@@ -49,7 +49,7 @@ data:
     \ [&](int a, int b) {\n    return v[a] * w[b] > v[b] * w[a];\n  });\n  T ret =\
     \ T();\n  for(int i = 0; i < dp.size(); i++) {\n    if(dp[i] > W || dp[i] == -1)\
     \ continue;\n    T rest = W - dp[i], cost = i;\n    for(auto &p : ord) {\n   \
-    \   auto get = min(mb[p], rest / w[p]);\n      if(get == 0) break;\n      cost\
+    \   auto get = min(mb[p], rest / w[p]);\n      if(get <= 0) continue;\n      cost\
     \ += get * v[p];\n      rest -= get * w[p];\n    }\n    ret = max(ret, cost);\n\
     \  }\n  return ret;\n}\n"
   code: "#include \"knapsack-limitations.cpp\"\n\n/**\n * @brief Knapsack Limitations(\u500B\
@@ -66,7 +66,7 @@ data:
     \ [&](int a, int b) {\n    return v[a] * w[b] > v[b] * w[a];\n  });\n  T ret =\
     \ T();\n  for(int i = 0; i < dp.size(); i++) {\n    if(dp[i] > W || dp[i] == -1)\
     \ continue;\n    T rest = W - dp[i], cost = i;\n    for(auto &p : ord) {\n   \
-    \   auto get = min(mb[p], rest / w[p]);\n      if(get == 0) break;\n      cost\
+    \   auto get = min(mb[p], rest / w[p]);\n      if(get <= 0) continue;\n      cost\
     \ += get * v[p];\n      rest -= get * w[p];\n    }\n    ret = max(ret, cost);\n\
     \  }\n  return ret;\n}\n"
   dependsOn:
@@ -74,7 +74,7 @@ data:
   isVerificationFile: false
   path: dp/knapsack-limitations-2.cpp
   requiredBy: []
-  timestamp: '2021-08-25 15:39:13+09:00'
+  timestamp: '2021-12-20 12:50:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/aoj-dpl-1-i.test.cpp
