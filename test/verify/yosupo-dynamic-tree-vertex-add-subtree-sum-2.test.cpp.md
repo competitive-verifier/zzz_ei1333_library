@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: structure/develop/vertex-set-subtree-sum.cpp
     title: Vertex Set Subtree Sum
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.cpp
     title: template/template.cpp
   _extendedRequiredBy: []
