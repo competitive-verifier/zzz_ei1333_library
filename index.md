@@ -641,7 +641,7 @@ data:
     - icon: ':warning:'
       path: other/mo-rollback.cpp
       title: other/mo-rollback.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: other/mo.cpp
       title: Mo's Algorithm
     - icon: ':warning:'
@@ -830,7 +830,7 @@ data:
     - icon: ':warning:'
       path: structure/others/abstract-binary-indexed-tree.cpp
       title: "Abstract Binary Indexed Tree(\u62BD\u8C61\u5316BIT)"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: structure/others/binary-indexed-tree.cpp
       title: Binary-Indexed-Tree(BIT)
     - icon: ':heavy_check_mark:'
@@ -948,7 +948,7 @@ data:
       title: "Wavelet Tree(\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u6728)"
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.cpp
       title: template/template.cpp
   verificationCategories:
@@ -1488,7 +1488,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-sqrt-of-formal-power-series.test.cpp
       title: test/verify/yosupo-sqrt-of-formal-power-series.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-static-range-inversions-query.test.cpp
       title: test/verify/yosupo-static-range-inversions-query.test.cpp
     - icon: ':heavy_check_mark:'
