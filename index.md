@@ -827,7 +827,11 @@ data:
       title: Link-Cut-Tree
   - name: structure/others
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
+      path: structure/others/abstract-2d-binary-indexed-tree-compressed.cpp
+      title: "Abstract 2D Binary Indexed Tree Compressed(\u62BD\u8C61\u53162\u6B21\
+        \u5143\u5EA7\u5727BIT)"
+    - icon: ':heavy_check_mark:'
       path: structure/others/abstract-binary-indexed-tree.cpp
       title: "Abstract Binary Indexed Tree(\u62BD\u8C61\u5316BIT)"
     - icon: ':heavy_check_mark:'
@@ -1563,6 +1567,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/verify/yukicoder-1720.test.cpp
       title: test/verify/yukicoder-1720.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/verify/yukicoder-1826.test.cpp
+      title: test/verify/yukicoder-1826.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/verify/yukicoder-184.test.cpp
       title: test/verify/yukicoder-184.test.cpp

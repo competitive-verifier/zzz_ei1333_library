@@ -613,6 +613,9 @@ data:
     path: test/verify/yukicoder-1720.test.cpp
     title: test/verify/yukicoder-1720.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/verify/yukicoder-1826.test.cpp
+    title: test/verify/yukicoder-1826.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/verify/yukicoder-184.test.cpp
     title: test/verify/yukicoder-184.test.cpp
   - icon: ':heavy_check_mark:'
@@ -760,6 +763,7 @@ data:
   - test/verify/yosupo-stirling-number-of-the-first-kind.test.cpp
   - test/verify/aoj-0233.test.cpp
   - test/verify/aoj-grl-3-b.test.cpp
+  - test/verify/yukicoder-1826.test.cpp
   - test/verify/yosupo-staticrmq.test.cpp
   - test/verify/yosupo-dynamic-tree-vertex-add-path-sum-3.test.cpp
   - test/verify/aoj-grl-3-a.test.cpp

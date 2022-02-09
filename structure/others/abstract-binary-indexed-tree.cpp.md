@@ -1,11 +1,18 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: structure/others/abstract-2d-binary-indexed-tree-compressed.cpp
+    title: "Abstract 2D Binary Indexed Tree Compressed(\u62BD\u8C61\u53162\u6B21\u5143\
+      \u5EA7\u5727BIT)"
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/verify/yukicoder-1826.test.cpp
+    title: test/verify/yukicoder-1826.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: docs/abstract-binary-indexed-tree.md
     document_title: "Abstract Binary Indexed Tree(\u62BD\u8C61\u5316BIT)"
@@ -27,8 +34,9 @@ data:
     \    return ret;\n  }\n};\n\ntemplate< typename T, typename F >\nAbstractBinaryIndexedTree<\
     \ T, F > get_abstract_binary_indexed_tree(int n, const F &f, const T &e) {\n \
     \ return AbstractBinaryIndexedTree{n, f, e};\n}\n\ntemplate< typename T, typename\
-    \ F >\nAbstractBinaryIndexedTree< T, F > get_segment_tree(const vector< T > &v,\
-    \ const F &f, const T &e) {\n  return AbstractBinaryIndexedTree{v, f, e};\n}\n"
+    \ F >\nAbstractBinaryIndexedTree< T, F > get_abstract_binary_indexed_tree(const\
+    \ vector< T > &v, const F &f, const T &e) {\n  return AbstractBinaryIndexedTree{v,\
+    \ f, e};\n}\n"
   code: "/**\n * @brief Abstract Binary Indexed Tree(\u62BD\u8C61\u5316BIT)\n * @docs\
     \ docs/abstract-binary-indexed-tree.md\n */\ntemplate< typename T, typename F\
     \ >\nstruct AbstractBinaryIndexedTree {\nprivate:\n  int n;\n  vector< T > data;\n\
@@ -45,16 +53,18 @@ data:
     \ ret = f(ret, data[r]);\n    return ret;\n  }\n};\n\ntemplate< typename T, typename\
     \ F >\nAbstractBinaryIndexedTree< T, F > get_abstract_binary_indexed_tree(int\
     \ n, const F &f, const T &e) {\n  return AbstractBinaryIndexedTree{n, f, e};\n\
-    }\n\ntemplate< typename T, typename F >\nAbstractBinaryIndexedTree< T, F > get_segment_tree(const\
+    }\n\ntemplate< typename T, typename F >\nAbstractBinaryIndexedTree< T, F > get_abstract_binary_indexed_tree(const\
     \ vector< T > &v, const F &f, const T &e) {\n  return AbstractBinaryIndexedTree{v,\
     \ f, e};\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: structure/others/abstract-binary-indexed-tree.cpp
-  requiredBy: []
-  timestamp: '2022-02-04 23:35:17+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  requiredBy:
+  - structure/others/abstract-2d-binary-indexed-tree-compressed.cpp
+  timestamp: '2022-02-09 16:47:12+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/verify/yukicoder-1826.test.cpp
 documentation_of: structure/others/abstract-binary-indexed-tree.cpp
 layout: document
 redirect_from:
