@@ -34,6 +34,9 @@ data:
     path: test/verify/yosupo-lca.test.cpp
     title: test/verify/yosupo-lca.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
+    title: test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-point-add-rectangle-sum.test.cpp
     title: test/verify/yosupo-point-add-rectangle-sum.test.cpp
   - icon: ':heavy_check_mark:'
@@ -123,6 +126,7 @@ data:
   - test/verify/yosupo-bitwise-xor-convolution.test.cpp
   - test/verify/yosupo-tree-decomposition-width-2.test.cpp
   - test/verify/yosupo-bitwise-and-convolution-3.test.cpp
+  - test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
   - test/verify/yosupo-lca-3.test.cpp
   - test/verify/yosupo-lca-4.test.cpp
 documentation_of: other/scanner.cpp

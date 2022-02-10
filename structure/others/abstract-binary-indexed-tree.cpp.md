@@ -8,6 +8,9 @@ data:
       \u5EA7\u5727BIT)"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
+    title: test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/verify/yukicoder-1826.test.cpp
     title: test/verify/yukicoder-1826.test.cpp
   _isVerificationFailed: false
@@ -65,6 +68,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/yukicoder-1826.test.cpp
+  - test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
 documentation_of: structure/others/abstract-binary-indexed-tree.cpp
 layout: document
 redirect_from:

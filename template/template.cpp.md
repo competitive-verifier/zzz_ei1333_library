@@ -469,6 +469,9 @@ data:
     path: test/verify/yosupo-persistent-unionfind.test.cpp
     title: test/verify/yosupo-persistent-unionfind.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
+    title: test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-point-add-rectangle-sum.test.cpp
     title: test/verify/yosupo-point-add-rectangle-sum.test.cpp
   - icon: ':heavy_check_mark:'
@@ -909,6 +912,7 @@ data:
   - test/verify/aoj-cgl-3-b.test.cpp
   - test/verify/aoj-cgl-7-e.test.cpp
   - test/verify/aoj-0560.test.cpp
+  - test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
   - test/verify/aoj-grl-5-c-4.test.cpp
   - test/verify/yosupo-chromatic-number.test.cpp
   - test/verify/yosupo-staticrmq-3.test.cpp
