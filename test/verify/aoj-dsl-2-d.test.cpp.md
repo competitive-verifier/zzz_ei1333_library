@@ -47,27 +47,25 @@ data:
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-dsl-2-d.test.cpp\"\
     \n\n#line 1 \"structure/segment-tree/dual-segment-tree.cpp\"\n/**\n * @brief Dual-Segment-Tree(\u53CC\
     \u5BFE\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)\n * @docs docs/dual-segment-tree.md\n\
-    \ */\ntemplate< typename OperatorMonoid, typename H >\nstruct DualSegmentTree\
-    \ {\n  int sz, height;\n  vector< OperatorMonoid > lazy;\n  const H h;\n  const\
-    \ OperatorMonoid OM0;\n\n  DualSegmentTree(int n, const H h, const OperatorMonoid\
-    \ &OM0) : h(h), OM0(OM0) {\n    sz = 1;\n    height = 0;\n    while(sz < n) sz\
-    \ <<= 1, height++;\n    lazy.assign(2 * sz, OM0);\n  }\n\n  inline void propagate(int\
-    \ k) {\n    if(lazy[k] != OM0) {\n      lazy[2 * k + 0] = h(lazy[2 * k + 0], lazy[k]);\n\
-    \      lazy[2 * k + 1] = h(lazy[2 * k + 1], lazy[k]);\n      lazy[k] = OM0;\n\
-    \    }\n  }\n\n  inline void thrust(int k) {\n    for(int i = height; i > 0; i--)\
-    \ propagate(k >> i);\n  }\n\n  void update(int a, int b, const OperatorMonoid\
-    \ &x) {\n    thrust(a += sz);\n    thrust(b += sz - 1);\n    for(int l = a, r\
-    \ = b + 1; l < r; l >>= 1, r >>= 1) {\n      if(l & 1) lazy[l] = h(lazy[l], x),\
-    \ ++l;\n      if(r & 1) --r, lazy[r] = h(lazy[r], x);\n    }\n  }\n\n  OperatorMonoid\
-    \ operator[](int k) {\n    thrust(k += sz);\n    return lazy[k];\n  }\n};\n\n\
-    template< typename OperatorMonoid, typename H >\nDualSegmentTree< OperatorMonoid,\
-    \ H > get_dual_segment_tree(int N, const H& h, const OperatorMonoid& OM0) {\n\
-    \  return {N, h, OM0};\n}\n#line 6 \"test/verify/aoj-dsl-2-d.test.cpp\"\n\nint\
-    \ main() {\n  int N, Q;\n  cin >> N >> Q;\n  auto h = [](int a, int b) { return\
-    \ b; };\n  auto seg = get_dual_segment_tree(N, h, INT_MAX);\n  while(Q--) {\n\
-    \    int com;\n    cin >> com;\n    if(com == 0) {\n      int l, r, x;\n     \
-    \ cin >> l >> r >> x;\n      seg.update(l, r + 1, x);\n    } else if(com == 1)\
-    \ {\n      int k;\n      cin >> k;\n      cout << seg[k] << \"\\n\";\n    }\n\
+    \ */\ntemplate< typename E, typename H >\nstruct DualSegmentTree {\n  int sz,\
+    \ height;\n  vector< E > lazy;\n  const H h;\n  const E ei;\n\n  DualSegmentTree(int\
+    \ n, const H h, const E &ei) : h(h), ei(ei) {\n    sz = 1;\n    height = 0;\n\
+    \    while(sz < n) sz <<= 1, height++;\n    lazy.assign(2 * sz, ei);\n  }\n\n\
+    \  inline void propagate(int k) {\n    if(lazy[k] != ei) {\n      lazy[2 * k +\
+    \ 0] = h(lazy[2 * k + 0], lazy[k]);\n      lazy[2 * k + 1] = h(lazy[2 * k + 1],\
+    \ lazy[k]);\n      lazy[k] = ei;\n    }\n  }\n\n  inline void thrust(int k) {\n\
+    \    for(int i = height; i > 0; i--) propagate(k >> i);\n  }\n\n  void update(int\
+    \ a, int b, const E &x) {\n    thrust(a += sz);\n    thrust(b += sz - 1);\n  \
+    \  for(int l = a, r = b + 1; l < r; l >>= 1, r >>= 1) {\n      if(l & 1) lazy[l]\
+    \ = h(lazy[l], x), ++l;\n      if(r & 1) --r, lazy[r] = h(lazy[r], x);\n    }\n\
+    \  }\n\n  E operator[](int k) {\n    thrust(k += sz);\n    return lazy[k];\n \
+    \ }\n};\n\ntemplate< typename E, typename H >\nDualSegmentTree< E, H > get_dual_segment_tree(int\
+    \ N, const H& h, const E& ei) {\n  return {N, h, ei};\n}\n#line 6 \"test/verify/aoj-dsl-2-d.test.cpp\"\
+    \n\nint main() {\n  int N, Q;\n  cin >> N >> Q;\n  auto h = [](int a, int b) {\
+    \ return b; };\n  auto seg = get_dual_segment_tree(N, h, INT_MAX);\n  while(Q--)\
+    \ {\n    int com;\n    cin >> com;\n    if(com == 0) {\n      int l, r, x;\n \
+    \     cin >> l >> r >> x;\n      seg.update(l, r + 1, x);\n    } else if(com ==\
+    \ 1) {\n      int k;\n      cin >> k;\n      cout << seg[k] << \"\\n\";\n    }\n\
     \  }\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_D\"\
     \n\n#include \"../../template/template.cpp\"\n\n#include \"../../structure/segment-tree/dual-segment-tree.cpp\"\
@@ -83,7 +81,7 @@ data:
   isVerificationFile: true
   path: test/verify/aoj-dsl-2-d.test.cpp
   requiredBy: []
-  timestamp: '2021-05-01 00:06:55+09:00'
+  timestamp: '2022-02-15 22:44:36+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/aoj-dsl-2-d.test.cpp
