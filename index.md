@@ -616,8 +616,8 @@ data:
       path: math/number-theory/prime-table.cpp
       title: "Prime Table(\u7D20\u6570\u30C6\u30FC\u30D6\u30EB)"
     - icon: ':warning:'
-      path: math/number-theory/quotient-range.cpp
-      title: math/number-theory/quotient-range.cpp
+      path: math/number-theory/quotient-ranges.cpp
+      title: "Quotient Ranges(\u5546\u5217\u6319)"
     - icon: ':heavy_check_mark:'
       path: math/number-theory/sum-of-floor-of-linear.cpp
       title: "Sum of Floor of Linear(\u4E00\u6B21\u95A2\u6570\u306E\u5E8A\u95A2\u6570\
