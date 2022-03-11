@@ -14,7 +14,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: structure/others/abstract-binary-indexed-tree.cpp
     title: "Abstract Binary Indexed Tree(\u62BD\u8C61\u5316BIT)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.cpp
     title: template/template.cpp
   _extendedRequiredBy: []

@@ -228,7 +228,7 @@ data:
       title: graph/flow/push-relabel.hpp
   - name: graph
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: graph/graph-template.hpp
       title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8\
         )"
@@ -319,7 +319,7 @@ data:
     - icon: ':warning:'
       path: graph/shortest-path/complement-shotest-path.hpp
       title: "Complement-Shortest-Path(\u88DC\u30B0\u30E9\u30D5\u6700\u77ED\u8DEF)"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/shortest-path/dijkstra-fibonacchi-heap.hpp
       title: "Dijkstra-Fibonacchi-Heap(\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u8DEF)"
     - icon: ':heavy_check_mark:'
@@ -795,7 +795,7 @@ data:
     - icon: ':warning:'
       path: structure/heap/erasable-heap.hpp
       title: structure/heap/erasable-heap.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: structure/heap/fibonacchi-heap.cpp
       title: "Fibonacchi-Heap(\u30D5\u30A3\u30DC\u30CA\u30C3\u30C1\u30D2\u30FC\u30D7\
         )"
@@ -952,7 +952,7 @@ data:
       title: "Wavelet Tree(\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u6728)"
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.cpp
       title: template/template.cpp
   verificationCategories:
@@ -1171,7 +1171,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/verify/aoj-dsl-2-d.test.cpp
       title: test/verify/aoj-dsl-2-d.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/verify/aoj-grl-1-a-2.test.cpp
       title: test/verify/aoj-grl-1-a-2.test.cpp
     - icon: ':heavy_check_mark:'
