@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
   _extendedRequiredBy: []
@@ -63,8 +63,8 @@ data:
   timestamp: '2021-08-16 02:17:26+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/verify/aoj-0304.test.cpp
   - test/verify/aoj-grl-1-b.test.cpp
+  - test/verify/aoj-0304.test.cpp
 documentation_of: graph/shortest-path/bellman-ford.hpp
 layout: document
 redirect_from:

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
   _extendedRequiredBy: []
@@ -139,9 +139,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/aoj-2450.test.cpp
-  - test/verify/yukicoder-650.test.cpp
-  - test/verify/aoj-2667.test.cpp
   - test/verify/aoj-grl-5-c-2.test.cpp
+  - test/verify/aoj-2667.test.cpp
+  - test/verify/yukicoder-650.test.cpp
 documentation_of: graph/tree/heavy-light-decomposition.hpp
 layout: document
 redirect_from:

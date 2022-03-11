@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: structure/develop/vertex-set-path-sum.cpp
     title: Vertex Set Path Sum
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.cpp
     title: template/template.cpp
   _extendedRequiredBy: []

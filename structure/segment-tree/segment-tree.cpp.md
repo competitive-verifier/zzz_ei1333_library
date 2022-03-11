@@ -98,8 +98,8 @@ data:
   timestamp: '2022-02-15 22:44:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/verify/aoj-dsl-2-a.test.cpp
   - test/verify/yukicoder-650.test.cpp
+  - test/verify/aoj-dsl-2-a.test.cpp
 documentation_of: structure/segment-tree/segment-tree.cpp
 layout: document
 redirect_from:
