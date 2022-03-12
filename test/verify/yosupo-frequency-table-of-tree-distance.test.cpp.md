@@ -75,7 +75,7 @@ data:
     \ typename T >\nstruct CentroidDecomposition : Graph< T > {\npublic:\n  using\
     \ Graph< T >::Graph;\n  using Graph< T >::g;\n  Graph< int > tree;\n\n  int build(int\
     \ t = 0) {\n    sub.assign(g.size(), 0);\n    v.assign(g.size(), 0);\n    tree\
-    \ = Graph< T >(g.size());\n    return build_dfs(0);\n  }\n\n  explicit CentroidDecomposition(const\
+    \ = Graph< int >(g.size());\n    return build_dfs(0);\n  }\n\n  explicit CentroidDecomposition(const\
     \ Graph< T > &g) : Graph< T >(g) {}\n\nprivate:\n  vector< int > sub;\n  vector<\
     \ int > v;\n\n  inline int build_dfs(int idx, int par) {\n    sub[idx] = 1;\n\
     \    for(auto &to : g[idx]) {\n      if(to == par || v[to]) continue;\n      sub[idx]\
@@ -168,7 +168,7 @@ data:
   isVerificationFile: true
   path: test/verify/yosupo-frequency-table-of-tree-distance.test.cpp
   requiredBy: []
-  timestamp: '2021-08-16 02:17:26+09:00'
+  timestamp: '2022-03-12 17:40:54+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/yosupo-frequency-table-of-tree-distance.test.cpp
