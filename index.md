@@ -681,6 +681,9 @@ data:
       path: string/manacher.cpp
       title: string/manacher.cpp
     - icon: ':heavy_check_mark:'
+      path: string/palindromic-tree.cpp
+      title: "Palindromic Tree(\u56DE\u6587\u6728)"
+    - icon: ':heavy_check_mark:'
       path: string/rolling-hash.cpp
       title: "Rolling-Hash(\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5)"
     - icon: ':heavy_check_mark:'
@@ -1580,11 +1583,20 @@ data:
       path: test/verify/yukicoder-215.test.cpp
       title: test/verify/yukicoder-215.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/verify/yukicoder-263.test.cpp
+      title: test/verify/yukicoder-263.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/verify/yukicoder-273.test.cpp
+      title: test/verify/yukicoder-273.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/verify/yukicoder-3046.test.cpp
       title: test/verify/yukicoder-3046.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/verify/yukicoder-430.test.cpp
       title: test/verify/yukicoder-430.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/verify/yukicoder-465.test.cpp
+      title: test/verify/yukicoder-465.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/verify/yukicoder-502.test.cpp
       title: test/verify/yukicoder-502.test.cpp

@@ -625,11 +625,20 @@ data:
     path: test/verify/yukicoder-215.test.cpp
     title: test/verify/yukicoder-215.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/verify/yukicoder-263.test.cpp
+    title: test/verify/yukicoder-263.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/verify/yukicoder-273.test.cpp
+    title: test/verify/yukicoder-273.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/verify/yukicoder-3046.test.cpp
     title: test/verify/yukicoder-3046.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/verify/yukicoder-430.test.cpp
     title: test/verify/yukicoder-430.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/verify/yukicoder-465.test.cpp
+    title: test/verify/yukicoder-465.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/verify/yukicoder-502.test.cpp
     title: test/verify/yukicoder-502.test.cpp
@@ -827,6 +836,7 @@ data:
   - test/verify/yosupo-lca-2.test.cpp
   - test/verify/aoj-cgl-2-d.test.cpp
   - test/verify/yosupo-multipoint-evaluation.test.cpp
+  - test/verify/yukicoder-465.test.cpp
   - test/verify/yosupo-general-matching.test.cpp
   - test/verify/aoj-0294.test.cpp
   - test/verify/yosupo-pow-of-formal-power-series.test.cpp
@@ -836,6 +846,7 @@ data:
   - test/verify/aoj-grl-2-a.test.cpp
   - test/verify/aoj-0412.test.cpp
   - test/verify/yosupo-range-affine-range-sum.test.cpp
+  - test/verify/yukicoder-263.test.cpp
   - test/verify/aoj-grl-6-a-4.test.cpp
   - test/verify/yosupo-k-shortest-walk.test.cpp
   - test/verify/aoj-dsl-2-d.test.cpp
@@ -856,6 +867,7 @@ data:
   - test/verify/aoj-cgl-1-a.test.cpp
   - test/verify/aoj-dpl-5-j.test.cpp
   - test/verify/yosupo-scc.test.cpp
+  - test/verify/yukicoder-273.test.cpp
   - test/verify/yosupo-polynomial-taylor-shift.test.cpp
   - test/verify/aoj-0304.test.cpp
   - test/verify/yukicoder-430.test.cpp
