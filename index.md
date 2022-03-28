@@ -642,6 +642,9 @@ data:
       path: other/mo-rollback.cpp
       title: other/mo-rollback.cpp
     - icon: ':heavy_check_mark:'
+      path: other/mo-tree.cpp
+      title: "Mo Tree(\u6728\u4E0A\u306EMo)"
+    - icon: ':heavy_check_mark:'
       path: other/mo.cpp
       title: Mo's Algorithm
     - icon: ':warning:'
@@ -1009,6 +1012,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/verify/aoj-1615.test.cpp
       title: test/verify/aoj-1615.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/verify/aoj-2270.test.cpp
+      title: test/verify/aoj-2270.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/verify/aoj-2286.test.cpp
       title: test/verify/aoj-2286.test.cpp

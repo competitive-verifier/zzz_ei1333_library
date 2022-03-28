@@ -124,6 +124,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/tree/tree-isomorphism.hpp
     title: "Tree-Isomorphism(\u6728\u306E\u540C\u578B\u6027\u5224\u5B9A)"
+  - icon: ':heavy_check_mark:'
+    path: other/mo-tree.cpp
+    title: "Mo Tree(\u6728\u4E0A\u306EMo)"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-0275.test.cpp
@@ -134,6 +137,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-0304.test.cpp
     title: test/verify/aoj-0304.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/verify/aoj-2270.test.cpp
+    title: test/verify/aoj-2270.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-2450.test.cpp
     title: test/verify/aoj-2450.test.cpp
@@ -318,6 +324,7 @@ data:
   isVerificationFile: false
   path: graph/graph-template.hpp
   requiredBy:
+  - other/mo-tree.cpp
   - graph/mst/prim-fibonacchi-heap.hpp
   - graph/mst/kruskal.hpp
   - graph/mst/directed-mst.hpp
@@ -407,6 +414,7 @@ data:
   - test/verify/yukicoder-1254.test.cpp
   - test/verify/aoj-grl-1-b.test.cpp
   - test/verify/aoj-grl-5-c-2.test.cpp
+  - test/verify/aoj-2270.test.cpp
 documentation_of: graph/graph-template.hpp
 layout: document
 redirect_from:

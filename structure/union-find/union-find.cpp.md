@@ -24,9 +24,15 @@ data:
     title: "Offline LCA(\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\u901A\u7956\
       \u5148)"
   - icon: ':heavy_check_mark:'
+    path: other/mo-tree.cpp
+    title: "Mo Tree(\u6728\u4E0A\u306EMo)"
+  - icon: ':heavy_check_mark:'
     path: other/offline-rmq.cpp
     title: Offline RMQ
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/verify/aoj-2270.test.cpp
+    title: test/verify/aoj-2270.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-2821.test.cpp
     title: test/verify/aoj-2821.test.cpp
@@ -103,6 +109,7 @@ data:
   path: structure/union-find/union-find.cpp
   requiredBy:
   - other/offline-rmq.cpp
+  - other/mo-tree.cpp
   - graph/mst/kruskal.hpp
   - graph/mst/boruvka.hpp
   - graph/others/bipartite-graph-edge-coloring.hpp
@@ -125,6 +132,7 @@ data:
   - test/verify/yosupo-two-edge-connected-components-2.test.cpp
   - test/verify/yosupo-tree-decomposition-width-2.test.cpp
   - test/verify/yosupo-lca-4.test.cpp
+  - test/verify/aoj-2270.test.cpp
 documentation_of: structure/union-find/union-find.cpp
 layout: document
 redirect_from:

@@ -52,6 +52,9 @@ data:
     path: test/verify/aoj-1615.test.cpp
     title: test/verify/aoj-1615.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/verify/aoj-2270.test.cpp
+    title: test/verify/aoj-2270.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-2286.test.cpp
     title: test/verify/aoj-2286.test.cpp
   - icon: ':heavy_check_mark:'
@@ -946,6 +949,7 @@ data:
   - test/verify/yosupo-polynomial-interpolation.test.cpp
   - test/verify/yosupo-dynamic-tree-vertex-add-path-sum-2.test.cpp
   - test/verify/yosupo-dynamic-tree-vertex-set-path-composite.test.cpp
+  - test/verify/aoj-2270.test.cpp
 documentation_of: template/template.cpp
 layout: document
 redirect_from:

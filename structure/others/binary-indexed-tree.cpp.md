@@ -7,6 +7,9 @@ data:
     title: Wavelet Matrix Point Add Rectangle Sum
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/verify/aoj-2270.test.cpp
+    title: test/verify/aoj-2270.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-dsl-2-b.test.cpp
     title: test/verify/aoj-dsl-2-b.test.cpp
   - icon: ':heavy_check_mark:'
@@ -70,6 +73,7 @@ data:
   - test/verify/aoj-dsl-2-b.test.cpp
   - test/verify/yosupo-point-add-rectangle-sum.test.cpp
   - test/verify/yosupo-static-range-inversions-query.test.cpp
+  - test/verify/aoj-2270.test.cpp
 documentation_of: structure/others/binary-indexed-tree.cpp
 layout: document
 redirect_from:
