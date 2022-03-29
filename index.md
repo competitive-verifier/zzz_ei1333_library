@@ -690,8 +690,8 @@ data:
       path: string/rolling-hash.cpp
       title: "Rolling-Hash(\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5)"
     - icon: ':heavy_check_mark:'
-      path: string/suffix-array.cpp
-      title: string/suffix-array.cpp
+      path: string/suffix-array.hpp
+      title: "Suffix Array(\u63A5\u5C3E\u8F9E\u914D\u5217)"
     - icon: ':warning:'
       path: string/z-algorithm.cpp
       title: string/z-algorithm.cpp
@@ -1075,7 +1075,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/verify/aoj-alds-1-14-b.test.cpp
       title: test/verify/aoj-alds-1-14-b.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/verify/aoj-alds-1-14-d.test.cpp
       title: test/verify/aoj-alds-1-14-d.test.cpp
     - icon: ':heavy_check_mark:'
@@ -1537,6 +1537,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-subset-convolution.test.cpp
       title: test/verify/yosupo-subset-convolution.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/verify/yosupo-suffixarray.test.cpp
+      title: test/verify/yosupo-suffixarray.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-sum-of-floor-of-linear.test.cpp
       title: test/verify/yosupo-sum-of-floor-of-linear.test.cpp

@@ -115,9 +115,6 @@ data:
     path: test/verify/aoj-alds-1-14-b.test.cpp
     title: test/verify/aoj-alds-1-14-b.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/verify/aoj-alds-1-14-d.test.cpp
-    title: test/verify/aoj-alds-1-14-d.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-alds-1-9-c.test.cpp
     title: test/verify/aoj-alds-1-9-c.test.cpp
   - icon: ':heavy_check_mark:'
@@ -577,6 +574,9 @@ data:
     path: test/verify/yosupo-subset-convolution.test.cpp
     title: test/verify/yosupo-subset-convolution.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/verify/yosupo-suffixarray.test.cpp
+    title: test/verify/yosupo-suffixarray.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-sum-of-floor-of-linear.test.cpp
     title: test/verify/yosupo-sum-of-floor-of-linear.test.cpp
   - icon: ':heavy_check_mark:'
@@ -763,7 +763,6 @@ data:
   - test/verify/yukicoder-583.test.cpp
   - test/verify/yosupo-tetration-mod.test.cpp
   - test/verify/yukicoder-1720.test.cpp
-  - test/verify/aoj-alds-1-14-d.test.cpp
   - test/verify/aoj-grl-5-c.test.cpp
   - test/verify/aoj-grl-7-a.test.cpp
   - test/verify/yosupo-two-sat.test.cpp
@@ -888,6 +887,7 @@ data:
   - test/verify/aoj-0275.test.cpp
   - test/verify/aoj-dpl-5-i.test.cpp
   - test/verify/aoj-2405.test.cpp
+  - test/verify/yosupo-suffixarray.test.cpp
   - test/verify/yosupo-shortest-path.test.cpp
   - test/verify/aoj-2450-2.test.cpp
   - test/verify/aoj-1549-2.test.cpp

@@ -1,0 +1,120 @@
+---
+data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/verify/yosupo-suffixarray.test.cpp
+    title: test/verify/yosupo-suffixarray.test.cpp
+  _isVerificationFailed: false
+  _pathExtension: hpp
+  _verificationStatusIcon: ':heavy_check_mark:'
+  attributes:
+    document_title: "Suffix Array(\u63A5\u5C3E\u8F9E\u914D\u5217)"
+    links: []
+  bundledCode: "#line 1 \"string/suffix-array.hpp\"\n/**\n * @brief Suffix Array(\u63A5\
+    \u5C3E\u8F9E\u914D\u5217)\n */\ntemplate< typename T >\nstruct SuffixArray : vector<\
+    \ int > {\nprivate:\n  vector< int > sa_is(const vector< int > &s) const {\n \
+    \   const int n = (int) s.size();\n    vector< int > ret(n);\n\n    vector< int\
+    \ > is_s(n), is_lms(n);\n    int m = 0;\n    for(int i = n - 2; i >= 0; i--) {\n\
+    \      is_s[i] = (s[i] > s[i + 1]) or (s[i] == s[i + 1] and is_s[i + 1]);\n  \
+    \    m += (is_lms[i + 1] = is_s[i] and not is_s[i + 1]);\n    }\n\n    auto induced_sort\
+    \ = [&](const vector< int > &lms) {\n      int upper = *max_element(s.begin(),\
+    \ s.end());\n      vector< int > l(upper + 2), r(upper + 2);\n      for(auto &&v:\
+    \ s) {\n        ++l[v + 1];\n        ++r[v];\n      }\n      partial_sum(l.begin(),\
+    \ l.end(), l.begin());\n      partial_sum(r.begin(), r.end(), r.begin());\n  \
+    \    fill(ret.begin(), ret.end(), -1);\n      for(int i = (int) lms.size() - 1;\
+    \ i >= 0; i--) {\n        ret[--r[s[lms[i]]]] = lms[i];\n      }\n      for(auto\
+    \ &&v: ret) {\n        if(v >= 1 and is_s[v - 1]) ret[l[s[v - 1]]++] = v - 1;\n\
+    \      }\n      fill(r.begin(), r.end(), 0);\n      for(auto &&v: s) ++r[v];\n\
+    \      partial_sum(r.begin(), r.end(), r.begin());\n      for(int k = (int) ret.size()\
+    \ - 1, i = ret[k]; k >= 1; i = ret[--k]) {\n        if(i >= 1 and not is_s[i -\
+    \ 1]) {\n          ret[--r[s[i - 1]]] = i - 1;\n        }\n      }\n    };\n\n\
+    \    vector< int > lms;\n    lms.reserve(m);\n    for(int i = 1; i < n; i++) {\n\
+    \      if(is_lms[i]) lms.push_back(i);\n    }\n\n    induced_sort(lms);\n\n  \
+    \  vector< int > new_lms;\n    new_lms.reserve(m);\n    for(int i = 0; i < n;\
+    \ i++) {\n      if(not is_s[ret[i]] and ret[i] > 0 and is_s[ret[i] - 1]) {\n \
+    \       new_lms.push_back(ret[i]);\n      }\n    }\n\n    auto is_same = [&](int\
+    \ a, int b) {\n      if(s[a++] != s[b++]) return false;\n      for(;; ++a, ++b)\
+    \ {\n        if(s[a] != s[b]) return false;\n        if(is_lms[a] or is_lms[b])\
+    \ return is_lms[a] and is_lms[b];\n      }\n    };\n\n    int rank = 0;\n    ret[n\
+    \ - 1] = 0;\n    for(int i = 1; i < m; i++) {\n      if(not is_same(new_lms[i\
+    \ - 1], new_lms[i])) ++rank;\n      ret[new_lms[i]] = rank;\n    }\n\n    if(rank\
+    \ + 1 < m) {\n      vector< int > new_s(m);\n      for(int i = 0; i < m; i++)\
+    \ {\n        new_s[i] = ret[lms[i]];\n      }\n      auto lms_sa = sa_is(new_s);\n\
+    \      for(int i = 0; i < m; i++) {\n        new_lms[i] = lms[lms_sa[i]];\n  \
+    \    }\n    }\n\n    induced_sort(new_lms);\n\n    return ret;\n  }\n\npublic:\n\
+    \  T vs;\n\n  explicit SuffixArray(const T &vs, bool compress = false) : vs(vs)\
+    \ {\n    vector< int > new_vs(vs.size() + 1);\n    if(compress) {\n      T xs\
+    \ = vs;\n      sort(xs.begin(), xs.end());\n      xs.erase(unique(xs.begin(),\
+    \ xs.end()), xs.end());\n      for(int i = 0; i < (int) vs.size(); i++) {\n  \
+    \      new_vs[i] = lower_bound(xs.begin(), xs.end(), vs[i]) - xs.begin() + 1;\n\
+    \      }\n    } else {\n      auto d = *min_element(vs.begin(), vs.end());\n \
+    \     for(int i = 0; i < (int) vs.size(); i++) {\n        new_vs[i] = vs[i] -\
+    \ d + 1;\n      }\n    }\n    auto ret = sa_is(new_vs);\n    assign(ret.begin(),\
+    \ ret.end());\n  }\n\n  void output() const {\n    for(int i = 0; i < (int) vs.size();\
+    \ i++) {\n      cout << i << \":[\" << (*this)[i] << \"]\";\n      for(int j =\
+    \ (*this)[i]; j < (int) vs.size(); j++) cout << \" \" << vs[j];\n      cout <<\
+    \ \"\\n\";\n    }\n  }\n};\n\ntemplate<>\nvoid SuffixArray< string >::output()\
+    \ const {\n  for(int i = 0; i < (int) vs.size(); i++) {\n    cout << i << \":[\"\
+    \ << (*this)[i] << \"] \" << vs.substr((*this)[i]) << \"\\n\";\n  }\n}\n"
+  code: "/**\n * @brief Suffix Array(\u63A5\u5C3E\u8F9E\u914D\u5217)\n */\ntemplate<\
+    \ typename T >\nstruct SuffixArray : vector< int > {\nprivate:\n  vector< int\
+    \ > sa_is(const vector< int > &s) const {\n    const int n = (int) s.size();\n\
+    \    vector< int > ret(n);\n\n    vector< int > is_s(n), is_lms(n);\n    int m\
+    \ = 0;\n    for(int i = n - 2; i >= 0; i--) {\n      is_s[i] = (s[i] > s[i + 1])\
+    \ or (s[i] == s[i + 1] and is_s[i + 1]);\n      m += (is_lms[i + 1] = is_s[i]\
+    \ and not is_s[i + 1]);\n    }\n\n    auto induced_sort = [&](const vector< int\
+    \ > &lms) {\n      int upper = *max_element(s.begin(), s.end());\n      vector<\
+    \ int > l(upper + 2), r(upper + 2);\n      for(auto &&v: s) {\n        ++l[v +\
+    \ 1];\n        ++r[v];\n      }\n      partial_sum(l.begin(), l.end(), l.begin());\n\
+    \      partial_sum(r.begin(), r.end(), r.begin());\n      fill(ret.begin(), ret.end(),\
+    \ -1);\n      for(int i = (int) lms.size() - 1; i >= 0; i--) {\n        ret[--r[s[lms[i]]]]\
+    \ = lms[i];\n      }\n      for(auto &&v: ret) {\n        if(v >= 1 and is_s[v\
+    \ - 1]) ret[l[s[v - 1]]++] = v - 1;\n      }\n      fill(r.begin(), r.end(), 0);\n\
+    \      for(auto &&v: s) ++r[v];\n      partial_sum(r.begin(), r.end(), r.begin());\n\
+    \      for(int k = (int) ret.size() - 1, i = ret[k]; k >= 1; i = ret[--k]) {\n\
+    \        if(i >= 1 and not is_s[i - 1]) {\n          ret[--r[s[i - 1]]] = i -\
+    \ 1;\n        }\n      }\n    };\n\n    vector< int > lms;\n    lms.reserve(m);\n\
+    \    for(int i = 1; i < n; i++) {\n      if(is_lms[i]) lms.push_back(i);\n   \
+    \ }\n\n    induced_sort(lms);\n\n    vector< int > new_lms;\n    new_lms.reserve(m);\n\
+    \    for(int i = 0; i < n; i++) {\n      if(not is_s[ret[i]] and ret[i] > 0 and\
+    \ is_s[ret[i] - 1]) {\n        new_lms.push_back(ret[i]);\n      }\n    }\n\n\
+    \    auto is_same = [&](int a, int b) {\n      if(s[a++] != s[b++]) return false;\n\
+    \      for(;; ++a, ++b) {\n        if(s[a] != s[b]) return false;\n        if(is_lms[a]\
+    \ or is_lms[b]) return is_lms[a] and is_lms[b];\n      }\n    };\n\n    int rank\
+    \ = 0;\n    ret[n - 1] = 0;\n    for(int i = 1; i < m; i++) {\n      if(not is_same(new_lms[i\
+    \ - 1], new_lms[i])) ++rank;\n      ret[new_lms[i]] = rank;\n    }\n\n    if(rank\
+    \ + 1 < m) {\n      vector< int > new_s(m);\n      for(int i = 0; i < m; i++)\
+    \ {\n        new_s[i] = ret[lms[i]];\n      }\n      auto lms_sa = sa_is(new_s);\n\
+    \      for(int i = 0; i < m; i++) {\n        new_lms[i] = lms[lms_sa[i]];\n  \
+    \    }\n    }\n\n    induced_sort(new_lms);\n\n    return ret;\n  }\n\npublic:\n\
+    \  T vs;\n\n  explicit SuffixArray(const T &vs, bool compress = false) : vs(vs)\
+    \ {\n    vector< int > new_vs(vs.size() + 1);\n    if(compress) {\n      T xs\
+    \ = vs;\n      sort(xs.begin(), xs.end());\n      xs.erase(unique(xs.begin(),\
+    \ xs.end()), xs.end());\n      for(int i = 0; i < (int) vs.size(); i++) {\n  \
+    \      new_vs[i] = lower_bound(xs.begin(), xs.end(), vs[i]) - xs.begin() + 1;\n\
+    \      }\n    } else {\n      auto d = *min_element(vs.begin(), vs.end());\n \
+    \     for(int i = 0; i < (int) vs.size(); i++) {\n        new_vs[i] = vs[i] -\
+    \ d + 1;\n      }\n    }\n    auto ret = sa_is(new_vs);\n    assign(ret.begin(),\
+    \ ret.end());\n  }\n\n  void output() const {\n    for(int i = 0; i < (int) vs.size();\
+    \ i++) {\n      cout << i << \":[\" << (*this)[i] << \"]\";\n      for(int j =\
+    \ (*this)[i]; j < (int) vs.size(); j++) cout << \" \" << vs[j];\n      cout <<\
+    \ \"\\n\";\n    }\n  }\n};\n\ntemplate<>\nvoid SuffixArray< string >::output()\
+    \ const {\n  for(int i = 0; i < (int) vs.size(); i++) {\n    cout << i << \":[\"\
+    \ << (*this)[i] << \"] \" << vs.substr((*this)[i]) << \"\\n\";\n  }\n}\n"
+  dependsOn: []
+  isVerificationFile: false
+  path: string/suffix-array.hpp
+  requiredBy: []
+  timestamp: '2022-03-30 00:42:08+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/verify/yosupo-suffixarray.test.cpp
+documentation_of: string/suffix-array.hpp
+layout: document
+redirect_from:
+- /library/string/suffix-array.hpp
+- /library/string/suffix-array.hpp.html
+title: "Suffix Array(\u63A5\u5C3E\u8F9E\u914D\u5217)"
+---
