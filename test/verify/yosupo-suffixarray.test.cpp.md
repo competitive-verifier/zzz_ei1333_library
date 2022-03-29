@@ -86,7 +86,7 @@ data:
     \ + 1;\n      }\n    } else {\n      auto d = *min_element(vs.begin(), vs.end());\n\
     \      for(int i = 0; i < (int) vs.size(); i++) {\n        new_vs[i] = vs[i] -\
     \ d + 1;\n      }\n    }\n    auto ret = sa_is(new_vs);\n    assign(ret.begin(),\
-    \ ret.end());\n  }\n\n  void output() const {\n    for(int i = 0; i < (int) vs.size();\
+    \ ret.end());\n  }\n\n  void output() const {\n    for(int i = 0; i < size();\
     \ i++) {\n      cout << i << \":[\" << (*this)[i] << \"]\";\n      for(int j =\
     \ (*this)[i]; j < (int) vs.size(); j++) cout << \" \" << vs[j];\n      cout <<\
     \ \"\\n\";\n    }\n  }\n\n\n  bool lt_substr(const string &t, int si = 0, int\
@@ -102,8 +102,8 @@ data:
     \ > 1) {\n      int mid = (ok + ng) / 2;\n      if(lt_substr(t, at(mid))) ng =\
     \ mid;\n      else ok = mid;\n    }\n    t.back()--;\n    return {low, ok};\n\
     \  }\n};\n\ntemplate<>\nvoid SuffixArray< string >::output() const {\n  for(int\
-    \ i = 0; i < (int) vs.size(); i++) {\n    cout << i << \":[\" << (*this)[i] <<\
-    \ \"] \" << vs.substr((*this)[i]) << \"\\n\";\n  }\n}\n#line 6 \"test/verify/yosupo-suffixarray.test.cpp\"\
+    \ i = 0; i < (int) size(); i++) {\n    cout << i << \":[\" << (*this)[i] << \"\
+    ] \" << vs.substr((*this)[i]) << \"\\n\";\n  }\n}\n#line 6 \"test/verify/yosupo-suffixarray.test.cpp\"\
     \n\nint main() {\n  string s;\n  cin >> s;\n  auto sa = SuffixArray(s);\n  sa.erase(sa.begin());\n\
     \  cout << sa << \"\\n\";\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/suffixarray\"\n\n#include\
@@ -116,7 +116,7 @@ data:
   isVerificationFile: true
   path: test/verify/yosupo-suffixarray.test.cpp
   requiredBy: []
-  timestamp: '2022-03-30 01:02:55+09:00'
+  timestamp: '2022-03-30 01:32:04+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/yosupo-suffixarray.test.cpp

@@ -1,11 +1,17 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: string/lcp-array.hpp
+    title: LCP Array
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-alds-1-14-d.test.cpp
     title: test/verify/aoj-alds-1-14-d.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/verify/yosupo-number-of-substrings.test.cpp
+    title: test/verify/yosupo-number-of-substrings.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-suffixarray.test.cpp
     title: test/verify/yosupo-suffixarray.test.cpp
@@ -55,7 +61,7 @@ data:
     \ + 1;\n      }\n    } else {\n      auto d = *min_element(vs.begin(), vs.end());\n\
     \      for(int i = 0; i < (int) vs.size(); i++) {\n        new_vs[i] = vs[i] -\
     \ d + 1;\n      }\n    }\n    auto ret = sa_is(new_vs);\n    assign(ret.begin(),\
-    \ ret.end());\n  }\n\n  void output() const {\n    for(int i = 0; i < (int) vs.size();\
+    \ ret.end());\n  }\n\n  void output() const {\n    for(int i = 0; i < size();\
     \ i++) {\n      cout << i << \":[\" << (*this)[i] << \"]\";\n      for(int j =\
     \ (*this)[i]; j < (int) vs.size(); j++) cout << \" \" << vs[j];\n      cout <<\
     \ \"\\n\";\n    }\n  }\n\n\n  bool lt_substr(const string &t, int si = 0, int\
@@ -71,8 +77,8 @@ data:
     \ > 1) {\n      int mid = (ok + ng) / 2;\n      if(lt_substr(t, at(mid))) ng =\
     \ mid;\n      else ok = mid;\n    }\n    t.back()--;\n    return {low, ok};\n\
     \  }\n};\n\ntemplate<>\nvoid SuffixArray< string >::output() const {\n  for(int\
-    \ i = 0; i < (int) vs.size(); i++) {\n    cout << i << \":[\" << (*this)[i] <<\
-    \ \"] \" << vs.substr((*this)[i]) << \"\\n\";\n  }\n}\n"
+    \ i = 0; i < (int) size(); i++) {\n    cout << i << \":[\" << (*this)[i] << \"\
+    ] \" << vs.substr((*this)[i]) << \"\\n\";\n  }\n}\n"
   code: "/**\n * @brief Suffix Array(\u63A5\u5C3E\u8F9E\u914D\u5217)\n */\ntemplate<\
     \ typename T >\nstruct SuffixArray : vector< int > {\nprivate:\n  vector< int\
     \ > sa_is(const vector< int > &s) const {\n    const int n = (int) s.size();\n\
@@ -112,7 +118,7 @@ data:
     \ + 1;\n      }\n    } else {\n      auto d = *min_element(vs.begin(), vs.end());\n\
     \      for(int i = 0; i < (int) vs.size(); i++) {\n        new_vs[i] = vs[i] -\
     \ d + 1;\n      }\n    }\n    auto ret = sa_is(new_vs);\n    assign(ret.begin(),\
-    \ ret.end());\n  }\n\n  void output() const {\n    for(int i = 0; i < (int) vs.size();\
+    \ ret.end());\n  }\n\n  void output() const {\n    for(int i = 0; i < size();\
     \ i++) {\n      cout << i << \":[\" << (*this)[i] << \"]\";\n      for(int j =\
     \ (*this)[i]; j < (int) vs.size(); j++) cout << \" \" << vs[j];\n      cout <<\
     \ \"\\n\";\n    }\n  }\n\n\n  bool lt_substr(const string &t, int si = 0, int\
@@ -128,15 +134,17 @@ data:
     \ > 1) {\n      int mid = (ok + ng) / 2;\n      if(lt_substr(t, at(mid))) ng =\
     \ mid;\n      else ok = mid;\n    }\n    t.back()--;\n    return {low, ok};\n\
     \  }\n};\n\ntemplate<>\nvoid SuffixArray< string >::output() const {\n  for(int\
-    \ i = 0; i < (int) vs.size(); i++) {\n    cout << i << \":[\" << (*this)[i] <<\
-    \ \"] \" << vs.substr((*this)[i]) << \"\\n\";\n  }\n}\n"
+    \ i = 0; i < (int) size(); i++) {\n    cout << i << \":[\" << (*this)[i] << \"\
+    ] \" << vs.substr((*this)[i]) << \"\\n\";\n  }\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: string/suffix-array.hpp
-  requiredBy: []
-  timestamp: '2022-03-30 01:02:55+09:00'
+  requiredBy:
+  - string/lcp-array.hpp
+  timestamp: '2022-03-30 01:32:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/verify/yosupo-number-of-substrings.test.cpp
   - test/verify/aoj-alds-1-14-d.test.cpp
   - test/verify/yosupo-suffixarray.test.cpp
 documentation_of: string/suffix-array.hpp

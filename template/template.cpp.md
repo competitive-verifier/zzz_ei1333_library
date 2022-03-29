@@ -466,6 +466,9 @@ data:
     path: test/verify/yosupo-multipoint-evaluation.test.cpp
     title: test/verify/yosupo-multipoint-evaluation.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/verify/yosupo-number-of-substrings.test.cpp
+    title: test/verify/yosupo-number-of-substrings.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-partition-function.test.cpp
     title: test/verify/yosupo-partition-function.test.cpp
   - icon: ':heavy_check_mark:'
@@ -736,6 +739,7 @@ data:
   - test/verify/aoj-2450-4.test.cpp
   - test/verify/yosupo-queue-operate-all-composite.test.cpp
   - test/verify/aoj-cgl-1-c.test.cpp
+  - test/verify/yosupo-number-of-substrings.test.cpp
   - test/verify/aoj-grl-2-a-2.test.cpp
   - test/verify/aoj-dsl-2-a.test.cpp
   - test/verify/aoj-2821.test.cpp

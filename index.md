@@ -677,9 +677,9 @@ data:
       path: string/aho-corasick.cpp
       title: "Aho-Corasick(\u30A8\u30A4\u30DB\u2013\u30B3\u30E9\u30B7\u30C3\u30AF\u6CD5\
         )"
-    - icon: ':warning:'
-      path: string/longest-common-prefix-array.cpp
-      title: string/longest-common-prefix-array.cpp
+    - icon: ':heavy_check_mark:'
+      path: string/lcp-array.hpp
+      title: LCP Array
     - icon: ':warning:'
       path: string/manacher.cpp
       title: string/manacher.cpp
@@ -1426,6 +1426,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-multipoint-evaluation.test.cpp
       title: test/verify/yosupo-multipoint-evaluation.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/verify/yosupo-number-of-substrings.test.cpp
+      title: test/verify/yosupo-number-of-substrings.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-partition-function.test.cpp
       title: test/verify/yosupo-partition-function.test.cpp

@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: string/lcp-array.hpp
+    title: LCP Array
+  - icon: ':heavy_check_mark:'
     path: string/suffix-array.hpp
     title: "Suffix Array(\u63A5\u5C3E\u8F9E\u914D\u5217)"
   - icon: ':heavy_check_mark:'
@@ -14,14 +17,14 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D
+    PROBLEM: https://judge.yosupo.jp/problem/number_of_substrings
     links:
-    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D
-  bundledCode: "#line 1 \"test/verify/aoj-alds-1-14-d.test.cpp\"\n#define PROBLEM\
-    \ \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D\"\n\n\
-    #line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
-    \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
-    \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
+    - https://judge.yosupo.jp/problem/number_of_substrings
+  bundledCode: "#line 1 \"test/verify/yosupo-number-of-substrings.test.cpp\"\n#define\
+    \ PROBLEM \"https://judge.yosupo.jp/problem/number_of_substrings\"\n\n#line 1\
+    \ \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
+    \nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll = (1LL\
+    \ << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
     \ << setprecision(10);\n    cerr << fixed << setprecision(10);\n  }\n} iosetup;\n\
     \ntemplate< typename T1, typename T2 >\nostream &operator<<(ostream &os, const\
@@ -45,7 +48,7 @@ data:
     \  explicit FixPoint(F &&f) : F(forward< F >(f)) {}\n\n  template< typename...\
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
-    \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-alds-1-14-d.test.cpp\"\
+    \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-number-of-substrings.test.cpp\"\
     \n\n#line 1 \"string/suffix-array.hpp\"\n/**\n * @brief Suffix Array(\u63A5\u5C3E\
     \u8F9E\u914D\u5217)\n */\ntemplate< typename T >\nstruct SuffixArray : vector<\
     \ int > {\nprivate:\n  vector< int > sa_is(const vector< int > &s) const {\n \
@@ -103,28 +106,36 @@ data:
     \ mid;\n      else ok = mid;\n    }\n    t.back()--;\n    return {low, ok};\n\
     \  }\n};\n\ntemplate<>\nvoid SuffixArray< string >::output() const {\n  for(int\
     \ i = 0; i < (int) size(); i++) {\n    cout << i << \":[\" << (*this)[i] << \"\
-    ] \" << vs.substr((*this)[i]) << \"\\n\";\n  }\n}\n#line 6 \"test/verify/aoj-alds-1-14-d.test.cpp\"\
-    \n\nint main() {\n  string S;\n  int Q;\n\n  cin >> S;\n  SuffixArray sa(S);\n\
-    \  cin >> Q;\n  while(Q--) {\n    string T;\n    cin >> T;\n    auto range = sa.equal_range(T);\n\
-    \    cout << (range.first != range.second) << endl;\n  }\n}\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../string/suffix-array.hpp\"\
-    \n\nint main() {\n  string S;\n  int Q;\n\n  cin >> S;\n  SuffixArray sa(S);\n\
-    \  cin >> Q;\n  while(Q--) {\n    string T;\n    cin >> T;\n    auto range = sa.equal_range(T);\n\
-    \    cout << (range.first != range.second) << endl;\n  }\n}\n"
+    ] \" << vs.substr((*this)[i]) << \"\\n\";\n  }\n}\n#line 2 \"string/lcp-array.hpp\"\
+    \n\n/**\n * @brief LCP Array\n */\ntemplate< typename T >\nvector< int > lcp_array(const\
+    \ SuffixArray< T > &sa) {\n  int n = (int) sa.size() - 1;\n  vector< int > lcp(n\
+    \ + 1), rank(n + 1);\n  for(int i = 0; i <= n; i++) {\n    rank[sa[i]] = i;\n\
+    \  }\n  int h = 0;\n  for(int i = 0; i <= n; i++) {\n    if(rank[i] < n) {\n \
+    \     int j = sa[rank[i] + 1];\n      for(; j + h < n && i + h < n; h++) {\n \
+    \       if(sa.vs[j + h] != sa.vs[i + h]) break;\n      }\n      lcp[rank[i] +\
+    \ 1] = h;\n      if(h > 0) h--;\n    }\n  }\n  return lcp;\n}\n\n#line 6 \"test/verify/yosupo-number-of-substrings.test.cpp\"\
+    \n\nint main() {\n  string S;\n  cin >> S;\n  int N = (int) S.size();\n  SuffixArray\
+    \ sa(S);\n  auto lcp = lcp_array(sa);\n  cout << 1LL * N * (N + 1) / 2 - accumulate(begin(lcp),\
+    \ end(lcp), 0LL) << \"\\n\";\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/number_of_substrings\"\n\
+    \n#include \"../../template/template.cpp\"\n\n#include \"../../string/lcp-array.hpp\"\
+    \n\nint main() {\n  string S;\n  cin >> S;\n  int N = (int) S.size();\n  SuffixArray\
+    \ sa(S);\n  auto lcp = lcp_array(sa);\n  cout << 1LL * N * (N + 1) / 2 - accumulate(begin(lcp),\
+    \ end(lcp), 0LL) << \"\\n\";\n}\n"
   dependsOn:
   - template/template.cpp
+  - string/lcp-array.hpp
   - string/suffix-array.hpp
   isVerificationFile: true
-  path: test/verify/aoj-alds-1-14-d.test.cpp
+  path: test/verify/yosupo-number-of-substrings.test.cpp
   requiredBy: []
   timestamp: '2022-03-30 01:32:04+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/verify/aoj-alds-1-14-d.test.cpp
+documentation_of: test/verify/yosupo-number-of-substrings.test.cpp
 layout: document
 redirect_from:
-- /verify/test/verify/aoj-alds-1-14-d.test.cpp
-- /verify/test/verify/aoj-alds-1-14-d.test.cpp.html
-title: test/verify/aoj-alds-1-14-d.test.cpp
+- /verify/test/verify/yosupo-number-of-substrings.test.cpp
+- /verify/test/verify/yosupo-number-of-substrings.test.cpp.html
+title: test/verify/yosupo-number-of-substrings.test.cpp
 ---

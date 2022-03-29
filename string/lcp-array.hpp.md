@@ -4,50 +4,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/suffix-array.hpp
     title: "Suffix Array(\u63A5\u5C3E\u8F9E\u914D\u5217)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/verify/yosupo-number-of-substrings.test.cpp
+    title: test/verify/yosupo-number-of-substrings.test.cpp
   _isVerificationFailed: false
-  _pathExtension: cpp
+  _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D
-    links:
-    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D
-  bundledCode: "#line 1 \"test/verify/aoj-alds-1-14-d.test.cpp\"\n#define PROBLEM\
-    \ \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D\"\n\n\
-    #line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
-    \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
-    \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
-    \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
-    \ << setprecision(10);\n    cerr << fixed << setprecision(10);\n  }\n} iosetup;\n\
-    \ntemplate< typename T1, typename T2 >\nostream &operator<<(ostream &os, const\
-    \ pair< T1, T2 >& p) {\n  os << p.first << \" \" << p.second;\n  return os;\n\
-    }\n\ntemplate< typename T1, typename T2 >\nistream &operator>>(istream &is, pair<\
-    \ T1, T2 > &p) {\n  is >> p.first >> p.second;\n  return is;\n}\n\ntemplate< typename\
-    \ T >\nostream &operator<<(ostream &os, const vector< T > &v) {\n  for(int i =\
-    \ 0; i < (int) v.size(); i++) {\n    os << v[i] << (i + 1 != v.size() ? \" \"\
-    \ : \"\");\n  }\n  return os;\n}\n\ntemplate< typename T >\nistream &operator>>(istream\
-    \ &is, vector< T > &v) {\n  for(T &in : v) is >> in;\n  return is;\n}\n\ntemplate<\
-    \ typename T1, typename T2 >\ninline bool chmax(T1 &a, T2 b) { return a < b &&\
-    \ (a = b, true); }\n\ntemplate< typename T1, typename T2 >\ninline bool chmin(T1\
-    \ &a, T2 b) { return a > b && (a = b, true); }\n\ntemplate< typename T = int64\
-    \ >\nvector< T > make_v(size_t a) {\n  return vector< T >(a);\n}\n\ntemplate<\
-    \ typename T, typename... Ts >\nauto make_v(size_t a, Ts... ts) {\n  return vector<\
-    \ decltype(make_v< T >(ts...)) >(a, make_v< T >(ts...));\n}\n\ntemplate< typename\
-    \ T, typename V >\ntypename enable_if< is_class< T >::value == 0 >::type fill_v(T\
-    \ &t, const V &v) {\n  t = v;\n}\n\ntemplate< typename T, typename V >\ntypename\
-    \ enable_if< is_class< T >::value != 0 >::type fill_v(T &t, const V &v) {\n  for(auto\
-    \ &e : t) fill_v(e, v);\n}\n\ntemplate< typename F >\nstruct FixPoint : F {\n\
-    \  explicit FixPoint(F &&f) : F(forward< F >(f)) {}\n\n  template< typename...\
-    \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
-    \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
-    \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-alds-1-14-d.test.cpp\"\
-    \n\n#line 1 \"string/suffix-array.hpp\"\n/**\n * @brief Suffix Array(\u63A5\u5C3E\
-    \u8F9E\u914D\u5217)\n */\ntemplate< typename T >\nstruct SuffixArray : vector<\
+    document_title: LCP Array
+    links: []
+  bundledCode: "#line 1 \"string/suffix-array.hpp\"\n/**\n * @brief Suffix Array(\u63A5\
+    \u5C3E\u8F9E\u914D\u5217)\n */\ntemplate< typename T >\nstruct SuffixArray : vector<\
     \ int > {\nprivate:\n  vector< int > sa_is(const vector< int > &s) const {\n \
     \   const int n = (int) s.size();\n    vector< int > ret(n);\n\n    vector< int\
     \ > is_s(n), is_lms(n);\n    int m = 0;\n    for(int i = n - 2; i >= 0; i--) {\n\
@@ -103,28 +72,35 @@ data:
     \ mid;\n      else ok = mid;\n    }\n    t.back()--;\n    return {low, ok};\n\
     \  }\n};\n\ntemplate<>\nvoid SuffixArray< string >::output() const {\n  for(int\
     \ i = 0; i < (int) size(); i++) {\n    cout << i << \":[\" << (*this)[i] << \"\
-    ] \" << vs.substr((*this)[i]) << \"\\n\";\n  }\n}\n#line 6 \"test/verify/aoj-alds-1-14-d.test.cpp\"\
-    \n\nint main() {\n  string S;\n  int Q;\n\n  cin >> S;\n  SuffixArray sa(S);\n\
-    \  cin >> Q;\n  while(Q--) {\n    string T;\n    cin >> T;\n    auto range = sa.equal_range(T);\n\
-    \    cout << (range.first != range.second) << endl;\n  }\n}\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../string/suffix-array.hpp\"\
-    \n\nint main() {\n  string S;\n  int Q;\n\n  cin >> S;\n  SuffixArray sa(S);\n\
-    \  cin >> Q;\n  while(Q--) {\n    string T;\n    cin >> T;\n    auto range = sa.equal_range(T);\n\
-    \    cout << (range.first != range.second) << endl;\n  }\n}\n"
+    ] \" << vs.substr((*this)[i]) << \"\\n\";\n  }\n}\n#line 2 \"string/lcp-array.hpp\"\
+    \n\n/**\n * @brief LCP Array\n */\ntemplate< typename T >\nvector< int > lcp_array(const\
+    \ SuffixArray< T > &sa) {\n  int n = (int) sa.size() - 1;\n  vector< int > lcp(n\
+    \ + 1), rank(n + 1);\n  for(int i = 0; i <= n; i++) {\n    rank[sa[i]] = i;\n\
+    \  }\n  int h = 0;\n  for(int i = 0; i <= n; i++) {\n    if(rank[i] < n) {\n \
+    \     int j = sa[rank[i] + 1];\n      for(; j + h < n && i + h < n; h++) {\n \
+    \       if(sa.vs[j + h] != sa.vs[i + h]) break;\n      }\n      lcp[rank[i] +\
+    \ 1] = h;\n      if(h > 0) h--;\n    }\n  }\n  return lcp;\n}\n\n"
+  code: "#include \"suffix-array.hpp\"\n\n/**\n * @brief LCP Array\n */\ntemplate<\
+    \ typename T >\nvector< int > lcp_array(const SuffixArray< T > &sa) {\n  int n\
+    \ = (int) sa.size() - 1;\n  vector< int > lcp(n + 1), rank(n + 1);\n  for(int\
+    \ i = 0; i <= n; i++) {\n    rank[sa[i]] = i;\n  }\n  int h = 0;\n  for(int i\
+    \ = 0; i <= n; i++) {\n    if(rank[i] < n) {\n      int j = sa[rank[i] + 1];\n\
+    \      for(; j + h < n && i + h < n; h++) {\n        if(sa.vs[j + h] != sa.vs[i\
+    \ + h]) break;\n      }\n      lcp[rank[i] + 1] = h;\n      if(h > 0) h--;\n \
+    \   }\n  }\n  return lcp;\n}\n\n"
   dependsOn:
-  - template/template.cpp
   - string/suffix-array.hpp
-  isVerificationFile: true
-  path: test/verify/aoj-alds-1-14-d.test.cpp
+  isVerificationFile: false
+  path: string/lcp-array.hpp
   requiredBy: []
   timestamp: '2022-03-30 01:32:04+09:00'
-  verificationStatus: TEST_ACCEPTED
-  verifiedWith: []
-documentation_of: test/verify/aoj-alds-1-14-d.test.cpp
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/verify/yosupo-number-of-substrings.test.cpp
+documentation_of: string/lcp-array.hpp
 layout: document
 redirect_from:
-- /verify/test/verify/aoj-alds-1-14-d.test.cpp
-- /verify/test/verify/aoj-alds-1-14-d.test.cpp.html
-title: test/verify/aoj-alds-1-14-d.test.cpp
+- /library/string/lcp-array.hpp
+- /library/string/lcp-array.hpp.html
+title: LCP Array
 ---
