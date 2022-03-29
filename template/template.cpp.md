@@ -115,6 +115,9 @@ data:
     path: test/verify/aoj-alds-1-14-b.test.cpp
     title: test/verify/aoj-alds-1-14-b.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/verify/aoj-alds-1-14-d.test.cpp
+    title: test/verify/aoj-alds-1-14-d.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-alds-1-9-c.test.cpp
     title: test/verify/aoj-alds-1-9-c.test.cpp
   - icon: ':heavy_check_mark:'
@@ -763,6 +766,7 @@ data:
   - test/verify/yukicoder-583.test.cpp
   - test/verify/yosupo-tetration-mod.test.cpp
   - test/verify/yukicoder-1720.test.cpp
+  - test/verify/aoj-alds-1-14-d.test.cpp
   - test/verify/aoj-grl-5-c.test.cpp
   - test/verify/aoj-grl-7-a.test.cpp
   - test/verify/yosupo-two-sat.test.cpp

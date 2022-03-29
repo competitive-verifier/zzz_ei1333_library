@@ -1075,7 +1075,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/verify/aoj-alds-1-14-b.test.cpp
       title: test/verify/aoj-alds-1-14-b.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-alds-1-14-d.test.cpp
       title: test/verify/aoj-alds-1-14-d.test.cpp
     - icon: ':heavy_check_mark:'
