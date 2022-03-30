@@ -607,6 +607,9 @@ data:
     path: test/verify/yosupo-two-sat.test.cpp
     title: test/verify/yosupo-two-sat.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/verify/yosupo-zalgorithm.test.cpp
+    title: test/verify/yosupo-zalgorithm.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/verify/yukicoder-1002.test.cpp
     title: test/verify/yukicoder-1002.test.cpp
   - icon: ':heavy_check_mark:'
@@ -917,6 +920,7 @@ data:
   - test/verify/aoj-cgl-1-b.test.cpp
   - test/verify/aoj-grl-6-a-2.test.cpp
   - test/verify/aoj-ntl-1-d.test.cpp
+  - test/verify/yosupo-zalgorithm.test.cpp
   - test/verify/aoj-ntl-1-a.test.cpp
   - test/verify/yosupo-partition-function.test.cpp
   - test/verify/aoj-2286.test.cpp
