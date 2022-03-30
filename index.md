@@ -680,9 +680,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/lcp-array.hpp
       title: LCP Array
-    - icon: ':warning:'
-      path: string/manacher.cpp
-      title: string/manacher.cpp
+    - icon: ':heavy_check_mark:'
+      path: string/manacher.hpp
+      title: "Manacher(\u6700\u9577\u56DE\u6587)"
     - icon: ':heavy_check_mark:'
       path: string/palindromic-tree.cpp
       title: "Palindromic Tree(\u56DE\u6587\u6728)"
@@ -1357,6 +1357,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-dynamic-tree-vertex-set-path-composite.test.cpp
       title: test/verify/yosupo-dynamic-tree-vertex-set-path-composite.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/verify/yosupo-enumerate-palindromes.test.cpp
+      title: test/verify/yosupo-enumerate-palindromes.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-enumerate-primes.test.cpp
       title: test/verify/yosupo-enumerate-primes.test.cpp

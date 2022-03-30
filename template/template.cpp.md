@@ -397,6 +397,9 @@ data:
     path: test/verify/yosupo-dynamic-tree-vertex-set-path-composite.test.cpp
     title: test/verify/yosupo-dynamic-tree-vertex-set-path-composite.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/verify/yosupo-enumerate-palindromes.test.cpp
+    title: test/verify/yosupo-enumerate-palindromes.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-enumerate-primes.test.cpp
     title: test/verify/yosupo-enumerate-primes.test.cpp
   - icon: ':heavy_check_mark:'
@@ -882,6 +885,7 @@ data:
   - test/verify/yosupo-scc.test.cpp
   - test/verify/yukicoder-273.test.cpp
   - test/verify/yosupo-polynomial-taylor-shift.test.cpp
+  - test/verify/yosupo-enumerate-palindromes.test.cpp
   - test/verify/aoj-0304.test.cpp
   - test/verify/yukicoder-430.test.cpp
   - test/verify/yukicoder-3046.test.cpp
