@@ -824,13 +824,13 @@ data:
       title: Euler-Tour-Tree
     - icon: ':heavy_check_mark:'
       path: structure/lct/link-cut-tree-lazy-path.cpp
-      title: Link-Cut-Tree-Lazy-Path
+      title: Link Cut Tree Lazy Path
     - icon: ':heavy_check_mark:'
       path: structure/lct/link-cut-tree-subtree.cpp
       title: structure/lct/link-cut-tree-subtree.cpp
     - icon: ':heavy_check_mark:'
       path: structure/lct/link-cut-tree.cpp
-      title: Link-Cut-Tree
+      title: Link Cut Tree
   - name: structure/others
     pages:
     - icon: ':heavy_check_mark:'

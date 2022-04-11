@@ -11,10 +11,10 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: docs/link-cut-tree-lazy-path.md
-    document_title: Link-Cut-Tree-Lazy-Path
+    document_title: Link Cut Tree Lazy Path
     links: []
   bundledCode: "#line 1 \"structure/lct/link-cut-tree-lazy-path.cpp\"\n/**\n * @brief\
-    \ Link-Cut-Tree-Lazy-Path\n * @docs docs/link-cut-tree-lazy-path.md\n */\ntemplate<\
+    \ Link Cut Tree Lazy Path\n * @docs docs/link-cut-tree-lazy-path.md\n */\ntemplate<\
     \ typename T, typename E, typename F, typename G, typename H, typename S >\nstruct\
     \ LinkCutTreeLazyPath {\n\nprivate:\n  F f;\n  G g;\n  H h;\n  S s;\n  E e0;\n\
     \n  struct Node {\n    Node *l, *r, *p;\n    T key, sum;\n    E lazy;\n    bool\
@@ -53,26 +53,29 @@ data:
     \ cur = t; cur; cur = cur->p) {\n      splay(cur);\n      cur->r = rp;\n     \
     \ update(cur);\n      rp = cur;\n    }\n    splay(t);\n    return rp;\n  }\n\n\
     \  void evert(NP t) {\n    expose(t);\n    toggle(t);\n    push(t);\n  }\n\n \
-    \ void link(NP child, NP parent) {\n    expose(parent);\n    child->p = parent;\n\
-    \    parent->r = child;\n    update(parent);\n  }\n\n  void cut(NP child) {\n\
-    \    expose(child);\n    NP parent = child->l;\n    child->l = nullptr;\n    parent->p\
-    \ = nullptr;\n    update(child);\n  }\n\n  bool is_connected(NP u, NP v) {\n \
-    \   expose(u), expose(v);\n    return u == v or u->p;\n  }\n\n  NP lca(NP u, NP\
-    \ v) {\n    if(not is_connected(u, v)) return nullptr;\n    expose(u);\n    return\
-    \ expose(v);\n  }\n\n  NP get_kth(NP x, int k) {\n    expose(x);\n    while(x)\
-    \ {\n      push(x);\n      if(x->r && x->r->sz > k) {\n        x = x->r;\n   \
-    \   } else {\n        if(x->r) k -= x->r->sz;\n        if(k == 0) return x;\n\
-    \        k -= 1;\n        x = x->l;\n      }\n    }\n    return nullptr;\n  }\n\
-    \n  const T &query(NP u) {\n    expose(u);\n    return u->sum;\n  }\n\n  const\
-    \ T &query(NP u, NP v) {\n    evert(u);\n    return query(v);\n  }\n\n  void set_key(NP\
-    \ t, T v) {\n    expose(t);\n    t->key = v;\n    update(t);\n  }\n\n  void set_propagate(NP\
-    \ t, const E &e) {\n    expose(t);\n    propagate(t, e);\n    push(t);\n  }\n\n\
-    \  void set_propagate(NP u, NP v, const E &e) {\n    evert(u);\n    set_propagate(v,\
-    \ e);\n  }\n};\n\ntemplate< typename T, typename E, typename F, typename G, typename\
-    \ H, typename S >\nLinkCutTreeLazyPath< T, E, F, G, H, S > get_link_cut_tree_lazy_path(const\
-    \ F &f, const G &g, const H &h, const S &s, const E &e0) {\n  return {f, g, h,\
-    \ s, e0};\n}\n"
-  code: "/**\n * @brief Link-Cut-Tree-Lazy-Path\n * @docs docs/link-cut-tree-lazy-path.md\n\
+    \ void link(NP child, NP parent) {\n    if(is_connected(child, parent)) {\n  \
+    \    throw runtime_error(\"child and parent must be different connected components\"\
+    );\n    }\n    if(child->l) {\n      throw runtime_error(\"child must be root\"\
+    );\n    }\n    child->p = parent;\n    parent->r = child;\n    update(parent);\n\
+    \  }\n\n  void cut(NP child) {\n    expose(child);\n    NP parent = child->l;\n\
+    \    if(not parent) {\n      throw runtime_error(\"child must not be root\");\n\
+    \    }\n    child->l = nullptr;\n    parent->p = nullptr;\n    update(child);\n\
+    \  }\n\n  bool is_connected(NP u, NP v) {\n    expose(u), expose(v);\n    return\
+    \ u == v or u->p;\n  }\n\n  NP lca(NP u, NP v) {\n    if(not is_connected(u, v))\
+    \ return nullptr;\n    expose(u);\n    return expose(v);\n  }\n\n  NP get_kth(NP\
+    \ x, int k) {\n    expose(x);\n    while(x) {\n      push(x);\n      if(x->r &&\
+    \ x->r->sz > k) {\n        x = x->r;\n      } else {\n        if(x->r) k -= x->r->sz;\n\
+    \        if(k == 0) return x;\n        k -= 1;\n        x = x->l;\n      }\n \
+    \   }\n    return nullptr;\n  }\n\n  const T &query(NP u) {\n    expose(u);\n\
+    \    return u->sum;\n  }\n\n  const T &query(NP u, NP v) {\n    evert(u);\n  \
+    \  return query(v);\n  }\n\n  void set_key(NP t, T v) {\n    expose(t);\n    t->key\
+    \ = v;\n    update(t);\n  }\n\n  void set_propagate(NP t, const E &e) {\n    expose(t);\n\
+    \    propagate(t, e);\n    push(t);\n  }\n\n  void set_propagate(NP u, NP v, const\
+    \ E &e) {\n    evert(u);\n    set_propagate(v, e);\n  }\n};\n\ntemplate< typename\
+    \ T, typename E, typename F, typename G, typename H, typename S >\nLinkCutTreeLazyPath<\
+    \ T, E, F, G, H, S > get_link_cut_tree_lazy_path(const F &f, const G &g, const\
+    \ H &h, const S &s, const E &e0) {\n  return {f, g, h, s, e0};\n}\n"
+  code: "/**\n * @brief Link Cut Tree Lazy Path\n * @docs docs/link-cut-tree-lazy-path.md\n\
     \ */\ntemplate< typename T, typename E, typename F, typename G, typename H, typename\
     \ S >\nstruct LinkCutTreeLazyPath {\n\nprivate:\n  F f;\n  G g;\n  H h;\n  S s;\n\
     \  E e0;\n\n  struct Node {\n    Node *l, *r, *p;\n    T key, sum;\n    E lazy;\n\
@@ -111,30 +114,33 @@ data:
     \ cur = t; cur; cur = cur->p) {\n      splay(cur);\n      cur->r = rp;\n     \
     \ update(cur);\n      rp = cur;\n    }\n    splay(t);\n    return rp;\n  }\n\n\
     \  void evert(NP t) {\n    expose(t);\n    toggle(t);\n    push(t);\n  }\n\n \
-    \ void link(NP child, NP parent) {\n    expose(parent);\n    child->p = parent;\n\
-    \    parent->r = child;\n    update(parent);\n  }\n\n  void cut(NP child) {\n\
-    \    expose(child);\n    NP parent = child->l;\n    child->l = nullptr;\n    parent->p\
-    \ = nullptr;\n    update(child);\n  }\n\n  bool is_connected(NP u, NP v) {\n \
-    \   expose(u), expose(v);\n    return u == v or u->p;\n  }\n\n  NP lca(NP u, NP\
-    \ v) {\n    if(not is_connected(u, v)) return nullptr;\n    expose(u);\n    return\
-    \ expose(v);\n  }\n\n  NP get_kth(NP x, int k) {\n    expose(x);\n    while(x)\
-    \ {\n      push(x);\n      if(x->r && x->r->sz > k) {\n        x = x->r;\n   \
-    \   } else {\n        if(x->r) k -= x->r->sz;\n        if(k == 0) return x;\n\
-    \        k -= 1;\n        x = x->l;\n      }\n    }\n    return nullptr;\n  }\n\
-    \n  const T &query(NP u) {\n    expose(u);\n    return u->sum;\n  }\n\n  const\
-    \ T &query(NP u, NP v) {\n    evert(u);\n    return query(v);\n  }\n\n  void set_key(NP\
-    \ t, T v) {\n    expose(t);\n    t->key = v;\n    update(t);\n  }\n\n  void set_propagate(NP\
-    \ t, const E &e) {\n    expose(t);\n    propagate(t, e);\n    push(t);\n  }\n\n\
-    \  void set_propagate(NP u, NP v, const E &e) {\n    evert(u);\n    set_propagate(v,\
-    \ e);\n  }\n};\n\ntemplate< typename T, typename E, typename F, typename G, typename\
-    \ H, typename S >\nLinkCutTreeLazyPath< T, E, F, G, H, S > get_link_cut_tree_lazy_path(const\
-    \ F &f, const G &g, const H &h, const S &s, const E &e0) {\n  return {f, g, h,\
-    \ s, e0};\n}\n"
+    \ void link(NP child, NP parent) {\n    if(is_connected(child, parent)) {\n  \
+    \    throw runtime_error(\"child and parent must be different connected components\"\
+    );\n    }\n    if(child->l) {\n      throw runtime_error(\"child must be root\"\
+    );\n    }\n    child->p = parent;\n    parent->r = child;\n    update(parent);\n\
+    \  }\n\n  void cut(NP child) {\n    expose(child);\n    NP parent = child->l;\n\
+    \    if(not parent) {\n      throw runtime_error(\"child must not be root\");\n\
+    \    }\n    child->l = nullptr;\n    parent->p = nullptr;\n    update(child);\n\
+    \  }\n\n  bool is_connected(NP u, NP v) {\n    expose(u), expose(v);\n    return\
+    \ u == v or u->p;\n  }\n\n  NP lca(NP u, NP v) {\n    if(not is_connected(u, v))\
+    \ return nullptr;\n    expose(u);\n    return expose(v);\n  }\n\n  NP get_kth(NP\
+    \ x, int k) {\n    expose(x);\n    while(x) {\n      push(x);\n      if(x->r &&\
+    \ x->r->sz > k) {\n        x = x->r;\n      } else {\n        if(x->r) k -= x->r->sz;\n\
+    \        if(k == 0) return x;\n        k -= 1;\n        x = x->l;\n      }\n \
+    \   }\n    return nullptr;\n  }\n\n  const T &query(NP u) {\n    expose(u);\n\
+    \    return u->sum;\n  }\n\n  const T &query(NP u, NP v) {\n    evert(u);\n  \
+    \  return query(v);\n  }\n\n  void set_key(NP t, T v) {\n    expose(t);\n    t->key\
+    \ = v;\n    update(t);\n  }\n\n  void set_propagate(NP t, const E &e) {\n    expose(t);\n\
+    \    propagate(t, e);\n    push(t);\n  }\n\n  void set_propagate(NP u, NP v, const\
+    \ E &e) {\n    evert(u);\n    set_propagate(v, e);\n  }\n};\n\ntemplate< typename\
+    \ T, typename E, typename F, typename G, typename H, typename S >\nLinkCutTreeLazyPath<\
+    \ T, E, F, G, H, S > get_link_cut_tree_lazy_path(const F &f, const G &g, const\
+    \ H &h, const S &s, const E &e0) {\n  return {f, g, h, s, e0};\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: structure/lct/link-cut-tree-lazy-path.cpp
   requiredBy: []
-  timestamp: '2021-05-09 20:53:58+09:00'
+  timestamp: '2022-04-11 23:12:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/aoj-2450-2.test.cpp
@@ -143,7 +149,7 @@ layout: document
 redirect_from:
 - /library/structure/lct/link-cut-tree-lazy-path.cpp
 - /library/structure/lct/link-cut-tree-lazy-path.cpp.html
-title: Link-Cut-Tree-Lazy-Path
+title: Link Cut Tree Lazy Path
 ---
 ## 概要
 

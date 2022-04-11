@@ -6,7 +6,7 @@ data:
     title: math/combinatorics/mod-int.cpp
   - icon: ':heavy_check_mark:'
     path: structure/lct/link-cut-tree.cpp
-    title: Link-Cut-Tree
+    title: Link Cut Tree
   - icon: ':heavy_check_mark:'
     path: template/template.cpp
     title: template/template.cpp
@@ -49,7 +49,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-dynamic-tree-vertex-set-path-composite.test.cpp\"\
-    \n\n#line 1 \"structure/lct/link-cut-tree.cpp\"\n/**\n * @brief Link-Cut-Tree\n\
+    \n\n#line 1 \"structure/lct/link-cut-tree.cpp\"\n/**\n * @brief Link Cut Tree\n\
     \ * @docs docs/link-cut-tree.md\n */\ntemplate< typename T, typename F, typename\
     \ S >\nstruct LinkCutTree {\n\nprivate:\n  F f;\n  S s;\n\n  struct Node {\n \
     \   Node *l, *r, *p;\n    T key, sum;\n    bool rev;\n    size_t sz;\n\n    explicit\
@@ -83,22 +83,26 @@ data:
     \ {\n      splay(cur);\n      cur->r = rp;\n      update(cur);\n      rp = cur;\n\
     \    }\n    splay(t);\n    return rp;\n  }\n\n  void evert(NP t) {\n    expose(t);\n\
     \    toggle(t);\n    push(t);\n  }\n\n  void link(NP child, NP parent) {\n   \
-    \ expose(parent);\n    child->p = parent;\n    parent->r = child;\n    update(parent);\n\
-    \  }\n\n  void cut(NP child) {\n    expose(child);\n    NP parent = child->l;\n\
-    \    child->l = nullptr;\n    parent->p = nullptr;\n    update(child);\n  }\n\n\
-    \  bool is_connected(NP u, NP v) {\n    expose(u), expose(v);\n    return u ==\
-    \ v or u->p;\n  }\n\n  NP lca(NP u, NP v) {\n    if(not is_connected(u, v)) return\
-    \ nullptr;\n    expose(u);\n    return expose(v);\n  }\n\n  NP get_kth(NP x, int\
-    \ k) {\n    expose(x);\n    while(x) {\n      push(x);\n      if(x->r && x->r->sz\
-    \ > k) {\n        x = x->r;\n      } else {\n        if(x->r) k -= x->r->sz;\n\
-    \        if(k == 0) return x;\n        k -= 1;\n        x = x->l;\n      }\n \
-    \   }\n    return nullptr;\n  }\n\n  const T &query(NP u) {\n    expose(u);\n\
-    \    return u->sum;\n  }\n\n  const T &query(NP u, NP v) {\n    evert(u);\n  \
-    \  return query(v);\n  }\n\n  void set_key(NP t, T v) {\n    expose(t);\n    t->key\
-    \ = v;\n    update(t);\n  }\n};\n\ntemplate< typename T, typename F, typename\
-    \ S >\nLinkCutTree< T, F, S > get_link_cut_tree(const F &f, const S &s) {\n  return\
-    \ {f, s};\n}\n#line 6 \"test/verify/yosupo-dynamic-tree-vertex-set-path-composite.test.cpp\"\
-    \n\n#line 1 \"math/combinatorics/mod-int.cpp\"\ntemplate< int mod >\nstruct ModInt\
+    \ if(is_connected(child, parent)) {\n      throw runtime_error(\"child and parent\
+    \ must be different connected components\");\n    }\n    if(child->l) {\n    \
+    \  throw runtime_error(\"child must be root\");\n    }\n    child->p = parent;\n\
+    \    parent->r = child;\n    update(parent);\n  }\n\n  void cut(NP child) {\n\
+    \    expose(child);\n    NP parent = child->l;\n    if(not parent) {\n      throw\
+    \ runtime_error(\"child must not be root\");\n    }\n    child->l = nullptr;\n\
+    \    parent->p = nullptr;\n    update(child);\n  }\n\n  bool is_connected(NP u,\
+    \ NP v) {\n    expose(u), expose(v);\n    return u == v or u->p;\n  }\n\n  NP\
+    \ lca(NP u, NP v) {\n    if(not is_connected(u, v)) return nullptr;\n    expose(u);\n\
+    \    return expose(v);\n  }\n\n  NP get_kth(NP x, int k) {\n    expose(x);\n \
+    \   while(x) {\n      push(x);\n      if(x->r && x->r->sz > k) {\n        x =\
+    \ x->r;\n      } else {\n        if(x->r) k -= x->r->sz;\n        if(k == 0) return\
+    \ x;\n        k -= 1;\n        x = x->l;\n      }\n    }\n    return nullptr;\n\
+    \  }\n\n  const T &query(NP u) {\n    expose(u);\n    return u->sum;\n  }\n\n\
+    \  const T &query(NP u, NP v) {\n    evert(u);\n    return query(v);\n  }\n\n\
+    \  void set_key(NP t, T v) {\n    expose(t);\n    t->key = v;\n    update(t);\n\
+    \  }\n};\n\ntemplate< typename T, typename F, typename S >\nLinkCutTree< T, F,\
+    \ S > get_link_cut_tree(const F &f, const S &s) {\n  return {f, s};\n}\n#line\
+    \ 6 \"test/verify/yosupo-dynamic-tree-vertex-set-path-composite.test.cpp\"\n\n\
+    #line 1 \"math/combinatorics/mod-int.cpp\"\ntemplate< int mod >\nstruct ModInt\
     \ {\n  int x;\n\n  ModInt() : x(0) {}\n\n  ModInt(int64_t y) : x(y >= 0 ? y %\
     \ mod : (mod - (-y) % mod) % mod) {}\n\n  ModInt &operator+=(const ModInt &p)\
     \ {\n    if((x += p.x) >= mod) x -= mod;\n    return *this;\n  }\n\n  ModInt &operator-=(const\
@@ -165,7 +169,7 @@ data:
   isVerificationFile: true
   path: test/verify/yosupo-dynamic-tree-vertex-set-path-composite.test.cpp
   requiredBy: []
-  timestamp: '2021-05-09 20:53:58+09:00'
+  timestamp: '2022-04-11 23:12:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/yosupo-dynamic-tree-vertex-set-path-composite.test.cpp
