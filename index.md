@@ -744,7 +744,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: structure/convex-hull-trick/convex-hull-trick-add-monotone.cpp
-      title: Convex-Hull-Trick-Add-Monotone
+      title: Convex Hull Trick Add Monotone
     - icon: ':heavy_check_mark:'
       path: structure/convex-hull-trick/dynamic-li-chao-tree.cpp
       title: Dynamic-Li-Chao-Tree

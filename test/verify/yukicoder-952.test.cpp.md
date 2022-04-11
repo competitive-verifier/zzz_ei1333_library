@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: structure/convex-hull-trick/convex-hull-trick-add-monotone.cpp
-    title: Convex-Hull-Trick-Add-Monotone
+    title: Convex Hull Trick Add Monotone
   - icon: ':heavy_check_mark:'
     path: template/template.cpp
     title: template/template.cpp
@@ -47,37 +47,38 @@ data:
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yukicoder-952.test.cpp\"\
     \n\n#line 1 \"structure/convex-hull-trick/convex-hull-trick-add-monotone.cpp\"\
-    \n/**\n * @brief Convex-Hull-Trick-Add-Monotone\n * @docs docs/convex-hull-trick-add-monotone.md\n\
+    \n/**\n * @brief Convex Hull Trick Add Monotone\n * @docs docs/convex-hull-trick-add-monotone.md\n\
     */\ntemplate< typename T, bool isMin >\nstruct ConvexHullTrickAddMonotone {\n\
     #define F first\n#define S second\n  using P = pair< T, T >;\n  deque< P > H;\n\
     \n  ConvexHullTrickAddMonotone() = default;\n\n  bool empty() const { return H.empty();\
     \ }\n\n  void clear() { H.clear(); }\n\n  inline int sgn(T x) { return x == 0\
-    \ ? 0 : (x < 0 ? -1 : 1); }\n\n  using D = long double;\n\n  inline bool check(const\
-    \ P &a, const P &b, const P &c) {\n    if(b.S == a.S || c.S == b.S)\n      return\
-    \ sgn(b.F - a.F) * sgn(c.S - b.S) >= sgn(c.F - b.F) * sgn(b.S - a.S);\n\n    //return\
-    \ (b.F-a.F)*(c.S-b.S) >= (b.S-a.S)*(c.F-b.F);\n    return\n        D(b.F - a.F)\
-    \ * sgn(c.S - b.S) / D(abs(b.S - a.S)) >=\n        D(c.F - b.F) * sgn(b.S - a.S)\
-    \ / D(abs(c.S - b.S));\n  }\n\n  void add(T a, T b) {\n    if(!isMin) a *= -1,\
-    \ b *= -1;\n    P line(a, b);\n    if(empty()) {\n      H.emplace_front(line);\n\
-    \      return;\n    }\n    if(H.front().F <= a) {\n      if(H.front().F == a)\
-    \ {\n        if(H.front().S <= b) return;\n        H.pop_front();\n      }\n \
-    \     while(H.size() >= 2 && check(line, H.front(), H[1])) H.pop_front();\n  \
-    \    H.emplace_front(line);\n    } else {\n      assert(a <= H.back().F);\n  \
-    \    if(H.back().F == a) {\n        if(H.back().S <= b) return;\n        H.pop_back();\n\
-    \      }\n      while(H.size() >= 2 && check(H[H.size() - 2], H.back(), line))\
-    \ H.pop_back();\n      H.emplace_back(line);\n    }\n  }\n\n  inline T get_y(const\
-    \ P &a, const T &x) {\n    return a.F * x + a.S;\n  }\n\n  T query(T x) {\n  \
-    \  assert(!empty());\n    int l = -1, r = H.size() - 1;\n    while(l + 1 < r)\
-    \ {\n      int m = (l + r) >> 1;\n      if(get_y(H[m], x) >= get_y(H[m + 1], x))\
-    \ l = m;\n      else r = m;\n    }\n    if(isMin) return get_y(H[r], x);\n   \
-    \ return -get_y(H[r], x);\n  }\n\n  T query_monotone_inc(T x) {\n    assert(!empty());\n\
-    \    while(H.size() >= 2 && get_y(H.front(), x) >= get_y(H[1], x)) H.pop_front();\n\
-    \    if(isMin) return get_y(H.front(), x);\n    return -get_y(H.front(), x);\n\
-    \  }\n\n  T query_monotone_dec(T x) {\n    assert(!empty());\n    while(H.size()\
-    \ >= 2 && get_y(H.back(), x) >= get_y(H[H.size() - 2], x)) H.pop_back();\n   \
-    \ if(isMin) return get_y(H.back(), x);\n    return -get_y(H.back(), x);\n  }\n\
-    \n#undef F\n#undef S\n};\n#line 6 \"test/verify/yukicoder-952.test.cpp\"\n\nint\
-    \ main() {\n  int N;\n  cin >> N;\n  vector< int > A(N);\n  cin >> A;\n  vector<\
+    \ ? 0 : (x < 0 ? -1 : 1); }\n\n  inline bool check(const P &a, const P &b, const\
+    \ P &c) {\n    if(b.S == a.S || c.S == b.S)\n      return sgn(b.F - a.F) * sgn(c.S\
+    \ - b.S) >= sgn(c.F - b.F) * sgn(b.S - a.S);\n    //return (b.F-a.F)*(c.S-b.S)\
+    \ >= (b.S-a.S)*(c.F-b.F);\n    if(is_integral< T >::value) {\n      return (b.S\
+    \ - a.S) / (a.F - b.F) >= (c.S - b.S) / (b.F - c.F);\n    } else {\n      return\n\
+    \          (b.F - a.F) * sgn(c.S - b.S) / abs(b.S - a.S) >=\n          (c.F -\
+    \ b.F) * sgn(b.S - a.S) / abs(c.S - b.S);\n    }\n  }\n\n  void add(T a, T b)\
+    \ {\n    if(!isMin) a *= -1, b *= -1;\n    P line(a, b);\n    if(empty()) {\n\
+    \      H.emplace_front(line);\n      return;\n    }\n    if(H.front().F <= a)\
+    \ {\n      if(H.front().F == a) {\n        if(H.front().S <= b) return;\n    \
+    \    H.pop_front();\n      }\n      while(H.size() >= 2 && check(line, H.front(),\
+    \ H[1])) H.pop_front();\n      H.emplace_front(line);\n    } else {\n      assert(a\
+    \ <= H.back().F);\n      if(H.back().F == a) {\n        if(H.back().S <= b) return;\n\
+    \        H.pop_back();\n      }\n      while(H.size() >= 2 && check(H[H.size()\
+    \ - 2], H.back(), line)) H.pop_back();\n      H.emplace_back(line);\n    }\n \
+    \ }\n\n  inline T get_y(const P &a, const T &x) {\n    return a.F * x + a.S;\n\
+    \  }\n\n  T query(T x) {\n    assert(!empty());\n    int l = -1, r = H.size()\
+    \ - 1;\n    while(l + 1 < r) {\n      int m = (l + r) >> 1;\n      if(get_y(H[m],\
+    \ x) >= get_y(H[m + 1], x)) l = m;\n      else r = m;\n    }\n    if(isMin) return\
+    \ get_y(H[r], x);\n    return -get_y(H[r], x);\n  }\n\n  T query_monotone_inc(T\
+    \ x) {\n    assert(!empty());\n    while(H.size() >= 2 && get_y(H.front(), x)\
+    \ >= get_y(H[1], x)) H.pop_front();\n    if(isMin) return get_y(H.front(), x);\n\
+    \    return -get_y(H.front(), x);\n  }\n\n  T query_monotone_dec(T x) {\n    assert(!empty());\n\
+    \    while(H.size() >= 2 && get_y(H.back(), x) >= get_y(H[H.size() - 2], x)) H.pop_back();\n\
+    \    if(isMin) return get_y(H.back(), x);\n    return -get_y(H.back(), x);\n \
+    \ }\n\n#undef F\n#undef S\n};\n#line 6 \"test/verify/yukicoder-952.test.cpp\"\n\
+    \nint main() {\n  int N;\n  cin >> N;\n  vector< int > A(N);\n  cin >> A;\n  vector<\
     \ int64 > S(N + 2);\n  for(int i = 0; i < N; i++) {\n    S[i + 1] = S[i] + A[i];\n\
     \  }\n\n  auto dp = make_v< int64 >(N + 2, N + 1);\n  auto dp2 = make_v< int64\
     \ >(N + 2, N + 1);\n  fill_v(dp, infll);\n  fill_v(dp2, infll);\n  dp[0][0] =\
@@ -109,7 +110,7 @@ data:
   isVerificationFile: true
   path: test/verify/yukicoder-952.test.cpp
   requiredBy: []
-  timestamp: '2021-05-01 00:06:55+09:00'
+  timestamp: '2022-04-11 23:46:03+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/yukicoder-952.test.cpp
