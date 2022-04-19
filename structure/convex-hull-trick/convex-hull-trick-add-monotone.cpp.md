@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/verify/yosupo-line-add-get-min-2.test.cpp
+    title: test/verify/yosupo-line-add-get-min-2.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/verify/yukicoder-952.test.cpp
     title: test/verify/yukicoder-952.test.cpp
   _isVerificationFailed: false
@@ -84,6 +87,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/yukicoder-952.test.cpp
+  - test/verify/yosupo-line-add-get-min-2.test.cpp
 documentation_of: structure/convex-hull-trick/convex-hull-trick-add-monotone.cpp
 layout: document
 redirect_from:

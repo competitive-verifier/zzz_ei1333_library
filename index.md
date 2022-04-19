@@ -1406,6 +1406,9 @@ data:
       path: test/verify/yosupo-lca.test.cpp
       title: test/verify/yosupo-lca.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/verify/yosupo-line-add-get-min-2.test.cpp
+      title: test/verify/yosupo-line-add-get-min-2.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-line-add-get-min.test.cpp
       title: test/verify/yosupo-line-add-get-min.test.cpp
     - icon: ':heavy_check_mark:'

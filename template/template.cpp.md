@@ -445,6 +445,9 @@ data:
     path: test/verify/yosupo-lca.test.cpp
     title: test/verify/yosupo-lca.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/verify/yosupo-line-add-get-min-2.test.cpp
+    title: test/verify/yosupo-line-add-get-min-2.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-line-add-get-min.test.cpp
     title: test/verify/yosupo-line-add-get-min.test.cpp
   - icon: ':heavy_check_mark:'
@@ -962,6 +965,7 @@ data:
   - test/verify/yosupo-range-affine-range-sum-3.test.cpp
   - test/verify/aoj-cgl-4-c.test.cpp
   - test/verify/aoj-cgl-7-d.test.cpp
+  - test/verify/yosupo-line-add-get-min-2.test.cpp
   - test/verify/aoj-grl-5-c-4.test.cpp
   - test/verify/aoj-dpl-1-i.test.cpp
   - test/verify/yosupo-k-shortest-walk.test.cpp
