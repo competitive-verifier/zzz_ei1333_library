@@ -12,18 +12,23 @@ data:
     links: []
   bundledCode: "#line 1 \"math/combinatorics/binomial.cpp\"\n/**\n * @brief Binomial(\u4E8C\
     \u9805\u4FC2\u6570)\n * @docs docs/binomial.md\n */\ntemplate< typename T >\n\
-    T binomial(int64_t N, int64_t K) {\n  if(K < 0 || N < K) return 0;\n  T ret =\
-    \ 1;\n  for(int64_t i = 1; i <= K; ++i) {\n    ret *= N;\n    N--;\n    ret /=\
-    \ i;\n  }\n  return ret;\n}\n"
+    T binomial(int64_t N, int64_t K) {\n  if(K < 0 || N < K) return 0;\n  static vector<\
+    \ T > invs;\n  if(invs.size() < K + 1) {\n    int pre_sz = max(1, (int) invs.size());\n\
+    \    invs.resize(K + 1);\n    for(int i = pre_sz; i <= K; i++) {\n      invs[i]\
+    \ = T(1) / i;\n    }\n  }\n  T ret = 1;\n  for(int64_t i = 1; i <= K; ++i) {\n\
+    \    ret *= N;\n    N--;\n    ret *= invs[i];\n  }\n  return ret;\n}\n"
   code: "/**\n * @brief Binomial(\u4E8C\u9805\u4FC2\u6570)\n * @docs docs/binomial.md\n\
     \ */\ntemplate< typename T >\nT binomial(int64_t N, int64_t K) {\n  if(K < 0 ||\
-    \ N < K) return 0;\n  T ret = 1;\n  for(int64_t i = 1; i <= K; ++i) {\n    ret\
-    \ *= N;\n    N--;\n    ret /= i;\n  }\n  return ret;\n}\n"
+    \ N < K) return 0;\n  static vector< T > invs;\n  if(invs.size() < K + 1) {\n\
+    \    int pre_sz = max(1, (int) invs.size());\n    invs.resize(K + 1);\n    for(int\
+    \ i = pre_sz; i <= K; i++) {\n      invs[i] = T(1) / i;\n    }\n  }\n  T ret =\
+    \ 1;\n  for(int64_t i = 1; i <= K; ++i) {\n    ret *= N;\n    N--;\n    ret *=\
+    \ invs[i];\n  }\n  return ret;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: math/combinatorics/binomial.cpp
   requiredBy: []
-  timestamp: '2020-11-25 02:37:25+09:00'
+  timestamp: '2022-04-23 02:04:24+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/combinatorics/binomial.cpp
