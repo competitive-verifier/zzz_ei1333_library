@@ -2,31 +2,31 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/connected-components/incremental-bridge-connectivity.hpp
     title: Incremental Bridge Connectivity
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/connected-components/three-edge-connected-components.hpp
     title: "Three Edge Connected Components(\u4E09\u91CD\u8FBA\u9023\u7D50\u6210\u5206\
       \u5206\u89E3)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/mst/boruvka.hpp
     title: "Boruvka(\u6700\u5C0F\u5168\u57DF\u6728)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/mst/kruskal.hpp
     title: "Kruskal(\u6700\u5C0F\u5168\u57DF\u6728)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/others/bipartite-graph-edge-coloring.hpp
     title: "Bipartite Graph Edge Coloring(\u4E8C\u90E8\u30B0\u30E9\u30D5\u306E\u8FBA\
       \u5F69\u8272)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/tree/offline-lca.hpp
     title: "Offline LCA(\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\u901A\u7956\
       \u5148)"
   - icon: ':heavy_check_mark:'
     path: other/mo-tree.cpp
     title: "Mo Tree(\u6728\u4E0A\u306EMo)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: other/offline-rmq.cpp
     title: Offline RMQ
   _extendedVerifiedWith:
@@ -39,42 +39,42 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-3139.test.cpp
     title: test/verify/aoj-3139.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/aoj-dsl-1-a.test.cpp
     title: test/verify/aoj-dsl-1-a.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/aoj-grl-2-a-2.test.cpp
     title: test/verify/aoj-grl-2-a-2.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/aoj-grl-2-a-3.test.cpp
     title: test/verify/aoj-grl-2-a-3.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yosupo-bipartite-edge-coloring.test.cpp
     title: test/verify/yosupo-bipartite-edge-coloring.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yosupo-lca-4.test.cpp
     title: test/verify/yosupo-lca-4.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yosupo-manhattanmst.test.cpp
     title: test/verify/yosupo-manhattanmst.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yosupo-staticrmq-6.test.cpp
     title: test/verify/yosupo-staticrmq-6.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yosupo-three-edge-connected-components.test.cpp
     title: test/verify/yosupo-three-edge-connected-components.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yosupo-tree-decomposition-width-2.test.cpp
     title: test/verify/yosupo-tree-decomposition-width-2.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yosupo-two-edge-connected-components-2.test.cpp
     title: test/verify/yosupo-two-edge-connected-components-2.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yukicoder-583.test.cpp
     title: test/verify/yukicoder-583.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: docs/union-find.md
     document_title: Union-Find
@@ -90,7 +90,7 @@ data:
     \ find(x) == find(y);\n  }\n\n  vector< vector< int > > groups() {\n    int n\
     \ = (int) data.size();\n    vector< vector< int > > ret(n);\n    for(int i = 0;\
     \ i < n; i++) {\n      ret[find(i)].emplace_back(i);\n    }\n    ret.erase(remove_if(begin(ret),\
-    \ end(ret), [&](const vector< int > &v) {\n      return v.empty();\n    }));\n\
+    \ end(ret), [&](const vector< int > &v) {\n      return v.empty();\n    }), end(ret));\n\
     \    return ret;\n  }\n};\n"
   code: "/**\n * @brief Union-Find\n * @docs docs/union-find.md\n */\nstruct UnionFind\
     \ {\n  vector< int > data;\n\n  UnionFind() = default;\n\n  explicit UnionFind(size_t\
@@ -103,36 +103,36 @@ data:
     \ > groups() {\n    int n = (int) data.size();\n    vector< vector< int > > ret(n);\n\
     \    for(int i = 0; i < n; i++) {\n      ret[find(i)].emplace_back(i);\n    }\n\
     \    ret.erase(remove_if(begin(ret), end(ret), [&](const vector< int > &v) {\n\
-    \      return v.empty();\n    }));\n    return ret;\n  }\n};\n"
+    \      return v.empty();\n    }), end(ret));\n    return ret;\n  }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: structure/union-find/union-find.cpp
   requiredBy:
-  - other/mo-tree.cpp
-  - other/offline-rmq.cpp
+  - graph/connected-components/three-edge-connected-components.hpp
+  - graph/connected-components/incremental-bridge-connectivity.hpp
+  - graph/tree/offline-lca.hpp
   - graph/mst/kruskal.hpp
   - graph/mst/boruvka.hpp
   - graph/others/bipartite-graph-edge-coloring.hpp
-  - graph/tree/offline-lca.hpp
-  - graph/connected-components/three-edge-connected-components.hpp
-  - graph/connected-components/incremental-bridge-connectivity.hpp
-  timestamp: '2021-05-07 20:07:14+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  - other/offline-rmq.cpp
+  - other/mo-tree.cpp
+  timestamp: '2022-05-09 03:40:15+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/verify/yosupo-lca-4.test.cpp
   - test/verify/yosupo-three-edge-connected-components.test.cpp
-  - test/verify/yosupo-two-edge-connected-components-2.test.cpp
+  - test/verify/aoj-2270.test.cpp
+  - test/verify/yukicoder-583.test.cpp
   - test/verify/yosupo-manhattanmst.test.cpp
+  - test/verify/aoj-dsl-1-a.test.cpp
+  - test/verify/yosupo-two-edge-connected-components-2.test.cpp
+  - test/verify/yosupo-lca-4.test.cpp
+  - test/verify/yosupo-staticrmq-6.test.cpp
+  - test/verify/yosupo-bipartite-edge-coloring.test.cpp
   - test/verify/aoj-grl-2-a-2.test.cpp
   - test/verify/yosupo-tree-decomposition-width-2.test.cpp
-  - test/verify/aoj-dsl-1-a.test.cpp
-  - test/verify/yukicoder-583.test.cpp
   - test/verify/aoj-grl-2-a-3.test.cpp
-  - test/verify/yosupo-bipartite-edge-coloring.test.cpp
-  - test/verify/aoj-2821.test.cpp
-  - test/verify/yosupo-staticrmq-6.test.cpp
-  - test/verify/aoj-2270.test.cpp
   - test/verify/aoj-3139.test.cpp
+  - test/verify/aoj-2821.test.cpp
 documentation_of: structure/union-find/union-find.cpp
 layout: document
 redirect_from:

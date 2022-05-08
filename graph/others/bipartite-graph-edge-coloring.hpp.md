@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/flow/bipartite-flow.hpp
     title: "Bipartite Flow(\u4E8C\u90E8\u30B0\u30E9\u30D5\u306E\u30D5\u30ED\u30FC)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/others/eulerian-trail.hpp
     title: "Eulerian Trail(\u30AA\u30A4\u30E9\u30FC\u8DEF)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: structure/union-find/union-find.cpp
     title: Union-Find
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yosupo-bipartite-edge-coloring.test.cpp
     title: test/verify/yosupo-bipartite-edge-coloring.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: docs/bipartite-graph-edge-coloring.md
     document_title: "Bipartite Graph Edge Coloring(\u4E8C\u90E8\u30B0\u30E9\u30D5\u306E\
@@ -36,21 +36,21 @@ data:
     \  }\n\n  vector< vector< int > > groups() {\n    int n = (int) data.size();\n\
     \    vector< vector< int > > ret(n);\n    for(int i = 0; i < n; i++) {\n     \
     \ ret[find(i)].emplace_back(i);\n    }\n    ret.erase(remove_if(begin(ret), end(ret),\
-    \ [&](const vector< int > &v) {\n      return v.empty();\n    }));\n    return\
-    \ ret;\n  }\n};\n#line 1 \"graph/flow/bipartite-flow.hpp\"\n/**\n * @brief Bipartite\
-    \ Flow(\u4E8C\u90E8\u30B0\u30E9\u30D5\u306E\u30D5\u30ED\u30FC)\n * @docs docs/bipartite-flow.md\n\
-    \ */\nstruct BipartiteFlow {\n  size_t n, m, time_stamp;\n  vector< vector< int\
-    \ > > g, rg;\n  vector< int > match_l, match_r, dist, used, alive;\n  bool matched;\n\
-    \npublic:\n  explicit BipartiteFlow(size_t n, size_t m) :\n      n(n), m(m), time_stamp(0),\
-    \ g(n), rg(m), match_l(n, -1), match_r(m, -1), used(n), alive(n, 1), matched(false)\
-    \ {}\n\n  void add_edge(int u, int v) {\n    g[u].push_back(v);\n    rg[v].emplace_back(u);\n\
-    \  }\n\n  vector< pair< int, int > > max_matching() {\n    matched = true;\n \
-    \   for(;;) {\n      build_augment_path();\n      ++time_stamp;\n      int flow\
-    \ = 0;\n      for(int i = 0; i < (int)n; i++) {\n        if(match_l[i] == -1)\
-    \ flow += find_min_dist_augment_path(i);\n      }\n      if(flow == 0) break;\n\
-    \    }\n    vector< pair< int, int > > ret;\n    for(int i = 0; i < (int)n; i++)\
-    \ {\n      if(match_l[i] >= 0) ret.emplace_back(i, match_l[i]);\n    }\n    return\
-    \ ret;\n  }\n\n  /* http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=3198\
+    \ [&](const vector< int > &v) {\n      return v.empty();\n    }), end(ret));\n\
+    \    return ret;\n  }\n};\n#line 1 \"graph/flow/bipartite-flow.hpp\"\n/**\n *\
+    \ @brief Bipartite Flow(\u4E8C\u90E8\u30B0\u30E9\u30D5\u306E\u30D5\u30ED\u30FC\
+    )\n * @docs docs/bipartite-flow.md\n */\nstruct BipartiteFlow {\n  size_t n, m,\
+    \ time_stamp;\n  vector< vector< int > > g, rg;\n  vector< int > match_l, match_r,\
+    \ dist, used, alive;\n  bool matched;\n\npublic:\n  explicit BipartiteFlow(size_t\
+    \ n, size_t m) :\n      n(n), m(m), time_stamp(0), g(n), rg(m), match_l(n, -1),\
+    \ match_r(m, -1), used(n), alive(n, 1), matched(false) {}\n\n  void add_edge(int\
+    \ u, int v) {\n    g[u].push_back(v);\n    rg[v].emplace_back(u);\n  }\n\n  vector<\
+    \ pair< int, int > > max_matching() {\n    matched = true;\n    for(;;) {\n  \
+    \    build_augment_path();\n      ++time_stamp;\n      int flow = 0;\n      for(int\
+    \ i = 0; i < (int)n; i++) {\n        if(match_l[i] == -1) flow += find_min_dist_augment_path(i);\n\
+    \      }\n      if(flow == 0) break;\n    }\n    vector< pair< int, int > > ret;\n\
+    \    for(int i = 0; i < (int)n; i++) {\n      if(match_l[i] >= 0) ret.emplace_back(i,\
+    \ match_l[i]);\n    }\n    return ret;\n  }\n\n  /* http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=3198\
     \ */\n  void erase_edge(int a, int b) {\n    if(match_l[a] == b) {\n      match_l[a]\
     \ = -1;\n      match_r[b] = -1;\n    }\n    g[a].erase(find(begin(g[a]), end(g[a]),\
     \ b));\n    rg[b].erase(find(begin(rg[b]), end(rg[b]), a));\n  }\n\n  /* http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0334\
@@ -263,8 +263,8 @@ data:
   isVerificationFile: false
   path: graph/others/bipartite-graph-edge-coloring.hpp
   requiredBy: []
-  timestamp: '2021-08-14 14:18:51+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-05-09 03:40:15+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/yosupo-bipartite-edge-coloring.test.cpp
 documentation_of: graph/others/bipartite-graph-edge-coloring.hpp

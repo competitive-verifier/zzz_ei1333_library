@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
   _extendedRequiredBy:
@@ -99,16 +99,16 @@ data:
   isVerificationFile: false
   path: graph/others/low-link.hpp
   requiredBy:
-  - graph/others/block-cut-tree.hpp
   - graph/connected-components/two-edge-connected-components.hpp
   - graph/connected-components/bi-connected-components.hpp
+  - graph/others/block-cut-tree.hpp
   timestamp: '2021-08-16 02:17:26+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/verify/yosupo-two-edge-connected-components.test.cpp
-  - test/verify/aoj-grl-3-a.test.cpp
-  - test/verify/aoj-3022.test.cpp
   - test/verify/aoj-grl-3-b.test.cpp
+  - test/verify/yosupo-two-edge-connected-components.test.cpp
+  - test/verify/aoj-3022.test.cpp
+  - test/verify/aoj-grl-3-a.test.cpp
   - test/verify/aoj-3139.test.cpp
 documentation_of: graph/others/low-link.hpp
 layout: document

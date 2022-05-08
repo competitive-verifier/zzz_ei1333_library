@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/others/bipartite-graph-edge-coloring.hpp
     title: "Bipartite Graph Edge Coloring(\u4E8C\u90E8\u30B0\u30E9\u30D5\u306E\u8FBA\
       \u5F69\u8272)"
@@ -13,15 +13,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-3198.test.cpp
     title: test/verify/aoj-3198.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yosupo-bipartite-edge-coloring.test.cpp
     title: test/verify/yosupo-bipartite-edge-coloring.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-bipartitematching.test.cpp
     title: test/verify/yosupo-bipartitematching.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: docs/bipartite-flow.md
     document_title: "Bipartite Flow(\u4E8C\u90E8\u30B0\u30E9\u30D5\u306E\u30D5\u30ED\
@@ -201,12 +201,12 @@ data:
   requiredBy:
   - graph/others/bipartite-graph-edge-coloring.hpp
   timestamp: '2021-08-14 14:18:51+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/verify/aoj-3198.test.cpp
-  - test/verify/aoj-0334.test.cpp
   - test/verify/yosupo-bipartite-edge-coloring.test.cpp
   - test/verify/yosupo-bipartitematching.test.cpp
+  - test/verify/aoj-0334.test.cpp
 documentation_of: graph/flow/bipartite-flow.hpp
 layout: document
 redirect_from:

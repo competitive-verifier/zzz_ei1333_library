@@ -6,12 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-2405.test.cpp
     title: test/verify/aoj-2405.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yosupo-tree-decomposition-width-2.test.cpp
     title: test/verify/yosupo-tree-decomposition-width-2.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: docs/tree-decomposition-width-2.md
     document_title: "Tree Decomposition Width 2(\u6728\u5E452\u306E\u6728\u5206\u89E3\
@@ -128,7 +128,7 @@ data:
   path: graph/others/tree-decomposition-width-2.hpp
   requiredBy: []
   timestamp: '2021-07-17 00:36:52+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/verify/aoj-2405.test.cpp
   - test/verify/yosupo-tree-decomposition-width-2.test.cpp

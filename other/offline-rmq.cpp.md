@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: structure/union-find/union-find.cpp
     title: Union-Find
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yosupo-staticrmq-6.test.cpp
     title: test/verify/yosupo-staticrmq-6.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     document_title: Offline RMQ
     links: []
@@ -26,7 +26,7 @@ data:
     \ find(x) == find(y);\n  }\n\n  vector< vector< int > > groups() {\n    int n\
     \ = (int) data.size();\n    vector< vector< int > > ret(n);\n    for(int i = 0;\
     \ i < n; i++) {\n      ret[find(i)].emplace_back(i);\n    }\n    ret.erase(remove_if(begin(ret),\
-    \ end(ret), [&](const vector< int > &v) {\n      return v.empty();\n    }));\n\
+    \ end(ret), [&](const vector< int > &v) {\n      return v.empty();\n    }), end(ret));\n\
     \    return ret;\n  }\n};\n#line 2 \"other/offline-rmq.cpp\"\n\n/**\n * @brief\
     \ Offline RMQ\n **/\ntemplate< typename Comp >\nvector< int > offline_rmq(vector<\
     \ pair< int, int > > &qs, const Comp &comp) {\n  int n = 0;\n  for(auto&[l, r]:\
@@ -54,8 +54,8 @@ data:
   isVerificationFile: false
   path: other/offline-rmq.cpp
   requiredBy: []
-  timestamp: '2021-10-28 01:20:12+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-05-09 03:40:15+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/yosupo-staticrmq-6.test.cpp
 documentation_of: other/offline-rmq.cpp

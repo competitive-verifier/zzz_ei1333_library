@@ -10,7 +10,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: structure/develop/vertex-set-path-composite.cpp
     title: Vertex Set Path Composite
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.cpp
     title: template/template.cpp
   _extendedRequiredBy: []

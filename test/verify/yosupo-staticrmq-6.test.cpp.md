@@ -1,26 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: other/offline-rmq.cpp
     title: Offline RMQ
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: other/printer.cpp
     title: "Printer(\u9AD8\u901F\u51FA\u529B)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: other/scanner.cpp
     title: "Scanner(\u9AD8\u901F\u5165\u529B)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: structure/union-find/union-find.cpp
     title: Union-Find
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.cpp
     title: template/template.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/staticrmq
@@ -66,7 +66,7 @@ data:
     \ find(x) == find(y);\n  }\n\n  vector< vector< int > > groups() {\n    int n\
     \ = (int) data.size();\n    vector< vector< int > > ret(n);\n    for(int i = 0;\
     \ i < n; i++) {\n      ret[find(i)].emplace_back(i);\n    }\n    ret.erase(remove_if(begin(ret),\
-    \ end(ret), [&](const vector< int > &v) {\n      return v.empty();\n    }));\n\
+    \ end(ret), [&](const vector< int > &v) {\n      return v.empty();\n    }), end(ret));\n\
     \    return ret;\n  }\n};\n#line 2 \"other/offline-rmq.cpp\"\n\n/**\n * @brief\
     \ Offline RMQ\n **/\ntemplate< typename Comp >\nvector< int > offline_rmq(vector<\
     \ pair< int, int > > &qs, const Comp &comp) {\n  int n = 0;\n  for(auto&[l, r]:\
@@ -141,8 +141,8 @@ data:
   isVerificationFile: true
   path: test/verify/yosupo-staticrmq-6.test.cpp
   requiredBy: []
-  timestamp: '2021-10-28 01:20:12+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-05-09 03:40:15+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-staticrmq-6.test.cpp
 layout: document

@@ -1,26 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/mst/kruskal.hpp
     title: "Kruskal(\u6700\u5C0F\u5168\u57DF\u6728)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/mst/manhattan-mst.hpp
     title: Manhattan MST
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: structure/union-find/union-find.cpp
     title: Union-Find
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.cpp
     title: template/template.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/manhattanmst
@@ -97,20 +97,20 @@ data:
     \  }\n\n  vector< vector< int > > groups() {\n    int n = (int) data.size();\n\
     \    vector< vector< int > > ret(n);\n    for(int i = 0; i < n; i++) {\n     \
     \ ret[find(i)].emplace_back(i);\n    }\n    ret.erase(remove_if(begin(ret), end(ret),\
-    \ [&](const vector< int > &v) {\n      return v.empty();\n    }));\n    return\
-    \ ret;\n  }\n};\n#line 5 \"graph/mst/kruskal.hpp\"\n\n/**\n * @brief Kruskal(\u6700\
-    \u5C0F\u5168\u57DF\u6728)\n * @docs docs/kruskal.md\n */\ntemplate< typename T\
-    \ >\nstruct MinimumSpanningTree {\n  T cost;\n  Edges< T > edges;\n};\n\ntemplate<\
-    \ typename T >\nMinimumSpanningTree< T > kruskal(Edges< T > &edges, int V) {\n\
-    \  sort(begin(edges), end(edges), [](const Edge< T > &a, const Edge< T > &b) {\n\
-    \    return a.cost < b.cost;\n  });\n  UnionFind tree(V);\n  T total = T();\n\
-    \  Edges< T > es;\n  for(auto &e : edges) {\n    if(tree.unite(e.from, e.to))\
-    \ {\n      es.emplace_back(e);\n      total += e.cost;\n    }\n  }\n  return {total,\
-    \ es};\n}\n#line 7 \"test/verify/yosupo-manhattanmst.test.cpp\"\n\nint main()\
-    \ {\n  int N;\n  cin >> N;\n  vector< int64_t > X(N), Y(N);\n  for(int i = 0;\
-    \ i < N; i++) {\n    cin >> X[i] >> Y[i];\n  }\n  auto es = manhattan_mst(X, Y);\n\
-    \  auto ret = kruskal(es, N);\n  cout << ret.cost << \"\\n\";\n  for(auto &e :\
-    \ ret.edges) cout << e.from << \" \" << e.to << \"\\n\";\n}\n"
+    \ [&](const vector< int > &v) {\n      return v.empty();\n    }), end(ret));\n\
+    \    return ret;\n  }\n};\n#line 5 \"graph/mst/kruskal.hpp\"\n\n/**\n * @brief\
+    \ Kruskal(\u6700\u5C0F\u5168\u57DF\u6728)\n * @docs docs/kruskal.md\n */\ntemplate<\
+    \ typename T >\nstruct MinimumSpanningTree {\n  T cost;\n  Edges< T > edges;\n\
+    };\n\ntemplate< typename T >\nMinimumSpanningTree< T > kruskal(Edges< T > &edges,\
+    \ int V) {\n  sort(begin(edges), end(edges), [](const Edge< T > &a, const Edge<\
+    \ T > &b) {\n    return a.cost < b.cost;\n  });\n  UnionFind tree(V);\n  T total\
+    \ = T();\n  Edges< T > es;\n  for(auto &e : edges) {\n    if(tree.unite(e.from,\
+    \ e.to)) {\n      es.emplace_back(e);\n      total += e.cost;\n    }\n  }\n  return\
+    \ {total, es};\n}\n#line 7 \"test/verify/yosupo-manhattanmst.test.cpp\"\n\nint\
+    \ main() {\n  int N;\n  cin >> N;\n  vector< int64_t > X(N), Y(N);\n  for(int\
+    \ i = 0; i < N; i++) {\n    cin >> X[i] >> Y[i];\n  }\n  auto es = manhattan_mst(X,\
+    \ Y);\n  auto ret = kruskal(es, N);\n  cout << ret.cost << \"\\n\";\n  for(auto\
+    \ &e : ret.edges) cout << e.from << \" \" << e.to << \"\\n\";\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/manhattanmst\"\n\n#include\
     \ \"../../template/template.cpp\"\n\n#include \"../../graph/mst/manhattan-mst.hpp\"\
     \n#include \"../../graph/mst/kruskal.hpp\"\n\nint main() {\n  int N;\n  cin >>\
@@ -127,8 +127,8 @@ data:
   isVerificationFile: true
   path: test/verify/yosupo-manhattanmst.test.cpp
   requiredBy: []
-  timestamp: '2021-08-16 03:00:45+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-05-09 03:40:15+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-manhattanmst.test.cpp
 layout: document

@@ -1,30 +1,30 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/tree/offline-lca.hpp
     title: "Offline LCA(\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\u901A\u7956\
       \u5148)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: other/printer.cpp
     title: "Printer(\u9AD8\u901F\u51FA\u529B)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: other/scanner.cpp
     title: "Scanner(\u9AD8\u901F\u5165\u529B)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: structure/union-find/union-find.cpp
     title: Union-Find
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.cpp
     title: template/template.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/lca
@@ -89,24 +89,25 @@ data:
     \ > groups() {\n    int n = (int) data.size();\n    vector< vector< int > > ret(n);\n\
     \    for(int i = 0; i < n; i++) {\n      ret[find(i)].emplace_back(i);\n    }\n\
     \    ret.erase(remove_if(begin(ret), end(ret), [&](const vector< int > &v) {\n\
-    \      return v.empty();\n    }));\n    return ret;\n  }\n};\n#line 3 \"graph/tree/offline-lca.hpp\"\
-    \n\n/**\n * @brief Offline LCA(\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\
-    \u901A\u7956\u5148)\n **/\ntemplate< typename T >\nvector< int > offline_lca(const\
-    \ Graph< T > &g, vector< pair< int, int > > &qs, int root = 0) {\n  int n = (int)\
-    \ g.size();\n  UnionFind uf(n);\n  vector< int > st(n), mark(n), ptr(n), ans(qs.size(),\
-    \ -1);\n  int top = 0;\n  st[top] = root;\n  for(auto&[l, r]: qs) mark[l]++, mark[r]++;\n\
-    \  vector< vector< pair< int, int > > > q(n);\n  for(int i = 0; i < n; i++) {\n\
-    \    q[i].reserve(mark[i]);\n    mark[i] = -1;\n    ptr[i] = (int) g[i].size();\n\
-    \  }\n  for(int i = 0; i < qs.size(); i++) {\n    q[qs[i].first].emplace_back(qs[i].second,\
-    \ i);\n    q[qs[i].second].emplace_back(qs[i].first, i);\n  }\n  auto run = [&](int\
-    \ u) -> bool {\n    while(ptr[u]) {\n      int v = g[u][--ptr[u]];\n      if(mark[v]\
-    \ == -1) {\n        st[++top] = v;\n        return true;\n      }\n    }\n   \
-    \ return false;\n  };\n  while(~top) {\n    int u = st[top];\n    if(mark[u] ==\
-    \ -1) {\n      mark[u] = u;\n    } else {\n      uf.unite(u, g[u][ptr[u]]);\n\
-    \      mark[uf.find(u)] = u;\n    }\n    if(not run(u)) {\n      for(auto&[v,\
-    \ i]: q[u]) {\n        if(~mark[v] and ans[i] == -1) {\n          ans[i] = mark[uf.find(v)];\n\
-    \        }\n      }\n      --top;\n    }\n  }\n  return ans;\n}\n#line 6 \"test/verify/yosupo-lca-4.test.cpp\"\
-    \n\n#line 1 \"other/scanner.cpp\"\n/**\n * @brief Scanner(\u9AD8\u901F\u5165\u529B\
+    \      return v.empty();\n    }), end(ret));\n    return ret;\n  }\n};\n#line\
+    \ 3 \"graph/tree/offline-lca.hpp\"\n\n/**\n * @brief Offline LCA(\u30AA\u30D5\u30E9\
+    \u30A4\u30F3\u6700\u5C0F\u5171\u901A\u7956\u5148)\n **/\ntemplate< typename T\
+    \ >\nvector< int > offline_lca(const Graph< T > &g, vector< pair< int, int > >\
+    \ &qs, int root = 0) {\n  int n = (int) g.size();\n  UnionFind uf(n);\n  vector<\
+    \ int > st(n), mark(n), ptr(n), ans(qs.size(), -1);\n  int top = 0;\n  st[top]\
+    \ = root;\n  for(auto&[l, r]: qs) mark[l]++, mark[r]++;\n  vector< vector< pair<\
+    \ int, int > > > q(n);\n  for(int i = 0; i < n; i++) {\n    q[i].reserve(mark[i]);\n\
+    \    mark[i] = -1;\n    ptr[i] = (int) g[i].size();\n  }\n  for(int i = 0; i <\
+    \ qs.size(); i++) {\n    q[qs[i].first].emplace_back(qs[i].second, i);\n    q[qs[i].second].emplace_back(qs[i].first,\
+    \ i);\n  }\n  auto run = [&](int u) -> bool {\n    while(ptr[u]) {\n      int\
+    \ v = g[u][--ptr[u]];\n      if(mark[v] == -1) {\n        st[++top] = v;\n   \
+    \     return true;\n      }\n    }\n    return false;\n  };\n  while(~top) {\n\
+    \    int u = st[top];\n    if(mark[u] == -1) {\n      mark[u] = u;\n    } else\
+    \ {\n      uf.unite(u, g[u][ptr[u]]);\n      mark[uf.find(u)] = u;\n    }\n  \
+    \  if(not run(u)) {\n      for(auto&[v, i]: q[u]) {\n        if(~mark[v] and ans[i]\
+    \ == -1) {\n          ans[i] = mark[uf.find(v)];\n        }\n      }\n      --top;\n\
+    \    }\n  }\n  return ans;\n}\n#line 6 \"test/verify/yosupo-lca-4.test.cpp\"\n\
+    \n#line 1 \"other/scanner.cpp\"\n/**\n * @brief Scanner(\u9AD8\u901F\u5165\u529B\
     )\n */\nstruct Scanner {\npublic:\n\n  explicit Scanner(FILE *fp) : fp(fp) {}\n\
     \n  template< typename T, typename... E >\n  void read(T &t, E &... e) {\n   \
     \ read_single(t);\n    read(e...);\n  }\n\nprivate:\n  static constexpr size_t\
@@ -170,8 +171,8 @@ data:
   isVerificationFile: true
   path: test/verify/yosupo-lca-4.test.cpp
   requiredBy: []
-  timestamp: '2021-10-28 01:20:12+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-05-09 03:40:15+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-lca-4.test.cpp
 layout: document
