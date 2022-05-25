@@ -70,9 +70,9 @@ data:
   timestamp: '2022-02-04 23:35:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/verify/aoj-2270.test.cpp
   - test/verify/yosupo-point-add-rectangle-sum.test.cpp
   - test/verify/aoj-dsl-2-b.test.cpp
+  - test/verify/aoj-2270.test.cpp
   - test/verify/yosupo-static-range-inversions-query.test.cpp
 documentation_of: structure/others/binary-indexed-tree.cpp
 layout: document

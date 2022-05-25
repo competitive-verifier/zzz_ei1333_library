@@ -24,7 +24,7 @@ data:
     \ &e) {\n    add(a, b, e, 0, 0, segsz);\n  }\n\n  void build() {\n    for(auto\
     \ &p : cnt) {\n      if(p.second > 0) pend.emplace_back(make_pair(appear[p.first],\
     \ Q), p.first);\n    }\n    for(auto &s : pend) {\n      add(s.first.first, s.first.second,\
-    \ s.second);\n    }\n  }\n\n  int run(const function< void(int) > &f, int k =\
+    \ s.second);\n    }\n  }\n\n  void run(const function< void(int) > &f, int k =\
     \ 0) {\n    int add = 0;\n    for(auto &e : seg[k]) {\n      add += uf.unite(e.first,\
     \ e.second);\n    }\n    comp -= add;\n    if(k < segsz - 1) {\n      run(f, 2\
     \ * k + 1);\n      run(f, 2 * k + 2);\n    } else if(k - (segsz - 1) < Q) {\n\
@@ -45,7 +45,7 @@ data:
     \ &e) {\n    add(a, b, e, 0, 0, segsz);\n  }\n\n  void build() {\n    for(auto\
     \ &p : cnt) {\n      if(p.second > 0) pend.emplace_back(make_pair(appear[p.first],\
     \ Q), p.first);\n    }\n    for(auto &s : pend) {\n      add(s.first.first, s.first.second,\
-    \ s.second);\n    }\n  }\n\n  int run(const function< void(int) > &f, int k =\
+    \ s.second);\n    }\n  }\n\n  void run(const function< void(int) > &f, int k =\
     \ 0) {\n    int add = 0;\n    for(auto &e : seg[k]) {\n      add += uf.unite(e.first,\
     \ e.second);\n    }\n    comp -= add;\n    if(k < segsz - 1) {\n      run(f, 2\
     \ * k + 1);\n      run(f, 2 * k + 2);\n    } else if(k - (segsz - 1) < Q) {\n\
@@ -55,7 +55,7 @@ data:
   isVerificationFile: false
   path: other/offline-dynamic-connectivity.cpp
   requiredBy: []
-  timestamp: '2019-07-20 01:29:30+09:00'
+  timestamp: '2022-05-26 01:18:37+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: other/offline-dynamic-connectivity.cpp

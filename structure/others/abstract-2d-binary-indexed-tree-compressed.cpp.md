@@ -92,8 +92,8 @@ data:
   timestamp: '2022-02-09 16:47:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
   - test/verify/yukicoder-1826.test.cpp
+  - test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
 documentation_of: structure/others/abstract-2d-binary-indexed-tree-compressed.cpp
 layout: document
 redirect_from:
