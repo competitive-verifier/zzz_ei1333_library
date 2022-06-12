@@ -28,7 +28,7 @@ data:
   isVerificationFile: false
   path: math/combinatorics/binomial.cpp
   requiredBy: []
-  timestamp: '2022-04-23 02:04:24+09:00'
+  timestamp: '2022-04-23 02:02:06+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/combinatorics/binomial.cpp

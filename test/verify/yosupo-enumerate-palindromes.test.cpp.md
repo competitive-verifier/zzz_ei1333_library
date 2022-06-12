@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/manacher.hpp
     title: "Manacher(\u6700\u9577\u56DE\u6587)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.cpp
     title: template/template.cpp
   _extendedRequiredBy: []

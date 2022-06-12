@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: structure/develop/super-link-cut-tree.cpp
     title: "\u4F55\u3067\u3082\u3067\u304D\u308BLCT"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.cpp
     title: template/template.cpp
   _extendedRequiredBy: []

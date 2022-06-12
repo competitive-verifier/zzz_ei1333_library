@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: other/mo.cpp
     title: Mo's Algorithm
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: structure/others/binary-indexed-tree.cpp
     title: Binary-Indexed-Tree(BIT)
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.cpp
     title: template/template.cpp
   _extendedRequiredBy: []

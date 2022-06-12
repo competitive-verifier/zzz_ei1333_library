@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/palindromic-tree.cpp
     title: "Palindromic Tree(\u56DE\u6587\u6728)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.cpp
     title: template/template.cpp
   _extendedRequiredBy: []

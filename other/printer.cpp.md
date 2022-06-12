@@ -36,6 +36,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
     title: test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
+  - icon: ':x:'
+    path: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
+    title: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-point-add-rectangle-sum.test.cpp
     title: test/verify/yosupo-point-add-rectangle-sum.test.cpp
@@ -54,9 +57,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-two-sat.test.cpp
     title: test/verify/yosupo-two-sat.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     document_title: "Printer(\u9AD8\u901F\u51FA\u529B)"
     links: []
@@ -103,25 +106,26 @@ data:
   path: other/printer.cpp
   requiredBy: []
   timestamp: '2021-08-31 21:10:51+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/verify/yosupo-bitwise-and-convolution-3.test.cpp
+  - test/verify/dmoj-ds5.test.cpp
+  - test/verify/yosupo-bitwise-and-convolution-2.test.cpp
   - test/verify/yosupo-bitwise-and-convolution.test.cpp
-  - test/verify/yosupo-lca-2.test.cpp
-  - test/verify/yosupo-subset-convolution.test.cpp
   - test/verify/yosupo-staticrmq-5.test.cpp
-  - test/verify/yosupo-two-sat.test.cpp
-  - test/verify/yosupo-staticrmq-6.test.cpp
-  - test/verify/yosupo-point-add-rectangle-sum.test.cpp
-  - test/verify/yosupo-lca.test.cpp
-  - test/verify/yosupo-lca-4.test.cpp
   - test/verify/yosupo-tree-decomposition-width-2.test.cpp
   - test/verify/yosupo-division-of-polynomials.test.cpp
-  - test/verify/yosupo-bitwise-and-convolution-2.test.cpp
-  - test/verify/yosupo-lca-3.test.cpp
-  - test/verify/yosupo-bitwise-xor-convolution.test.cpp
-  - test/verify/dmoj-ds5.test.cpp
+  - test/verify/yosupo-point-add-rectangle-sum.test.cpp
   - test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
+  - test/verify/yosupo-two-sat.test.cpp
+  - test/verify/yosupo-bitwise-and-convolution-3.test.cpp
+  - test/verify/yosupo-lca.test.cpp
+  - test/verify/yosupo-lca-3.test.cpp
+  - test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
+  - test/verify/yosupo-subset-convolution.test.cpp
+  - test/verify/yosupo-lca-4.test.cpp
+  - test/verify/yosupo-lca-2.test.cpp
+  - test/verify/yosupo-bitwise-xor-convolution.test.cpp
+  - test/verify/yosupo-staticrmq-6.test.cpp
 documentation_of: other/printer.cpp
 layout: document
 redirect_from:

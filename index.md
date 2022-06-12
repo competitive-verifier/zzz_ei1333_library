@@ -653,15 +653,18 @@ data:
     - icon: ':heavy_check_mark:'
       path: other/offline-rmq.cpp
       title: Offline RMQ
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: other/printer.cpp
       title: "Printer(\u9AD8\u901F\u51FA\u529B)"
     - icon: ':warning:'
       path: other/random-number-generator.cpp
       title: other/random-number-generator.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: other/scanner.cpp
       title: "Scanner(\u9AD8\u901F\u5165\u529B)"
+    - icon: ':x:'
+      path: other/static-point-add-rectangle-sum.cpp
+      title: Static Point Add Rectangle Sum
     - icon: ':warning:'
       path: other/timer.cpp
       title: "Timer(\u30BF\u30A4\u30DE\u30FC)"
@@ -840,7 +843,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: structure/others/abstract-binary-indexed-tree.cpp
       title: "Abstract Binary Indexed Tree(\u62BD\u8C61\u5316BIT)"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: structure/others/binary-indexed-tree.cpp
       title: Binary-Indexed-Tree(BIT)
     - icon: ':heavy_check_mark:'
@@ -958,7 +961,7 @@ data:
       title: "Wavelet Tree(\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u6728)"
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.cpp
       title: template/template.cpp
   verificationCategories:
@@ -1444,6 +1447,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
       title: test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
+    - icon: ':x:'
+      path: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
+      title: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-point-add-rectangle-sum.test.cpp
       title: test/verify/yosupo-point-add-rectangle-sum.test.cpp
