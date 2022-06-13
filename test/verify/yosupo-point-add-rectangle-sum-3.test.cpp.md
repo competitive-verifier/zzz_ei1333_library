@@ -88,12 +88,12 @@ data:
     \   sort(points.begin(), points.end(), [](const Point &a, const Point &b) {\n\
     \      return a.y < b.y;\n    });\n    vector< T > ys;\n    ys.reserve(n);\n \
     \   for(Point &p: points) {\n      if(ys.empty() or ys.back() != p.y) ys.emplace_back(p.y);\n\
-    \      p.y = (int) ys.size() - 1;\n    }\n    ys.shrink_to_fit();\n\n\n    struct\
-    \ Q {\n      T x, d, u;\n      bool type;\n      int idx;\n    };\n    vector<\
-    \ Q > qs;\n    qs.reserve(q + q);\n    for(int i = 0; i < q; i++) {\n      auto\
-    \ &query = queries[i];\n      int d = lower_bound(ys.begin(), ys.end(), query.d)\
-    \ - ys.begin();\n      int u = lower_bound(ys.begin(), ys.end(), query.u) - ys.begin();\n\
-    \      qs.emplace_back(Q{query.l, d, u, false, i});\n      qs.emplace_back(Q{query.r,\
+    \      p.y = (int) ys.size() - 1;\n    }\n    ys.shrink_to_fit();\n\n    struct\
+    \ Q {\n      T x;\n      int d, u;\n      bool type;\n      int idx;\n    };\n\
+    \    vector< Q > qs;\n    qs.reserve(q + q);\n    for(int i = 0; i < q; i++) {\n\
+    \      auto &query = queries[i];\n      int d = lower_bound(ys.begin(), ys.end(),\
+    \ query.d) - ys.begin();\n      int u = lower_bound(ys.begin(), ys.end(), query.u)\
+    \ - ys.begin();\n      qs.emplace_back(Q{query.l, d, u, false, i});\n      qs.emplace_back(Q{query.r,\
     \ d, u, true, i});\n    }\n    sort(points.begin(), points.end(), [](const Point\
     \ &a, const Point &b) {\n      return a.x < b.x;\n    });\n    sort(qs.begin(),\
     \ qs.end(), [](const Q &a, const Q &b) {\n      return a.x < b.x;\n    });\n \
@@ -169,7 +169,7 @@ data:
   isVerificationFile: true
   path: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
   requiredBy: []
-  timestamp: '2022-06-12 20:13:41+09:00'
+  timestamp: '2022-06-14 00:08:39+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
