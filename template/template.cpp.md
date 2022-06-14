@@ -483,9 +483,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
     title: test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
-  - icon: ':x:'
-    path: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
-    title: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-point-add-rectangle-sum.test.cpp
     title: test/verify/yosupo-point-add-rectangle-sum.test.cpp
@@ -525,6 +522,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-range-kth-smallest.test.cpp
     title: test/verify/yosupo-range-kth-smallest.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/verify/yosupo-rectangle-sum-2.test.cpp
+    title: test/verify/yosupo-rectangle-sum-2.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-rectangle-sum.test.cpp
     title: test/verify/yosupo-rectangle-sum.test.cpp
@@ -681,9 +681,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/yukicoder-952.test.cpp
     title: test/verify/yukicoder-952.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing\
@@ -746,7 +746,7 @@ data:
   path: template/template.cpp
   requiredBy: []
   timestamp: '2021-05-01 00:06:55+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/yukicoder-1826.test.cpp
   - test/verify/yosupo-enumerate-triangles.test.cpp
@@ -860,7 +860,6 @@ data:
   - test/verify/yosupo-line-add-get-min.test.cpp
   - test/verify/aoj-dpl-1-f.test.cpp
   - test/verify/yosupo-k-shortest-walk.test.cpp
-  - test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
   - test/verify/aoj-dpl-1-g.test.cpp
   - test/verify/yosupo-dominatortree.test.cpp
   - test/verify/aoj-dsl-1-b.test.cpp
@@ -897,6 +896,7 @@ data:
   - test/verify/aoj-2450-4.test.cpp
   - test/verify/yosupo-factorize.test.cpp
   - test/verify/yosupo-dynamic-tree-vertex-set-path-composite-3.test.cpp
+  - test/verify/yosupo-rectangle-sum-2.test.cpp
   - test/verify/aoj-cgl-2-a.test.cpp
   - test/verify/aoj-dsl-2-a.test.cpp
   - test/verify/yosupo-frequency-table-of-tree-distance.test.cpp

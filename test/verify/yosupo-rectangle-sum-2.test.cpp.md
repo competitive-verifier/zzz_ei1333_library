@@ -1,60 +1,60 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: other/printer.cpp
     title: "Printer(\u9AD8\u901F\u51FA\u529B)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: other/scanner.cpp
     title: "Scanner(\u9AD8\u901F\u5165\u529B)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: other/static-point-add-rectangle-sum.cpp
     title: Static Point Add Rectangle Sum
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: structure/others/binary-indexed-tree.cpp
     title: Binary-Indexed-Tree(BIT)
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.cpp
     title: template/template.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/point_add_rectangle_sum
+    PROBLEM: https://judge.yosupo.jp/problem/rectangle_sum
     links:
-    - https://judge.yosupo.jp/problem/point_add_rectangle_sum
-  bundledCode: "#line 1 \"test/verify/yosupo-point-add-rectangle-sum-3.test.cpp\"\n\
-    #define PROBLEM \"https://judge.yosupo.jp/problem/point_add_rectangle_sum\"\n\n\
-    #line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
-    \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
-    \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
-    \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
-    \ << setprecision(10);\n    cerr << fixed << setprecision(10);\n  }\n} iosetup;\n\
-    \ntemplate< typename T1, typename T2 >\nostream &operator<<(ostream &os, const\
-    \ pair< T1, T2 >& p) {\n  os << p.first << \" \" << p.second;\n  return os;\n\
-    }\n\ntemplate< typename T1, typename T2 >\nistream &operator>>(istream &is, pair<\
-    \ T1, T2 > &p) {\n  is >> p.first >> p.second;\n  return is;\n}\n\ntemplate< typename\
-    \ T >\nostream &operator<<(ostream &os, const vector< T > &v) {\n  for(int i =\
-    \ 0; i < (int) v.size(); i++) {\n    os << v[i] << (i + 1 != v.size() ? \" \"\
-    \ : \"\");\n  }\n  return os;\n}\n\ntemplate< typename T >\nistream &operator>>(istream\
-    \ &is, vector< T > &v) {\n  for(T &in : v) is >> in;\n  return is;\n}\n\ntemplate<\
-    \ typename T1, typename T2 >\ninline bool chmax(T1 &a, T2 b) { return a < b &&\
-    \ (a = b, true); }\n\ntemplate< typename T1, typename T2 >\ninline bool chmin(T1\
-    \ &a, T2 b) { return a > b && (a = b, true); }\n\ntemplate< typename T = int64\
-    \ >\nvector< T > make_v(size_t a) {\n  return vector< T >(a);\n}\n\ntemplate<\
-    \ typename T, typename... Ts >\nauto make_v(size_t a, Ts... ts) {\n  return vector<\
-    \ decltype(make_v< T >(ts...)) >(a, make_v< T >(ts...));\n}\n\ntemplate< typename\
-    \ T, typename V >\ntypename enable_if< is_class< T >::value == 0 >::type fill_v(T\
-    \ &t, const V &v) {\n  t = v;\n}\n\ntemplate< typename T, typename V >\ntypename\
-    \ enable_if< is_class< T >::value != 0 >::type fill_v(T &t, const V &v) {\n  for(auto\
-    \ &e : t) fill_v(e, v);\n}\n\ntemplate< typename F >\nstruct FixPoint : F {\n\
-    \  explicit FixPoint(F &&f) : F(forward< F >(f)) {}\n\n  template< typename...\
-    \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
+    - https://judge.yosupo.jp/problem/rectangle_sum
+  bundledCode: "#line 1 \"test/verify/yosupo-rectangle-sum-2.test.cpp\"\n#define PROBLEM\
+    \ \"https://judge.yosupo.jp/problem/rectangle_sum\"\n\n#line 1 \"template/template.cpp\"\
+    \n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
+    const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
+    \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
+    \    ios::sync_with_stdio(false);\n    cout << fixed << setprecision(10);\n  \
+    \  cerr << fixed << setprecision(10);\n  }\n} iosetup;\n\ntemplate< typename T1,\
+    \ typename T2 >\nostream &operator<<(ostream &os, const pair< T1, T2 >& p) {\n\
+    \  os << p.first << \" \" << p.second;\n  return os;\n}\n\ntemplate< typename\
+    \ T1, typename T2 >\nistream &operator>>(istream &is, pair< T1, T2 > &p) {\n \
+    \ is >> p.first >> p.second;\n  return is;\n}\n\ntemplate< typename T >\nostream\
+    \ &operator<<(ostream &os, const vector< T > &v) {\n  for(int i = 0; i < (int)\
+    \ v.size(); i++) {\n    os << v[i] << (i + 1 != v.size() ? \" \" : \"\");\n  }\n\
+    \  return os;\n}\n\ntemplate< typename T >\nistream &operator>>(istream &is, vector<\
+    \ T > &v) {\n  for(T &in : v) is >> in;\n  return is;\n}\n\ntemplate< typename\
+    \ T1, typename T2 >\ninline bool chmax(T1 &a, T2 b) { return a < b && (a = b,\
+    \ true); }\n\ntemplate< typename T1, typename T2 >\ninline bool chmin(T1 &a, T2\
+    \ b) { return a > b && (a = b, true); }\n\ntemplate< typename T = int64 >\nvector<\
+    \ T > make_v(size_t a) {\n  return vector< T >(a);\n}\n\ntemplate< typename T,\
+    \ typename... Ts >\nauto make_v(size_t a, Ts... ts) {\n  return vector< decltype(make_v<\
+    \ T >(ts...)) >(a, make_v< T >(ts...));\n}\n\ntemplate< typename T, typename V\
+    \ >\ntypename enable_if< is_class< T >::value == 0 >::type fill_v(T &t, const\
+    \ V &v) {\n  t = v;\n}\n\ntemplate< typename T, typename V >\ntypename enable_if<\
+    \ is_class< T >::value != 0 >::type fill_v(T &t, const V &v) {\n  for(auto &e\
+    \ : t) fill_v(e, v);\n}\n\ntemplate< typename F >\nstruct FixPoint : F {\n  explicit\
+    \ FixPoint(F &&f) : F(forward< F >(f)) {}\n\n  template< typename... Args >\n\
+    \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
-    \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-point-add-rectangle-sum-3.test.cpp\"\
+    \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-rectangle-sum-2.test.cpp\"\
     \n\n#line 1 \"structure/others/binary-indexed-tree.cpp\"\n/**\n * @brief Binary-Indexed-Tree(BIT)\n\
     \ * @docs docs/binary-indexed-tree.md\n */\ntemplate< typename T >\nstruct BinaryIndexedTree\
     \ {\nprivate:\n  int n;\n  vector< T > data;\n\npublic:\n  BinaryIndexedTree()\
@@ -101,7 +101,7 @@ data:
     \ &query: qs) {\n      while(j < n and points[j].x < query.x) {\n        bit.apply(points[j].y,\
     \ points[j].w);\n        ++j;\n      }\n      if(query.type) ans[query.idx] +=\
     \ bit.prod(query.d, query.u);\n      else ans[query.idx] -= bit.prod(query.d,\
-    \ query.u);\n    }\n    return ans;\n  }\n};\n#line 6 \"test/verify/yosupo-point-add-rectangle-sum-3.test.cpp\"\
+    \ query.u);\n    }\n    return ans;\n  }\n};\n#line 6 \"test/verify/yosupo-rectangle-sum-2.test.cpp\"\
     \n\n#line 1 \"other/scanner.cpp\"\n/**\n * @brief Scanner(\u9AD8\u901F\u5165\u529B\
     )\n */\nstruct Scanner {\npublic:\n\n  explicit Scanner(FILE *fp) : fp(fp) {}\n\
     \n  template< typename T, typename... E >\n  void read(T &t, E &... e) {\n   \
@@ -142,7 +142,7 @@ data:
     \  }\n\n  void write_single(const char *s) {\n    while(*s != 0) write_single(*s++);\n\
     \  }\n\n  template< typename T >\n  void write_single(const vector< T > &s) {\n\
     \    for(size_t i = 0; i < s.size(); i++) {\n      if(i) write_single(' ');\n\
-    \      write_single(s[i]);\n    }\n  }\n};\n#line 9 \"test/verify/yosupo-point-add-rectangle-sum-3.test.cpp\"\
+    \      write_single(s[i]);\n    }\n  }\n};\n#line 9 \"test/verify/yosupo-rectangle-sum-2.test.cpp\"\
     \n\nint main() {\n  int N, Q;\n  Scanner in(stdin);\n  Printer out(stdout);\n\
     \  in.read(N, Q);\n  StaticPointAddRectangleSum< int, int64 > spars;\n  for(int\
     \ i = 0; i < N; i++) {\n    int x, y, z;\n    in.read(x, y, z);\n    spars.add_point(x,\
@@ -150,8 +150,8 @@ data:
     \  for(int i = 0; i < Q; i++) {\n    int l, d, r, u;\n    in.read(l, d, r, u);\n\
     \    spars.add_query(l, d, r, u);\n  }\n  for(auto &&ans: spars.calculate_queries())\
     \ {\n    out.writeln(ans);\n  }\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_rectangle_sum\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../other/static-point-add-rectangle-sum.cpp\"\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/rectangle_sum\"\n\n#include\
+    \ \"../../template/template.cpp\"\n\n#include \"../../other/static-point-add-rectangle-sum.cpp\"\
     \n\n#include \"../../other/scanner.cpp\"\n#include \"../../other/printer.cpp\"\
     \n\nint main() {\n  int N, Q;\n  Scanner in(stdin);\n  Printer out(stdout);\n\
     \  in.read(N, Q);\n  StaticPointAddRectangleSum< int, int64 > spars;\n  for(int\
@@ -167,15 +167,15 @@ data:
   - other/scanner.cpp
   - other/printer.cpp
   isVerificationFile: true
-  path: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
+  path: test/verify/yosupo-rectangle-sum-2.test.cpp
   requiredBy: []
-  timestamp: '2022-06-14 00:08:39+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-06-14 14:38:43+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
+documentation_of: test/verify/yosupo-rectangle-sum-2.test.cpp
 layout: document
 redirect_from:
-- /verify/test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
-- /verify/test/verify/yosupo-point-add-rectangle-sum-3.test.cpp.html
-title: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
+- /verify/test/verify/yosupo-rectangle-sum-2.test.cpp
+- /verify/test/verify/yosupo-rectangle-sum-2.test.cpp.html
+title: test/verify/yosupo-rectangle-sum-2.test.cpp
 ---

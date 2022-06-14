@@ -8,16 +8,16 @@ data:
     path: graph/tree/offline-lca.hpp
     title: "Offline LCA(\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\u901A\u7956\
       \u5148)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: other/printer.cpp
     title: "Printer(\u9AD8\u901F\u51FA\u529B)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: other/scanner.cpp
     title: "Scanner(\u9AD8\u901F\u5165\u529B)"
   - icon: ':heavy_check_mark:'
     path: structure/union-find/union-find.cpp
     title: Union-Find
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.cpp
     title: template/template.cpp
   _extendedRequiredBy: []

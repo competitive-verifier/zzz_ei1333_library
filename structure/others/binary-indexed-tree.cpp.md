@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: other/static-point-add-rectangle-sum.cpp
     title: Static Point Add Rectangle Sum
   - icon: ':heavy_check_mark:'
@@ -15,18 +15,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-dsl-2-b.test.cpp
     title: test/verify/aoj-dsl-2-b.test.cpp
-  - icon: ':x:'
-    path: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
-    title: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-point-add-rectangle-sum.test.cpp
     title: test/verify/yosupo-point-add-rectangle-sum.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/verify/yosupo-rectangle-sum-2.test.cpp
+    title: test/verify/yosupo-rectangle-sum-2.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-static-range-inversions-query.test.cpp
     title: test/verify/yosupo-static-range-inversions-query.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: docs/binary-indexed-tree.md
     document_title: Binary-Indexed-Tree(BIT)
@@ -75,13 +75,13 @@ data:
   - other/static-point-add-rectangle-sum.cpp
   - structure/wavelet/wavelet-matrix-point-add-rectangle-sum.cpp
   timestamp: '2022-02-04 23:35:17+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/yosupo-static-range-inversions-query.test.cpp
   - test/verify/yosupo-point-add-rectangle-sum.test.cpp
   - test/verify/aoj-2270.test.cpp
   - test/verify/aoj-dsl-2-b.test.cpp
-  - test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
+  - test/verify/yosupo-rectangle-sum-2.test.cpp
 documentation_of: structure/others/binary-indexed-tree.cpp
 layout: document
 redirect_from:

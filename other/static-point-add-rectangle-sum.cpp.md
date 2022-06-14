@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: structure/others/binary-indexed-tree.cpp
     title: Binary-Indexed-Tree(BIT)
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
-    title: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
-  _isVerificationFailed: true
+  - icon: ':heavy_check_mark:'
+    path: test/verify/yosupo-rectangle-sum-2.test.cpp
+    title: test/verify/yosupo-rectangle-sum-2.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: Static Point Add Rectangle Sum
     links: []
@@ -97,9 +97,9 @@ data:
   path: other/static-point-add-rectangle-sum.cpp
   requiredBy: []
   timestamp: '2022-06-14 00:08:39+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
+  - test/verify/yosupo-rectangle-sum-2.test.cpp
 documentation_of: other/static-point-add-rectangle-sum.cpp
 layout: document
 redirect_from:
