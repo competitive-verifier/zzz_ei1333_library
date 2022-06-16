@@ -113,8 +113,8 @@ data:
   isVerificationFile: false
   path: structure/heap/fibonacchi-heap.cpp
   requiredBy:
-  - graph/shortest-path/dijkstra-fibonacchi-heap.hpp
   - graph/mst/prim-fibonacchi-heap.hpp
+  - graph/shortest-path/dijkstra-fibonacchi-heap.hpp
   timestamp: '2020-08-20 17:25:40+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

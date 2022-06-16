@@ -4,8 +4,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: structure/others/binary-indexed-tree.cpp
     title: Binary-Indexed-Tree(BIT)
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: other/dynamic-point-add-rectangle-sum.cpp
+    title: Dynamic Point Add Rectangle Sum
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
+    title: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-rectangle-sum-2.test.cpp
     title: test/verify/yosupo-rectangle-sum-2.test.cpp
@@ -44,10 +50,11 @@ data:
     \ add_point(T x, T y, C w) {\n    points.emplace_back(Point{x, y, w});\n  }\n\n\
     \  // tatal weight of [l, r) * [d, u) points\n  void add_query(T l, T d, T r,\
     \ T u) {\n    queries.emplace_back(Query{l, d, r, u});\n  }\n\n  vector< C > calculate_queries()\
-    \ {\n    int n = (int) points.size();\n    int q = (int) queries.size();\n\n \
-    \   sort(points.begin(), points.end(), [](const Point &a, const Point &b) {\n\
-    \      return a.y < b.y;\n    });\n    vector< T > ys;\n    ys.reserve(n);\n \
-    \   for(Point &p: points) {\n      if(ys.empty() or ys.back() != p.y) ys.emplace_back(p.y);\n\
+    \ {\n    int n = (int) points.size();\n    int q = (int) queries.size();\n   \
+    \ vector< C > ans(q);\n    if(points.empty() or queries.empty()) {\n      return\
+    \ ans;\n    }\n    sort(points.begin(), points.end(), [](const Point &a, const\
+    \ Point &b) {\n      return a.y < b.y;\n    });\n    vector< T > ys;\n    ys.reserve(n);\n\
+    \    for(Point &p: points) {\n      if(ys.empty() or ys.back() != p.y) ys.emplace_back(p.y);\n\
     \      p.y = (int) ys.size() - 1;\n    }\n    ys.shrink_to_fit();\n\n    struct\
     \ Q {\n      T x;\n      int d, u;\n      bool type;\n      int idx;\n    };\n\
     \    vector< Q > qs;\n    qs.reserve(q + q);\n    for(int i = 0; i < q; i++) {\n\
@@ -57,11 +64,11 @@ data:
     \ d, u, true, i});\n    }\n    sort(points.begin(), points.end(), [](const Point\
     \ &a, const Point &b) {\n      return a.x < b.x;\n    });\n    sort(qs.begin(),\
     \ qs.end(), [](const Q &a, const Q &b) {\n      return a.x < b.x;\n    });\n \
-    \   vector< C > ans(q);\n    int j = 0;\n    BIT bit(ys.size());\n    for(auto\
-    \ &query: qs) {\n      while(j < n and points[j].x < query.x) {\n        bit.apply(points[j].y,\
-    \ points[j].w);\n        ++j;\n      }\n      if(query.type) ans[query.idx] +=\
-    \ bit.prod(query.d, query.u);\n      else ans[query.idx] -= bit.prod(query.d,\
-    \ query.u);\n    }\n    return ans;\n  }\n};\n"
+    \   int j = 0;\n    BIT bit(ys.size());\n    for(auto &query: qs) {\n      while(j\
+    \ < n and points[j].x < query.x) {\n        bit.apply(points[j].y, points[j].w);\n\
+    \        ++j;\n      }\n      if(query.type) ans[query.idx] += bit.prod(query.d,\
+    \ query.u);\n      else ans[query.idx] -= bit.prod(query.d, query.u);\n    }\n\
+    \    return ans;\n  }\n};\n"
   code: "#include \"../structure/others/binary-indexed-tree.cpp\"\n\n/**\n * @brief\
     \ Static Point Add Rectangle Sum\n */\ntemplate< typename T, typename C >\nstruct\
     \ StaticPointAddRectangleSum {\n  using BIT = BinaryIndexedTree< C >;\n\n  static_assert(is_integral<\
@@ -73,9 +80,10 @@ data:
     \ y, w});\n  }\n\n  // tatal weight of [l, r) * [d, u) points\n  void add_query(T\
     \ l, T d, T r, T u) {\n    queries.emplace_back(Query{l, d, r, u});\n  }\n\n \
     \ vector< C > calculate_queries() {\n    int n = (int) points.size();\n    int\
-    \ q = (int) queries.size();\n\n    sort(points.begin(), points.end(), [](const\
-    \ Point &a, const Point &b) {\n      return a.y < b.y;\n    });\n    vector< T\
-    \ > ys;\n    ys.reserve(n);\n    for(Point &p: points) {\n      if(ys.empty()\
+    \ q = (int) queries.size();\n    vector< C > ans(q);\n    if(points.empty() or\
+    \ queries.empty()) {\n      return ans;\n    }\n    sort(points.begin(), points.end(),\
+    \ [](const Point &a, const Point &b) {\n      return a.y < b.y;\n    });\n   \
+    \ vector< T > ys;\n    ys.reserve(n);\n    for(Point &p: points) {\n      if(ys.empty()\
     \ or ys.back() != p.y) ys.emplace_back(p.y);\n      p.y = (int) ys.size() - 1;\n\
     \    }\n    ys.shrink_to_fit();\n\n    struct Q {\n      T x;\n      int d, u;\n\
     \      bool type;\n      int idx;\n    };\n    vector< Q > qs;\n    qs.reserve(q\
@@ -85,20 +93,21 @@ data:
     \ d, u, false, i});\n      qs.emplace_back(Q{query.r, d, u, true, i});\n    }\n\
     \    sort(points.begin(), points.end(), [](const Point &a, const Point &b) {\n\
     \      return a.x < b.x;\n    });\n    sort(qs.begin(), qs.end(), [](const Q &a,\
-    \ const Q &b) {\n      return a.x < b.x;\n    });\n    vector< C > ans(q);\n \
-    \   int j = 0;\n    BIT bit(ys.size());\n    for(auto &query: qs) {\n      while(j\
-    \ < n and points[j].x < query.x) {\n        bit.apply(points[j].y, points[j].w);\n\
-    \        ++j;\n      }\n      if(query.type) ans[query.idx] += bit.prod(query.d,\
-    \ query.u);\n      else ans[query.idx] -= bit.prod(query.d, query.u);\n    }\n\
-    \    return ans;\n  }\n};\n"
+    \ const Q &b) {\n      return a.x < b.x;\n    });\n    int j = 0;\n    BIT bit(ys.size());\n\
+    \    for(auto &query: qs) {\n      while(j < n and points[j].x < query.x) {\n\
+    \        bit.apply(points[j].y, points[j].w);\n        ++j;\n      }\n      if(query.type)\
+    \ ans[query.idx] += bit.prod(query.d, query.u);\n      else ans[query.idx] -=\
+    \ bit.prod(query.d, query.u);\n    }\n    return ans;\n  }\n};\n"
   dependsOn:
   - structure/others/binary-indexed-tree.cpp
   isVerificationFile: false
   path: other/static-point-add-rectangle-sum.cpp
-  requiredBy: []
-  timestamp: '2022-06-14 00:08:39+09:00'
+  requiredBy:
+  - other/dynamic-point-add-rectangle-sum.cpp
+  timestamp: '2022-06-16 22:37:08+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
   - test/verify/yosupo-rectangle-sum-2.test.cpp
 documentation_of: other/static-point-add-rectangle-sum.cpp
 layout: document

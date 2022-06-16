@@ -3,6 +3,9 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: other/dynamic-point-add-rectangle-sum.cpp
+    title: Dynamic Point Add Rectangle Sum
+  - icon: ':heavy_check_mark:'
     path: other/static-point-add-rectangle-sum.cpp
     title: Static Point Add Rectangle Sum
   - icon: ':heavy_check_mark:'
@@ -15,6 +18,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-dsl-2-b.test.cpp
     title: test/verify/aoj-dsl-2-b.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
+    title: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-point-add-rectangle-sum.test.cpp
     title: test/verify/yosupo-point-add-rectangle-sum.test.cpp
@@ -72,16 +78,18 @@ data:
   isVerificationFile: false
   path: structure/others/binary-indexed-tree.cpp
   requiredBy:
+  - other/dynamic-point-add-rectangle-sum.cpp
   - other/static-point-add-rectangle-sum.cpp
   - structure/wavelet/wavelet-matrix-point-add-rectangle-sum.cpp
   timestamp: '2022-02-04 23:35:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
   - test/verify/yosupo-static-range-inversions-query.test.cpp
   - test/verify/yosupo-point-add-rectangle-sum.test.cpp
+  - test/verify/yosupo-rectangle-sum-2.test.cpp
   - test/verify/aoj-2270.test.cpp
   - test/verify/aoj-dsl-2-b.test.cpp
-  - test/verify/yosupo-rectangle-sum-2.test.cpp
 documentation_of: structure/others/binary-indexed-tree.cpp
 layout: document
 redirect_from:

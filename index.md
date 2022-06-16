@@ -638,6 +638,9 @@ data:
     - icon: ':warning:'
       path: other/dice.cpp
       title: other/dice.cpp
+    - icon: ':heavy_check_mark:'
+      path: other/dynamic-point-add-rectangle-sum.cpp
+      title: Dynamic Point Add Rectangle Sum
     - icon: ':warning:'
       path: other/mo-rollback.cpp
       title: other/mo-rollback.cpp
@@ -1447,6 +1450,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
       title: test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
+      title: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-point-add-rectangle-sum.test.cpp
       title: test/verify/yosupo-point-add-rectangle-sum.test.cpp
