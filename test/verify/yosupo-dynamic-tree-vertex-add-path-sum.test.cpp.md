@@ -91,16 +91,16 @@ data:
     \ lca(NP u, NP v) {\n    if(not is_connected(u, v)) return nullptr;\n    expose(u);\n\
     \    return expose(v);\n  }\n\n  NP get_kth(NP x, int k) {\n    expose(x);\n \
     \   while(x) {\n      push(x);\n      if(x->r && x->r->sz > k) {\n        x =\
-    \ x->r;\n      } else {\n        if(x->r) k -= x->r->sz;\n        if(k == 0) return\
-    \ x;\n        k -= 1;\n        x = x->l;\n      }\n    }\n    return nullptr;\n\
-    \  }\n\n  const T &query(NP u) {\n    expose(u);\n    return u->sum;\n  }\n\n\
-    \  const T &query(NP u, NP v) {\n    evert(u);\n    return query(v);\n  }\n\n\
-    \  void set_key(NP t, T v) {\n    expose(t);\n    t->key = v;\n    update(t);\n\
-    \  }\n};\n\ntemplate< typename T, typename F, typename S >\nLinkCutTree< T, F,\
-    \ S > get_link_cut_tree(const F &f, const S &s) {\n  return {f, s};\n}\n#line\
-    \ 6 \"test/verify/yosupo-dynamic-tree-vertex-add-path-sum.test.cpp\"\n\nint main()\
-    \ {\n  int N, Q;\n  cin >> N >> Q;\n  auto add = [](int64 a, int64 b) { return\
-    \ a + b; };\n  auto s = [](int64 a) { return a; };\n  auto lct = get_link_cut_tree<\
+    \ x->r;\n      } else {\n        if(x->r) k -= x->r->sz;\n        if(k == 0) {\n\
+    \          splay(x);\n          return x;\n        }\n        k -= 1;\n      \
+    \  x = x->l;\n      }\n    }\n    return nullptr;\n  }\n\n  const T &query(NP\
+    \ u) {\n    expose(u);\n    return u->sum;\n  }\n\n  const T &query(NP u, NP v)\
+    \ {\n    evert(u);\n    return query(v);\n  }\n\n  void set_key(NP t, T v) {\n\
+    \    expose(t);\n    t->key = v;\n    update(t);\n  }\n};\n\ntemplate< typename\
+    \ T, typename F, typename S >\nLinkCutTree< T, F, S > get_link_cut_tree(const\
+    \ F &f, const S &s) {\n  return {f, s};\n}\n#line 6 \"test/verify/yosupo-dynamic-tree-vertex-add-path-sum.test.cpp\"\
+    \n\nint main() {\n  int N, Q;\n  cin >> N >> Q;\n  auto add = [](int64 a, int64\
+    \ b) { return a + b; };\n  auto s = [](int64 a) { return a; };\n  auto lct = get_link_cut_tree<\
     \ int64 >(add, s);\n\n  vector< int64 > A(N);\n  cin >> A;\n\n  auto vs = lct.build(A);\n\
     \  for(int i = 1; i < N; i++) {\n    int a, b;\n    cin >> a >> b;\n    lct.evert(vs[a]);\n\
     \    lct.link(vs[a], vs[b]);\n  }\n\n  while(Q--) {\n    int T;\n    cin >> T;\n\
@@ -129,7 +129,7 @@ data:
   isVerificationFile: true
   path: test/verify/yosupo-dynamic-tree-vertex-add-path-sum.test.cpp
   requiredBy: []
-  timestamp: '2022-04-11 23:12:33+09:00'
+  timestamp: '2022-06-21 02:34:26+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/yosupo-dynamic-tree-vertex-add-path-sum.test.cpp

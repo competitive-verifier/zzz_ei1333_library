@@ -62,13 +62,13 @@ data:
     \ return nullptr;\n    expose(u);\n    return expose(v);\n  }\n\n  NP get_kth(NP\
     \ x, int k) {\n    expose(x);\n    while(x) {\n      push(x);\n      if(x->r &&\
     \ x->r->sz > k) {\n        x = x->r;\n      } else {\n        if(x->r) k -= x->r->sz;\n\
-    \        if(k == 0) return x;\n        k -= 1;\n        x = x->l;\n      }\n \
-    \   }\n    return nullptr;\n  }\n\n  const T &query(NP u) {\n    expose(u);\n\
-    \    return u->sum;\n  }\n\n  const T &query(NP u, NP v) {\n    evert(u);\n  \
-    \  return query(v);\n  }\n\n  void set_key(NP t, T v) {\n    expose(t);\n    t->key\
-    \ = v;\n    update(t);\n  }\n};\n\ntemplate< typename T, typename F, typename\
-    \ S >\nLinkCutTree< T, F, S > get_link_cut_tree(const F &f, const S &s) {\n  return\
-    \ {f, s};\n}\n"
+    \        if(k == 0) {\n          splay(x);\n          return x;\n        }\n \
+    \       k -= 1;\n        x = x->l;\n      }\n    }\n    return nullptr;\n  }\n\
+    \n  const T &query(NP u) {\n    expose(u);\n    return u->sum;\n  }\n\n  const\
+    \ T &query(NP u, NP v) {\n    evert(u);\n    return query(v);\n  }\n\n  void set_key(NP\
+    \ t, T v) {\n    expose(t);\n    t->key = v;\n    update(t);\n  }\n};\n\ntemplate<\
+    \ typename T, typename F, typename S >\nLinkCutTree< T, F, S > get_link_cut_tree(const\
+    \ F &f, const S &s) {\n  return {f, s};\n}\n"
   code: "/**\n * @brief Link Cut Tree\n * @docs docs/link-cut-tree.md\n */\ntemplate<\
     \ typename T, typename F, typename S >\nstruct LinkCutTree {\n\nprivate:\n  F\
     \ f;\n  S s;\n\n  struct Node {\n    Node *l, *r, *p;\n    T key, sum;\n    bool\
@@ -114,18 +114,18 @@ data:
     \ return nullptr;\n    expose(u);\n    return expose(v);\n  }\n\n  NP get_kth(NP\
     \ x, int k) {\n    expose(x);\n    while(x) {\n      push(x);\n      if(x->r &&\
     \ x->r->sz > k) {\n        x = x->r;\n      } else {\n        if(x->r) k -= x->r->sz;\n\
-    \        if(k == 0) return x;\n        k -= 1;\n        x = x->l;\n      }\n \
-    \   }\n    return nullptr;\n  }\n\n  const T &query(NP u) {\n    expose(u);\n\
-    \    return u->sum;\n  }\n\n  const T &query(NP u, NP v) {\n    evert(u);\n  \
-    \  return query(v);\n  }\n\n  void set_key(NP t, T v) {\n    expose(t);\n    t->key\
-    \ = v;\n    update(t);\n  }\n};\n\ntemplate< typename T, typename F, typename\
-    \ S >\nLinkCutTree< T, F, S > get_link_cut_tree(const F &f, const S &s) {\n  return\
-    \ {f, s};\n}\n"
+    \        if(k == 0) {\n          splay(x);\n          return x;\n        }\n \
+    \       k -= 1;\n        x = x->l;\n      }\n    }\n    return nullptr;\n  }\n\
+    \n  const T &query(NP u) {\n    expose(u);\n    return u->sum;\n  }\n\n  const\
+    \ T &query(NP u, NP v) {\n    evert(u);\n    return query(v);\n  }\n\n  void set_key(NP\
+    \ t, T v) {\n    expose(t);\n    t->key = v;\n    update(t);\n  }\n};\n\ntemplate<\
+    \ typename T, typename F, typename S >\nLinkCutTree< T, F, S > get_link_cut_tree(const\
+    \ F &f, const S &s) {\n  return {f, s};\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: structure/lct/link-cut-tree.cpp
   requiredBy: []
-  timestamp: '2022-04-11 23:12:33+09:00'
+  timestamp: '2022-06-21 02:34:26+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/yosupo-dynamic-tree-vertex-set-path-composite.test.cpp

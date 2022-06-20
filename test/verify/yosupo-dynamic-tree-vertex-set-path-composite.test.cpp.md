@@ -94,15 +94,15 @@ data:
     \ lca(NP u, NP v) {\n    if(not is_connected(u, v)) return nullptr;\n    expose(u);\n\
     \    return expose(v);\n  }\n\n  NP get_kth(NP x, int k) {\n    expose(x);\n \
     \   while(x) {\n      push(x);\n      if(x->r && x->r->sz > k) {\n        x =\
-    \ x->r;\n      } else {\n        if(x->r) k -= x->r->sz;\n        if(k == 0) return\
-    \ x;\n        k -= 1;\n        x = x->l;\n      }\n    }\n    return nullptr;\n\
-    \  }\n\n  const T &query(NP u) {\n    expose(u);\n    return u->sum;\n  }\n\n\
-    \  const T &query(NP u, NP v) {\n    evert(u);\n    return query(v);\n  }\n\n\
-    \  void set_key(NP t, T v) {\n    expose(t);\n    t->key = v;\n    update(t);\n\
-    \  }\n};\n\ntemplate< typename T, typename F, typename S >\nLinkCutTree< T, F,\
-    \ S > get_link_cut_tree(const F &f, const S &s) {\n  return {f, s};\n}\n#line\
-    \ 6 \"test/verify/yosupo-dynamic-tree-vertex-set-path-composite.test.cpp\"\n\n\
-    #line 1 \"math/combinatorics/mod-int.cpp\"\ntemplate< int mod >\nstruct ModInt\
+    \ x->r;\n      } else {\n        if(x->r) k -= x->r->sz;\n        if(k == 0) {\n\
+    \          splay(x);\n          return x;\n        }\n        k -= 1;\n      \
+    \  x = x->l;\n      }\n    }\n    return nullptr;\n  }\n\n  const T &query(NP\
+    \ u) {\n    expose(u);\n    return u->sum;\n  }\n\n  const T &query(NP u, NP v)\
+    \ {\n    evert(u);\n    return query(v);\n  }\n\n  void set_key(NP t, T v) {\n\
+    \    expose(t);\n    t->key = v;\n    update(t);\n  }\n};\n\ntemplate< typename\
+    \ T, typename F, typename S >\nLinkCutTree< T, F, S > get_link_cut_tree(const\
+    \ F &f, const S &s) {\n  return {f, s};\n}\n#line 6 \"test/verify/yosupo-dynamic-tree-vertex-set-path-composite.test.cpp\"\
+    \n\n#line 1 \"math/combinatorics/mod-int.cpp\"\ntemplate< int mod >\nstruct ModInt\
     \ {\n  int x;\n\n  ModInt() : x(0) {}\n\n  ModInt(int64_t y) : x(y >= 0 ? y %\
     \ mod : (mod - (-y) % mod) % mod) {}\n\n  ModInt &operator+=(const ModInt &p)\
     \ {\n    if((x += p.x) >= mod) x -= mod;\n    return *this;\n  }\n\n  ModInt &operator-=(const\
@@ -169,7 +169,7 @@ data:
   isVerificationFile: true
   path: test/verify/yosupo-dynamic-tree-vertex-set-path-composite.test.cpp
   requiredBy: []
-  timestamp: '2022-04-11 23:12:33+09:00'
+  timestamp: '2022-06-21 02:34:26+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/yosupo-dynamic-tree-vertex-set-path-composite.test.cpp
