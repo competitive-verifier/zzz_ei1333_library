@@ -62,15 +62,16 @@ data:
     \ {\n          e.cap -= d;\n          graph[e.to][e.rev].cap += d;\n         \
     \ return d;\n        }\n      }\n    }\n    return 0;\n  }\n\n  flow_t max_flow(int\
     \ s, int t) {\n    flow_t flow = 0;\n    for(flow_t f; (f = find_augment_path(s,\
-    \ t, INF)) > 0; timestamp++) {\n      flow += f;\n    }\n    return flow;\n  }\n\
-    \n  void output() {\n    for(int i = 0; i < graph.size(); i++) {\n      for(auto\
-    \ &e : graph[i]) {\n        if(e.isrev) continue;\n        auto &rev_e = graph[e.to][e.rev];\n\
-    \        cout << i << \"->\" << e.to << \" (flow: \" << rev_e.cap << \"/\" <<\
-    \ e.cap + rev_e.cap << \")\" << endl;\n      }\n    }\n  }\n};\n#line 6 \"test/verify/aoj-grl-6-a-2.test.cpp\"\
-    \n\nint main() {\n  int V, E;\n  scanf(\"%d %d\", &V, &E);\n  FordFulkerson< int\
-    \ > g(V);\n  for(int i = 0; i < E; i++) {\n    int a, b, c;\n    scanf(\"%d %d\
-    \ %d\", &a, &b, &c);\n    g.add_edge(a, b, c);\n  }\n  printf(\"%d\\n\", g.max_flow(0,\
-    \ V - 1));\n}\n"
+    \ t, INF)) > 0; timestamp++) {\n      flow += f;\n    }\n    timestamp++;\n  \
+    \  return flow;\n  }\n\n  void output() {\n    for(int i = 0; i < graph.size();\
+    \ i++) {\n      for(auto &e : graph[i]) {\n        if(e.isrev) continue;\n   \
+    \     auto &rev_e = graph[e.to][e.rev];\n        cout << i << \"->\" << e.to <<\
+    \ \" (flow: \" << rev_e.cap << \"/\" << e.cap + rev_e.cap << \")\" << endl;\n\
+    \      }\n    }\n  }\n};\n#line 6 \"test/verify/aoj-grl-6-a-2.test.cpp\"\n\nint\
+    \ main() {\n  int V, E;\n  scanf(\"%d %d\", &V, &E);\n  FordFulkerson< int > g(V);\n\
+    \  for(int i = 0; i < E; i++) {\n    int a, b, c;\n    scanf(\"%d %d %d\", &a,\
+    \ &b, &c);\n    g.add_edge(a, b, c);\n  }\n  printf(\"%d\\n\", g.max_flow(0, V\
+    \ - 1));\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_A\"\
     \n\n#include \"../../template/template.cpp\"\n\n#include \"../../graph/flow/ford-fulkerson.hpp\"\
     \n\nint main() {\n  int V, E;\n  scanf(\"%d %d\", &V, &E);\n  FordFulkerson< int\
@@ -83,7 +84,7 @@ data:
   isVerificationFile: true
   path: test/verify/aoj-grl-6-a-2.test.cpp
   requiredBy: []
-  timestamp: '2021-08-14 14:18:51+09:00'
+  timestamp: '2022-06-21 15:19:19+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/aoj-grl-6-a-2.test.cpp

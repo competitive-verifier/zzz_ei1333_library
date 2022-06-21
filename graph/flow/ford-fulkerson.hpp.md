@@ -29,11 +29,12 @@ data:
     \ {\n          e.cap -= d;\n          graph[e.to][e.rev].cap += d;\n         \
     \ return d;\n        }\n      }\n    }\n    return 0;\n  }\n\n  flow_t max_flow(int\
     \ s, int t) {\n    flow_t flow = 0;\n    for(flow_t f; (f = find_augment_path(s,\
-    \ t, INF)) > 0; timestamp++) {\n      flow += f;\n    }\n    return flow;\n  }\n\
-    \n  void output() {\n    for(int i = 0; i < graph.size(); i++) {\n      for(auto\
-    \ &e : graph[i]) {\n        if(e.isrev) continue;\n        auto &rev_e = graph[e.to][e.rev];\n\
-    \        cout << i << \"->\" << e.to << \" (flow: \" << rev_e.cap << \"/\" <<\
-    \ e.cap + rev_e.cap << \")\" << endl;\n      }\n    }\n  }\n};\n"
+    \ t, INF)) > 0; timestamp++) {\n      flow += f;\n    }\n    timestamp++;\n  \
+    \  return flow;\n  }\n\n  void output() {\n    for(int i = 0; i < graph.size();\
+    \ i++) {\n      for(auto &e : graph[i]) {\n        if(e.isrev) continue;\n   \
+    \     auto &rev_e = graph[e.to][e.rev];\n        cout << i << \"->\" << e.to <<\
+    \ \" (flow: \" << rev_e.cap << \"/\" << e.cap + rev_e.cap << \")\" << endl;\n\
+    \      }\n    }\n  }\n};\n"
   code: "/**\n * @brief Ford Fulkerson(\u6700\u5927\u6D41)\n * @docs docs/ford-fulkerson.md\n\
     \ */\ntemplate< typename flow_t >\nstruct FordFulkerson {\n  struct edge {\n \
     \   int to;\n    flow_t cap;\n    int rev;\n    bool isrev;\n    int idx;\n  };\n\
@@ -50,16 +51,16 @@ data:
     \ += d;\n          return d;\n        }\n      }\n    }\n    return 0;\n  }\n\n\
     \  flow_t max_flow(int s, int t) {\n    flow_t flow = 0;\n    for(flow_t f; (f\
     \ = find_augment_path(s, t, INF)) > 0; timestamp++) {\n      flow += f;\n    }\n\
-    \    return flow;\n  }\n\n  void output() {\n    for(int i = 0; i < graph.size();\
-    \ i++) {\n      for(auto &e : graph[i]) {\n        if(e.isrev) continue;\n   \
-    \     auto &rev_e = graph[e.to][e.rev];\n        cout << i << \"->\" << e.to <<\
-    \ \" (flow: \" << rev_e.cap << \"/\" << e.cap + rev_e.cap << \")\" << endl;\n\
-    \      }\n    }\n  }\n};\n"
+    \    timestamp++;\n    return flow;\n  }\n\n  void output() {\n    for(int i =\
+    \ 0; i < graph.size(); i++) {\n      for(auto &e : graph[i]) {\n        if(e.isrev)\
+    \ continue;\n        auto &rev_e = graph[e.to][e.rev];\n        cout << i << \"\
+    ->\" << e.to << \" (flow: \" << rev_e.cap << \"/\" << e.cap + rev_e.cap << \"\
+    )\" << endl;\n      }\n    }\n  }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: graph/flow/ford-fulkerson.hpp
   requiredBy: []
-  timestamp: '2021-08-14 14:18:51+09:00'
+  timestamp: '2022-06-21 15:19:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/aoj-grl-6-a-2.test.cpp
