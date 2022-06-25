@@ -22,7 +22,7 @@ data:
     \ Binary-Indexed-Tree(BIT)\n * @docs docs/binary-indexed-tree.md\n */\ntemplate<\
     \ typename T >\nstruct BinaryIndexedTree {\nprivate:\n  int n;\n  vector< T >\
     \ data;\n\npublic:\n  BinaryIndexedTree() = default;\n\n  explicit BinaryIndexedTree(int\
-    \ n) : n(n) {\n    data.assign(n + 1, 0);\n  }\n\n  explicit BinaryIndexedTree(const\
+    \ n) : n(n) {\n    data.assign(n + 1, T());\n  }\n\n  explicit BinaryIndexedTree(const\
     \ vector< T > &v) :\n      BinaryIndexedTree((int) v.size()) {\n    build(v);\n\
     \  }\n\n  void build(const vector< T > &v) {\n    assert(n == (int) v.size());\n\
     \    for(int i = 1; i <= n; i++) data[i] = v[i - 1];\n    for(int i = 1; i <=\
@@ -124,7 +124,7 @@ data:
   isVerificationFile: false
   path: other/dynamic-point-add-rectangle-sum.cpp
   requiredBy: []
-  timestamp: '2022-06-16 22:37:08+09:00'
+  timestamp: '2022-06-25 20:28:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/yosupo-point-add-rectangle-sum-3.test.cpp

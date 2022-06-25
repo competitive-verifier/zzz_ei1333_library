@@ -669,6 +669,9 @@ data:
       path: other/static-point-add-rectangle-sum.cpp
       title: Static Point Add Rectangle Sum
     - icon: ':warning:'
+      path: other/static-rectangle-add-rectangle-sum.cpp
+      title: Static Rectangle Add Rectangle Sum
+    - icon: ':warning:'
       path: other/timer.cpp
       title: "Timer(\u30BF\u30A4\u30DE\u30FC)"
     - icon: ':heavy_check_mark:'

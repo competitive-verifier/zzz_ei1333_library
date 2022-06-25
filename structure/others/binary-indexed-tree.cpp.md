@@ -8,6 +8,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: other/static-point-add-rectangle-sum.cpp
     title: Static Point Add Rectangle Sum
+  - icon: ':warning:'
+    path: other/static-rectangle-add-rectangle-sum.cpp
+    title: Static Rectangle Add Rectangle Sum
   - icon: ':heavy_check_mark:'
     path: structure/wavelet/wavelet-matrix-point-add-rectangle-sum.cpp
     title: Wavelet Matrix Point Add Rectangle Sum
@@ -41,7 +44,7 @@ data:
     \ Binary-Indexed-Tree(BIT)\n * @docs docs/binary-indexed-tree.md\n */\ntemplate<\
     \ typename T >\nstruct BinaryIndexedTree {\nprivate:\n  int n;\n  vector< T >\
     \ data;\n\npublic:\n  BinaryIndexedTree() = default;\n\n  explicit BinaryIndexedTree(int\
-    \ n) : n(n) {\n    data.assign(n + 1, 0);\n  }\n\n  explicit BinaryIndexedTree(const\
+    \ n) : n(n) {\n    data.assign(n + 1, T());\n  }\n\n  explicit BinaryIndexedTree(const\
     \ vector< T > &v) :\n      BinaryIndexedTree((int) v.size()) {\n    build(v);\n\
     \  }\n\n  void build(const vector< T > &v) {\n    assert(n == (int) v.size());\n\
     \    for(int i = 1; i <= n; i++) data[i] = v[i - 1];\n    for(int i = 1; i <=\
@@ -59,7 +62,7 @@ data:
   code: "/**\n * @brief Binary-Indexed-Tree(BIT)\n * @docs docs/binary-indexed-tree.md\n\
     \ */\ntemplate< typename T >\nstruct BinaryIndexedTree {\nprivate:\n  int n;\n\
     \  vector< T > data;\n\npublic:\n  BinaryIndexedTree() = default;\n\n  explicit\
-    \ BinaryIndexedTree(int n) : n(n) {\n    data.assign(n + 1, 0);\n  }\n\n  explicit\
+    \ BinaryIndexedTree(int n) : n(n) {\n    data.assign(n + 1, T());\n  }\n\n  explicit\
     \ BinaryIndexedTree(const vector< T > &v) :\n      BinaryIndexedTree((int) v.size())\
     \ {\n    build(v);\n  }\n\n  void build(const vector< T > &v) {\n    assert(n\
     \ == (int) v.size());\n    for(int i = 1; i <= n; i++) data[i] = v[i - 1];\n \
@@ -80,8 +83,9 @@ data:
   requiredBy:
   - structure/wavelet/wavelet-matrix-point-add-rectangle-sum.cpp
   - other/dynamic-point-add-rectangle-sum.cpp
+  - other/static-rectangle-add-rectangle-sum.cpp
   - other/static-point-add-rectangle-sum.cpp
-  timestamp: '2022-02-04 23:35:17+09:00'
+  timestamp: '2022-06-25 20:28:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
