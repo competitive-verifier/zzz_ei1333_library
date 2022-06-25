@@ -96,7 +96,7 @@ data:
     \  }\n\n  template< typename T >\n  void write_single(const vector< T > &s) {\n\
     \    for(size_t i = 0; i < s.size(); i++) {\n      if(i) write_single(' ');\n\
     \      write_single(s[i]);\n    }\n  }\n};\n#line 7 \"test/verify/yosupo-tree-decomposition-width-2.test.cpp\"\
-    \n\n#line 1 \"structure/union-find/union-find.cpp\"\n/**\n * @brief Union-Find\n\
+    \n\n#line 2 \"structure/union-find/union-find.cpp\"\n\n/**\n * @brief Union-Find\n\
     \ * @docs docs/union-find.md\n */\nstruct UnionFind {\n  vector< int > data;\n\
     \n  UnionFind() = default;\n\n  explicit UnionFind(size_t sz) : data(sz, -1) {}\n\
     \n  bool unite(int x, int y) {\n    x = find(x), y = find(y);\n    if(x == y)\
@@ -198,7 +198,7 @@ data:
   isVerificationFile: true
   path: test/verify/yosupo-tree-decomposition-width-2.test.cpp
   requiredBy: []
-  timestamp: '2022-05-09 03:40:15+09:00'
+  timestamp: '2022-06-25 18:23:01+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/yosupo-tree-decomposition-width-2.test.cpp

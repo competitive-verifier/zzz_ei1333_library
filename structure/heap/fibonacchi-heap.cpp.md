@@ -113,13 +113,13 @@ data:
   isVerificationFile: false
   path: structure/heap/fibonacchi-heap.cpp
   requiredBy:
-  - graph/mst/prim-fibonacchi-heap.hpp
   - graph/shortest-path/dijkstra-fibonacchi-heap.hpp
+  - graph/mst/prim-fibonacchi-heap.hpp
   timestamp: '2020-08-20 17:25:40+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/verify/aoj-grl-2-a-4.test.cpp
   - test/verify/aoj-grl-1-a-2.test.cpp
+  - test/verify/aoj-grl-2-a-4.test.cpp
 documentation_of: structure/heap/fibonacchi-heap.cpp
 layout: document
 redirect_from:

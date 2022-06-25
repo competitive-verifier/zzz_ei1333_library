@@ -204,8 +204,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/yosupo-bipartitematching.test.cpp
-  - test/verify/yosupo-bipartite-edge-coloring.test.cpp
   - test/verify/aoj-3198.test.cpp
+  - test/verify/yosupo-bipartite-edge-coloring.test.cpp
   - test/verify/aoj-0334.test.cpp
 documentation_of: graph/flow/bipartite-flow.hpp
 layout: document

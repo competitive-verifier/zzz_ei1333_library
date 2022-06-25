@@ -40,8 +40,8 @@ data:
     \ b, c);\n      else add_edge(a, b, c);\n    }\n  }\n\n  inline vector< Edge<\
     \ T > > &operator[](const int &k) {\n    return g[k];\n  }\n\n  inline const vector<\
     \ Edge< T > > &operator[](const int &k) const {\n    return g[k];\n  }\n};\n\n\
-    template< typename T = int >\nusing Edges = vector< Edge< T > >;\n#line 1 \"structure/union-find/union-find.cpp\"\
-    \n/**\n * @brief Union-Find\n * @docs docs/union-find.md\n */\nstruct UnionFind\
+    template< typename T = int >\nusing Edges = vector< Edge< T > >;\n#line 2 \"structure/union-find/union-find.cpp\"\
+    \n\n/**\n * @brief Union-Find\n * @docs docs/union-find.md\n */\nstruct UnionFind\
     \ {\n  vector< int > data;\n\n  UnionFind() = default;\n\n  explicit UnionFind(size_t\
     \ sz) : data(sz, -1) {}\n\n  bool unite(int x, int y) {\n    x = find(x), y =\
     \ find(y);\n    if(x == y) return false;\n    if(data[x] > data[y]) swap(x, y);\n\
@@ -76,11 +76,11 @@ data:
   isVerificationFile: false
   path: graph/mst/kruskal.hpp
   requiredBy: []
-  timestamp: '2022-05-09 03:40:15+09:00'
+  timestamp: '2022-06-25 18:23:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/verify/aoj-grl-2-a-2.test.cpp
   - test/verify/yosupo-manhattanmst.test.cpp
+  - test/verify/aoj-grl-2-a-2.test.cpp
 documentation_of: graph/mst/kruskal.hpp
 layout: document
 redirect_from:

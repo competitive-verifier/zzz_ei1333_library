@@ -56,8 +56,8 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-bipartite-edge-coloring.test.cpp\"\
-    \n\n\n#line 2 \"graph/others/bipartite-graph-edge-coloring.hpp\"\n\n#line 1 \"\
-    structure/union-find/union-find.cpp\"\n/**\n * @brief Union-Find\n * @docs docs/union-find.md\n\
+    \n\n\n#line 2 \"graph/others/bipartite-graph-edge-coloring.hpp\"\n\n#line 2 \"\
+    structure/union-find/union-find.cpp\"\n\n/**\n * @brief Union-Find\n * @docs docs/union-find.md\n\
     \ */\nstruct UnionFind {\n  vector< int > data;\n\n  UnionFind() = default;\n\n\
     \  explicit UnionFind(size_t sz) : data(sz, -1) {}\n\n  bool unite(int x, int\
     \ y) {\n    x = find(x), y = find(y);\n    if(x == y) return false;\n    if(data[x]\
@@ -152,21 +152,22 @@ data:
     \      if(c < 0 || (alive[c] == 1 && used[c] != (int)time_stamp && find_augment_path(c)))\
     \ {\n        match_r[b] = a;\n        match_l[a] = b;\n        return true;\n\
     \      }\n    }\n    return false;\n  }\n};\n#line 2 \"graph/others/eulerian-trail.hpp\"\
-    \n\n/**\n * @brief Eulerian Trail(\u30AA\u30A4\u30E9\u30FC\u8DEF)\n * @docs docs/eulerian-trail.md\n\
-    \ */\ntemplate< bool directed >\nstruct EulerianTrail {\n  vector< vector< pair<\
-    \ int, int > > > g;\n  vector< pair< int, int > > es;\n  int M;\n  vector< int\
-    \ > used_vertex, used_edge, deg;\n\n  explicit EulerianTrail(int V) : g(V), M(0),\
-    \ used_vertex(V), deg(V) {}\n\n  void add_edge(int a, int b) {\n    es.emplace_back(a,\
-    \ b);\n    g[a].emplace_back(b, M);\n    if(directed) {\n      deg[a]++;\n   \
-    \   deg[b]--;\n    } else {\n      g[b].emplace_back(a, M);\n      deg[a]++;\n\
-    \      deg[b]++;\n    }\n    M++;\n  }\n\n  pair< int, int > get_edge(int idx)\
-    \ const {\n    return es[idx];\n  }\n\n  vector< vector< int > > enumerate_eulerian_trail()\
-    \ {\n    if(directed) {\n      for(auto &p : deg) if(p != 0) return {};\n    }\
-    \ else {\n      for(auto &p : deg) if(p & 1) return {};\n    }\n    used_edge.assign(M,\
-    \ 0);\n    vector< vector< int > > ret;\n    for(int i = 0; i < (int) g.size();\
-    \ i++) {\n      if(g[i].empty() || used_vertex[i]) continue;\n      ret.emplace_back(go(i));\n\
-    \    }\n    return ret;\n  }\n\n  vector< vector< int > > enumerate_semi_eulerian_trail()\
-    \ {\n    UnionFind uf(g.size());\n    for(auto &p : es) uf.unite(p.first, p.second);\n\
+    \n\n#line 4 \"graph/others/eulerian-trail.hpp\"\n\n/**\n * @brief Eulerian Trail(\u30AA\
+    \u30A4\u30E9\u30FC\u8DEF)\n * @docs docs/eulerian-trail.md\n */\ntemplate< bool\
+    \ directed >\nstruct EulerianTrail {\n  vector< vector< pair< int, int > > > g;\n\
+    \  vector< pair< int, int > > es;\n  int M;\n  vector< int > used_vertex, used_edge,\
+    \ deg;\n\n  explicit EulerianTrail(int V) : g(V), M(0), used_vertex(V), deg(V)\
+    \ {}\n\n  void add_edge(int a, int b) {\n    es.emplace_back(a, b);\n    g[a].emplace_back(b,\
+    \ M);\n    if(directed) {\n      deg[a]++;\n      deg[b]--;\n    } else {\n  \
+    \    g[b].emplace_back(a, M);\n      deg[a]++;\n      deg[b]++;\n    }\n    M++;\n\
+    \  }\n\n  pair< int, int > get_edge(int idx) const {\n    return es[idx];\n  }\n\
+    \n  vector< vector< int > > enumerate_eulerian_trail() {\n    if(directed) {\n\
+    \      for(auto &p : deg) if(p != 0) return {};\n    } else {\n      for(auto\
+    \ &p : deg) if(p & 1) return {};\n    }\n    used_edge.assign(M, 0);\n    vector<\
+    \ vector< int > > ret;\n    for(int i = 0; i < (int) g.size(); i++) {\n      if(g[i].empty()\
+    \ || used_vertex[i]) continue;\n      ret.emplace_back(go(i));\n    }\n    return\
+    \ ret;\n  }\n\n  vector< vector< int > > enumerate_semi_eulerian_trail() {\n \
+    \   UnionFind uf(g.size());\n    for(auto &p : es) uf.unite(p.first, p.second);\n\
     \    vector< vector< int > > group(g.size());\n    for(int i = 0; i < (int) g.size();\
     \ i++) group[uf.find(i)].emplace_back(i);\n    vector< vector< int > > ret;\n\
     \    used_edge.assign(M, 0);\n    for(auto &vs : group) {\n      if(vs.empty())\
@@ -258,7 +259,7 @@ data:
   isVerificationFile: true
   path: test/verify/yosupo-bipartite-edge-coloring.test.cpp
   requiredBy: []
-  timestamp: '2022-05-09 03:40:15+09:00'
+  timestamp: '2022-06-25 18:23:01+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/yosupo-bipartite-edge-coloring.test.cpp

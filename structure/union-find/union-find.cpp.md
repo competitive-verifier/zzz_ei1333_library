@@ -20,6 +20,9 @@ data:
     title: "Bipartite Graph Edge Coloring(\u4E8C\u90E8\u30B0\u30E9\u30D5\u306E\u8FBA\
       \u5F69\u8272)"
   - icon: ':heavy_check_mark:'
+    path: graph/others/eulerian-trail.hpp
+    title: "Eulerian Trail(\u30AA\u30A4\u30E9\u30FC\u8DEF)"
+  - icon: ':heavy_check_mark:'
     path: graph/tree/offline-lca.hpp
     title: "Offline LCA(\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\u901A\u7956\
       \u5148)"
@@ -79,60 +82,61 @@ data:
     _deprecated_at_docs: docs/union-find.md
     document_title: Union-Find
     links: []
-  bundledCode: "#line 1 \"structure/union-find/union-find.cpp\"\n/**\n * @brief Union-Find\n\
-    \ * @docs docs/union-find.md\n */\nstruct UnionFind {\n  vector< int > data;\n\
-    \n  UnionFind() = default;\n\n  explicit UnionFind(size_t sz) : data(sz, -1) {}\n\
-    \n  bool unite(int x, int y) {\n    x = find(x), y = find(y);\n    if(x == y)\
-    \ return false;\n    if(data[x] > data[y]) swap(x, y);\n    data[x] += data[y];\n\
-    \    data[y] = x;\n    return true;\n  }\n\n  int find(int k) {\n    if(data[k]\
-    \ < 0) return (k);\n    return data[k] = find(data[k]);\n  }\n\n  int size(int\
-    \ k) {\n    return -data[find(k)];\n  }\n\n  bool same(int x, int y) {\n    return\
-    \ find(x) == find(y);\n  }\n\n  vector< vector< int > > groups() {\n    int n\
-    \ = (int) data.size();\n    vector< vector< int > > ret(n);\n    for(int i = 0;\
-    \ i < n; i++) {\n      ret[find(i)].emplace_back(i);\n    }\n    ret.erase(remove_if(begin(ret),\
-    \ end(ret), [&](const vector< int > &v) {\n      return v.empty();\n    }), end(ret));\n\
-    \    return ret;\n  }\n};\n"
-  code: "/**\n * @brief Union-Find\n * @docs docs/union-find.md\n */\nstruct UnionFind\
-    \ {\n  vector< int > data;\n\n  UnionFind() = default;\n\n  explicit UnionFind(size_t\
-    \ sz) : data(sz, -1) {}\n\n  bool unite(int x, int y) {\n    x = find(x), y =\
-    \ find(y);\n    if(x == y) return false;\n    if(data[x] > data[y]) swap(x, y);\n\
-    \    data[x] += data[y];\n    data[y] = x;\n    return true;\n  }\n\n  int find(int\
-    \ k) {\n    if(data[k] < 0) return (k);\n    return data[k] = find(data[k]);\n\
-    \  }\n\n  int size(int k) {\n    return -data[find(k)];\n  }\n\n  bool same(int\
-    \ x, int y) {\n    return find(x) == find(y);\n  }\n\n  vector< vector< int >\
-    \ > groups() {\n    int n = (int) data.size();\n    vector< vector< int > > ret(n);\n\
-    \    for(int i = 0; i < n; i++) {\n      ret[find(i)].emplace_back(i);\n    }\n\
-    \    ret.erase(remove_if(begin(ret), end(ret), [&](const vector< int > &v) {\n\
+  bundledCode: "#line 2 \"structure/union-find/union-find.cpp\"\n\n/**\n * @brief\
+    \ Union-Find\n * @docs docs/union-find.md\n */\nstruct UnionFind {\n  vector<\
+    \ int > data;\n\n  UnionFind() = default;\n\n  explicit UnionFind(size_t sz) :\
+    \ data(sz, -1) {}\n\n  bool unite(int x, int y) {\n    x = find(x), y = find(y);\n\
+    \    if(x == y) return false;\n    if(data[x] > data[y]) swap(x, y);\n    data[x]\
+    \ += data[y];\n    data[y] = x;\n    return true;\n  }\n\n  int find(int k) {\n\
+    \    if(data[k] < 0) return (k);\n    return data[k] = find(data[k]);\n  }\n\n\
+    \  int size(int k) {\n    return -data[find(k)];\n  }\n\n  bool same(int x, int\
+    \ y) {\n    return find(x) == find(y);\n  }\n\n  vector< vector< int > > groups()\
+    \ {\n    int n = (int) data.size();\n    vector< vector< int > > ret(n);\n   \
+    \ for(int i = 0; i < n; i++) {\n      ret[find(i)].emplace_back(i);\n    }\n \
+    \   ret.erase(remove_if(begin(ret), end(ret), [&](const vector< int > &v) {\n\
     \      return v.empty();\n    }), end(ret));\n    return ret;\n  }\n};\n"
+  code: "#pragma once\n\n/**\n * @brief Union-Find\n * @docs docs/union-find.md\n\
+    \ */\nstruct UnionFind {\n  vector< int > data;\n\n  UnionFind() = default;\n\n\
+    \  explicit UnionFind(size_t sz) : data(sz, -1) {}\n\n  bool unite(int x, int\
+    \ y) {\n    x = find(x), y = find(y);\n    if(x == y) return false;\n    if(data[x]\
+    \ > data[y]) swap(x, y);\n    data[x] += data[y];\n    data[y] = x;\n    return\
+    \ true;\n  }\n\n  int find(int k) {\n    if(data[k] < 0) return (k);\n    return\
+    \ data[k] = find(data[k]);\n  }\n\n  int size(int k) {\n    return -data[find(k)];\n\
+    \  }\n\n  bool same(int x, int y) {\n    return find(x) == find(y);\n  }\n\n \
+    \ vector< vector< int > > groups() {\n    int n = (int) data.size();\n    vector<\
+    \ vector< int > > ret(n);\n    for(int i = 0; i < n; i++) {\n      ret[find(i)].emplace_back(i);\n\
+    \    }\n    ret.erase(remove_if(begin(ret), end(ret), [&](const vector< int >\
+    \ &v) {\n      return v.empty();\n    }), end(ret));\n    return ret;\n  }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: structure/union-find/union-find.cpp
   requiredBy:
-  - other/offline-rmq.cpp
   - other/mo-tree.cpp
-  - graph/tree/offline-lca.hpp
+  - other/offline-rmq.cpp
+  - graph/connected-components/three-edge-connected-components.hpp
+  - graph/connected-components/incremental-bridge-connectivity.hpp
   - graph/others/bipartite-graph-edge-coloring.hpp
+  - graph/others/eulerian-trail.hpp
+  - graph/tree/offline-lca.hpp
   - graph/mst/boruvka.hpp
   - graph/mst/kruskal.hpp
-  - graph/connected-components/incremental-bridge-connectivity.hpp
-  - graph/connected-components/three-edge-connected-components.hpp
-  timestamp: '2022-05-09 03:40:15+09:00'
+  timestamp: '2022-06-25 18:23:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/verify/yosupo-two-edge-connected-components-2.test.cpp
+  - test/verify/aoj-dsl-1-a.test.cpp
+  - test/verify/yosupo-manhattanmst.test.cpp
+  - test/verify/aoj-grl-2-a-2.test.cpp
   - test/verify/yosupo-staticrmq-6.test.cpp
   - test/verify/yosupo-lca-4.test.cpp
-  - test/verify/yosupo-bipartite-edge-coloring.test.cpp
-  - test/verify/yosupo-three-edge-connected-components.test.cpp
-  - test/verify/aoj-grl-2-a-2.test.cpp
   - test/verify/yosupo-tree-decomposition-width-2.test.cpp
-  - test/verify/aoj-dsl-1-a.test.cpp
-  - test/verify/aoj-3139.test.cpp
-  - test/verify/aoj-grl-2-a-3.test.cpp
   - test/verify/aoj-2270.test.cpp
-  - test/verify/yosupo-manhattanmst.test.cpp
-  - test/verify/aoj-2821.test.cpp
+  - test/verify/yosupo-two-edge-connected-components-2.test.cpp
   - test/verify/yukicoder-583.test.cpp
+  - test/verify/aoj-2821.test.cpp
+  - test/verify/aoj-grl-2-a-3.test.cpp
+  - test/verify/yosupo-three-edge-connected-components.test.cpp
+  - test/verify/aoj-3139.test.cpp
+  - test/verify/yosupo-bipartite-edge-coloring.test.cpp
 documentation_of: structure/union-find/union-find.cpp
 layout: document
 redirect_from:

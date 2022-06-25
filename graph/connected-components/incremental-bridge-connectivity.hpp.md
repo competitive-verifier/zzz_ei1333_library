@@ -25,7 +25,7 @@ data:
     links:
     - https://scrapbox.io/data-structures/Incremental_Bridge-Connectivity
   bundledCode: "#line 2 \"graph/connected-components/incremental-bridge-connectivity.hpp\"\
-    \n\n#line 1 \"structure/union-find/union-find.cpp\"\n/**\n * @brief Union-Find\n\
+    \n\n#line 2 \"structure/union-find/union-find.cpp\"\n\n/**\n * @brief Union-Find\n\
     \ * @docs docs/union-find.md\n */\nstruct UnionFind {\n  vector< int > data;\n\
     \n  UnionFind() = default;\n\n  explicit UnionFind(size_t sz) : data(sz, -1) {}\n\
     \n  bool unite(int x, int y) {\n    x = find(x), y = find(y);\n    if(x == y)\
@@ -85,7 +85,7 @@ data:
   path: graph/connected-components/incremental-bridge-connectivity.hpp
   requiredBy:
   - graph/connected-components/three-edge-connected-components.hpp
-  timestamp: '2022-05-09 03:40:15+09:00'
+  timestamp: '2022-06-25 18:23:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/yosupo-two-edge-connected-components-2.test.cpp

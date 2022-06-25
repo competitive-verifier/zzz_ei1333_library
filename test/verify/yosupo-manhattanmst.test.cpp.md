@@ -85,8 +85,8 @@ data:
     \          if(xs[i] - xs[j] < ys[i] - ys[j]) break;\n          ret.emplace_back(i,\
     \ j, abs(xs[i] - xs[j]) + abs(ys[i] - ys[j]));\n        }\n        idx[-ys[i]]\
     \ = i;\n      }\n      swap(xs, ys);\n    }\n    for(int i = 0; i < n; i++) xs[i]\
-    \ *= -1;\n  }\n  return ret;\n}\n#line 2 \"graph/mst/kruskal.hpp\"\n\n#line 1\
-    \ \"structure/union-find/union-find.cpp\"\n/**\n * @brief Union-Find\n * @docs\
+    \ *= -1;\n  }\n  return ret;\n}\n#line 2 \"graph/mst/kruskal.hpp\"\n\n#line 2\
+    \ \"structure/union-find/union-find.cpp\"\n\n/**\n * @brief Union-Find\n * @docs\
     \ docs/union-find.md\n */\nstruct UnionFind {\n  vector< int > data;\n\n  UnionFind()\
     \ = default;\n\n  explicit UnionFind(size_t sz) : data(sz, -1) {}\n\n  bool unite(int\
     \ x, int y) {\n    x = find(x), y = find(y);\n    if(x == y) return false;\n \
@@ -127,7 +127,7 @@ data:
   isVerificationFile: true
   path: test/verify/yosupo-manhattanmst.test.cpp
   requiredBy: []
-  timestamp: '2022-05-09 03:40:15+09:00'
+  timestamp: '2022-06-25 18:23:01+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/yosupo-manhattanmst.test.cpp

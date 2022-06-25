@@ -49,20 +49,20 @@ data:
     \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yukicoder-583.test.cpp\"\
-    \n\n#line 1 \"structure/union-find/union-find.cpp\"\n/**\n * @brief Union-Find\n\
-    \ * @docs docs/union-find.md\n */\nstruct UnionFind {\n  vector< int > data;\n\
-    \n  UnionFind() = default;\n\n  explicit UnionFind(size_t sz) : data(sz, -1) {}\n\
-    \n  bool unite(int x, int y) {\n    x = find(x), y = find(y);\n    if(x == y)\
-    \ return false;\n    if(data[x] > data[y]) swap(x, y);\n    data[x] += data[y];\n\
-    \    data[y] = x;\n    return true;\n  }\n\n  int find(int k) {\n    if(data[k]\
-    \ < 0) return (k);\n    return data[k] = find(data[k]);\n  }\n\n  int size(int\
-    \ k) {\n    return -data[find(k)];\n  }\n\n  bool same(int x, int y) {\n    return\
-    \ find(x) == find(y);\n  }\n\n  vector< vector< int > > groups() {\n    int n\
-    \ = (int) data.size();\n    vector< vector< int > > ret(n);\n    for(int i = 0;\
-    \ i < n; i++) {\n      ret[find(i)].emplace_back(i);\n    }\n    ret.erase(remove_if(begin(ret),\
-    \ end(ret), [&](const vector< int > &v) {\n      return v.empty();\n    }), end(ret));\n\
-    \    return ret;\n  }\n};\n#line 6 \"test/verify/yukicoder-583.test.cpp\"\n\n\
-    #line 2 \"graph/others/eulerian-trail.hpp\"\n\n/**\n * @brief Eulerian Trail(\u30AA\
+    \n\n#line 2 \"graph/others/eulerian-trail.hpp\"\n\n#line 2 \"structure/union-find/union-find.cpp\"\
+    \n\n/**\n * @brief Union-Find\n * @docs docs/union-find.md\n */\nstruct UnionFind\
+    \ {\n  vector< int > data;\n\n  UnionFind() = default;\n\n  explicit UnionFind(size_t\
+    \ sz) : data(sz, -1) {}\n\n  bool unite(int x, int y) {\n    x = find(x), y =\
+    \ find(y);\n    if(x == y) return false;\n    if(data[x] > data[y]) swap(x, y);\n\
+    \    data[x] += data[y];\n    data[y] = x;\n    return true;\n  }\n\n  int find(int\
+    \ k) {\n    if(data[k] < 0) return (k);\n    return data[k] = find(data[k]);\n\
+    \  }\n\n  int size(int k) {\n    return -data[find(k)];\n  }\n\n  bool same(int\
+    \ x, int y) {\n    return find(x) == find(y);\n  }\n\n  vector< vector< int >\
+    \ > groups() {\n    int n = (int) data.size();\n    vector< vector< int > > ret(n);\n\
+    \    for(int i = 0; i < n; i++) {\n      ret[find(i)].emplace_back(i);\n    }\n\
+    \    ret.erase(remove_if(begin(ret), end(ret), [&](const vector< int > &v) {\n\
+    \      return v.empty();\n    }), end(ret));\n    return ret;\n  }\n};\n#line\
+    \ 4 \"graph/others/eulerian-trail.hpp\"\n\n/**\n * @brief Eulerian Trail(\u30AA\
     \u30A4\u30E9\u30FC\u8DEF)\n * @docs docs/eulerian-trail.md\n */\ntemplate< bool\
     \ directed >\nstruct EulerianTrail {\n  vector< vector< pair< int, int > > > g;\n\
     \  vector< pair< int, int > > es;\n  int M;\n  vector< int > used_vertex, used_edge,\
@@ -96,25 +96,25 @@ data:
     \ {\n        auto e = g[idx].back();\n        g[idx].pop_back();\n        if(used_edge[e.second])\
     \ continue;\n        used_edge[e.second] = true;\n        st.emplace(e);\n   \
     \   }\n    }\n    ord.pop_back();\n    reverse(ord.begin(), ord.end());\n    return\
-    \ ord;\n  }\n};\n#line 8 \"test/verify/yukicoder-583.test.cpp\"\n\nint main()\
+    \ ord;\n  }\n};\n#line 6 \"test/verify/yukicoder-583.test.cpp\"\n\nint main()\
     \ {\n  int N, M;\n  cin >> N >> M;\n  vector< int > A(M), B(M);\n  EulerianTrail<\
     \ false > et(N);\n  for(int i = 0; i < M; i++) {\n    cin >> A[i] >> B[i];\n \
     \   et.add_edge(A[i], B[i]);\n  }\n  if(et.enumerate_semi_eulerian_trail().size()\
     \ == 1) cout << \"YES\\n\";\n  else cout << \"NO\\n\";\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/583\"\n\n#include \"../../template/template.cpp\"\
-    \n\n#include \"../../structure/union-find/union-find.cpp\"\n\n#include \"../../graph/others/eulerian-trail.hpp\"\
-    \n\nint main() {\n  int N, M;\n  cin >> N >> M;\n  vector< int > A(M), B(M);\n\
-    \  EulerianTrail< false > et(N);\n  for(int i = 0; i < M; i++) {\n    cin >> A[i]\
-    \ >> B[i];\n    et.add_edge(A[i], B[i]);\n  }\n  if(et.enumerate_semi_eulerian_trail().size()\
-    \ == 1) cout << \"YES\\n\";\n  else cout << \"NO\\n\";\n}\n"
+    \n\n#include \"../../graph/others/eulerian-trail.hpp\"\n\nint main() {\n  int\
+    \ N, M;\n  cin >> N >> M;\n  vector< int > A(M), B(M);\n  EulerianTrail< false\
+    \ > et(N);\n  for(int i = 0; i < M; i++) {\n    cin >> A[i] >> B[i];\n    et.add_edge(A[i],\
+    \ B[i]);\n  }\n  if(et.enumerate_semi_eulerian_trail().size() == 1) cout << \"\
+    YES\\n\";\n  else cout << \"NO\\n\";\n}\n"
   dependsOn:
   - template/template.cpp
-  - structure/union-find/union-find.cpp
   - graph/others/eulerian-trail.hpp
+  - structure/union-find/union-find.cpp
   isVerificationFile: true
   path: test/verify/yukicoder-583.test.cpp
   requiredBy: []
-  timestamp: '2022-05-09 03:40:15+09:00'
+  timestamp: '2022-06-25 18:24:39+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/yukicoder-583.test.cpp
