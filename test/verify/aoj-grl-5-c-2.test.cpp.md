@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/tree/heavy-light-decomposition.hpp
     title: "Heavy-Light-Decomposition(HL\u5206\u89E3)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C
@@ -22,7 +22,7 @@ data:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C
   bundledCode: "#line 1 \"test/verify/aoj-grl-5-c-2.test.cpp\"\n#define PROBLEM \"\
     http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C\"\n\n#line 1\
-    \ \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
+    \ \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
     \nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll = (1LL\
     \ << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -116,21 +116,21 @@ data:
     \  }\n  }\n  hld.build();\n  cin >> Q;\n  for(int i = 0; i < Q; i++) {\n    int\
     \ u, v;\n    cin >> u >> v;\n    cout << hld.lca(u, v) << \"\\n\";\n  }\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../graph/tree/heavy-light-decomposition.hpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../graph/tree/heavy-light-decomposition.hpp\"\
     \n\nint main() {\n  int N, Q;\n  cin >> N;\n  HeavyLightDecomposition< int > hld(N);\n\
     \  for(int i = 0; i < N; i++) {\n    int k;\n    cin >> k;\n    for(int j = 0;\
     \ j < k; j++) {\n      int c;\n      cin >> c;\n      hld.add_edge(i, c);\n  \
     \  }\n  }\n  hld.build();\n  cin >> Q;\n  for(int i = 0; i < Q; i++) {\n    int\
     \ u, v;\n    cin >> u >> v;\n    cout << hld.lca(u, v) << \"\\n\";\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - graph/tree/heavy-light-decomposition.hpp
   - graph/graph-template.hpp
   isVerificationFile: true
   path: test/verify/aoj-grl-5-c-2.test.cpp
   requiredBy: []
-  timestamp: '2021-08-16 02:17:26+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/aoj-grl-5-c-2.test.cpp
 layout: document

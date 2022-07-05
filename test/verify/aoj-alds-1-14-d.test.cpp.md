@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/suffix-array.hpp
     title: "Suffix Array(\u63A5\u5C3E\u8F9E\u914D\u5217)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D
@@ -19,7 +19,7 @@ data:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D
   bundledCode: "#line 1 \"test/verify/aoj-alds-1-14-d.test.cpp\"\n#define PROBLEM\
     \ \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D\"\n\n\
-    #line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    #line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -108,18 +108,18 @@ data:
     \  cin >> Q;\n  while(Q--) {\n    string T;\n    cin >> T;\n    auto range = sa.equal_range(T);\n\
     \    cout << (range.first != range.second) << endl;\n  }\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_14_D\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../string/suffix-array.hpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../string/suffix-array.hpp\"\
     \n\nint main() {\n  string S;\n  int Q;\n\n  cin >> S;\n  SuffixArray sa(S);\n\
     \  cin >> Q;\n  while(Q--) {\n    string T;\n    cin >> T;\n    auto range = sa.equal_range(T);\n\
     \    cout << (range.first != range.second) << endl;\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - string/suffix-array.hpp
   isVerificationFile: true
   path: test/verify/aoj-alds-1-14-d.test.cpp
   requiredBy: []
-  timestamp: '2022-03-30 01:32:04+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/aoj-alds-1-14-d.test.cpp
 layout: document

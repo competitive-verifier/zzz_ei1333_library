@@ -1,25 +1,25 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/shortest-path/shortest-nonzero-path.hpp
     title: "Shortest Nonzero Path(\u7FA4\u30E9\u30D9\u30EB\u5236\u7D04\u4ED8\u304D\
       \u5358\u4E00\u59CB\u70B9\u6700\u77ED\u8DEF)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/1602
     links:
     - https://yukicoder.me/problems/no/1602
   bundledCode: "#line 1 \"test/verify/yukicoder-1602.test.cpp\"\n#define PROBLEM \"\
-    https://yukicoder.me/problems/no/1602\"\n\n#line 1 \"template/template.cpp\"\n\
+    https://yukicoder.me/problems/no/1602\"\n\n#line 1 \"template/template.hpp\"\n\
     #include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -102,7 +102,7 @@ data:
     \ {\n    if(ret[i] >= infll) cout << -1 << \"\\n\";\n    else cout << ret[i] <<\
     \ \"\\n\";\n  }\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/1602\"\n\n#include \"\
-    ../../template/template.cpp\"\n\n#include \"../../graph/shortest-path/shortest-nonzero-path.hpp\"\
+    ../../template/template.hpp\"\n\n#include \"../../graph/shortest-path/shortest-nonzero-path.hpp\"\
     \n\nint main() {\n  int N, M, K;\n  cin >> N >> M >> K;\n  auto f = [](int a,\
     \ int b) { return a ^ b; };\n  auto g = get_shortest_nonzero_path< int64, int\
     \ >(N, f);\n  for(int i = 0; i < M; i++) {\n    int a, b, c;\n    string x;\n\
@@ -112,13 +112,13 @@ data:
     \ {\n    if(ret[i] >= infll) cout << -1 << \"\\n\";\n    else cout << ret[i] <<\
     \ \"\\n\";\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - graph/shortest-path/shortest-nonzero-path.hpp
   isVerificationFile: true
   path: test/verify/yukicoder-1602.test.cpp
   requiredBy: []
-  timestamp: '2021-07-13 23:17:19+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yukicoder-1602.test.cpp
 layout: document

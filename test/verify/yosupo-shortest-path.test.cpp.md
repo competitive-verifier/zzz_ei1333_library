@@ -1,27 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/shortest-path/dijkstra.hpp
     title: "Dijkstra(\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u8DEF)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/shortest_path
     links:
     - https://judge.yosupo.jp/problem/shortest_path
   bundledCode: "#line 1 \"test/verify/yosupo-shortest-path.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/shortest_path\"\n\n#line 1 \"template/template.cpp\"\
+    \ \"https://judge.yosupo.jp/problem/shortest_path\"\n\n#line 1 \"template/template.hpp\"\
     \n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -89,7 +89,7 @@ data:
     \ << es.size() << \"\\n\";\n    for(auto &p : es) cout << p.first << \" \" <<\
     \ p.second << \"\\n\";\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/shortest_path\"\n\n#include\
-    \ \"../../template/template.cpp\"\n\n#include \"../../graph/graph-template.hpp\"\
+    \ \"../../template/template.hpp\"\n\n#include \"../../graph/graph-template.hpp\"\
     \n#include \"../../graph/shortest-path/dijkstra.hpp\"\n\nint main() {\n  int N,\
     \ M, S, T;\n  cin >> N >> M >> S >> T;\n  Graph< int64 > g(N);\n  g.read(M, 0,\
     \ true, true);\n  auto ret = dijkstra(g, S);\n  if(ret.from[T] == -1) {\n    cout\
@@ -99,14 +99,14 @@ data:
     \ << es.size() << \"\\n\";\n    for(auto &p : es) cout << p.first << \" \" <<\
     \ p.second << \"\\n\";\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - graph/graph-template.hpp
   - graph/shortest-path/dijkstra.hpp
   isVerificationFile: true
   path: test/verify/yosupo-shortest-path.test.cpp
   requiredBy: []
-  timestamp: '2021-08-16 02:34:50+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-shortest-path.test.cpp
 layout: document

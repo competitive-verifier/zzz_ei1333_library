@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: dp/edit-distance.cpp
+  - icon: ':x:'
+    path: dp/edit-distance.hpp
     title: "Edit Distance(\u7DE8\u96C6\u8DDD\u96E2)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_E
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_E
   bundledCode: "#line 1 \"test/verify/aoj-dpl-1-e.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_E\"\
-    \n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -45,7 +45,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-dpl-1-e.test.cpp\"\
-    \n\n#line 1 \"dp/edit-distance.cpp\"\n/**\n * @brief Edit Distance(\u7DE8\u96C6\
+    \n\n#line 1 \"dp/edit-distance.hpp\"\n/**\n * @brief Edit Distance(\u7DE8\u96C6\
     \u8DDD\u96E2)\n * @docs docs/edit-distance.md\n */\nint edit_distance(const string\
     \ &S, const string &T) {\n  const int N = (int) S.size(), M = (int) T.size();\n\
     \  vector< vector< int > > dp(N + 1, vector< int >(M + 1, N + M));\n  for(int\
@@ -57,17 +57,17 @@ data:
     \n\nint main() {\n  string S, T;\n  cin >> S >> T;\n  cout << edit_distance(S,\
     \ T) << endl;\n}\n\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_E\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../dp/edit-distance.cpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../dp/edit-distance.hpp\"\
     \n\nint main() {\n  string S, T;\n  cin >> S >> T;\n  cout << edit_distance(S,\
     \ T) << endl;\n}\n\n"
   dependsOn:
-  - template/template.cpp
-  - dp/edit-distance.cpp
+  - template/template.hpp
+  - dp/edit-distance.hpp
   isVerificationFile: true
   path: test/verify/aoj-dpl-1-e.test.cpp
   requiredBy: []
-  timestamp: '2021-07-13 19:53:12+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/aoj-dpl-1-e.test.cpp
 layout: document

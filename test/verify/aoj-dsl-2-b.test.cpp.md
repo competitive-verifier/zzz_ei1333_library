@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: structure/others/binary-indexed-tree.cpp
+  - icon: ':question:'
+    path: structure/others/binary-indexed-tree.hpp
     title: Binary-Indexed-Tree(BIT)
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
   bundledCode: "#line 1 \"test/verify/aoj-dsl-2-b.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\
-    \n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -45,7 +45,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-dsl-2-b.test.cpp\"\
-    \n\n#line 1 \"structure/others/binary-indexed-tree.cpp\"\n/**\n * @brief Binary-Indexed-Tree(BIT)\n\
+    \n\n#line 1 \"structure/others/binary-indexed-tree.hpp\"\n/**\n * @brief Binary-Indexed-Tree(BIT)\n\
     \ * @docs docs/binary-indexed-tree.md\n */\ntemplate< typename T >\nstruct BinaryIndexedTree\
     \ {\nprivate:\n  int n;\n  vector< T > data;\n\npublic:\n  BinaryIndexedTree()\
     \ = default;\n\n  explicit BinaryIndexedTree(int n) : n(n) {\n    data.assign(n\
@@ -68,18 +68,18 @@ data:
     \  while(Q--) {\n    int T, X, Y;\n    cin >> T >> X >> Y;\n    if(T == 0) bit.apply(X\
     \ - 1, Y);\n    else cout << bit.prod(X - 1, Y) << \"\\n\";\n  }\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../structure/others/binary-indexed-tree.cpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../structure/others/binary-indexed-tree.hpp\"\
     \n\nint main() {\n  int N, Q;\n  cin >> N >> Q;\n  BinaryIndexedTree< int > bit(N);\n\
     \  while(Q--) {\n    int T, X, Y;\n    cin >> T >> X >> Y;\n    if(T == 0) bit.apply(X\
     \ - 1, Y);\n    else cout << bit.prod(X - 1, Y) << \"\\n\";\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - structure/others/binary-indexed-tree.cpp
+  - template/template.hpp
+  - structure/others/binary-indexed-tree.hpp
   isVerificationFile: true
   path: test/verify/aoj-dsl-2-b.test.cpp
   requiredBy: []
-  timestamp: '2022-06-25 20:28:37+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/aoj-dsl-2-b.test.cpp
 layout: document

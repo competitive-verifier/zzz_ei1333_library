@@ -1,27 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/others/chromatic-number.hpp
     title: "Chromatic Number(\u5F69\u8272\u6570)"
-  - icon: ':heavy_check_mark:'
-    path: math/matrix/square-matrix.cpp
+  - icon: ':question:'
+    path: math/matrix/square-matrix.hpp
     title: "Square-Matrix(\u6B63\u65B9\u884C\u5217)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/chromatic_number
     links:
     - https://judge.yosupo.jp/problem/chromatic_number
   bundledCode: "#line 1 \"test/verify/yosupo-chromatic-number.test.cpp\"\n#define\
-    \ PROBLEM \"https://judge.yosupo.jp/problem/chromatic_number\"\n\n#line 1 \"template/template.cpp\"\
+    \ PROBLEM \"https://judge.yosupo.jp/problem/chromatic_number\"\n\n#line 1 \"template/template.hpp\"\
     \n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -64,7 +64,7 @@ data:
     \ k = 0; k < 3; k++) {\n    auto buf = hist;\n    for(int c = 1; c < ret; c++)\
     \ {\n      int64_t sum = 0;\n      for(auto&[i, x] : buf) {\n        sum += (x\
     \ = int64_t(x) * i % mods[k]);\n      }\n      if(sum % mods[k]) ret = c;\n  \
-    \  }\n  }\n  return ret;\n}\n#line 1 \"math/matrix/square-matrix.cpp\"\n/**\n\
+    \  }\n  }\n  return ret;\n}\n#line 1 \"math/matrix/square-matrix.hpp\"\n/**\n\
     \ * @brief Square-Matrix(\u6B63\u65B9\u884C\u5217)\n */\ntemplate< class T, size_t\
     \ N >\nstruct SquareMatrix {\n  array< array< T, N >, N > A;\n\n  SquareMatrix()\
     \ : A{{}} {}\n\n  size_t size() const { return N; }\n\n  inline const array< T,\
@@ -97,20 +97,20 @@ data:
     \  for(int i = 0; i < M; i++) {\n    int u, v;\n    cin >> u >> v;\n    g[u][v]\
     \ = g[v][u] = true;\n  }\n  cout << chromatic_number(g) << \"\\n\";\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/chromatic_number\"\n\n\
-    #include \"../../template/template.cpp\"\n\n#include \"../../graph/others/chromatic-number.hpp\"\
-    \n#include \"../../math/matrix/square-matrix.cpp\"\n\nint main() {\n  int N, M;\n\
+    #include \"../../template/template.hpp\"\n\n#include \"../../graph/others/chromatic-number.hpp\"\
+    \n#include \"../../math/matrix/square-matrix.hpp\"\n\nint main() {\n  int N, M;\n\
     \  cin >> N >> M;\n  SquareMatrix< bool, 20 > g;\n  for(int i = 0; i < M; i++)\
     \ {\n    int u, v;\n    cin >> u >> v;\n    g[u][v] = g[v][u] = true;\n  }\n \
     \ cout << chromatic_number(g) << \"\\n\";\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - graph/others/chromatic-number.hpp
-  - math/matrix/square-matrix.cpp
+  - math/matrix/square-matrix.hpp
   isVerificationFile: true
   path: test/verify/yosupo-chromatic-number.test.cpp
   requiredBy: []
-  timestamp: '2021-07-21 02:10:43+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-chromatic-number.test.cpp
 layout: document

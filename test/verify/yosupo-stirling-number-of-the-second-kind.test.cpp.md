@@ -1,28 +1,28 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/combinatorics/mod-int.cpp
-    title: math/combinatorics/mod-int.cpp
-  - icon: ':heavy_check_mark:'
-    path: math/fft/number-theoretic-transform-friendly-mod-int.cpp
+  - icon: ':question:'
+    path: math/combinatorics/mod-int.hpp
+    title: math/combinatorics/mod-int.hpp
+  - icon: ':x:'
+    path: math/fft/number-theoretic-transform-friendly-mod-int.hpp
     title: Number Theoretic Transform Friendly ModInt
-  - icon: ':heavy_check_mark:'
-    path: math/fps/formal-power-series-friendly-ntt.cpp
+  - icon: ':x:'
+    path: math/fps/formal-power-series-friendly-ntt.hpp
     title: "Formal Power Series Friendly NTT(NTTmod\u7528\u5F62\u5F0F\u7684\u51AA\u7D1A\
       \u6570)"
-  - icon: ':heavy_check_mark:'
-    path: math/fps/stirling-second.cpp
+  - icon: ':x:'
+    path: math/fps/stirling-second.hpp
     title: "Stirling Second(\u7B2C\u4E8C\u7A2E\u30B9\u30BF\u30FC\u30EA\u30F3\u30B0\
       \u6570)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/stirling_number_of_the_second_kind
@@ -30,7 +30,7 @@ data:
     - https://judge.yosupo.jp/problem/stirling_number_of_the_second_kind
   bundledCode: "#line 1 \"test/verify/yosupo-stirling-number-of-the-second-kind.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/stirling_number_of_the_second_kind\"\
-    \n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -57,7 +57,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-stirling-number-of-the-second-kind.test.cpp\"\
-    \n\n#line 1 \"math/combinatorics/mod-int.cpp\"\ntemplate< int mod >\nstruct ModInt\
+    \n\n#line 1 \"math/combinatorics/mod-int.hpp\"\ntemplate< int mod >\nstruct ModInt\
     \ {\n  int x;\n\n  ModInt() : x(0) {}\n\n  ModInt(int64_t y) : x(y >= 0 ? y %\
     \ mod : (mod - (-y) % mod) % mod) {}\n\n  ModInt &operator+=(const ModInt &p)\
     \ {\n    if((x += p.x) >= mod) x -= mod;\n    return *this;\n  }\n\n  ModInt &operator-=(const\
@@ -79,7 +79,7 @@ data:
     \ &operator<<(ostream &os, const ModInt &p) {\n    return os << p.x;\n  }\n\n\
     \  friend istream &operator>>(istream &is, ModInt &a) {\n    int64_t t;\n    is\
     \ >> t;\n    a = ModInt< mod >(t);\n    return (is);\n  }\n\n  static int get_mod()\
-    \ { return mod; }\n};\n\nusing modint = ModInt< mod >;\n#line 1 \"math/fft/number-theoretic-transform-friendly-mod-int.cpp\"\
+    \ { return mod; }\n};\n\nusing modint = ModInt< mod >;\n#line 1 \"math/fft/number-theoretic-transform-friendly-mod-int.hpp\"\
     \n/**\n * @brief Number Theoretic Transform Friendly ModInt\n */\ntemplate< typename\
     \ Mint >\nstruct NumberTheoreticTransformFriendlyModInt {\n\n  static vector<\
     \ Mint > roots, iroots, rate3, irate3;\n  static int max_base;\n\n  NumberTheoreticTransformFriendlyModInt()\
@@ -157,7 +157,7 @@ data:
     \ > NumberTheoreticTransformFriendlyModInt< Mint >::rate3 = vector< Mint >();\n\
     template< typename Mint >\nvector< Mint > NumberTheoreticTransformFriendlyModInt<\
     \ Mint >::irate3 = vector< Mint >();\ntemplate< typename Mint >\nint NumberTheoreticTransformFriendlyModInt<\
-    \ Mint >::max_base = 0;\n#line 2 \"math/fps/formal-power-series-friendly-ntt.cpp\"\
+    \ Mint >::max_base = 0;\n#line 2 \"math/fps/formal-power-series-friendly-ntt.hpp\"\
     \n\n/**\n * @brief Formal Power Series Friendly NTT(NTTmod\u7528\u5F62\u5F0F\u7684\
     \u51AA\u7D1A\u6570)\n * @docs docs/formal-power-series-friendly-ntt.md\n */\n\
     template< typename T >\nstruct FormalPowerSeriesFriendlyNTT : vector< T > {\n\
@@ -281,7 +281,7 @@ data:
     \ T(1));\n    for(int i = 1; i < n; i++) bs[i] = bs[i - 1] * c * rfact[i] * fact[i\
     \ - 1];\n    p = (p * bs).pre(n);\n    p = p.rev();\n    for(int i = 0; i < n;\
     \ i++) p[i] *= rfact[i];\n    return p;\n  }\n};\n\ntemplate< typename Mint >\n\
-    using FPS = FormalPowerSeriesFriendlyNTT< Mint >;\n#line 1 \"math/fps/stirling-second.cpp\"\
+    using FPS = FormalPowerSeriesFriendlyNTT< Mint >;\n#line 1 \"math/fps/stirling-second.hpp\"\
     \n/**\n * @brief Stirling Second(\u7B2C\u4E8C\u7A2E\u30B9\u30BF\u30FC\u30EA\u30F3\
     \u30B0\u6570)\n */\ntemplate< template< typename > class FPS, typename Mint >\n\
     FPS< Mint > stirling_second(int N) {\n  FPS< Mint > A(N + 1), B(N + 1);\n  Mint\
@@ -292,22 +292,22 @@ data:
     \ MOD = 998244353;\nusing mint = ModInt< MOD >;\n\nint main() {\n  int N;\n  cin\
     \ >> N;\n  cout << stirling_second< FPS, mint >(N) << endl;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/stirling_number_of_the_second_kind\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../math/combinatorics/mod-int.cpp\"\
-    \n#include \"../../math/fps/formal-power-series-friendly-ntt.cpp\"\n#include \"\
-    ../../math/fps/stirling-second.cpp\"\n\nconst int MOD = 998244353;\nusing mint\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../math/combinatorics/mod-int.hpp\"\
+    \n#include \"../../math/fps/formal-power-series-friendly-ntt.hpp\"\n#include \"\
+    ../../math/fps/stirling-second.hpp\"\n\nconst int MOD = 998244353;\nusing mint\
     \ = ModInt< MOD >;\n\nint main() {\n  int N;\n  cin >> N;\n  cout << stirling_second<\
     \ FPS, mint >(N) << endl;\n}\n"
   dependsOn:
-  - template/template.cpp
-  - math/combinatorics/mod-int.cpp
-  - math/fps/formal-power-series-friendly-ntt.cpp
-  - math/fft/number-theoretic-transform-friendly-mod-int.cpp
-  - math/fps/stirling-second.cpp
+  - template/template.hpp
+  - math/combinatorics/mod-int.hpp
+  - math/fps/formal-power-series-friendly-ntt.hpp
+  - math/fft/number-theoretic-transform-friendly-mod-int.hpp
+  - math/fps/stirling-second.hpp
   isVerificationFile: true
   path: test/verify/yosupo-stirling-number-of-the-second-kind.test.cpp
   requiredBy: []
-  timestamp: '2021-08-17 19:31:02+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-stirling-number-of-the-second-kind.test.cpp
 layout: document

@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/rational/rational.hpp
     title: "Rational (\u6709\u7406\u6570\u578B)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/1236
     links:
     - https://yukicoder.me/problems/no/1236
   bundledCode: "#line 1 \"test/verify/yukicoder-1236.test.cpp\"\n#define PROBLEM \"\
-    https://yukicoder.me/problems/no/1236\"\n\n#line 1 \"template/template.cpp\"\n\
+    https://yukicoder.me/problems/no/1236\"\n\n#line 1 \"template/template.hpp\"\n\
     #include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -99,19 +99,19 @@ data:
     \ < c) x += d;\n  x = x - c;\n  cout << x.numerator() * 60 / x.denominator() <<\
     \ \"\\n\";\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/1236\"\n\n#include \"\
-    ../../template/template.cpp\"\n\n#include \"../../math/rational/rational.hpp\"\
+    ../../template/template.hpp\"\n\n#include \"../../math/rational/rational.hpp\"\
     \n\nint main() {\n  string s, t;\n  cin >> s >> t;\n  int a = stoi(s);\n  int\
     \ b = stoi(t);\n  using F = Rational< int >;\n  F c(a * 60 + b);\n  F d(720, 11);\n\
     \  F x(0);\n  while(x < c) x += d;\n  x = x - c;\n  cout << x.numerator() * 60\
     \ / x.denominator() << \"\\n\";\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - math/rational/rational.hpp
   isVerificationFile: true
   path: test/verify/yukicoder-1236.test.cpp
   requiredBy: []
-  timestamp: '2021-11-07 01:16:35+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yukicoder-1236.test.cpp
 layout: document

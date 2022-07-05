@@ -1,27 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/tree/centroid-decomposition.hpp
     title: "Centroid-Decomosition(\u91CD\u5FC3\u5206\u89E3)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/1002
     links:
     - https://yukicoder.me/problems/no/1002
   bundledCode: "#line 1 \"test/verify/yukicoder-1002.test.cpp\"\n#define PROBLEM \"\
-    https://yukicoder.me/problems/no/1002\"\n\n#line 1 \"template/template.cpp\"\n\
+    https://yukicoder.me/problems/no/1002\"\n\n#line 1 \"template/template.hpp\"\n\
     #include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -107,7 +107,7 @@ data:
     \ {\n      rec(to);\n    }\n    used[idx] = false;\n  });\n  rec(root);\n  cout\
     \ << ret << endl;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/1002\"\n\n#include \"\
-    ../../template/template.cpp\"\n\n#include \"../../graph/tree/centroid-decomposition.hpp\"\
+    ../../template/template.hpp\"\n\n#include \"../../graph/tree/centroid-decomposition.hpp\"\
     \n\nint main() {\n  int N, K;\n  cin >> N >> K;\n  CentroidDecomposition< int\
     \ > g(N);\n  g.read(N - 1, -1, true);\n  int root = g.build();\n  int64 ret =\
     \ 0;\n  vector< int > used(N);\n\n  map< pair< int, int >, int > mp;\n  int all;\n\
@@ -131,14 +131,14 @@ data:
     \    }\n    for(auto &to : g.tree.g[idx]) {\n      rec(to);\n    }\n    used[idx]\
     \ = false;\n  });\n  rec(root);\n  cout << ret << endl;\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - graph/tree/centroid-decomposition.hpp
   - graph/graph-template.hpp
   isVerificationFile: true
   path: test/verify/yukicoder-1002.test.cpp
   requiredBy: []
-  timestamp: '2022-03-12 17:40:54+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yukicoder-1002.test.cpp
 layout: document

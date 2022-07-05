@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/others/maximum-independent-set.hpp
     title: "Maximum Independent Set(\u6700\u5927\u72EC\u7ACB\u96C6\u5408)"
-  - icon: ':heavy_check_mark:'
-    path: math/matrix/matrix.cpp
-    title: math/matrix/matrix.cpp
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: math/matrix/matrix.hpp
+    title: math/matrix/matrix.hpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/maximum_independent_set
@@ -22,7 +22,7 @@ data:
     - https://judge.yosupo.jp/problem/maximum_independent_set
   bundledCode: "#line 1 \"test/verify/yosupo-maximum-independent-set.test.cpp\"\n\
     #define PROBLEM \"https://judge.yosupo.jp/problem/maximum_independent_set\"\n\n\
-    #line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    #line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -49,7 +49,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-maximum-independent-set.test.cpp\"\
-    \n\n#line 1 \"math/matrix/matrix.cpp\"\ntemplate< class T >\nstruct Matrix {\n\
+    \n\n#line 1 \"math/matrix/matrix.hpp\"\ntemplate< class T >\nstruct Matrix {\n\
     \  vector< vector< T > > A;\n\n  Matrix() {}\n\n  Matrix(size_t n, size_t m) :\
     \ A(n, vector< T >(m, 0)) {}\n\n  Matrix(size_t n) : A(n, vector< T >(n, 0)) {};\n\
     \n  size_t size() const {\n     if(A.empty()) return 0;\n     assert(A.size()\
@@ -109,21 +109,21 @@ data:
     \ true;\n  }\n  auto ret = maximum_independent_set(mat);\n  cout << ret.size()\
     \ << endl;\n  cout << ret << endl;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/maximum_independent_set\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../math/matrix/matrix.cpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../math/matrix/matrix.hpp\"\
     \n#include \"../../graph/others/maximum-independent-set.hpp\"\n\nint main() {\n\
     \  int N, M;\n  cin >> N >> M;\n  Matrix< bool > mat(N);\n  for(int i = 0; i <\
     \ M; i++) {\n    int a, b;\n    cin >> a >> b;\n    mat[a][b] = true;\n    mat[b][a]\
     \ = true;\n  }\n  auto ret = maximum_independent_set(mat);\n  cout << ret.size()\
     \ << endl;\n  cout << ret << endl;\n}\n"
   dependsOn:
-  - template/template.cpp
-  - math/matrix/matrix.cpp
+  - template/template.hpp
+  - math/matrix/matrix.hpp
   - graph/others/maximum-independent-set.hpp
   isVerificationFile: true
   path: test/verify/yosupo-maximum-independent-set.test.cpp
   requiredBy: []
-  timestamp: '2021-07-14 01:17:14+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-maximum-independent-set.test.cpp
 layout: document

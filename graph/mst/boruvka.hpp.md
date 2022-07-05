@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: structure/union-find/union-find.cpp
+  - icon: ':question:'
+    path: structure/union-find/union-find.hpp
     title: Union-Find
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/aoj-grl-2-a-3.test.cpp
     title: test/verify/aoj-grl-2-a-3.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: docs/boruvka.md
     document_title: "Boruvka(\u6700\u5C0F\u5168\u57DF\u6728)"
     links: []
-  bundledCode: "#line 2 \"structure/union-find/union-find.cpp\"\n\n/**\n * @brief\
+  bundledCode: "#line 2 \"structure/union-find/union-find.hpp\"\n\n/**\n * @brief\
     \ Union-Find\n * @docs docs/union-find.md\n */\nstruct UnionFind {\n  vector<\
     \ int > data;\n\n  UnionFind() = default;\n\n  explicit UnionFind(size_t sz) :\
     \ data(sz, -1) {}\n\n  bool unite(int x, int y) {\n    x = find(x), y = find(y);\n\
@@ -40,7 +40,7 @@ data:
     \ {\n        if(v[i].second >= 0 && uf.unite(i, v[i].second)) {\n          ret\
     \ += v[i].first;\n          con = true;\n        }\n      }\n      if(!con) return\
     \ INF;\n    }\n    return ret;\n  }\n};\n"
-  code: "#include \"../../structure/union-find/union-find.cpp\"\n\n/**\n * @brief\
+  code: "#include \"../../structure/union-find/union-find.hpp\"\n\n/**\n * @brief\
     \ Boruvka(\u6700\u5C0F\u5168\u57DF\u6728)\n * @docs docs/boruvka.md\n */\ntemplate<\
     \ typename T >\nstruct Boruvka {\nprivate:\n  size_t V;\n  UnionFind uf;\n  const\
     \ T INF;\n\npublic:\n  explicit Boruvka(size_t V, T INF = numeric_limits< T >::max())\
@@ -52,12 +52,12 @@ data:
     \   ret += v[i].first;\n          con = true;\n        }\n      }\n      if(!con)\
     \ return INF;\n    }\n    return ret;\n  }\n};\n"
   dependsOn:
-  - structure/union-find/union-find.cpp
+  - structure/union-find/union-find.hpp
   isVerificationFile: false
   path: graph/mst/boruvka.hpp
   requiredBy: []
-  timestamp: '2022-06-25 18:23:01+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/aoj-grl-2-a-3.test.cpp
 documentation_of: graph/mst/boruvka.hpp

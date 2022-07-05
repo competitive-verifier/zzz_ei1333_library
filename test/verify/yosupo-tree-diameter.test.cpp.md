@@ -1,27 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/tree/tree-diameter.hpp
     title: "Tree-Diameter(\u6728\u306E\u76F4\u5F84)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/tree_diameter
     links:
     - https://judge.yosupo.jp/problem/tree_diameter
   bundledCode: "#line 1 \"test/verify/yosupo-tree-diameter.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/tree_diameter\"\n\n#line 1 \"template/template.cpp\"\
+    \ \"https://judge.yosupo.jp/problem/tree_diameter\"\n\n#line 1 \"template/template.hpp\"\
     \n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -85,19 +85,19 @@ data:
     \ - 1, 0, true);\n  cout << g.build() << \" \";\n  cout << g.path.size() + 1 <<\
     \ \"\\n\";\n  cout << g.path[0].from << \" \" << g.path << \"\\n\";\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/tree_diameter\"\n\n#include\
-    \ \"../../template/template.cpp\"\n\n#include \"../../graph/tree/tree-diameter.hpp\"\
+    \ \"../../template/template.hpp\"\n\n#include \"../../graph/tree/tree-diameter.hpp\"\
     \n\nint main() {\n  int N;\n  cin >> N;\n  TreeDiameter< int64_t > g(N);\n  g.read(N\
     \ - 1, 0, true);\n  cout << g.build() << \" \";\n  cout << g.path.size() + 1 <<\
     \ \"\\n\";\n  cout << g.path[0].from << \" \" << g.path << \"\\n\";\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - graph/tree/tree-diameter.hpp
   - graph/graph-template.hpp
   isVerificationFile: true
   path: test/verify/yosupo-tree-diameter.test.cpp
   requiredBy: []
-  timestamp: '2021-08-16 02:17:26+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-tree-diameter.test.cpp
 layout: document

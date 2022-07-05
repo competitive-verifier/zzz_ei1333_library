@@ -1,27 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/connected-components/incremental-bridge-connectivity.hpp
     title: Incremental Bridge Connectivity
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/connected-components/three-edge-connected-components.hpp
     title: "Three Edge Connected Components(\u4E09\u91CD\u8FBA\u9023\u7D50\u6210\u5206\
       \u5206\u89E3)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
-  - icon: ':heavy_check_mark:'
-    path: structure/union-find/union-find.cpp
+  - icon: ':question:'
+    path: structure/union-find/union-find.hpp
     title: Union-Find
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/three_edge_connected_components
@@ -29,7 +29,7 @@ data:
     - https://judge.yosupo.jp/problem/three_edge_connected_components
   bundledCode: "#line 1 \"test/verify/yosupo-three-edge-connected-components.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/three_edge_connected_components\"\
-    \n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -76,7 +76,7 @@ data:
     \ {\n    return g[k];\n  }\n\n  inline const vector< Edge< T > > &operator[](const\
     \ int &k) const {\n    return g[k];\n  }\n};\n\ntemplate< typename T = int >\n\
     using Edges = vector< Edge< T > >;\n#line 2 \"graph/connected-components/incremental-bridge-connectivity.hpp\"\
-    \n\n#line 2 \"structure/union-find/union-find.cpp\"\n\n/**\n * @brief Union-Find\n\
+    \n\n#line 2 \"structure/union-find/union-find.hpp\"\n\n/**\n * @brief Union-Find\n\
     \ * @docs docs/union-find.md\n */\nstruct UnionFind {\n  vector< int > data;\n\
     \n  UnionFind() = default;\n\n  explicit UnionFind(size_t sz) : data(sz, -1) {}\n\
     \n  bool unite(int x, int y) {\n    x = find(x), y = find(y);\n    if(x == y)\
@@ -146,22 +146,22 @@ data:
     \  for(auto &p : g.group) {\n    cout << p.size() << \" \" << p << \"\\n\";\n\
     \  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/three_edge_connected_components\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../graph/connected-components/three-edge-connected-components.hpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../graph/connected-components/three-edge-connected-components.hpp\"\
     \n\nint main() {\n  int N, M;\n  cin >> N >> M;\n  ThreeEdgeConnectedComponents<>\
     \ g(N);\n  g.read(M, 0);\n  g.build();\n  cout << g.group.size() << \"\\n\";\n\
     \  for(auto &p : g.group) {\n    cout << p.size() << \" \" << p << \"\\n\";\n\
     \  }\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - graph/connected-components/three-edge-connected-components.hpp
   - graph/graph-template.hpp
   - graph/connected-components/incremental-bridge-connectivity.hpp
-  - structure/union-find/union-find.cpp
+  - structure/union-find/union-find.hpp
   isVerificationFile: true
   path: test/verify/yosupo-three-edge-connected-components.test.cpp
   requiredBy: []
-  timestamp: '2022-06-25 18:23:01+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-three-edge-connected-components.test.cpp
 layout: document

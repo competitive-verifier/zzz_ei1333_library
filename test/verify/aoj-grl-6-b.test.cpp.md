@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/flow/primal-dual.hpp
     title: "Primal Dual(\u6700\u5C0F\u8CBB\u7528\u6D41)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_B
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_B
   bundledCode: "#line 1 \"test/verify/aoj-grl-6-b.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_B\"\
-    \n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -82,19 +82,19 @@ data:
     %d %d %d %d\", &a, &b, &c, &d);\n    g.add_edge(a, b, c, d);\n  }\n  printf(\"\
     %d\\n\", g.min_cost_flow(0, V - 1, F));\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_B\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../graph/flow/primal-dual.hpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../graph/flow/primal-dual.hpp\"\
     \n\nint main() {\n  int V, E, F;\n  scanf(\"%d %d %d\", &V, &E, &F);\n  PrimalDual<\
     \ int, int > g(V);\n  for(int i = 0; i < E; i++) {\n    int a, b, c, d;\n    scanf(\"\
     %d %d %d %d\", &a, &b, &c, &d);\n    g.add_edge(a, b, c, d);\n  }\n  printf(\"\
     %d\\n\", g.min_cost_flow(0, V - 1, F));\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - graph/flow/primal-dual.hpp
   isVerificationFile: true
   path: test/verify/aoj-grl-6-b.test.cpp
   requiredBy: []
-  timestamp: '2021-07-16 02:06:57+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/aoj-grl-6-b.test.cpp
 layout: document

@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: structure/union-find/weighted-union-find.cpp
-    title: structure/union-find/weighted-union-find.cpp
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':x:'
+    path: structure/union-find/weighted-union-find.hpp
+    title: structure/union-find/weighted-union-find.hpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_B
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_B
   bundledCode: "#line 1 \"test/verify/aoj-dsl-1-b.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_B\"\
-    \n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -45,7 +45,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-dsl-1-b.test.cpp\"\
-    \n\n#line 1 \"structure/union-find/weighted-union-find.cpp\"\ntemplate< typename\
+    \n\n#line 1 \"structure/union-find/weighted-union-find.hpp\"\ntemplate< typename\
     \ T >\nstruct WeightedUnionFind {\n  vector< int > data;\n  vector< T > ws;\n\n\
     \  WeightedUnionFind() {}\n\n  WeightedUnionFind(int sz) : data(sz, -1), ws(sz)\
     \ {}\n\n  int find(int k) {\n    if(data[k] < 0) return k;\n    auto par = find(data[k]);\n\
@@ -62,20 +62,20 @@ data:
     \ {\n        cout << tree.diff(B, C) << endl;\n      } else {\n        cout <<\
     \ \"?\" << endl;\n      }\n    }\n  }\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_B\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../structure/union-find/weighted-union-find.cpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../structure/union-find/weighted-union-find.hpp\"\
     \n\nint main() {\n  int N, M;\n  cin >> N >> M;\n  WeightedUnionFind< int > tree(N);\n\
     \  while(M--) {\n    int A, B, C, D;\n    cin >> A >> B >> C;\n    if(A == 0)\
     \ {\n      cin >> D;\n      tree.unite(B, C, D);\n    } else {\n      if(tree.find(B)\
     \ == tree.find(C)) {\n        cout << tree.diff(B, C) << endl;\n      } else {\n\
     \        cout << \"?\" << endl;\n      }\n    }\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - structure/union-find/weighted-union-find.cpp
+  - template/template.hpp
+  - structure/union-find/weighted-union-find.hpp
   isVerificationFile: true
   path: test/verify/aoj-dsl-1-b.test.cpp
   requiredBy: []
-  timestamp: '2021-05-01 00:06:55+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/aoj-dsl-1-b.test.cpp
 layout: document

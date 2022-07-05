@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/combinatorics/mod-int.cpp
-    title: math/combinatorics/mod-int.cpp
-  - icon: ':heavy_check_mark:'
-    path: structure/lct/link-cut-tree.cpp
+  - icon: ':question:'
+    path: math/combinatorics/mod-int.hpp
+    title: math/combinatorics/mod-int.hpp
+  - icon: ':x:'
+    path: structure/lct/link-cut-tree.hpp
     title: Link Cut Tree
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite
@@ -22,7 +22,7 @@ data:
     - https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite
   bundledCode: "#line 1 \"test/verify/yosupo-dynamic-tree-vertex-set-path-composite.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite\"\
-    \n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -49,7 +49,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-dynamic-tree-vertex-set-path-composite.test.cpp\"\
-    \n\n#line 1 \"structure/lct/link-cut-tree.cpp\"\n/**\n * @brief Link Cut Tree\n\
+    \n\n#line 1 \"structure/lct/link-cut-tree.hpp\"\n/**\n * @brief Link Cut Tree\n\
     \ * @docs docs/link-cut-tree.md\n */\ntemplate< typename T, typename F, typename\
     \ S >\nstruct LinkCutTree {\n\nprivate:\n  F f;\n  S s;\n\n  struct Node {\n \
     \   Node *l, *r, *p;\n    T key, sum;\n    bool rev;\n    size_t sz;\n\n    explicit\
@@ -102,7 +102,7 @@ data:
     \    expose(t);\n    t->key = v;\n    update(t);\n  }\n};\n\ntemplate< typename\
     \ T, typename F, typename S >\nLinkCutTree< T, F, S > get_link_cut_tree(const\
     \ F &f, const S &s) {\n  return {f, s};\n}\n#line 6 \"test/verify/yosupo-dynamic-tree-vertex-set-path-composite.test.cpp\"\
-    \n\n#line 1 \"math/combinatorics/mod-int.cpp\"\ntemplate< int mod >\nstruct ModInt\
+    \n\n#line 1 \"math/combinatorics/mod-int.hpp\"\ntemplate< int mod >\nstruct ModInt\
     \ {\n  int x;\n\n  ModInt() : x(0) {}\n\n  ModInt(int64_t y) : x(y >= 0 ? y %\
     \ mod : (mod - (-y) % mod) % mod) {}\n\n  ModInt &operator+=(const ModInt &p)\
     \ {\n    if((x += p.x) >= mod) x -= mod;\n    return *this;\n  }\n\n  ModInt &operator-=(const\
@@ -143,8 +143,8 @@ data:
     \    cin >> U >> V >> X;\n      auto ret = lct.query(vs[U], vs[V]).first;\n  \
     \    cout << ret.first * X + ret.second << \"\\n\";\n    }\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../structure/lct/link-cut-tree.cpp\"\
-    \n\n#include \"../../math/combinatorics/mod-int.cpp\"\n\nusing mint = ModInt<\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../structure/lct/link-cut-tree.hpp\"\
+    \n\n#include \"../../math/combinatorics/mod-int.hpp\"\n\nusing mint = ModInt<\
     \ 998244353 >;\n\nint main() {\n  int N, Q;\n  cin >> N >> Q;\n\n  using pi =\
     \ pair< mint, mint >;\n  using pii = pair< pi, pi >;\n  auto f = [](const pi &x,\
     \ const pi &y) { return pi(x.first * y.first, x.second * y.first + y.second);\
@@ -163,14 +163,14 @@ data:
     \ = lct.query(vs[U], vs[V]).first;\n      cout << ret.first * X + ret.second <<\
     \ \"\\n\";\n    }\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - structure/lct/link-cut-tree.cpp
-  - math/combinatorics/mod-int.cpp
+  - template/template.hpp
+  - structure/lct/link-cut-tree.hpp
+  - math/combinatorics/mod-int.hpp
   isVerificationFile: true
   path: test/verify/yosupo-dynamic-tree-vertex-set-path-composite.test.cpp
   requiredBy: []
-  timestamp: '2022-06-21 02:34:26+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-dynamic-tree-vertex-set-path-composite.test.cpp
 layout: document

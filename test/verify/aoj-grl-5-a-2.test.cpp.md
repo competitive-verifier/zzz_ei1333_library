@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: structure/develop/diameter.cpp
+  - icon: ':x:'
+    path: structure/develop/diameter.hpp
     title: Diameter
-  - icon: ':heavy_check_mark:'
-    path: structure/develop/super-link-cut-tree.cpp
+  - icon: ':question:'
+    path: structure/develop/super-link-cut-tree.hpp
     title: "\u4F55\u3067\u3082\u3067\u304D\u308BLCT"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A
@@ -22,7 +22,7 @@ data:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A
   bundledCode: "#line 1 \"test/verify/aoj-grl-5-a-2.test.cpp\"\n#define PROBLEM \"\
     http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A\"\n\n#line 1\
-    \ \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
+    \ \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
     \nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll = (1LL\
     \ << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -48,7 +48,7 @@ data:
     \  explicit FixPoint(F &&f) : F(forward< F >(f)) {}\n\n  template< typename...\
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
-    \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 1 \"structure/develop/super-link-cut-tree.cpp\"\
+    \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 1 \"structure/develop/super-link-cut-tree.hpp\"\
     \n/**\n * @brief \u4F55\u3067\u3082\u3067\u304D\u308BLCT\n */\ntemplate< typename\
     \ LInfo, typename Lazy >\nstruct SplayTree {\n  struct Node {\n    Node *l, *r,\
     \ *p;\n    LInfo info;\n    Lazy lazy, lbuf;\n\n    explicit Node(const LInfo\
@@ -177,7 +177,7 @@ data:
     \u9045\u5EF6\u4F1D\u642C\n  // path\u3068subtree\u306E\u9045\u5EF6\u4F1D\u642C\
     \u304C\u4E21\u65B9\u3042\u308B\u5834\u5408\u306B\u5B9F\u88C5\u3059\u308B\n  void\
     \ propagate_light(const Lazy &p) {}\n};\n\nusing LCT = SuperLinkCutTree< Info,\
-    \ LInfo, Lazy >;\n*/\n#line 2 \"structure/develop/diameter.cpp\"\n\n/**\n * @brief\
+    \ LInfo, Lazy >;\n*/\n#line 2 \"structure/develop/diameter.hpp\"\n\n/**\n * @brief\
     \ Diameter\n */\nusing T = int64_t;\n\n// \u9045\u5EF6\u4F1D\u642C\u3092\u3059\
     \u308B\u305F\u3081\u306E\u4F5C\u7528\u7D20\nstruct Lazy {\n\n  // \u5358\u4F4D\
     \u5143\n  Lazy() {}\n\n  // \u521D\u671F\u5316\n  Lazy(T v) {}\n\n  // \u9045\u5EF6\
@@ -225,7 +225,7 @@ data:
     \ vs[idx]);\n    }\n  });\n  rec(0, -1);\n  cout << lct.query(vs[0]).dia_max <<\
     \ \"\\n\";\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A\"\
-    \n\n#include \"../../template/template.cpp\"\n#include \"../../structure/develop/diameter.cpp\"\
+    \n\n#include \"../../template/template.hpp\"\n#include \"../../structure/develop/diameter.hpp\"\
     \n\nint main() {\n  int N;\n  cin >> N;\n  LCT lct;\n  vector< vector< pair< int,\
     \ int > > > g(N);\n  for(int i = 1; i < N; i++) {\n    int x, y, z;\n    cin >>\
     \ x >> y >> z;\n    g[x].emplace_back(y, z);\n    g[y].emplace_back(x, z);\n \
@@ -236,14 +236,14 @@ data:
     \ vs[idx]);\n    }\n  });\n  rec(0, -1);\n  cout << lct.query(vs[0]).dia_max <<\
     \ \"\\n\";\n}\n"
   dependsOn:
-  - template/template.cpp
-  - structure/develop/diameter.cpp
-  - structure/develop/super-link-cut-tree.cpp
+  - template/template.hpp
+  - structure/develop/diameter.hpp
+  - structure/develop/super-link-cut-tree.hpp
   isVerificationFile: true
   path: test/verify/aoj-grl-5-a-2.test.cpp
   requiredBy: []
-  timestamp: '2021-10-11 00:07:13+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/aoj-grl-5-a-2.test.cpp
 layout: document

@@ -1,37 +1,37 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/tree/offline-lca.hpp
     title: "Offline LCA(\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\u901A\u7956\
       \u5148)"
-  - icon: ':heavy_check_mark:'
-    path: other/printer.cpp
+  - icon: ':x:'
+    path: other/printer.hpp
     title: "Printer(\u9AD8\u901F\u51FA\u529B)"
-  - icon: ':heavy_check_mark:'
-    path: other/scanner.cpp
+  - icon: ':x:'
+    path: other/scanner.hpp
     title: "Scanner(\u9AD8\u901F\u5165\u529B)"
-  - icon: ':heavy_check_mark:'
-    path: structure/union-find/union-find.cpp
+  - icon: ':question:'
+    path: structure/union-find/union-find.hpp
     title: Union-Find
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/lca
     links:
     - https://judge.yosupo.jp/problem/lca
   bundledCode: "#line 1 \"test/verify/yosupo-lca-4.test.cpp\"\n#define PROBLEM \"\
-    https://judge.yosupo.jp/problem/lca\"\n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\
+    https://judge.yosupo.jp/problem/lca\"\n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\
     \nusing namespace std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\
     \nconst int64 infll = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct\
     \ IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
@@ -77,7 +77,7 @@ data:
     \ b, c);\n    }\n  }\n\n  inline vector< Edge< T > > &operator[](const int &k)\
     \ {\n    return g[k];\n  }\n\n  inline const vector< Edge< T > > &operator[](const\
     \ int &k) const {\n    return g[k];\n  }\n};\n\ntemplate< typename T = int >\n\
-    using Edges = vector< Edge< T > >;\n#line 2 \"structure/union-find/union-find.cpp\"\
+    using Edges = vector< Edge< T > >;\n#line 2 \"structure/union-find/union-find.hpp\"\
     \n\n/**\n * @brief Union-Find\n * @docs docs/union-find.md\n */\nstruct UnionFind\
     \ {\n  vector< int > data;\n\n  UnionFind() = default;\n\n  explicit UnionFind(size_t\
     \ sz) : data(sz, -1) {}\n\n  bool unite(int x, int y) {\n    x = find(x), y =\
@@ -107,7 +107,7 @@ data:
     \  if(not run(u)) {\n      for(auto&[v, i]: q[u]) {\n        if(~mark[v] and ans[i]\
     \ == -1) {\n          ans[i] = mark[uf.find(v)];\n        }\n      }\n      --top;\n\
     \    }\n  }\n  return ans;\n}\n#line 6 \"test/verify/yosupo-lca-4.test.cpp\"\n\
-    \n#line 1 \"other/scanner.cpp\"\n/**\n * @brief Scanner(\u9AD8\u901F\u5165\u529B\
+    \n#line 1 \"other/scanner.hpp\"\n/**\n * @brief Scanner(\u9AD8\u901F\u5165\u529B\
     )\n */\nstruct Scanner {\npublic:\n\n  explicit Scanner(FILE *fp) : fp(fp) {}\n\
     \n  template< typename T, typename... E >\n  void read(T &t, E &... e) {\n   \
     \ read_single(t);\n    read(e...);\n  }\n\nprivate:\n  static constexpr size_t\
@@ -129,7 +129,7 @@ data:
     \ = st;\n      while(*st && !is_space(*st)) ++st;\n      s += string(base, st);\n\
     \      if(st != ed) return;\n      reread();\n    }\n  }\n\n  template< typename\
     \ T >\n  void read_single(vector< T > &s) {\n    for(auto &d : s) read(d);\n \
-    \ }\n};\n#line 1 \"other/printer.cpp\"\n/**\n * @brief Printer(\u9AD8\u901F\u51FA\
+    \ }\n};\n#line 1 \"other/printer.hpp\"\n/**\n * @brief Printer(\u9AD8\u901F\u51FA\
     \u529B)\n */\nstruct Printer {\npublic:\n  explicit Printer(FILE *fp) : fp(fp)\
     \ {}\n\n  ~Printer() { flush(); }\n\n  template< bool f = false, typename T, typename...\
     \ E >\n  void write(const T &t, const E &... e) {\n    if(f) write_single(' ');\n\
@@ -153,26 +153,26 @@ data:
     \ x;\n    in.read(x);\n    g.add_directed_edge(x, i);\n  }\n  vector< pair< int,\
     \ int > > qs(Q);\n  for(auto&[l, r]: qs) in.read(l, r);\n  auto ans = offline_lca(g,\
     \ qs);\n  for(auto &p: ans) out.writeln(p);\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\n\n#include \"../../template/template.cpp\"\
-    \n\n#include \"../../graph/tree/offline-lca.hpp\"\n\n#include \"../../other/scanner.cpp\"\
-    \n#include \"../../other/printer.cpp\"\n\nint main() {\n  Scanner in(stdin);\n\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\n\n#include \"../../template/template.hpp\"\
+    \n\n#include \"../../graph/tree/offline-lca.hpp\"\n\n#include \"../../other/scanner.hpp\"\
+    \n#include \"../../other/printer.hpp\"\n\nint main() {\n  Scanner in(stdin);\n\
     \  Printer out(stdout);\n  int N, Q;\n  in.read(N, Q);\n  Graph< int > g(N);\n\
     \  for(int i = 1; i < N; i++) {\n    int x;\n    in.read(x);\n    g.add_directed_edge(x,\
     \ i);\n  }\n  vector< pair< int, int > > qs(Q);\n  for(auto&[l, r]: qs) in.read(l,\
     \ r);\n  auto ans = offline_lca(g, qs);\n  for(auto &p: ans) out.writeln(p);\n\
     }\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - graph/tree/offline-lca.hpp
   - graph/graph-template.hpp
-  - structure/union-find/union-find.cpp
-  - other/scanner.cpp
-  - other/printer.cpp
+  - structure/union-find/union-find.hpp
+  - other/scanner.hpp
+  - other/printer.hpp
   isVerificationFile: true
   path: test/verify/yosupo-lca-4.test.cpp
   requiredBy: []
-  timestamp: '2022-06-25 18:23:01+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-lca-4.test.cpp
 layout: document

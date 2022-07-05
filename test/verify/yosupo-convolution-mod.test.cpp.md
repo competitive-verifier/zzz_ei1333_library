@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/fft/number-theoretic-transform.cpp
-    title: math/fft/number-theoretic-transform.cpp
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':x:'
+    path: math/fft/number-theoretic-transform.hpp
+    title: math/fft/number-theoretic-transform.hpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/convolution_mod
     links:
     - https://judge.yosupo.jp/problem/convolution_mod
   bundledCode: "#line 1 \"test/verify/yosupo-convolution-mod.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/convolution_mod\"\n\n#line 1 \"template/template.cpp\"\
+    \ \"https://judge.yosupo.jp/problem/convolution_mod\"\n\n#line 1 \"template/template.hpp\"\
     \n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -46,7 +46,7 @@ data:
     \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-convolution-mod.test.cpp\"\
-    \n\n#line 1 \"math/fft/number-theoretic-transform.cpp\"\ntemplate< int mod >\n\
+    \n\n#line 1 \"math/fft/number-theoretic-transform.hpp\"\ntemplate< int mod >\n\
     struct NumberTheoreticTransform {\n\n  vector< int > rev, rts;\n  int base, max_base,\
     \ root;\n\n  NumberTheoreticTransform() : base(1), rev{0, 1}, rts{0, 1} {\n  \
     \  assert(mod >= 3 && mod % 2 == 1);\n    auto tmp = mod - 1;\n    max_base =\
@@ -85,19 +85,19 @@ data:
     \ 998244353 > ntt;\n  for(auto &c : ntt.multiply(A, B)) cout << c << \" \";\n\
     \  cout << endl;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/convolution_mod\"\n\n#include\
-    \ \"../../template/template.cpp\"\n\n#include \"../../math/fft/number-theoretic-transform.cpp\"\
+    \ \"../../template/template.hpp\"\n\n#include \"../../math/fft/number-theoretic-transform.hpp\"\
     \n\nint main() {\n  int N, M;\n  cin >> N >> M;\n  vector< int > A(N), B(M);\n\
     \  for(auto &a : A) cin >> a;\n  for(auto &b : B) cin >> b;\n  NumberTheoreticTransform<\
     \ 998244353 > ntt;\n  for(auto &c : ntt.multiply(A, B)) cout << c << \" \";\n\
     \  cout << endl;\n}\n"
   dependsOn:
-  - template/template.cpp
-  - math/fft/number-theoretic-transform.cpp
+  - template/template.hpp
+  - math/fft/number-theoretic-transform.hpp
   isVerificationFile: true
   path: test/verify/yosupo-convolution-mod.test.cpp
   requiredBy: []
-  timestamp: '2021-05-01 00:06:55+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-convolution-mod.test.cpp
 layout: document

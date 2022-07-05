@@ -1,32 +1,32 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/combinatorics/mod-int.cpp
-    title: math/combinatorics/mod-int.cpp
-  - icon: ':heavy_check_mark:'
-    path: math/fft/arbitrary-mod-convolution.cpp
+  - icon: ':question:'
+    path: math/combinatorics/mod-int.hpp
+    title: math/combinatorics/mod-int.hpp
+  - icon: ':x:'
+    path: math/fft/arbitrary-mod-convolution.hpp
     title: "Arbitrary Mod Convolution(\u4EFB\u610Fmod\u7573\u307F\u8FBC\u307F)"
-  - icon: ':heavy_check_mark:'
-    path: math/fft/fast-fourier-transform.cpp
-    title: math/fft/fast-fourier-transform.cpp
-  - icon: ':heavy_check_mark:'
-    path: math/fps/berlekamp-massey.cpp
+  - icon: ':x:'
+    path: math/fft/fast-fourier-transform.hpp
+    title: math/fft/fast-fourier-transform.hpp
+  - icon: ':x:'
+    path: math/fps/berlekamp-massey.hpp
     title: Berlekamp Massey
-  - icon: ':heavy_check_mark:'
-    path: math/fps/formal-power-series.cpp
+  - icon: ':x:'
+    path: math/fps/formal-power-series.hpp
     title: "Formal Power Series(\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570)"
-  - icon: ':heavy_check_mark:'
-    path: math/fps/sparse-matrix.cpp
-    title: math/fps/sparse-matrix.cpp
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':x:'
+    path: math/fps/sparse-matrix.hpp
+    title: math/fps/sparse-matrix.hpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/sparse_matrix_det
@@ -34,7 +34,7 @@ data:
     - https://judge.yosupo.jp/problem/sparse_matrix_det
   bundledCode: "#line 1 \"test/verify/yosupo-sparse-matrix-det.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/sparse_matrix_det\"\n\n#line 1 \"\
-    template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing\
+    template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing\
     \ int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll = (1LL <<\
     \ 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n\
     \    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed <<\
@@ -61,7 +61,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-sparse-matrix-det.test.cpp\"\
-    \n\n#line 1 \"math/combinatorics/mod-int.cpp\"\ntemplate< int mod >\nstruct ModInt\
+    \n\n#line 1 \"math/combinatorics/mod-int.hpp\"\ntemplate< int mod >\nstruct ModInt\
     \ {\n  int x;\n\n  ModInt() : x(0) {}\n\n  ModInt(int64_t y) : x(y >= 0 ? y %\
     \ mod : (mod - (-y) % mod) % mod) {}\n\n  ModInt &operator+=(const ModInt &p)\
     \ {\n    if((x += p.x) >= mod) x -= mod;\n    return *this;\n  }\n\n  ModInt &operator-=(const\
@@ -84,7 +84,7 @@ data:
     \  friend istream &operator>>(istream &is, ModInt &a) {\n    int64_t t;\n    is\
     \ >> t;\n    a = ModInt< mod >(t);\n    return (is);\n  }\n\n  static int get_mod()\
     \ { return mod; }\n};\n\nusing modint = ModInt< mod >;\n#line 6 \"test/verify/yosupo-sparse-matrix-det.test.cpp\"\
-    \n\n#line 1 \"math/fft/fast-fourier-transform.cpp\"\nnamespace FastFourierTransform\
+    \n\n#line 1 \"math/fft/fast-fourier-transform.hpp\"\nnamespace FastFourierTransform\
     \ {\n  using real = double;\n\n  struct C {\n    real x, y;\n\n    C() : x(0),\
     \ y(0) {}\n\n    C(real x, real y) : x(x), y(y) {}\n\n    inline C operator+(const\
     \ C &c) const { return C(x + c.x, y + c.y); }\n\n    inline C operator-(const\
@@ -120,7 +120,7 @@ data:
     \      C A1 = (fa[i] - fa[i + (sz >> 1)]) * t * rts[(sz >> 1) + i];\n      fa[i]\
     \ = A0 + A1 * s;\n    }\n    fft(fa, sz >> 1);\n    vector< int64_t > ret(need);\n\
     \    for(int i = 0; i < need; i++) {\n      ret[i] = llround(i & 1 ? fa[i >> 1].y\
-    \ : fa[i >> 1].x);\n    }\n    return ret;\n  }\n};\n#line 2 \"math/fft/arbitrary-mod-convolution.cpp\"\
+    \ : fa[i >> 1].x);\n    }\n    return ret;\n  }\n};\n#line 2 \"math/fft/arbitrary-mod-convolution.hpp\"\
     \n\n/*\n * @brief Arbitrary Mod Convolution(\u4EFB\u610Fmod\u7573\u307F\u8FBC\u307F\
     )\n */\ntemplate< typename T >\nstruct ArbitraryModConvolution {\n  using real\
     \ = FastFourierTransform::real;\n  using C = FastFourierTransform::C;\n\n  ArbitraryModConvolution()\
@@ -145,7 +145,7 @@ data:
     \ {\n      int64_t aa = llround(fa[i].x);\n      int64_t bb = llround(fb[i].x);\n\
     \      int64_t cc = llround(fa[i].y);\n      aa = T(aa).x, bb = T(bb).x, cc =\
     \ T(cc).x;\n      ret[i] = aa + (bb << 15) + (cc << 30);\n    }\n    return ret;\n\
-    \  }\n};\n#line 2 \"math/fps/formal-power-series.cpp\"\n\n/**\n * @brief Formal\
+    \  }\n};\n#line 2 \"math/fps/formal-power-series.hpp\"\n\n/**\n * @brief Formal\
     \ Power Series(\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570)\n */\ntemplate< typename\
     \ T >\nstruct FormalPowerSeries : vector< T > {\n  using vector< T >::vector;\n\
     \  using P = FormalPowerSeries;\n  using Conv = ArbitraryModConvolution< T >;\n\
@@ -241,7 +241,7 @@ data:
     \ - 1];\n    p = (p * bs).pre(n);\n    p = p.rev();\n    for(int i = 0; i < n;\
     \ i++) p[i] *= rfact[i];\n    return p;\n  }\n};\n\n\ntemplate< typename Mint\
     \ >\nusing FPS = FormalPowerSeries< Mint >;\n#line 8 \"test/verify/yosupo-sparse-matrix-det.test.cpp\"\
-    \n\n#line 1 \"math/fps/berlekamp-massey.cpp\"\n/**\n * @brief Berlekamp Massey\n\
+    \n\n#line 1 \"math/fps/berlekamp-massey.hpp\"\n/**\n * @brief Berlekamp Massey\n\
     \ */\ntemplate< template< typename > class FPS, typename Mint >\nFPS< Mint > berlekamp_massey(const\
     \ FPS< Mint > &s) {\n  const int N = (int) s.size();\n  FPS< Mint > b = {Mint(-1)},\
     \ c = {Mint(-1)};\n  Mint y = Mint(1);\n  for(int ed = 1; ed <= N; ed++) {\n \
@@ -251,7 +251,7 @@ data:
     \   auto tmp = c;\n      c.insert(begin(c), m - l, Mint(0));\n      for(int i\
     \ = 0; i < m; i++) c[m - 1 - i] -= freq * b[m - 1 - i];\n      b = tmp;\n    \
     \  y = x;\n    } else {\n      for(int i = 0; i < m; i++) c[l - 1 - i] -= freq\
-    \ * b[m - 1 - i];\n    }\n  }\n  return c;\n}\n#line 1 \"math/fps/sparse-matrix.cpp\"\
+    \ * b[m - 1 - i];\n    }\n  }\n  return c;\n}\n#line 1 \"math/fps/sparse-matrix.hpp\"\
     \ntemplate< typename T >\nusing FPSGraph = vector< vector< pair< int, T > > >;\n\
     \ntemplate< typename T >\nFormalPowerSeries< T > random_poly(int n) {\n  mt19937\
     \ mt(1333333);\n  FormalPowerSeries< T > res(n);\n  uniform_int_distribution<\
@@ -281,26 +281,26 @@ data:
     \ K; i++) {\n    int a, b, c;\n    cin >> a >> b >> c;\n    g[a].emplace_back(b,\
     \ c);\n  }\n  cout << sparse_determinant(g) << endl;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/sparse_matrix_det\"\n\n\
-    #include \"../../template/template.cpp\"\n\n#include \"../../math/combinatorics/mod-int.cpp\"\
-    \n\n#include \"../../math/fps/formal-power-series.cpp\"\n\n#include \"../../math/fps/berlekamp-massey.cpp\"\
-    \n#include \"../../math/fps/sparse-matrix.cpp\"\n\nconst int MOD = 998244353;\n\
+    #include \"../../template/template.hpp\"\n\n#include \"../../math/combinatorics/mod-int.hpp\"\
+    \n\n#include \"../../math/fps/formal-power-series.hpp\"\n\n#include \"../../math/fps/berlekamp-massey.hpp\"\
+    \n#include \"../../math/fps/sparse-matrix.hpp\"\n\nconst int MOD = 998244353;\n\
     using mint = ModInt< MOD >;\n\nint main() {\n  int N, K;\n  cin >> N >> K;\n \
     \ FPSGraph< mint > g(N);\n  for(int i = 0; i < K; i++) {\n    int a, b, c;\n \
     \   cin >> a >> b >> c;\n    g[a].emplace_back(b, c);\n  }\n  cout << sparse_determinant(g)\
     \ << endl;\n}\n"
   dependsOn:
-  - template/template.cpp
-  - math/combinatorics/mod-int.cpp
-  - math/fps/formal-power-series.cpp
-  - math/fft/arbitrary-mod-convolution.cpp
-  - math/fft/fast-fourier-transform.cpp
-  - math/fps/berlekamp-massey.cpp
-  - math/fps/sparse-matrix.cpp
+  - template/template.hpp
+  - math/combinatorics/mod-int.hpp
+  - math/fps/formal-power-series.hpp
+  - math/fft/arbitrary-mod-convolution.hpp
+  - math/fft/fast-fourier-transform.hpp
+  - math/fps/berlekamp-massey.hpp
+  - math/fps/sparse-matrix.hpp
   isVerificationFile: true
   path: test/verify/yosupo-sparse-matrix-det.test.cpp
   requiredBy: []
-  timestamp: '2021-07-13 20:39:58+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-sparse-matrix-det.test.cpp
 layout: document

@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/others/maximum-clique.hpp
     title: "Maximum Clique(\u6700\u5927\u30AF\u30EA\u30FC\u30AF)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/maximum_independent_set
@@ -19,7 +19,7 @@ data:
     - https://judge.yosupo.jp/problem/maximum_independent_set
   bundledCode: "#line 1 \"test/verify/yosupo-maximum-independent-set-2.test.cpp\"\n\
     #define PROBLEM \"https://judge.yosupo.jp/problem/maximum_independent_set\"\n\n\
-    #line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    #line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -75,7 +75,7 @@ data:
     \ j);\n    }\n  }\n  auto ret = mc.solve();\n  cout << ret.size() << \"\\n\";\n\
     \  cout << ret << \"\\n\";\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/maximum_independent_set\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../graph/others/maximum-clique.hpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../graph/others/maximum-clique.hpp\"\
     \n\nint main() {\n  int V, E;\n  cin >> V >> E;\n  auto D = make_v< int >(V, V);\n\
     \  for(int i = 0; i < E; i++) {\n    int a, b;\n    cin >> a >> b;\n    D[a][b]\
     \ = D[b][a] = true;\n  }\n  MaximumClique< 40 > mc(V);\n  for(int i = 0; i < V;\
@@ -83,13 +83,13 @@ data:
     \ j);\n    }\n  }\n  auto ret = mc.solve();\n  cout << ret.size() << \"\\n\";\n\
     \  cout << ret << \"\\n\";\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - graph/others/maximum-clique.hpp
   isVerificationFile: true
   path: test/verify/yosupo-maximum-independent-set-2.test.cpp
   requiredBy: []
-  timestamp: '2021-07-21 02:10:43+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-maximum-independent-set-2.test.cpp
 layout: document

@@ -1,36 +1,36 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/others/cartesian-tree.hpp
     title: Cartesian Tree
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/tree/pmormq-lowest-common-ancestor.hpp
     title: "PMORMQ-Lowest-Common-Ancestor(\u6700\u5C0F\u5171\u901A\u7956\u5148)"
-  - icon: ':heavy_check_mark:'
-    path: structure/others/plus-minus-one-rmq.cpp
+  - icon: ':x:'
+    path: structure/others/plus-minus-one-rmq.hpp
     title: Plus-Minus-One-RMQ
-  - icon: ':heavy_check_mark:'
-    path: structure/others/sparse-table.cpp
+  - icon: ':x:'
+    path: structure/others/sparse-table.hpp
     title: "Sparse-Table(\u30B9\u30D1\u30FC\u30B9\u30C6\u30FC\u30D6\u30EB)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/staticrmq
     links:
     - https://judge.yosupo.jp/problem/staticrmq
   bundledCode: "#line 1 \"test/verify/yosupo-staticrmq-4.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#line 1 \"template/template.cpp\"\
+    \ \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#line 1 \"template/template.hpp\"\
     \n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -77,7 +77,7 @@ data:
     \ {\n    return g[k];\n  }\n\n  inline const vector< Edge< T > > &operator[](const\
     \ int &k) const {\n    return g[k];\n  }\n};\n\ntemplate< typename T = int >\n\
     using Edges = vector< Edge< T > >;\n#line 2 \"graph/tree/pmormq-lowest-common-ancestor.hpp\"\
-    \n\n#line 1 \"structure/others/sparse-table.cpp\"\n/**\n * @brief Sparse-Table(\u30B9\
+    \n\n#line 1 \"structure/others/sparse-table.hpp\"\n/**\n * @brief Sparse-Table(\u30B9\
     \u30D1\u30FC\u30B9\u30C6\u30FC\u30D6\u30EB)\n * @docs docs/sparse-table.md\n */\n\
     template< typename T, typename F >\nstruct SparseTable {\n  F f;\n  vector< vector<\
     \ T > > st;\n  vector< int > lookup;\n\n  SparseTable() = default;\n\n  explicit\
@@ -91,7 +91,7 @@ data:
     \ l, int r) const {\n    int b = lookup[r - l];\n    return f(st[b][l], st[b][r\
     \ - (1 << b)]);\n  }\n};\n\ntemplate< typename T, typename F >\nSparseTable< T,\
     \ F > get_sparse_table(const vector< T > &v, const F &f) {\n  return SparseTable<\
-    \ T, F >(v, f);\n}\n#line 2 \"structure/others/plus-minus-one-rmq.cpp\"\n\n/**\n\
+    \ T, F >(v, f);\n}\n#line 2 \"structure/others/plus-minus-one-rmq.hpp\"\n\n/**\n\
     \ * @brief Plus-Minus-One-RMQ\n **/\ntemplate< typename T >\nstruct PlusMinusOneRMQ\
     \ {\n  using F = function< int(int, int) >;\n\n  int backet;\n  vector< T > vs;\n\
     \  vector< int > bidx, bbit;\n  SparseTable< int, F > st;\n  vector< vector< vector<\
@@ -146,7 +146,7 @@ data:
     \  while(Q--) {\n    int l, r;\n    cin >> l >> r;\n    cout << A[g.lca(l, r -\
     \ 1)] << \"\\n\";\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#include\
-    \ \"../../template/template.cpp\"\n\n#include \"../../graph/graph-template.hpp\"\
+    \ \"../../template/template.hpp\"\n\n#include \"../../graph/graph-template.hpp\"\
     \n#include \"../../graph/tree/pmormq-lowest-common-ancestor.hpp\"\n#include \"\
     ../../graph/others/cartesian-tree.hpp\"\n\nint main() {\n  int N, Q;\n  cin >>\
     \ N >> Q;\n  vector< int > A(N);\n  cin >> A;\n  auto t = cartesian_tree(A);\n\
@@ -156,17 +156,17 @@ data:
     \  int l, r;\n    cin >> l >> r;\n    cout << A[g.lca(l, r - 1)] << \"\\n\";\n\
     \  }\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - graph/graph-template.hpp
   - graph/tree/pmormq-lowest-common-ancestor.hpp
-  - structure/others/plus-minus-one-rmq.cpp
-  - structure/others/sparse-table.cpp
+  - structure/others/plus-minus-one-rmq.hpp
+  - structure/others/sparse-table.hpp
   - graph/others/cartesian-tree.hpp
   isVerificationFile: true
   path: test/verify/yosupo-staticrmq-4.test.cpp
   requiredBy: []
-  timestamp: '2021-08-16 02:17:26+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-staticrmq-4.test.cpp
 layout: document

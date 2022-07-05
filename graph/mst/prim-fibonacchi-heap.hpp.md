@@ -1,21 +1,21 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
-  - icon: ':heavy_check_mark:'
-    path: structure/heap/fibonacchi-heap.cpp
+  - icon: ':x:'
+    path: structure/heap/fibonacchi-heap.hpp
     title: "Fibonacchi-Heap(\u30D5\u30A3\u30DC\u30CA\u30C3\u30C1\u30D2\u30FC\u30D7\
       )"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/aoj-grl-2-a-4.test.cpp
     title: test/verify/aoj-grl-2-a-4.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: docs/prim-fibonacchi-heap.md
     document_title: "Prim Fibonacchi Heap(\u6700\u5C0F\u5168\u57DF\u6728)"
@@ -38,7 +38,7 @@ data:
     \ b, c);\n      else add_edge(a, b, c);\n    }\n  }\n\n  inline vector< Edge<\
     \ T > > &operator[](const int &k) {\n    return g[k];\n  }\n\n  inline const vector<\
     \ Edge< T > > &operator[](const int &k) const {\n    return g[k];\n  }\n};\n\n\
-    template< typename T = int >\nusing Edges = vector< Edge< T > >;\n#line 1 \"structure/heap/fibonacchi-heap.cpp\"\
+    template< typename T = int >\nusing Edges = vector< Edge< T > >;\n#line 1 \"structure/heap/fibonacchi-heap.hpp\"\
     \n/**\n * @brief Fibonacchi-Heap(\u30D5\u30A3\u30DC\u30CA\u30C3\u30C1\u30D2\u30FC\
     \u30D7)\n * @see https://www.cs.princeton.edu/~wayne/teaching/fibonacci-heap.pdf\n\
     \ */\ntemplate< typename key_t, typename val_t >\nstruct FibonacchiHeap {\n  struct\
@@ -97,7 +97,7 @@ data:
     \     keep[e.to] = heap.push(e.cost, e.to);\n      } else {\n        T d = dist[e.to]->cost\
     \ - e.cost;\n        heap.decrease_key(keep[e.to], d);\n        dist[e.to] = &e;\n\
     \      }\n    }\n  }\n  return {total, es};\n}\n\n"
-  code: "#pragma once\n\n#include \"../graph-template.hpp\"\n#include \"../../structure/heap/fibonacchi-heap.cpp\"\
+  code: "#pragma once\n\n#include \"../graph-template.hpp\"\n#include \"../../structure/heap/fibonacchi-heap.hpp\"\
     \n\n/**\n * @brief Prim Fibonacchi Heap(\u6700\u5C0F\u5168\u57DF\u6728)\n * @docs\
     \ docs/prim-fibonacchi-heap.md\n */\ntemplate< typename T >\nstruct MinimumSpanningTree\
     \ {\n  T cost;\n  Edges< T > edges;\n};\n\ntemplate< typename T >\nMinimumSpanningTree<\
@@ -115,12 +115,12 @@ data:
     \      }\n    }\n  }\n  return {total, es};\n}\n\n"
   dependsOn:
   - graph/graph-template.hpp
-  - structure/heap/fibonacchi-heap.cpp
+  - structure/heap/fibonacchi-heap.hpp
   isVerificationFile: false
   path: graph/mst/prim-fibonacchi-heap.hpp
   requiredBy: []
-  timestamp: '2021-08-16 02:34:50+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/aoj-grl-2-a-4.test.cpp
 documentation_of: graph/mst/prim-fibonacchi-heap.hpp

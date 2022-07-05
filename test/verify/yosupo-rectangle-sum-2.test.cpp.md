@@ -1,33 +1,33 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: other/printer.cpp
+  - icon: ':x:'
+    path: other/printer.hpp
     title: "Printer(\u9AD8\u901F\u51FA\u529B)"
-  - icon: ':heavy_check_mark:'
-    path: other/scanner.cpp
+  - icon: ':x:'
+    path: other/scanner.hpp
     title: "Scanner(\u9AD8\u901F\u5165\u529B)"
-  - icon: ':heavy_check_mark:'
-    path: other/static-point-add-rectangle-sum.cpp
+  - icon: ':x:'
+    path: other/static-point-add-rectangle-sum.hpp
     title: Static Point Add Rectangle Sum
-  - icon: ':heavy_check_mark:'
-    path: structure/others/binary-indexed-tree.cpp
+  - icon: ':question:'
+    path: structure/others/binary-indexed-tree.hpp
     title: Binary-Indexed-Tree(BIT)
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/rectangle_sum
     links:
     - https://judge.yosupo.jp/problem/rectangle_sum
   bundledCode: "#line 1 \"test/verify/yosupo-rectangle-sum-2.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/rectangle_sum\"\n\n#line 1 \"template/template.cpp\"\
+    \ \"https://judge.yosupo.jp/problem/rectangle_sum\"\n\n#line 1 \"template/template.hpp\"\
     \n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -55,7 +55,7 @@ data:
     \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-rectangle-sum-2.test.cpp\"\
-    \n\n#line 1 \"structure/others/binary-indexed-tree.cpp\"\n/**\n * @brief Binary-Indexed-Tree(BIT)\n\
+    \n\n#line 1 \"structure/others/binary-indexed-tree.hpp\"\n/**\n * @brief Binary-Indexed-Tree(BIT)\n\
     \ * @docs docs/binary-indexed-tree.md\n */\ntemplate< typename T >\nstruct BinaryIndexedTree\
     \ {\nprivate:\n  int n;\n  vector< T > data;\n\npublic:\n  BinaryIndexedTree()\
     \ = default;\n\n  explicit BinaryIndexedTree(int n) : n(n) {\n    data.assign(n\
@@ -73,7 +73,7 @@ data:
     \   }\n    }\n    return i;\n  }\n\n  int upper_bound(T x) const {\n    int i\
     \ = 0;\n    for(int k = 1 << (__lg(n) + 1); k > 0; k >>= 1) {\n      if(i + k\
     \ <= n && data[i + k] <= x) {\n        x -= data[i + k];\n        i += k;\n  \
-    \    }\n    }\n    return i;\n  }\n};\n#line 2 \"other/static-point-add-rectangle-sum.cpp\"\
+    \    }\n    }\n    return i;\n  }\n};\n#line 2 \"other/static-point-add-rectangle-sum.hpp\"\
     \n\n/**\n * @brief Static Point Add Rectangle Sum\n */\ntemplate< typename T,\
     \ typename C >\nstruct StaticPointAddRectangleSum {\n  using BIT = BinaryIndexedTree<\
     \ C >;\n\n  static_assert(is_integral< T >::value, \"template parameter T must\
@@ -103,7 +103,7 @@ data:
     \        ++j;\n      }\n      if(query.type) ans[query.idx] += bit.prod(query.d,\
     \ query.u);\n      else ans[query.idx] -= bit.prod(query.d, query.u);\n    }\n\
     \    return ans;\n  }\n};\n#line 6 \"test/verify/yosupo-rectangle-sum-2.test.cpp\"\
-    \n\n#line 1 \"other/scanner.cpp\"\n/**\n * @brief Scanner(\u9AD8\u901F\u5165\u529B\
+    \n\n#line 1 \"other/scanner.hpp\"\n/**\n * @brief Scanner(\u9AD8\u901F\u5165\u529B\
     )\n */\nstruct Scanner {\npublic:\n\n  explicit Scanner(FILE *fp) : fp(fp) {}\n\
     \n  template< typename T, typename... E >\n  void read(T &t, E &... e) {\n   \
     \ read_single(t);\n    read(e...);\n  }\n\nprivate:\n  static constexpr size_t\
@@ -125,7 +125,7 @@ data:
     \ = st;\n      while(*st && !is_space(*st)) ++st;\n      s += string(base, st);\n\
     \      if(st != ed) return;\n      reread();\n    }\n  }\n\n  template< typename\
     \ T >\n  void read_single(vector< T > &s) {\n    for(auto &d : s) read(d);\n \
-    \ }\n};\n#line 1 \"other/printer.cpp\"\n/**\n * @brief Printer(\u9AD8\u901F\u51FA\
+    \ }\n};\n#line 1 \"other/printer.hpp\"\n/**\n * @brief Printer(\u9AD8\u901F\u51FA\
     \u529B)\n */\nstruct Printer {\npublic:\n  explicit Printer(FILE *fp) : fp(fp)\
     \ {}\n\n  ~Printer() { flush(); }\n\n  template< bool f = false, typename T, typename...\
     \ E >\n  void write(const T &t, const E &... e) {\n    if(f) write_single(' ');\n\
@@ -152,8 +152,8 @@ data:
     \    spars.add_query(l, d, r, u);\n  }\n  for(auto &&ans: spars.calculate_queries())\
     \ {\n    out.writeln(ans);\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/rectangle_sum\"\n\n#include\
-    \ \"../../template/template.cpp\"\n\n#include \"../../other/static-point-add-rectangle-sum.cpp\"\
-    \n\n#include \"../../other/scanner.cpp\"\n#include \"../../other/printer.cpp\"\
+    \ \"../../template/template.hpp\"\n\n#include \"../../other/static-point-add-rectangle-sum.hpp\"\
+    \n\n#include \"../../other/scanner.hpp\"\n#include \"../../other/printer.hpp\"\
     \n\nint main() {\n  int N, Q;\n  Scanner in(stdin);\n  Printer out(stdout);\n\
     \  in.read(N, Q);\n  StaticPointAddRectangleSum< int, int64 > spars;\n  for(int\
     \ i = 0; i < N; i++) {\n    int x, y, z;\n    in.read(x, y, z);\n    spars.add_point(x,\
@@ -162,16 +162,16 @@ data:
     \    spars.add_query(l, d, r, u);\n  }\n  for(auto &&ans: spars.calculate_queries())\
     \ {\n    out.writeln(ans);\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - other/static-point-add-rectangle-sum.cpp
-  - structure/others/binary-indexed-tree.cpp
-  - other/scanner.cpp
-  - other/printer.cpp
+  - template/template.hpp
+  - other/static-point-add-rectangle-sum.hpp
+  - structure/others/binary-indexed-tree.hpp
+  - other/scanner.hpp
+  - other/printer.hpp
   isVerificationFile: true
   path: test/verify/yosupo-rectangle-sum-2.test.cpp
   requiredBy: []
-  timestamp: '2022-06-25 20:28:37+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-rectangle-sum-2.test.cpp
 layout: document

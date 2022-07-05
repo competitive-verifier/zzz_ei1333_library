@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/combinatorics/lagrange-polynomial-3.cpp
+  - icon: ':x:'
+    path: math/combinatorics/lagrange-polynomial-3.hpp
     title: "Lagrange Polynomial(\u591A\u9805\u5F0F\u88DC\u9593, \u5024)"
-  - icon: ':heavy_check_mark:'
-    path: math/combinatorics/mod-int.cpp
-    title: math/combinatorics/mod-int.cpp
-  - icon: ':heavy_check_mark:'
-    path: math/fft/number-theoretic-transform-friendly-mod-int.cpp
+  - icon: ':question:'
+    path: math/combinatorics/mod-int.hpp
+    title: math/combinatorics/mod-int.hpp
+  - icon: ':x:'
+    path: math/fft/number-theoretic-transform-friendly-mod-int.hpp
     title: Number Theoretic Transform Friendly ModInt
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/shift_of_sampling_points_of_polynomial
@@ -25,7 +25,7 @@ data:
     - https://judge.yosupo.jp/problem/shift_of_sampling_points_of_polynomial
   bundledCode: "#line 1 \"test/verify/yosupo-shift-of-sampling-points-of-polynomial.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/shift_of_sampling_points_of_polynomial\"\
-    \n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -52,7 +52,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-shift-of-sampling-points-of-polynomial.test.cpp\"\
-    \n\n#line 1 \"math/fft/number-theoretic-transform-friendly-mod-int.cpp\"\n/**\n\
+    \n\n#line 1 \"math/fft/number-theoretic-transform-friendly-mod-int.hpp\"\n/**\n\
     \ * @brief Number Theoretic Transform Friendly ModInt\n */\ntemplate< typename\
     \ Mint >\nstruct NumberTheoreticTransformFriendlyModInt {\n\n  static vector<\
     \ Mint > roots, iroots, rate3, irate3;\n  static int max_base;\n\n  NumberTheoreticTransformFriendlyModInt()\
@@ -131,7 +131,7 @@ data:
     template< typename Mint >\nvector< Mint > NumberTheoreticTransformFriendlyModInt<\
     \ Mint >::irate3 = vector< Mint >();\ntemplate< typename Mint >\nint NumberTheoreticTransformFriendlyModInt<\
     \ Mint >::max_base = 0;\n#line 6 \"test/verify/yosupo-shift-of-sampling-points-of-polynomial.test.cpp\"\
-    \n\n#line 1 \"math/combinatorics/lagrange-polynomial-3.cpp\"\n/**\n * @brief Lagrange\
+    \n\n#line 1 \"math/combinatorics/lagrange-polynomial-3.hpp\"\n/**\n * @brief Lagrange\
     \ Polynomial(\u591A\u9805\u5F0F\u88DC\u9593, \u5024)\n */\ntemplate< typename\
     \ Mint, typename F >\nvector< Mint > lagrange_polynomial(const vector< Mint >\
     \ &y, int64_t T, const int &m, const F &multiply) {\n  int k = (int) y.size()\
@@ -152,7 +152,7 @@ data:
     \ cur = T;\n  for(int i = 1; i <= k; i++) cur *= T - i;\n  for(int i = 0; i <\
     \ m; i++) {\n    ret[i] = cur * dh[k + i];\n    cur *= T + i + 1;\n    cur *=\
     \ h[i];\n  }\n  return ret;\n}\n#line 8 \"test/verify/yosupo-shift-of-sampling-points-of-polynomial.test.cpp\"\
-    \n\n#line 1 \"math/combinatorics/mod-int.cpp\"\ntemplate< int mod >\nstruct ModInt\
+    \n\n#line 1 \"math/combinatorics/mod-int.hpp\"\ntemplate< int mod >\nstruct ModInt\
     \ {\n  int x;\n\n  ModInt() : x(0) {}\n\n  ModInt(int64_t y) : x(y >= 0 ? y %\
     \ mod : (mod - (-y) % mod) % mod) {}\n\n  ModInt &operator+=(const ModInt &p)\
     \ {\n    if((x += p.x) >= mod) x -= mod;\n    return *this;\n  }\n\n  ModInt &operator-=(const\
@@ -181,24 +181,24 @@ data:
     \ vector< mint > &a, const vector< mint > &b) { return v.multiply(a, b); };\n\
     \  cout << lagrange_polynomial(ys, M, T, multiply) << \"\\n\";\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/shift_of_sampling_points_of_polynomial\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../math/fft/number-theoretic-transform-friendly-mod-int.cpp\"\
-    \n\n#include \"../../math/combinatorics/lagrange-polynomial-3.cpp\"\n\n#include\
-    \ \"../../math/combinatorics/mod-int.cpp\"\n\nusing mint = ModInt< 998244353 >;\n\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../math/fft/number-theoretic-transform-friendly-mod-int.hpp\"\
+    \n\n#include \"../../math/combinatorics/lagrange-polynomial-3.hpp\"\n\n#include\
+    \ \"../../math/combinatorics/mod-int.hpp\"\n\nusing mint = ModInt< 998244353 >;\n\
     \nint main() {\n  int N, T, M;\n  cin >> N >> T >> M;\n  vector< mint > ys(N);\n\
     \  for(int i = 0; i < N; i++) cin >> ys[i];\n  NumberTheoreticTransformFriendlyModInt<\
     \ mint > v;\n  auto multiply = [&](const vector< mint > &a, const vector< mint\
     \ > &b) { return v.multiply(a, b); };\n  cout << lagrange_polynomial(ys, M, T,\
     \ multiply) << \"\\n\";\n}\n"
   dependsOn:
-  - template/template.cpp
-  - math/fft/number-theoretic-transform-friendly-mod-int.cpp
-  - math/combinatorics/lagrange-polynomial-3.cpp
-  - math/combinatorics/mod-int.cpp
+  - template/template.hpp
+  - math/fft/number-theoretic-transform-friendly-mod-int.hpp
+  - math/combinatorics/lagrange-polynomial-3.hpp
+  - math/combinatorics/mod-int.hpp
   isVerificationFile: true
   path: test/verify/yosupo-shift-of-sampling-points-of-polynomial.test.cpp
   requiredBy: []
-  timestamp: '2021-08-17 19:31:02+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-shift-of-sampling-points-of-polynomial.test.cpp
 layout: document

@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: structure/others/disjoint-sparse-table.cpp
+  - icon: ':x:'
+    path: structure/others/disjoint-sparse-table.hpp
     title: Disjoint-Sparse-Table
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/staticrmq
     links:
     - https://judge.yosupo.jp/problem/staticrmq
   bundledCode: "#line 1 \"test/verify/yosupo-staticrmq-2.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#line 1 \"template/template.cpp\"\
+    \ \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#line 1 \"template/template.hpp\"\
     \n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -46,7 +46,7 @@ data:
     \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-staticrmq-2.test.cpp\"\
-    \n\n#line 1 \"structure/others/disjoint-sparse-table.cpp\"\n/**\n * @brief Disjoint-Sparse-Table\n\
+    \n\n#line 1 \"structure/others/disjoint-sparse-table.hpp\"\n/**\n * @brief Disjoint-Sparse-Table\n\
     \ * @docs docs/disjoint-sparse-table.md\n */\ntemplate< typename Semigroup, typename\
     \ F >\nstruct DisjointSparseTable {\n  const F f;\n  vector< vector< Semigroup\
     \ > > st;\n  vector< int > lookup;\n\n  DisjointSparseTable(const vector< Semigroup\
@@ -70,19 +70,19 @@ data:
     \ f);\n  while(Q--) {\n    int l, r;\n    cin >> l >> r;\n    cout << st.fold(l,\
     \ r) << \"\\n\";\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#include\
-    \ \"../../template/template.cpp\"\n\n#include \"../../structure/others/disjoint-sparse-table.cpp\"\
+    \ \"../../template/template.hpp\"\n\n#include \"../../structure/others/disjoint-sparse-table.hpp\"\
     \n\nint main() {\n  int N, Q;\n  cin >> N >> Q;\n  vector< int > A(N);\n  cin\
     \ >> A;\n  auto f = [](int a, int b) { return min(a, b); };\n  auto st = get_disjoint_sparse_table(A,\
     \ f);\n  while(Q--) {\n    int l, r;\n    cin >> l >> r;\n    cout << st.fold(l,\
     \ r) << \"\\n\";\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - structure/others/disjoint-sparse-table.cpp
+  - template/template.hpp
+  - structure/others/disjoint-sparse-table.hpp
   isVerificationFile: true
   path: test/verify/yosupo-staticrmq-2.test.cpp
   requiredBy: []
-  timestamp: '2021-05-07 20:07:14+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-staticrmq-2.test.cpp
 layout: document

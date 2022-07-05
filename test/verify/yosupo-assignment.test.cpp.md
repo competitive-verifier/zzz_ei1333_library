@@ -1,28 +1,28 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/flow/hungarian.hpp
     title: "Hungarian(\u4E8C\u90E8\u30B0\u30E9\u30D5\u306E\u6700\u5C0F\u91CD\u307F\
       \u6700\u5927\u30DE\u30C3\u30C1\u30F3\u30B0)"
-  - icon: ':heavy_check_mark:'
-    path: math/matrix/matrix.cpp
-    title: math/matrix/matrix.cpp
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: math/matrix/matrix.hpp
+    title: math/matrix/matrix.hpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/assignment
     links:
     - https://judge.yosupo.jp/problem/assignment
   bundledCode: "#line 1 \"test/verify/yosupo-assignment.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/assignment\"\n\n#line 1 \"template/template.cpp\"\
+    \ \"https://judge.yosupo.jp/problem/assignment\"\n\n#line 1 \"template/template.hpp\"\
     \n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -50,7 +50,7 @@ data:
     \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-assignment.test.cpp\"\
-    \n\n#line 1 \"math/matrix/matrix.cpp\"\ntemplate< class T >\nstruct Matrix {\n\
+    \n\n#line 1 \"math/matrix/matrix.hpp\"\ntemplate< class T >\nstruct Matrix {\n\
     \  vector< vector< T > > A;\n\n  Matrix() {}\n\n  Matrix(size_t n, size_t m) :\
     \ A(n, vector< T >(m, 0)) {}\n\n  Matrix(size_t n) : A(n, vector< T >(n, 0)) {};\n\
     \n  size_t size() const {\n     if(A.empty()) return 0;\n     assert(A.size()\
@@ -112,21 +112,21 @@ data:
     \ \"\\n\";\n  ret.second.erase(begin(ret.second));\n  for(auto& p : ret.second)\
     \ --p;\n  cout << ret.second << \"\\n\";\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/assignment\"\n\n#include\
-    \ \"../../template/template.cpp\"\n\n#include \"../../graph/flow/hungarian.hpp\"\
+    \ \"../../template/template.hpp\"\n\n#include \"../../graph/flow/hungarian.hpp\"\
     \n\nint main() {\n  int N;\n  cin >> N;\n  Matrix< int64_t > X(N + 1, N + 1);\n\
     \  for(int i = 1; i <= N; i++) {\n    for(int j = 1; j <= N; j++) {\n      cin\
     \ >> X[j][i];\n    }\n  }\n  auto ret = hungarian(X);\n  cout << ret.first <<\
     \ \"\\n\";\n  ret.second.erase(begin(ret.second));\n  for(auto& p : ret.second)\
     \ --p;\n  cout << ret.second << \"\\n\";\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - graph/flow/hungarian.hpp
-  - math/matrix/matrix.cpp
+  - math/matrix/matrix.hpp
   isVerificationFile: true
   path: test/verify/yosupo-assignment.test.cpp
   requiredBy: []
-  timestamp: '2021-07-16 00:30:06+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-assignment.test.cpp
 layout: document

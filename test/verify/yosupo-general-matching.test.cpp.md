@@ -1,25 +1,25 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/flow/gabow-edmonds.hpp
     title: "Gabow Edmonds(\u4E00\u822C\u30B0\u30E9\u30D5\u306E\u6700\u5927\u30DE\u30C3\
       \u30C1\u30F3\u30B0)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/general_matching
     links:
     - https://judge.yosupo.jp/problem/general_matching
   bundledCode: "#line 1 \"test/verify/yosupo-general-matching.test.cpp\"\n#define\
-    \ PROBLEM \"https://judge.yosupo.jp/problem/general_matching\"\n\n#line 1 \"template/template.cpp\"\
+    \ PROBLEM \"https://judge.yosupo.jp/problem/general_matching\"\n\n#line 1 \"template/template.hpp\"\
     \n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -89,19 +89,19 @@ data:
     \  }\n  auto ret = flow.max_matching();\n  cout << ret.size() << endl;\n  for(auto\
     \ &p : ret) cout << p << endl;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/general_matching\"\n\n\
-    #include \"../../template/template.cpp\"\n\n#include \"../../graph/flow/gabow-edmonds.hpp\"\
+    #include \"../../template/template.hpp\"\n\n#include \"../../graph/flow/gabow-edmonds.hpp\"\
     \n\nint main() {\n  int N, M;\n  cin >> N >> M;\n  GabowEdmonds flow(N);\n  for(int\
     \ i = 0; i < M; i++) {\n    int a, b;\n    cin >> a >> b;\n    flow.add_edge(a,\
     \ b);\n  }\n  auto ret = flow.max_matching();\n  cout << ret.size() << endl;\n\
     \  for(auto &p : ret) cout << p << endl;\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - graph/flow/gabow-edmonds.hpp
   isVerificationFile: true
   path: test/verify/yosupo-general-matching.test.cpp
   requiredBy: []
-  timestamp: '2021-07-16 00:30:06+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-general-matching.test.cpp
 layout: document

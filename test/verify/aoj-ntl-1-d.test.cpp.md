@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/number-theory/euler-phi.cpp
+  - icon: ':x:'
+    path: math/number-theory/euler-phi.hpp
     title: "Euler's Phi(\u30AA\u30A4\u30E9\u30FC\u306E\u03C6\u95A2\u6570)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_D
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_D
   bundledCode: "#line 1 \"test/verify/aoj-ntl-1-d.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_D\"\
-    \n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -45,7 +45,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-ntl-1-d.test.cpp\"\
-    \n\n#line 1 \"math/number-theory/euler-phi.cpp\"\n/**\n * @brief Euler's Phi(\u30AA\
+    \n\n#line 1 \"math/number-theory/euler-phi.hpp\"\n/**\n * @brief Euler's Phi(\u30AA\
     \u30A4\u30E9\u30FC\u306E\u03C6\u95A2\u6570)\n * @docs docs/euler-phi.md\n */\n\
     template< typename T >\nT euler_phi(T n) {\n  T ret = n;\n  for(T i = 2; i * i\
     \ <= n; i++) {\n    if(n % i == 0) {\n      ret -= ret / i;\n      while(n % i\
@@ -53,17 +53,17 @@ data:
     \ 6 \"test/verify/aoj-ntl-1-d.test.cpp\"\n\nint main() {\n  int N;\n  cin >> N;\n\
     \  cout << euler_phi< int64_t >(N) << endl;\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_D\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../math/number-theory/euler-phi.cpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../math/number-theory/euler-phi.hpp\"\
     \n\nint main() {\n  int N;\n  cin >> N;\n  cout << euler_phi< int64_t >(N) <<\
     \ endl;\n}\n"
   dependsOn:
-  - template/template.cpp
-  - math/number-theory/euler-phi.cpp
+  - template/template.hpp
+  - math/number-theory/euler-phi.hpp
   isVerificationFile: true
   path: test/verify/aoj-ntl-1-d.test.cpp
   requiredBy: []
-  timestamp: '2021-07-13 21:51:53+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/aoj-ntl-1-d.test.cpp
 layout: document

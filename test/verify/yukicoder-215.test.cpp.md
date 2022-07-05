@@ -1,33 +1,33 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/combinatorics/mod-int.cpp
-    title: math/combinatorics/mod-int.cpp
-  - icon: ':heavy_check_mark:'
-    path: math/fft/arbitrary-mod-convolution.cpp
+  - icon: ':question:'
+    path: math/combinatorics/mod-int.hpp
+    title: math/combinatorics/mod-int.hpp
+  - icon: ':x:'
+    path: math/fft/arbitrary-mod-convolution.hpp
     title: "Arbitrary Mod Convolution(\u4EFB\u610Fmod\u7573\u307F\u8FBC\u307F)"
-  - icon: ':heavy_check_mark:'
-    path: math/fft/fast-fourier-transform.cpp
-    title: math/fft/fast-fourier-transform.cpp
-  - icon: ':heavy_check_mark:'
-    path: math/fps/formal-power-series.cpp
+  - icon: ':x:'
+    path: math/fft/fast-fourier-transform.hpp
+    title: math/fft/fast-fourier-transform.hpp
+  - icon: ':x:'
+    path: math/fps/formal-power-series.hpp
     title: "Formal Power Series(\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/215
     links:
     - https://yukicoder.me/problems/no/215
   bundledCode: "#line 1 \"test/verify/yukicoder-215.test.cpp\"\n#define PROBLEM \"\
-    https://yukicoder.me/problems/no/215\"\n\n#line 1 \"template/template.cpp\"\n\
+    https://yukicoder.me/problems/no/215\"\n\n#line 1 \"template/template.hpp\"\n\
     #include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -55,7 +55,7 @@ data:
     \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yukicoder-215.test.cpp\"\
-    \n\n#line 1 \"math/combinatorics/mod-int.cpp\"\ntemplate< int mod >\nstruct ModInt\
+    \n\n#line 1 \"math/combinatorics/mod-int.hpp\"\ntemplate< int mod >\nstruct ModInt\
     \ {\n  int x;\n\n  ModInt() : x(0) {}\n\n  ModInt(int64_t y) : x(y >= 0 ? y %\
     \ mod : (mod - (-y) % mod) % mod) {}\n\n  ModInt &operator+=(const ModInt &p)\
     \ {\n    if((x += p.x) >= mod) x -= mod;\n    return *this;\n  }\n\n  ModInt &operator-=(const\
@@ -77,7 +77,7 @@ data:
     \ &operator<<(ostream &os, const ModInt &p) {\n    return os << p.x;\n  }\n\n\
     \  friend istream &operator>>(istream &is, ModInt &a) {\n    int64_t t;\n    is\
     \ >> t;\n    a = ModInt< mod >(t);\n    return (is);\n  }\n\n  static int get_mod()\
-    \ { return mod; }\n};\n\nusing modint = ModInt< mod >;\n#line 1 \"math/fft/fast-fourier-transform.cpp\"\
+    \ { return mod; }\n};\n\nusing modint = ModInt< mod >;\n#line 1 \"math/fft/fast-fourier-transform.hpp\"\
     \nnamespace FastFourierTransform {\n  using real = double;\n\n  struct C {\n \
     \   real x, y;\n\n    C() : x(0), y(0) {}\n\n    C(real x, real y) : x(x), y(y)\
     \ {}\n\n    inline C operator+(const C &c) const { return C(x + c.x, y + c.y);\
@@ -114,7 +114,7 @@ data:
     \ >> 1) + i];\n      fa[i] = A0 + A1 * s;\n    }\n    fft(fa, sz >> 1);\n    vector<\
     \ int64_t > ret(need);\n    for(int i = 0; i < need; i++) {\n      ret[i] = llround(i\
     \ & 1 ? fa[i >> 1].y : fa[i >> 1].x);\n    }\n    return ret;\n  }\n};\n#line\
-    \ 2 \"math/fft/arbitrary-mod-convolution.cpp\"\n\n/*\n * @brief Arbitrary Mod\
+    \ 2 \"math/fft/arbitrary-mod-convolution.hpp\"\n\n/*\n * @brief Arbitrary Mod\
     \ Convolution(\u4EFB\u610Fmod\u7573\u307F\u8FBC\u307F)\n */\ntemplate< typename\
     \ T >\nstruct ArbitraryModConvolution {\n  using real = FastFourierTransform::real;\n\
     \  using C = FastFourierTransform::C;\n\n  ArbitraryModConvolution() = default;\n\
@@ -139,7 +139,7 @@ data:
     \ {\n      int64_t aa = llround(fa[i].x);\n      int64_t bb = llround(fb[i].x);\n\
     \      int64_t cc = llround(fa[i].y);\n      aa = T(aa).x, bb = T(bb).x, cc =\
     \ T(cc).x;\n      ret[i] = aa + (bb << 15) + (cc << 30);\n    }\n    return ret;\n\
-    \  }\n};\n#line 2 \"math/fps/formal-power-series.cpp\"\n\n/**\n * @brief Formal\
+    \  }\n};\n#line 2 \"math/fps/formal-power-series.hpp\"\n\n/**\n * @brief Formal\
     \ Power Series(\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570)\n */\ntemplate< typename\
     \ T >\nstruct FormalPowerSeries : vector< T > {\n  using vector< T >::vector;\n\
     \  using P = FormalPowerSeries;\n  using Conv = ArbitraryModConvolution< T >;\n\
@@ -246,8 +246,8 @@ data:
     \  dp = dp.rev();\n  FPS< mint > x{0, 1};\n  auto cur = x.mod_pow(N + (int64)\
     \ dp.size() - 2, dp);\n  cout << accumulate(begin(cur), end(cur), mint(0)) <<\
     \ \"\\n\";\n}\n"
-  code: "#define PROBLEM \"https://yukicoder.me/problems/no/215\"\n\n#include \"../../template/template.cpp\"\
-    \n\n#include \"../../math/combinatorics/mod-int.cpp\"\n#include \"../../math/fps/formal-power-series.cpp\"\
+  code: "#define PROBLEM \"https://yukicoder.me/problems/no/215\"\n\n#include \"../../template/template.hpp\"\
+    \n\n#include \"../../math/combinatorics/mod-int.hpp\"\n#include \"../../math/fps/formal-power-series.hpp\"\
     \n\nconst int MOD = (int) (1e9 + 7);\nusing mint = ModInt< MOD >;\n\nint main()\
     \ {\n  int64 N;\n  int P, C;\n  cin >> N >> P >> C;\n  vector< int > as{2, 3,\
     \ 5, 7, 11, 13};\n  vector< int > bs{4, 6, 8, 9, 10, 12};\n  auto gen = [&](vector<\
@@ -260,16 +260,16 @@ data:
     \ dp.size() - 2, dp);\n  cout << accumulate(begin(cur), end(cur), mint(0)) <<\
     \ \"\\n\";\n}\n"
   dependsOn:
-  - template/template.cpp
-  - math/combinatorics/mod-int.cpp
-  - math/fps/formal-power-series.cpp
-  - math/fft/arbitrary-mod-convolution.cpp
-  - math/fft/fast-fourier-transform.cpp
+  - template/template.hpp
+  - math/combinatorics/mod-int.hpp
+  - math/fps/formal-power-series.hpp
+  - math/fft/arbitrary-mod-convolution.hpp
+  - math/fft/fast-fourier-transform.hpp
   isVerificationFile: true
   path: test/verify/yukicoder-215.test.cpp
   requiredBy: []
-  timestamp: '2021-07-13 20:39:58+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yukicoder-215.test.cpp
 layout: document

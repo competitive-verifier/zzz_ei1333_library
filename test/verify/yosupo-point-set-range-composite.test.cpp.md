@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/combinatorics/mod-int.cpp
-    title: math/combinatorics/mod-int.cpp
-  - icon: ':heavy_check_mark:'
-    path: structure/bbst/reversible-splay-tree.cpp
+  - icon: ':question:'
+    path: math/combinatorics/mod-int.hpp
+    title: math/combinatorics/mod-int.hpp
+  - icon: ':x:'
+    path: structure/bbst/reversible-splay-tree.hpp
     title: "Reversible-Splay-Tree(\u53CD\u8EE2\u53EF\u80FDSplay\u6728)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_set_range_composite
@@ -22,7 +22,7 @@ data:
     - https://judge.yosupo.jp/problem/point_set_range_composite
   bundledCode: "#line 1 \"test/verify/yosupo-point-set-range-composite.test.cpp\"\n\
     #define PROBLEM \"https://judge.yosupo.jp/problem/point_set_range_composite\"\n\
-    \n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -49,7 +49,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-point-set-range-composite.test.cpp\"\
-    \n\n#line 1 \"structure/bbst/reversible-splay-tree.cpp\"\n/**\n * @brief Reversible-Splay-Tree(\u53CD\
+    \n\n#line 1 \"structure/bbst/reversible-splay-tree.hpp\"\n/**\n * @brief Reversible-Splay-Tree(\u53CD\
     \u8EE2\u53EF\u80FDSplay\u6728)\n */\ntemplate< typename Monoid = int, typename\
     \ OperatorMonoid = void >\nstruct ReversibleSplayTree {\npublic:\n  using F =\
     \ function< Monoid(Monoid, Monoid) >;\n  using S = function< Monoid(Monoid) >;\n\
@@ -126,7 +126,7 @@ data:
     \    update(x), update(t);\n    if((t->p = y)) {\n      if(y->l == x) y->l = t;\n\
     \      if(y->r == x) y->r = t;\n      update(y);\n    }\n  }\n\n  Node *merge(Node\
     \ *l) {\n    return l;\n  }\n};\n#line 6 \"test/verify/yosupo-point-set-range-composite.test.cpp\"\
-    \n\n#line 1 \"math/combinatorics/mod-int.cpp\"\ntemplate< int mod >\nstruct ModInt\
+    \n\n#line 1 \"math/combinatorics/mod-int.hpp\"\ntemplate< int mod >\nstruct ModInt\
     \ {\n  int x;\n\n  ModInt() : x(0) {}\n\n  ModInt(int64_t y) : x(y >= 0 ? y %\
     \ mod : (mod - (-y) % mod) % mod) {}\n\n  ModInt &operator+=(const ModInt &p)\
     \ {\n    if((x += p.x) >= mod) x -= mod;\n    return *this;\n  }\n\n  ModInt &operator-=(const\
@@ -160,8 +160,8 @@ data:
     \ r;\n      mint x;\n      cin >> l >> r >> x;\n      auto ret = seg.query(root,\
     \ l, r);\n      cout << ret.first * x + ret.second << \"\\n\";\n    }\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_set_range_composite\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../structure/bbst/reversible-splay-tree.cpp\"\
-    \n\n#include \"../../math/combinatorics/mod-int.cpp\"\n\nusing mint = ModInt<\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../structure/bbst/reversible-splay-tree.hpp\"\
+    \n\n#include \"../../math/combinatorics/mod-int.hpp\"\n\nusing mint = ModInt<\
     \ 998244353 >;\n\nint main() {\n  int N, Q;\n  cin >> N >> Q;\n  using pi = pair<\
     \ mint, mint >;\n  auto f = [](const pi &a, const pi &b) -> pi {\n    return {a.first\
     \ * b.first, a.second * b.first + b.second};\n  };\n  ReversibleSplayTree< pi\
@@ -173,14 +173,14 @@ data:
     \ >> r >> x;\n      auto ret = seg.query(root, l, r);\n      cout << ret.first\
     \ * x + ret.second << \"\\n\";\n    }\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - structure/bbst/reversible-splay-tree.cpp
-  - math/combinatorics/mod-int.cpp
+  - template/template.hpp
+  - structure/bbst/reversible-splay-tree.hpp
+  - math/combinatorics/mod-int.hpp
   isVerificationFile: true
   path: test/verify/yosupo-point-set-range-composite.test.cpp
   requiredBy: []
-  timestamp: '2021-05-01 00:06:55+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-point-set-range-composite.test.cpp
 layout: document

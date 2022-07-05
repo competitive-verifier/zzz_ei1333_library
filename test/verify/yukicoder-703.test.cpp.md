@@ -1,28 +1,28 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: dp/monotone-minima.cpp
+  - icon: ':question:'
+    path: dp/monotone-minima.hpp
     title: Monotone Minima
-  - icon: ':heavy_check_mark:'
-    path: dp/online-offline-dp.cpp
+  - icon: ':x:'
+    path: dp/online-offline-dp.hpp
     title: "Online Offline DP(\u30AA\u30F3\u30E9\u30A4\u30F3\u30FB\u30AA\u30D5\u30E9\
       \u30A4\u30F3\u5909\u63DB)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/703
     links:
     - https://yukicoder.me/problems/no/703
   bundledCode: "#line 1 \"test/verify/yukicoder-703.test.cpp\"\n#define PROBLEM \"\
-    https://yukicoder.me/problems/no/703\"\n\n#line 1 \"template/template.cpp\"\n\
+    https://yukicoder.me/problems/no/703\"\n\n#line 1 \"template/template.hpp\"\n\
     #include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -50,7 +50,7 @@ data:
     \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yukicoder-703.test.cpp\"\
-    \n\n#line 1 \"dp/monotone-minima.cpp\"\n/**\n * @brief Monotone Minima\n * @docs\
+    \n\n#line 1 \"dp/monotone-minima.hpp\"\n/**\n * @brief Monotone Minima\n * @docs\
     \ docs/monotone-minima.md\n */\ntemplate< typename T, typename Compare = less<\
     \ T > >\nvector< pair< int, T > > monotone_minima(int H, int W, const function<\
     \ T(int, int) > &f, const Compare &comp = Compare()) {\n  vector< pair< int, T\
@@ -60,7 +60,7 @@ data:
     \ i++) {\n      T cst = f(line, i);\n      if(mi == -1 || comp(cst, ma)) {\n \
     \       ma = cst;\n        mi = i;\n      }\n    }\n    dp[line] = make_pair(mi,\
     \ ma);\n    dfs(top, line - 1, left, mi);\n    dfs(line + 1, bottom, mi, right);\n\
-    \  };\n  dfs(0, H - 1, 0, W - 1);\n  return dp;\n}\n#line 2 \"dp/online-offline-dp.cpp\"\
+    \  };\n  dfs(0, H - 1, 0, W - 1);\n  return dp;\n}\n#line 2 \"dp/online-offline-dp.hpp\"\
     \n\n/**\n * @brief  Online Offline DP(\u30AA\u30F3\u30E9\u30A4\u30F3\u30FB\u30AA\
     \u30D5\u30E9\u30A4\u30F3\u5909\u63DB)\n * @docs docs/online-offline-dp.md\n */\n\
     template< typename T, typename Compare = less< T > >\nvector< T > online_offline_dp(int\
@@ -85,8 +85,8 @@ data:
     \ <= i && i < j && j <= n);\n    int s = abs(a[j - 1] - x[i]);\n    int t = abs(y[i]);\n\
     \    return 1LL * s * s + 1LL * t * t;\n  };\n  cout << online_offline_dp(n, dist).back()\
     \ << endl;\n}\n"
-  code: "#define PROBLEM \"https://yukicoder.me/problems/no/703\"\n\n#include \"../../template/template.cpp\"\
-    \n\n#include \"../../dp/online-offline-dp.cpp\"\n\nint main() {\n  int n;\n  cin\
+  code: "#define PROBLEM \"https://yukicoder.me/problems/no/703\"\n\n#include \"../../template/template.hpp\"\
+    \n\n#include \"../../dp/online-offline-dp.hpp\"\n\nint main() {\n  int n;\n  cin\
     \ >> n;\n  vector< int > a(n), x(n), y(n);\n  for(int i = 0; i < n; i++) cin >>\
     \ a[i];\n  for(int i = 0; i < n; i++) cin >> x[i];\n  for(int i = 0; i < n; i++)\
     \ cin >> y[i];\n  function< int64_t(int, int) > dist = [&](int i, int j) {\n \
@@ -94,14 +94,14 @@ data:
     \  int t = abs(y[i]);\n    return 1LL * s * s + 1LL * t * t;\n  };\n  cout <<\
     \ online_offline_dp(n, dist).back() << endl;\n}\n"
   dependsOn:
-  - template/template.cpp
-  - dp/online-offline-dp.cpp
-  - dp/monotone-minima.cpp
+  - template/template.hpp
+  - dp/online-offline-dp.hpp
+  - dp/monotone-minima.hpp
   isVerificationFile: true
   path: test/verify/yukicoder-703.test.cpp
   requiredBy: []
-  timestamp: '2021-07-13 19:53:12+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yukicoder-703.test.cpp
 layout: document

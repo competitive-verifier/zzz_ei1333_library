@@ -1,27 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: structure/wavelet/succinct-indexable-dictionary.cpp
+  - icon: ':question:'
+    path: structure/wavelet/succinct-indexable-dictionary.hpp
     title: "Succinct Indexable Dictionary(\u5B8C\u5099\u8F9E\u66F8)"
-  - icon: ':heavy_check_mark:'
-    path: structure/wavelet/wavelet-matrix-rectangle-sum.cpp
+  - icon: ':x:'
+    path: structure/wavelet/wavelet-matrix-rectangle-sum.hpp
     title: Wavelet Matrix Rectangle Sum
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/rectangle_sum
     links:
     - https://judge.yosupo.jp/problem/rectangle_sum
   bundledCode: "#line 1 \"test/verify/yosupo-rectangle-sum.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/rectangle_sum\"\n\n#line 1 \"template/template.cpp\"\
+    \ \"https://judge.yosupo.jp/problem/rectangle_sum\"\n\n#line 1 \"template/template.hpp\"\
     \n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -49,7 +49,7 @@ data:
     \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-rectangle-sum.test.cpp\"\
-    \n\n#line 1 \"structure/wavelet/succinct-indexable-dictionary.cpp\"\n/**\n * @brief\
+    \n\n#line 1 \"structure/wavelet/succinct-indexable-dictionary.hpp\"\n/**\n * @brief\
     \ Succinct Indexable Dictionary(\u5B8C\u5099\u8F9E\u66F8)\n */\nstruct SuccinctIndexableDictionary\
     \ {\n  size_t length;\n  size_t blocks;\n  vector< unsigned > bit, sum;\n\n  SuccinctIndexableDictionary()\
     \ = default;\n\n  SuccinctIndexableDictionary(size_t length) : length(length),\
@@ -60,7 +60,7 @@ data:
     \ operator[](int k) {\n    return (bool((bit[k >> 5] >> (k & 31)) & 1));\n  }\n\
     \n  int rank(int k) {\n    return (sum[k >> 5] + __builtin_popcount(bit[k >> 5]\
     \ & ((1U << (k & 31)) - 1)));\n  }\n\n  int rank(bool val, int k) {\n    return\
-    \ (val ? rank(k) : k - rank(k));\n  }\n};\n#line 1 \"structure/wavelet/wavelet-matrix-rectangle-sum.cpp\"\
+    \ (val ? rank(k) : k - rank(k));\n  }\n};\n#line 1 \"structure/wavelet/wavelet-matrix-rectangle-sum.hpp\"\
     \n/*\n * @brief Wavelet Matrix Rectangle Sum\n * @docs docs/wavelet-matrix-rectangle-sum.md\n\
     \ */\ntemplate< typename T, int MAXLOG, typename D >\nstruct WaveletMatrixRectangleSum\
     \ {\n  size_t length;\n  SuccinctIndexableDictionary matrix[MAXLOG];\n  vector<\
@@ -107,8 +107,8 @@ data:
     \ - begin(xs);\n    r = lower_bound(begin(xs), end(xs), make_pair(r, -1)) - begin(xs);\n\
     \    cout << mat.rect_sum(l, r, d, u) << \"\\n\";\n  }\n}\n\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/rectangle_sum\"\n\n#include\
-    \ \"../../template/template.cpp\"\n\n#include \"../../structure/wavelet/succinct-indexable-dictionary.cpp\"\
-    \n#include \"../../structure/wavelet/wavelet-matrix-rectangle-sum.cpp\"\n\nint\
+    \ \"../../template/template.hpp\"\n\n#include \"../../structure/wavelet/succinct-indexable-dictionary.hpp\"\
+    \n#include \"../../structure/wavelet/wavelet-matrix-rectangle-sum.hpp\"\n\nint\
     \ main() {\n  int N, Q;\n  cin >> N >> Q;\n  vector< int > x(N), y(N), w(N);\n\
     \  vector< pair< int, int > > xs(N);\n  for(int i = 0; i < N; i++) {\n    cin\
     \ >> x[i] >> y[i] >> w[i];\n    xs[i] = {x[i], i};\n  }\n  sort(begin(xs), end(xs));\n\
@@ -120,14 +120,14 @@ data:
     \ - begin(xs);\n    r = lower_bound(begin(xs), end(xs), make_pair(r, -1)) - begin(xs);\n\
     \    cout << mat.rect_sum(l, r, d, u) << \"\\n\";\n  }\n}\n\n"
   dependsOn:
-  - template/template.cpp
-  - structure/wavelet/succinct-indexable-dictionary.cpp
-  - structure/wavelet/wavelet-matrix-rectangle-sum.cpp
+  - template/template.hpp
+  - structure/wavelet/succinct-indexable-dictionary.hpp
+  - structure/wavelet/wavelet-matrix-rectangle-sum.hpp
   isVerificationFile: true
   path: test/verify/yosupo-rectangle-sum.test.cpp
   requiredBy: []
-  timestamp: '2021-08-28 02:59:12+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-rectangle-sum.test.cpp
 layout: document

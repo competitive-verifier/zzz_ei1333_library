@@ -1,27 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: other/vector-pool.cpp
-    title: other/vector-pool.cpp
-  - icon: ':heavy_check_mark:'
-    path: structure/bbst/red-black-tree.cpp
+  - icon: ':question:'
+    path: other/vector-pool.hpp
+    title: other/vector-pool.hpp
+  - icon: ':question:'
+    path: structure/bbst/red-black-tree.hpp
     title: "Red-Black-Tree(\u8D64\u9ED2\u6728)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/staticrmq
     links:
     - https://judge.yosupo.jp/problem/staticrmq
   bundledCode: "#line 1 \"test/verify/yosupo-staticrmq-3.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#line 1 \"template/template.cpp\"\
+    \ \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#line 1 \"template/template.hpp\"\
     \n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -49,13 +49,13 @@ data:
     \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-staticrmq-3.test.cpp\"\
-    \n\n#line 1 \"other/vector-pool.cpp\"\ntemplate< class T >\nstruct VectorPool\
+    \n\n#line 1 \"other/vector-pool.hpp\"\ntemplate< class T >\nstruct VectorPool\
     \ {\n  vector< T > pool;\n  vector< T * > stock;\n  int ptr;\n\n  VectorPool()\
     \ = default;\n\n  VectorPool(int sz) : pool(sz), stock(sz) {}\n\n  inline T *alloc()\
     \ { return stock[--ptr]; }\n\n  inline void free(T *t) { stock[ptr++] = t; }\n\
     \n  void clear() {\n    ptr = (int) pool.size();\n    for(int i = 0; i < pool.size();\
     \ i++) stock[i] = &pool[i];\n  }\n};\n#line 6 \"test/verify/yosupo-staticrmq-3.test.cpp\"\
-    \n\n#line 1 \"structure/bbst/red-black-tree.cpp\"\n/**\n * @brief Red-Black-Tree(\u8D64\
+    \n\n#line 1 \"structure/bbst/red-black-tree.hpp\"\n/**\n * @brief Red-Black-Tree(\u8D64\
     \u9ED2\u6728)\n * @docs docs/red-black-tree.md\n */\ntemplate< typename Monoid,\
     \ typename F >\nstruct RedBlackTree {\npublic:\n  enum COLOR {\n    BLACK, RED\n\
     \  };\n\n  struct Node {\n    Node *l, *r;\n    COLOR color;\n    int level, cnt;\n\
@@ -132,21 +132,21 @@ data:
     \ {\n    int l, r;\n    cin >> l >> r;\n    cout << rbt.query(root, l, r) << \"\
     \\n\";\n  }\n}\n\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#include\
-    \ \"../../template/template.cpp\"\n\n#include \"../../other/vector-pool.cpp\"\n\
-    \n#include \"../../structure/bbst/red-black-tree.cpp\"\n\nint main() {\n  int\
+    \ \"../../template/template.hpp\"\n\n#include \"../../other/vector-pool.hpp\"\n\
+    \n#include \"../../structure/bbst/red-black-tree.hpp\"\n\nint main() {\n  int\
     \ N, Q;\n  cin >> N >> Q;\n  vector< int > A(N);\n  cin >> A;\n  auto f = [](int\
     \ a, int b) { return min(a, b); };\n  RedBlackTree< int, decltype(f) > rbt(2 *\
     \ N, f, inf);\n  auto root = rbt.build(A);\n  while(Q--) {\n    int l, r;\n  \
     \  cin >> l >> r;\n    cout << rbt.query(root, l, r) << \"\\n\";\n  }\n}\n\n"
   dependsOn:
-  - template/template.cpp
-  - other/vector-pool.cpp
-  - structure/bbst/red-black-tree.cpp
+  - template/template.hpp
+  - other/vector-pool.hpp
+  - structure/bbst/red-black-tree.hpp
   isVerificationFile: true
   path: test/verify/yosupo-staticrmq-3.test.cpp
   requiredBy: []
-  timestamp: '2021-05-01 00:06:55+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-staticrmq-3.test.cpp
 layout: document

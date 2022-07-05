@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/lcp-array.hpp
     title: LCP Array
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/suffix-array.hpp
     title: "Suffix Array(\u63A5\u5C3E\u8F9E\u914D\u5217)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/number_of_substrings
@@ -22,7 +22,7 @@ data:
     - https://judge.yosupo.jp/problem/number_of_substrings
   bundledCode: "#line 1 \"test/verify/yosupo-number-of-substrings.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/number_of_substrings\"\n\n#line 1\
-    \ \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
+    \ \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
     \nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll = (1LL\
     \ << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -118,19 +118,19 @@ data:
     \ sa(S);\n  auto lcp = lcp_array(sa);\n  cout << 1LL * N * (N + 1) / 2 - accumulate(begin(lcp),\
     \ end(lcp), 0LL) << \"\\n\";\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/number_of_substrings\"\n\
-    \n#include \"../../template/template.cpp\"\n\n#include \"../../string/lcp-array.hpp\"\
+    \n#include \"../../template/template.hpp\"\n\n#include \"../../string/lcp-array.hpp\"\
     \n\nint main() {\n  string S;\n  cin >> S;\n  int N = (int) S.size();\n  SuffixArray\
     \ sa(S);\n  auto lcp = lcp_array(sa);\n  cout << 1LL * N * (N + 1) / 2 - accumulate(begin(lcp),\
     \ end(lcp), 0LL) << \"\\n\";\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - string/lcp-array.hpp
   - string/suffix-array.hpp
   isVerificationFile: true
   path: test/verify/yosupo-number-of-substrings.test.cpp
   requiredBy: []
-  timestamp: '2022-03-30 01:32:04+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-number-of-substrings.test.cpp
 layout: document

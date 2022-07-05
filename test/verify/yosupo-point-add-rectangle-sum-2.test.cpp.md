@@ -1,27 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: other/printer.cpp
+  - icon: ':x:'
+    path: other/printer.hpp
     title: "Printer(\u9AD8\u901F\u51FA\u529B)"
-  - icon: ':heavy_check_mark:'
-    path: other/scanner.cpp
+  - icon: ':x:'
+    path: other/scanner.hpp
     title: "Scanner(\u9AD8\u901F\u5165\u529B)"
-  - icon: ':heavy_check_mark:'
-    path: structure/others/abstract-2d-binary-indexed-tree-compressed.cpp
+  - icon: ':x:'
+    path: structure/others/abstract-2d-binary-indexed-tree-compressed.hpp
     title: "Abstract 2D Binary Indexed Tree Compressed(\u62BD\u8C61\u53162\u6B21\u5143\
       \u5EA7\u5727BIT)"
-  - icon: ':heavy_check_mark:'
-    path: structure/others/abstract-binary-indexed-tree.cpp
+  - icon: ':x:'
+    path: structure/others/abstract-binary-indexed-tree.hpp
     title: "Abstract Binary Indexed Tree(\u62BD\u8C61\u5316BIT)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_rectangle_sum
@@ -29,7 +29,7 @@ data:
     - https://judge.yosupo.jp/problem/point_add_rectangle_sum
   bundledCode: "#line 1 \"test/verify/yosupo-point-add-rectangle-sum-2.test.cpp\"\n\
     #define PROBLEM \"https://judge.yosupo.jp/problem/point_add_rectangle_sum\"\n\n\
-    #line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    #line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -56,7 +56,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-point-add-rectangle-sum-2.test.cpp\"\
-    \n\n#line 1 \"structure/others/abstract-binary-indexed-tree.cpp\"\n/**\n * @brief\
+    \n\n#line 1 \"structure/others/abstract-binary-indexed-tree.hpp\"\n/**\n * @brief\
     \ Abstract Binary Indexed Tree(\u62BD\u8C61\u5316BIT)\n * @docs docs/abstract-binary-indexed-tree.md\n\
     \ */\ntemplate< typename T, typename F >\nstruct AbstractBinaryIndexedTree {\n\
     private:\n  int n;\n  vector< T > data;\n  const F f;\n  const T e;\n\npublic:\n\
@@ -75,7 +75,7 @@ data:
     \ return AbstractBinaryIndexedTree{n, f, e};\n}\n\ntemplate< typename T, typename\
     \ F >\nAbstractBinaryIndexedTree< T, F > get_abstract_binary_indexed_tree(const\
     \ vector< T > &v, const F &f, const T &e) {\n  return AbstractBinaryIndexedTree{v,\
-    \ f, e};\n}\n#line 2 \"structure/others/abstract-2d-binary-indexed-tree-compressed.cpp\"\
+    \ f, e};\n}\n#line 2 \"structure/others/abstract-2d-binary-indexed-tree-compressed.hpp\"\
     \n\n/**\n * @brief Abstract 2D Binary Indexed Tree Compressed(\u62BD\u8C61\u5316\
     2\u6B21\u5143\u5EA7\u5727BIT)\n */\ntemplate< typename T, typename F >\nstruct\
     \ Abstract2DBinaryIndexedTreeCompressed {\nprivate:\n  int n;\n  vector< AbstractBinaryIndexedTree<\
@@ -98,7 +98,7 @@ data:
     \ T, F > get_abstract_2d_binary_indexed_tree_compressed(const vector< int > &hs,\
     \ const F &f, const T &e) {\n  return Abstract2DBinaryIndexedTreeCompressed{hs,\
     \ f, e};\n}\n#line 6 \"test/verify/yosupo-point-add-rectangle-sum-2.test.cpp\"\
-    \n\n#line 1 \"other/scanner.cpp\"\n/**\n * @brief Scanner(\u9AD8\u901F\u5165\u529B\
+    \n\n#line 1 \"other/scanner.hpp\"\n/**\n * @brief Scanner(\u9AD8\u901F\u5165\u529B\
     )\n */\nstruct Scanner {\npublic:\n\n  explicit Scanner(FILE *fp) : fp(fp) {}\n\
     \n  template< typename T, typename... E >\n  void read(T &t, E &... e) {\n   \
     \ read_single(t);\n    read(e...);\n  }\n\nprivate:\n  static constexpr size_t\
@@ -120,7 +120,7 @@ data:
     \ = st;\n      while(*st && !is_space(*st)) ++st;\n      s += string(base, st);\n\
     \      if(st != ed) return;\n      reread();\n    }\n  }\n\n  template< typename\
     \ T >\n  void read_single(vector< T > &s) {\n    for(auto &d : s) read(d);\n \
-    \ }\n};\n#line 1 \"other/printer.cpp\"\n/**\n * @brief Printer(\u9AD8\u901F\u51FA\
+    \ }\n};\n#line 1 \"other/printer.hpp\"\n/**\n * @brief Printer(\u9AD8\u901F\u51FA\
     \u529B)\n */\nstruct Printer {\npublic:\n  explicit Printer(FILE *fp) : fp(fp)\
     \ {}\n\n  ~Printer() { flush(); }\n\n  template< bool f = false, typename T, typename...\
     \ E >\n  void write(const T &t, const E &... e) {\n    if(f) write_single(' ');\n\
@@ -159,8 +159,8 @@ data:
     \    } else {\n      out.writeln(bit.prod(D[i], E[i]) - bit.prod(D[i], C[i]) -\
     \ bit.prod(B[i], E[i]) + bit.prod(B[i], C[i]));\n    }\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_rectangle_sum\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../structure/others/abstract-2d-binary-indexed-tree-compressed.cpp\"\
-    \n\n#include \"../../other/scanner.cpp\"\n#include \"../../other/printer.cpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../structure/others/abstract-2d-binary-indexed-tree-compressed.hpp\"\
+    \n\n#include \"../../other/scanner.hpp\"\n#include \"../../other/printer.hpp\"\
     \n\nint main() {\n  Scanner in(stdin);\n  Printer out(stdout);\n  int N, Q;\n\
     \  in.read(N, Q);\n  vector< int > X(N), Y(N), W(N);\n  vector< pair< int, int\
     \ > > ps(N);\n  for(int i = 0; i < N; i++) {\n    in.read(X[i], Y[i], W[i]);\n\
@@ -181,16 +181,16 @@ data:
     \    } else {\n      out.writeln(bit.prod(D[i], E[i]) - bit.prod(D[i], C[i]) -\
     \ bit.prod(B[i], E[i]) + bit.prod(B[i], C[i]));\n    }\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - structure/others/abstract-2d-binary-indexed-tree-compressed.cpp
-  - structure/others/abstract-binary-indexed-tree.cpp
-  - other/scanner.cpp
-  - other/printer.cpp
+  - template/template.hpp
+  - structure/others/abstract-2d-binary-indexed-tree-compressed.hpp
+  - structure/others/abstract-binary-indexed-tree.hpp
+  - other/scanner.hpp
+  - other/printer.hpp
   isVerificationFile: true
   path: test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
   requiredBy: []
-  timestamp: '2022-02-10 22:22:03+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
 layout: document

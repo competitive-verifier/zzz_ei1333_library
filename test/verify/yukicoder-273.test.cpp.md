@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: string/palindromic-tree.cpp
+  - icon: ':x:'
+    path: string/palindromic-tree.hpp
     title: "Palindromic Tree(\u56DE\u6587\u6728)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/273
     links:
     - https://yukicoder.me/problems/no/273
   bundledCode: "#line 1 \"test/verify/yukicoder-273.test.cpp\"\n#define PROBLEM \"\
-    https://yukicoder.me/problems/no/273\"\n\n#line 1 \"template/template.cpp\"\n\
+    https://yukicoder.me/problems/no/273\"\n\n#line 1 \"template/template.hpp\"\n\
     #include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -46,7 +46,7 @@ data:
     \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yukicoder-273.test.cpp\"\
-    \n\n#line 1 \"string/palindromic-tree.cpp\"\n/**\n * @brief Palindromic Tree(\u56DE\
+    \n\n#line 1 \"string/palindromic-tree.hpp\"\n/**\n * @brief Palindromic Tree(\u56DE\
     \u6587\u6728)\n * @see https://math314.hateblo.jp/entry/2016/12/19/005919\n *\
     \ @docs docs/palindromic-tree.md\n */\ntemplate< typename T = char >\nstruct PalindromicTree\
     \ {\npublic:\n  struct Node {\n    map< T, int > link; // \u5B50\u306Eidx\n  \
@@ -109,8 +109,8 @@ data:
     \ == N) chmax(dp1[id], dp1[par]);\n                             else chmax(dp1[id],\
     \ max(dp1[par], t[id].len));\n                           });\n    for(auto &p:\
     \ ret) chmax(dp2[i + 1], dp1[p]);\n  }\n  cout << dp2[N] << \"\\n\";\n}\n"
-  code: "#define PROBLEM \"https://yukicoder.me/problems/no/273\"\n\n#include \"../../template/template.cpp\"\
-    \n\n#include \"../../string/palindromic-tree.cpp\"\n\nint main() {\n  string S;\n\
+  code: "#define PROBLEM \"https://yukicoder.me/problems/no/273\"\n\n#include \"../../template/template.hpp\"\
+    \n\n#include \"../../string/palindromic-tree.hpp\"\n\nint main() {\n  string S;\n\
     \  cin >> S;\n  int N = (int) S.size();\n  vector< int > dp1(N + 3, -inf), dp2(N\
     \ + 1, -inf);\n  PalindromicTree t;\n  dp2[0] = 1;\n  for(int i = 0; i < N; i++)\
     \ {\n    int id = t.add(S[i]);\n    auto ret = t.update_dp([&](int id, int pos)\
@@ -122,13 +122,13 @@ data:
     \                           });\n    for(auto &p: ret) chmax(dp2[i + 1], dp1[p]);\n\
     \  }\n  cout << dp2[N] << \"\\n\";\n}\n"
   dependsOn:
-  - template/template.cpp
-  - string/palindromic-tree.cpp
+  - template/template.hpp
+  - string/palindromic-tree.hpp
   isVerificationFile: true
   path: test/verify/yukicoder-273.test.cpp
   requiredBy: []
-  timestamp: '2022-03-16 03:07:47+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yukicoder-273.test.cpp
 layout: document

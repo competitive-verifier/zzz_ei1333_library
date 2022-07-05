@@ -1,26 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/combinatorics/mod-int.cpp
-    title: math/combinatorics/mod-int.cpp
-  - icon: ':heavy_check_mark:'
-    path: structure/develop/link-cut-tree.cpp
+  - icon: ':question:'
+    path: math/combinatorics/mod-int.hpp
+    title: math/combinatorics/mod-int.hpp
+  - icon: ':question:'
+    path: structure/develop/link-cut-tree.hpp
     title: Link-Cut-Tree
-  - icon: ':heavy_check_mark:'
-    path: structure/develop/reversible-splay-tree.cpp
+  - icon: ':question:'
+    path: structure/develop/reversible-splay-tree.hpp
     title: "Reversible-Splay-Tree(\u53CD\u8EE2\u53EF\u80FDSplay\u6728)"
-  - icon: ':heavy_check_mark:'
-    path: structure/develop/splay-tree-base.cpp
+  - icon: ':question:'
+    path: structure/develop/splay-tree-base.hpp
     title: "Splay-Tree-Base(Splay\u6728)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite
@@ -28,7 +28,7 @@ data:
     - https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite
   bundledCode: "#line 1 \"test/verify/yosupo-dynamic-tree-vertex-set-path-composite-2.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite\"\
-    \n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -55,7 +55,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-dynamic-tree-vertex-set-path-composite-2.test.cpp\"\
-    \n\n#line 1 \"structure/develop/splay-tree-base.cpp\"\n/**\n * @brief Splay-Tree-Base(Splay\u6728\
+    \n\n#line 1 \"structure/develop/splay-tree-base.hpp\"\n/**\n * @brief Splay-Tree-Base(Splay\u6728\
     )\n */\ntemplate< typename Node >\nstruct SplayTreeBase {\npublic:\n  using NP\
     \ = Node *;\n\n  bool is_root(const NP &t) const { return !t->p || (t->p->l !=\
     \ t && t->p->r != t); }\n\n  inline size_t count(const NP &t) const { return t\
@@ -100,7 +100,7 @@ data:
     \ k);\n    return merge(x.first, v, x.second);\n  }\n\n  NP erase_node(NP t, int\
     \ k) {\n    splay(t);\n    auto x = split(t, k);\n    auto y = split(x.second,\
     \ 1);\n    delete y.first;\n    return merge(x.first, y.second);\n  }\n};\n#line\
-    \ 1 \"structure/develop/reversible-splay-tree.cpp\"\n/**\n * @brief Reversible-Splay-Tree(\u53CD\
+    \ 1 \"structure/develop/reversible-splay-tree.hpp\"\n/**\n * @brief Reversible-Splay-Tree(\u53CD\
     \u8EE2\u53EF\u80FDSplay\u6728)\n */\ntemplate< typename Tp >\nstruct ReversibleSplayTreeNode\
     \ {\n  using T = Tp;\n  ReversibleSplayTreeNode *l, *r, *p;\n  T key, sum;\n \
     \ bool rev;\n  size_t sz;\n\n  ReversibleSplayTreeNode() : ReversibleSplayTreeNode(Tp())\
@@ -138,7 +138,7 @@ data:
     \ k, x);\n    } else if(k == count(t->l)) {\n      t->key = x;\n      splay(t);\n\
     \      return t;\n    } else {\n      return imp_set_element(t->r, k - count(t->l)\
     \ - 1, x);\n    }\n  }\n};\n\ntemplate< typename T >\nusing RST = ReversibleSplayTree<\
-    \ ReversibleSplayTreeNode< T > >;\n#line 1 \"structure/develop/link-cut-tree.cpp\"\
+    \ ReversibleSplayTreeNode< T > >;\n#line 1 \"structure/develop/link-cut-tree.hpp\"\
     \n/**\n * @brief Link-Cut-Tree\n */\ntemplate< typename STp >\nstruct LinkCutTree\
     \ : STp {\n  using ST = STp;\n  using ST::ST;\n  using Node = typename ST::Node;\n\
     \n  Node *expose(Node *t) {\n    Node *rp = nullptr;\n    for(Node *cur = t; cur;\
@@ -157,7 +157,7 @@ data:
     \      }\n    }\n    return nullptr;\n  }\n\n  Node *get_root(Node *x) {\n   \
     \ expose(x);\n    while(x->l) {\n      this->push(x);\n      x = x->l;\n    }\n\
     \    return x;\n  }\n};\n#line 8 \"test/verify/yosupo-dynamic-tree-vertex-set-path-composite-2.test.cpp\"\
-    \n\n#line 1 \"math/combinatorics/mod-int.cpp\"\ntemplate< int mod >\nstruct ModInt\
+    \n\n#line 1 \"math/combinatorics/mod-int.hpp\"\ntemplate< int mod >\nstruct ModInt\
     \ {\n  int x;\n\n  ModInt() : x(0) {}\n\n  ModInt(int64_t y) : x(y >= 0 ? y %\
     \ mod : (mod - (-y) % mod) % mod) {}\n\n  ModInt &operator+=(const ModInt &p)\
     \ {\n    if((x += p.x) >= mod) x -= mod;\n    return *this;\n  }\n\n  ModInt &operator-=(const\
@@ -200,9 +200,9 @@ data:
     \    auto ret = vs[V]->sum.first;\n      cout << ret.first * X + ret.second <<\
     \ \"\\n\";\n    }\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../structure/develop/splay-tree-base.cpp\"\
-    \n#include \"../../structure/develop/reversible-splay-tree.cpp\"\n#include \"\
-    ../../structure/develop/link-cut-tree.cpp\"\n\n#include \"../../math/combinatorics/mod-int.cpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../structure/develop/splay-tree-base.hpp\"\
+    \n#include \"../../structure/develop/reversible-splay-tree.hpp\"\n#include \"\
+    ../../structure/develop/link-cut-tree.hpp\"\n\n#include \"../../math/combinatorics/mod-int.hpp\"\
     \n\nusing mint = ModInt< 998244353 >;\n\nint main() {\n  int N, Q;\n  cin >> N\
     \ >> Q;\n\n  using pi = pair< mint, mint >;\n  using pii = pair< pi, pi >;\n \
     \ using LCT = LinkCutTree< RST< pair< pi, pi > > >;\n  auto f = [](const pi &x,\
@@ -223,16 +223,16 @@ data:
     \    auto ret = vs[V]->sum.first;\n      cout << ret.first * X + ret.second <<\
     \ \"\\n\";\n    }\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - structure/develop/splay-tree-base.cpp
-  - structure/develop/reversible-splay-tree.cpp
-  - structure/develop/link-cut-tree.cpp
-  - math/combinatorics/mod-int.cpp
+  - template/template.hpp
+  - structure/develop/splay-tree-base.hpp
+  - structure/develop/reversible-splay-tree.hpp
+  - structure/develop/link-cut-tree.hpp
+  - math/combinatorics/mod-int.hpp
   isVerificationFile: true
   path: test/verify/yosupo-dynamic-tree-vertex-set-path-composite-2.test.cpp
   requiredBy: []
-  timestamp: '2021-05-08 18:10:42+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-dynamic-tree-vertex-set-path-composite-2.test.cpp
 layout: document

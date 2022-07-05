@@ -1,28 +1,28 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: string/aho-corasick.cpp
+  - icon: ':x:'
+    path: string/aho-corasick.hpp
     title: "Aho-Corasick(\u30A8\u30A4\u30DB\u2013\u30B3\u30E9\u30B7\u30C3\u30AF\u6CD5\
       )"
-  - icon: ':heavy_check_mark:'
-    path: structure/trie/trie.cpp
-    title: structure/trie/trie.cpp
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':x:'
+    path: structure/trie/trie.hpp
+    title: structure/trie/trie.hpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/430
     links:
     - https://yukicoder.me/problems/no/430
   bundledCode: "#line 1 \"test/verify/yukicoder-430.test.cpp\"\n#define PROBLEM \"\
-    https://yukicoder.me/problems/no/430\"\n\n#line 1 \"template/template.cpp\"\n\
+    https://yukicoder.me/problems/no/430\"\n\n#line 1 \"template/template.hpp\"\n\
     #include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -50,7 +50,7 @@ data:
     \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yukicoder-430.test.cpp\"\
-    \n\n#line 1 \"structure/trie/trie.cpp\"\ntemplate< int char_size >\nstruct TrieNode\
+    \n\n#line 1 \"structure/trie/trie.hpp\"\ntemplate< int char_size >\nstruct TrieNode\
     \ {\n  int nxt[char_size];\n\n  int exist;\n  vector< int > accept;\n\n  TrieNode()\
     \ : exist(0) {\n    memset(nxt, -1, sizeof(nxt));\n  }\n};\n\ntemplate< int char_size,\
     \ int margin >\nstruct Trie {\n  using Node = TrieNode< char_size >;\n\n  vector<\
@@ -73,7 +73,7 @@ data:
     \ const function< void(int) > &f) {\n    query(str, f, 0, 0);\n  }\n\n  int count()\
     \ const {\n    return (nodes[0].exist);\n  }\n\n  int size() const {\n    return\
     \ ((int) nodes.size());\n  }\n};\n#line 6 \"test/verify/yukicoder-430.test.cpp\"\
-    \n\n#line 1 \"string/aho-corasick.cpp\"\n/**\n * @brief Aho-Corasick(\u30A8\u30A4\
+    \n\n#line 1 \"string/aho-corasick.hpp\"\n/**\n * @brief Aho-Corasick(\u30A8\u30A4\
     \u30DB\u2013\u30B3\u30E9\u30B7\u30C3\u30AF\u6CD5)\n * @docs docs/aho-corasick.md\n\
     \ */\ntemplate< int char_size, int margin >\nstruct AhoCorasick : Trie< char_size\
     \ + 1, margin > {\n  using Trie< char_size + 1, margin >::Trie;\n\n  const int\
@@ -104,21 +104,21 @@ data:
     \ 26, 'A' > aho;\n  for(int i = 0; i < M; i++) {\n    string T;\n    cin >> T;\n\
     \    aho.add(T);\n  }\n  aho.build();\n  cout << aho.move(S).first << endl;\n\
     }\n"
-  code: "#define PROBLEM \"https://yukicoder.me/problems/no/430\"\n\n#include \"../../template/template.cpp\"\
-    \n\n#include \"../../structure/trie/trie.cpp\"\n\n#include \"../../string/aho-corasick.cpp\"\
+  code: "#define PROBLEM \"https://yukicoder.me/problems/no/430\"\n\n#include \"../../template/template.hpp\"\
+    \n\n#include \"../../structure/trie/trie.hpp\"\n\n#include \"../../string/aho-corasick.hpp\"\
     \n\nint main() {\n  string S;\n  int M;\n  cin >> S;\n  cin >> M;\n  AhoCorasick<\
     \ 26, 'A' > aho;\n  for(int i = 0; i < M; i++) {\n    string T;\n    cin >> T;\n\
     \    aho.add(T);\n  }\n  aho.build();\n  cout << aho.move(S).first << endl;\n\
     }\n"
   dependsOn:
-  - template/template.cpp
-  - structure/trie/trie.cpp
-  - string/aho-corasick.cpp
+  - template/template.hpp
+  - structure/trie/trie.hpp
+  - string/aho-corasick.hpp
   isVerificationFile: true
   path: test/verify/yukicoder-430.test.cpp
   requiredBy: []
-  timestamp: '2021-05-01 00:06:55+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yukicoder-430.test.cpp
 layout: document

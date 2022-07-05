@@ -1,30 +1,30 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/mst/directed-mst.hpp
     title: "Directed MST(\u6700\u5C0F\u6709\u5411\u5168\u57DF\u6728)"
-  - icon: ':heavy_check_mark:'
-    path: structure/heap/skew-heap.cpp
+  - icon: ':x:'
+    path: structure/heap/skew-heap.hpp
     title: Skew-Heap
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_B
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_B
   bundledCode: "#line 1 \"test/verify/aoj-grl-2-b.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_B\"\
-    \n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -69,7 +69,7 @@ data:
     \ b, c);\n      else add_edge(a, b, c);\n    }\n  }\n\n  inline vector< Edge<\
     \ T > > &operator[](const int &k) {\n    return g[k];\n  }\n\n  inline const vector<\
     \ Edge< T > > &operator[](const int &k) const {\n    return g[k];\n  }\n};\n\n\
-    template< typename T = int >\nusing Edges = vector< Edge< T > >;\n#line 1 \"structure/heap/skew-heap.cpp\"\
+    template< typename T = int >\nusing Edges = vector< Edge< T > >;\n#line 1 \"structure/heap/skew-heap.hpp\"\
     \n/**\n * @brief Skew-Heap\n */\ntemplate< typename T, bool isMin = true >\nstruct\
     \ SkewHeap {\n  struct Node {\n    T key, lazy;\n    Node *l, *r;\n    int idx;\n\
     \n    explicit Node(const T &key, int idx) : key(key), idx(idx), lazy(0), l(nullptr),\
@@ -111,21 +111,21 @@ data:
     \ = 0; i < E; i++) {\n    int a, b, c;\n    cin >> a >> b >> c;\n    edges.emplace_back(a,\
     \ b, c);\n  }\n  cout << directed_mst(V, R, edges).cost << \"\\n\";\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_B\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../graph/mst/directed-mst.hpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../graph/mst/directed-mst.hpp\"\
     \n\nint main() {\n  int V, E, R;\n  cin >> V >> E >> R;\n  Edges< int > edges;\n\
     \  for(int i = 0; i < E; i++) {\n    int a, b, c;\n    cin >> a >> b >> c;\n \
     \   edges.emplace_back(a, b, c);\n  }\n  cout << directed_mst(V, R, edges).cost\
     \ << \"\\n\";\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - graph/mst/directed-mst.hpp
   - graph/graph-template.hpp
-  - structure/heap/skew-heap.cpp
+  - structure/heap/skew-heap.hpp
   isVerificationFile: true
   path: test/verify/aoj-grl-2-b.test.cpp
   requiredBy: []
-  timestamp: '2021-08-16 02:17:26+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/aoj-grl-2-b.test.cpp
 layout: document

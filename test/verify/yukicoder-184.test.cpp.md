@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/matrix/binary-basis.cpp
-    title: math/matrix/binary-basis.cpp
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':x:'
+    path: math/matrix/binary-basis.hpp
+    title: math/matrix/binary-basis.hpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/184
     links:
     - https://yukicoder.me/problems/no/184
   bundledCode: "#line 1 \"test/verify/yukicoder-184.test.cpp\"\n#define PROBLEM \"\
-    https://yukicoder.me/problems/no/184\"\n\n#line 1 \"template/template.cpp\"\n\
+    https://yukicoder.me/problems/no/184\"\n\n#line 1 \"template/template.hpp\"\n\
     #include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -46,7 +46,7 @@ data:
     \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yukicoder-184.test.cpp\"\
-    \n\n#line 1 \"math/matrix/binary-basis.cpp\"\ntemplate< typename T >\nstruct BinaryBasis\
+    \n\n#line 1 \"math/matrix/binary-basis.hpp\"\ntemplate< typename T >\nstruct BinaryBasis\
     \ {\n  vector< T > basis;\n  bool update;\n\n  BinaryBasis() : update(false) {}\n\
     \n  bool add(T bit) {\n    for(auto &p : basis) {\n      bit = min(bit, bit ^\
     \ p);\n    }\n    if(bit) {\n      basis.emplace_back(bit);\n      return update\
@@ -67,19 +67,19 @@ data:
     \ N;\n  cin >> N;\n  BinaryBasis< int64 > bb;\n  for(int i = 0; i < N; i++) {\n\
     \    int64 x;\n    cin >> x;\n    bb.add(x);\n  }\n  cout << (1LL << bb.size())\
     \ << \"\\n\";\n}\n"
-  code: "#define PROBLEM \"https://yukicoder.me/problems/no/184\"\n\n#include \"../../template/template.cpp\"\
-    \n\n#include \"../../math/matrix/binary-basis.cpp\"\n\nint main() {\n  int N;\n\
+  code: "#define PROBLEM \"https://yukicoder.me/problems/no/184\"\n\n#include \"../../template/template.hpp\"\
+    \n\n#include \"../../math/matrix/binary-basis.hpp\"\n\nint main() {\n  int N;\n\
     \  cin >> N;\n  BinaryBasis< int64 > bb;\n  for(int i = 0; i < N; i++) {\n   \
     \ int64 x;\n    cin >> x;\n    bb.add(x);\n  }\n  cout << (1LL << bb.size()) <<\
     \ \"\\n\";\n}\n"
   dependsOn:
-  - template/template.cpp
-  - math/matrix/binary-basis.cpp
+  - template/template.hpp
+  - math/matrix/binary-basis.hpp
   isVerificationFile: true
   path: test/verify/yukicoder-184.test.cpp
   requiredBy: []
-  timestamp: '2021-05-01 00:06:55+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yukicoder-184.test.cpp
 layout: document

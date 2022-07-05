@@ -1,27 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/others/eulerian-trail.hpp
     title: "Eulerian Trail(\u30AA\u30A4\u30E9\u30FC\u8DEF)"
-  - icon: ':heavy_check_mark:'
-    path: structure/union-find/union-find.cpp
+  - icon: ':question:'
+    path: structure/union-find/union-find.hpp
     title: Union-Find
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/583
     links:
     - https://yukicoder.me/problems/no/583
   bundledCode: "#line 1 \"test/verify/yukicoder-583.test.cpp\"\n#define PROBLEM \"\
-    https://yukicoder.me/problems/no/583\"\n\n#line 1 \"template/template.cpp\"\n\
+    https://yukicoder.me/problems/no/583\"\n\n#line 1 \"template/template.hpp\"\n\
     #include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -49,7 +49,7 @@ data:
     \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yukicoder-583.test.cpp\"\
-    \n\n#line 2 \"graph/others/eulerian-trail.hpp\"\n\n#line 2 \"structure/union-find/union-find.cpp\"\
+    \n\n#line 2 \"graph/others/eulerian-trail.hpp\"\n\n#line 2 \"structure/union-find/union-find.hpp\"\
     \n\n/**\n * @brief Union-Find\n * @docs docs/union-find.md\n */\nstruct UnionFind\
     \ {\n  vector< int > data;\n\n  UnionFind() = default;\n\n  explicit UnionFind(size_t\
     \ sz) : data(sz, -1) {}\n\n  bool unite(int x, int y) {\n    x = find(x), y =\
@@ -101,21 +101,21 @@ data:
     \ false > et(N);\n  for(int i = 0; i < M; i++) {\n    cin >> A[i] >> B[i];\n \
     \   et.add_edge(A[i], B[i]);\n  }\n  if(et.enumerate_semi_eulerian_trail().size()\
     \ == 1) cout << \"YES\\n\";\n  else cout << \"NO\\n\";\n}\n"
-  code: "#define PROBLEM \"https://yukicoder.me/problems/no/583\"\n\n#include \"../../template/template.cpp\"\
+  code: "#define PROBLEM \"https://yukicoder.me/problems/no/583\"\n\n#include \"../../template/template.hpp\"\
     \n\n#include \"../../graph/others/eulerian-trail.hpp\"\n\nint main() {\n  int\
     \ N, M;\n  cin >> N >> M;\n  vector< int > A(M), B(M);\n  EulerianTrail< false\
     \ > et(N);\n  for(int i = 0; i < M; i++) {\n    cin >> A[i] >> B[i];\n    et.add_edge(A[i],\
     \ B[i]);\n  }\n  if(et.enumerate_semi_eulerian_trail().size() == 1) cout << \"\
     YES\\n\";\n  else cout << \"NO\\n\";\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - graph/others/eulerian-trail.hpp
-  - structure/union-find/union-find.cpp
+  - structure/union-find/union-find.hpp
   isVerificationFile: true
   path: test/verify/yukicoder-583.test.cpp
   requiredBy: []
-  timestamp: '2022-06-25 18:24:39+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yukicoder-583.test.cpp
 layout: document

@@ -1,30 +1,30 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: geometry/base.cpp
-    title: geometry/base.cpp
-  - icon: ':heavy_check_mark:'
-    path: geometry/ccw.cpp
-    title: geometry/ccw.cpp
-  - icon: ':heavy_check_mark:'
-    path: geometry/point.cpp
-    title: geometry/point.cpp
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: geometry/base.hpp
+    title: geometry/base.hpp
+  - icon: ':x:'
+    path: geometry/ccw.hpp
+    title: geometry/ccw.hpp
+  - icon: ':question:'
+    path: geometry/point.hpp
+    title: geometry/point.hpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C
   bundledCode: "#line 1 \"test/verify/aoj-cgl-1-c.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C\"\
-    \n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -51,11 +51,11 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-cgl-1-c.test.cpp\"\
-    \n\n#line 2 \"geometry/base.cpp\"\n\nnamespace geometry {\n  using Real = double;\n\
+    \n\n#line 2 \"geometry/base.hpp\"\n\nnamespace geometry {\n  using Real = double;\n\
     \  const Real EPS = 1e-8;\n  const Real PI = acos(static_cast< Real >(-1));\n\n\
     \  enum {\n    OUT, ON, IN\n  };\n\n  inline int sign(const Real &r) {\n    return\
     \ r <= -EPS ? -1 : r >= EPS ? 1 : 0;\n  }\n\n  inline bool equals(const Real &a,\
-    \ const Real &b) {\n    return sign(a - b) == 0;\n  }\n}\n#line 3 \"geometry/point.cpp\"\
+    \ const Real &b) {\n    return sign(a - b) == 0;\n  }\n}\n#line 3 \"geometry/point.hpp\"\
     \n\nnamespace geometry {\n  using Point = complex< Real >;\n\n  istream &operator>>(istream\
     \ &is, Point &p) {\n    Real a, b;\n    is >> a >> b;\n    p = Point(a, b);\n\
     \    return is;\n  }\n\n  ostream &operator<<(ostream &os, const Point &p) {\n\
@@ -70,7 +70,7 @@ data:
     \ {\n    return equals(real(a), real(b)) ? imag(a) < imag(b) : real(a) < real(b);\n\
     \  }\n\n  bool compare_y(const Point &a, const Point &b) {\n    return equals(imag(a),\
     \ imag(b)) ? real(a) < real(b) : imag(a) < imag(b);\n  }\n\n  using Points = vector<\
-    \ Point >;\n}\n#line 3 \"geometry/ccw.cpp\"\n\nnamespace geometry {\n  // http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C\n\
+    \ Point >;\n}\n#line 3 \"geometry/ccw.hpp\"\n\nnamespace geometry {\n  // http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C\n\
     \  constexpr int COUNTER_CLOCKWISE = +1;\n  constexpr int CLOCKWISE = -1;\n  constexpr\
     \ int ONLINE_BACK = +2; // c-a-b\n  constexpr int ONLINE_FRONT = -2; // a-b-c\n\
     \  constexpr int ON_SEGMENT = 0; // a-c-b\n  int ccw(const Point &a, Point b,\
@@ -85,7 +85,7 @@ data:
     n\";\n    else if(t == -2) cout << \"ONLINE_FRONT\\n\";\n    else cout << \"ON_SEGMENT\\\
     n\";\n  }\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../geometry/ccw.cpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../geometry/ccw.hpp\"\
     \n\nusing namespace geometry;\n\nint main() {\n  Point p1, p2;\n  cin >> p1 >>\
     \ p2;\n  int Q;\n  cin >> Q;\n  while(Q--) {\n    Point p3;\n    cin >> p3;\n\
     \    auto t = ccw(p1, p2, p3);\n    if(t == 1) cout << \"COUNTER_CLOCKWISE\\n\"\
@@ -93,15 +93,15 @@ data:
     \ \"ONLINE_BACK\\n\";\n    else if(t == -2) cout << \"ONLINE_FRONT\\n\";\n   \
     \ else cout << \"ON_SEGMENT\\n\";\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - geometry/ccw.cpp
-  - geometry/point.cpp
-  - geometry/base.cpp
+  - template/template.hpp
+  - geometry/ccw.hpp
+  - geometry/point.hpp
+  - geometry/base.hpp
   isVerificationFile: true
   path: test/verify/aoj-cgl-1-c.test.cpp
   requiredBy: []
-  timestamp: '2021-05-01 00:06:55+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/aoj-cgl-1-c.test.cpp
 layout: document

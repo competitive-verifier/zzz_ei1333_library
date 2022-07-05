@@ -1,32 +1,32 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: geometry/base.cpp
-    title: geometry/base.cpp
-  - icon: ':heavy_check_mark:'
-    path: geometry/circle.cpp
-    title: geometry/circle.cpp
-  - icon: ':heavy_check_mark:'
-    path: geometry/cross_point_cl.cpp
-    title: geometry/cross_point_cl.cpp
-  - icon: ':heavy_check_mark:'
-    path: geometry/line.cpp
-    title: geometry/line.cpp
-  - icon: ':heavy_check_mark:'
-    path: geometry/point.cpp
-    title: geometry/point.cpp
-  - icon: ':heavy_check_mark:'
-    path: geometry/projection.cpp
-    title: geometry/projection.cpp
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: geometry/base.hpp
+    title: geometry/base.hpp
+  - icon: ':x:'
+    path: geometry/circle.hpp
+    title: geometry/circle.hpp
+  - icon: ':x:'
+    path: geometry/cross_point_cl.hpp
+    title: geometry/cross_point_cl.hpp
+  - icon: ':x:'
+    path: geometry/line.hpp
+    title: geometry/line.hpp
+  - icon: ':question:'
+    path: geometry/point.hpp
+    title: geometry/point.hpp
+  - icon: ':x:'
+    path: geometry/projection.hpp
+    title: geometry/projection.hpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     ERROR: '0.000001'
@@ -34,7 +34,7 @@ data:
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_D
   bundledCode: "#line 1 \"test/verify/aoj-cgl-7-d.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_D\"\
-    \n#define ERROR 0.000001\n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\
+    \n#define ERROR 0.000001\n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\
     \nusing namespace std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\
     \nconst int64 infll = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct\
     \ IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
@@ -62,11 +62,11 @@ data:
     \ args) const {\n    return F::operator()(*this, forward< Args >(args)...);\n\
     \  }\n};\n \ntemplate< typename F >\ninline decltype(auto) MFP(F &&f) {\n  return\
     \ FixPoint< F >{forward< F >(f)};\n}\n#line 5 \"test/verify/aoj-cgl-7-d.test.cpp\"\
-    \n\n#line 2 \"geometry/base.cpp\"\n\nnamespace geometry {\n  using Real = double;\n\
+    \n\n#line 2 \"geometry/base.hpp\"\n\nnamespace geometry {\n  using Real = double;\n\
     \  const Real EPS = 1e-8;\n  const Real PI = acos(static_cast< Real >(-1));\n\n\
     \  enum {\n    OUT, ON, IN\n  };\n\n  inline int sign(const Real &r) {\n    return\
     \ r <= -EPS ? -1 : r >= EPS ? 1 : 0;\n  }\n\n  inline bool equals(const Real &a,\
-    \ const Real &b) {\n    return sign(a - b) == 0;\n  }\n}\n#line 3 \"geometry/point.cpp\"\
+    \ const Real &b) {\n    return sign(a - b) == 0;\n  }\n}\n#line 3 \"geometry/point.hpp\"\
     \n\nnamespace geometry {\n  using Point = complex< Real >;\n\n  istream &operator>>(istream\
     \ &is, Point &p) {\n    Real a, b;\n    is >> a >> b;\n    p = Point(a, b);\n\
     \    return is;\n  }\n\n  ostream &operator<<(ostream &os, const Point &p) {\n\
@@ -81,7 +81,7 @@ data:
     \ {\n    return equals(real(a), real(b)) ? imag(a) < imag(b) : real(a) < real(b);\n\
     \  }\n\n  bool compare_y(const Point &a, const Point &b) {\n    return equals(imag(a),\
     \ imag(b)) ? real(a) < real(b) : imag(a) < imag(b);\n  }\n\n  using Points = vector<\
-    \ Point >;\n}\n#line 3 \"geometry/line.cpp\"\n\nnamespace geometry {\n  struct\
+    \ Point >;\n}\n#line 3 \"geometry/line.hpp\"\n\nnamespace geometry {\n  struct\
     \ Line {\n    Point a, b;\n\n    Line() = default;\n\n    Line(const Point &a,\
     \ const Point &b) : a(a), b(b) {}\n\n    Line(const Real &A, const Real &B, const\
     \ Real &C) { // Ax+By=C\n      if(equals(A, 0)) {\n        assert(!equals(B, 0));\n\
@@ -91,14 +91,14 @@ data:
     \ }\n\n    friend ostream &operator<<(ostream &os, Line &l) {\n      return os\
     \ << l.a << \" to \" << l.b;\n    }\n\n    friend istream &operator>>(istream\
     \ &is, Line &l) {\n      return is >> l.a >> l.b;\n    }\n  };\n\n  using Lines\
-    \ = vector< Line >;\n}\n#line 3 \"geometry/circle.cpp\"\n\nnamespace geometry\
+    \ = vector< Line >;\n}\n#line 3 \"geometry/circle.hpp\"\n\nnamespace geometry\
     \ {\n  struct Circle {\n    Point p;\n    Real r{};\n\n    Circle() = default;\n\
     \n    Circle(const Point &p, const Real &r) : p(p), r(r) {}\n  };\n\n  using Circles\
-    \ = vector< Circle >;\n}\n#line 2 \"geometry/projection.cpp\"\n\n#line 5 \"geometry/projection.cpp\"\
+    \ = vector< Circle >;\n}\n#line 2 \"geometry/projection.hpp\"\n\n#line 5 \"geometry/projection.hpp\"\
     \n\nnamespace geometry {\n  // http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_A\n\
     \  Point projection(const Line &l, const Point &p) {\n    auto t = dot(p - l.a,\
     \ l.a - l.b) / norm(l.a - l.b);\n    return l.a + (l.a - l.b) * t;\n  }\n}\n#line\
-    \ 6 \"geometry/cross_point_cl.cpp\"\n\nnamespace geometry {\n  // http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_D\n\
+    \ 6 \"geometry/cross_point_cl.hpp\"\n\nnamespace geometry {\n  // http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_D\n\
     \  Points cross_point_cl(const Circle &c, const Line &l) {\n    Point pr = projection(l,\
     \ c.p);\n    if(equals(abs(pr - c.p), c.r)) return {pr};\n    Point e = (l.b -\
     \ l.a) / abs(l.b - l.a);\n    auto k = sqrt(norm(c.r) - norm(pr - c.p));\n   \
@@ -109,25 +109,25 @@ data:
     \    if(!compare_x(ret[0], ret[1])) swap(ret[0], ret[1]);\n    cout << ret[0]\
     \ << \" \" << ret[1] << \"\\n\";\n  }\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_7_D\"\
-    \n#define ERROR 0.000001\n\n#include \"../../template/template.cpp\"\n\n#include\
-    \ \"../../geometry/cross_point_cl.cpp\"\n\nusing namespace geometry;\n\nint main()\
+    \n#define ERROR 0.000001\n\n#include \"../../template/template.hpp\"\n\n#include\
+    \ \"../../geometry/cross_point_cl.hpp\"\n\nusing namespace geometry;\n\nint main()\
     \ {\n  Circle c;\n  cin >> c.p >> c.r;\n  int Q;\n  cin >> Q;\n  while(Q--) {\n\
     \    Line l;\n    cin >> l;\n    auto ret = cross_point_cl(c, l);\n    if(ret.size()\
     \ == 1) ret.emplace_back(ret[0]);\n    if(!compare_x(ret[0], ret[1])) swap(ret[0],\
     \ ret[1]);\n    cout << ret[0] << \" \" << ret[1] << \"\\n\";\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - geometry/cross_point_cl.cpp
-  - geometry/base.cpp
-  - geometry/point.cpp
-  - geometry/line.cpp
-  - geometry/circle.cpp
-  - geometry/projection.cpp
+  - template/template.hpp
+  - geometry/cross_point_cl.hpp
+  - geometry/base.hpp
+  - geometry/point.hpp
+  - geometry/line.hpp
+  - geometry/circle.hpp
+  - geometry/projection.hpp
   isVerificationFile: true
   path: test/verify/aoj-cgl-7-d.test.cpp
   requiredBy: []
-  timestamp: '2021-05-01 00:06:55+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/aoj-cgl-7-d.test.cpp
 layout: document

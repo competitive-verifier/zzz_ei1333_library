@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yukicoder-1236.test.cpp
     title: test/verify/yukicoder-1236.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     document_title: "Rational (\u6709\u7406\u6570\u578B)"
     links: []
@@ -112,7 +112,7 @@ data:
   path: math/rational/rational.hpp
   requiredBy: []
   timestamp: '2021-11-07 01:16:35+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/yukicoder-1236.test.cpp
 documentation_of: math/rational/rational.hpp

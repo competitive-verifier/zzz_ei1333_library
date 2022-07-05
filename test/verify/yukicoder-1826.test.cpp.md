@@ -1,28 +1,28 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: structure/others/abstract-2d-binary-indexed-tree-compressed.cpp
+  - icon: ':x:'
+    path: structure/others/abstract-2d-binary-indexed-tree-compressed.hpp
     title: "Abstract 2D Binary Indexed Tree Compressed(\u62BD\u8C61\u53162\u6B21\u5143\
       \u5EA7\u5727BIT)"
-  - icon: ':heavy_check_mark:'
-    path: structure/others/abstract-binary-indexed-tree.cpp
+  - icon: ':x:'
+    path: structure/others/abstract-binary-indexed-tree.hpp
     title: "Abstract Binary Indexed Tree(\u62BD\u8C61\u5316BIT)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/1826
     links:
     - https://yukicoder.me/problems/no/1826
   bundledCode: "#line 1 \"test/verify/yukicoder-1826.test.cpp\"\n#define PROBLEM \"\
-    https://yukicoder.me/problems/no/1826\"\n\n#line 1 \"template/template.cpp\"\n\
+    https://yukicoder.me/problems/no/1826\"\n\n#line 1 \"template/template.hpp\"\n\
     #include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -50,7 +50,7 @@ data:
     \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yukicoder-1826.test.cpp\"\
-    \n\n#line 1 \"structure/others/abstract-binary-indexed-tree.cpp\"\n/**\n * @brief\
+    \n\n#line 1 \"structure/others/abstract-binary-indexed-tree.hpp\"\n/**\n * @brief\
     \ Abstract Binary Indexed Tree(\u62BD\u8C61\u5316BIT)\n * @docs docs/abstract-binary-indexed-tree.md\n\
     \ */\ntemplate< typename T, typename F >\nstruct AbstractBinaryIndexedTree {\n\
     private:\n  int n;\n  vector< T > data;\n  const F f;\n  const T e;\n\npublic:\n\
@@ -69,7 +69,7 @@ data:
     \ return AbstractBinaryIndexedTree{n, f, e};\n}\n\ntemplate< typename T, typename\
     \ F >\nAbstractBinaryIndexedTree< T, F > get_abstract_binary_indexed_tree(const\
     \ vector< T > &v, const F &f, const T &e) {\n  return AbstractBinaryIndexedTree{v,\
-    \ f, e};\n}\n#line 2 \"structure/others/abstract-2d-binary-indexed-tree-compressed.cpp\"\
+    \ f, e};\n}\n#line 2 \"structure/others/abstract-2d-binary-indexed-tree-compressed.hpp\"\
     \n\n/**\n * @brief Abstract 2D Binary Indexed Tree Compressed(\u62BD\u8C61\u5316\
     2\u6B21\u5143\u5EA7\u5727BIT)\n */\ntemplate< typename T, typename F >\nstruct\
     \ Abstract2DBinaryIndexedTreeCompressed {\nprivate:\n  int n;\n  vector< AbstractBinaryIndexedTree<\
@@ -117,7 +117,7 @@ data:
     \ >= 0) {\n      chmax(ret, v);\n      lseg.apply(m.size() - mdx[i] - 1, v);\n\
     \      rseg.apply(mdx[i], v);\n    }\n  }\n  cout << ret << \"\\n\";\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/1826\"\n\n#include \"\
-    ../../template/template.cpp\"\n\n#include \"../../structure/others/abstract-2d-binary-indexed-tree-compressed.cpp\"\
+    ../../template/template.hpp\"\n\n#include \"../../structure/others/abstract-2d-binary-indexed-tree-compressed.hpp\"\
     \n\nint main() {\n  int N;\n  cin >> N;\n  vector< tuple< int, int, int > > ds;\n\
     \  ds.reserve(N + 1);\n  for(int i = 0; i < N; i++) {\n    int t, x, v;\n    cin\
     \ >> t >> x >> v;\n    ds.emplace_back(t, x, v);\n  }\n  ds.emplace_back(0, 0,\
@@ -143,14 +143,14 @@ data:
     \ >= 0) {\n      chmax(ret, v);\n      lseg.apply(m.size() - mdx[i] - 1, v);\n\
     \      rseg.apply(mdx[i], v);\n    }\n  }\n  cout << ret << \"\\n\";\n}\n"
   dependsOn:
-  - template/template.cpp
-  - structure/others/abstract-2d-binary-indexed-tree-compressed.cpp
-  - structure/others/abstract-binary-indexed-tree.cpp
+  - template/template.hpp
+  - structure/others/abstract-2d-binary-indexed-tree-compressed.hpp
+  - structure/others/abstract-binary-indexed-tree.hpp
   isVerificationFile: true
   path: test/verify/yukicoder-1826.test.cpp
   requiredBy: []
-  timestamp: '2022-02-09 16:47:12+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yukicoder-1826.test.cpp
 layout: document

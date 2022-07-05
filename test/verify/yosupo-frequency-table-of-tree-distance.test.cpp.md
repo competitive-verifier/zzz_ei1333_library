@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/tree/centroid-decomposition.hpp
     title: "Centroid-Decomosition(\u91CD\u5FC3\u5206\u89E3)"
-  - icon: ':heavy_check_mark:'
-    path: math/fft/fast-fourier-transform.cpp
-    title: math/fft/fast-fourier-transform.cpp
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':x:'
+    path: math/fft/fast-fourier-transform.hpp
+    title: math/fft/fast-fourier-transform.hpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/frequency_table_of_tree_distance
@@ -25,7 +25,7 @@ data:
     - https://judge.yosupo.jp/problem/frequency_table_of_tree_distance
   bundledCode: "#line 1 \"test/verify/yosupo-frequency-table-of-tree-distance.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/frequency_table_of_tree_distance\"\
-    \n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -87,7 +87,7 @@ data:
     \ = true;\n    for(auto &to : g[centroid]) {\n      if(!v[to]) tree.add_directed_edge(centroid,\
     \ build_dfs(to));\n    }\n    v[centroid] = false;\n    return centroid;\n  }\n\
     };\n#line 6 \"test/verify/yosupo-frequency-table-of-tree-distance.test.cpp\"\n\
-    \n#line 1 \"math/fft/fast-fourier-transform.cpp\"\nnamespace FastFourierTransform\
+    \n#line 1 \"math/fft/fast-fourier-transform.hpp\"\nnamespace FastFourierTransform\
     \ {\n  using real = double;\n\n  struct C {\n    real x, y;\n\n    C() : x(0),\
     \ y(0) {}\n\n    C(real x, real y) : x(x), y(y) {}\n\n    inline C operator+(const\
     \ C &c) const { return C(x + c.x, y + c.y); }\n\n    inline C operator-(const\
@@ -142,8 +142,8 @@ data:
     \ })(root);\n  dist.erase(begin(dist));\n  for(auto &p : dist) p /= 2;\n  cout\
     \ << dist << \"\\n\";\n}\n\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/frequency_table_of_tree_distance\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../graph/tree/centroid-decomposition.hpp\"\
-    \n\n#include \"../../math/fft/fast-fourier-transform.cpp\"\n\nint main() {\n \
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../graph/tree/centroid-decomposition.hpp\"\
+    \n\n#include \"../../math/fft/fast-fourier-transform.hpp\"\n\nint main() {\n \
     \ int N;\n  cin >> N;\n  CentroidDecomposition< int > g(N);\n  g.read(N - 1, 0);\n\
     \  int root = g.build();\n  vector< int > used(N);\n  vector< int64 > dist(N);\n\
     \  MFP([&](auto rec, int centroid) -> void {\n    used[centroid] = true;\n   \
@@ -161,15 +161,15 @@ data:
     \ &to : g.tree.g[centroid]) rec(to);\n  })(root);\n  dist.erase(begin(dist));\n\
     \  for(auto &p : dist) p /= 2;\n  cout << dist << \"\\n\";\n}\n\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - graph/tree/centroid-decomposition.hpp
   - graph/graph-template.hpp
-  - math/fft/fast-fourier-transform.cpp
+  - math/fft/fast-fourier-transform.hpp
   isVerificationFile: true
   path: test/verify/yosupo-frequency-table-of-tree-distance.test.cpp
   requiredBy: []
-  timestamp: '2022-03-12 17:40:54+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-frequency-table-of-tree-distance.test.cpp
 layout: document

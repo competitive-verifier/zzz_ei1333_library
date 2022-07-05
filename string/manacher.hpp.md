@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yosupo-enumerate-palindromes.test.cpp
     title: test/verify/yosupo-enumerate-palindromes.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     document_title: "Manacher(\u6700\u9577\u56DE\u6587)"
     links: []
@@ -43,7 +43,7 @@ data:
   path: string/manacher.hpp
   requiredBy: []
   timestamp: '2022-03-30 22:35:09+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/yosupo-enumerate-palindromes.test.cpp
 documentation_of: string/manacher.hpp

@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: structure/convex-hull-trick/convex-hull-trick-add-monotone.cpp
+  - icon: ':x:'
+    path: structure/convex-hull-trick/convex-hull-trick-add-monotone.hpp
     title: Convex Hull Trick Add Monotone
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/line_add_get_min
     links:
     - https://judge.yosupo.jp/problem/line_add_get_min
   bundledCode: "#line 1 \"test/verify/yosupo-line-add-get-min-2.test.cpp\"\n#define\
-    \ PROBLEM \"https://judge.yosupo.jp/problem/line_add_get_min\"\n\n#line 1 \"template/template.cpp\"\
+    \ PROBLEM \"https://judge.yosupo.jp/problem/line_add_get_min\"\n\n#line 1 \"template/template.hpp\"\
     \n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -46,7 +46,7 @@ data:
     \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-line-add-get-min-2.test.cpp\"\
-    \n\n#line 1 \"structure/convex-hull-trick/convex-hull-trick-add-monotone.cpp\"\
+    \n\n#line 1 \"structure/convex-hull-trick/convex-hull-trick-add-monotone.hpp\"\
     \n/**\n * @brief Convex Hull Trick Add Monotone\n * @docs docs/convex-hull-trick-add-monotone.md\n\
     */\ntemplate< typename T, bool isMin >\nstruct ConvexHullTrickAddMonotone {\n\
     #define F first\n#define S second\n  using P = pair< T, T >;\n  deque< P > H;\n\
@@ -95,7 +95,7 @@ data:
     \ ret = infll;\n      for(auto &c: cht) {\n        chmin(ret, c.query(x));\n \
     \     }\n      cout << ret << \"\\n\";\n    }\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/line_add_get_min\"\n\n\
-    #include \"../../template/template.cpp\"\n\n#include \"../../structure/convex-hull-trick/convex-hull-trick-add-monotone.cpp\"\
+    #include \"../../template/template.hpp\"\n\n#include \"../../structure/convex-hull-trick/convex-hull-trick-add-monotone.hpp\"\
     \n\nint main() {\n  int N, Q;\n  cin >> N >> Q;\n  using CHT = ConvexHullTrickAddMonotone<\
     \ int64, true >;\n  vector< CHT > cht;\n  auto add = [&](int64 a, int64 b) {\n\
     \    cht.emplace_back();\n    cht.back().add(a, b);\n    while(cht.size() >= 2\
@@ -113,13 +113,13 @@ data:
     \ ret = infll;\n      for(auto &c: cht) {\n        chmin(ret, c.query(x));\n \
     \     }\n      cout << ret << \"\\n\";\n    }\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - structure/convex-hull-trick/convex-hull-trick-add-monotone.cpp
+  - template/template.hpp
+  - structure/convex-hull-trick/convex-hull-trick-add-monotone.hpp
   isVerificationFile: true
   path: test/verify/yosupo-line-add-get-min-2.test.cpp
   requiredBy: []
-  timestamp: '2022-04-19 19:56:57+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-line-add-get-min-2.test.cpp
 layout: document

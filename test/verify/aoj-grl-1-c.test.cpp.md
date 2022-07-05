@@ -1,27 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/shortest-path/warshall-floyd.hpp
     title: "Warshall Floyd(\u5168\u70B9\u5BFE\u9593\u6700\u77ED\u8DEF)"
-  - icon: ':heavy_check_mark:'
-    path: math/matrix/square-matrix.cpp
+  - icon: ':question:'
+    path: math/matrix/square-matrix.hpp
     title: "Square-Matrix(\u6B63\u65B9\u884C\u5217)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C
   bundledCode: "#line 1 \"test/verify/aoj-grl-1-c.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C\"\
-    \n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -48,7 +48,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-grl-1-c.test.cpp\"\
-    \n\n#line 1 \"math/matrix/square-matrix.cpp\"\n/**\n * @brief Square-Matrix(\u6B63\
+    \n\n#line 1 \"math/matrix/square-matrix.hpp\"\n/**\n * @brief Square-Matrix(\u6B63\
     \u65B9\u884C\u5217)\n */\ntemplate< class T, size_t N >\nstruct SquareMatrix {\n\
     \  array< array< T, N >, N > A;\n\n  SquareMatrix() : A{{}} {}\n\n  size_t size()\
     \ const { return N; }\n\n  inline const array< T, N > &operator[](int k) const\
@@ -93,7 +93,7 @@ data:
     \      if(j > 0) putchar(' ');\n      if(mat[i][j] == INT_MAX) printf(\"INF\"\
     );\n      else printf(\"%d\", mat[i][j]);\n    }\n    putchar('\\n');\n  }\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../math/matrix/square-matrix.cpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../math/matrix/square-matrix.hpp\"\
     \n#include \"../../graph/shortest-path/warshall-floyd.hpp\"\n\nint main() {\n\
     \  int V, E;\n  scanf(\"%d %d\", &V, &E);\n  SquareMatrix< int, 100 > mat;\n \
     \ for(int i = 0; i < 100; i++) {\n    for(int j = 0; j < 100; j++) {\n      if(i\
@@ -105,14 +105,14 @@ data:
     \ ');\n      if(mat[i][j] == INT_MAX) printf(\"INF\");\n      else printf(\"%d\"\
     , mat[i][j]);\n    }\n    putchar('\\n');\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - math/matrix/square-matrix.cpp
+  - template/template.hpp
+  - math/matrix/square-matrix.hpp
   - graph/shortest-path/warshall-floyd.hpp
   isVerificationFile: true
   path: test/verify/aoj-grl-1-c.test.cpp
   requiredBy: []
-  timestamp: '2021-07-14 01:17:14+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/aoj-grl-1-c.test.cpp
 layout: document

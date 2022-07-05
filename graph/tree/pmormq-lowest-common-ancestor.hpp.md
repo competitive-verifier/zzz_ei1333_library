@@ -1,29 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
-  - icon: ':heavy_check_mark:'
-    path: structure/others/plus-minus-one-rmq.cpp
+  - icon: ':x:'
+    path: structure/others/plus-minus-one-rmq.hpp
     title: Plus-Minus-One-RMQ
-  - icon: ':heavy_check_mark:'
-    path: structure/others/sparse-table.cpp
+  - icon: ':x:'
+    path: structure/others/sparse-table.hpp
     title: "Sparse-Table(\u30B9\u30D1\u30FC\u30B9\u30C6\u30FC\u30D6\u30EB)"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/aoj-grl-5-c-4.test.cpp
     title: test/verify/aoj-grl-5-c-4.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yosupo-lca.test.cpp
     title: test/verify/yosupo-lca.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yosupo-staticrmq-4.test.cpp
     title: test/verify/yosupo-staticrmq-4.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: docs/pmormq-lowest-common-ancestor.md
     document_title: "PMORMQ-Lowest-Common-Ancestor(\u6700\u5C0F\u5171\u901A\u7956\u5148\
@@ -48,7 +48,7 @@ data:
     \ b, c);\n    }\n  }\n\n  inline vector< Edge< T > > &operator[](const int &k)\
     \ {\n    return g[k];\n  }\n\n  inline const vector< Edge< T > > &operator[](const\
     \ int &k) const {\n    return g[k];\n  }\n};\n\ntemplate< typename T = int >\n\
-    using Edges = vector< Edge< T > >;\n#line 1 \"structure/others/sparse-table.cpp\"\
+    using Edges = vector< Edge< T > >;\n#line 1 \"structure/others/sparse-table.hpp\"\
     \n/**\n * @brief Sparse-Table(\u30B9\u30D1\u30FC\u30B9\u30C6\u30FC\u30D6\u30EB\
     )\n * @docs docs/sparse-table.md\n */\ntemplate< typename T, typename F >\nstruct\
     \ SparseTable {\n  F f;\n  vector< vector< T > > st;\n  vector< int > lookup;\n\
@@ -62,7 +62,7 @@ data:
     \ + 1;\n    }\n  }\n\n  inline T fold(int l, int r) const {\n    int b = lookup[r\
     \ - l];\n    return f(st[b][l], st[b][r - (1 << b)]);\n  }\n};\n\ntemplate< typename\
     \ T, typename F >\nSparseTable< T, F > get_sparse_table(const vector< T > &v,\
-    \ const F &f) {\n  return SparseTable< T, F >(v, f);\n}\n#line 2 \"structure/others/plus-minus-one-rmq.cpp\"\
+    \ const F &f) {\n  return SparseTable< T, F >(v, f);\n}\n#line 2 \"structure/others/plus-minus-one-rmq.hpp\"\
     \n\n/**\n * @brief Plus-Minus-One-RMQ\n **/\ntemplate< typename T >\nstruct PlusMinusOneRMQ\
     \ {\n  using F = function< int(int, int) >;\n\n  int backet;\n  vector< T > vs;\n\
     \  vector< int > bidx, bbit;\n  SparseTable< int, F > st;\n  vector< vector< vector<\
@@ -103,7 +103,7 @@ data:
     \    ord.emplace_back(idx);\n    dep.emplace_back(d);\n    for(auto &to : g[idx])\
     \ {\n      if(to != par) {\n        dfs(to, idx, d + 1);\n        ord.emplace_back(idx);\n\
     \        dep.emplace_back(d);\n      }\n    }\n  }\n};\n"
-  code: "#pragma once\n\n#include \"../graph-template.hpp\"\n#include \"../../structure/others/plus-minus-one-rmq.cpp\"\
+  code: "#pragma once\n\n#include \"../graph-template.hpp\"\n#include \"../../structure/others/plus-minus-one-rmq.hpp\"\
     \n\n/**\n * @brief PMORMQ-Lowest-Common-Ancestor(\u6700\u5C0F\u5171\u901A\u7956\
     \u5148)\n * @docs docs/pmormq-lowest-common-ancestor.md\n **/\ntemplate< typename\
     \ T = int >\nstruct PMORMQLowestCommonAncestor : Graph< T > {\npublic:\n  using\
@@ -120,13 +120,13 @@ data:
     \        dep.emplace_back(d);\n      }\n    }\n  }\n};\n"
   dependsOn:
   - graph/graph-template.hpp
-  - structure/others/plus-minus-one-rmq.cpp
-  - structure/others/sparse-table.cpp
+  - structure/others/plus-minus-one-rmq.hpp
+  - structure/others/sparse-table.hpp
   isVerificationFile: false
   path: graph/tree/pmormq-lowest-common-ancestor.hpp
   requiredBy: []
-  timestamp: '2021-08-16 02:17:26+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/aoj-grl-5-c-4.test.cpp
   - test/verify/yosupo-lca.test.cpp

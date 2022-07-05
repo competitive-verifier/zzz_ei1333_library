@@ -1,33 +1,33 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: other/printer.cpp
+  - icon: ':x:'
+    path: other/printer.hpp
     title: "Printer(\u9AD8\u901F\u51FA\u529B)"
-  - icon: ':heavy_check_mark:'
-    path: other/scanner.cpp
+  - icon: ':x:'
+    path: other/scanner.hpp
     title: "Scanner(\u9AD8\u901F\u5165\u529B)"
-  - icon: ':heavy_check_mark:'
-    path: structure/develop/dynamic-tree-test.cpp
+  - icon: ':x:'
+    path: structure/develop/dynamic-tree-test.hpp
     title: Dynamic Tree Test
-  - icon: ':heavy_check_mark:'
-    path: structure/develop/super-link-cut-tree.cpp
+  - icon: ':question:'
+    path: structure/develop/super-link-cut-tree.hpp
     title: "\u4F55\u3067\u3082\u3067\u304D\u308BLCT"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://dmoj.ca/problem/ds5
     links:
     - https://dmoj.ca/problem/ds5
   bundledCode: "#line 1 \"test/verify/dmoj-ds5.test.cpp\"\n#define PROBLEM \"https://dmoj.ca/problem/ds5\"\
-    \n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -54,7 +54,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/dmoj-ds5.test.cpp\"\
-    \n\n#line 1 \"structure/develop/super-link-cut-tree.cpp\"\n/**\n * @brief \u4F55\
+    \n\n#line 1 \"structure/develop/super-link-cut-tree.hpp\"\n/**\n * @brief \u4F55\
     \u3067\u3082\u3067\u304D\u308BLCT\n */\ntemplate< typename LInfo, typename Lazy\
     \ >\nstruct SplayTree {\n  struct Node {\n    Node *l, *r, *p;\n    LInfo info;\n\
     \    Lazy lazy, lbuf;\n\n    explicit Node(const LInfo &info) : info(info), l(nullptr),\
@@ -183,7 +183,7 @@ data:
     \u9045\u5EF6\u4F1D\u642C\n  // path\u3068subtree\u306E\u9045\u5EF6\u4F1D\u642C\
     \u304C\u4E21\u65B9\u3042\u308B\u5834\u5408\u306B\u5B9F\u88C5\u3059\u308B\n  void\
     \ propagate_light(const Lazy &p) {}\n};\n\nusing LCT = SuperLinkCutTree< Info,\
-    \ LInfo, Lazy >;\n*/\n#line 2 \"structure/develop/dynamic-tree-test.cpp\"\n\n\
+    \ LInfo, Lazy >;\n*/\n#line 2 \"structure/develop/dynamic-tree-test.hpp\"\n\n\
     /**\n * @brief Dynamic Tree Test\n * @see https://dmoj.ca/problem/ds5\n */\nusing\
     \ T = int;\nconst T inf_max = numeric_limits< T >::max();\nconst T inf_min = numeric_limits<\
     \ T >::min();\n\n// \u9045\u5EF6\u4F1D\u642C\u3092\u3059\u308B\u4F5C\u7528\u7D20\
@@ -240,7 +240,7 @@ data:
     \ p.v * light_sz;\n    } else { // inc\n      light_min += p.v;\n      light_max\
     \ += p.v;\n      light_sum += p.v * light_sz;\n    }\n  }\n};\n\nusing LCT = SuperLinkCutTree<\
     \ Info, LInfo, Lazy >;\n#line 6 \"test/verify/dmoj-ds5.test.cpp\"\n\n#line 1 \"\
-    other/scanner.cpp\"\n/**\n * @brief Scanner(\u9AD8\u901F\u5165\u529B)\n */\nstruct\
+    other/scanner.hpp\"\n/**\n * @brief Scanner(\u9AD8\u901F\u5165\u529B)\n */\nstruct\
     \ Scanner {\npublic:\n\n  explicit Scanner(FILE *fp) : fp(fp) {}\n\n  template<\
     \ typename T, typename... E >\n  void read(T &t, E &... e) {\n    read_single(t);\n\
     \    read(e...);\n  }\n\nprivate:\n  static constexpr size_t line_size = 1 <<\
@@ -262,7 +262,7 @@ data:
     \ = st;\n      while(*st && !is_space(*st)) ++st;\n      s += string(base, st);\n\
     \      if(st != ed) return;\n      reread();\n    }\n  }\n\n  template< typename\
     \ T >\n  void read_single(vector< T > &s) {\n    for(auto &d : s) read(d);\n \
-    \ }\n};\n#line 1 \"other/printer.cpp\"\n/**\n * @brief Printer(\u9AD8\u901F\u51FA\
+    \ }\n};\n#line 1 \"other/printer.hpp\"\n/**\n * @brief Printer(\u9AD8\u901F\u51FA\
     \u529B)\n */\nstruct Printer {\npublic:\n  explicit Printer(FILE *fp) : fp(fp)\
     \ {}\n\n  ~Printer() { flush(); }\n\n  template< bool f = false, typename T, typename...\
     \ E >\n  void write(const T &t, const E &... e) {\n    if(f) write_single(' ');\n\
@@ -313,9 +313,9 @@ data:
     \ vs[y]).path_sum);\n    } else {\n      int x;\n      in.read(x);\n      --x;\n\
     \      lct.evert(vs[R]);\n      auto ret = lct.query_subtree(vs[x]);\n      out.writeln(ret.path_sum\
     \ + ret.light_sum);\n    }\n  }\n}\n"
-  code: "#define PROBLEM \"https://dmoj.ca/problem/ds5\"\n\n#include \"../../template/template.cpp\"\
-    \n\n#include \"../../structure/develop/dynamic-tree-test.cpp\"\n\n#include \"\
-    ../../other/scanner.cpp\"\n#include \"../../other/printer.cpp\"\n\nint main()\
+  code: "#define PROBLEM \"https://dmoj.ca/problem/ds5\"\n\n#include \"../../template/template.hpp\"\
+    \n\n#include \"../../structure/develop/dynamic-tree-test.hpp\"\n\n#include \"\
+    ../../other/scanner.hpp\"\n#include \"../../other/printer.hpp\"\n\nint main()\
     \ {\n  Scanner in(stdin);\n  Printer out(stdout);\n\n  int N, M;\n  in.read(N,\
     \ M);\n  vector< vector< int > > g(N);\n  for(int i = 0; i + 1 < N; i++) {\n \
     \   int x, y;\n    in.read(x, y);\n    --x, --y;\n    g[x].emplace_back(y);\n\
@@ -349,16 +349,16 @@ data:
     \      lct.evert(vs[R]);\n      auto ret = lct.query_subtree(vs[x]);\n      out.writeln(ret.path_sum\
     \ + ret.light_sum);\n    }\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - structure/develop/dynamic-tree-test.cpp
-  - structure/develop/super-link-cut-tree.cpp
-  - other/scanner.cpp
-  - other/printer.cpp
+  - template/template.hpp
+  - structure/develop/dynamic-tree-test.hpp
+  - structure/develop/super-link-cut-tree.hpp
+  - other/scanner.hpp
+  - other/printer.hpp
   isVerificationFile: true
   path: test/verify/dmoj-ds5.test.cpp
   requiredBy: []
-  timestamp: '2021-10-02 02:49:48+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/dmoj-ds5.test.cpp
 layout: document

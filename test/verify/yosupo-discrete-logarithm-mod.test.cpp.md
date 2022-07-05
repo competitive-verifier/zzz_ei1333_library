@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/combinatorics/mod-log.cpp
+  - icon: ':x:'
+    path: math/combinatorics/mod-log.hpp
     title: "Mod Log(\u96E2\u6563\u5BFE\u6570\u554F\u984C)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/discrete_logarithm_mod
@@ -19,7 +19,7 @@ data:
     - https://judge.yosupo.jp/problem/discrete_logarithm_mod
   bundledCode: "#line 1 \"test/verify/yosupo-discrete-logarithm-mod.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/discrete_logarithm_mod\" \n\n#line\
-    \ 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
+    \ 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
     \nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll = (1LL\
     \ << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -46,7 +46,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-discrete-logarithm-mod.test.cpp\"\
-    \n\n#line 1 \"math/combinatorics/mod-log.cpp\"\n/**\n * @brief Mod Log(\u96E2\u6563\
+    \n\n#line 1 \"math/combinatorics/mod-log.hpp\"\n/**\n * @brief Mod Log(\u96E2\u6563\
     \u5BFE\u6570\u554F\u984C)\n * @docs docs/mod-log.md\n */\nint64_t mod_log(int64_t\
     \ a, int64_t b, int64_t p) {\n  int64_t g = 1;\n\n  for(int64_t i = p; i; i /=\
     \ 2) (g *= a) %= p;\n  g = __gcd(g, p);\n\n  int64_t t = 1, c = 0;\n  for(; t\
@@ -59,17 +59,17 @@ data:
     \n\nint main() {\n  int T;\n  cin >> T;\n  while(T--) {\n    int64_t X, Y, M;\n\
     \    cin >> X >> Y >> M;\n    cout << mod_log(X, Y, M) << endl;\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/discrete_logarithm_mod\"\
-    \ \n\n#include \"../../template/template.cpp\"\n\n#include \"../../math/combinatorics/mod-log.cpp\"\
+    \ \n\n#include \"../../template/template.hpp\"\n\n#include \"../../math/combinatorics/mod-log.hpp\"\
     \n\nint main() {\n  int T;\n  cin >> T;\n  while(T--) {\n    int64_t X, Y, M;\n\
     \    cin >> X >> Y >> M;\n    cout << mod_log(X, Y, M) << endl;\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - math/combinatorics/mod-log.cpp
+  - template/template.hpp
+  - math/combinatorics/mod-log.hpp
   isVerificationFile: true
   path: test/verify/yosupo-discrete-logarithm-mod.test.cpp
   requiredBy: []
-  timestamp: '2021-07-13 21:04:36+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-discrete-logarithm-mod.test.cpp
 layout: document

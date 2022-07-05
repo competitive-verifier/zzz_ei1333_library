@@ -1,25 +1,25 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: dp/knapsack-limitations.cpp
+  - icon: ':x:'
+    path: dp/knapsack-limitations.hpp
     title: "Knapsack Limitations(\u500B\u6570\u5236\u9650\u3064\u304D\u30CA\u30C3\u30D7\
       \u30B5\u30C3\u30AF\u554F\u984C) $O(NW)$"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_G
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_G
   bundledCode: "#line 1 \"test/verify/aoj-dpl-1-g.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_G\"\
-    \n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -46,7 +46,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-dpl-1-g.test.cpp\"\
-    \n\n#line 1 \"dp/knapsack-limitations.cpp\"\n/**\n * @brief Knapsack Limitations(\u500B\
+    \n\n#line 1 \"dp/knapsack-limitations.hpp\"\n/**\n * @brief Knapsack Limitations(\u500B\
     \u6570\u5236\u9650\u3064\u304D\u30CA\u30C3\u30D7\u30B5\u30C3\u30AF\u554F\u984C\
     ) $O(NW)$\n * @docs docs/knapsack-limitations.md\n */\ntemplate< typename T, typename\
     \ Compare = greater< T > >\nvector< T > knapsack_limitations(const vector< int\
@@ -68,19 +68,19 @@ data:
     \    cin >> v[i] >> w[i] >> m[i];\n  }\n  auto ret = knapsack_limitations(w, m,\
     \ v, W, -1);\n  cout << *max_element(begin(ret), end(ret)) << endl;\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_G\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../dp/knapsack-limitations.cpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../dp/knapsack-limitations.hpp\"\
     \n\nint main() {\n  int N, W;\n  cin >> N >> W;\n  vector< int > v(N), w(N), m(N);\n\
     \  for(int i = 0; i < N; i++) {\n    cin >> v[i] >> w[i] >> m[i];\n  }\n  auto\
     \ ret = knapsack_limitations(w, m, v, W, -1);\n  cout << *max_element(begin(ret),\
     \ end(ret)) << endl;\n}\n"
   dependsOn:
-  - template/template.cpp
-  - dp/knapsack-limitations.cpp
+  - template/template.hpp
+  - dp/knapsack-limitations.hpp
   isVerificationFile: true
   path: test/verify/aoj-dpl-1-g.test.cpp
   requiredBy: []
-  timestamp: '2021-08-25 15:39:13+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/aoj-dpl-1-g.test.cpp
 layout: document

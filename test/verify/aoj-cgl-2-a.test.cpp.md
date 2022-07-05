@@ -1,36 +1,36 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: geometry/base.cpp
-    title: geometry/base.cpp
-  - icon: ':heavy_check_mark:'
-    path: geometry/is_orthogonal.cpp
-    title: geometry/is_orthogonal.cpp
-  - icon: ':heavy_check_mark:'
-    path: geometry/is_parallel.cpp
-    title: geometry/is_parallel.cpp
-  - icon: ':heavy_check_mark:'
-    path: geometry/line.cpp
-    title: geometry/line.cpp
-  - icon: ':heavy_check_mark:'
-    path: geometry/point.cpp
-    title: geometry/point.cpp
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: geometry/base.hpp
+    title: geometry/base.hpp
+  - icon: ':x:'
+    path: geometry/is_orthogonal.hpp
+    title: geometry/is_orthogonal.hpp
+  - icon: ':x:'
+    path: geometry/is_parallel.hpp
+    title: geometry/is_parallel.hpp
+  - icon: ':x:'
+    path: geometry/line.hpp
+    title: geometry/line.hpp
+  - icon: ':question:'
+    path: geometry/point.hpp
+    title: geometry/point.hpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A
   bundledCode: "#line 1 \"test/verify/aoj-cgl-2-a.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A\"\
-    \n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -57,11 +57,11 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-cgl-2-a.test.cpp\"\
-    \n\n#line 2 \"geometry/base.cpp\"\n\nnamespace geometry {\n  using Real = double;\n\
+    \n\n#line 2 \"geometry/base.hpp\"\n\nnamespace geometry {\n  using Real = double;\n\
     \  const Real EPS = 1e-8;\n  const Real PI = acos(static_cast< Real >(-1));\n\n\
     \  enum {\n    OUT, ON, IN\n  };\n\n  inline int sign(const Real &r) {\n    return\
     \ r <= -EPS ? -1 : r >= EPS ? 1 : 0;\n  }\n\n  inline bool equals(const Real &a,\
-    \ const Real &b) {\n    return sign(a - b) == 0;\n  }\n}\n#line 3 \"geometry/point.cpp\"\
+    \ const Real &b) {\n    return sign(a - b) == 0;\n  }\n}\n#line 3 \"geometry/point.hpp\"\
     \n\nnamespace geometry {\n  using Point = complex< Real >;\n\n  istream &operator>>(istream\
     \ &is, Point &p) {\n    Real a, b;\n    is >> a >> b;\n    p = Point(a, b);\n\
     \    return is;\n  }\n\n  ostream &operator<<(ostream &os, const Point &p) {\n\
@@ -76,7 +76,7 @@ data:
     \ {\n    return equals(real(a), real(b)) ? imag(a) < imag(b) : real(a) < real(b);\n\
     \  }\n\n  bool compare_y(const Point &a, const Point &b) {\n    return equals(imag(a),\
     \ imag(b)) ? real(a) < real(b) : imag(a) < imag(b);\n  }\n\n  using Points = vector<\
-    \ Point >;\n}\n#line 3 \"geometry/line.cpp\"\n\nnamespace geometry {\n  struct\
+    \ Point >;\n}\n#line 3 \"geometry/line.hpp\"\n\nnamespace geometry {\n  struct\
     \ Line {\n    Point a, b;\n\n    Line() = default;\n\n    Line(const Point &a,\
     \ const Point &b) : a(a), b(b) {}\n\n    Line(const Real &A, const Real &B, const\
     \ Real &C) { // Ax+By=C\n      if(equals(A, 0)) {\n        assert(!equals(B, 0));\n\
@@ -86,10 +86,10 @@ data:
     \ }\n\n    friend ostream &operator<<(ostream &os, Line &l) {\n      return os\
     \ << l.a << \" to \" << l.b;\n    }\n\n    friend istream &operator>>(istream\
     \ &is, Line &l) {\n      return is >> l.a >> l.b;\n    }\n  };\n\n  using Lines\
-    \ = vector< Line >;\n}\n#line 3 \"geometry/is_parallel.cpp\"\n\nnamespace geometry\
+    \ = vector< Line >;\n}\n#line 3 \"geometry/is_parallel.hpp\"\n\nnamespace geometry\
     \ {\n  // http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A\n \
     \ bool is_parallel(const Line &a, const Line &b) {\n    return equals(cross(a.b\
-    \ - a.a, b.b - b.a), 0.0);\n  }\n}\n#line 3 \"geometry/is_orthogonal.cpp\"\n\n\
+    \ - a.a, b.b - b.a), 0.0);\n  }\n}\n#line 3 \"geometry/is_orthogonal.hpp\"\n\n\
     namespace geometry {\n  // http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A\n\
     \  bool is_orthogonal(const Line &a, const Line &b) {\n    return equals(dot(a.a\
     \ - a.b, b.a - b.b), 0.0);\n  }\n}\n#line 7 \"test/verify/aoj-cgl-2-a.test.cpp\"\
@@ -98,23 +98,23 @@ data:
     \ << \"2\\n\";\n    else if(is_orthogonal(s1, s2)) cout << \"1\\n\";\n    else\
     \ cout << \"0\\n\";\n  }\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../geometry/is_parallel.cpp\"\
-    \n#include \"../../geometry/is_orthogonal.cpp\"\n\nusing namespace geometry;\n\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../geometry/is_parallel.hpp\"\
+    \n#include \"../../geometry/is_orthogonal.hpp\"\n\nusing namespace geometry;\n\
     \nint main() {\n  int Q;\n  cin >> Q;\n  while(Q--) {\n    Line s1, s2;\n    cin\
     \ >> s1 >> s2;\n    if(is_parallel(s1, s2)) cout << \"2\\n\";\n    else if(is_orthogonal(s1,\
     \ s2)) cout << \"1\\n\";\n    else cout << \"0\\n\";\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - geometry/is_parallel.cpp
-  - geometry/point.cpp
-  - geometry/base.cpp
-  - geometry/line.cpp
-  - geometry/is_orthogonal.cpp
+  - template/template.hpp
+  - geometry/is_parallel.hpp
+  - geometry/point.hpp
+  - geometry/base.hpp
+  - geometry/line.hpp
+  - geometry/is_orthogonal.hpp
   isVerificationFile: true
   path: test/verify/aoj-cgl-2-a.test.cpp
   requiredBy: []
-  timestamp: '2021-05-01 00:06:55+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/aoj-cgl-2-a.test.cpp
 layout: document

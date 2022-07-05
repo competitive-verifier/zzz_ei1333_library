@@ -6,12 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-1254.test.cpp
     title: test/verify/aoj-1254.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yosupo-chromatic-number.test.cpp
     title: test/verify/yosupo-chromatic-number.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: docs/chromatic-number.md
     document_title: "Chromatic Number(\u5F69\u8272\u6570)"
@@ -54,7 +54,7 @@ data:
   path: graph/others/chromatic-number.hpp
   requiredBy: []
   timestamp: '2021-07-21 02:10:43+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/verify/yosupo-chromatic-number.test.cpp
   - test/verify/aoj-1254.test.cpp

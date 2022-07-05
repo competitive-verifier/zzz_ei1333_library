@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/flow/bipartite-flow.hpp
     title: "Bipartite Flow(\u4E8C\u90E8\u30B0\u30E9\u30D5\u306E\u30D5\u30ED\u30FC)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/others/eulerian-trail.hpp
     title: "Eulerian Trail(\u30AA\u30A4\u30E9\u30FC\u8DEF)"
-  - icon: ':heavy_check_mark:'
-    path: structure/union-find/union-find.cpp
+  - icon: ':question:'
+    path: structure/union-find/union-find.hpp
     title: Union-Find
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yosupo-bipartite-edge-coloring.test.cpp
     title: test/verify/yosupo-bipartite-edge-coloring.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: docs/bipartite-graph-edge-coloring.md
     document_title: "Bipartite Graph Edge Coloring(\u4E8C\u90E8\u30B0\u30E9\u30D5\u306E\
@@ -25,7 +25,7 @@ data:
     links:
     - https://ei1333.hateblo.jp/entry/2020/08/25/015955
   bundledCode: "#line 2 \"graph/others/bipartite-graph-edge-coloring.hpp\"\n\n#line\
-    \ 2 \"structure/union-find/union-find.cpp\"\n\n/**\n * @brief Union-Find\n * @docs\
+    \ 2 \"structure/union-find/union-find.hpp\"\n\n/**\n * @brief Union-Find\n * @docs\
     \ docs/union-find.md\n */\nstruct UnionFind {\n  vector< int > data;\n\n  UnionFind()\
     \ = default;\n\n  explicit UnionFind(size_t sz) : data(sz, -1) {}\n\n  bool unite(int\
     \ x, int y) {\n    x = find(x), y = find(y);\n    if(x == y) return false;\n \
@@ -205,7 +205,7 @@ data:
     \ ans.size(); i++) {\n      res.emplace_back();\n      for(auto &j : ans[i]) if(j\
     \ < (int)A.size()) res.back().emplace_back(j);\n    }\n    return res;\n  }\n\
     };\n"
-  code: "#pragma once\n\n#include \"../../structure/union-find/union-find.cpp\"\n\
+  code: "#pragma once\n\n#include \"../../structure/union-find/union-find.hpp\"\n\
     #include \"../flow/bipartite-flow.hpp\"\n#include \"eulerian-trail.hpp\"\n\n/**\n\
     \ * @brief Bipartite Graph Edge Coloring(\u4E8C\u90E8\u30B0\u30E9\u30D5\u306E\u8FBA\
     \u5F69\u8272)\n * @docs docs/bipartite-graph-edge-coloring.md\n * @see https://ei1333.hateblo.jp/entry/2020/08/25/015955\n\
@@ -258,14 +258,14 @@ data:
     \ < (int)A.size()) res.back().emplace_back(j);\n    }\n    return res;\n  }\n\
     };\n"
   dependsOn:
-  - structure/union-find/union-find.cpp
+  - structure/union-find/union-find.hpp
   - graph/flow/bipartite-flow.hpp
   - graph/others/eulerian-trail.hpp
   isVerificationFile: false
   path: graph/others/bipartite-graph-edge-coloring.hpp
   requiredBy: []
-  timestamp: '2022-06-25 18:23:01+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/yosupo-bipartite-edge-coloring.test.cpp
 documentation_of: graph/others/bipartite-graph-edge-coloring.hpp

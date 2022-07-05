@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/shortest-path/k-shortest-path.hpp
     title: K-Shortest-Path
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     ERROR: 1e-4
@@ -23,7 +23,7 @@ data:
     - https://yukicoder.me/problems/no/1069
   bundledCode: "#line 1 \"test/verify/yukicoder-1069.test.cpp\"\n#define ERROR \"\
     1e-4\"\n#define PROBLEM \"https://yukicoder.me/problems/no/1069\"\n\n#line 1 \"\
-    template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing\
+    template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing\
     \ int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll = (1LL <<\
     \ 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n\
     \    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed <<\
@@ -123,7 +123,7 @@ data:
     \ Y, K);\n  for(int i = 0; i < K; i++) {\n    if(i < ans.size()) cout << ans[i].first\
     \ << \"\\n\";\n    else cout << -1 << \"\\n\";\n  }\n}\n"
   code: "#define ERROR \"1e-4\"\n#define PROBLEM \"https://yukicoder.me/problems/no/1069\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../graph/graph-template.hpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../graph/graph-template.hpp\"\
     \n#include \"../../graph/shortest-path/k-shortest-path.hpp\"\n\nint main() {\n\
     \  int N, M, K;\n  cin >> N >> M >> K;\n  int X, Y;\n  cin >> X >> Y;\n  --X,\
     \ --Y;\n  vector< int > P(N), Q(N);\n  for(int i = 0; i < N; i++) {\n    cin >>\
@@ -136,14 +136,14 @@ data:
     \ i = 0; i < K; i++) {\n    if(i < ans.size()) cout << ans[i].first << \"\\n\"\
     ;\n    else cout << -1 << \"\\n\";\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - graph/graph-template.hpp
   - graph/shortest-path/k-shortest-path.hpp
   isVerificationFile: true
   path: test/verify/yukicoder-1069.test.cpp
   requiredBy: []
-  timestamp: '2021-08-16 02:34:50+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yukicoder-1069.test.cpp
 layout: document

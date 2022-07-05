@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: structure/others/persistent-array.cpp
-    title: structure/others/persistent-array.cpp
-  - icon: ':heavy_check_mark:'
-    path: structure/union-find/persistent-union-find.cpp
+  - icon: ':x:'
+    path: structure/others/persistent-array.hpp
+    title: structure/others/persistent-array.hpp
+  - icon: ':x:'
+    path: structure/union-find/persistent-union-find.hpp
     title: "Persistent-Union-Find(\u6C38\u7D9AUnion-Find)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/persistent_unionfind
@@ -22,7 +22,7 @@ data:
     - https://judge.yosupo.jp/problem/persistent_unionfind
   bundledCode: "#line 1 \"test/verify/yosupo-persistent-unionfind.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/persistent_unionfind\"\n\n#line 1\
-    \ \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
+    \ \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
     \nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll = (1LL\
     \ << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -49,7 +49,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-persistent-unionfind.test.cpp\"\
-    \n\n#line 1 \"structure/others/persistent-array.cpp\"\ntemplate< typename T, int\
+    \n\n#line 1 \"structure/others/persistent-array.hpp\"\ntemplate< typename T, int\
     \ LOG >\nstruct PersistentArray {\n  struct Node {\n    T data;\n    Node *child[1\
     \ << LOG] = {};\n\n    Node() {}\n\n    Node(const T &data) : data(data) {}\n\
     \  };\n\n  Node *root;\n\n  PersistentArray() : root(nullptr) {}\n\n  T get(Node\
@@ -65,7 +65,7 @@ data:
     \ t;\n    }\n    auto p = build(t->child[k & ((1 << LOG) - 1)], data, k >> LOG);\n\
     \    t->child[k & ((1 << LOG) - 1)] = p;\n    return t;\n  }\n\n  void build(const\
     \ vector< T > &v) {\n    root = nullptr;\n    for(int i = 0; i < v.size(); i++)\
-    \ {\n      root = build(root, v[i], i);\n    }\n  }\n};\n\n#line 1 \"structure/union-find/persistent-union-find.cpp\"\
+    \ {\n      root = build(root, v[i], i);\n    }\n  }\n};\n\n#line 1 \"structure/union-find/persistent-union-find.hpp\"\
     \n/*\n * @brief Persistent-Union-Find(\u6C38\u7D9AUnion-Find)\n */\nstruct PersistentUnionFind\
     \ {\n  PersistentArray< int, 3 > data;\n\n  PersistentUnionFind() {}\n\n  PersistentUnionFind(int\
     \ sz) {\n    data.build(vector< int >(sz, -1));\n  }\n\n  int find(int k) {\n\
@@ -83,22 +83,22 @@ data:
     \      uf[i] = uf[k];\n      uf[i].unite(u, v);\n    } else {\n      cout << (uf[k].find(u)\
     \ == uf[k].find(v)) << \"\\n\";\n    }\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/persistent_unionfind\"\n\
-    \n#include \"../../template/template.cpp\"\n\n#include \"../../structure/others/persistent-array.cpp\"\
-    \n#include \"../../structure/union-find/persistent-union-find.cpp\"\n\nint main()\
+    \n#include \"../../template/template.hpp\"\n\n#include \"../../structure/others/persistent-array.hpp\"\
+    \n#include \"../../structure/union-find/persistent-union-find.hpp\"\n\nint main()\
     \ {\n  int N, Q;\n  cin >> N >> Q;\n  vector< PersistentUnionFind > uf(Q + 1);\n\
     \  uf[0] = PersistentUnionFind(N);\n  for(int i = 1; i <= Q; i++) {\n    int t,\
     \ k, u, v;\n    cin >> t >> k >> u >> v;\n    ++k;\n    if(t == 0) {\n      uf[i]\
     \ = uf[k];\n      uf[i].unite(u, v);\n    } else {\n      cout << (uf[k].find(u)\
     \ == uf[k].find(v)) << \"\\n\";\n    }\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - structure/others/persistent-array.cpp
-  - structure/union-find/persistent-union-find.cpp
+  - template/template.hpp
+  - structure/others/persistent-array.hpp
+  - structure/union-find/persistent-union-find.hpp
   isVerificationFile: true
   path: test/verify/yosupo-persistent-unionfind.test.cpp
   requiredBy: []
-  timestamp: '2021-05-01 00:06:55+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-persistent-unionfind.test.cpp
 layout: document

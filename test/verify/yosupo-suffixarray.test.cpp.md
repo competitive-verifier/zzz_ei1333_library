@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/suffix-array.hpp
     title: "Suffix Array(\u63A5\u5C3E\u8F9E\u914D\u5217)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/suffixarray
     links:
     - https://judge.yosupo.jp/problem/suffixarray
   bundledCode: "#line 1 \"test/verify/yosupo-suffixarray.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/suffixarray\"\n\n#line 1 \"template/template.cpp\"\
+    \ \"https://judge.yosupo.jp/problem/suffixarray\"\n\n#line 1 \"template/template.hpp\"\
     \n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -107,17 +107,17 @@ data:
     \n\nint main() {\n  string s;\n  cin >> s;\n  auto sa = SuffixArray(s);\n  sa.erase(sa.begin());\n\
     \  cout << sa << \"\\n\";\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/suffixarray\"\n\n#include\
-    \ \"../../template/template.cpp\"\n\n#include \"../../string/suffix-array.hpp\"\
+    \ \"../../template/template.hpp\"\n\n#include \"../../string/suffix-array.hpp\"\
     \n\nint main() {\n  string s;\n  cin >> s;\n  auto sa = SuffixArray(s);\n  sa.erase(sa.begin());\n\
     \  cout << sa << \"\\n\";\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - string/suffix-array.hpp
   isVerificationFile: true
   path: test/verify/yosupo-suffixarray.test.cpp
   requiredBy: []
-  timestamp: '2022-03-30 01:32:04+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-suffixarray.test.cpp
 layout: document

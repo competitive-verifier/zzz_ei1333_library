@@ -1,31 +1,31 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/combinatorics/montgomery-mod-int.cpp
+  - icon: ':x:'
+    path: math/combinatorics/montgomery-mod-int.hpp
     title: Montgomery ModInt
-  - icon: ':heavy_check_mark:'
-    path: structure/others/permutation-tree.cpp
+  - icon: ':x:'
+    path: structure/others/permutation-tree.hpp
     title: "Permutation Tree(\u9806\u5217\u6728)"
-  - icon: ':heavy_check_mark:'
-    path: structure/segment-tree/lazy-segment-tree.cpp
+  - icon: ':question:'
+    path: structure/segment-tree/lazy-segment-tree.hpp
     title: "Lazy-Segment-Tree(\u9045\u5EF6\u4F1D\u642C\u30BB\u30B0\u30E1\u30F3\u30C8\
       \u6728)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/1720
     links:
     - https://yukicoder.me/problems/no/1720
   bundledCode: "#line 1 \"test/verify/yukicoder-1720.test.cpp\"\n#define PROBLEM \"\
-    https://yukicoder.me/problems/no/1720\"\n\n#line 1 \"template/template.cpp\"\n\
+    https://yukicoder.me/problems/no/1720\"\n\n#line 1 \"template/template.hpp\"\n\
     #include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -53,7 +53,7 @@ data:
     \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yukicoder-1720.test.cpp\"\
-    \n\n#line 1 \"structure/segment-tree/lazy-segment-tree.cpp\"\n/**\n * @brief Lazy-Segment-Tree(\u9045\
+    \n\n#line 1 \"structure/segment-tree/lazy-segment-tree.hpp\"\n/**\n * @brief Lazy-Segment-Tree(\u9045\
     \u5EF6\u4F1D\u642C\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)\n * @docs docs/lazy-segment-tree.md\n\
     \ */\ntemplate< typename T, typename E, typename F, typename G, typename H >\n\
     struct LazySegmentTree {\nprivate:\n  int n{}, sz{}, height{};\n  vector< T >\
@@ -114,7 +114,7 @@ data:
     \  return LazySegmentTree{N, f, g, h, ti, ei};\n}\n\ntemplate< typename T, typename\
     \ E, typename F, typename G, typename H >\nLazySegmentTree< T, E, F, G, H > get_lazy_segment_tree\n\
     \    (const vector< T > &v, const F &f, const G &g, const H &h, const T &ti, const\
-    \ E &ei) {\n  return LazySegmentTree{v, f, g, h, ti, ei};\n}\n#line 2 \"structure/others/permutation-tree.cpp\"\
+    \ E &ei) {\n  return LazySegmentTree{v, f, g, h, ti, ei};\n}\n#line 2 \"structure/others/permutation-tree.hpp\"\
     \n\n/**\n * @brief Permutation Tree(\u9806\u5217\u6728)\n * @docs docs/permutation-tree.md\n\
     \ * @see https://codeforces.com/blog/entry/78898\n */\nstruct PermutationTree\
     \ {\npublic:\n  enum NodeType {\n    JOIN_ASC,\n    JOIN_DESC,\n    LEAF,\n  \
@@ -149,7 +149,7 @@ data:
     \          } while(t->max_v - t->min_v != t->size());\n          reverse(begin(t->ch),\
     \ end(t->ch));\n        } else {\n          break;\n        }\n      }\n     \
     \ st.emplace_back(t);\n      seg.apply(0, i + 1, -1);\n    }\n    return st[0];\n\
-    \  }\n};\n#line 6 \"test/verify/yukicoder-1720.test.cpp\"\n\n#line 1 \"math/combinatorics/montgomery-mod-int.cpp\"\
+    \  }\n};\n#line 6 \"test/verify/yukicoder-1720.test.cpp\"\n\n#line 1 \"math/combinatorics/montgomery-mod-int.hpp\"\
     \n/**\n * @brief Montgomery ModInt\n */\ntemplate< uint32_t mod, bool fast = false\
     \ >\nstruct MontgomeryModInt {\n  using mint = MontgomeryModInt;\n  using i32\
     \ = int32_t;\n  using i64 = int64_t;\n  using u32 = uint32_t;\n  using u64 = uint64_t;\n\
@@ -193,8 +193,8 @@ data:
     \  }\n      }\n    }\n  })(PermutationTree::build(A));\n  for(int i = 1; i <=\
     \ K; i++) {\n    cout << dp[i][N] << \"\\n\";\n  }\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/1720\"\n\n#include \"\
-    ../../template/template.cpp\"\n\n#include \"../../structure/others/permutation-tree.cpp\"\
-    \n\n#include \"../../math/combinatorics/montgomery-mod-int.cpp\"\n\nconst int\
+    ../../template/template.hpp\"\n\n#include \"../../structure/others/permutation-tree.hpp\"\
+    \n\n#include \"../../math/combinatorics/montgomery-mod-int.hpp\"\n\nconst int\
     \ MOD = 998244353;\nusing mint = MontgomeryModInt< MOD >;\n\nint main() {\n  int\
     \ N, K;\n  cin >> N >> K;\n  vector< int > A(N);\n  cin >> A;\n  for(auto &a:\
     \ A) --a;\n  using NP = PermutationTree::Node *;\n  auto dp = make_v< mint >(K\
@@ -206,15 +206,15 @@ data:
     \        }\n      }\n    }\n  })(PermutationTree::build(A));\n  for(int i = 1;\
     \ i <= K; i++) {\n    cout << dp[i][N] << \"\\n\";\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - structure/others/permutation-tree.cpp
-  - structure/segment-tree/lazy-segment-tree.cpp
-  - math/combinatorics/montgomery-mod-int.cpp
+  - template/template.hpp
+  - structure/others/permutation-tree.hpp
+  - structure/segment-tree/lazy-segment-tree.hpp
+  - math/combinatorics/montgomery-mod-int.hpp
   isVerificationFile: true
   path: test/verify/yukicoder-1720.test.cpp
   requiredBy: []
-  timestamp: '2022-02-15 22:44:36+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yukicoder-1720.test.cpp
 layout: document

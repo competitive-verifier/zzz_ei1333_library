@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/shortest-path/dijkstra-fibonacchi-heap.hpp
     title: "Dijkstra-Fibonacchi-Heap(\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u8DEF)"
-  - icon: ':heavy_check_mark:'
-    path: structure/heap/fibonacchi-heap.cpp
+  - icon: ':x:'
+    path: structure/heap/fibonacchi-heap.hpp
     title: "Fibonacchi-Heap(\u30D5\u30A3\u30DC\u30CA\u30C3\u30C1\u30D2\u30FC\u30D7\
       )"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A
@@ -26,7 +26,7 @@ data:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A
   bundledCode: "#line 1 \"test/verify/aoj-grl-1-a-2.test.cpp\"\n#define PROBLEM \"\
     http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A\"\n\n#line 1\
-    \ \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
+    \ \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
     \nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll = (1LL\
     \ << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -72,7 +72,7 @@ data:
     \ inline vector< Edge< T > > &operator[](const int &k) {\n    return g[k];\n \
     \ }\n\n  inline const vector< Edge< T > > &operator[](const int &k) const {\n\
     \    return g[k];\n  }\n};\n\ntemplate< typename T = int >\nusing Edges = vector<\
-    \ Edge< T > >;\n#line 1 \"structure/heap/fibonacchi-heap.cpp\"\n/**\n * @brief\
+    \ Edge< T > >;\n#line 1 \"structure/heap/fibonacchi-heap.hpp\"\n/**\n * @brief\
     \ Fibonacchi-Heap(\u30D5\u30A3\u30DC\u30CA\u30C3\u30C1\u30D2\u30FC\u30D7)\n *\
     \ @see https://www.cs.princeton.edu/~wayne/teaching/fibonacci-heap.pdf\n */\n\
     template< typename key_t, typename val_t >\nstruct FibonacchiHeap {\n  struct\
@@ -134,21 +134,21 @@ data:
     \ &dist : dijkstra_fibonacchi_heap(g, R)) {\n    if(dist == numeric_limits< int\
     \ >::max()) cout << \"INF\\n\";\n    else cout << dist << \"\\n\";\n  }\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../graph/shortest-path/dijkstra-fibonacchi-heap.hpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../graph/shortest-path/dijkstra-fibonacchi-heap.hpp\"\
     \n\nint main() {\n  int V, E, R;\n  cin >> V >> E >> R;\n  Graph< int > g(V);\n\
     \  g.read(E, 0, true, true);\n  for(auto &dist : dijkstra_fibonacchi_heap(g, R))\
     \ {\n    if(dist == numeric_limits< int >::max()) cout << \"INF\\n\";\n    else\
     \ cout << dist << \"\\n\";\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - graph/shortest-path/dijkstra-fibonacchi-heap.hpp
   - graph/graph-template.hpp
-  - structure/heap/fibonacchi-heap.cpp
+  - structure/heap/fibonacchi-heap.hpp
   isVerificationFile: true
   path: test/verify/aoj-grl-1-a-2.test.cpp
   requiredBy: []
-  timestamp: '2022-03-11 16:39:05+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/aoj-grl-1-a-2.test.cpp
 layout: document

@@ -1,25 +1,25 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: dp/knapsack-01-2.cpp
+  - icon: ':x:'
+    path: dp/knapsack-01-2.hpp
     title: "Knapsack 01(0-1\u30CA\u30C3\u30D7\u30B5\u30C3\u30AF\u554F\u984C) $O(N\
       \ \\sum {v_i})$"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_F
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_F
   bundledCode: "#line 1 \"test/verify/aoj-dpl-1-f.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_F\"\
-    \n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -46,7 +46,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-dpl-1-f.test.cpp\"\
-    \n\n#line 1 \"dp/knapsack-01-2.cpp\"\n/**\n * @brief Knapsack 01(0-1\u30CA\u30C3\
+    \n\n#line 1 \"dp/knapsack-01-2.hpp\"\n/**\n * @brief Knapsack 01(0-1\u30CA\u30C3\
     \u30D7\u30B5\u30C3\u30AF\u554F\u984C) $O(N \\sum {v_i})$\n * @docs docs/knapsack-01-2.md\n\
     \ */\ntemplate< typename T >\nT knapsack_01_2(const vector< T > &w, const vector<\
     \ int > &v, const T &W) {\n  const int N = (int) w.size();\n  const int sum =\
@@ -58,18 +58,18 @@ data:
     \ N, W;\n  cin >> N >> W;\n  vector< int > v(N), w(N);\n  for(int i = 0; i < N;\
     \ i++) cin >> v[i] >> w[i];\n  cout << knapsack_01_2(w, v, W) << endl;\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_F\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../dp/knapsack-01-2.cpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../dp/knapsack-01-2.hpp\"\
     \n\nint main() {\n  int N, W;\n  cin >> N >> W;\n  vector< int > v(N), w(N);\n\
     \  for(int i = 0; i < N; i++) cin >> v[i] >> w[i];\n  cout << knapsack_01_2(w,\
     \ v, W) << endl;\n}\n"
   dependsOn:
-  - template/template.cpp
-  - dp/knapsack-01-2.cpp
+  - template/template.hpp
+  - dp/knapsack-01-2.hpp
   isVerificationFile: true
   path: test/verify/aoj-dpl-1-f.test.cpp
   requiredBy: []
-  timestamp: '2021-07-13 19:53:12+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/aoj-dpl-1-f.test.cpp
 layout: document

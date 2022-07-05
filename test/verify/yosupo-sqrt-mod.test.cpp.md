@@ -1,27 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/combinatorics/mod-pow.cpp
+  - icon: ':x:'
+    path: math/combinatorics/mod-pow.hpp
     title: "Mod Pow(\u3079\u304D\u4E57)"
-  - icon: ':heavy_check_mark:'
-    path: math/combinatorics/mod-sqrt.cpp
+  - icon: ':x:'
+    path: math/combinatorics/mod-sqrt.hpp
     title: Mod Sqrt
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/sqrt_mod
     links:
     - https://judge.yosupo.jp/problem/sqrt_mod
   bundledCode: "#line 1 \"test/verify/yosupo-sqrt-mod.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/sqrt_mod\"\n\n#line 1 \"template/template.cpp\"\
+    \ \"https://judge.yosupo.jp/problem/sqrt_mod\"\n\n#line 1 \"template/template.hpp\"\
     \n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -49,11 +49,11 @@ data:
     \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-sqrt-mod.test.cpp\"\
-    \n\n#line 1 \"math/combinatorics/mod-pow.cpp\"\n/**\n * @brief Mod Pow(\u3079\u304D\
+    \n\n#line 1 \"math/combinatorics/mod-pow.hpp\"\n/**\n * @brief Mod Pow(\u3079\u304D\
     \u4E57)\n * @docs docs/mod-pow.md\n */\ntemplate< typename T >\nT mod_pow(T x,\
     \ int64_t n, const T &p) {\n  T ret = 1;\n  while(n > 0) {\n    if(n & 1) (ret\
     \ *= x) %= p;\n    (x *= x) %= p;\n    n >>= 1;\n  }\n  return ret % p;\n}\n#line\
-    \ 1 \"math/combinatorics/mod-sqrt.cpp\"\n/**\n * @brief Mod Sqrt\n */\ntemplate<\
+    \ 1 \"math/combinatorics/mod-sqrt.hpp\"\n/**\n * @brief Mod Sqrt\n */\ntemplate<\
     \ typename T >\nT mod_sqrt(const T &a, const T &p) {\n  if(a == 0) return 0;\n\
     \  if(p == 2) return a;\n  if(mod_pow(a, (p - 1) >> 1, p) != 1) return -1;\n \
     \ T b = 1;\n  while(mod_pow(b, (p - 1) >> 1, p) == 1) ++b;\n  T e = 0, m = p -\
@@ -66,19 +66,19 @@ data:
     \ T;\n  cin >> T;\n  while(T--) {\n    int64_t Y, P;\n    cin >> Y >> P;\n   \
     \ cout << mod_sqrt(Y, P) << endl;\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/sqrt_mod\"\n\n#include\
-    \ \"../../template/template.cpp\"\n\n#include \"../../math/combinatorics/mod-pow.cpp\"\
-    \n#include \"../../math/combinatorics/mod-sqrt.cpp\"\n\nint main() {\n  int T;\n\
+    \ \"../../template/template.hpp\"\n\n#include \"../../math/combinatorics/mod-pow.hpp\"\
+    \n#include \"../../math/combinatorics/mod-sqrt.hpp\"\n\nint main() {\n  int T;\n\
     \  cin >> T;\n  while(T--) {\n    int64_t Y, P;\n    cin >> Y >> P;\n    cout\
     \ << mod_sqrt(Y, P) << endl;\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - math/combinatorics/mod-pow.cpp
-  - math/combinatorics/mod-sqrt.cpp
+  - template/template.hpp
+  - math/combinatorics/mod-pow.hpp
+  - math/combinatorics/mod-sqrt.hpp
   isVerificationFile: true
   path: test/verify/yosupo-sqrt-mod.test.cpp
   requiredBy: []
-  timestamp: '2021-07-13 21:04:36+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-sqrt-mod.test.cpp
 layout: document

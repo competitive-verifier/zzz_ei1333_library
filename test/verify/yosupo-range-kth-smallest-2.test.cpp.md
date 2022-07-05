@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: structure/wavelet/succinct-indexable-dictionary.cpp
+  - icon: ':question:'
+    path: structure/wavelet/succinct-indexable-dictionary.hpp
     title: "Succinct Indexable Dictionary(\u5B8C\u5099\u8F9E\u66F8)"
-  - icon: ':heavy_check_mark:'
-    path: structure/wavelet/wavelet-tree.cpp
+  - icon: ':question:'
+    path: structure/wavelet/wavelet-tree.hpp
     title: "Wavelet Tree(\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u6728)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/range_kth_smallest
@@ -22,7 +22,7 @@ data:
     - https://judge.yosupo.jp/problem/range_kth_smallest
   bundledCode: "#line 1 \"test/verify/yosupo-range-kth-smallest-2.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/range_kth_smallest\"\n\n#line 1 \"\
-    template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing\
+    template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing\
     \ int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll = (1LL <<\
     \ 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n\
     \    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed <<\
@@ -49,7 +49,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-range-kth-smallest-2.test.cpp\"\
-    \n\n#line 1 \"structure/wavelet/succinct-indexable-dictionary.cpp\"\n/**\n * @brief\
+    \n\n#line 1 \"structure/wavelet/succinct-indexable-dictionary.hpp\"\n/**\n * @brief\
     \ Succinct Indexable Dictionary(\u5B8C\u5099\u8F9E\u66F8)\n */\nstruct SuccinctIndexableDictionary\
     \ {\n  size_t length;\n  size_t blocks;\n  vector< unsigned > bit, sum;\n\n  SuccinctIndexableDictionary()\
     \ = default;\n\n  SuccinctIndexableDictionary(size_t length) : length(length),\
@@ -60,7 +60,7 @@ data:
     \ operator[](int k) {\n    return (bool((bit[k >> 5] >> (k & 31)) & 1));\n  }\n\
     \n  int rank(int k) {\n    return (sum[k >> 5] + __builtin_popcount(bit[k >> 5]\
     \ & ((1U << (k & 31)) - 1)));\n  }\n\n  int rank(bool val, int k) {\n    return\
-    \ (val ? rank(k) : k - rank(k));\n  }\n};\n#line 1 \"structure/wavelet/wavelet-tree.cpp\"\
+    \ (val ? rank(k) : k - rank(k));\n  }\n};\n#line 1 \"structure/wavelet/wavelet-tree.hpp\"\
     \n/*\n * @brief Wavelet Tree(\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u6728\
     )\n * @docs docs/wavelet-tree.md\n */\ntemplate< typename T, int MAXLOG >\nstruct\
     \ WaveletTree {\n\n  struct Node {\n    SuccinctIndexableDictionary sid;\n   \
@@ -124,20 +124,20 @@ data:
     \ {\n    int a, b, c;\n    cin >> a >> b >> c;\n    cout << mat.kth_smallest(a,\
     \ b, c) << \"\\n\";\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_kth_smallest\"\n\n\
-    #include \"../../template/template.cpp\"\n\n#include \"../../structure/wavelet/succinct-indexable-dictionary.cpp\"\
-    \n#include \"../../structure/wavelet/wavelet-tree.cpp\"\n\nint main() {\n  int\
+    #include \"../../template/template.hpp\"\n\n#include \"../../structure/wavelet/succinct-indexable-dictionary.hpp\"\
+    \n#include \"../../structure/wavelet/wavelet-tree.hpp\"\n\nint main() {\n  int\
     \ N, Q;\n  cin >> N >> Q;\n  vector< int > A(N);\n  cin >> A;\n  CompressedWaveletTree<\
     \ int, 18 > mat(A);\n  for(int i = 0; i < Q; i++) {\n    int a, b, c;\n    cin\
     \ >> a >> b >> c;\n    cout << mat.kth_smallest(a, b, c) << \"\\n\";\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - structure/wavelet/succinct-indexable-dictionary.cpp
-  - structure/wavelet/wavelet-tree.cpp
+  - template/template.hpp
+  - structure/wavelet/succinct-indexable-dictionary.hpp
+  - structure/wavelet/wavelet-tree.hpp
   isVerificationFile: true
   path: test/verify/yosupo-range-kth-smallest-2.test.cpp
   requiredBy: []
-  timestamp: '2021-08-28 02:59:12+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-range-kth-smallest-2.test.cpp
 layout: document

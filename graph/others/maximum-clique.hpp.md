@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yosupo-maximum-independent-set-2.test.cpp
     title: test/verify/yosupo-maximum-independent-set-2.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     document_title: "Maximum Clique(\u6700\u5927\u30AF\u30EA\u30FC\u30AF)"
     links: []
@@ -61,7 +61,7 @@ data:
   path: graph/others/maximum-clique.hpp
   requiredBy: []
   timestamp: '2021-07-21 02:10:43+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/yosupo-maximum-independent-set-2.test.cpp
 documentation_of: graph/others/maximum-clique.hpp

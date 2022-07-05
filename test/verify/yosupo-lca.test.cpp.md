@@ -1,39 +1,39 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/tree/pmormq-lowest-common-ancestor.hpp
     title: "PMORMQ-Lowest-Common-Ancestor(\u6700\u5C0F\u5171\u901A\u7956\u5148)"
-  - icon: ':heavy_check_mark:'
-    path: other/printer.cpp
+  - icon: ':x:'
+    path: other/printer.hpp
     title: "Printer(\u9AD8\u901F\u51FA\u529B)"
-  - icon: ':heavy_check_mark:'
-    path: other/scanner.cpp
+  - icon: ':x:'
+    path: other/scanner.hpp
     title: "Scanner(\u9AD8\u901F\u5165\u529B)"
-  - icon: ':heavy_check_mark:'
-    path: structure/others/plus-minus-one-rmq.cpp
+  - icon: ':x:'
+    path: structure/others/plus-minus-one-rmq.hpp
     title: Plus-Minus-One-RMQ
-  - icon: ':heavy_check_mark:'
-    path: structure/others/sparse-table.cpp
+  - icon: ':x:'
+    path: structure/others/sparse-table.hpp
     title: "Sparse-Table(\u30B9\u30D1\u30FC\u30B9\u30C6\u30FC\u30D6\u30EB)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/lca
     links:
     - https://judge.yosupo.jp/problem/lca
   bundledCode: "#line 1 \"test/verify/yosupo-lca.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\
-    \n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -79,7 +79,7 @@ data:
     \ {\n    return g[k];\n  }\n\n  inline const vector< Edge< T > > &operator[](const\
     \ int &k) const {\n    return g[k];\n  }\n};\n\ntemplate< typename T = int >\n\
     using Edges = vector< Edge< T > >;\n#line 2 \"graph/tree/pmormq-lowest-common-ancestor.hpp\"\
-    \n\n#line 1 \"structure/others/sparse-table.cpp\"\n/**\n * @brief Sparse-Table(\u30B9\
+    \n\n#line 1 \"structure/others/sparse-table.hpp\"\n/**\n * @brief Sparse-Table(\u30B9\
     \u30D1\u30FC\u30B9\u30C6\u30FC\u30D6\u30EB)\n * @docs docs/sparse-table.md\n */\n\
     template< typename T, typename F >\nstruct SparseTable {\n  F f;\n  vector< vector<\
     \ T > > st;\n  vector< int > lookup;\n\n  SparseTable() = default;\n\n  explicit\
@@ -93,7 +93,7 @@ data:
     \ l, int r) const {\n    int b = lookup[r - l];\n    return f(st[b][l], st[b][r\
     \ - (1 << b)]);\n  }\n};\n\ntemplate< typename T, typename F >\nSparseTable< T,\
     \ F > get_sparse_table(const vector< T > &v, const F &f) {\n  return SparseTable<\
-    \ T, F >(v, f);\n}\n#line 2 \"structure/others/plus-minus-one-rmq.cpp\"\n\n/**\n\
+    \ T, F >(v, f);\n}\n#line 2 \"structure/others/plus-minus-one-rmq.hpp\"\n\n/**\n\
     \ * @brief Plus-Minus-One-RMQ\n **/\ntemplate< typename T >\nstruct PlusMinusOneRMQ\
     \ {\n  using F = function< int(int, int) >;\n\n  int backet;\n  vector< T > vs;\n\
     \  vector< int > bidx, bbit;\n  SparseTable< int, F > st;\n  vector< vector< vector<\
@@ -134,7 +134,7 @@ data:
     \    ord.emplace_back(idx);\n    dep.emplace_back(d);\n    for(auto &to : g[idx])\
     \ {\n      if(to != par) {\n        dfs(to, idx, d + 1);\n        ord.emplace_back(idx);\n\
     \        dep.emplace_back(d);\n      }\n    }\n  }\n};\n#line 7 \"test/verify/yosupo-lca.test.cpp\"\
-    \n\n#line 1 \"other/scanner.cpp\"\n/**\n * @brief Scanner(\u9AD8\u901F\u5165\u529B\
+    \n\n#line 1 \"other/scanner.hpp\"\n/**\n * @brief Scanner(\u9AD8\u901F\u5165\u529B\
     )\n */\nstruct Scanner {\npublic:\n\n  explicit Scanner(FILE *fp) : fp(fp) {}\n\
     \n  template< typename T, typename... E >\n  void read(T &t, E &... e) {\n   \
     \ read_single(t);\n    read(e...);\n  }\n\nprivate:\n  static constexpr size_t\
@@ -156,7 +156,7 @@ data:
     \ = st;\n      while(*st && !is_space(*st)) ++st;\n      s += string(base, st);\n\
     \      if(st != ed) return;\n      reread();\n    }\n  }\n\n  template< typename\
     \ T >\n  void read_single(vector< T > &s) {\n    for(auto &d : s) read(d);\n \
-    \ }\n};\n#line 1 \"other/printer.cpp\"\n/**\n * @brief Printer(\u9AD8\u901F\u51FA\
+    \ }\n};\n#line 1 \"other/printer.hpp\"\n/**\n * @brief Printer(\u9AD8\u901F\u51FA\
     \u529B)\n */\nstruct Printer {\npublic:\n  explicit Printer(FILE *fp) : fp(fp)\
     \ {}\n\n  ~Printer() { flush(); }\n\n  template< bool f = false, typename T, typename...\
     \ E >\n  void write(const T &t, const E &... e) {\n    if(f) write_single(' ');\n\
@@ -180,27 +180,27 @@ data:
     \ i < N; i++) {\n    int x;\n    in.read(x);\n    g.add_directed_edge(x, i);\n\
     \  }\n  g.build();\n  for(int i = 0; i < Q; i++) {\n    int u, v;\n    in.read(u,\
     \ v);\n    out.writeln(g.lca(u, v));\n  }\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\n\n#include \"../../template/template.cpp\"\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\n\n#include \"../../template/template.hpp\"\
     \n\n#include \"../../graph/graph-template.hpp\"\n#include \"../../graph/tree/pmormq-lowest-common-ancestor.hpp\"\
-    \n\n#include \"../../other/scanner.cpp\"\n#include \"../../other/printer.cpp\"\
+    \n\n#include \"../../other/scanner.hpp\"\n#include \"../../other/printer.hpp\"\
     \n\n\nint main() {\n  Scanner in(stdin);\n  Printer out(stdout);\n  int N, Q;\n\
     \  in.read(N, Q);\n  PMORMQLowestCommonAncestor< int > g(N);\n  for(int i = 1;\
     \ i < N; i++) {\n    int x;\n    in.read(x);\n    g.add_directed_edge(x, i);\n\
     \  }\n  g.build();\n  for(int i = 0; i < Q; i++) {\n    int u, v;\n    in.read(u,\
     \ v);\n    out.writeln(g.lca(u, v));\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - graph/graph-template.hpp
   - graph/tree/pmormq-lowest-common-ancestor.hpp
-  - structure/others/plus-minus-one-rmq.cpp
-  - structure/others/sparse-table.cpp
-  - other/scanner.cpp
-  - other/printer.cpp
+  - structure/others/plus-minus-one-rmq.hpp
+  - structure/others/sparse-table.hpp
+  - other/scanner.hpp
+  - other/printer.hpp
   isVerificationFile: true
   path: test/verify/yosupo-lca.test.cpp
   requiredBy: []
-  timestamp: '2021-08-31 21:10:51+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-lca.test.cpp
 layout: document

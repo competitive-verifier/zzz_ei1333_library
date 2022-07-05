@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: dp/cumulative-sum.cpp
+  - icon: ':x:'
+    path: dp/cumulative-sum.hpp
     title: "Cumulative Sum(\u4E00\u6B21\u5143\u7D2F\u7A4D\u548C)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/static_range_sum
     links:
     - https://judge.yosupo.jp/problem/static_range_sum
   bundledCode: "#line 1 \"test/verify/yosupo-static-range-sum.test.cpp\"\n#define\
-    \ PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n\n#line 1 \"template/template.cpp\"\
+    \ PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n\n#line 1 \"template/template.hpp\"\
     \n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -46,7 +46,7 @@ data:
     \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-static-range-sum.test.cpp\"\
-    \n\n#line 1 \"dp/cumulative-sum.cpp\"\n/**\n * @brief Cumulative Sum(\u4E00\u6B21\
+    \n\n#line 1 \"dp/cumulative-sum.hpp\"\n/**\n * @brief Cumulative Sum(\u4E00\u6B21\
     \u5143\u7D2F\u7A4D\u548C)\n * @docs docs/cumulative-sum.md\n */\ntemplate< class\
     \ T >\nstruct CumulativeSum {\n  vector< T > data;\n\n  CumulativeSum() = default;\n\
     \n  explicit CumulativeSum(size_t sz) : data(sz + 1, 0) {}\n\n  void add(int k,\
@@ -60,19 +60,19 @@ data:
     \  }\n  cs.build();\n  for(int i = 0; i < q; i++) {\n    int l, r;\n    cin >>\
     \ l >> r;\n    cout << cs.fold(l, r) << \"\\n\";\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n\n\
-    #include \"../../template/template.cpp\"\n\n#include \"../../dp/cumulative-sum.cpp\"\
+    #include \"../../template/template.hpp\"\n\n#include \"../../dp/cumulative-sum.hpp\"\
     \n\nint main() {\n  int n, q;\n  cin >> n >> q;\n  CumulativeSum< int64 > cs(n);\n\
     \  for(int i = 0; i < n; i++) {\n    int x;\n    cin >> x;\n    cs.add(i, x);\n\
     \  }\n  cs.build();\n  for(int i = 0; i < q; i++) {\n    int l, r;\n    cin >>\
     \ l >> r;\n    cout << cs.fold(l, r) << \"\\n\";\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - dp/cumulative-sum.cpp
+  - template/template.hpp
+  - dp/cumulative-sum.hpp
   isVerificationFile: true
   path: test/verify/yosupo-static-range-sum.test.cpp
   requiredBy: []
-  timestamp: '2021-07-13 19:53:12+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-static-range-sum.test.cpp
 layout: document

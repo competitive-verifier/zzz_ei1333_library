@@ -1,30 +1,30 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/combinatorics/bell-number.cpp
+  - icon: ':x:'
+    path: math/combinatorics/bell-number.hpp
     title: "Bell Number(\u30D9\u30EB\u6570)"
-  - icon: ':heavy_check_mark:'
-    path: math/combinatorics/enumeration.cpp
+  - icon: ':x:'
+    path: math/combinatorics/enumeration.hpp
     title: "Enumeration(\u7D44\u307F\u5408\u308F\u305B)"
-  - icon: ':heavy_check_mark:'
-    path: math/combinatorics/mod-int.cpp
-    title: math/combinatorics/mod-int.cpp
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: math/combinatorics/mod-int.hpp
+    title: math/combinatorics/mod-int.hpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_G
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_G
   bundledCode: "#line 1 \"test/verify/aoj-dpl-5-g.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_G\"\
-    \n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -51,7 +51,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-dpl-5-g.test.cpp\"\
-    \n\n#line 1 \"math/combinatorics/mod-int.cpp\"\ntemplate< int mod >\nstruct ModInt\
+    \n\n#line 1 \"math/combinatorics/mod-int.hpp\"\ntemplate< int mod >\nstruct ModInt\
     \ {\n  int x;\n\n  ModInt() : x(0) {}\n\n  ModInt(int64_t y) : x(y >= 0 ? y %\
     \ mod : (mod - (-y) % mod) % mod) {}\n\n  ModInt &operator+=(const ModInt &p)\
     \ {\n    if((x += p.x) >= mod) x -= mod;\n    return *this;\n  }\n\n  ModInt &operator-=(const\
@@ -74,7 +74,7 @@ data:
     \  friend istream &operator>>(istream &is, ModInt &a) {\n    int64_t t;\n    is\
     \ >> t;\n    a = ModInt< mod >(t);\n    return (is);\n  }\n\n  static int get_mod()\
     \ { return mod; }\n};\n\nusing modint = ModInt< mod >;\n#line 6 \"test/verify/aoj-dpl-5-g.test.cpp\"\
-    \n\n#line 1 \"math/combinatorics/enumeration.cpp\"\n/**\n * @brief Enumeration(\u7D44\
+    \n\n#line 1 \"math/combinatorics/enumeration.hpp\"\n/**\n * @brief Enumeration(\u7D44\
     \u307F\u5408\u308F\u305B)\n */\ntemplate< typename T >\nstruct Enumeration {\n\
     private:\n  static vector< T > _fact, _finv, _inv;\n\n  inline static void expand(size_t\
     \ sz) {\n    if(_fact.size() < sz + 1) {\n      int pre_sz = max(1, (int) _fact.size());\n\
@@ -95,7 +95,7 @@ data:
     \ typename T >\nvector< T > Enumeration< T >::_fact = vector< T >();\ntemplate<\
     \ typename T >\nvector< T > Enumeration< T >::_finv = vector< T >();\ntemplate<\
     \ typename T >\nvector< T > Enumeration< T >::_inv = vector< T >();\n#line 2 \"\
-    math/combinatorics/bell-number.cpp\"\n\n/**\n * @brief Bell Number(\u30D9\u30EB\
+    math/combinatorics/bell-number.hpp\"\n\n/**\n * @brief Bell Number(\u30D9\u30EB\
     \u6570)\n * @docs docs/bell-number.md\n */\ntemplate< typename T >\nT bell_number(int\
     \ n, int k) {\n  if(n == 0) return 1;\n  k = min(k, n);\n  Enumeration< T > uku(k);\n\
     \  T ret = 0;\n  vector< T > pref(k + 1);\n  pref[0] = 1;\n  for(int i = 1; i\
@@ -105,19 +105,19 @@ data:
     \ \"test/verify/aoj-dpl-5-g.test.cpp\"\n\nint main() {\n  int N, K;\n  cin >>\
     \ N >> K;\n  cout << bell_number< modint >(N, K) << endl;\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_G\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../math/combinatorics/mod-int.cpp\"\
-    \n\n#include \"../../math/combinatorics/bell-number.cpp\"\n\nint main() {\n  int\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../math/combinatorics/mod-int.hpp\"\
+    \n\n#include \"../../math/combinatorics/bell-number.hpp\"\n\nint main() {\n  int\
     \ N, K;\n  cin >> N >> K;\n  cout << bell_number< modint >(N, K) << endl;\n}\n"
   dependsOn:
-  - template/template.cpp
-  - math/combinatorics/mod-int.cpp
-  - math/combinatorics/bell-number.cpp
-  - math/combinatorics/enumeration.cpp
+  - template/template.hpp
+  - math/combinatorics/mod-int.hpp
+  - math/combinatorics/bell-number.hpp
+  - math/combinatorics/enumeration.hpp
   isVerificationFile: true
   path: test/verify/aoj-dpl-5-g.test.cpp
   requiredBy: []
-  timestamp: '2021-07-13 23:44:53+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/aoj-dpl-5-g.test.cpp
 layout: document

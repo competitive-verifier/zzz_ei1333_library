@@ -1,27 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/others/namori-graph.hpp
     title: Namori Graph
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/1254
     links:
     - https://yukicoder.me/problems/no/1254
   bundledCode: "#line 1 \"test/verify/yukicoder-1254.test.cpp\"\n#define PROBLEM \"\
-    https://yukicoder.me/problems/no/1254\"\n\n#line 1 \"template/template.cpp\"\n\
+    https://yukicoder.me/problems/no/1254\"\n\n#line 1 \"template/template.hpp\"\n\
     #include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -115,20 +115,20 @@ data:
     \  sort(begin(ans), end(ans));\n  cout << ans.size() << \"\\n\";\n  cout << ans\
     \ << \"\\n\";\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/1254\"\n\n#include \"\
-    ../../template/template.cpp\"\n\n#include \"../../graph/others/namori-graph.hpp\"\
+    ../../template/template.hpp\"\n\n#include \"../../graph/others/namori-graph.hpp\"\
     \n\nint main() {\n  int N;\n  cin >> N;\n  NamoriGraph< int > g(N);\n  g.read(N);\n\
     \  g.build();\n  vector< int > ans;\n  for(auto &e : g.loop_edges) {\n    ans.emplace_back(e.idx\
     \ + 1);\n  }\n  sort(begin(ans), end(ans));\n  cout << ans.size() << \"\\n\";\n\
     \  cout << ans << \"\\n\";\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - graph/others/namori-graph.hpp
   - graph/graph-template.hpp
   isVerificationFile: true
   path: test/verify/yukicoder-1254.test.cpp
   requiredBy: []
-  timestamp: '2021-08-16 02:17:26+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yukicoder-1254.test.cpp
 layout: document

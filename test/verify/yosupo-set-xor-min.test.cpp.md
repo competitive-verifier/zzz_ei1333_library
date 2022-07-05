@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: structure/trie/binary-trie.cpp
+  - icon: ':x:'
+    path: structure/trie/binary-trie.hpp
     title: Binary-Trie
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/set_xor_min
     links:
     - https://judge.yosupo.jp/problem/set_xor_min
   bundledCode: "#line 1 \"test/verify/yosupo-set-xor-min.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/set_xor_min\"\n\n#line 1 \"template/template.cpp\"\
+    \ \"https://judge.yosupo.jp/problem/set_xor_min\"\n\n#line 1 \"template/template.hpp\"\
     \n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -46,7 +46,7 @@ data:
     \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-set-xor-min.test.cpp\"\
-    \n\n#line 1 \"structure/trie/binary-trie.cpp\"\n/**\n * @brief Binary-Trie\n *\
+    \n\n#line 1 \"structure/trie/binary-trie.hpp\"\n/**\n * @brief Binary-Trie\n *\
     \ @docs docs/binary-trie.md\n */\ntemplate< typename T, int MAX_LOG, typename\
     \ D = int >\nstruct BinaryTrie {\npublic:\n  struct Node {\n    Node *nxt[2];\n\
     \    D exist;\n    vector< int > accept;\n\n    Node() : nxt{nullptr, nullptr},\
@@ -93,20 +93,20 @@ data:
     \    } else {\n      cout << trie.min_element(x).first << \"\\n\";\n    }\n  }\n\
     }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/set_xor_min\"\n\n#include\
-    \ \"../../template/template.cpp\"\n\n#include \"../../structure/trie/binary-trie.cpp\"\
+    \ \"../../template/template.hpp\"\n\n#include \"../../structure/trie/binary-trie.hpp\"\
     \n\nint main() {\n  int Q;\n  cin >> Q;\n  BinaryTrie< int, 29 > trie;\n  for(int\
     \ i = 0; i < Q; i++) {\n    int t, x;\n    cin >> t >> x;\n    if(t == 0) {\n\
     \      if(trie.count(x) == 0) trie.add(x);\n    } else if(t == 1) {\n      if(trie.count(x)\
     \ != 0) trie.erase(x);\n    } else {\n      cout << trie.min_element(x).first\
     \ << \"\\n\";\n    }\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - structure/trie/binary-trie.cpp
+  - template/template.hpp
+  - structure/trie/binary-trie.hpp
   isVerificationFile: true
   path: test/verify/yosupo-set-xor-min.test.cpp
   requiredBy: []
-  timestamp: '2021-05-01 00:06:55+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-set-xor-min.test.cpp
 layout: document

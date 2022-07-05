@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/mst/boruvka.hpp
     title: "Boruvka(\u6700\u5C0F\u5168\u57DF\u6728)"
-  - icon: ':heavy_check_mark:'
-    path: structure/union-find/union-find.cpp
+  - icon: ':question:'
+    path: structure/union-find/union-find.hpp
     title: Union-Find
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A
@@ -22,7 +22,7 @@ data:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A
   bundledCode: "#line 1 \"test/verify/aoj-grl-2-a-3.test.cpp\"\n#define PROBLEM \"\
     http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A\"\n\n#line 1\
-    \ \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
+    \ \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
     \nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll = (1LL\
     \ << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -49,7 +49,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-grl-2-a-3.test.cpp\"\
-    \n\n#line 2 \"structure/union-find/union-find.cpp\"\n\n/**\n * @brief Union-Find\n\
+    \n\n#line 2 \"structure/union-find/union-find.hpp\"\n\n/**\n * @brief Union-Find\n\
     \ * @docs docs/union-find.md\n */\nstruct UnionFind {\n  vector< int > data;\n\
     \n  UnionFind() = default;\n\n  explicit UnionFind(size_t sz) : data(sz, -1) {}\n\
     \n  bool unite(int x, int y) {\n    x = find(x), y = find(y);\n    if(x == y)\
@@ -80,7 +80,7 @@ data:
     \ Y[i]));\n      ret[Y[i]] = min(ret[Y[i]], make_pair(Z[i], X[i]));\n    }\n \
     \   return ret;\n  };\n  cout << mst.build(f) << endl;\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../graph/mst/boruvka.hpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../graph/mst/boruvka.hpp\"\
     \n\nint main() {\n  int V, E;\n  cin >> V >> E;\n  vector< int > X(E), Y(E), Z(E);\n\
     \  for(int i = 0; i < E; i++) {\n    cin >> X[i] >> Y[i] >> Z[i];\n  }\n  Boruvka<\
     \ int > mst(V);\n  auto f = [&](vector< pair< int, int > > &ret) {\n    for(int\
@@ -89,14 +89,14 @@ data:
     \ Y[i]));\n      ret[Y[i]] = min(ret[Y[i]], make_pair(Z[i], X[i]));\n    }\n \
     \   return ret;\n  };\n  cout << mst.build(f) << endl;\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - graph/mst/boruvka.hpp
-  - structure/union-find/union-find.cpp
+  - structure/union-find/union-find.hpp
   isVerificationFile: true
   path: test/verify/aoj-grl-2-a-3.test.cpp
   requiredBy: []
-  timestamp: '2022-06-25 18:23:01+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/aoj-grl-2-a-3.test.cpp
 layout: document

@@ -1,37 +1,37 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/connected-components/strongly-connected-components.hpp
     title: "Strongly Connected Components(\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3\
       )"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/others/two-satisfiability.hpp
     title: Two Satisfiability(2-SAT)
-  - icon: ':heavy_check_mark:'
-    path: other/printer.cpp
+  - icon: ':x:'
+    path: other/printer.hpp
     title: "Printer(\u9AD8\u901F\u51FA\u529B)"
-  - icon: ':heavy_check_mark:'
-    path: other/scanner.cpp
+  - icon: ':x:'
+    path: other/scanner.hpp
     title: "Scanner(\u9AD8\u901F\u5165\u529B)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/two_sat
     links:
     - https://judge.yosupo.jp/problem/two_sat
   bundledCode: "#line 1 \"test/verify/yosupo-two-sat.test.cpp\"\n#define PROBLEM \"\
-    https://judge.yosupo.jp/problem/two_sat\"\n\n#line 1 \"template/template.cpp\"\
+    https://judge.yosupo.jp/problem/two_sat\"\n\n#line 1 \"template/template.hpp\"\
     \n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -59,7 +59,7 @@ data:
     \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-two-sat.test.cpp\"\
-    \n\n#line 1 \"other/scanner.cpp\"\n/**\n * @brief Scanner(\u9AD8\u901F\u5165\u529B\
+    \n\n#line 1 \"other/scanner.hpp\"\n/**\n * @brief Scanner(\u9AD8\u901F\u5165\u529B\
     )\n */\nstruct Scanner {\npublic:\n\n  explicit Scanner(FILE *fp) : fp(fp) {}\n\
     \n  template< typename T, typename... E >\n  void read(T &t, E &... e) {\n   \
     \ read_single(t);\n    read(e...);\n  }\n\nprivate:\n  static constexpr size_t\
@@ -81,7 +81,7 @@ data:
     \ = st;\n      while(*st && !is_space(*st)) ++st;\n      s += string(base, st);\n\
     \      if(st != ed) return;\n      reread();\n    }\n  }\n\n  template< typename\
     \ T >\n  void read_single(vector< T > &s) {\n    for(auto &d : s) read(d);\n \
-    \ }\n};\n#line 1 \"other/printer.cpp\"\n/**\n * @brief Printer(\u9AD8\u901F\u51FA\
+    \ }\n};\n#line 1 \"other/printer.hpp\"\n/**\n * @brief Printer(\u9AD8\u901F\u51FA\
     \u529B)\n */\nstruct Printer {\npublic:\n  explicit Printer(FILE *fp) : fp(fp)\
     \ {}\n\n  ~Printer() { flush(); }\n\n  template< bool f = false, typename T, typename...\
     \ E >\n  void write(const T &t, const E &... e) {\n    if(f) write_single(' ');\n\
@@ -167,8 +167,8 @@ data:
     \ = i + 1;\n      else ret[i] = -i - 1;\n    }\n    output.write(ret);\n    output.writeln(\"\
     \ 0\");\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/two_sat\"\n\n#include \"\
-    ../../template/template.cpp\"\n\n#include \"../../other/scanner.cpp\"\n#include\
-    \ \"../../other/printer.cpp\"\n\n#include \"../../graph/others/two-satisfiability.hpp\"\
+    ../../template/template.hpp\"\n\n#include \"../../other/scanner.hpp\"\n#include\
+    \ \"../../other/printer.hpp\"\n\n#include \"../../graph/others/two-satisfiability.hpp\"\
     \n\nint main() {\n  Scanner input(stdin);\n  Printer output(stdout);\n\n  string\
     \ s;\n  int N, M;\n  input.read(s, s, N, M);\n  TwoSatisfiability two(N);\n  for(int\
     \ i = 0; i < M; i++) {\n    int a, b, c;\n    input.read(a, b, c);\n    if(a <\
@@ -179,17 +179,17 @@ data:
     \ i++) {\n      if(ret[i]) ret[i] = i + 1;\n      else ret[i] = -i - 1;\n    }\n\
     \    output.write(ret);\n    output.writeln(\" 0\");\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - other/scanner.cpp
-  - other/printer.cpp
+  - template/template.hpp
+  - other/scanner.hpp
+  - other/printer.hpp
   - graph/others/two-satisfiability.hpp
   - graph/connected-components/strongly-connected-components.hpp
   - graph/graph-template.hpp
   isVerificationFile: true
   path: test/verify/yosupo-two-sat.test.cpp
   requiredBy: []
-  timestamp: '2021-08-31 21:10:51+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-two-sat.test.cpp
 layout: document

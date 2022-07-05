@@ -1,27 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/others/cycle-detection.hpp
     title: "Cycle Detection(\u9589\u8DEF\u691C\u51FA)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/cycle_detection
     links:
     - https://judge.yosupo.jp/problem/cycle_detection
   bundledCode: "#line 1 \"test/verify/yosupo-cycle-detection.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/cycle_detection\"\n\n#line 1 \"template/template.cpp\"\
+    \ \"https://judge.yosupo.jp/problem/cycle_detection\"\n\n#line 1 \"template/template.hpp\"\
     \n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -86,20 +86,20 @@ data:
     \ {\n        cout << -1 << \"\\n\";\n    } else {\n        cout << ret.size()\
     \ << \"\\n\";\n        for(auto& e : ret) cout << e.idx << \"\\n\";\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/cycle_detection\"\n\n#include\
-    \ \"../../template/template.cpp\"\n\n#include \"../../graph/others/cycle-detection.hpp\"\
+    \ \"../../template/template.hpp\"\n\n#include \"../../graph/others/cycle-detection.hpp\"\
     \n\nint main() {\n    int N, M;\n    cin >> N >> M;\n    CycleDetection<> g(N);\n\
     \    g.read(M, 0, false, true);\n    auto ret = g.build();\n    if(ret.empty())\
     \ {\n        cout << -1 << \"\\n\";\n    } else {\n        cout << ret.size()\
     \ << \"\\n\";\n        for(auto& e : ret) cout << e.idx << \"\\n\";\n    }\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - graph/others/cycle-detection.hpp
   - graph/graph-template.hpp
   isVerificationFile: true
   path: test/verify/yosupo-cycle-detection.test.cpp
   requiredBy: []
-  timestamp: '2021-08-16 02:34:50+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-cycle-detection.test.cpp
 layout: document

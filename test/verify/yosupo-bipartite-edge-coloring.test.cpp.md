@@ -1,27 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/flow/bipartite-flow.hpp
     title: "Bipartite Flow(\u4E8C\u90E8\u30B0\u30E9\u30D5\u306E\u30D5\u30ED\u30FC)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/others/bipartite-graph-edge-coloring.hpp
     title: "Bipartite Graph Edge Coloring(\u4E8C\u90E8\u30B0\u30E9\u30D5\u306E\u8FBA\
       \u5F69\u8272)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/others/eulerian-trail.hpp
     title: "Eulerian Trail(\u30AA\u30A4\u30E9\u30FC\u8DEF)"
-  - icon: ':heavy_check_mark:'
-    path: structure/union-find/union-find.cpp
+  - icon: ':question:'
+    path: structure/union-find/union-find.hpp
     title: Union-Find
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/bipartite_edge_coloring
@@ -29,7 +29,7 @@ data:
     - https://judge.yosupo.jp/problem/bipartite_edge_coloring
   bundledCode: "#line 1 \"test/verify/yosupo-bipartite-edge-coloring.test.cpp\"\n\
     #define PROBLEM \"https://judge.yosupo.jp/problem/bipartite_edge_coloring\"\n\n\
-    #line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    #line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -57,7 +57,7 @@ data:
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-bipartite-edge-coloring.test.cpp\"\
     \n\n\n#line 2 \"graph/others/bipartite-graph-edge-coloring.hpp\"\n\n#line 2 \"\
-    structure/union-find/union-find.cpp\"\n\n/**\n * @brief Union-Find\n * @docs docs/union-find.md\n\
+    structure/union-find/union-find.hpp\"\n\n/**\n * @brief Union-Find\n * @docs docs/union-find.md\n\
     \ */\nstruct UnionFind {\n  vector< int > data;\n\n  UnionFind() = default;\n\n\
     \  explicit UnionFind(size_t sz) : data(sz, -1) {}\n\n  bool unite(int x, int\
     \ y) {\n    x = find(x), y = find(y);\n    if(x == y) return false;\n    if(data[x]\
@@ -243,7 +243,7 @@ data:
     \ int > color(M);\n  for(int i = 0; i < res.size(); i++) {\n    for(auto &j :\
     \ res[i]) color[j] = i;\n  }\n  for(auto &c : color) cout << c << \"\\n\";\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/bipartite_edge_coloring\"\
-    \n\n#include \"../../template/template.cpp\"\n\n\n#include \"../../graph/others/bipartite-graph-edge-coloring.hpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n\n#include \"../../graph/others/bipartite-graph-edge-coloring.hpp\"\
     \n\nint main() {\n  int L, R, M;\n  cin >> L >> R >> M;\n  BipariteGraphEdgeColoring\
     \ ecbg;\n  for(int i = 0; i < M; i++) {\n    int a, b;\n    cin >> a >> b;\n \
     \   ecbg.add_edge(a, b);\n  }\n  auto res = ecbg.build();\n  cout << res.size()\
@@ -251,16 +251,16 @@ data:
     \ {\n    for(auto &j : res[i]) color[j] = i;\n  }\n  for(auto &c : color) cout\
     \ << c << \"\\n\";\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - graph/others/bipartite-graph-edge-coloring.hpp
-  - structure/union-find/union-find.cpp
+  - structure/union-find/union-find.hpp
   - graph/flow/bipartite-flow.hpp
   - graph/others/eulerian-trail.hpp
   isVerificationFile: true
   path: test/verify/yosupo-bipartite-edge-coloring.test.cpp
   requiredBy: []
-  timestamp: '2022-06-25 18:23:01+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-bipartite-edge-coloring.test.cpp
 layout: document

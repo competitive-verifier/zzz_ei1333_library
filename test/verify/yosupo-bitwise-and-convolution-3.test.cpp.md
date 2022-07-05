@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/fft/superset-zeta-moebius-transform-simd.cpp
+  - icon: ':x:'
+    path: math/fft/superset-zeta-moebius-transform-simd.hpp
     title: "Superset Zeta/Moebius Transform SIMD (\u4E0A\u4F4D\u96C6\u5408\u306E\u30BC\
       \u30FC\u30BF/\u30E1\u30D3\u30A6\u30B9\u5909\u63DB, SIMD)"
-  - icon: ':heavy_check_mark:'
-    path: other/printer.cpp
+  - icon: ':x:'
+    path: other/printer.hpp
     title: "Printer(\u9AD8\u901F\u51FA\u529B)"
-  - icon: ':heavy_check_mark:'
-    path: other/scanner.cpp
+  - icon: ':x:'
+    path: other/scanner.hpp
     title: "Scanner(\u9AD8\u901F\u5165\u529B)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/bitwise_and_convolution
@@ -26,7 +26,7 @@ data:
     - https://judge.yosupo.jp/problem/bitwise_and_convolution
   bundledCode: "#line 1 \"test/verify/yosupo-bitwise-and-convolution-3.test.cpp\"\n\
     #define PROBLEM \"https://judge.yosupo.jp/problem/bitwise_and_convolution\"\n\n\
-    #line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    #line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -53,7 +53,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-bitwise-and-convolution-3.test.cpp\"\
-    \n\n#line 1 \"math/fft/superset-zeta-moebius-transform-simd.cpp\"\n#include <immintrin.h>\n\
+    \n\n#line 1 \"math/fft/superset-zeta-moebius-transform-simd.hpp\"\n#include <immintrin.h>\n\
     \n/**\n * @brief Superset Zeta/Moebius Transform SIMD (\u4E0A\u4F4D\u96C6\u5408\
     \u306E\u30BC\u30FC\u30BF/\u30E1\u30D3\u30A6\u30B9\u5909\u63DB, SIMD)\n */\n__attribute__((target(\"\
     avx2\")))\nvoid superset_zeta_transform_simd(int *buf, int mod, int n) {\n  assert((n\
@@ -95,7 +95,7 @@ data:
     \ mod, n);\n  superset_zeta_transform_simd(g, mod, n);\n  for(int i = 0; i < n;\
     \ i++) f[i] = (1uLL * f[i] * g[i]) % mod;\n  superset_moebius_transform_simd(f,\
     \ mod, n);\n  return f;\n}\n#line 6 \"test/verify/yosupo-bitwise-and-convolution-3.test.cpp\"\
-    \n\n#line 1 \"other/scanner.cpp\"\n/**\n * @brief Scanner(\u9AD8\u901F\u5165\u529B\
+    \n\n#line 1 \"other/scanner.hpp\"\n/**\n * @brief Scanner(\u9AD8\u901F\u5165\u529B\
     )\n */\nstruct Scanner {\npublic:\n\n  explicit Scanner(FILE *fp) : fp(fp) {}\n\
     \n  template< typename T, typename... E >\n  void read(T &t, E &... e) {\n   \
     \ read_single(t);\n    read(e...);\n  }\n\nprivate:\n  static constexpr size_t\
@@ -117,7 +117,7 @@ data:
     \ = st;\n      while(*st && !is_space(*st)) ++st;\n      s += string(base, st);\n\
     \      if(st != ed) return;\n      reread();\n    }\n  }\n\n  template< typename\
     \ T >\n  void read_single(vector< T > &s) {\n    for(auto &d : s) read(d);\n \
-    \ }\n};\n#line 1 \"other/printer.cpp\"\n/**\n * @brief Printer(\u9AD8\u901F\u51FA\
+    \ }\n};\n#line 1 \"other/printer.hpp\"\n/**\n * @brief Printer(\u9AD8\u901F\u51FA\
     \u529B)\n */\nstruct Printer {\npublic:\n  explicit Printer(FILE *fp) : fp(fp)\
     \ {}\n\n  ~Printer() { flush(); }\n\n  template< bool f = false, typename T, typename...\
     \ E >\n  void write(const T &t, const E &... e) {\n    if(f) write_single(' ');\n\
@@ -143,8 +143,8 @@ data:
     \ i = 0; i < (1 << N); i++) {\n    if(i) out.write(' ');\n    out.write(a[i]);\n\
     \  }\n  out.writeln();\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/bitwise_and_convolution\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../math/fft/superset-zeta-moebius-transform-simd.cpp\"\
-    \n\n#include \"../../other/scanner.cpp\"\n#include \"../../other/printer.cpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../math/fft/superset-zeta-moebius-transform-simd.hpp\"\
+    \n\n#include \"../../other/scanner.hpp\"\n#include \"../../other/printer.hpp\"\
     \n\nconst int MOD = 998244353;\n\nint main() {\n  Scanner in(stdin);\n  Printer\
     \ out(stdout);\n  int N;\n  in.read(N);\n  int a[1 << N], b[1 << N];\n  for(int\
     \ i = 0; i < (1 << N); i++) in.read(a[i]);\n  for(int i = 0; i < (1 << N); i++)\
@@ -152,15 +152,15 @@ data:
     \ i = 0; i < (1 << N); i++) {\n    if(i) out.write(' ');\n    out.write(a[i]);\n\
     \  }\n  out.writeln();\n}\n"
   dependsOn:
-  - template/template.cpp
-  - math/fft/superset-zeta-moebius-transform-simd.cpp
-  - other/scanner.cpp
-  - other/printer.cpp
+  - template/template.hpp
+  - math/fft/superset-zeta-moebius-transform-simd.hpp
+  - other/scanner.hpp
+  - other/printer.hpp
   isVerificationFile: true
   path: test/verify/yosupo-bitwise-and-convolution-3.test.cpp
   requiredBy: []
-  timestamp: '2021-08-31 21:10:51+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-bitwise-and-convolution-3.test.cpp
 layout: document

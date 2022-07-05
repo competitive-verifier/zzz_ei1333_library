@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/number-theory/fast-prime-factorization.cpp
-    title: math/number-theory/fast-prime-factorization.cpp
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':x:'
+    path: math/number-theory/fast-prime-factorization.hpp
+    title: math/number-theory/fast-prime-factorization.hpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/factorize
     links:
     - https://judge.yosupo.jp/problem/factorize
   bundledCode: "#line 1 \"test/verify/yosupo-factorize.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/factorize\"\n\n#line 1 \"template/template.cpp\"\
+    \ \"https://judge.yosupo.jp/problem/factorize\"\n\n#line 1 \"template/template.hpp\"\
     \n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -46,7 +46,7 @@ data:
     \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-factorize.test.cpp\"\
-    \n\n#line 1 \"math/number-theory/fast-prime-factorization.cpp\"\nnamespace FastPrimeFactorization\
+    \n\n#line 1 \"math/number-theory/fast-prime-factorization.hpp\"\nnamespace FastPrimeFactorization\
     \ {\n\n  template< typename word, typename dword, typename sword >\n  struct UnsafeMod\
     \ {\n    UnsafeMod() : x(0) {}\n\n    UnsafeMod(word _x) : x(init(_x)) {}\n\n\
     \    bool operator==(const UnsafeMod &rhs) const {\n      return x == rhs.x;\n\
@@ -104,19 +104,19 @@ data:
     \    sort(begin(ret), end(ret));\n    cout << ret.size() << \" \";\n    cout <<\
     \ ret << \"\\n\";\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/factorize\"\n\n#include\
-    \ \"../../template/template.cpp\"\n\n#include \"../../math/number-theory/fast-prime-factorization.cpp\"\
+    \ \"../../template/template.hpp\"\n\n#include \"../../math/number-theory/fast-prime-factorization.hpp\"\
     \n\nint main() {\n  int Q;\n  cin >> Q;\n  while(Q--) {\n    int64 X;\n    cin\
     \ >> X;\n    auto ret = FastPrimeFactorization::prime_factor(X);\n    sort(begin(ret),\
     \ end(ret));\n    cout << ret.size() << \" \";\n    cout << ret << \"\\n\";\n\
     \  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - math/number-theory/fast-prime-factorization.cpp
+  - template/template.hpp
+  - math/number-theory/fast-prime-factorization.hpp
   isVerificationFile: true
   path: test/verify/yosupo-factorize.test.cpp
   requiredBy: []
-  timestamp: '2021-05-01 00:06:55+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-factorize.test.cpp
 layout: document

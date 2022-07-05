@@ -1,36 +1,36 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/shortest-path/dijkstra.hpp
     title: "Dijkstra(\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u8DEF)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/shortest-path/k-shortest-walk.hpp
     title: K-Shortest-Walk
-  - icon: ':heavy_check_mark:'
-    path: structure/heap/leftist-heap.cpp
+  - icon: ':x:'
+    path: structure/heap/leftist-heap.hpp
     title: Leftist-Heap
-  - icon: ':heavy_check_mark:'
-    path: structure/heap/persistent-leftist-heap.cpp
+  - icon: ':x:'
+    path: structure/heap/persistent-leftist-heap.hpp
     title: Persistent-Leftist-Heap
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/k_shortest_walk
     links:
     - https://judge.yosupo.jp/problem/k_shortest_walk
   bundledCode: "#line 1 \"test/verify/yosupo-k-shortest-walk.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/k_shortest_walk\"\n\n#line 1 \"template/template.cpp\"\
+    \ \"https://judge.yosupo.jp/problem/k_shortest_walk\"\n\n#line 1 \"template/template.hpp\"\
     \n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -90,7 +90,7 @@ data:
     \ = cost + e.cost;\n      if(dist[e.to] <= next_cost) continue;\n      dist[e.to]\
     \ = next_cost;\n      from[e.to] = idx;\n      id[e.to] = e.idx;\n      que.emplace(dist[e.to],\
     \ e.to);\n    }\n  }\n  return {dist, from, id};\n}\n#line 7 \"test/verify/yosupo-k-shortest-walk.test.cpp\"\
-    \n\n#line 1 \"structure/heap/leftist-heap.cpp\"\n/**\n * @brief Leftist-Heap\n\
+    \n\n#line 1 \"structure/heap/leftist-heap.hpp\"\n/**\n * @brief Leftist-Heap\n\
     \ */\ntemplate< typename T, bool isMin = true >\nstruct LeftistHeap {\n  struct\
     \ Node {\n    Node *l, *r;\n    int s;\n    T key;\n    int idx;\n\n    explicit\
     \ Node(const T &key, int idx) : key(key), s(1), l(nullptr), r(nullptr), idx(idx)\
@@ -102,7 +102,7 @@ data:
     \    a->s = (a->r ? a->r->s : 0) + 1;\n    return a;\n  }\n\n  Node *push(Node\
     \ *t, const T &key, int idx = -1) {\n    return meld(t, alloc(key, idx));\n  }\n\
     \n  Node *pop(Node *t) {\n    assert(t != nullptr);\n    return meld(t->l, t->r);\n\
-    \  }\n\n  Node *make_root() {\n    return nullptr;\n  }\n};\n#line 1 \"structure/heap/persistent-leftist-heap.cpp\"\
+    \  }\n\n  Node *make_root() {\n    return nullptr;\n  }\n};\n#line 1 \"structure/heap/persistent-leftist-heap.hpp\"\
     \n/**\n * @brief Persistent-Leftist-Heap\n */\ntemplate< typename T, bool isMin\
     \ = true >\nstruct PersistentLeftistHeap : LeftistHeap< T, isMin > {\n  using\
     \ Node = typename LeftistHeap< T, isMin >::Node;\n\n  Node *clone(Node *t) override\
@@ -138,25 +138,25 @@ data:
     \ S, T, K);\n  for(int i = 0; i < K; i++) {\n    if(i >= (int)ret.size()) cout\
     \ << -1 << \"\\n\";\n    else cout << ret[i] << \"\\n\";\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/k_shortest_walk\"\n\n#include\
-    \ \"../../template/template.cpp\"\n\n#include \"../../graph/graph-template.hpp\"\
-    \n#include \"../../graph/shortest-path/dijkstra.hpp\"\n\n#include \"../../structure/heap/leftist-heap.cpp\"\
-    \n#include \"../../structure/heap/persistent-leftist-heap.cpp\"\n#include \"../../graph/shortest-path/k-shortest-walk.hpp\"\
+    \ \"../../template/template.hpp\"\n\n#include \"../../graph/graph-template.hpp\"\
+    \n#include \"../../graph/shortest-path/dijkstra.hpp\"\n\n#include \"../../structure/heap/leftist-heap.hpp\"\
+    \n#include \"../../structure/heap/persistent-leftist-heap.hpp\"\n#include \"../../graph/shortest-path/k-shortest-walk.hpp\"\
     \n\nint main() {\n  int N, M, S, T, K;\n  cin >> N >> M >> S >> T >> K;\n  Graph<\
     \ int64 > g(N);\n  g.read(M, 0, true, true);\n  auto ret = k_shortest_walk(g,\
     \ S, T, K);\n  for(int i = 0; i < K; i++) {\n    if(i >= (int)ret.size()) cout\
     \ << -1 << \"\\n\";\n    else cout << ret[i] << \"\\n\";\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - graph/graph-template.hpp
   - graph/shortest-path/dijkstra.hpp
-  - structure/heap/leftist-heap.cpp
-  - structure/heap/persistent-leftist-heap.cpp
+  - structure/heap/leftist-heap.hpp
+  - structure/heap/persistent-leftist-heap.hpp
   - graph/shortest-path/k-shortest-walk.hpp
   isVerificationFile: true
   path: test/verify/yosupo-k-shortest-walk.test.cpp
   requiredBy: []
-  timestamp: '2021-08-16 02:34:50+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-k-shortest-walk.test.cpp
 layout: document

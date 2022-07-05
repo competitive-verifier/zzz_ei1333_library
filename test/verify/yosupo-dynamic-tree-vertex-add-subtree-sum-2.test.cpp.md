@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: structure/develop/super-link-cut-tree.cpp
+  - icon: ':question:'
+    path: structure/develop/super-link-cut-tree.hpp
     title: "\u4F55\u3067\u3082\u3067\u304D\u308BLCT"
-  - icon: ':heavy_check_mark:'
-    path: structure/develop/vertex-set-subtree-sum.cpp
+  - icon: ':x:'
+    path: structure/develop/vertex-set-subtree-sum.hpp
     title: Vertex Set Subtree Sum
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum
@@ -22,7 +22,7 @@ data:
     - https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum
   bundledCode: "#line 1 \"test/verify/yosupo-dynamic-tree-vertex-add-subtree-sum-2.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum\"\
-    \n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -49,7 +49,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-dynamic-tree-vertex-add-subtree-sum-2.test.cpp\"\
-    \n\n#line 1 \"structure/develop/super-link-cut-tree.cpp\"\n/**\n * @brief \u4F55\
+    \n\n#line 1 \"structure/develop/super-link-cut-tree.hpp\"\n/**\n * @brief \u4F55\
     \u3067\u3082\u3067\u304D\u308BLCT\n */\ntemplate< typename LInfo, typename Lazy\
     \ >\nstruct SplayTree {\n  struct Node {\n    Node *l, *r, *p;\n    LInfo info;\n\
     \    Lazy lazy, lbuf;\n\n    explicit Node(const LInfo &info) : info(info), l(nullptr),\
@@ -178,7 +178,7 @@ data:
     \u9045\u5EF6\u4F1D\u642C\n  // path\u3068subtree\u306E\u9045\u5EF6\u4F1D\u642C\
     \u304C\u4E21\u65B9\u3042\u308B\u5834\u5408\u306B\u5B9F\u88C5\u3059\u308B\n  void\
     \ propagate_light(const Lazy &p) {}\n};\n\nusing LCT = SuperLinkCutTree< Info,\
-    \ LInfo, Lazy >;\n*/\n#line 2 \"structure/develop/vertex-set-subtree-sum.cpp\"\
+    \ LInfo, Lazy >;\n*/\n#line 2 \"structure/develop/vertex-set-subtree-sum.hpp\"\
     \n\n/**\n * @brief Vertex Set Subtree Sum\n */\nusing T = int64_t;\n\n// \u9045\
     \u5EF6\u4F1D\u642C\u3092\u3059\u308B\u305F\u3081\u306E\u4F5C\u7528\u7D20\nstruct\
     \ Lazy {\n\n  // \u5358\u4F4D\u5143\n  Lazy() {}\n\n  // \u521D\u671F\u5316\n\
@@ -218,7 +218,7 @@ data:
     \ >> p;\n      lct.evert(vs[p]);\n      cout << lct.query_subtree(vs[v]).sum_sum\
     \ << \"\\n\";\n    }\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../structure/develop/vertex-set-subtree-sum.cpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../structure/develop/vertex-set-subtree-sum.hpp\"\
     \n\nint main() {\n  int N, Q;\n  cin >> N >> Q;\n  LCT lct;\n  vector< LCT::NP\
     \ > vs(N);\n  for(int i = 0; i < N; i++) {\n    T x;\n    cin >> x;\n    vs[i]\
     \ = lct.alloc(x);\n  }\n  for(int i = 1; i < N; i++) {\n    int a, b;\n    cin\
@@ -231,14 +231,14 @@ data:
     \ >> p;\n      lct.evert(vs[p]);\n      cout << lct.query_subtree(vs[v]).sum_sum\
     \ << \"\\n\";\n    }\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - structure/develop/vertex-set-subtree-sum.cpp
-  - structure/develop/super-link-cut-tree.cpp
+  - template/template.hpp
+  - structure/develop/vertex-set-subtree-sum.hpp
+  - structure/develop/super-link-cut-tree.hpp
   isVerificationFile: true
   path: test/verify/yosupo-dynamic-tree-vertex-add-subtree-sum-2.test.cpp
   requiredBy: []
-  timestamp: '2021-10-02 02:34:17+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-dynamic-tree-vertex-add-subtree-sum-2.test.cpp
 layout: document

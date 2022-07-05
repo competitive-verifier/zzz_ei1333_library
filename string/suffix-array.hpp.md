@@ -2,22 +2,22 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/lcp-array.hpp
     title: LCP Array
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/aoj-alds-1-14-d.test.cpp
     title: test/verify/aoj-alds-1-14-d.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yosupo-number-of-substrings.test.cpp
     title: test/verify/yosupo-number-of-substrings.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yosupo-suffixarray.test.cpp
     title: test/verify/yosupo-suffixarray.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     document_title: "Suffix Array(\u63A5\u5C3E\u8F9E\u914D\u5217)"
     links: []
@@ -142,7 +142,7 @@ data:
   requiredBy:
   - string/lcp-array.hpp
   timestamp: '2022-03-30 01:32:04+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/yosupo-suffixarray.test.cpp
   - test/verify/yosupo-number-of-substrings.test.cpp

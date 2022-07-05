@@ -1,30 +1,30 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/combinatorics/mod-int.cpp
-    title: math/combinatorics/mod-int.cpp
-  - icon: ':heavy_check_mark:'
-    path: math/fft/bitwise-xor-convolution.cpp
+  - icon: ':question:'
+    path: math/combinatorics/mod-int.hpp
+    title: math/combinatorics/mod-int.hpp
+  - icon: ':x:'
+    path: math/fft/bitwise-xor-convolution.hpp
     title: "Bitwise Xor Convolution (Bitwise-XOR\u7573\u307F\u8FBC\u307F)"
-  - icon: ':heavy_check_mark:'
-    path: math/fft/fast-walsh-hadamard-transform.cpp
+  - icon: ':x:'
+    path: math/fft/fast-walsh-hadamard-transform.hpp
     title: "Fast Walsh Hadamard Transform (\u9AD8\u901F\u30A6\u30A9\u30EB\u30B7\u30E5\
       \u30A2\u30C0\u30DE\u30FC\u30EB\u5909\u63DB)"
-  - icon: ':heavy_check_mark:'
-    path: other/printer.cpp
+  - icon: ':x:'
+    path: other/printer.hpp
     title: "Printer(\u9AD8\u901F\u51FA\u529B)"
-  - icon: ':heavy_check_mark:'
-    path: other/scanner.cpp
+  - icon: ':x:'
+    path: other/scanner.hpp
     title: "Scanner(\u9AD8\u901F\u5165\u529B)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/bitwise_xor_convolution
@@ -32,7 +32,7 @@ data:
     - https://judge.yosupo.jp/problem/bitwise_xor_convolution
   bundledCode: "#line 1 \"test/verify/yosupo-bitwise-xor-convolution.test.cpp\"\n\
     #define PROBLEM \"https://judge.yosupo.jp/problem/bitwise_xor_convolution\"\n\n\
-    #line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    #line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -59,7 +59,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-bitwise-xor-convolution.test.cpp\"\
-    \n\n#line 1 \"math/fft/fast-walsh-hadamard-transform.cpp\"\n/**\n * @brief Fast\
+    \n\n#line 1 \"math/fft/fast-walsh-hadamard-transform.hpp\"\n/**\n * @brief Fast\
     \ Walsh Hadamard Transform (\u9AD8\u901F\u30A6\u30A9\u30EB\u30B7\u30E5\u30A2\u30C0\
     \u30DE\u30FC\u30EB\u5909\u63DB)\n */\ntemplate< typename T >\nvoid fast_walsh_hadamard_transform(vector<\
     \ T > &f, bool inv = false) {\n  const int n = (int) f.size();\n  assert((n &\
@@ -67,14 +67,14 @@ data:
     \ n; j += i << 1) {\n      for(int k = 0; k < i; k++) {\n        T s = f[j + k],\
     \ t = f[j + k + i];\n        f[j + k] = s + t;\n        f[j + k + i] = s - t;\n\
     \      }\n    }\n  }\n  if(inv) {\n    T inv_n = T(1) / n;\n    for(auto &x :\
-    \ f) x *= inv_n;\n  }\n}\n#line 2 \"math/fft/bitwise-xor-convolution.cpp\"\n\n\
+    \ f) x *= inv_n;\n  }\n}\n#line 2 \"math/fft/bitwise-xor-convolution.hpp\"\n\n\
     /**\n * @brief Bitwise Xor Convolution (Bitwise-XOR\u7573\u307F\u8FBC\u307F)\n\
     \ */\ntemplate< typename T >\nvector< T > bitwise_xor_convolution(vector< T >\
     \ f, vector< T > g) {\n  const int n = (int) f.size();\n  assert(f.size() == g.size());\n\
     \  assert((n & (n - 1)) == 0);\n  fast_walsh_hadamard_transform(f, false);\n \
     \ fast_walsh_hadamard_transform(g, false);\n  for(int i = 0; i < n; i++) f[i]\
     \ *= g[i];\n  fast_walsh_hadamard_transform(f, true);\n  return f;\n}\n#line 1\
-    \ \"math/combinatorics/mod-int.cpp\"\ntemplate< int mod >\nstruct ModInt {\n \
+    \ \"math/combinatorics/mod-int.hpp\"\ntemplate< int mod >\nstruct ModInt {\n \
     \ int x;\n\n  ModInt() : x(0) {}\n\n  ModInt(int64_t y) : x(y >= 0 ? y % mod :\
     \ (mod - (-y) % mod) % mod) {}\n\n  ModInt &operator+=(const ModInt &p) {\n  \
     \  if((x += p.x) >= mod) x -= mod;\n    return *this;\n  }\n\n  ModInt &operator-=(const\
@@ -97,7 +97,7 @@ data:
     \  friend istream &operator>>(istream &is, ModInt &a) {\n    int64_t t;\n    is\
     \ >> t;\n    a = ModInt< mod >(t);\n    return (is);\n  }\n\n  static int get_mod()\
     \ { return mod; }\n};\n\nusing modint = ModInt< mod >;\n#line 7 \"test/verify/yosupo-bitwise-xor-convolution.test.cpp\"\
-    \n\n#line 1 \"other/scanner.cpp\"\n/**\n * @brief Scanner(\u9AD8\u901F\u5165\u529B\
+    \n\n#line 1 \"other/scanner.hpp\"\n/**\n * @brief Scanner(\u9AD8\u901F\u5165\u529B\
     )\n */\nstruct Scanner {\npublic:\n\n  explicit Scanner(FILE *fp) : fp(fp) {}\n\
     \n  template< typename T, typename... E >\n  void read(T &t, E &... e) {\n   \
     \ read_single(t);\n    read(e...);\n  }\n\nprivate:\n  static constexpr size_t\
@@ -119,7 +119,7 @@ data:
     \ = st;\n      while(*st && !is_space(*st)) ++st;\n      s += string(base, st);\n\
     \      if(st != ed) return;\n      reread();\n    }\n  }\n\n  template< typename\
     \ T >\n  void read_single(vector< T > &s) {\n    for(auto &d : s) read(d);\n \
-    \ }\n};\n#line 1 \"other/printer.cpp\"\n/**\n * @brief Printer(\u9AD8\u901F\u51FA\
+    \ }\n};\n#line 1 \"other/printer.hpp\"\n/**\n * @brief Printer(\u9AD8\u901F\u51FA\
     \u529B)\n */\nstruct Printer {\npublic:\n  explicit Printer(FILE *fp) : fp(fp)\
     \ {}\n\n  ~Printer() { flush(); }\n\n  template< bool f = false, typename T, typename...\
     \ E >\n  void write(const T &t, const E &... e) {\n    if(f) write_single(' ');\n\
@@ -146,9 +146,9 @@ data:
     \ i++) {\n    if(i) out.write(' ');\n    out.write(c[i].x);\n  }\n  out.writeln();\n\
     }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/bitwise_xor_convolution\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../math/fft/bitwise-xor-convolution.cpp\"\
-    \n#include \"../../math/combinatorics/mod-int.cpp\"\n\n#include \"../../other/scanner.cpp\"\
-    \n#include \"../../other/printer.cpp\"\n\nconst int MOD = 998244353;\nusing mint\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../math/fft/bitwise-xor-convolution.hpp\"\
+    \n#include \"../../math/combinatorics/mod-int.hpp\"\n\n#include \"../../other/scanner.hpp\"\
+    \n#include \"../../other/printer.hpp\"\n\nconst int MOD = 998244353;\nusing mint\
     \ = ModInt< MOD >;\n\nint main() {\n  Scanner in(stdin);\n  Printer out(stdout);\n\
     \  int N;\n  in.read(N);\n  vector< mint > a(1 << N), b(1 << N);\n  for(auto &x\
     \ : a) {\n    int p;\n    in.read(p);\n    x = p;\n  }\n  for(auto &x : b) {\n\
@@ -156,17 +156,17 @@ data:
     \ b);\n  for(int i = 0; i < (1 << N); i++) {\n    if(i) out.write(' ');\n    out.write(c[i].x);\n\
     \  }\n  out.writeln();\n}\n"
   dependsOn:
-  - template/template.cpp
-  - math/fft/bitwise-xor-convolution.cpp
-  - math/fft/fast-walsh-hadamard-transform.cpp
-  - math/combinatorics/mod-int.cpp
-  - other/scanner.cpp
-  - other/printer.cpp
+  - template/template.hpp
+  - math/fft/bitwise-xor-convolution.hpp
+  - math/fft/fast-walsh-hadamard-transform.hpp
+  - math/combinatorics/mod-int.hpp
+  - other/scanner.hpp
+  - other/printer.hpp
   isVerificationFile: true
   path: test/verify/yosupo-bitwise-xor-convolution.test.cpp
   requiredBy: []
-  timestamp: '2021-08-31 21:10:51+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-bitwise-xor-convolution.test.cpp
 layout: document

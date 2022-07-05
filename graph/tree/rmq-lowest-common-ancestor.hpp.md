@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
-  - icon: ':heavy_check_mark:'
-    path: structure/others/sparse-table.cpp
+  - icon: ':x:'
+    path: structure/others/sparse-table.hpp
     title: "Sparse-Table(\u30B9\u30D1\u30FC\u30B9\u30C6\u30FC\u30D6\u30EB)"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/aoj-grl-5-c-3.test.cpp
     title: test/verify/aoj-grl-5-c-3.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yosupo-lca-2.test.cpp
     title: test/verify/yosupo-lca-2.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: docs/rmq-lowest-common-ancestor.md
     document_title: "RMQ-Lowest-Common-Ancestor(\u6700\u5C0F\u5171\u901A\u7956\u5148\
@@ -42,7 +42,7 @@ data:
     \ inline vector< Edge< T > > &operator[](const int &k) {\n    return g[k];\n \
     \ }\n\n  inline const vector< Edge< T > > &operator[](const int &k) const {\n\
     \    return g[k];\n  }\n};\n\ntemplate< typename T = int >\nusing Edges = vector<\
-    \ Edge< T > >;\n#line 1 \"structure/others/sparse-table.cpp\"\n/**\n * @brief\
+    \ Edge< T > >;\n#line 1 \"structure/others/sparse-table.hpp\"\n/**\n * @brief\
     \ Sparse-Table(\u30B9\u30D1\u30FC\u30B9\u30C6\u30FC\u30D6\u30EB)\n * @docs docs/sparse-table.md\n\
     \ */\ntemplate< typename T, typename F >\nstruct SparseTable {\n  F f;\n  vector<\
     \ vector< T > > st;\n  vector< int > lookup;\n\n  SparseTable() = default;\n\n\
@@ -72,7 +72,7 @@ data:
     \    dep.emplace_back(d);\n    for(auto &to : g[idx]) {\n      if(to != par) {\n\
     \        dfs(to, idx, d + 1);\n        ord.emplace_back(idx);\n        dep.emplace_back(d);\n\
     \      }\n    }\n  }\n};\n"
-  code: "#pragma once\n\n#include \"../graph-template.hpp\"\n#include \"../../structure/others/sparse-table.cpp\"\
+  code: "#pragma once\n\n#include \"../graph-template.hpp\"\n#include \"../../structure/others/sparse-table.hpp\"\
     \n\n/**\n * @brief RMQ-Lowest-Common-Ancestor(\u6700\u5C0F\u5171\u901A\u7956\u5148\
     )\n * @docs docs/rmq-lowest-common-ancestor.md\n **/\ntemplate< typename T = int\
     \ >\nstruct RMQLowestCommonAncestor : Graph< T > {\npublic:\n  using Graph< T\
@@ -90,12 +90,12 @@ data:
     \      }\n    }\n  }\n};\n"
   dependsOn:
   - graph/graph-template.hpp
-  - structure/others/sparse-table.cpp
+  - structure/others/sparse-table.hpp
   isVerificationFile: false
   path: graph/tree/rmq-lowest-common-ancestor.hpp
   requiredBy: []
-  timestamp: '2021-08-16 02:17:26+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/aoj-grl-5-c-3.test.cpp
   - test/verify/yosupo-lca-2.test.cpp

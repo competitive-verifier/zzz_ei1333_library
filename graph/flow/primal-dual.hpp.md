@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/aoj-grl-6-b.test.cpp
     title: test/verify/aoj-grl-6-b.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: docs/primal-dual.md
     document_title: "Primal Dual(\u6700\u5C0F\u8CBB\u7528\u6D41)"
@@ -81,7 +81,7 @@ data:
   path: graph/flow/primal-dual.hpp
   requiredBy: []
   timestamp: '2021-07-16 02:06:57+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/aoj-grl-6-b.test.cpp
 documentation_of: graph/flow/primal-dual.hpp

@@ -1,30 +1,30 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: other/printer.cpp
+  - icon: ':x:'
+    path: other/printer.hpp
     title: "Printer(\u9AD8\u901F\u51FA\u529B)"
-  - icon: ':heavy_check_mark:'
-    path: other/scanner.cpp
+  - icon: ':x:'
+    path: other/scanner.hpp
     title: "Scanner(\u9AD8\u901F\u5165\u529B)"
-  - icon: ':heavy_check_mark:'
-    path: structure/others/linear-rmq.cpp
+  - icon: ':x:'
+    path: structure/others/linear-rmq.hpp
     title: Linear-RMQ
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/staticrmq
     links:
     - https://judge.yosupo.jp/problem/staticrmq
   bundledCode: "#line 1 \"test/verify/yosupo-staticrmq-5.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#line 1 \"template/template.cpp\"\
+    \ \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#line 1 \"template/template.hpp\"\
     \n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -52,7 +52,7 @@ data:
     \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-staticrmq-5.test.cpp\"\
-    \n\n#line 1 \"structure/others/linear-rmq.cpp\"\n/**\n * @brief Linear-RMQ\n **/\n\
+    \n\n#line 1 \"structure/others/linear-rmq.hpp\"\n/**\n * @brief Linear-RMQ\n **/\n\
     template< typename Comp >\nstruct LinearRMQ {\n\n  vector< int > small;\n  vector<\
     \ vector< int > > large;\n\n  LinearRMQ() = default;\n\n  Comp comp;\n\n  static\
     \ inline int msb(int c) {\n    return 31 - __builtin_clz(c);\n  }\n\n  static\
@@ -78,7 +78,7 @@ data:
     \ right * 32 + ctz(small[r] & ~0 << l % 32);\n    }\n  }\n};\n\ntemplate< typename\
     \ Comp >\nLinearRMQ< Comp > get_linear_rmq(int n, const Comp &comp) {\n  return\
     \ LinearRMQ< Comp >(n, comp);\n}\n#line 6 \"test/verify/yosupo-staticrmq-5.test.cpp\"\
-    \n\n#line 1 \"other/scanner.cpp\"\n/**\n * @brief Scanner(\u9AD8\u901F\u5165\u529B\
+    \n\n#line 1 \"other/scanner.hpp\"\n/**\n * @brief Scanner(\u9AD8\u901F\u5165\u529B\
     )\n */\nstruct Scanner {\npublic:\n\n  explicit Scanner(FILE *fp) : fp(fp) {}\n\
     \n  template< typename T, typename... E >\n  void read(T &t, E &... e) {\n   \
     \ read_single(t);\n    read(e...);\n  }\n\nprivate:\n  static constexpr size_t\
@@ -100,7 +100,7 @@ data:
     \ = st;\n      while(*st && !is_space(*st)) ++st;\n      s += string(base, st);\n\
     \      if(st != ed) return;\n      reread();\n    }\n  }\n\n  template< typename\
     \ T >\n  void read_single(vector< T > &s) {\n    for(auto &d : s) read(d);\n \
-    \ }\n};\n#line 1 \"other/printer.cpp\"\n/**\n * @brief Printer(\u9AD8\u901F\u51FA\
+    \ }\n};\n#line 1 \"other/printer.hpp\"\n/**\n * @brief Printer(\u9AD8\u901F\u51FA\
     \u529B)\n */\nstruct Printer {\npublic:\n  explicit Printer(FILE *fp) : fp(fp)\
     \ {}\n\n  ~Printer() { flush(); }\n\n  template< bool f = false, typename T, typename...\
     \ E >\n  void write(const T &t, const E &... e) {\n    if(f) write_single(' ');\n\
@@ -125,23 +125,23 @@ data:
     \ {\n    int l, r;\n    in.read(l, r);\n    out.writeln(A[seg.fold(l, r)]);\n\
     \  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#include\
-    \ \"../../template/template.cpp\"\n\n#include \"../../structure/others/linear-rmq.cpp\"\
-    \n\n#include \"../../other/scanner.cpp\"\n#include \"../../other/printer.cpp\"\
+    \ \"../../template/template.hpp\"\n\n#include \"../../structure/others/linear-rmq.hpp\"\
+    \n\n#include \"../../other/scanner.hpp\"\n#include \"../../other/printer.hpp\"\
     \n\nint main() {\n  Scanner in(stdin);\n  Printer out(stdout);\n  int N, Q;\n\
     \  in.read(N, Q);\n  vector< int > A(N);\n  in.read(A);\n  auto f = [&](int a,\
     \ int b) { return A[a] < A[b]; };\n  auto seg = get_linear_rmq(N, f);\n  while(Q--)\
     \ {\n    int l, r;\n    in.read(l, r);\n    out.writeln(A[seg.fold(l, r)]);\n\
     \  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - structure/others/linear-rmq.cpp
-  - other/scanner.cpp
-  - other/printer.cpp
+  - template/template.hpp
+  - structure/others/linear-rmq.hpp
+  - other/scanner.hpp
+  - other/printer.hpp
   isVerificationFile: true
   path: test/verify/yosupo-staticrmq-5.test.cpp
   requiredBy: []
-  timestamp: '2021-08-31 21:10:51+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-staticrmq-5.test.cpp
 layout: document

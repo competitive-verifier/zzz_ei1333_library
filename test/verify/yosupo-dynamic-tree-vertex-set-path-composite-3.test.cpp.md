@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/combinatorics/montgomery-mod-int.cpp
+  - icon: ':x:'
+    path: math/combinatorics/montgomery-mod-int.hpp
     title: Montgomery ModInt
-  - icon: ':heavy_check_mark:'
-    path: structure/develop/super-link-cut-tree.cpp
+  - icon: ':question:'
+    path: structure/develop/super-link-cut-tree.hpp
     title: "\u4F55\u3067\u3082\u3067\u304D\u308BLCT"
-  - icon: ':heavy_check_mark:'
-    path: structure/develop/vertex-set-path-composite.cpp
+  - icon: ':x:'
+    path: structure/develop/vertex-set-path-composite.hpp
     title: Vertex Set Path Composite
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite
@@ -25,7 +25,7 @@ data:
     - https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite
   bundledCode: "#line 1 \"test/verify/yosupo-dynamic-tree-vertex-set-path-composite-3.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite\"\
-    \n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -52,7 +52,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-dynamic-tree-vertex-set-path-composite-3.test.cpp\"\
-    \n\n#line 1 \"structure/develop/super-link-cut-tree.cpp\"\n/**\n * @brief \u4F55\
+    \n\n#line 1 \"structure/develop/super-link-cut-tree.hpp\"\n/**\n * @brief \u4F55\
     \u3067\u3082\u3067\u304D\u308BLCT\n */\ntemplate< typename LInfo, typename Lazy\
     \ >\nstruct SplayTree {\n  struct Node {\n    Node *l, *r, *p;\n    LInfo info;\n\
     \    Lazy lazy, lbuf;\n\n    explicit Node(const LInfo &info) : info(info), l(nullptr),\
@@ -181,7 +181,7 @@ data:
     \u9045\u5EF6\u4F1D\u642C\n  // path\u3068subtree\u306E\u9045\u5EF6\u4F1D\u642C\
     \u304C\u4E21\u65B9\u3042\u308B\u5834\u5408\u306B\u5B9F\u88C5\u3059\u308B\n  void\
     \ propagate_light(const Lazy &p) {}\n};\n\nusing LCT = SuperLinkCutTree< Info,\
-    \ LInfo, Lazy >;\n*/\n#line 1 \"math/combinatorics/montgomery-mod-int.cpp\"\n\
+    \ LInfo, Lazy >;\n*/\n#line 1 \"math/combinatorics/montgomery-mod-int.hpp\"\n\
     /**\n * @brief Montgomery ModInt\n */\ntemplate< uint32_t mod, bool fast = false\
     \ >\nstruct MontgomeryModInt {\n  using mint = MontgomeryModInt;\n  using i32\
     \ = int32_t;\n  using i64 = int64_t;\n  using u32 = uint32_t;\n  using u64 = uint64_t;\n\
@@ -213,7 +213,7 @@ data:
     \ &os, const mint &p) {\n    return os << p.get();\n  }\n\n  friend istream &operator>>(istream\
     \ &is, mint &a) {\n    i64 t;\n    is >> t;\n    a = mint(t);\n    return is;\n\
     \  }\n\n  static u32 get_mod() { return mod; }\n};\n\nusing modint = MontgomeryModInt<\
-    \ mod >;\n#line 3 \"structure/develop/vertex-set-path-composite.cpp\"\n\n/**\n\
+    \ mod >;\n#line 3 \"structure/develop/vertex-set-path-composite.hpp\"\n\n/**\n\
     \ * @brief Vertex Set Path Composite\n */\nusing T = MontgomeryModInt< 998244353,\
     \ true >;\n\n// \u9045\u5EF6\u4F1D\u642C\u3092\u3059\u308B\u305F\u3081\u306E\u4F5C\
     \u7528\u7D20\nstruct Lazy {\n\n  // \u5358\u4F4D\u5143\n  Lazy() {}\n\n  // \u521D\
@@ -256,7 +256,7 @@ data:
     \ x;\n      auto info = lct.query_path(vs[u], vs[v]);\n      cout << info.a_sum_p\
     \ * x + info.b_sum_p << \"\\n\";\n    }\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/dynamic_tree_vertex_set_path_composite\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../structure/develop/vertex-set-path-composite.cpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../structure/develop/vertex-set-path-composite.hpp\"\
     \n\nint main() {\n  int N, Q;\n  cin >> N >> Q;\n  LCT lct;\n  vector< LCT::NP\
     \ > vs(N);\n  for(int i = 0; i < N; i++) {\n    T a, b;\n    cin >> a >> b;\n\
     \    vs[i] = lct.alloc({a, b});\n  }\n  for(int i = 1; i < N; i++) {\n    int\
@@ -269,15 +269,15 @@ data:
     \ x;\n      auto info = lct.query_path(vs[u], vs[v]);\n      cout << info.a_sum_p\
     \ * x + info.b_sum_p << \"\\n\";\n    }\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - structure/develop/vertex-set-path-composite.cpp
-  - structure/develop/super-link-cut-tree.cpp
-  - math/combinatorics/montgomery-mod-int.cpp
+  - template/template.hpp
+  - structure/develop/vertex-set-path-composite.hpp
+  - structure/develop/super-link-cut-tree.hpp
+  - math/combinatorics/montgomery-mod-int.hpp
   isVerificationFile: true
   path: test/verify/yosupo-dynamic-tree-vertex-set-path-composite-3.test.cpp
   requiredBy: []
-  timestamp: '2021-10-02 02:49:48+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-dynamic-tree-vertex-set-path-composite-3.test.cpp
 layout: document

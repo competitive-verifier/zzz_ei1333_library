@@ -1,31 +1,31 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: structure/union-find/union-find.cpp
+  - icon: ':question:'
+    path: structure/union-find/union-find.hpp
     title: Union-Find
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/connected-components/three-edge-connected-components.hpp
     title: "Three Edge Connected Components(\u4E09\u91CD\u8FBA\u9023\u7D50\u6210\u5206\
       \u5206\u89E3)"
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yosupo-three-edge-connected-components.test.cpp
     title: test/verify/yosupo-three-edge-connected-components.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yosupo-two-edge-connected-components-2.test.cpp
     title: test/verify/yosupo-two-edge-connected-components-2.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: docs/incremental-bridge-connectivity.md
     document_title: Incremental Bridge Connectivity
     links:
     - https://scrapbox.io/data-structures/Incremental_Bridge-Connectivity
   bundledCode: "#line 2 \"graph/connected-components/incremental-bridge-connectivity.hpp\"\
-    \n\n#line 2 \"structure/union-find/union-find.cpp\"\n\n/**\n * @brief Union-Find\n\
+    \n\n#line 2 \"structure/union-find/union-find.hpp\"\n\n/**\n * @brief Union-Find\n\
     \ * @docs docs/union-find.md\n */\nstruct UnionFind {\n  vector< int > data;\n\
     \n  UnionFind() = default;\n\n  explicit UnionFind(size_t sz) : data(sz, -1) {}\n\
     \n  bool unite(int x, int y) {\n    x = find(x), y = find(y);\n    if(x == y)\
@@ -58,7 +58,7 @@ data:
     \ cc.find(y)) {\n      int w = lca(x, y);\n      compress(x, w);\n      compress(y,\
     \ w);\n    } else {\n      if(cc.size(x) > cc.size(y)) swap(x, y);\n      link(x,\
     \ y);\n      cc.unite(x, y);\n      ++bridge;\n    }\n  }\n};\n"
-  code: "#pragma once\n\n#include \"../../structure/union-find/union-find.cpp\"\n\n\
+  code: "#pragma once\n\n#include \"../../structure/union-find/union-find.hpp\"\n\n\
     /**\n * @brief Incremental Bridge Connectivity\n * @docs docs/incremental-bridge-connectivity.md\n\
     \ * @see https://scrapbox.io/data-structures/Incremental_Bridge-Connectivity\n\
     \ */\nstruct IncrementalBridgeConnectivity {\nprivate:\n  UnionFind cc, bcc;\n\
@@ -80,13 +80,13 @@ data:
     \ w);\n    } else {\n      if(cc.size(x) > cc.size(y)) swap(x, y);\n      link(x,\
     \ y);\n      cc.unite(x, y);\n      ++bridge;\n    }\n  }\n};\n"
   dependsOn:
-  - structure/union-find/union-find.cpp
+  - structure/union-find/union-find.hpp
   isVerificationFile: false
   path: graph/connected-components/incremental-bridge-connectivity.hpp
   requiredBy:
   - graph/connected-components/three-edge-connected-components.hpp
-  timestamp: '2022-06-25 18:23:01+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/yosupo-two-edge-connected-components-2.test.cpp
   - test/verify/yosupo-three-edge-connected-components.test.cpp

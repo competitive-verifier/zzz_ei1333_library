@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/z-algorithm.hpp
     title: Z Algorithm
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/zalgorithm
     links:
     - https://judge.yosupo.jp/problem/zalgorithm
   bundledCode: "#line 1 \"test/verify/yosupo-zalgorithm.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/zalgorithm\"\n\n#line 1 \"template/template.cpp\"\
+    \ \"https://judge.yosupo.jp/problem/zalgorithm\"\n\n#line 1 \"template/template.hpp\"\
     \n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -69,17 +69,17 @@ data:
     #line 6 \"test/verify/yosupo-zalgorithm.test.cpp\"\n\nint main() {\n  string s;\n\
     \  cin >> s;\n  cout << ZAlgorithm(s).get() << \"\\n\";\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/zalgorithm\"\n\n#include\
-    \ \"../../template/template.cpp\"\n\n#include \"../../string/z-algorithm.hpp\"\
+    \ \"../../template/template.hpp\"\n\n#include \"../../string/z-algorithm.hpp\"\
     \n\nint main() {\n  string s;\n  cin >> s;\n  cout << ZAlgorithm(s).get() << \"\
     \\n\";\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - string/z-algorithm.hpp
   isVerificationFile: true
   path: test/verify/yosupo-zalgorithm.test.cpp
   requiredBy: []
-  timestamp: '2022-03-30 22:01:37+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-zalgorithm.test.cpp
 layout: document

@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: structure/heap/leftist-heap.cpp
+  - icon: ':x:'
+    path: structure/heap/leftist-heap.hpp
     title: Leftist-Heap
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_9_C
@@ -19,7 +19,7 @@ data:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_9_C
   bundledCode: "#line 1 \"test/verify/aoj-alds-1-9-c.test.cpp\"\n#define PROBLEM \"\
     http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_9_C\"\n\n#line\
-    \ 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
+    \ 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
     \nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll = (1LL\
     \ << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -46,7 +46,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-alds-1-9-c.test.cpp\"\
-    \n\n#line 1 \"structure/heap/leftist-heap.cpp\"\n/**\n * @brief Leftist-Heap\n\
+    \n\n#line 1 \"structure/heap/leftist-heap.hpp\"\n/**\n * @brief Leftist-Heap\n\
     \ */\ntemplate< typename T, bool isMin = true >\nstruct LeftistHeap {\n  struct\
     \ Node {\n    Node *l, *r;\n    int s;\n    T key;\n    int idx;\n\n    explicit\
     \ Node(const T &key, int idx) : key(key), s(1), l(nullptr), r(nullptr), idx(idx)\
@@ -65,20 +65,20 @@ data:
     \ {\n      cout << root->key << \"\\n\";\n      root = que.pop(root);\n    }\n\
     \  }\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_9_C\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../structure/heap/leftist-heap.cpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../structure/heap/leftist-heap.hpp\"\
     \n\nint main() {\n  string s;\n  LeftistHeap< int, false > que;\n  auto root =\
     \ que.make_root();\n  while(cin >> s, s != \"end\") {\n    if(s == \"insert\"\
     ) {\n      int x;\n      cin >> x;\n      root = que.push(root, x);\n    } else\
     \ {\n      cout << root->key << \"\\n\";\n      root = que.pop(root);\n    }\n\
     \  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - structure/heap/leftist-heap.cpp
+  - template/template.hpp
+  - structure/heap/leftist-heap.hpp
   isVerificationFile: true
   path: test/verify/aoj-alds-1-9-c.test.cpp
   requiredBy: []
-  timestamp: '2021-05-01 00:06:55+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/aoj-alds-1-9-c.test.cpp
 layout: document

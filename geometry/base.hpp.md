@@ -1,0 +1,246 @@
+---
+data:
+  _extendedDependsOn: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: geometry/angle.hpp
+    title: geometry/angle.hpp
+  - icon: ':x:'
+    path: geometry/area.hpp
+    title: geometry/area.hpp
+  - icon: ':x:'
+    path: geometry/ccw.hpp
+    title: geometry/ccw.hpp
+  - icon: ':x:'
+    path: geometry/circle.hpp
+    title: geometry/circle.hpp
+  - icon: ':x:'
+    path: geometry/common_area_cp.hpp
+    title: geometry/common_area_cp.hpp
+  - icon: ':x:'
+    path: geometry/contains.hpp
+    title: geometry/contains.hpp
+  - icon: ':x:'
+    path: geometry/convex_hull.hpp
+    title: geometry/convex_hull.hpp
+  - icon: ':heavy_check_mark:'
+    path: geometry/convex_polygon_contains.hpp
+    title: geometry/convex_polygon_contains.hpp
+  - icon: ':x:'
+    path: geometry/convex_polygon_cut.hpp
+    title: geometry/convex_polygon_cut.hpp
+  - icon: ':x:'
+    path: geometry/convex_polygon_diameter.hpp
+    title: geometry/convex_polygon_diameter.hpp
+  - icon: ':x:'
+    path: geometry/cross_point_cc.hpp
+    title: geometry/cross_point_cc.hpp
+  - icon: ':x:'
+    path: geometry/cross_point_cl.hpp
+    title: geometry/cross_point_cl.hpp
+  - icon: ':warning:'
+    path: geometry/cross_point_cs.hpp
+    title: geometry/cross_point_cs.hpp
+  - icon: ':x:'
+    path: geometry/cross_point_ll.hpp
+    title: geometry/cross_point_ll.hpp
+  - icon: ':warning:'
+    path: geometry/distance_ll.hpp
+    title: geometry/distance_ll.hpp
+  - icon: ':warning:'
+    path: geometry/distance_lp.hpp
+    title: geometry/distance_lp.hpp
+  - icon: ':warning:'
+    path: geometry/distance_pp.hpp
+    title: geometry/distance_pp.hpp
+  - icon: ':x:'
+    path: geometry/distance_sp.hpp
+    title: geometry/distance_sp.hpp
+  - icon: ':x:'
+    path: geometry/distance_ss.hpp
+    title: geometry/distance_ss.hpp
+  - icon: ':x:'
+    path: geometry/is_convex_polygon.hpp
+    title: geometry/is_convex_polygon.hpp
+  - icon: ':warning:'
+    path: geometry/is_intersect_cl.hpp
+    title: geometry/is_intersect_cl.hpp
+  - icon: ':warning:'
+    path: geometry/is_intersect_cp.hpp
+    title: geometry/is_intersect_cp.hpp
+  - icon: ':x:'
+    path: geometry/is_intersect_cs.hpp
+    title: geometry/is_intersect_cs.hpp
+  - icon: ':warning:'
+    path: geometry/is_intersect_ll.hpp
+    title: geometry/is_intersect_ll.hpp
+  - icon: ':warning:'
+    path: geometry/is_intersect_lp.hpp
+    title: geometry/is_intersect_lp.hpp
+  - icon: ':warning:'
+    path: geometry/is_intersect_ls.hpp
+    title: geometry/is_intersect_ls.hpp
+  - icon: ':x:'
+    path: geometry/is_intersect_sp.hpp
+    title: geometry/is_intersect_sp.hpp
+  - icon: ':x:'
+    path: geometry/is_intersect_ss.hpp
+    title: geometry/is_intersect_ss.hpp
+  - icon: ':x:'
+    path: geometry/is_orthogonal.hpp
+    title: geometry/is_orthogonal.hpp
+  - icon: ':x:'
+    path: geometry/is_parallel.hpp
+    title: geometry/is_parallel.hpp
+  - icon: ':x:'
+    path: geometry/line.hpp
+    title: geometry/line.hpp
+  - icon: ':question:'
+    path: geometry/point.hpp
+    title: geometry/point.hpp
+  - icon: ':question:'
+    path: geometry/polygon.hpp
+    title: geometry/polygon.hpp
+  - icon: ':x:'
+    path: geometry/projection.hpp
+    title: geometry/projection.hpp
+  - icon: ':x:'
+    path: geometry/reflection.hpp
+    title: geometry/reflection.hpp
+  - icon: ':x:'
+    path: geometry/segment.hpp
+    title: geometry/segment.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/verify/aoj-0412.test.cpp
+    title: test/verify/aoj-0412.test.cpp
+  - icon: ':x:'
+    path: test/verify/aoj-cgl-1-a.test.cpp
+    title: test/verify/aoj-cgl-1-a.test.cpp
+  - icon: ':x:'
+    path: test/verify/aoj-cgl-1-b.test.cpp
+    title: test/verify/aoj-cgl-1-b.test.cpp
+  - icon: ':x:'
+    path: test/verify/aoj-cgl-1-c.test.cpp
+    title: test/verify/aoj-cgl-1-c.test.cpp
+  - icon: ':x:'
+    path: test/verify/aoj-cgl-2-a.test.cpp
+    title: test/verify/aoj-cgl-2-a.test.cpp
+  - icon: ':x:'
+    path: test/verify/aoj-cgl-2-b.test.cpp
+    title: test/verify/aoj-cgl-2-b.test.cpp
+  - icon: ':x:'
+    path: test/verify/aoj-cgl-2-c.test.cpp
+    title: test/verify/aoj-cgl-2-c.test.cpp
+  - icon: ':x:'
+    path: test/verify/aoj-cgl-2-d.test.cpp
+    title: test/verify/aoj-cgl-2-d.test.cpp
+  - icon: ':x:'
+    path: test/verify/aoj-cgl-3-a.test.cpp
+    title: test/verify/aoj-cgl-3-a.test.cpp
+  - icon: ':x:'
+    path: test/verify/aoj-cgl-3-b.test.cpp
+    title: test/verify/aoj-cgl-3-b.test.cpp
+  - icon: ':x:'
+    path: test/verify/aoj-cgl-3-c.test.cpp
+    title: test/verify/aoj-cgl-3-c.test.cpp
+  - icon: ':x:'
+    path: test/verify/aoj-cgl-4-a.test.cpp
+    title: test/verify/aoj-cgl-4-a.test.cpp
+  - icon: ':x:'
+    path: test/verify/aoj-cgl-4-b.test.cpp
+    title: test/verify/aoj-cgl-4-b.test.cpp
+  - icon: ':x:'
+    path: test/verify/aoj-cgl-4-c.test.cpp
+    title: test/verify/aoj-cgl-4-c.test.cpp
+  - icon: ':x:'
+    path: test/verify/aoj-cgl-7-d.test.cpp
+    title: test/verify/aoj-cgl-7-d.test.cpp
+  - icon: ':x:'
+    path: test/verify/aoj-cgl-7-e.test.cpp
+    title: test/verify/aoj-cgl-7-e.test.cpp
+  - icon: ':x:'
+    path: test/verify/aoj-cgl-7-h.test.cpp
+    title: test/verify/aoj-cgl-7-h.test.cpp
+  _isVerificationFailed: true
+  _pathExtension: hpp
+  _verificationStatusIcon: ':question:'
+  attributes:
+    links: []
+  bundledCode: "#line 2 \"geometry/base.hpp\"\n\nnamespace geometry {\n  using Real\
+    \ = double;\n  const Real EPS = 1e-8;\n  const Real PI = acos(static_cast< Real\
+    \ >(-1));\n\n  enum {\n    OUT, ON, IN\n  };\n\n  inline int sign(const Real &r)\
+    \ {\n    return r <= -EPS ? -1 : r >= EPS ? 1 : 0;\n  }\n\n  inline bool equals(const\
+    \ Real &a, const Real &b) {\n    return sign(a - b) == 0;\n  }\n}\n"
+  code: "#pragma once\n\nnamespace geometry {\n  using Real = double;\n  const Real\
+    \ EPS = 1e-8;\n  const Real PI = acos(static_cast< Real >(-1));\n\n  enum {\n\
+    \    OUT, ON, IN\n  };\n\n  inline int sign(const Real &r) {\n    return r <=\
+    \ -EPS ? -1 : r >= EPS ? 1 : 0;\n  }\n\n  inline bool equals(const Real &a, const\
+    \ Real &b) {\n    return sign(a - b) == 0;\n  }\n}\n"
+  dependsOn: []
+  isVerificationFile: false
+  path: geometry/base.hpp
+  requiredBy:
+  - geometry/convex_polygon_cut.hpp
+  - geometry/convex_hull.hpp
+  - geometry/projection.hpp
+  - geometry/distance_ll.hpp
+  - geometry/ccw.hpp
+  - geometry/distance_sp.hpp
+  - geometry/is_parallel.hpp
+  - geometry/convex_polygon_diameter.hpp
+  - geometry/is_convex_polygon.hpp
+  - geometry/cross_point_cs.hpp
+  - geometry/is_intersect_cp.hpp
+  - geometry/reflection.hpp
+  - geometry/distance_pp.hpp
+  - geometry/contains.hpp
+  - geometry/is_intersect_cl.hpp
+  - geometry/distance_ss.hpp
+  - geometry/segment.hpp
+  - geometry/cross_point_cl.hpp
+  - geometry/line.hpp
+  - geometry/is_intersect_ls.hpp
+  - geometry/is_orthogonal.hpp
+  - geometry/convex_polygon_contains.hpp
+  - geometry/is_intersect_ll.hpp
+  - geometry/point.hpp
+  - geometry/area.hpp
+  - geometry/cross_point_ll.hpp
+  - geometry/is_intersect_cs.hpp
+  - geometry/is_intersect_ss.hpp
+  - geometry/is_intersect_lp.hpp
+  - geometry/polygon.hpp
+  - geometry/distance_lp.hpp
+  - geometry/is_intersect_sp.hpp
+  - geometry/cross_point_cc.hpp
+  - geometry/angle.hpp
+  - geometry/common_area_cp.hpp
+  - geometry/circle.hpp
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: LIBRARY_SOME_WA
+  verifiedWith:
+  - test/verify/aoj-cgl-7-e.test.cpp
+  - test/verify/aoj-cgl-4-a.test.cpp
+  - test/verify/aoj-cgl-2-b.test.cpp
+  - test/verify/aoj-cgl-2-c.test.cpp
+  - test/verify/aoj-cgl-7-d.test.cpp
+  - test/verify/aoj-cgl-1-a.test.cpp
+  - test/verify/aoj-cgl-2-d.test.cpp
+  - test/verify/aoj-cgl-4-b.test.cpp
+  - test/verify/aoj-cgl-3-c.test.cpp
+  - test/verify/aoj-cgl-4-c.test.cpp
+  - test/verify/aoj-0412.test.cpp
+  - test/verify/aoj-cgl-7-h.test.cpp
+  - test/verify/aoj-cgl-1-c.test.cpp
+  - test/verify/aoj-cgl-1-b.test.cpp
+  - test/verify/aoj-cgl-3-b.test.cpp
+  - test/verify/aoj-cgl-3-a.test.cpp
+  - test/verify/aoj-cgl-2-a.test.cpp
+documentation_of: geometry/base.hpp
+layout: document
+redirect_from:
+- /library/geometry/base.hpp
+- /library/geometry/base.hpp.html
+title: geometry/base.hpp
+---

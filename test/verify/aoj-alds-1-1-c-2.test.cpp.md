@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/number-theory/prime-table.cpp
+  - icon: ':x:'
+    path: math/number-theory/prime-table.hpp
     title: "Prime Table(\u7D20\u6570\u30C6\u30FC\u30D6\u30EB)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C
@@ -19,7 +19,7 @@ data:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C
   bundledCode: "#line 1 \"test/verify/aoj-alds-1-1-c-2.test.cpp\"\n#define PROBLEM\
     \ \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C\"\n\n#line\
-    \ 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
+    \ 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
     \nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll = (1LL\
     \ << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -46,7 +46,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-alds-1-1-c-2.test.cpp\"\
-    \n\n#line 1 \"math/number-theory/prime-table.cpp\"\n/**\n * @brief Prime Table(\u7D20\
+    \n\n#line 1 \"math/number-theory/prime-table.hpp\"\n/**\n * @brief Prime Table(\u7D20\
     \u6570\u30C6\u30FC\u30D6\u30EB)\n * @docs docs/prime-table.md\n */\nvector< bool\
     \ > prime_table(int n) {\n  vector< bool > prime(n + 1, true);\n  if(n >= 0) prime[0]\
     \ = false;\n  if(n >= 1) prime[1] = false;\n  for(int i = 2; i * i <= n; i++)\
@@ -56,18 +56,18 @@ data:
     \  int ret = 0;\n  while(N--) {\n    int x;\n    cin >> x;\n    ret += t[x];\n\
     \  }\n  cout << ret << endl;\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../math/number-theory/prime-table.cpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../math/number-theory/prime-table.hpp\"\
     \n\nint main() {\n  auto t = prime_table(100000000);\n  int N;\n  cin >> N;\n\
     \  int ret = 0;\n  while(N--) {\n    int x;\n    cin >> x;\n    ret += t[x];\n\
     \  }\n  cout << ret << endl;\n}\n"
   dependsOn:
-  - template/template.cpp
-  - math/number-theory/prime-table.cpp
+  - template/template.hpp
+  - math/number-theory/prime-table.hpp
   isVerificationFile: true
   path: test/verify/aoj-alds-1-1-c-2.test.cpp
   requiredBy: []
-  timestamp: '2021-07-13 22:13:38+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/aoj-alds-1-1-c-2.test.cpp
 layout: document

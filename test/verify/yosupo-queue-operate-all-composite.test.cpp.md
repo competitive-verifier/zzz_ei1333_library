@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/combinatorics/mod-int.cpp
-    title: math/combinatorics/mod-int.cpp
-  - icon: ':heavy_check_mark:'
-    path: structure/others/sliding-window-aggregation.cpp
-    title: structure/others/sliding-window-aggregation.cpp
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: math/combinatorics/mod-int.hpp
+    title: math/combinatorics/mod-int.hpp
+  - icon: ':x:'
+    path: structure/others/sliding-window-aggregation.hpp
+    title: structure/others/sliding-window-aggregation.hpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/queue_operate_all_composite
@@ -22,7 +22,7 @@ data:
     - https://judge.yosupo.jp/problem/queue_operate_all_composite
   bundledCode: "#line 1 \"test/verify/yosupo-queue-operate-all-composite.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/queue_operate_all_composite\"\
-    \n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -49,7 +49,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-queue-operate-all-composite.test.cpp\"\
-    \n\n#line 1 \"math/combinatorics/mod-int.cpp\"\ntemplate< int mod >\nstruct ModInt\
+    \n\n#line 1 \"math/combinatorics/mod-int.hpp\"\ntemplate< int mod >\nstruct ModInt\
     \ {\n  int x;\n\n  ModInt() : x(0) {}\n\n  ModInt(int64_t y) : x(y >= 0 ? y %\
     \ mod : (mod - (-y) % mod) % mod) {}\n\n  ModInt &operator+=(const ModInt &p)\
     \ {\n    if((x += p.x) >= mod) x -= mod;\n    return *this;\n  }\n\n  ModInt &operator-=(const\
@@ -72,7 +72,7 @@ data:
     \  friend istream &operator>>(istream &is, ModInt &a) {\n    int64_t t;\n    is\
     \ >> t;\n    a = ModInt< mod >(t);\n    return (is);\n  }\n\n  static int get_mod()\
     \ { return mod; }\n};\n\nusing modint = ModInt< mod >;\n#line 6 \"test/verify/yosupo-queue-operate-all-composite.test.cpp\"\
-    \n\n#line 1 \"structure/others/sliding-window-aggregation.cpp\"\ntemplate< typename\
+    \n\n#line 1 \"structure/others/sliding-window-aggregation.hpp\"\ntemplate< typename\
     \ SemiGroup >\nstruct SlidingWindowAggregation {\n  using F = function< SemiGroup(SemiGroup,\
     \ SemiGroup) >;\n \n  struct Node {\n    SemiGroup val, sum;\n \n    Node(const\
     \ SemiGroup &val, const SemiGroup &sum) : val(val), sum(sum) {}\n  };\n \n  SlidingWindowAggregation(F\
@@ -97,8 +97,8 @@ data:
     \   cout << x << \"\\n\";\n      } else {\n        auto s = swa.fold_all();\n\
     \        cout << s.first * x + s.second << \"\\n\";\n      }\n    }\n  }\n}\n\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/queue_operate_all_composite\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../math/combinatorics/mod-int.cpp\"\
-    \n\n#include \"../../structure/others/sliding-window-aggregation.cpp\"\n\nconst\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../math/combinatorics/mod-int.hpp\"\
+    \n\n#include \"../../structure/others/sliding-window-aggregation.hpp\"\n\nconst\
     \ int MOD = 998244353;\nusing mint = ModInt< MOD >;\n\nint main() {\n  int Q;\n\
     \  cin >> Q;\n  using pi = pair< mint, mint >;\n  auto f = [](const pi &a, const\
     \ pi &b) -> pi {\n    return {a.first * b.first, a.second * b.first + b.second};\n\
@@ -109,14 +109,14 @@ data:
     \ x << \"\\n\";\n      } else {\n        auto s = swa.fold_all();\n        cout\
     \ << s.first * x + s.second << \"\\n\";\n      }\n    }\n  }\n}\n\n"
   dependsOn:
-  - template/template.cpp
-  - math/combinatorics/mod-int.cpp
-  - structure/others/sliding-window-aggregation.cpp
+  - template/template.hpp
+  - math/combinatorics/mod-int.hpp
+  - structure/others/sliding-window-aggregation.hpp
   isVerificationFile: true
   path: test/verify/yosupo-queue-operate-all-composite.test.cpp
   requiredBy: []
-  timestamp: '2021-05-01 00:06:55+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-queue-operate-all-composite.test.cpp
 layout: document

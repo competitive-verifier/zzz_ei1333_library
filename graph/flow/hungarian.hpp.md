@@ -1,26 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/matrix/matrix.cpp
-    title: math/matrix/matrix.cpp
+  - icon: ':question:'
+    path: math/matrix/matrix.hpp
+    title: math/matrix/matrix.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-1163.test.cpp
     title: test/verify/aoj-1163.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yosupo-assignment.test.cpp
     title: test/verify/yosupo-assignment.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: docs/hungarian.md
     document_title: "Hungarian(\u4E8C\u90E8\u30B0\u30E9\u30D5\u306E\u6700\u5C0F\u91CD\
       \u307F\u6700\u5927\u30DE\u30C3\u30C1\u30F3\u30B0)"
     links: []
-  bundledCode: "#line 1 \"math/matrix/matrix.cpp\"\ntemplate< class T >\nstruct Matrix\
+  bundledCode: "#line 1 \"math/matrix/matrix.hpp\"\ntemplate< class T >\nstruct Matrix\
     \ {\n  vector< vector< T > > A;\n\n  Matrix() {}\n\n  Matrix(size_t n, size_t\
     \ m) : A(n, vector< T >(m, 0)) {}\n\n  Matrix(size_t n) : A(n, vector< T >(n,\
     \ 0)) {};\n\n  size_t size() const {\n     if(A.empty()) return 0;\n     assert(A.size()\
@@ -76,7 +76,7 @@ data:
     \ -= delta;\n        else minV[j] -= delta;\n      }\n      j0 = j1;\n    }\n\
     \    do {\n      P[j0] = P[way[j0]];\n      j0 = way[j0];\n    } while(j0 != 0);\n\
     \  }\n  return {-V[0], P};\n}\n"
-  code: "#include \"../../math/matrix/matrix.cpp\"\n\n/**\n * @brief Hungarian(\u4E8C\
+  code: "#include \"../../math/matrix/matrix.hpp\"\n\n/**\n * @brief Hungarian(\u4E8C\
     \u90E8\u30B0\u30E9\u30D5\u306E\u6700\u5C0F\u91CD\u307F\u6700\u5927\u30DE\u30C3\
     \u30C1\u30F3\u30B0)\n * @docs docs/hungarian.md\n */\ntemplate< typename T >\n\
     pair< T, vector< int > > hungarian(Matrix< T > &A) {\n  const T infty = numeric_limits<\
@@ -93,12 +93,12 @@ data:
     \    do {\n      P[j0] = P[way[j0]];\n      j0 = way[j0];\n    } while(j0 != 0);\n\
     \  }\n  return {-V[0], P};\n}\n"
   dependsOn:
-  - math/matrix/matrix.cpp
+  - math/matrix/matrix.hpp
   isVerificationFile: false
   path: graph/flow/hungarian.hpp
   requiredBy: []
-  timestamp: '2021-07-16 00:30:06+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/verify/yosupo-assignment.test.cpp
   - test/verify/aoj-1163.test.cpp

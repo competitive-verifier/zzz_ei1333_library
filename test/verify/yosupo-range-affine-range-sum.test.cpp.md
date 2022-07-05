@@ -1,21 +1,21 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/combinatorics/mod-int.cpp
-    title: math/combinatorics/mod-int.cpp
-  - icon: ':heavy_check_mark:'
-    path: structure/segment-tree/lazy-segment-tree.cpp
+  - icon: ':question:'
+    path: math/combinatorics/mod-int.hpp
+    title: math/combinatorics/mod-int.hpp
+  - icon: ':question:'
+    path: structure/segment-tree/lazy-segment-tree.hpp
     title: "Lazy-Segment-Tree(\u9045\u5EF6\u4F1D\u642C\u30BB\u30B0\u30E1\u30F3\u30C8\
       \u6728)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/range_affine_range_sum
@@ -23,7 +23,7 @@ data:
     - https://judge.yosupo.jp/problem/range_affine_range_sum
   bundledCode: "#line 1 \"test/verify/yosupo-range-affine-range-sum.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/range_affine_range_sum\"\n\n#line\
-    \ 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
+    \ 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
     \nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll = (1LL\
     \ << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -50,7 +50,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-range-affine-range-sum.test.cpp\"\
-    \n\n#line 1 \"math/combinatorics/mod-int.cpp\"\ntemplate< int mod >\nstruct ModInt\
+    \n\n#line 1 \"math/combinatorics/mod-int.hpp\"\ntemplate< int mod >\nstruct ModInt\
     \ {\n  int x;\n\n  ModInt() : x(0) {}\n\n  ModInt(int64_t y) : x(y >= 0 ? y %\
     \ mod : (mod - (-y) % mod) % mod) {}\n\n  ModInt &operator+=(const ModInt &p)\
     \ {\n    if((x += p.x) >= mod) x -= mod;\n    return *this;\n  }\n\n  ModInt &operator-=(const\
@@ -73,7 +73,7 @@ data:
     \  friend istream &operator>>(istream &is, ModInt &a) {\n    int64_t t;\n    is\
     \ >> t;\n    a = ModInt< mod >(t);\n    return (is);\n  }\n\n  static int get_mod()\
     \ { return mod; }\n};\n\nusing modint = ModInt< mod >;\n#line 6 \"test/verify/yosupo-range-affine-range-sum.test.cpp\"\
-    \n\n#line 1 \"structure/segment-tree/lazy-segment-tree.cpp\"\n/**\n * @brief Lazy-Segment-Tree(\u9045\
+    \n\n#line 1 \"structure/segment-tree/lazy-segment-tree.hpp\"\n/**\n * @brief Lazy-Segment-Tree(\u9045\
     \u5EF6\u4F1D\u642C\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)\n * @docs docs/lazy-segment-tree.md\n\
     \ */\ntemplate< typename T, typename E, typename F, typename G, typename H >\n\
     struct LazySegmentTree {\nprivate:\n  int n{}, sz{}, height{};\n  vector< T >\
@@ -149,8 +149,8 @@ data:
     \ {\n      int l, r;\n      cin >> l >> r;\n      cout << seg.prod(l, r).first\
     \ << \"\\n\";\n    }\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_range_sum\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../math/combinatorics/mod-int.cpp\"\
-    \n\n#include \"../../structure/segment-tree/lazy-segment-tree.cpp\"\n\nusing mint\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../math/combinatorics/mod-int.hpp\"\
+    \n\n#include \"../../structure/segment-tree/lazy-segment-tree.hpp\"\n\nusing mint\
     \ = ModInt< 998244353 >;\n\nint main() {\n  int N, Q;\n  cin >> N >> Q;\n  using\
     \ pi = pair< mint, int >;\n  using qi = pair< mint, mint >;\n  auto f = [](const\
     \ pi &a, const pi &b) -> pi {\n    return {a.first + b.first, a.second + b.second};\n\
@@ -165,14 +165,14 @@ data:
     \ l, r;\n      cin >> l >> r;\n      cout << seg.prod(l, r).first << \"\\n\";\n\
     \    }\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - math/combinatorics/mod-int.cpp
-  - structure/segment-tree/lazy-segment-tree.cpp
+  - template/template.hpp
+  - math/combinatorics/mod-int.hpp
+  - structure/segment-tree/lazy-segment-tree.hpp
   isVerificationFile: true
   path: test/verify/yosupo-range-affine-range-sum.test.cpp
   requiredBy: []
-  timestamp: '2022-02-15 22:44:36+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-range-affine-range-sum.test.cpp
 layout: document

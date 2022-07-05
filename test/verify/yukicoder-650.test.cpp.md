@@ -1,36 +1,36 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/tree/heavy-light-decomposition.hpp
     title: "Heavy-Light-Decomposition(HL\u5206\u89E3)"
-  - icon: ':heavy_check_mark:'
-    path: math/combinatorics/mod-int.cpp
-    title: math/combinatorics/mod-int.cpp
-  - icon: ':heavy_check_mark:'
-    path: math/matrix/square-matrix.cpp
+  - icon: ':question:'
+    path: math/combinatorics/mod-int.hpp
+    title: math/combinatorics/mod-int.hpp
+  - icon: ':question:'
+    path: math/matrix/square-matrix.hpp
     title: "Square-Matrix(\u6B63\u65B9\u884C\u5217)"
-  - icon: ':heavy_check_mark:'
-    path: structure/segment-tree/segment-tree.cpp
+  - icon: ':x:'
+    path: structure/segment-tree/segment-tree.hpp
     title: "Segment Tree(\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/650
     links:
     - https://yukicoder.me/problems/no/650
   bundledCode: "#line 1 \"test/verify/yukicoder-650.test.cpp\"\n#define PROBLEM \"\
-    https://yukicoder.me/problems/no/650\"\n\n#line 1 \"template/template.cpp\"\n\
+    https://yukicoder.me/problems/no/650\"\n\n#line 1 \"template/template.hpp\"\n\
     #include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -119,7 +119,7 @@ data:
     \    rev[in[idx]] = idx;\n    for(auto &to : g[idx]) {\n      if(to == p) continue;\n\
     \      head[to] = (g[idx][0] == to ? head[idx] : to);\n      dfs_hld(to, idx,\
     \ times);\n    }\n    out[idx] = times;\n  }\n};\n#line 6 \"test/verify/yukicoder-650.test.cpp\"\
-    \n\n#line 1 \"structure/segment-tree/segment-tree.cpp\"\n/**\n * @brief Segment\
+    \n\n#line 1 \"structure/segment-tree/segment-tree.hpp\"\n/**\n * @brief Segment\
     \ Tree(\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)\n * @docs docs/segment-tree.md\n\
     \ */\ntemplate< typename T, typename F >\nstruct SegmentTree {\n  int n, sz;\n\
     \  vector< T > seg;\n\n  const F f;\n  const T ti;\n\n  SegmentTree() = default;\n\
@@ -156,7 +156,7 @@ data:
     \ F > get_segment_tree(int N, const F &f, const T &ti) {\n  return SegmentTree{N,\
     \ f, ti};\n}\n\ntemplate< typename T, typename F >\nSegmentTree< T, F > get_segment_tree(const\
     \ vector< T > &v, const F &f, const T &ti) {\n  return SegmentTree{v, f, ti};\n\
-    }\n#line 8 \"test/verify/yukicoder-650.test.cpp\"\n\n#line 1 \"math/combinatorics/mod-int.cpp\"\
+    }\n#line 8 \"test/verify/yukicoder-650.test.cpp\"\n\n#line 1 \"math/combinatorics/mod-int.hpp\"\
     \ntemplate< int mod >\nstruct ModInt {\n  int x;\n\n  ModInt() : x(0) {}\n\n \
     \ ModInt(int64_t y) : x(y >= 0 ? y % mod : (mod - (-y) % mod) % mod) {}\n\n  ModInt\
     \ &operator+=(const ModInt &p) {\n    if((x += p.x) >= mod) x -= mod;\n    return\
@@ -179,7 +179,7 @@ data:
     \    return os << p.x;\n  }\n\n  friend istream &operator>>(istream &is, ModInt\
     \ &a) {\n    int64_t t;\n    is >> t;\n    a = ModInt< mod >(t);\n    return (is);\n\
     \  }\n\n  static int get_mod() { return mod; }\n};\n\nusing modint = ModInt< mod\
-    \ >;\n#line 1 \"math/matrix/square-matrix.cpp\"\n/**\n * @brief Square-Matrix(\u6B63\
+    \ >;\n#line 1 \"math/matrix/square-matrix.hpp\"\n/**\n * @brief Square-Matrix(\u6B63\
     \u65B9\u884C\u5217)\n */\ntemplate< class T, size_t N >\nstruct SquareMatrix {\n\
     \  array< array< T, N >, N > A;\n\n  SquareMatrix() : A{{}} {}\n\n  size_t size()\
     \ const { return N; }\n\n  inline const array< T, N > &operator[](int k) const\
@@ -221,10 +221,10 @@ data:
     \ b) { return seg.prod(a, b); }, f, true);\n      cout << mat[0][0] << \" \" <<\
     \ mat[0][1] << \" \" << mat[1][0] << \" \" << mat[1][1] << \"\\n\";\n    }\n \
     \ }\n}\n"
-  code: "#define PROBLEM \"https://yukicoder.me/problems/no/650\"\n\n#include \"../../template/template.cpp\"\
+  code: "#define PROBLEM \"https://yukicoder.me/problems/no/650\"\n\n#include \"../../template/template.hpp\"\
     \n\n#include \"../../graph/tree/heavy-light-decomposition.hpp\"\n\n#include \"\
-    ../../structure/segment-tree/segment-tree.cpp\"\n\n#include \"../../math/combinatorics/mod-int.cpp\"\
-    \n#include \"../../math/matrix/square-matrix.cpp\"\n\nint main() {\n  int N;\n\
+    ../../structure/segment-tree/segment-tree.hpp\"\n\n#include \"../../math/combinatorics/mod-int.hpp\"\
+    \n#include \"../../math/matrix/square-matrix.hpp\"\n\nint main() {\n  int N;\n\
     \  cin >> N;\n  vector< int > X(N), Y(N);\n  HeavyLightDecomposition<> g(N);\n\
     \  for(int i = 1; i < N; i++) {\n    cin >> X[i] >> Y[i];\n    g.add_edge(X[i],\
     \ Y[i]);\n  }\n  g.build();\n  for(int i = 1; i < N; i++) {\n    if(g.in[X[i]]\
@@ -239,17 +239,17 @@ data:
     \ mat[0][1] << \" \" << mat[1][0] << \" \" << mat[1][1] << \"\\n\";\n    }\n \
     \ }\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - graph/tree/heavy-light-decomposition.hpp
   - graph/graph-template.hpp
-  - structure/segment-tree/segment-tree.cpp
-  - math/combinatorics/mod-int.cpp
-  - math/matrix/square-matrix.cpp
+  - structure/segment-tree/segment-tree.hpp
+  - math/combinatorics/mod-int.hpp
+  - math/matrix/square-matrix.hpp
   isVerificationFile: true
   path: test/verify/yukicoder-650.test.cpp
   requiredBy: []
-  timestamp: '2022-02-15 22:44:36+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yukicoder-650.test.cpp
 layout: document

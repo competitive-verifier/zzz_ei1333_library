@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: structure/convex-hull-trick/convex-hull-trick-add-monotone.cpp
+  - icon: ':x:'
+    path: structure/convex-hull-trick/convex-hull-trick-add-monotone.hpp
     title: Convex Hull Trick Add Monotone
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/952
     links:
     - https://yukicoder.me/problems/no/952
   bundledCode: "#line 1 \"test/verify/yukicoder-952.test.cpp\"\n#define PROBLEM \"\
-    https://yukicoder.me/problems/no/952\"\n\n#line 1 \"template/template.cpp\"\n\
+    https://yukicoder.me/problems/no/952\"\n\n#line 1 \"template/template.hpp\"\n\
     #include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -46,7 +46,7 @@ data:
     \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yukicoder-952.test.cpp\"\
-    \n\n#line 1 \"structure/convex-hull-trick/convex-hull-trick-add-monotone.cpp\"\
+    \n\n#line 1 \"structure/convex-hull-trick/convex-hull-trick-add-monotone.hpp\"\
     \n/**\n * @brief Convex Hull Trick Add Monotone\n * @docs docs/convex-hull-trick-add-monotone.md\n\
     */\ntemplate< typename T, bool isMin >\nstruct ConvexHullTrickAddMonotone {\n\
     #define F first\n#define S second\n  using P = pair< T, T >;\n  deque< P > H;\n\
@@ -90,8 +90,8 @@ data:
     \ = min(dp[i - 1][j], dp2[i][j]);\n      if(dp[i][j] != infll) chts[j - i + Shift].add(S[i],\
     \ dp[i][j] + S[i] * S[i]);\n    }\n  }\n\n  for(int i = 1; i <= N; i++) {\n  \
     \  cout << dp[N + 1][i] << endl;\n  }\n}\n"
-  code: "#define PROBLEM \"https://yukicoder.me/problems/no/952\"\n\n#include \"../../template/template.cpp\"\
-    \n\n#include \"../../structure/convex-hull-trick/convex-hull-trick-add-monotone.cpp\"\
+  code: "#define PROBLEM \"https://yukicoder.me/problems/no/952\"\n\n#include \"../../template/template.hpp\"\
+    \n\n#include \"../../structure/convex-hull-trick/convex-hull-trick-add-monotone.hpp\"\
     \n\nint main() {\n  int N;\n  cin >> N;\n  vector< int > A(N);\n  cin >> A;\n\
     \  vector< int64 > S(N + 2);\n  for(int i = 0; i < N; i++) {\n    S[i + 1] = S[i]\
     \ + A[i];\n  }\n\n  auto dp = make_v< int64 >(N + 2, N + 1);\n  auto dp2 = make_v<\
@@ -105,13 +105,13 @@ data:
     \ dp[i][j] + S[i] * S[i]);\n    }\n  }\n\n  for(int i = 1; i <= N; i++) {\n  \
     \  cout << dp[N + 1][i] << endl;\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - structure/convex-hull-trick/convex-hull-trick-add-monotone.cpp
+  - template/template.hpp
+  - structure/convex-hull-trick/convex-hull-trick-add-monotone.hpp
   isVerificationFile: true
   path: test/verify/yukicoder-952.test.cpp
   requiredBy: []
-  timestamp: '2022-04-11 23:46:03+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yukicoder-952.test.cpp
 layout: document

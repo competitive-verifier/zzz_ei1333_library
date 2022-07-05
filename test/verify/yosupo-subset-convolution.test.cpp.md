@@ -1,26 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/combinatorics/montgomery-mod-int.cpp
+  - icon: ':x:'
+    path: math/combinatorics/montgomery-mod-int.hpp
     title: Montgomery ModInt
-  - icon: ':heavy_check_mark:'
-    path: math/fft/subset-convolution.cpp
+  - icon: ':x:'
+    path: math/fft/subset-convolution.hpp
     title: Subset Convolution
-  - icon: ':heavy_check_mark:'
-    path: other/printer.cpp
+  - icon: ':x:'
+    path: other/printer.hpp
     title: "Printer(\u9AD8\u901F\u51FA\u529B)"
-  - icon: ':heavy_check_mark:'
-    path: other/scanner.cpp
+  - icon: ':x:'
+    path: other/scanner.hpp
     title: "Scanner(\u9AD8\u901F\u5165\u529B)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/subset_convolution
@@ -28,7 +28,7 @@ data:
     - https://judge.yosupo.jp/problem/subset_convolution
   bundledCode: "#line 1 \"test/verify/yosupo-subset-convolution.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/subset_convolution\"\n\n#line 1 \"\
-    template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing\
+    template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing\
     \ int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll = (1LL <<\
     \ 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n\
     \    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed <<\
@@ -55,7 +55,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-subset-convolution.test.cpp\"\
-    \n\n#line 1 \"math/fft/subset-convolution.cpp\"\n/**\n * @brief Subset Convolution\n\
+    \n\n#line 1 \"math/fft/subset-convolution.hpp\"\n/**\n * @brief Subset Convolution\n\
     */\ntemplate< typename Mint, int _s >\nstruct SubsetConvolution {\n  using fps\
     \ = array< Mint, _s + 1 >;\n  static array< int, (1 << _s) > pop_count;\n  static\
     \ constexpr int s = _s;\n\n  SubsetConvolution() = default;\n\n  static void init()\
@@ -89,7 +89,7 @@ data:
     \    zeta_transform(G);\n    prod(F, G);\n    moebius_transform(F);\n    return\
     \ unlift(F);\n  }\n};\n\ntemplate< typename Mint, int s >\narray< int, (1 << s)\
     \ > SubsetConvolution< Mint, s >::pop_count;\n#line 6 \"test/verify/yosupo-subset-convolution.test.cpp\"\
-    \n\n#line 1 \"math/combinatorics/montgomery-mod-int.cpp\"\n/**\n * @brief Montgomery\
+    \n\n#line 1 \"math/combinatorics/montgomery-mod-int.hpp\"\n/**\n * @brief Montgomery\
     \ ModInt\n */\ntemplate< uint32_t mod, bool fast = false >\nstruct MontgomeryModInt\
     \ {\n  using mint = MontgomeryModInt;\n  using i32 = int32_t;\n  using i64 = int64_t;\n\
     \  using u32 = uint32_t;\n  using u64 = uint64_t;\n\n  static constexpr u32 get_r()\
@@ -122,7 +122,7 @@ data:
     \ &a) {\n    i64 t;\n    is >> t;\n    a = mint(t);\n    return is;\n  }\n\n \
     \ static u32 get_mod() { return mod; }\n};\n\nusing modint = MontgomeryModInt<\
     \ mod >;\n#line 8 \"test/verify/yosupo-subset-convolution.test.cpp\"\n\n#line\
-    \ 1 \"other/scanner.cpp\"\n/**\n * @brief Scanner(\u9AD8\u901F\u5165\u529B)\n\
+    \ 1 \"other/scanner.hpp\"\n/**\n * @brief Scanner(\u9AD8\u901F\u5165\u529B)\n\
     \ */\nstruct Scanner {\npublic:\n\n  explicit Scanner(FILE *fp) : fp(fp) {}\n\n\
     \  template< typename T, typename... E >\n  void read(T &t, E &... e) {\n    read_single(t);\n\
     \    read(e...);\n  }\n\nprivate:\n  static constexpr size_t line_size = 1 <<\
@@ -144,7 +144,7 @@ data:
     \ = st;\n      while(*st && !is_space(*st)) ++st;\n      s += string(base, st);\n\
     \      if(st != ed) return;\n      reread();\n    }\n  }\n\n  template< typename\
     \ T >\n  void read_single(vector< T > &s) {\n    for(auto &d : s) read(d);\n \
-    \ }\n};\n#line 1 \"other/printer.cpp\"\n/**\n * @brief Printer(\u9AD8\u901F\u51FA\
+    \ }\n};\n#line 1 \"other/printer.hpp\"\n/**\n * @brief Printer(\u9AD8\u901F\u51FA\
     \u529B)\n */\nstruct Printer {\npublic:\n  explicit Printer(FILE *fp) : fp(fp)\
     \ {}\n\n  ~Printer() { flush(); }\n\n  template< bool f = false, typename T, typename...\
     \ E >\n  void write(const T &t, const E &... e) {\n    if(f) write_single(' ');\n\
@@ -171,9 +171,9 @@ data:
     \  for(auto &a : h) {\n    out.write(a.get());\n    out.write(' ');\n  }\n  out.writeln();\n\
     }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/subset_convolution\"\n\n\
-    #include \"../../template/template.cpp\"\n\n#include \"../../math/fft/subset-convolution.cpp\"\
-    \n\n#include \"../../math/combinatorics/montgomery-mod-int.cpp\"\n\n#include \"\
-    ../../other/scanner.cpp\"\n#include \"../../other/printer.cpp\"\n\nconst int MOD\
+    #include \"../../template/template.hpp\"\n\n#include \"../../math/fft/subset-convolution.hpp\"\
+    \n\n#include \"../../math/combinatorics/montgomery-mod-int.hpp\"\n\n#include \"\
+    ../../other/scanner.hpp\"\n#include \"../../other/printer.hpp\"\n\nconst int MOD\
     \ = 998244353;\nusing mint = MontgomeryModInt< MOD, true >;\n\nint main() {\n\
     \  Scanner in(stdin);\n  Printer out(stdout);\n  int N;\n  in.read(N);\n  vector<\
     \ mint > f(1 << N), g(1 << N);\n  for(auto &a : f) {\n    int x;\n    in.read(x);\n\
@@ -182,16 +182,16 @@ data:
     \ : h) {\n    out.write(a.get());\n    out.write(' ');\n  }\n  out.writeln();\n\
     }\n"
   dependsOn:
-  - template/template.cpp
-  - math/fft/subset-convolution.cpp
-  - math/combinatorics/montgomery-mod-int.cpp
-  - other/scanner.cpp
-  - other/printer.cpp
+  - template/template.hpp
+  - math/fft/subset-convolution.hpp
+  - math/combinatorics/montgomery-mod-int.hpp
+  - other/scanner.hpp
+  - other/printer.hpp
   isVerificationFile: true
   path: test/verify/yosupo-subset-convolution.test.cpp
   requiredBy: []
-  timestamp: '2021-08-31 21:10:51+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-subset-convolution.test.cpp
 layout: document

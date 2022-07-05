@@ -1,27 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/combinatorics/montgomery-mod-int.cpp
+  - icon: ':x:'
+    path: math/combinatorics/montgomery-mod-int.hpp
     title: Montgomery ModInt
-  - icon: ':heavy_check_mark:'
-    path: math/fft/number-theoretic-transform-friendly-mod-int.cpp
+  - icon: ':x:'
+    path: math/fft/number-theoretic-transform-friendly-mod-int.hpp
     title: Number Theoretic Transform Friendly ModInt
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/convolution_mod
     links:
     - https://judge.yosupo.jp/problem/convolution_mod
   bundledCode: "#line 1 \"test/verify/yosupo-convolution-mod-2.test.cpp\"\n#define\
-    \ PROBLEM \"https://judge.yosupo.jp/problem/convolution_mod\"\n\n#line 1 \"template/template.cpp\"\
+    \ PROBLEM \"https://judge.yosupo.jp/problem/convolution_mod\"\n\n#line 1 \"template/template.hpp\"\
     \n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -49,7 +49,7 @@ data:
     \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-convolution-mod-2.test.cpp\"\
-    \n\n#line 1 \"math/combinatorics/montgomery-mod-int.cpp\"\n/**\n * @brief Montgomery\
+    \n\n#line 1 \"math/combinatorics/montgomery-mod-int.hpp\"\n/**\n * @brief Montgomery\
     \ ModInt\n */\ntemplate< uint32_t mod, bool fast = false >\nstruct MontgomeryModInt\
     \ {\n  using mint = MontgomeryModInt;\n  using i32 = int32_t;\n  using i64 = int64_t;\n\
     \  using u32 = uint32_t;\n  using u64 = uint64_t;\n\n  static constexpr u32 get_r()\
@@ -81,7 +81,7 @@ data:
     \   return os << p.get();\n  }\n\n  friend istream &operator>>(istream &is, mint\
     \ &a) {\n    i64 t;\n    is >> t;\n    a = mint(t);\n    return is;\n  }\n\n \
     \ static u32 get_mod() { return mod; }\n};\n\nusing modint = MontgomeryModInt<\
-    \ mod >;\n#line 1 \"math/fft/number-theoretic-transform-friendly-mod-int.cpp\"\
+    \ mod >;\n#line 1 \"math/fft/number-theoretic-transform-friendly-mod-int.hpp\"\
     \n/**\n * @brief Number Theoretic Transform Friendly ModInt\n */\ntemplate< typename\
     \ Mint >\nstruct NumberTheoreticTransformFriendlyModInt {\n\n  static vector<\
     \ Mint > roots, iroots, rate3, irate3;\n  static int max_base;\n\n  NumberTheoreticTransformFriendlyModInt()\
@@ -166,22 +166,22 @@ data:
     \ mint > ntt;\n  for(auto &c : ntt.multiply(A, B)) cout << c << \" \";\n  cout\
     \ << endl;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/convolution_mod\"\n\n#include\
-    \ \"../../template/template.cpp\"\n\n#include \"../../math/combinatorics/montgomery-mod-int.cpp\"\
-    \n#include \"../../math/fft/number-theoretic-transform-friendly-mod-int.cpp\"\n\
+    \ \"../../template/template.hpp\"\n\n#include \"../../math/combinatorics/montgomery-mod-int.hpp\"\
+    \n#include \"../../math/fft/number-theoretic-transform-friendly-mod-int.hpp\"\n\
     \nconst int MOD = 998244353;\nusing mint = MontgomeryModInt< MOD, true >;\n\n\
     int main() {\n  int N, M;\n  cin >> N >> M;\n  vector< mint > A(N), B(M);\n  for(auto\
     \ &a : A) cin >> a;\n  for(auto &b : B) cin >> b;\n  NumberTheoreticTransformFriendlyModInt<\
     \ mint > ntt;\n  for(auto &c : ntt.multiply(A, B)) cout << c << \" \";\n  cout\
     \ << endl;\n}\n"
   dependsOn:
-  - template/template.cpp
-  - math/combinatorics/montgomery-mod-int.cpp
-  - math/fft/number-theoretic-transform-friendly-mod-int.cpp
+  - template/template.hpp
+  - math/combinatorics/montgomery-mod-int.hpp
+  - math/fft/number-theoretic-transform-friendly-mod-int.hpp
   isVerificationFile: true
   path: test/verify/yosupo-convolution-mod-2.test.cpp
   requiredBy: []
-  timestamp: '2021-08-17 19:31:02+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-convolution-mod-2.test.cpp
 layout: document

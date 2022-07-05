@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/number-theory/is-prime.cpp
-    title: math/number-theory/is-prime.cpp
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':x:'
+    path: math/number-theory/is-prime.hpp
+    title: math/number-theory/is-prime.hpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C
@@ -19,7 +19,7 @@ data:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C
   bundledCode: "#line 1 \"test/verify/aoj-alds-1-1-c.test.cpp\"\n#define PROBLEM \"\
     http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C\"\n\n#line\
-    \ 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
+    \ 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
     \nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll = (1LL\
     \ << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -46,24 +46,24 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-alds-1-1-c.test.cpp\"\
-    \n\n#line 1 \"math/number-theory/is-prime.cpp\"\nbool is_prime(int64_t x) {\n\
+    \n\n#line 1 \"math/number-theory/is-prime.hpp\"\nbool is_prime(int64_t x) {\n\
     \  for(int64_t i = 2; i * i <= x; i++) {\n    if(x % i == 0) return false;\n \
     \ }\n  return true;\n}\n#line 6 \"test/verify/aoj-alds-1-1-c.test.cpp\"\n\nint\
     \ main() {\n  int N;\n  cin >> N;\n  int ret = 0;\n  while(N--) {\n    int x;\n\
     \    cin >> x;\n    ret += is_prime(x);\n  }\n  cout << ret << endl;\n}\n\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../math/number-theory/is-prime.cpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../math/number-theory/is-prime.hpp\"\
     \n\nint main() {\n  int N;\n  cin >> N;\n  int ret = 0;\n  while(N--) {\n    int\
     \ x;\n    cin >> x;\n    ret += is_prime(x);\n  }\n  cout << ret << endl;\n}\n\
     \n"
   dependsOn:
-  - template/template.cpp
-  - math/number-theory/is-prime.cpp
+  - template/template.hpp
+  - math/number-theory/is-prime.hpp
   isVerificationFile: true
   path: test/verify/aoj-alds-1-1-c.test.cpp
   requiredBy: []
-  timestamp: '2021-05-01 00:06:55+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/aoj-alds-1-1-c.test.cpp
 layout: document

@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: structure/trie/binary-trie.cpp
+  - icon: ':x:'
+    path: structure/trie/binary-trie.hpp
     title: Binary-Trie
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
@@ -19,7 +19,7 @@ data:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
   bundledCode: "#line 1 \"test/verify/aoj-dsl-2-b-2.test.cpp\"\n#define PROBLEM \"\
     http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\n\n#line 1\
-    \ \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
+    \ \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
     \nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll = (1LL\
     \ << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -46,7 +46,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-dsl-2-b-2.test.cpp\"\
-    \n\n#line 1 \"structure/trie/binary-trie.cpp\"\n/**\n * @brief Binary-Trie\n *\
+    \n\n#line 1 \"structure/trie/binary-trie.hpp\"\n/**\n * @brief Binary-Trie\n *\
     \ @docs docs/binary-trie.md\n */\ntemplate< typename T, int MAX_LOG, typename\
     \ D = int >\nstruct BinaryTrie {\npublic:\n  struct Node {\n    Node *nxt[2];\n\
     \    D exist;\n    vector< int > accept;\n\n    Node() : nxt{nullptr, nullptr},\
@@ -92,19 +92,19 @@ data:
     \ -1, y);\n    } else if(c == 1) {\n      cout << bt.count_less(y + 1) - bt.count_less(x)\
     \ << \"\\n\";\n    }\n  }\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../structure/trie/binary-trie.cpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../structure/trie/binary-trie.hpp\"\
     \n\nint main() {\n  int N, Q;\n  cin >> N >> Q;\n  BinaryTrie< int, 20 > bt;\n\
     \  for(int i = 0; i < Q; i++) {\n    int c, x, y;\n    cin >> c >> x >> y;\n \
     \   if(c == 0) {\n      bt.add(x, -1, y);\n    } else if(c == 1) {\n      cout\
     \ << bt.count_less(y + 1) - bt.count_less(x) << \"\\n\";\n    }\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - structure/trie/binary-trie.cpp
+  - template/template.hpp
+  - structure/trie/binary-trie.hpp
   isVerificationFile: true
   path: test/verify/aoj-dsl-2-b-2.test.cpp
   requiredBy: []
-  timestamp: '2021-05-01 00:06:55+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/aoj-dsl-2-b-2.test.cpp
 layout: document

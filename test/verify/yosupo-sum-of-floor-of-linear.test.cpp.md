@@ -1,18 +1,18 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/number-theory/sum-of-floor-of-linear.cpp
+  - icon: ':x:'
+    path: math/number-theory/sum-of-floor-of-linear.hpp
     title: "Sum of Floor of Linear(\u4E00\u6B21\u95A2\u6570\u306E\u5E8A\u95A2\u6570\
       \u306E\u548C)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/sum_of_floor_of_linear
@@ -20,7 +20,7 @@ data:
     - https://judge.yosupo.jp/problem/sum_of_floor_of_linear
   bundledCode: "#line 1 \"test/verify/yosupo-sum-of-floor-of-linear.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/sum_of_floor_of_linear\"\n\n#line\
-    \ 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
+    \ 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
     \nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll = (1LL\
     \ << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -47,7 +47,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-sum-of-floor-of-linear.test.cpp\"\
-    \n\n#line 1 \"math/number-theory/sum-of-floor-of-linear.cpp\"\n/**\n * @brief\
+    \n\n#line 1 \"math/number-theory/sum-of-floor-of-linear.hpp\"\n/**\n * @brief\
     \ Sum of Floor of Linear(\u4E00\u6B21\u95A2\u6570\u306E\u5E8A\u95A2\u6570\u306E\
     \u548C)\n * @docs docs/sum-of-floor-of-linear.md\n */\ntemplate< typename T >\n\
     T sum_of_floor_of_linear(const T &n, const T &m, T a, T b) {\n  T ret = 0;\n \
@@ -59,18 +59,18 @@ data:
     \    cin >> N >> M >> A >> B;\n    cout << sum_of_floor_of_linear(N, M, A, B)\
     \ << \"\\n\";\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/sum_of_floor_of_linear\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../math/number-theory/sum-of-floor-of-linear.cpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../math/number-theory/sum-of-floor-of-linear.hpp\"\
     \n\nint main() {\n  int T;\n  cin >> T;\n  while(T--) {\n    int64 N, M, A, B;\n\
     \    cin >> N >> M >> A >> B;\n    cout << sum_of_floor_of_linear(N, M, A, B)\
     \ << \"\\n\";\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - math/number-theory/sum-of-floor-of-linear.cpp
+  - template/template.hpp
+  - math/number-theory/sum-of-floor-of-linear.hpp
   isVerificationFile: true
   path: test/verify/yosupo-sum-of-floor-of-linear.test.cpp
   requiredBy: []
-  timestamp: '2021-07-13 21:51:53+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-sum-of-floor-of-linear.test.cpp
 layout: document

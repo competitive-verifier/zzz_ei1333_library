@@ -1,39 +1,39 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/combinatorics/enumeration.cpp
+  - icon: ':x:'
+    path: math/combinatorics/enumeration.hpp
     title: "Enumeration(\u7D44\u307F\u5408\u308F\u305B)"
-  - icon: ':heavy_check_mark:'
-    path: math/combinatorics/factorial.cpp
+  - icon: ':x:'
+    path: math/combinatorics/factorial.hpp
     title: "Factorial(\u968E\u4E57)"
-  - icon: ':heavy_check_mark:'
-    path: math/combinatorics/mod-int.cpp
-    title: math/combinatorics/mod-int.cpp
-  - icon: ':heavy_check_mark:'
-    path: math/combinatorics/sample-point-shift.cpp
+  - icon: ':question:'
+    path: math/combinatorics/mod-int.hpp
+    title: math/combinatorics/mod-int.hpp
+  - icon: ':x:'
+    path: math/combinatorics/sample-point-shift.hpp
     title: "Sample Point Shift(\u6A19\u672C\u70B9\u30B7\u30D5\u30C8)"
-  - icon: ':heavy_check_mark:'
-    path: math/fft/arbitrary-mod-convolution.cpp
+  - icon: ':x:'
+    path: math/fft/arbitrary-mod-convolution.hpp
     title: "Arbitrary Mod Convolution(\u4EFB\u610Fmod\u7573\u307F\u8FBC\u307F)"
-  - icon: ':heavy_check_mark:'
-    path: math/fft/fast-fourier-transform.cpp
-    title: math/fft/fast-fourier-transform.cpp
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':x:'
+    path: math/fft/fast-fourier-transform.hpp
+    title: math/fft/fast-fourier-transform.hpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/502
     links:
     - https://yukicoder.me/problems/no/502
   bundledCode: "#line 1 \"test/verify/yukicoder-502.test.cpp\"\n#define PROBLEM \"\
-    https://yukicoder.me/problems/no/502\"\n\n#line 1 \"template/template.cpp\"\n\
+    https://yukicoder.me/problems/no/502\"\n\n#line 1 \"template/template.hpp\"\n\
     #include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
     const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
     \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
@@ -61,7 +61,7 @@ data:
     \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yukicoder-502.test.cpp\"\
-    \n\n#line 1 \"math/combinatorics/mod-int.cpp\"\ntemplate< int mod >\nstruct ModInt\
+    \n\n#line 1 \"math/combinatorics/mod-int.hpp\"\ntemplate< int mod >\nstruct ModInt\
     \ {\n  int x;\n\n  ModInt() : x(0) {}\n\n  ModInt(int64_t y) : x(y >= 0 ? y %\
     \ mod : (mod - (-y) % mod) % mod) {}\n\n  ModInt &operator+=(const ModInt &p)\
     \ {\n    if((x += p.x) >= mod) x -= mod;\n    return *this;\n  }\n\n  ModInt &operator-=(const\
@@ -83,7 +83,7 @@ data:
     \ &operator<<(ostream &os, const ModInt &p) {\n    return os << p.x;\n  }\n\n\
     \  friend istream &operator>>(istream &is, ModInt &a) {\n    int64_t t;\n    is\
     \ >> t;\n    a = ModInt< mod >(t);\n    return (is);\n  }\n\n  static int get_mod()\
-    \ { return mod; }\n};\n\nusing modint = ModInt< mod >;\n#line 1 \"math/combinatorics/enumeration.cpp\"\
+    \ { return mod; }\n};\n\nusing modint = ModInt< mod >;\n#line 1 \"math/combinatorics/enumeration.hpp\"\
     \n/**\n * @brief Enumeration(\u7D44\u307F\u5408\u308F\u305B)\n */\ntemplate< typename\
     \ T >\nstruct Enumeration {\nprivate:\n  static vector< T > _fact, _finv, _inv;\n\
     \n  inline static void expand(size_t sz) {\n    if(_fact.size() < sz + 1) {\n\
@@ -104,7 +104,7 @@ data:
     \    return r == 0 ? 1 : C(n + r - 1, r);\n  }\n};\n\ntemplate< typename T >\n\
     vector< T > Enumeration< T >::_fact = vector< T >();\ntemplate< typename T >\n\
     vector< T > Enumeration< T >::_finv = vector< T >();\ntemplate< typename T >\n\
-    vector< T > Enumeration< T >::_inv = vector< T >();\n#line 2 \"math/combinatorics/sample-point-shift.cpp\"\
+    vector< T > Enumeration< T >::_inv = vector< T >();\n#line 2 \"math/combinatorics/sample-point-shift.hpp\"\
     \n\n/**\n * @brief Sample Point Shift(\u6A19\u672C\u70B9\u30B7\u30D5\u30C8)\n\
     \ */\ntemplate< typename Mint, typename F >\nvector< Mint > sample_point_shift(const\
     \ vector< Mint > &ys, const Mint &m, const F &multiply) {\n  Enumeration< Mint\
@@ -115,7 +115,7 @@ data:
     \  Mint coef = 1;\n  for(int i = 0; i <= d; i++) {\n    coef *= (m - d + i);\n\
     \  }\n  for(int i = 0; i <= d; i++) {\n    h[i + d] *= coef;\n    coef *= (m +\
     \ i + 1) * g[i];\n  }\n  return vector< Mint >{begin(h) + d, begin(h) + 2 * d\
-    \ + 1};\n}\n#line 2 \"math/combinatorics/factorial.cpp\"\n\n/**\n * @brief Factorial(\u968E\
+    \ + 1};\n}\n#line 2 \"math/combinatorics/factorial.hpp\"\n\n/**\n * @brief Factorial(\u968E\
     \u4E57)\n */\ntemplate< typename Mint, typename F >\nMint factorial(int64_t n,\
     \ const F& multiply) {\n  if(n <= 1) return 1;\n  if(n >= Mint::get_mod()) return\
     \ 0;\n  int64_t v = 1;\n  while(v * v < n) v *= 2;\n  Mint iv = Mint(1) / v;\n\
@@ -126,7 +126,7 @@ data:
     \ i = 0; i <= d; i++) G[i] *= G1[i], G2[i] *= G3[i];\n    copy(begin(G2), end(G2)\
     \ - 1, back_inserter(G));\n  }\n  Mint res = 1;\n  int64_t i = 0;\n  while(i +\
     \ v <= n) res *= G[i / v], i += v;\n  while(i < n) res *= ++i;\n  return res;\n\
-    }\n#line 7 \"test/verify/yukicoder-502.test.cpp\"\n\n#line 1 \"math/fft/fast-fourier-transform.cpp\"\
+    }\n#line 7 \"test/verify/yukicoder-502.test.cpp\"\n\n#line 1 \"math/fft/fast-fourier-transform.hpp\"\
     \nnamespace FastFourierTransform {\n  using real = double;\n\n  struct C {\n \
     \   real x, y;\n\n    C() : x(0), y(0) {}\n\n    C(real x, real y) : x(x), y(y)\
     \ {}\n\n    inline C operator+(const C &c) const { return C(x + c.x, y + c.y);\
@@ -163,7 +163,7 @@ data:
     \ >> 1) + i];\n      fa[i] = A0 + A1 * s;\n    }\n    fft(fa, sz >> 1);\n    vector<\
     \ int64_t > ret(need);\n    for(int i = 0; i < need; i++) {\n      ret[i] = llround(i\
     \ & 1 ? fa[i >> 1].y : fa[i >> 1].x);\n    }\n    return ret;\n  }\n};\n#line\
-    \ 2 \"math/fft/arbitrary-mod-convolution.cpp\"\n\n/*\n * @brief Arbitrary Mod\
+    \ 2 \"math/fft/arbitrary-mod-convolution.hpp\"\n\n/*\n * @brief Arbitrary Mod\
     \ Convolution(\u4EFB\u610Fmod\u7573\u307F\u8FBC\u307F)\n */\ntemplate< typename\
     \ T >\nstruct ArbitraryModConvolution {\n  using real = FastFourierTransform::real;\n\
     \  using C = FastFourierTransform::C;\n\n  ArbitraryModConvolution() = default;\n\
@@ -193,26 +193,26 @@ data:
     \ N;\n  ArbitraryModConvolution< mint > fft;\n  auto f = [&](vector< mint > &a,\
     \ vector< mint > &b) { return fft.multiply(a, b); };\n  cout << factorial< mint\
     \ >(N, f) << \"\\n\";\n}\n"
-  code: "#define PROBLEM \"https://yukicoder.me/problems/no/502\"\n\n#include \"../../template/template.cpp\"\
-    \n\n#include \"../../math/combinatorics/mod-int.cpp\"\n#include \"../../math/combinatorics/factorial.cpp\"\
-    \n\n#include \"../../math/fft/arbitrary-mod-convolution.cpp\"\n\nconst int MOD\
+  code: "#define PROBLEM \"https://yukicoder.me/problems/no/502\"\n\n#include \"../../template/template.hpp\"\
+    \n\n#include \"../../math/combinatorics/mod-int.hpp\"\n#include \"../../math/combinatorics/factorial.hpp\"\
+    \n\n#include \"../../math/fft/arbitrary-mod-convolution.hpp\"\n\nconst int MOD\
     \ = (int) (1e9 + 7);\nusing mint = ModInt< MOD >;\n\nint main() {\n  int N;\n\
     \  cin >> N;\n  ArbitraryModConvolution< mint > fft;\n  auto f = [&](vector< mint\
     \ > &a, vector< mint > &b) { return fft.multiply(a, b); };\n  cout << factorial<\
     \ mint >(N, f) << \"\\n\";\n}\n"
   dependsOn:
-  - template/template.cpp
-  - math/combinatorics/mod-int.cpp
-  - math/combinatorics/factorial.cpp
-  - math/combinatorics/sample-point-shift.cpp
-  - math/combinatorics/enumeration.cpp
-  - math/fft/arbitrary-mod-convolution.cpp
-  - math/fft/fast-fourier-transform.cpp
+  - template/template.hpp
+  - math/combinatorics/mod-int.hpp
+  - math/combinatorics/factorial.hpp
+  - math/combinatorics/sample-point-shift.hpp
+  - math/combinatorics/enumeration.hpp
+  - math/fft/arbitrary-mod-convolution.hpp
+  - math/fft/fast-fourier-transform.hpp
   isVerificationFile: true
   path: test/verify/yukicoder-502.test.cpp
   requiredBy: []
-  timestamp: '2021-07-13 23:44:53+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yukicoder-502.test.cpp
 layout: document

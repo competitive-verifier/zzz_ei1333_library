@@ -1,26 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
-  - icon: ':heavy_check_mark:'
-    path: structure/union-find/union-find.cpp
+  - icon: ':question:'
+    path: structure/union-find/union-find.hpp
     title: Union-Find
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: other/mo-tree.cpp
+    path: other/mo-tree.hpp
     title: "Mo Tree(\u6728\u4E0A\u306EMo)"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-2270.test.cpp
     title: test/verify/aoj-2270.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yosupo-lca-4.test.cpp
     title: test/verify/yosupo-lca-4.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     document_title: "Offline LCA(\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\u901A\
       \u7956\u5148)"
@@ -43,7 +43,7 @@ data:
     \ b, c);\n    }\n  }\n\n  inline vector< Edge< T > > &operator[](const int &k)\
     \ {\n    return g[k];\n  }\n\n  inline const vector< Edge< T > > &operator[](const\
     \ int &k) const {\n    return g[k];\n  }\n};\n\ntemplate< typename T = int >\n\
-    using Edges = vector< Edge< T > >;\n#line 2 \"structure/union-find/union-find.cpp\"\
+    using Edges = vector< Edge< T > >;\n#line 2 \"structure/union-find/union-find.hpp\"\
     \n\n/**\n * @brief Union-Find\n * @docs docs/union-find.md\n */\nstruct UnionFind\
     \ {\n  vector< int > data;\n\n  UnionFind() = default;\n\n  explicit UnionFind(size_t\
     \ sz) : data(sz, -1) {}\n\n  bool unite(int x, int y) {\n    x = find(x), y =\
@@ -73,7 +73,7 @@ data:
     \  if(not run(u)) {\n      for(auto&[v, i]: q[u]) {\n        if(~mark[v] and ans[i]\
     \ == -1) {\n          ans[i] = mark[uf.find(v)];\n        }\n      }\n      --top;\n\
     \    }\n  }\n  return ans;\n}\n"
-  code: "#include \"../graph-template.hpp\"\n#include \"../../structure/union-find/union-find.cpp\"\
+  code: "#include \"../graph-template.hpp\"\n#include \"../../structure/union-find/union-find.hpp\"\
     \n\n/**\n * @brief Offline LCA(\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\
     \u901A\u7956\u5148)\n **/\ntemplate< typename T >\nvector< int > offline_lca(const\
     \ Graph< T > &g, vector< pair< int, int > > &qs, int root = 0) {\n  int n = (int)\
@@ -92,13 +92,13 @@ data:
     \        }\n      }\n      --top;\n    }\n  }\n  return ans;\n}\n"
   dependsOn:
   - graph/graph-template.hpp
-  - structure/union-find/union-find.cpp
+  - structure/union-find/union-find.hpp
   isVerificationFile: false
   path: graph/tree/offline-lca.hpp
   requiredBy:
-  - other/mo-tree.cpp
-  timestamp: '2022-06-25 18:23:01+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  - other/mo-tree.hpp
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/verify/yosupo-lca-4.test.cpp
   - test/verify/aoj-2270.test.cpp

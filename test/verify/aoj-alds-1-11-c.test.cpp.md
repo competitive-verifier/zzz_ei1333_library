@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/shortest-path/bfs.hpp
     title: "BFS(\u5E45\u512A\u5148\u63A2\u7D22)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_11_C
@@ -22,7 +22,7 @@ data:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_11_C
   bundledCode: "#line 1 \"test/verify/aoj-alds-1-11-c.test.cpp\"\n#define PROBLEM\
     \ \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_11_C\"\n\n\
-    #line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    #line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -87,7 +87,7 @@ data:
     \ cout << i + 1 << \" \";\n    if(d[i] == numeric_limits< int >::max()) cout <<\
     \ -1 << \"\\n\";\n    else cout << d[i] << \"\\n\";\n  }\n}\n\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_11_C\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../graph/shortest-path/bfs.hpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../graph/shortest-path/bfs.hpp\"\
     \n\n\nint main() {\n  int N;\n  cin >> N;\n  Graph<> g(N);\n  for(int i = 0; i\
     \ < N; i++) {\n    int U, K;\n    cin >> U >> K;\n    --U;\n    for(int j = 0;\
     \ j < K; j++) {\n      int x;\n      cin >> x;\n      --x;\n      g.add_directed_edge(U,\
@@ -95,14 +95,14 @@ data:
     \ cout << i + 1 << \" \";\n    if(d[i] == numeric_limits< int >::max()) cout <<\
     \ -1 << \"\\n\";\n    else cout << d[i] << \"\\n\";\n  }\n}\n\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - graph/shortest-path/bfs.hpp
   - graph/graph-template.hpp
   isVerificationFile: true
   path: test/verify/aoj-alds-1-11-c.test.cpp
   requiredBy: []
-  timestamp: '2021-08-16 02:34:50+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/aoj-alds-1-11-c.test.cpp
 layout: document

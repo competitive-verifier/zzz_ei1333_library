@@ -1,21 +1,21 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
-  - icon: ':heavy_check_mark:'
-    path: structure/heap/fibonacchi-heap.cpp
+  - icon: ':x:'
+    path: structure/heap/fibonacchi-heap.hpp
     title: "Fibonacchi-Heap(\u30D5\u30A3\u30DC\u30CA\u30C3\u30C1\u30D2\u30FC\u30D7\
       )"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/aoj-grl-1-a-2.test.cpp
     title: test/verify/aoj-grl-1-a-2.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: docs/dijkstra-fibonacchi-heap.md
     document_title: "Dijkstra-Fibonacchi-Heap(\u5358\u4E00\u59CB\u70B9\u6700\u77ED\
@@ -40,7 +40,7 @@ data:
     \ b, c);\n    }\n  }\n\n  inline vector< Edge< T > > &operator[](const int &k)\
     \ {\n    return g[k];\n  }\n\n  inline const vector< Edge< T > > &operator[](const\
     \ int &k) const {\n    return g[k];\n  }\n};\n\ntemplate< typename T = int >\n\
-    using Edges = vector< Edge< T > >;\n#line 1 \"structure/heap/fibonacchi-heap.cpp\"\
+    using Edges = vector< Edge< T > >;\n#line 1 \"structure/heap/fibonacchi-heap.hpp\"\
     \n/**\n * @brief Fibonacchi-Heap(\u30D5\u30A3\u30DC\u30CA\u30C3\u30C1\u30D2\u30FC\
     \u30D7)\n * @see https://www.cs.princeton.edu/~wayne/teaching/fibonacci-heap.pdf\n\
     \ */\ntemplate< typename key_t, typename val_t >\nstruct FibonacchiHeap {\n  struct\
@@ -97,7 +97,7 @@ data:
     \ = next_cost;\n        keep[e.to] = heap.push(dist[e.to], e.to);\n      } else\
     \ {\n        T d = dist[e.to] - next_cost;\n        heap.decrease_key(keep[e.to],\
     \ d);\n        dist[e.to] -= d;\n      }\n    }\n  }\n  return dist;\n}\n"
-  code: "#pragma once\n\n#include \"../graph-template.hpp\"\n#include \"../../structure/heap/fibonacchi-heap.cpp\"\
+  code: "#pragma once\n\n#include \"../graph-template.hpp\"\n#include \"../../structure/heap/fibonacchi-heap.hpp\"\
     \n\n/**\n * @brief Dijkstra-Fibonacchi-Heap(\u5358\u4E00\u59CB\u70B9\u6700\u77ED\
     \u8DEF)\n * @docs docs/dijkstra-fibonacchi-heap.md\n */\ntemplate< typename T\
     \ >\nvector< T > dijkstra_fibonacchi_heap(Graph< T > &g, int s) {\n  const auto\
@@ -113,12 +113,12 @@ data:
     \ d);\n        dist[e.to] -= d;\n      }\n    }\n  }\n  return dist;\n}\n"
   dependsOn:
   - graph/graph-template.hpp
-  - structure/heap/fibonacchi-heap.cpp
+  - structure/heap/fibonacchi-heap.hpp
   isVerificationFile: false
   path: graph/shortest-path/dijkstra-fibonacchi-heap.hpp
   requiredBy: []
-  timestamp: '2022-03-11 02:08:54-05:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/aoj-grl-1-a-2.test.cpp
 documentation_of: graph/shortest-path/dijkstra-fibonacchi-heap.hpp

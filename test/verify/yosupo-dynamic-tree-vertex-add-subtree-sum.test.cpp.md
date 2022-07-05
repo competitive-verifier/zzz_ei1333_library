@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: structure/lct/link-cut-tree-subtree.cpp
-    title: structure/lct/link-cut-tree-subtree.cpp
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':x:'
+    path: structure/lct/link-cut-tree-subtree.hpp
+    title: structure/lct/link-cut-tree-subtree.hpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum
@@ -19,7 +19,7 @@ data:
     - https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum
   bundledCode: "#line 1 \"test/verify/yosupo-dynamic-tree-vertex-add-subtree-sum.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum\"\
-    \n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -46,7 +46,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-dynamic-tree-vertex-add-subtree-sum.test.cpp\"\
-    \n\n#line 1 \"structure/lct/link-cut-tree-subtree.cpp\"\ntemplate< typename SUM,\
+    \n\n#line 1 \"structure/lct/link-cut-tree-subtree.hpp\"\ntemplate< typename SUM,\
     \ typename KEY >\nstruct LinkCutTreeSubtree {\n \n  struct Node {\n    Node *l,\
     \ *r, *p;\n \n    KEY key;\n    SUM sum;\n \n    bool rev;\n    int sz;\n \n \
     \   bool is_root() const {\n      return !p || (p->l != this && p->r != this);\n\
@@ -111,7 +111,7 @@ data:
     \  cin >> V >> P;\n      lct.evert(vs[P]);\n      cout << lct.query(vs[V]).csum\
     \ << \"\\n\";\n    }\n  }\n}\n\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_subtree_sum\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../structure/lct/link-cut-tree-subtree.cpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../structure/lct/link-cut-tree-subtree.hpp\"\
     \n\nint main() {\n  int N, Q;\n  cin >> N >> Q;\n\n\n  struct Node {\n    int64\
     \ sum, psum, csum, lsum;\n\n    Node() : sum(0), lsum(0), psum(0), csum(0) {}\n\
     \n    void toggle() {\n      swap(psum, csum);\n    }\n\n    void merge(int64\
@@ -131,13 +131,13 @@ data:
     \  cin >> V >> P;\n      lct.evert(vs[P]);\n      cout << lct.query(vs[V]).csum\
     \ << \"\\n\";\n    }\n  }\n}\n\n"
   dependsOn:
-  - template/template.cpp
-  - structure/lct/link-cut-tree-subtree.cpp
+  - template/template.hpp
+  - structure/lct/link-cut-tree-subtree.hpp
   isVerificationFile: true
   path: test/verify/yosupo-dynamic-tree-vertex-add-subtree-sum.test.cpp
   requiredBy: []
-  timestamp: '2021-05-09 18:15:58+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-dynamic-tree-vertex-add-subtree-sum.test.cpp
 layout: document

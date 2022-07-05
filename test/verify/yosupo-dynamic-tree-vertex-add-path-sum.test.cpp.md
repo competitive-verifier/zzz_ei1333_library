@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: structure/lct/link-cut-tree.cpp
+  - icon: ':x:'
+    path: structure/lct/link-cut-tree.hpp
     title: Link Cut Tree
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_path_sum
@@ -19,7 +19,7 @@ data:
     - https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_path_sum
   bundledCode: "#line 1 \"test/verify/yosupo-dynamic-tree-vertex-add-path-sum.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_path_sum\"\
-    \n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -46,7 +46,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-dynamic-tree-vertex-add-path-sum.test.cpp\"\
-    \n\n#line 1 \"structure/lct/link-cut-tree.cpp\"\n/**\n * @brief Link Cut Tree\n\
+    \n\n#line 1 \"structure/lct/link-cut-tree.hpp\"\n/**\n * @brief Link Cut Tree\n\
     \ * @docs docs/link-cut-tree.md\n */\ntemplate< typename T, typename F, typename\
     \ S >\nstruct LinkCutTree {\n\nprivate:\n  F f;\n  S s;\n\n  struct Node {\n \
     \   Node *l, *r, *p;\n    T key, sum;\n    bool rev;\n    size_t sz;\n\n    explicit\
@@ -111,7 +111,7 @@ data:
     \  cin >> U >> V;\n      cout << lct.query(vs[U], vs[V]) << \"\\n\";\n    }\n\
     \  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/dynamic_tree_vertex_add_path_sum\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../structure/lct/link-cut-tree.cpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../structure/lct/link-cut-tree.hpp\"\
     \n\nint main() {\n  int N, Q;\n  cin >> N >> Q;\n  auto add = [](int64 a, int64\
     \ b) { return a + b; };\n  auto s = [](int64 a) { return a; };\n  auto lct = get_link_cut_tree<\
     \ int64 >(add, s);\n\n  vector< int64 > A(N);\n  cin >> A;\n\n  auto vs = lct.build(A);\n\
@@ -124,13 +124,13 @@ data:
     \  cin >> U >> V;\n      cout << lct.query(vs[U], vs[V]) << \"\\n\";\n    }\n\
     \  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - structure/lct/link-cut-tree.cpp
+  - template/template.hpp
+  - structure/lct/link-cut-tree.hpp
   isVerificationFile: true
   path: test/verify/yosupo-dynamic-tree-vertex-add-path-sum.test.cpp
   requiredBy: []
-  timestamp: '2022-06-21 02:34:26+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-dynamic-tree-vertex-add-path-sum.test.cpp
 layout: document

@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/number-theory/prime-factor.cpp
+  - icon: ':x:'
+    path: math/number-theory/prime-factor.hpp
     title: "Prime Factor(\u7D20\u56E0\u6570\u5206\u89E3)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A
   bundledCode: "#line 1 \"test/verify/aoj-ntl-1-a.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A\"\
-    \n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -45,7 +45,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-ntl-1-a.test.cpp\"\
-    \n\n#line 1 \"math/number-theory/prime-factor.cpp\"\n/**\n * @brief Prime Factor(\u7D20\
+    \n\n#line 1 \"math/number-theory/prime-factor.hpp\"\n/**\n * @brief Prime Factor(\u7D20\
     \u56E0\u6570\u5206\u89E3)\n */\nmap< int64_t, int > prime_factor(int64_t n) {\n\
     \  map< int64_t, int > ret;\n  for(int64_t i = 2; i * i <= n; i++) {\n    while(n\
     \ % i == 0) {\n      ret[i]++;\n      n /= i;\n    }\n  }\n  if(n != 1) ret[n]\
@@ -53,18 +53,18 @@ data:
     \ main() {\n  int N;\n  cin >> N;\n  cout << N << \":\";\n  for(auto p : prime_factor(N))\
     \ {\n    while(p.second--) cout << \" \" << p.first;\n  }\n  cout << endl;\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../math/number-theory/prime-factor.cpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../math/number-theory/prime-factor.hpp\"\
     \n\nint main() {\n  int N;\n  cin >> N;\n  cout << N << \":\";\n  for(auto p :\
     \ prime_factor(N)) {\n    while(p.second--) cout << \" \" << p.first;\n  }\n \
     \ cout << endl;\n}\n"
   dependsOn:
-  - template/template.cpp
-  - math/number-theory/prime-factor.cpp
+  - template/template.hpp
+  - math/number-theory/prime-factor.hpp
   isVerificationFile: true
   path: test/verify/aoj-ntl-1-a.test.cpp
   requiredBy: []
-  timestamp: '2021-07-13 21:51:53+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/aoj-ntl-1-a.test.cpp
 layout: document

@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/manacher.hpp
     title: "Manacher(\u6700\u9577\u56DE\u6587)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/enumerate_palindromes
@@ -19,7 +19,7 @@ data:
     - https://judge.yosupo.jp/problem/enumerate_palindromes
   bundledCode: "#line 1 \"test/verify/yosupo-enumerate-palindromes.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/enumerate_palindromes\"\n\n#line 1\
-    \ \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
+    \ \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
     \nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll = (1LL\
     \ << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -62,17 +62,17 @@ data:
     \n\nint main() {\n  string s;\n  cin >> s;\n  cout << manacher(s) << \"\\n\";\n\
     }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_palindromes\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../string/manacher.hpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../string/manacher.hpp\"\
     \n\nint main() {\n  string s;\n  cin >> s;\n  cout << manacher(s) << \"\\n\";\n\
     }\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - string/manacher.hpp
   isVerificationFile: true
   path: test/verify/yosupo-enumerate-palindromes.test.cpp
   requiredBy: []
-  timestamp: '2022-03-30 22:35:09+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-enumerate-palindromes.test.cpp
 layout: document

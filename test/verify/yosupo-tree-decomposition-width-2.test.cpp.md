@@ -1,26 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/others/tree-decomposition-width-2.hpp
     title: "Tree Decomposition Width 2(\u6728\u5E452\u306E\u6728\u5206\u89E3)"
-  - icon: ':heavy_check_mark:'
-    path: other/printer.cpp
+  - icon: ':x:'
+    path: other/printer.hpp
     title: "Printer(\u9AD8\u901F\u51FA\u529B)"
-  - icon: ':heavy_check_mark:'
-    path: other/scanner.cpp
+  - icon: ':x:'
+    path: other/scanner.hpp
     title: "Scanner(\u9AD8\u901F\u5165\u529B)"
-  - icon: ':heavy_check_mark:'
-    path: structure/union-find/union-find.cpp
+  - icon: ':question:'
+    path: structure/union-find/union-find.hpp
     title: Union-Find
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/tree_decomposition_width_2
@@ -28,7 +28,7 @@ data:
     - https://judge.yosupo.jp/problem/tree_decomposition_width_2
   bundledCode: "#line 1 \"test/verify/yosupo-tree-decomposition-width-2.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/tree_decomposition_width_2\"\
-    \n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -55,7 +55,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-tree-decomposition-width-2.test.cpp\"\
-    \n\n#line 1 \"other/scanner.cpp\"\n/**\n * @brief Scanner(\u9AD8\u901F\u5165\u529B\
+    \n\n#line 1 \"other/scanner.hpp\"\n/**\n * @brief Scanner(\u9AD8\u901F\u5165\u529B\
     )\n */\nstruct Scanner {\npublic:\n\n  explicit Scanner(FILE *fp) : fp(fp) {}\n\
     \n  template< typename T, typename... E >\n  void read(T &t, E &... e) {\n   \
     \ read_single(t);\n    read(e...);\n  }\n\nprivate:\n  static constexpr size_t\
@@ -77,7 +77,7 @@ data:
     \ = st;\n      while(*st && !is_space(*st)) ++st;\n      s += string(base, st);\n\
     \      if(st != ed) return;\n      reread();\n    }\n  }\n\n  template< typename\
     \ T >\n  void read_single(vector< T > &s) {\n    for(auto &d : s) read(d);\n \
-    \ }\n};\n#line 1 \"other/printer.cpp\"\n/**\n * @brief Printer(\u9AD8\u901F\u51FA\
+    \ }\n};\n#line 1 \"other/printer.hpp\"\n/**\n * @brief Printer(\u9AD8\u901F\u51FA\
     \u529B)\n */\nstruct Printer {\npublic:\n  explicit Printer(FILE *fp) : fp(fp)\
     \ {}\n\n  ~Printer() { flush(); }\n\n  template< bool f = false, typename T, typename...\
     \ E >\n  void write(const T &t, const E &... e) {\n    if(f) write_single(' ');\n\
@@ -96,7 +96,7 @@ data:
     \  }\n\n  template< typename T >\n  void write_single(const vector< T > &s) {\n\
     \    for(size_t i = 0; i < s.size(); i++) {\n      if(i) write_single(' ');\n\
     \      write_single(s[i]);\n    }\n  }\n};\n#line 7 \"test/verify/yosupo-tree-decomposition-width-2.test.cpp\"\
-    \n\n#line 2 \"structure/union-find/union-find.cpp\"\n\n/**\n * @brief Union-Find\n\
+    \n\n#line 2 \"structure/union-find/union-find.hpp\"\n\n/**\n * @brief Union-Find\n\
     \ * @docs docs/union-find.md\n */\nstruct UnionFind {\n  vector< int > data;\n\
     \n  UnionFind() = default;\n\n  explicit UnionFind(size_t sz) : data(sz, -1) {}\n\
     \n  bool unite(int x, int y) {\n    x = find(x), y = find(y);\n    if(x == y)\
@@ -174,8 +174,8 @@ data:
     b\", i + 1, tap[i].bag);\n  }\n  for(size_t i = 0; i < tap.size(); i++) {\n  \
     \  for(auto &t : tap[i].child) pout.writeln(i + 1, t + 1);\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/tree_decomposition_width_2\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../other/scanner.cpp\"\
-    \n#include \"../../other/printer.cpp\"\n\n#include \"../../structure/union-find/union-find.cpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../other/scanner.hpp\"\
+    \n#include \"../../other/printer.hpp\"\n\n#include \"../../structure/union-find/union-find.hpp\"\
     \n\n#include \"../../graph/others/tree-decomposition-width-2.hpp\"\n\nint main()\
     \ {\n  string x;\n  int N, M;\n  Scanner pin(stdin);\n  Printer pout(stdout);\n\
     \  pin.read(x, x, N, M);\n  vector< int > A(M), B(M);\n  UnionFind uf(N);\n  for(int\
@@ -190,16 +190,16 @@ data:
     b\", i + 1, tap[i].bag);\n  }\n  for(size_t i = 0; i < tap.size(); i++) {\n  \
     \  for(auto &t : tap[i].child) pout.writeln(i + 1, t + 1);\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - other/scanner.cpp
-  - other/printer.cpp
-  - structure/union-find/union-find.cpp
+  - template/template.hpp
+  - other/scanner.hpp
+  - other/printer.hpp
+  - structure/union-find/union-find.hpp
   - graph/others/tree-decomposition-width-2.hpp
   isVerificationFile: true
   path: test/verify/yosupo-tree-decomposition-width-2.test.cpp
   requiredBy: []
-  timestamp: '2022-06-25 18:23:01+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-tree-decomposition-width-2.test.cpp
 layout: document

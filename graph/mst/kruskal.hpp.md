@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
-  - icon: ':heavy_check_mark:'
-    path: structure/union-find/union-find.cpp
+  - icon: ':question:'
+    path: structure/union-find/union-find.hpp
     title: Union-Find
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/aoj-grl-2-a-2.test.cpp
     title: test/verify/aoj-grl-2-a-2.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yosupo-manhattanmst.test.cpp
     title: test/verify/yosupo-manhattanmst.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: docs/kruskal.md
     document_title: "Kruskal(\u6700\u5C0F\u5168\u57DF\u6728)"
@@ -40,7 +40,7 @@ data:
     \ b, c);\n      else add_edge(a, b, c);\n    }\n  }\n\n  inline vector< Edge<\
     \ T > > &operator[](const int &k) {\n    return g[k];\n  }\n\n  inline const vector<\
     \ Edge< T > > &operator[](const int &k) const {\n    return g[k];\n  }\n};\n\n\
-    template< typename T = int >\nusing Edges = vector< Edge< T > >;\n#line 2 \"structure/union-find/union-find.cpp\"\
+    template< typename T = int >\nusing Edges = vector< Edge< T > >;\n#line 2 \"structure/union-find/union-find.hpp\"\
     \n\n/**\n * @brief Union-Find\n * @docs docs/union-find.md\n */\nstruct UnionFind\
     \ {\n  vector< int > data;\n\n  UnionFind() = default;\n\n  explicit UnionFind(size_t\
     \ sz) : data(sz, -1) {}\n\n  bool unite(int x, int y) {\n    x = find(x), y =\
@@ -61,7 +61,7 @@ data:
     \ tree(V);\n  T total = T();\n  Edges< T > es;\n  for(auto &e : edges) {\n   \
     \ if(tree.unite(e.from, e.to)) {\n      es.emplace_back(e);\n      total += e.cost;\n\
     \    }\n  }\n  return {total, es};\n}\n"
-  code: "#pragma once\n\n#include \"../graph-template.hpp\"\n#include \"../../structure/union-find/union-find.cpp\"\
+  code: "#pragma once\n\n#include \"../graph-template.hpp\"\n#include \"../../structure/union-find/union-find.hpp\"\
     \n\n/**\n * @brief Kruskal(\u6700\u5C0F\u5168\u57DF\u6728)\n * @docs docs/kruskal.md\n\
     \ */\ntemplate< typename T >\nstruct MinimumSpanningTree {\n  T cost;\n  Edges<\
     \ T > edges;\n};\n\ntemplate< typename T >\nMinimumSpanningTree< T > kruskal(Edges<\
@@ -72,12 +72,12 @@ data:
     \ {total, es};\n}\n"
   dependsOn:
   - graph/graph-template.hpp
-  - structure/union-find/union-find.cpp
+  - structure/union-find/union-find.hpp
   isVerificationFile: false
   path: graph/mst/kruskal.hpp
   requiredBy: []
-  timestamp: '2022-06-25 18:23:01+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/yosupo-manhattanmst.test.cpp
   - test/verify/aoj-grl-2-a-2.test.cpp

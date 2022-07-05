@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/tree/rmq-lowest-common-ancestor.hpp
     title: "RMQ-Lowest-Common-Ancestor(\u6700\u5C0F\u5171\u901A\u7956\u5148)"
-  - icon: ':heavy_check_mark:'
-    path: structure/others/sparse-table.cpp
+  - icon: ':x:'
+    path: structure/others/sparse-table.hpp
     title: "Sparse-Table(\u30B9\u30D1\u30FC\u30B9\u30C6\u30FC\u30D6\u30EB)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C
@@ -25,7 +25,7 @@ data:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C
   bundledCode: "#line 1 \"test/verify/aoj-grl-5-c-3.test.cpp\"\n#define PROBLEM \"\
     http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C\"\n\n#line 1\
-    \ \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
+    \ \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\
     \nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll = (1LL\
     \ << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -70,7 +70,7 @@ data:
     \ b, c);\n      else add_edge(a, b, c);\n    }\n  }\n\n  inline vector< Edge<\
     \ T > > &operator[](const int &k) {\n    return g[k];\n  }\n\n  inline const vector<\
     \ Edge< T > > &operator[](const int &k) const {\n    return g[k];\n  }\n};\n\n\
-    template< typename T = int >\nusing Edges = vector< Edge< T > >;\n#line 1 \"structure/others/sparse-table.cpp\"\
+    template< typename T = int >\nusing Edges = vector< Edge< T > >;\n#line 1 \"structure/others/sparse-table.hpp\"\
     \n/**\n * @brief Sparse-Table(\u30B9\u30D1\u30FC\u30B9\u30C6\u30FC\u30D6\u30EB\
     )\n * @docs docs/sparse-table.md\n */\ntemplate< typename T, typename F >\nstruct\
     \ SparseTable {\n  F f;\n  vector< vector< T > > st;\n  vector< int > lookup;\n\
@@ -106,22 +106,22 @@ data:
     \  }\n  }\n  lca.build();\n  cin >> Q;\n  for(int i = 0; i < Q; i++) {\n    int\
     \ u, v;\n    cin >> u >> v;\n    cout << lca.lca(u, v) << \"\\n\";\n  }\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_C\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../graph/tree/rmq-lowest-common-ancestor.hpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../graph/tree/rmq-lowest-common-ancestor.hpp\"\
     \n\nint main() {\n  int N, Q;\n  cin >> N;\n  RMQLowestCommonAncestor< int > lca(N);\n\
     \  for(int i = 0; i < N; i++) {\n    int k;\n    cin >> k;\n    for(int j = 0;\
     \ j < k; j++) {\n      int c;\n      cin >> c;\n      lca.add_edge(i, c);\n  \
     \  }\n  }\n  lca.build();\n  cin >> Q;\n  for(int i = 0; i < Q; i++) {\n    int\
     \ u, v;\n    cin >> u >> v;\n    cout << lca.lca(u, v) << \"\\n\";\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - graph/tree/rmq-lowest-common-ancestor.hpp
   - graph/graph-template.hpp
-  - structure/others/sparse-table.cpp
+  - structure/others/sparse-table.hpp
   isVerificationFile: true
   path: test/verify/aoj-grl-5-c-3.test.cpp
   requiredBy: []
-  timestamp: '2021-08-16 02:17:26+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/aoj-grl-5-c-3.test.cpp
 layout: document

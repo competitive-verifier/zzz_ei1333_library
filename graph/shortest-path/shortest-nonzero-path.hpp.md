@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yukicoder-1602.test.cpp
     title: test/verify/yukicoder-1602.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     document_title: "Shortest Nonzero Path(\u7FA4\u30E9\u30D9\u30EB\u5236\u7D04\u4ED8\
       \u304D\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u8DEF)"
@@ -110,7 +110,7 @@ data:
   path: graph/shortest-path/shortest-nonzero-path.hpp
   requiredBy: []
   timestamp: '2021-07-13 23:17:19+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/yukicoder-1602.test.cpp
 documentation_of: graph/shortest-path/shortest-nonzero-path.hpp

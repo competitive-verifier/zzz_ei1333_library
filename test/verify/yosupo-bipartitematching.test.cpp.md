@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/flow/bipartite-flow.hpp
     title: "Bipartite Flow(\u4E8C\u90E8\u30B0\u30E9\u30D5\u306E\u30D5\u30ED\u30FC)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/bipartitematching
@@ -19,7 +19,7 @@ data:
     - https://judge.yosupo.jp/problem/bipartitematching
   bundledCode: "#line 1 \"test/verify/yosupo-bipartitematching.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/bipartitematching\"\n\n#line 1 \"\
-    template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing\
+    template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing\
     \ int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll = (1LL <<\
     \ 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n\
     \    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed <<\
@@ -135,20 +135,20 @@ data:
     \ << \"\\n\";\n  for(auto &p : es) cout << p.first << \" \" << p.second << \"\\\
     n\";\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/bipartitematching\"\n\n\
-    #include \"../../template/template.cpp\"\n\n#include \"../../graph/flow/bipartite-flow.hpp\"\
+    #include \"../../template/template.hpp\"\n\n#include \"../../graph/flow/bipartite-flow.hpp\"\
     \n\nint main() {\n  int L, R, M;\n  cin >> L >> R >> M;\n  BipartiteFlow flow(L,\
     \ R);\n  for(int i = 0; i < M; i++) {\n    int a, b;\n    cin >> a >> b;\n   \
     \ flow.add_edge(a, b);\n  }\n  auto es = flow.max_matching();\n  cout << es.size()\
     \ << \"\\n\";\n  for(auto &p : es) cout << p.first << \" \" << p.second << \"\\\
     n\";\n}\n"
   dependsOn:
-  - template/template.cpp
+  - template/template.hpp
   - graph/flow/bipartite-flow.hpp
   isVerificationFile: true
   path: test/verify/yosupo-bipartitematching.test.cpp
   requiredBy: []
-  timestamp: '2021-08-14 14:18:51+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-bipartitematching.test.cpp
 layout: document

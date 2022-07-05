@@ -1,29 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: other/printer.cpp
+  - icon: ':x:'
+    path: other/printer.hpp
     title: "Printer(\u9AD8\u901F\u51FA\u529B)"
-  - icon: ':heavy_check_mark:'
-    path: other/scanner.cpp
+  - icon: ':x:'
+    path: other/scanner.hpp
     title: "Scanner(\u9AD8\u901F\u5165\u529B)"
-  - icon: ':heavy_check_mark:'
-    path: structure/others/binary-indexed-tree.cpp
+  - icon: ':question:'
+    path: structure/others/binary-indexed-tree.hpp
     title: Binary-Indexed-Tree(BIT)
-  - icon: ':heavy_check_mark:'
-    path: structure/wavelet/succinct-indexable-dictionary.cpp
+  - icon: ':question:'
+    path: structure/wavelet/succinct-indexable-dictionary.hpp
     title: "Succinct Indexable Dictionary(\u5B8C\u5099\u8F9E\u66F8)"
-  - icon: ':heavy_check_mark:'
-    path: structure/wavelet/wavelet-matrix-point-add-rectangle-sum.cpp
+  - icon: ':x:'
+    path: structure/wavelet/wavelet-matrix-point-add-rectangle-sum.hpp
     title: Wavelet Matrix Point Add Rectangle Sum
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_rectangle_sum
@@ -31,7 +31,7 @@ data:
     - https://judge.yosupo.jp/problem/point_add_rectangle_sum
   bundledCode: "#line 1 \"test/verify/yosupo-point-add-rectangle-sum.test.cpp\"\n\
     #define PROBLEM \"https://judge.yosupo.jp/problem/point_add_rectangle_sum\"\n\n\
-    #line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    #line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -58,7 +58,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-point-add-rectangle-sum.test.cpp\"\
-    \n\n#line 1 \"structure/wavelet/succinct-indexable-dictionary.cpp\"\n/**\n * @brief\
+    \n\n#line 1 \"structure/wavelet/succinct-indexable-dictionary.hpp\"\n/**\n * @brief\
     \ Succinct Indexable Dictionary(\u5B8C\u5099\u8F9E\u66F8)\n */\nstruct SuccinctIndexableDictionary\
     \ {\n  size_t length;\n  size_t blocks;\n  vector< unsigned > bit, sum;\n\n  SuccinctIndexableDictionary()\
     \ = default;\n\n  SuccinctIndexableDictionary(size_t length) : length(length),\
@@ -69,7 +69,7 @@ data:
     \ operator[](int k) {\n    return (bool((bit[k >> 5] >> (k & 31)) & 1));\n  }\n\
     \n  int rank(int k) {\n    return (sum[k >> 5] + __builtin_popcount(bit[k >> 5]\
     \ & ((1U << (k & 31)) - 1)));\n  }\n\n  int rank(bool val, int k) {\n    return\
-    \ (val ? rank(k) : k - rank(k));\n  }\n};\n#line 1 \"structure/others/binary-indexed-tree.cpp\"\
+    \ (val ? rank(k) : k - rank(k));\n  }\n};\n#line 1 \"structure/others/binary-indexed-tree.hpp\"\
     \n/**\n * @brief Binary-Indexed-Tree(BIT)\n * @docs docs/binary-indexed-tree.md\n\
     \ */\ntemplate< typename T >\nstruct BinaryIndexedTree {\nprivate:\n  int n;\n\
     \  vector< T > data;\n\npublic:\n  BinaryIndexedTree() = default;\n\n  explicit\
@@ -88,7 +88,7 @@ data:
     \ int upper_bound(T x) const {\n    int i = 0;\n    for(int k = 1 << (__lg(n)\
     \ + 1); k > 0; k >>= 1) {\n      if(i + k <= n && data[i + k] <= x) {\n      \
     \  x -= data[i + k];\n        i += k;\n      }\n    }\n    return i;\n  }\n};\n\
-    #line 3 \"structure/wavelet/wavelet-matrix-point-add-rectangle-sum.cpp\"\n\n/*\n\
+    #line 3 \"structure/wavelet/wavelet-matrix-point-add-rectangle-sum.hpp\"\n\n/*\n\
     \ * @brief Wavelet Matrix Point Add Rectangle Sum\n * @docs docs/wavelet-matrix-point-add-rectangle-sum.md\n\
     \ */\ntemplate< typename T, int MAXLOG, typename D >\nstruct WaveletMatrixPointAddRectangleSum\
     \ {\n  size_t length;\n  SuccinctIndexableDictionary matrix[MAXLOG];\n  BinaryIndexedTree<\
@@ -130,7 +130,7 @@ data:
     \ lower, T upper) {\n    return mat.rect_sum(l, r, get(lower), get(upper));\n\
     \  }\n\n  void point_add(int k, const D &x) {\n    mat.point_add(k, x);\n  }\n\
     };\n#line 6 \"test/verify/yosupo-point-add-rectangle-sum.test.cpp\"\n\n#line 1\
-    \ \"other/scanner.cpp\"\n/**\n * @brief Scanner(\u9AD8\u901F\u5165\u529B)\n */\n\
+    \ \"other/scanner.hpp\"\n/**\n * @brief Scanner(\u9AD8\u901F\u5165\u529B)\n */\n\
     struct Scanner {\npublic:\n\n  explicit Scanner(FILE *fp) : fp(fp) {}\n\n  template<\
     \ typename T, typename... E >\n  void read(T &t, E &... e) {\n    read_single(t);\n\
     \    read(e...);\n  }\n\nprivate:\n  static constexpr size_t line_size = 1 <<\
@@ -152,7 +152,7 @@ data:
     \ = st;\n      while(*st && !is_space(*st)) ++st;\n      s += string(base, st);\n\
     \      if(st != ed) return;\n      reread();\n    }\n  }\n\n  template< typename\
     \ T >\n  void read_single(vector< T > &s) {\n    for(auto &d : s) read(d);\n \
-    \ }\n};\n#line 1 \"other/printer.cpp\"\n/**\n * @brief Printer(\u9AD8\u901F\u51FA\
+    \ }\n};\n#line 1 \"other/printer.hpp\"\n/**\n * @brief Printer(\u9AD8\u901F\u51FA\
     \u529B)\n */\nstruct Printer {\npublic:\n  explicit Printer(FILE *fp) : fp(fp)\
     \ {}\n\n  ~Printer() { flush(); }\n\n  template< bool f = false, typename T, typename...\
     \ E >\n  void write(const T &t, const E &... e) {\n    if(f) write_single(' ');\n\
@@ -190,8 +190,8 @@ data:
     \ {\n      mat.point_add(a[i], c[i]);\n    } else {\n      out.writeln(mat.rect_sum(a[i],\
     \ c[i], b[i], d[i]));\n    }\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_rectangle_sum\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../structure/wavelet/wavelet-matrix-point-add-rectangle-sum.cpp\"\
-    \n\n#include \"../../other/scanner.cpp\"\n#include \"../../other/printer.cpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../structure/wavelet/wavelet-matrix-point-add-rectangle-sum.hpp\"\
+    \n\n#include \"../../other/scanner.hpp\"\n#include \"../../other/printer.hpp\"\
     \n\nint main() {\n  Scanner in(stdin);\n  Printer out(stdout);\n  int N, Q;\n\
     \  in.read(N, Q);\n  vector< int > x(N), y(N), w(N);\n  vector< pair< int, int\
     \ > > xs;\n  xs.reserve(N + Q);\n  for(int i = 0; i < N; i++) {\n    in.read(x[i],\
@@ -211,17 +211,17 @@ data:
     \ {\n      mat.point_add(a[i], c[i]);\n    } else {\n      out.writeln(mat.rect_sum(a[i],\
     \ c[i], b[i], d[i]));\n    }\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - structure/wavelet/wavelet-matrix-point-add-rectangle-sum.cpp
-  - structure/wavelet/succinct-indexable-dictionary.cpp
-  - structure/others/binary-indexed-tree.cpp
-  - other/scanner.cpp
-  - other/printer.cpp
+  - template/template.hpp
+  - structure/wavelet/wavelet-matrix-point-add-rectangle-sum.hpp
+  - structure/wavelet/succinct-indexable-dictionary.hpp
+  - structure/others/binary-indexed-tree.hpp
+  - other/scanner.hpp
+  - other/printer.hpp
   isVerificationFile: true
   path: test/verify/yosupo-point-add-rectangle-sum.test.cpp
   requiredBy: []
-  timestamp: '2022-06-25 20:28:37+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-point-add-rectangle-sum.test.cpp
 layout: document

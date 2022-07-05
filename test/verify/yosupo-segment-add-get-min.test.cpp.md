@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: structure/convex-hull-trick/dynamic-li-chao-tree.cpp
+  - icon: ':x:'
+    path: structure/convex-hull-trick/dynamic-li-chao-tree.hpp
     title: Dynamic-Li-Chao-Tree
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/segment_add_get_min
@@ -19,7 +19,7 @@ data:
     - https://judge.yosupo.jp/problem/segment_add_get_min
   bundledCode: "#line 1 \"test/verify/yosupo-segment-add-get-min.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/segment_add_get_min\"\n\n#line 1 \"\
-    template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing\
+    template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing\
     \ int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll = (1LL <<\
     \ 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n\
     \    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed <<\
@@ -46,7 +46,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-segment-add-get-min.test.cpp\"\
-    \n\n#line 1 \"structure/convex-hull-trick/dynamic-li-chao-tree.cpp\"\n/**\n *\
+    \n\n#line 1 \"structure/convex-hull-trick/dynamic-li-chao-tree.hpp\"\n/**\n *\
     \ @brief Dynamic-Li-Chao-Tree\n * @docs docs/dynamic-li-chao-tree.md\n*/\ntemplate<\
     \ typename T, T x_low, T x_high, T id >\nstruct DynamicLiChaoTree {\n\n  struct\
     \ Line {\n    T a, b;\n\n    Line(T a, T b) : a(a), b(b) {}\n\n    inline T get(T\
@@ -89,7 +89,7 @@ data:
     \      if(ret >= infll) cout << \"INFINITY\\n\";\n      else cout << ret << endl;\n\
     \    }\n  }\n}\n\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/segment_add_get_min\"\n\
-    \n#include \"../../template/template.cpp\"\n\n#include \"../../structure/convex-hull-trick/dynamic-li-chao-tree.cpp\"\
+    \n#include \"../../template/template.hpp\"\n\n#include \"../../structure/convex-hull-trick/dynamic-li-chao-tree.hpp\"\
     \n\nint main() {\n  int N, Q;\n  cin >> N >> Q;\n  DynamicLiChaoTree< int64, -1000000000,\
     \ 1000000000, infll > dlct;\n  for(int i = 0; i < N; i++) {\n    int64 l, r, a,\
     \ b;\n    cin >> l >> r >> a >> b;\n    dlct.add_segment(l, r, a, b);\n  }\n \
@@ -99,13 +99,13 @@ data:
     \      if(ret >= infll) cout << \"INFINITY\\n\";\n      else cout << ret << endl;\n\
     \    }\n  }\n}\n\n"
   dependsOn:
-  - template/template.cpp
-  - structure/convex-hull-trick/dynamic-li-chao-tree.cpp
+  - template/template.hpp
+  - structure/convex-hull-trick/dynamic-li-chao-tree.hpp
   isVerificationFile: true
   path: test/verify/yosupo-segment-add-get-min.test.cpp
   requiredBy: []
-  timestamp: '2021-05-01 00:06:55+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-segment-add-get-min.test.cpp
 layout: document

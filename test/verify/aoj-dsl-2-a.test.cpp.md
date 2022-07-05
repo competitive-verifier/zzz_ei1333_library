@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: structure/segment-tree/segment-tree.cpp
+  - icon: ':x:'
+    path: structure/segment-tree/segment-tree.hpp
     title: "Segment Tree(\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
-  - icon: ':heavy_check_mark:'
-    path: template/template.cpp
-    title: template/template.cpp
+  - icon: ':question:'
+    path: template/template.hpp
+    title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A
   bundledCode: "#line 1 \"test/verify/aoj-dsl-2-a.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A\"\
-    \n\n#line 1 \"template/template.cpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
+    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
     \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
     \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
@@ -45,7 +45,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-dsl-2-a.test.cpp\"\
-    \n\n#line 1 \"structure/segment-tree/segment-tree.cpp\"\n/**\n * @brief Segment\
+    \n\n#line 1 \"structure/segment-tree/segment-tree.hpp\"\n/**\n * @brief Segment\
     \ Tree(\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)\n * @docs docs/segment-tree.md\n\
     \ */\ntemplate< typename T, typename F >\nstruct SegmentTree {\n  int n, sz;\n\
     \  vector< T > seg;\n\n  const F f;\n  const T ti;\n\n  SegmentTree() = default;\n\
@@ -88,19 +88,19 @@ data:
     %d %d %d\", &T, &X, &Y);\n    if(T == 0) seg.set(X, Y);\n    else printf(\"%d\\\
     n\", seg.prod(X, Y + 1));\n  }\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A\"\
-    \n\n#include \"../../template/template.cpp\"\n\n#include \"../../structure/segment-tree/segment-tree.cpp\"\
+    \n\n#include \"../../template/template.hpp\"\n\n#include \"../../structure/segment-tree/segment-tree.hpp\"\
     \n\nint main() {\n  int N, Q;\n  scanf(\"%d %d\", &N, &Q);\n  auto seg = get_segment_tree(N,\
     \ [](int a, int b) { return min(a, b); }, INT_MAX);\n  while(Q--) {\n    int T,\
     \ X, Y;\n    scanf(\"%d %d %d\", &T, &X, &Y);\n    if(T == 0) seg.set(X, Y);\n\
     \    else printf(\"%d\\n\", seg.prod(X, Y + 1));\n  }\n}\n"
   dependsOn:
-  - template/template.cpp
-  - structure/segment-tree/segment-tree.cpp
+  - template/template.hpp
+  - structure/segment-tree/segment-tree.hpp
   isVerificationFile: true
   path: test/verify/aoj-dsl-2-a.test.cpp
   requiredBy: []
-  timestamp: '2022-02-15 22:44:36+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2022-07-05 18:16:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/aoj-dsl-2-a.test.cpp
 layout: document
