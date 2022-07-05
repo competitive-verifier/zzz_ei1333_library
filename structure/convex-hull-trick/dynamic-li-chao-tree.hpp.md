@@ -3,7 +3,7 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-2725.test.cpp
     title: test/verify/aoj-2725.test.cpp
   - icon: ':x:'
@@ -14,7 +14,7 @@ data:
     title: test/verify/yosupo-segment-add-get-min.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: docs/dynamic-li-chao-tree.md
     document_title: Dynamic-Li-Chao-Tree
@@ -91,7 +91,7 @@ data:
   path: structure/convex-hull-trick/dynamic-li-chao-tree.hpp
   requiredBy: []
   timestamp: '2022-07-05 18:16:30+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/verify/yosupo-line-add-get-min.test.cpp
   - test/verify/yosupo-segment-add-get-min.test.cpp

@@ -4,7 +4,7 @@ data:
   - icon: ':x:'
     path: math/number-theory/enumerate-primes.hpp
     title: "Enumerate Primes(\u7D20\u6570\u5217\u6319)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/number-theory/prime-table.hpp
     title: "Prime Table(\u7D20\u6570\u30C6\u30FC\u30D6\u30EB)"
   - icon: ':question:'

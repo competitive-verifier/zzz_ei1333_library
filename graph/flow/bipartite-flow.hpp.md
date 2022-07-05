@@ -10,7 +10,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-0334.test.cpp
     title: test/verify/aoj-0334.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-3198.test.cpp
     title: test/verify/aoj-3198.test.cpp
   - icon: ':x:'
