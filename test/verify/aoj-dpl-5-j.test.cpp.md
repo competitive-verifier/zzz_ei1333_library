@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: math/combinatorics/mod-int.hpp
     title: math/combinatorics/mod-int.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/combinatorics/partition-table.hpp
     title: "Partition Table(\u5206\u5272\u6570\u30C6\u30FC\u30D6\u30EB)"
   - icon: ':question:'
@@ -12,9 +12,9 @@ data:
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_J
@@ -93,7 +93,7 @@ data:
   path: test/verify/aoj-dpl-5-j.test.cpp
   requiredBy: []
   timestamp: '2022-07-05 18:16:30+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/aoj-dpl-5-j.test.cpp
 layout: document

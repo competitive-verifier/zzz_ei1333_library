@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: math/combinatorics/mod-int.hpp
     title: math/combinatorics/mod-int.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/combinatorics/mod-pow.hpp
     title: "Mod Pow(\u3079\u304D\u4E57)"
   - icon: ':x:'

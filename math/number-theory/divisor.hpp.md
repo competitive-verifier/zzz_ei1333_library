@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-itp1-3-d.test.cpp
     title: test/verify/aoj-itp1-3-d.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: docs/divisor.md
     document_title: "Divisor(\u7D04\u6570\u5217\u6319)"
@@ -28,7 +28,7 @@ data:
   path: math/number-theory/divisor.hpp
   requiredBy: []
   timestamp: '2022-07-05 18:16:30+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/aoj-itp1-3-d.test.cpp
 documentation_of: math/number-theory/divisor.hpp

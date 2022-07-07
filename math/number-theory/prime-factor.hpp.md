@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-ntl-1-a.test.cpp
     title: test/verify/aoj-ntl-1-a.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: "Prime Factor(\u7D20\u56E0\u6570\u5206\u89E3)"
     links: []
@@ -26,7 +26,7 @@ data:
   path: math/number-theory/prime-factor.hpp
   requiredBy: []
   timestamp: '2022-07-05 18:16:30+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/aoj-ntl-1-a.test.cpp
 documentation_of: math/number-theory/prime-factor.hpp
