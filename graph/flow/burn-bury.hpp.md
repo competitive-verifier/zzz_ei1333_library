@@ -1,0 +1,158 @@
+---
+data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: graph/flow/dinic.hpp
+    title: "Dinic(\u6700\u5927\u6D41)"
+  - icon: ':question:'
+    path: structure/union-find/union-find.hpp
+    title: Union-Find
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: hpp
+  _verificationStatusIcon: ':warning:'
+  attributes:
+    document_title: "BurnBury(\u71C3\u3084\u3059\u57CB\u3081\u308B)"
+    links: []
+  bundledCode: "#line 2 \"graph/flow/burn-bury.hpp\"\n\n#line 2 \"structure/union-find/union-find.hpp\"\
+    \n\n/**\n * @brief Union-Find\n * @docs docs/union-find.md\n */\nstruct UnionFind\
+    \ {\n  vector< int > data;\n\n  UnionFind() = default;\n\n  explicit UnionFind(size_t\
+    \ sz) : data(sz, -1) {}\n\n  bool unite(int x, int y) {\n    x = find(x), y =\
+    \ find(y);\n    if(x == y) return false;\n    if(data[x] > data[y]) swap(x, y);\n\
+    \    data[x] += data[y];\n    data[y] = x;\n    return true;\n  }\n\n  int find(int\
+    \ k) {\n    if(data[k] < 0) return (k);\n    return data[k] = find(data[k]);\n\
+    \  }\n\n  int size(int k) {\n    return -data[find(k)];\n  }\n\n  bool same(int\
+    \ x, int y) {\n    return find(x) == find(y);\n  }\n\n  vector< vector< int >\
+    \ > groups() {\n    int n = (int) data.size();\n    vector< vector< int > > ret(n);\n\
+    \    for(int i = 0; i < n; i++) {\n      ret[find(i)].emplace_back(i);\n    }\n\
+    \    ret.erase(remove_if(begin(ret), end(ret), [&](const vector< int > &v) {\n\
+    \      return v.empty();\n    }), end(ret));\n    return ret;\n  }\n};\n#line\
+    \ 1 \"graph/flow/dinic.hpp\"\n/**\n * @brief Dinic(\u6700\u5927\u6D41)\n * @docs\
+    \ docs/dinic.md\n */\ntemplate< typename flow_t >\nstruct Dinic {\n  const flow_t\
+    \ INF;\n\n  struct edge {\n    int to;\n    flow_t cap;\n    int rev;\n    bool\
+    \ isrev;\n    int idx;\n  };\n\n  vector< vector< edge > > graph;\n  vector< int\
+    \ > min_cost, iter;\n\n  explicit Dinic(int V) : INF(numeric_limits< flow_t >::max()),\
+    \ graph(V) {}\n\n  void add_edge(int from, int to, flow_t cap, int idx = -1) {\n\
+    \    graph[from].emplace_back((edge) {to, cap, (int) graph[to].size(), false,\
+    \ idx});\n    graph[to].emplace_back((edge) {from, 0, (int) graph[from].size()\
+    \ - 1, true, idx});\n  }\n\n  bool build_augment_path(int s, int t) {\n    min_cost.assign(graph.size(),\
+    \ -1);\n    queue< int > que;\n    min_cost[s] = 0;\n    que.push(s);\n    while(!que.empty()\
+    \ && min_cost[t] == -1) {\n      int p = que.front();\n      que.pop();\n    \
+    \  for(auto &e : graph[p]) {\n        if(e.cap > 0 && min_cost[e.to] == -1) {\n\
+    \          min_cost[e.to] = min_cost[p] + 1;\n          que.push(e.to);\n    \
+    \    }\n      }\n    }\n    return min_cost[t] != -1;\n  }\n\n  flow_t find_min_dist_augment_path(int\
+    \ idx, const int t, flow_t flow) {\n    if(idx == t) return flow;\n    for(int\
+    \ &i = iter[idx]; i < (int)graph[idx].size(); i++) {\n      edge &e = graph[idx][i];\n\
+    \      if(e.cap > 0 && min_cost[idx] < min_cost[e.to]) {\n        flow_t d = find_min_dist_augment_path(e.to,\
+    \ t, min(flow, e.cap));\n        if(d > 0) {\n          e.cap -= d;\n        \
+    \  graph[e.to][e.rev].cap += d;\n          return d;\n        }\n      }\n   \
+    \ }\n    return 0;\n  }\n\n  flow_t max_flow(int s, int t) {\n    flow_t flow\
+    \ = 0;\n    while(build_augment_path(s, t)) {\n      iter.assign(graph.size(),\
+    \ 0);\n      flow_t f;\n      while((f = find_min_dist_augment_path(s, t, INF))\
+    \ > 0) flow += f;\n    }\n    return flow;\n  }\n\n  void output() {\n    for(int\
+    \ i = 0; i < graph.size(); i++) {\n      for(auto &e : graph[i]) {\n        if(e.isrev)\
+    \ continue;\n        auto &rev_e = graph[e.to][e.rev];\n        cout << i << \"\
+    ->\" << e.to << \" (flow: \" << rev_e.cap << \"/\" << e.cap + rev_e.cap << \"\
+    )\" << endl;\n      }\n    }\n  }\n};\n#line 5 \"graph/flow/burn-bury.hpp\"\n\n\
+    /**\n * @brief BurnBury(\u71C3\u3084\u3059\u57CB\u3081\u308B)\n */\ntemplate<\
+    \ typename T, bool minimize = true >\nstruct BurnBury {\nprivate:\n  using MaxFlow\
+    \ = Dinic< T >;\n  using UF = UnionFind;\n  using arr2 = array< T, 2 >;\n  using\
+    \ arr4 = array< T, 4 >;\n\n  int n;\n  T alpha;\n  vector< arr2 > theta;\n  vector<\
+    \ map< int, arr4 > > phi;\n\npublic:\n  explicit BurnBury(int n) : n{n}, alpha{},\
+    \ theta(n), phi(n) {}\n\n  void add_cost(T cost) {\n    if(not minimize) cost\
+    \ *= -1;\n    alpha += cost;\n  }\n\n  void add_cost(int x, T cost) {\n    if(not\
+    \ minimize) cost *= -1;\n    int a = max(~x, x);\n    theta[a][x >= 0] += cost;\n\
+    \  }\n\n  void add_cost(int x, int y, T cost) {\n    assert(x != y);\n    if(not\
+    \ minimize) cost *= -1;\n    int a = max(~x, x), b = max(~y, y);\n    if(a < b)\
+    \ phi[a][b][((x >= 0) << 1) | (y >= 0)] += cost;\n    else phi[b][a][((y >= 0)\
+    \ << 1) | (x >= 0)] += cost;\n  }\n\n  optional< T > solve() {\n    vector< int\
+    \ > flip(2 * n, -1);\n    {\n      UF uf(n + n);\n      for(int i = 0; i < n;\
+    \ i++) {\n        for(auto&[j, cs]: phi[i]) {\n          T c = -cs[0] + cs[1]\
+    \ + cs[2] - cs[3];\n          if(c < 0) {\n            uf.unite(i, j + n);\n \
+    \           uf.unite(i + n, j);\n          } else {\n            uf.unite(i, j);\n\
+    \            uf.unite(i + n, j + n);\n          }\n        }\n      }\n      for(int\
+    \ i = 0; i < n; i++) {\n        int x = uf.find(i);\n        int y = uf.find(i\
+    \ + n);\n        if(x == y) return {};\n        if(flip[x] < 0) {\n          flip[x]\
+    \ = 0;\n          flip[y] = 1;\n        }\n      }\n      for(int i = 0; i < n;\
+    \ i++) {\n        if(flip[i] < 0) {\n          flip[i] = flip[uf.find(i)];\n \
+    \       }\n      }\n      flip.resize(n);\n    }\n    {\n      for(int i = 0;\
+    \ i < n; i++) {\n        for(auto&[j, cs]: phi[i]) {\n          if(flip[i]) {\n\
+    \            swap(cs[0], cs[2]);\n            swap(cs[1], cs[3]);\n          }\n\
+    \          if(flip[j]) {\n            swap(cs[0], cs[1]);\n            swap(cs[2],\
+    \ cs[3]);\n          }\n          T c = -cs[0] + cs[1] + cs[2] - cs[3];\n    \
+    \      alpha += cs[0];\n          theta[i][not flip[i]] += cs[2] - cs[0];\n  \
+    \        theta[j][not flip[j]] += cs[3] - cs[2];\n          cs[1] = c;\n     \
+    \     cs[0] = cs[2] = cs[3] = 0;\n        }\n      }\n    }\n    {\n      for(int\
+    \ i = 0; i < n; i++) {\n        auto &cs = theta[i];\n        if(flip[i]) {\n\
+    \          swap(cs[0], cs[1]);\n        }\n        if(cs[0] <= cs[1]) {\n    \
+    \      alpha += cs[0];\n          cs[1] -= cs[0];\n          cs[0] = 0;\n    \
+    \    } else {\n          alpha += cs[1];\n          cs[0] -= cs[1];\n        \
+    \  cs[1] = 0;\n        }\n      }\n    }\n    MaxFlow flow(n + 2);\n    int s\
+    \ = n, t = n + 1;\n    {\n      for(int i = 0; i < n; i++) {\n        auto &cs\
+    \ = theta[i];\n        if(cs[1] > 0) {\n          flow.add_edge(i, t, cs[1]);\n\
+    \        }\n        if(cs[0] > 0) {\n          flow.add_edge(s, i, cs[0]);\n \
+    \       }\n      }\n      for(int i = 0; i < n; i++) {\n        for(auto&[j, cs]:\
+    \ phi[i]) {\n          if(cs[2] > 0) {\n            flow.add_edge(i, j, cs[2]);\n\
+    \          }\n          if(cs[1] > 0) {\n            flow.add_edge(j, i, cs[1]);\n\
+    \          }\n        }\n      }\n    }\n    return flow.max_flow(s, t) + alpha;\n\
+    \  }\n};\n"
+  code: "#pragma once\n\n#include \"../../structure/union-find/union-find.hpp\"\n\
+    #include \"dinic.hpp\"\n\n/**\n * @brief BurnBury(\u71C3\u3084\u3059\u57CB\u3081\
+    \u308B)\n */\ntemplate< typename T, bool minimize = true >\nstruct BurnBury {\n\
+    private:\n  using MaxFlow = Dinic< T >;\n  using UF = UnionFind;\n  using arr2\
+    \ = array< T, 2 >;\n  using arr4 = array< T, 4 >;\n\n  int n;\n  T alpha;\n  vector<\
+    \ arr2 > theta;\n  vector< map< int, arr4 > > phi;\n\npublic:\n  explicit BurnBury(int\
+    \ n) : n{n}, alpha{}, theta(n), phi(n) {}\n\n  void add_cost(T cost) {\n    if(not\
+    \ minimize) cost *= -1;\n    alpha += cost;\n  }\n\n  void add_cost(int x, T cost)\
+    \ {\n    if(not minimize) cost *= -1;\n    int a = max(~x, x);\n    theta[a][x\
+    \ >= 0] += cost;\n  }\n\n  void add_cost(int x, int y, T cost) {\n    assert(x\
+    \ != y);\n    if(not minimize) cost *= -1;\n    int a = max(~x, x), b = max(~y,\
+    \ y);\n    if(a < b) phi[a][b][((x >= 0) << 1) | (y >= 0)] += cost;\n    else\
+    \ phi[b][a][((y >= 0) << 1) | (x >= 0)] += cost;\n  }\n\n  optional< T > solve()\
+    \ {\n    vector< int > flip(2 * n, -1);\n    {\n      UF uf(n + n);\n      for(int\
+    \ i = 0; i < n; i++) {\n        for(auto&[j, cs]: phi[i]) {\n          T c = -cs[0]\
+    \ + cs[1] + cs[2] - cs[3];\n          if(c < 0) {\n            uf.unite(i, j +\
+    \ n);\n            uf.unite(i + n, j);\n          } else {\n            uf.unite(i,\
+    \ j);\n            uf.unite(i + n, j + n);\n          }\n        }\n      }\n\
+    \      for(int i = 0; i < n; i++) {\n        int x = uf.find(i);\n        int\
+    \ y = uf.find(i + n);\n        if(x == y) return {};\n        if(flip[x] < 0)\
+    \ {\n          flip[x] = 0;\n          flip[y] = 1;\n        }\n      }\n    \
+    \  for(int i = 0; i < n; i++) {\n        if(flip[i] < 0) {\n          flip[i]\
+    \ = flip[uf.find(i)];\n        }\n      }\n      flip.resize(n);\n    }\n    {\n\
+    \      for(int i = 0; i < n; i++) {\n        for(auto&[j, cs]: phi[i]) {\n   \
+    \       if(flip[i]) {\n            swap(cs[0], cs[2]);\n            swap(cs[1],\
+    \ cs[3]);\n          }\n          if(flip[j]) {\n            swap(cs[0], cs[1]);\n\
+    \            swap(cs[2], cs[3]);\n          }\n          T c = -cs[0] + cs[1]\
+    \ + cs[2] - cs[3];\n          alpha += cs[0];\n          theta[i][not flip[i]]\
+    \ += cs[2] - cs[0];\n          theta[j][not flip[j]] += cs[3] - cs[2];\n     \
+    \     cs[1] = c;\n          cs[0] = cs[2] = cs[3] = 0;\n        }\n      }\n \
+    \   }\n    {\n      for(int i = 0; i < n; i++) {\n        auto &cs = theta[i];\n\
+    \        if(flip[i]) {\n          swap(cs[0], cs[1]);\n        }\n        if(cs[0]\
+    \ <= cs[1]) {\n          alpha += cs[0];\n          cs[1] -= cs[0];\n        \
+    \  cs[0] = 0;\n        } else {\n          alpha += cs[1];\n          cs[0] -=\
+    \ cs[1];\n          cs[1] = 0;\n        }\n      }\n    }\n    MaxFlow flow(n\
+    \ + 2);\n    int s = n, t = n + 1;\n    {\n      for(int i = 0; i < n; i++) {\n\
+    \        auto &cs = theta[i];\n        if(cs[1] > 0) {\n          flow.add_edge(i,\
+    \ t, cs[1]);\n        }\n        if(cs[0] > 0) {\n          flow.add_edge(s, i,\
+    \ cs[0]);\n        }\n      }\n      for(int i = 0; i < n; i++) {\n        for(auto&[j,\
+    \ cs]: phi[i]) {\n          if(cs[2] > 0) {\n            flow.add_edge(i, j, cs[2]);\n\
+    \          }\n          if(cs[1] > 0) {\n            flow.add_edge(j, i, cs[1]);\n\
+    \          }\n        }\n      }\n    }\n    return flow.max_flow(s, t) + alpha;\n\
+    \  }\n};\n"
+  dependsOn:
+  - structure/union-find/union-find.hpp
+  - graph/flow/dinic.hpp
+  isVerificationFile: false
+  path: graph/flow/burn-bury.hpp
+  requiredBy: []
+  timestamp: '2022-07-11 01:00:58+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: graph/flow/burn-bury.hpp
+layout: document
+redirect_from:
+- /library/graph/flow/burn-bury.hpp
+- /library/graph/flow/burn-bury.hpp.html
+title: "BurnBury(\u71C3\u3084\u3059\u57CB\u3081\u308B)"
+---

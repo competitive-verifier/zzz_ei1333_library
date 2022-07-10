@@ -5,14 +5,14 @@ data:
   - icon: ':x:'
     path: math/number-theory/enumerate-primes.hpp
     title: "Enumerate Primes(\u7D20\u6570\u5217\u6319)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/number-theory/prime-count.hpp
     title: "Prime Count(\u7D20\u6570\u306E\u500B\u6570)"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-alds-1-1-c-2.test.cpp
     title: test/verify/aoj-alds-1-1-c-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-counting-primes.test.cpp
     title: test/verify/yosupo-counting-primes.test.cpp
   - icon: ':x:'

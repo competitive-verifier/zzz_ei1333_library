@@ -6,19 +6,19 @@ data:
   - icon: ':x:'
     path: test/verify/dmoj-ds5.test.cpp
     title: test/verify/dmoj-ds5.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-bitwise-and-convolution-2.test.cpp
     title: test/verify/yosupo-bitwise-and-convolution-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-bitwise-and-convolution-3.test.cpp
     title: test/verify/yosupo-bitwise-and-convolution-3.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-bitwise-and-convolution.test.cpp
     title: test/verify/yosupo-bitwise-and-convolution.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-bitwise-xor-convolution.test.cpp
     title: test/verify/yosupo-bitwise-xor-convolution.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-division-of-polynomials.test.cpp
     title: test/verify/yosupo-division-of-polynomials.test.cpp
   - icon: ':x:'
@@ -62,7 +62,7 @@ data:
     title: test/verify/yosupo-two-sat.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     document_title: "Scanner(\u9AD8\u901F\u5165\u529B)"
     links: []
@@ -116,7 +116,7 @@ data:
   path: other/scanner.hpp
   requiredBy: []
   timestamp: '2022-07-05 18:16:30+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
   - test/verify/yosupo-two-sat.test.cpp

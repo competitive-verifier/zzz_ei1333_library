@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: graph/flow/burn-bury.hpp
+    title: "BurnBury(\u71C3\u3084\u3059\u57CB\u3081\u308B)"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-1615.test.cpp
@@ -73,7 +76,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: graph/flow/dinic.hpp
-  requiredBy: []
+  requiredBy:
+  - graph/flow/burn-bury.hpp
   timestamp: '2021-07-01 02:53:34+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

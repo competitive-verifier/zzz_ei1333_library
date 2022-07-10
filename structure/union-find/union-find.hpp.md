@@ -9,17 +9,20 @@ data:
     path: graph/connected-components/three-edge-connected-components.hpp
     title: "Three Edge Connected Components(\u4E09\u91CD\u8FBA\u9023\u7D50\u6210\u5206\
       \u5206\u89E3)"
+  - icon: ':warning:'
+    path: graph/flow/burn-bury.hpp
+    title: "BurnBury(\u71C3\u3084\u3059\u57CB\u3081\u308B)"
   - icon: ':heavy_check_mark:'
     path: graph/mst/boruvka.hpp
     title: "Boruvka(\u6700\u5C0F\u5168\u57DF\u6728)"
   - icon: ':question:'
     path: graph/mst/kruskal.hpp
     title: "Kruskal(\u6700\u5C0F\u5168\u57DF\u6728)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/others/bipartite-graph-edge-coloring.hpp
     title: "Bipartite Graph Edge Coloring(\u4E8C\u90E8\u30B0\u30E9\u30D5\u306E\u8FBA\
       \u5F69\u8272)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/others/eulerian-trail.hpp
     title: "Eulerian Trail(\u30AA\u30A4\u30E9\u30FC\u8DEF)"
   - icon: ':question:'
@@ -51,7 +54,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-grl-2-a-3.test.cpp
     title: test/verify/aoj-grl-2-a-3.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-bipartite-edge-coloring.test.cpp
     title: test/verify/yosupo-bipartite-edge-coloring.test.cpp
   - icon: ':x:'
@@ -113,6 +116,7 @@ data:
   requiredBy:
   - other/mo-tree.hpp
   - other/offline-rmq.hpp
+  - graph/flow/burn-bury.hpp
   - graph/connected-components/three-edge-connected-components.hpp
   - graph/connected-components/incremental-bridge-connectivity.hpp
   - graph/others/bipartite-graph-edge-coloring.hpp

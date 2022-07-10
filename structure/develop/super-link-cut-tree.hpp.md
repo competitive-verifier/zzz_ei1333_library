@@ -8,13 +8,13 @@ data:
   - icon: ':x:'
     path: structure/develop/dynamic-tree-test.hpp
     title: Dynamic Tree Test
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: structure/develop/subtree-add-subtree-sum.hpp
     title: Subtree Add Subtree Sum
   - icon: ':x:'
     path: structure/develop/vertex-set-path-composite.hpp
     title: Vertex Set Path Composite
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: structure/develop/vertex-set-path-sum.hpp
     title: Vertex Set Path Sum
   - icon: ':x:'
@@ -30,10 +30,10 @@ data:
   - icon: ':x:'
     path: test/verify/dmoj-ds5.test.cpp
     title: test/verify/dmoj-ds5.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-dynamic-tree-subtree-add-subtree-sum.test.cpp
     title: test/verify/yosupo-dynamic-tree-subtree-add-subtree-sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-dynamic-tree-vertex-add-path-sum-3.test.cpp
     title: test/verify/yosupo-dynamic-tree-vertex-add-path-sum-3.test.cpp
   - icon: ':x:'

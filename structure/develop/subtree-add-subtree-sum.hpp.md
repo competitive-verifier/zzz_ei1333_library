@@ -6,12 +6,12 @@ data:
     title: "\u4F55\u3067\u3082\u3067\u304D\u308BLCT"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-dynamic-tree-subtree-add-subtree-sum.test.cpp
     title: test/verify/yosupo-dynamic-tree-subtree-add-subtree-sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: Subtree Add Subtree Sum
     links: []
@@ -214,7 +214,7 @@ data:
   path: structure/develop/subtree-add-subtree-sum.hpp
   requiredBy: []
   timestamp: '2022-07-05 18:16:30+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/yosupo-dynamic-tree-subtree-add-subtree-sum.test.cpp
 documentation_of: structure/develop/subtree-add-subtree-sum.hpp

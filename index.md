@@ -192,7 +192,7 @@ data:
         \u5206\u89E3)"
   - name: graph/flow
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/flow/bipartite-flow.hpp
       title: "Bipartite Flow(\u4E8C\u90E8\u30B0\u30E9\u30D5\u306E\u30D5\u30ED\u30FC\
         )"
@@ -200,6 +200,9 @@ data:
       path: graph/flow/bipartite-matching.hpp
       title: "Bipartite-Matching(\u4E8C\u90E8\u30B0\u30E9\u30D5\u306E\u6700\u5927\u30DE\
         \u30C3\u30C1\u30F3\u30B0)"
+    - icon: ':warning:'
+      path: graph/flow/burn-bury.hpp
+      title: "BurnBury(\u71C3\u3084\u3059\u57CB\u3081\u308B)"
     - icon: ':heavy_check_mark:'
       path: graph/flow/dinic-capacity-scaling.hpp
       title: "Dinic Capacity Scaling(\u6700\u5927\u6D41)"
@@ -213,7 +216,7 @@ data:
       path: graph/flow/gabow-edmonds.hpp
       title: "Gabow Edmonds(\u4E00\u822C\u30B0\u30E9\u30D5\u306E\u6700\u5927\u30DE\
         \u30C3\u30C1\u30F3\u30B0)"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/flow/hungarian.hpp
       title: "Hungarian(\u4E8C\u90E8\u30B0\u30E9\u30D5\u306E\u6700\u5C0F\u91CD\u307F\
         \u6700\u5927\u30DE\u30C3\u30C1\u30F3\u30B0)"
@@ -237,7 +240,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/mst/boruvka.hpp
       title: "Boruvka(\u6700\u5C0F\u5168\u57DF\u6728)"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/mst/directed-mst.hpp
       title: "Directed MST(\u6700\u5C0F\u6709\u5411\u5168\u57DF\u6728)"
     - icon: ':question:'
@@ -254,23 +257,23 @@ data:
       title: "Prim(\u6700\u5C0F\u5168\u57DF\u6728)"
   - name: graph/others
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/others/bipartite-graph-edge-coloring.hpp
       title: "Bipartite Graph Edge Coloring(\u4E8C\u90E8\u30B0\u30E9\u30D5\u306E\u8FBA\
         \u5F69\u8272)"
     - icon: ':heavy_check_mark:'
       path: graph/others/block-cut-tree.hpp
       title: Block Cut Tree
-    - icon: ':x:'
+    - icon: ':question:'
       path: graph/others/cartesian-tree.hpp
       title: Cartesian Tree
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/others/chromatic-number.hpp
       title: "Chromatic Number(\u5F69\u8272\u6570)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/others/cycle-detection.hpp
       title: "Cycle Detection(\u9589\u8DEF\u691C\u51FA)"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/others/dominator-tree.hpp
       title: Dominator Tree
     - icon: ':heavy_check_mark:'
@@ -279,7 +282,7 @@ data:
     - icon: ':x:'
       path: graph/others/enumerate-triangles.hpp
       title: "Enumerate Triangles(\u4E09\u89D2\u5F62\u5168\u5217\u6319)"
-    - icon: ':x:'
+    - icon: ':question:'
       path: graph/others/eulerian-trail.hpp
       title: "Eulerian Trail(\u30AA\u30A4\u30E9\u30FC\u8DEF)"
     - icon: ':question:'
@@ -420,7 +423,7 @@ data:
     - icon: ':question:'
       path: math/combinatorics/mod-int.hpp
       title: math/combinatorics/mod-int.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/combinatorics/mod-log.hpp
       title: "Mod Log(\u96E2\u6563\u5BFE\u6570\u554F\u984C)"
     - icon: ':question:'
@@ -432,7 +435,7 @@ data:
     - icon: ':x:'
       path: math/combinatorics/mod-tetration.hpp
       title: "Mod Tetration(\u30C6\u30C8\u30EC\u30FC\u30B7\u30E7\u30F3)"
-    - icon: ':x:'
+    - icon: ':question:'
       path: math/combinatorics/montgomery-mod-int.hpp
       title: Montgomery ModInt
     - icon: ':x:'
@@ -465,40 +468,40 @@ data:
     - icon: ':x:'
       path: math/fft/arbitrary-mod-convolution.hpp
       title: "Arbitrary Mod Convolution(\u4EFB\u610Fmod\u7573\u307F\u8FBC\u307F)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/fft/bitwise-and-convolution.hpp
       title: "Bitwise And Convolution (Bitwise-AND\u7573\u307F\u8FBC\u307F)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/fft/bitwise-or-convolution.hpp
       title: "Bitwise Or Convolution (Bitwise-OR\u7573\u307F\u8FBC\u307F)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/fft/bitwise-xor-convolution.hpp
       title: "Bitwise Xor Convolution (Bitwise-XOR\u7573\u307F\u8FBC\u307F)"
     - icon: ':x:'
       path: math/fft/fast-fourier-transform.hpp
       title: math/fft/fast-fourier-transform.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/fft/fast-walsh-hadamard-transform.hpp
       title: "Fast Walsh Hadamard Transform (\u9AD8\u901F\u30A6\u30A9\u30EB\u30B7\u30E5\
         \u30A2\u30C0\u30DE\u30FC\u30EB\u5909\u63DB)"
-    - icon: ':x:'
+    - icon: ':question:'
       path: math/fft/number-theoretic-transform-friendly-mod-int.hpp
       title: Number Theoretic Transform Friendly ModInt
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/fft/number-theoretic-transform.hpp
       title: math/fft/number-theoretic-transform.hpp
     - icon: ':x:'
       path: math/fft/subset-convolution.hpp
       title: Subset Convolution
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/fft/subset-zeta-moebius-transform.hpp
       title: "Subset Zeta/Moebius Transform (\u4E0B\u4F4D\u96C6\u5408\u306E\u30BC\u30FC\
         \u30BF/\u30E1\u30D3\u30A6\u30B9\u5909\u63DB)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/fft/superset-zeta-moebius-transform-simd.hpp
       title: "Superset Zeta/Moebius Transform SIMD (\u4E0A\u4F4D\u96C6\u5408\u306E\
         \u30BC\u30FC\u30BF/\u30E1\u30D3\u30A6\u30B9\u5909\u63DB, SIMD)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/fft/superset-zeta-moebius-transform.hpp
       title: "Superset Zeta/Moebius Transform (\u4E0A\u4F4D\u96C6\u5408\u306E\u30BC\
         \u30FC\u30BF/\u30E1\u30D3\u30A6\u30B9\u5909\u63DB)"
@@ -510,7 +513,7 @@ data:
     - icon: ':x:'
       path: math/fps/berlekamp-massey.hpp
       title: Berlekamp Massey
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/fps/bernoulli.hpp
       title: "Bernoulli(\u30D9\u30EB\u30CC\u30FC\u30A4\u6570)"
     - icon: ':x:'
@@ -522,7 +525,7 @@ data:
     - icon: ':warning:'
       path: math/fps/eulerian.hpp
       title: "Eulerian(\u30AA\u30A4\u30E9\u30FC\u6570)"
-    - icon: ':x:'
+    - icon: ':question:'
       path: math/fps/formal-power-series-friendly-ntt.hpp
       title: "Formal Power Series Friendly NTT(NTTmod\u7528\u5F62\u5F0F\u7684\u51AA\
         \u7D1A\u6570)"
@@ -581,10 +584,10 @@ data:
       path: math/number-theory/euler-phi-table.hpp
       title: "Euler\u2019s Phi Table(\u30AA\u30A4\u30E9\u30FC\u306E\u03C6\u95A2\u6570\
         \u30C6\u30FC\u30D6\u30EB)"
-    - icon: ':x:'
+    - icon: ':question:'
       path: math/number-theory/euler-phi.hpp
       title: "Euler's Phi(\u30AA\u30A4\u30E9\u30FC\u306E\u03C6\u95A2\u6570)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/number-theory/extgcd.hpp
       title: "Extgcd(\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\
         \u6CD5)"
@@ -594,14 +597,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/number-theory/is-prime.hpp
       title: math/number-theory/is-prime.hpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: math/number-theory/kth-root-integer.hpp
       title: Kth Root Integer
     - icon: ':warning:'
       path: math/number-theory/moebius-mu-table.hpp
       title: "Moebius Table(\u30E1\u30D3\u30A6\u30B9\u95A2\u6570\u30C6\u30FC\u30D6\
         \u30EB)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/number-theory/prime-count.hpp
       title: "Prime Count(\u7D20\u6570\u306E\u500B\u6570)"
     - icon: ':heavy_check_mark:'
@@ -651,13 +654,13 @@ data:
     - icon: ':x:'
       path: other/offline-rmq.hpp
       title: Offline RMQ
-    - icon: ':x:'
+    - icon: ':question:'
       path: other/printer.hpp
       title: "Printer(\u9AD8\u901F\u51FA\u529B)"
     - icon: ':warning:'
       path: other/random-number-generator.hpp
       title: other/random-number-generator.hpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: other/scanner.hpp
       title: "Scanner(\u9AD8\u901F\u5165\u529B)"
     - icon: ':x:'
@@ -785,7 +788,7 @@ data:
     - icon: ':warning:'
       path: structure/develop/splay-tree.hpp
       title: structure/develop/splay-tree.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: structure/develop/subtree-add-subtree-sum.hpp
       title: Subtree Add Subtree Sum
     - icon: ':question:'
@@ -794,7 +797,7 @@ data:
     - icon: ':x:'
       path: structure/develop/vertex-set-path-composite.hpp
       title: Vertex Set Path Composite
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: structure/develop/vertex-set-path-sum.hpp
       title: Vertex Set Path Sum
     - icon: ':x:'
@@ -818,7 +821,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: structure/heap/radix-heap.hpp
       title: structure/heap/radix-heap.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: structure/heap/skew-heap.hpp
       title: Skew-Heap
   - name: structure/lct
@@ -1271,76 +1274,76 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/verify/aoj-ntl-1-b.test.cpp
       title: test/verify/aoj-ntl-1-b.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-ntl-1-d.test.cpp
       title: test/verify/aoj-ntl-1-d.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-ntl-1-e.test.cpp
       title: test/verify/aoj-ntl-1-e.test.cpp
     - icon: ':x:'
       path: test/verify/dmoj-ds5.test.cpp
       title: test/verify/dmoj-ds5.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-assignment.test.cpp
       title: test/verify/yosupo-assignment.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-bernoulli-number.test.cpp
       title: test/verify/yosupo-bernoulli-number.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-bipartite-edge-coloring.test.cpp
       title: test/verify/yosupo-bipartite-edge-coloring.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-bipartitematching.test.cpp
       title: test/verify/yosupo-bipartitematching.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-bitwise-and-convolution-2.test.cpp
       title: test/verify/yosupo-bitwise-and-convolution-2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-bitwise-and-convolution-3.test.cpp
       title: test/verify/yosupo-bitwise-and-convolution-3.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-bitwise-and-convolution.test.cpp
       title: test/verify/yosupo-bitwise-and-convolution.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-bitwise-xor-convolution.test.cpp
       title: test/verify/yosupo-bitwise-xor-convolution.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-cartesian-tree.test.cpp
       title: test/verify/yosupo-cartesian-tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-chromatic-number.test.cpp
       title: test/verify/yosupo-chromatic-number.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-convolution-mod-2.test.cpp
       title: test/verify/yosupo-convolution-mod-2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-convolution-mod.test.cpp
       title: test/verify/yosupo-convolution-mod.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-counting-primes.test.cpp
       title: test/verify/yosupo-counting-primes.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-cycle-detection.test.cpp
       title: test/verify/yosupo-cycle-detection.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-directedmst.test.cpp
       title: test/verify/yosupo-directedmst.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-discrete-logarithm-mod.test.cpp
       title: test/verify/yosupo-discrete-logarithm-mod.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-division-of-polynomials.test.cpp
       title: test/verify/yosupo-division-of-polynomials.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-dominatortree.test.cpp
       title: test/verify/yosupo-dominatortree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-dynamic-tree-subtree-add-subtree-sum.test.cpp
       title: test/verify/yosupo-dynamic-tree-subtree-add-subtree-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-dynamic-tree-vertex-add-path-sum-2.test.cpp
       title: test/verify/yosupo-dynamic-tree-vertex-add-path-sum-2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-dynamic-tree-vertex-add-path-sum-3.test.cpp
       title: test/verify/yosupo-dynamic-tree-vertex-add-path-sum-3.test.cpp
     - icon: ':x:'

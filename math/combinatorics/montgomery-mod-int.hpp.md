@@ -6,7 +6,7 @@ data:
     path: structure/develop/vertex-set-path-composite.hpp
     title: Vertex Set Path Composite
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-convolution-mod-2.test.cpp
     title: test/verify/yosupo-convolution-mod-2.test.cpp
   - icon: ':x:'
@@ -20,7 +20,7 @@ data:
     title: test/verify/yukicoder-1720.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     document_title: Montgomery ModInt
     links: []
@@ -95,7 +95,7 @@ data:
   requiredBy:
   - structure/develop/vertex-set-path-composite.hpp
   timestamp: '2022-07-05 18:16:30+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/verify/yukicoder-1720.test.cpp
   - test/verify/yosupo-dynamic-tree-vertex-set-path-composite-3.test.cpp

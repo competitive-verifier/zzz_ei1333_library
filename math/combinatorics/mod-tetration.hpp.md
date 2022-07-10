@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: math/combinatorics/mod-pow.hpp
     title: "Mod Pow(\u3079\u304D\u4E57)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/number-theory/euler-phi.hpp
     title: "Euler's Phi(\u30AA\u30A4\u30E9\u30FC\u306E\u03C6\u95A2\u6570)"
   _extendedRequiredBy: []
