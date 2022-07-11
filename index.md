@@ -202,7 +202,7 @@ data:
         \u30C3\u30C1\u30F3\u30B0)"
     - icon: ':warning:'
       path: graph/flow/burn-bury.hpp
-      title: "BurnBury(\u71C3\u3084\u3059\u57CB\u3081\u308B)"
+      title: "Burn Bury(\u71C3\u3084\u3059\u57CB\u3081\u308B)"
     - icon: ':heavy_check_mark:'
       path: graph/flow/dinic-capacity-scaling.hpp
       title: "Dinic Capacity Scaling(\u6700\u5927\u6D41)"
@@ -663,7 +663,7 @@ data:
     - icon: ':question:'
       path: other/scanner.hpp
       title: "Scanner(\u9AD8\u901F\u5165\u529B)"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: other/static-point-add-rectangle-sum.hpp
       title: Static Point Add Rectangle Sum
     - icon: ':warning:'
@@ -704,14 +704,14 @@ data:
       title: Z Algorithm
   - name: structure/bbst
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: structure/bbst/lazy-red-black-tree.hpp
       title: "Lazy-Red-Black-Tree(\u9045\u5EF6\u4F1D\u642C\u8D64\u9ED2\u6728)"
     - icon: ':heavy_check_mark:'
       path: structure/bbst/lazy-reversible-splay-tree.hpp
       title: "Lazy-Reversible-Splay-Tree(\u9045\u5EF6\u4F1D\u642C\u53CD\u8EE2\u53EF\
         \u80FDSplay\u6728)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: structure/bbst/lazy-weight-balanced-tree.hpp
       title: "Lazy-Weight-Balanced-Tree(\u9045\u5EF6\u4F1D\u642C\u91CD\u307F\u5E73\
         \u8861\u6728)"
@@ -871,7 +871,7 @@ data:
     - icon: ':warning:'
       path: structure/others/priority-sum-structure.hpp
       title: structure/others/priority-sum-structure.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: structure/others/sliding-window-aggregation.hpp
       title: structure/others/sliding-window-aggregation.hpp
     - icon: ':warning:'
@@ -947,20 +947,20 @@ data:
       title: structure/union-find/weighted-union-find.hpp
   - name: structure/wavelet
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: structure/wavelet/succinct-indexable-dictionary.hpp
       title: "Succinct Indexable Dictionary(\u5B8C\u5099\u8F9E\u66F8)"
     - icon: ':heavy_check_mark:'
       path: structure/wavelet/wavelet-matrix-point-add-rectangle-sum.hpp
       title: Wavelet Matrix Point Add Rectangle Sum
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: structure/wavelet/wavelet-matrix-rectangle-sum.hpp
       title: Wavelet Matrix Rectangle Sum
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: structure/wavelet/wavelet-matrix.hpp
       title: "Wavelet Matrix(\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217\
         )"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: structure/wavelet/wavelet-tree.hpp
       title: "Wavelet Tree(\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u6728)"
   - name: template
@@ -1475,31 +1475,31 @@ data:
     - icon: ':x:'
       path: test/verify/yosupo-pow-of-formal-power-series.test.cpp
       title: test/verify/yosupo-pow-of-formal-power-series.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-queue-operate-all-composite.test.cpp
       title: test/verify/yosupo-queue-operate-all-composite.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-range-affine-range-sum-2.test.cpp
       title: test/verify/yosupo-range-affine-range-sum-2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-range-affine-range-sum-3.test.cpp
       title: test/verify/yosupo-range-affine-range-sum-3.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-range-affine-range-sum.test.cpp
       title: test/verify/yosupo-range-affine-range-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-range-kth-smallest-2.test.cpp
       title: test/verify/yosupo-range-kth-smallest-2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-range-kth-smallest.test.cpp
       title: test/verify/yosupo-range-kth-smallest.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-rectangle-sum-2.test.cpp
       title: test/verify/yosupo-rectangle-sum-2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-rectangle-sum.test.cpp
       title: test/verify/yosupo-rectangle-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-scc.test.cpp
       title: test/verify/yosupo-scc.test.cpp
     - icon: ':x:'

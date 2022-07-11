@@ -11,7 +11,7 @@ data:
       \u5206\u89E3)"
   - icon: ':warning:'
     path: graph/flow/burn-bury.hpp
-    title: "BurnBury(\u71C3\u3084\u3059\u57CB\u3081\u308B)"
+    title: "Burn Bury(\u71C3\u3084\u3059\u57CB\u3081\u308B)"
   - icon: ':heavy_check_mark:'
     path: graph/mst/boruvka.hpp
     title: "Boruvka(\u6700\u5C0F\u5168\u57DF\u6728)"

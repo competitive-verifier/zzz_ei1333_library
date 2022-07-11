@@ -242,7 +242,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-manhattanmst.test.cpp
     title: test/verify/yosupo-manhattanmst.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-scc.test.cpp
     title: test/verify/yosupo-scc.test.cpp
   - icon: ':x:'
