@@ -14,13 +14,8 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: docs/knapsack-limitations-2.md
-    document_title: "Knapsack Limitations(\u500B\u6570\u5236\u9650\u3064\u304D\u30CA\
-      \u30C3\u30D7\u30B5\u30C3\u30AF\u554F\u984C) $O(N^2 \\max(v_i)^2)$"
     links: []
-  bundledCode: "#line 1 \"dp/knapsack-limitations.hpp\"\n/**\n * @brief Knapsack Limitations(\u500B\
-    \u6570\u5236\u9650\u3064\u304D\u30CA\u30C3\u30D7\u30B5\u30C3\u30AF\u554F\u984C\
-    ) $O(NW)$\n * @docs docs/knapsack-limitations.md\n */\ntemplate< typename T, typename\
+  bundledCode: "#line 1 \"dp/knapsack-limitations.hpp\"\ntemplate< typename T, typename\
     \ Compare = greater< T > >\nvector< T > knapsack_limitations(const vector< int\
     \ > &w, const vector< int > &m, const vector< T > &v,\n                      \
     \           const int &W, const T &NG, const Compare &comp = Compare()) {\n  const\
@@ -35,57 +30,49 @@ data:
     \            deqv[t++] = val;\n          }\n          if(s < t) {\n          \
     \  dp[j * w[i] + a] = deqv[s] + j * v[i];\n            if(deq[s] == j - m[i])\
     \ ++s;\n          }\n        }\n      }\n    }\n  }\n  return dp;\n}\n#line 2\
-    \ \"dp/knapsack-limitations-2.hpp\"\n\n/**\n * @brief Knapsack Limitations(\u500B\
-    \u6570\u5236\u9650\u3064\u304D\u30CA\u30C3\u30D7\u30B5\u30C3\u30AF\u554F\u984C\
-    ) $O(N^2 \\max(v_i)^2)$\n * @docs docs/knapsack-limitations-2.md\n */\ntemplate<\
-    \ typename T >\nT knapsack_limitations(const vector< T > &w, const vector< T >\
-    \ &m, const vector< int > &v,\n                       const T &W) {\n  const int\
-    \ N = (int) w.size();\n  auto v_max = *max_element(begin(v), end(v));\n  if(v_max\
-    \ == 0) return 0;\n  vector< int > ma(N);\n  vector< T > mb(N);\n  for(int i =\
-    \ 0; i < N; i++) {\n    ma[i] = min< T >(m[i], v_max - 1);\n    mb[i] = m[i] -\
-    \ ma[i];\n  }\n  T sum = 0;\n  for(int i = 0; i < N; i++) sum += ma[i] * v[i];\n\
-    \  auto dp = knapsack_limitations(v, ma, w, sum, T(-1), less<>());\n  vector<\
-    \ int > ord(N);\n  iota(begin(ord), end(ord), 0);\n  sort(begin(ord), end(ord),\
-    \ [&](int a, int b) {\n    return v[a] * w[b] > v[b] * w[a];\n  });\n  T ret =\
-    \ T();\n  for(int i = 0; i < dp.size(); i++) {\n    if(dp[i] > W || dp[i] == -1)\
-    \ continue;\n    T rest = W - dp[i], cost = i;\n    for(auto &p : ord) {\n   \
-    \   auto get = min(mb[p], rest / w[p]);\n      if(get <= 0) continue;\n      cost\
-    \ += get * v[p];\n      rest -= get * w[p];\n    }\n    ret = max(ret, cost);\n\
-    \  }\n  return ret;\n}\n"
-  code: "#include \"knapsack-limitations.hpp\"\n\n/**\n * @brief Knapsack Limitations(\u500B\
-    \u6570\u5236\u9650\u3064\u304D\u30CA\u30C3\u30D7\u30B5\u30C3\u30AF\u554F\u984C\
-    ) $O(N^2 \\max(v_i)^2)$\n * @docs docs/knapsack-limitations-2.md\n */\ntemplate<\
-    \ typename T >\nT knapsack_limitations(const vector< T > &w, const vector< T >\
-    \ &m, const vector< int > &v,\n                       const T &W) {\n  const int\
-    \ N = (int) w.size();\n  auto v_max = *max_element(begin(v), end(v));\n  if(v_max\
-    \ == 0) return 0;\n  vector< int > ma(N);\n  vector< T > mb(N);\n  for(int i =\
-    \ 0; i < N; i++) {\n    ma[i] = min< T >(m[i], v_max - 1);\n    mb[i] = m[i] -\
-    \ ma[i];\n  }\n  T sum = 0;\n  for(int i = 0; i < N; i++) sum += ma[i] * v[i];\n\
-    \  auto dp = knapsack_limitations(v, ma, w, sum, T(-1), less<>());\n  vector<\
-    \ int > ord(N);\n  iota(begin(ord), end(ord), 0);\n  sort(begin(ord), end(ord),\
-    \ [&](int a, int b) {\n    return v[a] * w[b] > v[b] * w[a];\n  });\n  T ret =\
-    \ T();\n  for(int i = 0; i < dp.size(); i++) {\n    if(dp[i] > W || dp[i] == -1)\
-    \ continue;\n    T rest = W - dp[i], cost = i;\n    for(auto &p : ord) {\n   \
-    \   auto get = min(mb[p], rest / w[p]);\n      if(get <= 0) continue;\n      cost\
-    \ += get * v[p];\n      rest -= get * w[p];\n    }\n    ret = max(ret, cost);\n\
-    \  }\n  return ret;\n}\n"
+    \ \"dp/knapsack-limitations-2.hpp\"\n\ntemplate< typename T >\nT knapsack_limitations(const\
+    \ vector< T > &w, const vector< T > &m, const vector< int > &v,\n            \
+    \           const T &W) {\n  const int N = (int) w.size();\n  auto v_max = *max_element(begin(v),\
+    \ end(v));\n  if(v_max == 0) return 0;\n  vector< int > ma(N);\n  vector< T >\
+    \ mb(N);\n  for(int i = 0; i < N; i++) {\n    ma[i] = min< T >(m[i], v_max - 1);\n\
+    \    mb[i] = m[i] - ma[i];\n  }\n  T sum = 0;\n  for(int i = 0; i < N; i++) sum\
+    \ += ma[i] * v[i];\n  auto dp = knapsack_limitations(v, ma, w, sum, T(-1), less<>());\n\
+    \  vector< int > ord(N);\n  iota(begin(ord), end(ord), 0);\n  sort(begin(ord),\
+    \ end(ord), [&](int a, int b) {\n    return v[a] * w[b] > v[b] * w[a];\n  });\n\
+    \  T ret = T();\n  for(int i = 0; i < dp.size(); i++) {\n    if(dp[i] > W || dp[i]\
+    \ == -1) continue;\n    T rest = W - dp[i], cost = i;\n    for(auto &p : ord)\
+    \ {\n      auto get = min(mb[p], rest / w[p]);\n      if(get <= 0) continue;\n\
+    \      cost += get * v[p];\n      rest -= get * w[p];\n    }\n    ret = max(ret,\
+    \ cost);\n  }\n  return ret;\n}\n"
+  code: "#include \"knapsack-limitations.hpp\"\n\ntemplate< typename T >\nT knapsack_limitations(const\
+    \ vector< T > &w, const vector< T > &m, const vector< int > &v,\n            \
+    \           const T &W) {\n  const int N = (int) w.size();\n  auto v_max = *max_element(begin(v),\
+    \ end(v));\n  if(v_max == 0) return 0;\n  vector< int > ma(N);\n  vector< T >\
+    \ mb(N);\n  for(int i = 0; i < N; i++) {\n    ma[i] = min< T >(m[i], v_max - 1);\n\
+    \    mb[i] = m[i] - ma[i];\n  }\n  T sum = 0;\n  for(int i = 0; i < N; i++) sum\
+    \ += ma[i] * v[i];\n  auto dp = knapsack_limitations(v, ma, w, sum, T(-1), less<>());\n\
+    \  vector< int > ord(N);\n  iota(begin(ord), end(ord), 0);\n  sort(begin(ord),\
+    \ end(ord), [&](int a, int b) {\n    return v[a] * w[b] > v[b] * w[a];\n  });\n\
+    \  T ret = T();\n  for(int i = 0; i < dp.size(); i++) {\n    if(dp[i] > W || dp[i]\
+    \ == -1) continue;\n    T rest = W - dp[i], cost = i;\n    for(auto &p : ord)\
+    \ {\n      auto get = min(mb[p], rest / w[p]);\n      if(get <= 0) continue;\n\
+    \      cost += get * v[p];\n      rest -= get * w[p];\n    }\n    ret = max(ret,\
+    \ cost);\n  }\n  return ret;\n}\n"
   dependsOn:
   - dp/knapsack-limitations.hpp
   isVerificationFile: false
   path: dp/knapsack-limitations-2.hpp
   requiredBy: []
-  timestamp: '2022-07-05 18:16:30+09:00'
+  timestamp: '2022-07-11 11:56:34+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/aoj-dpl-1-i.test.cpp
 documentation_of: dp/knapsack-limitations-2.hpp
 layout: document
-redirect_from:
-- /library/dp/knapsack-limitations-2.hpp
-- /library/dp/knapsack-limitations-2.hpp.html
 title: "Knapsack Limitations(\u500B\u6570\u5236\u9650\u3064\u304D\u30CA\u30C3\u30D7\
   \u30B5\u30C3\u30AF\u554F\u984C) $O(N^2 \\max(v_i)^2)$"
 ---
+
 ## 概要
 
 個数制限つきナップサック問題を次に示す.

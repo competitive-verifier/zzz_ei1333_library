@@ -17,13 +17,8 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: docs/knapsack-limitations.md
-    document_title: "Knapsack Limitations(\u500B\u6570\u5236\u9650\u3064\u304D\u30CA\
-      \u30C3\u30D7\u30B5\u30C3\u30AF\u554F\u984C) $O(NW)$"
     links: []
-  bundledCode: "#line 1 \"dp/knapsack-limitations.hpp\"\n/**\n * @brief Knapsack Limitations(\u500B\
-    \u6570\u5236\u9650\u3064\u304D\u30CA\u30C3\u30D7\u30B5\u30C3\u30AF\u554F\u984C\
-    ) $O(NW)$\n * @docs docs/knapsack-limitations.md\n */\ntemplate< typename T, typename\
+  bundledCode: "#line 1 \"dp/knapsack-limitations.hpp\"\ntemplate< typename T, typename\
     \ Compare = greater< T > >\nvector< T > knapsack_limitations(const vector< int\
     \ > &w, const vector< int > &m, const vector< T > &v,\n                      \
     \           const int &W, const T &NG, const Compare &comp = Compare()) {\n  const\
@@ -38,9 +33,7 @@ data:
     \            deqv[t++] = val;\n          }\n          if(s < t) {\n          \
     \  dp[j * w[i] + a] = deqv[s] + j * v[i];\n            if(deq[s] == j - m[i])\
     \ ++s;\n          }\n        }\n      }\n    }\n  }\n  return dp;\n}\n"
-  code: "/**\n * @brief Knapsack Limitations(\u500B\u6570\u5236\u9650\u3064\u304D\u30CA\
-    \u30C3\u30D7\u30B5\u30C3\u30AF\u554F\u984C) $O(NW)$\n * @docs docs/knapsack-limitations.md\n\
-    \ */\ntemplate< typename T, typename Compare = greater< T > >\nvector< T > knapsack_limitations(const\
+  code: "template< typename T, typename Compare = greater< T > >\nvector< T > knapsack_limitations(const\
     \ vector< int > &w, const vector< int > &m, const vector< T > &v,\n          \
     \                       const int &W, const T &NG, const Compare &comp = Compare())\
     \ {\n  const int N = (int) w.size();\n  vector< T > dp(W + 1, NG), deqv(W + 1);\n\
@@ -60,19 +53,17 @@ data:
   path: dp/knapsack-limitations.hpp
   requiredBy:
   - dp/knapsack-limitations-2.hpp
-  timestamp: '2022-07-05 18:16:30+09:00'
+  timestamp: '2022-07-11 11:56:34+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/aoj-dpl-1-i.test.cpp
   - test/verify/aoj-dpl-1-g.test.cpp
 documentation_of: dp/knapsack-limitations.hpp
 layout: document
-redirect_from:
-- /library/dp/knapsack-limitations.hpp
-- /library/dp/knapsack-limitations.hpp.html
 title: "Knapsack Limitations(\u500B\u6570\u5236\u9650\u3064\u304D\u30CA\u30C3\u30D7\
   \u30B5\u30C3\u30AF\u554F\u984C) $O(NW)$"
 ---
+
 ## 概要
 
 個数制限つきナップサック問題を次に示す.

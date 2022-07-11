@@ -11,13 +11,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: structure/develop/subtree-add-subtree-sum.hpp
     title: Subtree Add Subtree Sum
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: structure/develop/vertex-set-path-composite.hpp
     title: Vertex Set Path Composite
   - icon: ':heavy_check_mark:'
     path: structure/develop/vertex-set-path-sum.hpp
     title: Vertex Set Path Sum
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: structure/develop/vertex-set-subtree-sum.hpp
     title: Vertex Set Subtree Sum
   _extendedVerifiedWith:
@@ -36,10 +36,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-dynamic-tree-vertex-add-path-sum-3.test.cpp
     title: test/verify/yosupo-dynamic-tree-vertex-add-path-sum-3.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-dynamic-tree-vertex-add-subtree-sum-2.test.cpp
     title: test/verify/yosupo-dynamic-tree-vertex-add-subtree-sum-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-dynamic-tree-vertex-set-path-composite-3.test.cpp
     title: test/verify/yosupo-dynamic-tree-vertex-set-path-composite-3.test.cpp
   _isVerificationFailed: true

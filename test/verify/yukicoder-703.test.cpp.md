@@ -50,20 +50,17 @@ data:
     \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yukicoder-703.test.cpp\"\
-    \n\n#line 1 \"dp/monotone-minima.hpp\"\n/**\n * @brief Monotone Minima\n * @docs\
-    \ docs/monotone-minima.md\n */\ntemplate< typename T, typename Compare = less<\
-    \ T > >\nvector< pair< int, T > > monotone_minima(int H, int W, const function<\
-    \ T(int, int) > &f, const Compare &comp = Compare()) {\n  vector< pair< int, T\
-    \ > > dp(H);\n  function< void(int, int, int, int) > dfs = [&](int top, int bottom,\
-    \ int left, int right) {\n    if(top > bottom) return;\n    int line = (top +\
-    \ bottom) / 2;\n    T ma;\n    int mi = -1;\n    for(int i = left; i <= right;\
-    \ i++) {\n      T cst = f(line, i);\n      if(mi == -1 || comp(cst, ma)) {\n \
-    \       ma = cst;\n        mi = i;\n      }\n    }\n    dp[line] = make_pair(mi,\
+    \n\n#line 1 \"dp/monotone-minima.hpp\"\ntemplate< typename T, typename Compare\
+    \ = less< T > >\nvector< pair< int, T > > monotone_minima(int H, int W, const\
+    \ function< T(int, int) > &f, const Compare &comp = Compare()) {\n  vector< pair<\
+    \ int, T > > dp(H);\n  function< void(int, int, int, int) > dfs = [&](int top,\
+    \ int bottom, int left, int right) {\n    if(top > bottom) return;\n    int line\
+    \ = (top + bottom) / 2;\n    T ma;\n    int mi = -1;\n    for(int i = left; i\
+    \ <= right; i++) {\n      T cst = f(line, i);\n      if(mi == -1 || comp(cst,\
+    \ ma)) {\n        ma = cst;\n        mi = i;\n      }\n    }\n    dp[line] = make_pair(mi,\
     \ ma);\n    dfs(top, line - 1, left, mi);\n    dfs(line + 1, bottom, mi, right);\n\
     \  };\n  dfs(0, H - 1, 0, W - 1);\n  return dp;\n}\n#line 2 \"dp/online-offline-dp.hpp\"\
-    \n\n/**\n * @brief  Online Offline DP(\u30AA\u30F3\u30E9\u30A4\u30F3\u30FB\u30AA\
-    \u30D5\u30E9\u30A4\u30F3\u5909\u63DB)\n * @docs docs/online-offline-dp.md\n */\n\
-    template< typename T, typename Compare = less< T > >\nvector< T > online_offline_dp(int\
+    \n\ntemplate< typename T, typename Compare = less< T > >\nvector< T > online_offline_dp(int\
     \ W, const function< T(int, int) > &f, const Compare &comp = Compare()) {\n  vector<\
     \ T > dp(W + 1);\n  vector< int > isset(W + 1);\n  int y_base = -1, x_base = -1;\n\
     \  function< T(int, int) > get_cost = [&](int y, int x) { // return dp[0, x+x_base)+f[x+x_base,\
@@ -100,7 +97,7 @@ data:
   isVerificationFile: true
   path: test/verify/yukicoder-703.test.cpp
   requiredBy: []
-  timestamp: '2022-07-05 18:16:30+09:00'
+  timestamp: '2022-07-11 11:56:34+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yukicoder-703.test.cpp

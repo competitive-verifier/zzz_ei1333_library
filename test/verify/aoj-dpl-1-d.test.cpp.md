@@ -46,12 +46,10 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-dpl-1-d.test.cpp\"\
-    \n\n#line 1 \"dp/longest-increasing-subsequence.hpp\"\n/**\n * @brief Longest\
-    \ Increasing Subsequence(\u6700\u9577\u5897\u52A0\u90E8\u5206\u5217)\n * @docs\
-    \ docs/longest-increasing-subsequence.md\n */\ntemplate< typename T >\nsize_t\
-    \ longest_increasing_subsequence(const vector< T > &a, bool strict) {\n  vector<\
-    \ T > lis;\n  for(auto &p : a) {\n    typename vector< T >::iterator it;\n   \
-    \ if(strict) it = lower_bound(begin(lis), end(lis), p);\n    else it = upper_bound(begin(lis),\
+    \n\n#line 1 \"dp/longest-increasing-subsequence.hpp\"\ntemplate< typename T >\n\
+    size_t longest_increasing_subsequence(const vector< T > &a, bool strict) {\n \
+    \ vector< T > lis;\n  for(auto &p : a) {\n    typename vector< T >::iterator it;\n\
+    \    if(strict) it = lower_bound(begin(lis), end(lis), p);\n    else it = upper_bound(begin(lis),\
     \ end(lis), p);\n    if(end(lis) == it) lis.emplace_back(p);\n    else *it = p;\n\
     \  }\n  return lis.size();\n}\n#line 6 \"test/verify/aoj-dpl-1-d.test.cpp\"\n\n\
     int main() {\n  int N;\n  cin >> N;\n  vector< int > A(N);\n  cin >> A;\n  cout\
@@ -66,7 +64,7 @@ data:
   isVerificationFile: true
   path: test/verify/aoj-dpl-1-d.test.cpp
   requiredBy: []
-  timestamp: '2022-07-05 18:16:30+09:00'
+  timestamp: '2022-07-11 11:56:34+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/aoj-dpl-1-d.test.cpp

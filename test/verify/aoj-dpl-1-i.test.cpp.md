@@ -50,43 +50,39 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-dpl-1-i.test.cpp\"\
-    \n\n#line 1 \"dp/knapsack-limitations.hpp\"\n/**\n * @brief Knapsack Limitations(\u500B\
-    \u6570\u5236\u9650\u3064\u304D\u30CA\u30C3\u30D7\u30B5\u30C3\u30AF\u554F\u984C\
-    ) $O(NW)$\n * @docs docs/knapsack-limitations.md\n */\ntemplate< typename T, typename\
-    \ Compare = greater< T > >\nvector< T > knapsack_limitations(const vector< int\
-    \ > &w, const vector< int > &m, const vector< T > &v,\n                      \
-    \           const int &W, const T &NG, const Compare &comp = Compare()) {\n  const\
-    \ int N = (int) w.size();\n  vector< T > dp(W + 1, NG), deqv(W + 1);\n  dp[0]\
-    \ = T();\n  vector< int > deq(W + 1);\n  for(int i = 0; i < N; i++) {\n    if(w[i]\
-    \ == 0) {\n      for(int j = 0; j <= W; j++) {\n        if(dp[j] != NG && comp(dp[j]\
-    \ + v[i] * m[i], dp[j])) {\n          dp[j] = dp[j] + v[i] * m[i];\n        }\n\
-    \      }\n    } else {\n      for(int a = 0; a < w[i]; a++) {\n        int s =\
-    \ 0, t = 0;\n        for(int j = 0; w[i] * j + a <= W; j++) {\n          if(dp[w[i]\
+    \n\n#line 1 \"dp/knapsack-limitations.hpp\"\ntemplate< typename T, typename Compare\
+    \ = greater< T > >\nvector< T > knapsack_limitations(const vector< int > &w, const\
+    \ vector< int > &m, const vector< T > &v,\n                                 const\
+    \ int &W, const T &NG, const Compare &comp = Compare()) {\n  const int N = (int)\
+    \ w.size();\n  vector< T > dp(W + 1, NG), deqv(W + 1);\n  dp[0] = T();\n  vector<\
+    \ int > deq(W + 1);\n  for(int i = 0; i < N; i++) {\n    if(w[i] == 0) {\n   \
+    \   for(int j = 0; j <= W; j++) {\n        if(dp[j] != NG && comp(dp[j] + v[i]\
+    \ * m[i], dp[j])) {\n          dp[j] = dp[j] + v[i] * m[i];\n        }\n     \
+    \ }\n    } else {\n      for(int a = 0; a < w[i]; a++) {\n        int s = 0, t\
+    \ = 0;\n        for(int j = 0; w[i] * j + a <= W; j++) {\n          if(dp[w[i]\
     \ * j + a] != NG) {\n            auto val = dp[w[i] * j + a] - j * v[i];\n   \
     \         while(s < t && comp(val, deqv[t - 1])) --t;\n            deq[t] = j;\n\
     \            deqv[t++] = val;\n          }\n          if(s < t) {\n          \
     \  dp[j * w[i] + a] = deqv[s] + j * v[i];\n            if(deq[s] == j - m[i])\
     \ ++s;\n          }\n        }\n      }\n    }\n  }\n  return dp;\n}\n#line 2\
-    \ \"dp/knapsack-limitations-2.hpp\"\n\n/**\n * @brief Knapsack Limitations(\u500B\
-    \u6570\u5236\u9650\u3064\u304D\u30CA\u30C3\u30D7\u30B5\u30C3\u30AF\u554F\u984C\
-    ) $O(N^2 \\max(v_i)^2)$\n * @docs docs/knapsack-limitations-2.md\n */\ntemplate<\
-    \ typename T >\nT knapsack_limitations(const vector< T > &w, const vector< T >\
-    \ &m, const vector< int > &v,\n                       const T &W) {\n  const int\
-    \ N = (int) w.size();\n  auto v_max = *max_element(begin(v), end(v));\n  if(v_max\
-    \ == 0) return 0;\n  vector< int > ma(N);\n  vector< T > mb(N);\n  for(int i =\
-    \ 0; i < N; i++) {\n    ma[i] = min< T >(m[i], v_max - 1);\n    mb[i] = m[i] -\
-    \ ma[i];\n  }\n  T sum = 0;\n  for(int i = 0; i < N; i++) sum += ma[i] * v[i];\n\
-    \  auto dp = knapsack_limitations(v, ma, w, sum, T(-1), less<>());\n  vector<\
-    \ int > ord(N);\n  iota(begin(ord), end(ord), 0);\n  sort(begin(ord), end(ord),\
-    \ [&](int a, int b) {\n    return v[a] * w[b] > v[b] * w[a];\n  });\n  T ret =\
-    \ T();\n  for(int i = 0; i < dp.size(); i++) {\n    if(dp[i] > W || dp[i] == -1)\
-    \ continue;\n    T rest = W - dp[i], cost = i;\n    for(auto &p : ord) {\n   \
-    \   auto get = min(mb[p], rest / w[p]);\n      if(get <= 0) continue;\n      cost\
-    \ += get * v[p];\n      rest -= get * w[p];\n    }\n    ret = max(ret, cost);\n\
-    \  }\n  return ret;\n}\n#line 6 \"test/verify/aoj-dpl-1-i.test.cpp\"\n\nint main()\
-    \ {\n  int N;\n  int64 W;\n  cin >> N >> W;\n  vector< int > v(N);\n  vector<\
-    \ int64 > w(N), m(N);\n  for(int i = 0; i < N; i++) {\n    cin >> v[i] >> w[i]\
-    \ >> m[i];\n  }\n  cout << knapsack_limitations(w, m, v, W) << endl;\n}\n"
+    \ \"dp/knapsack-limitations-2.hpp\"\n\ntemplate< typename T >\nT knapsack_limitations(const\
+    \ vector< T > &w, const vector< T > &m, const vector< int > &v,\n            \
+    \           const T &W) {\n  const int N = (int) w.size();\n  auto v_max = *max_element(begin(v),\
+    \ end(v));\n  if(v_max == 0) return 0;\n  vector< int > ma(N);\n  vector< T >\
+    \ mb(N);\n  for(int i = 0; i < N; i++) {\n    ma[i] = min< T >(m[i], v_max - 1);\n\
+    \    mb[i] = m[i] - ma[i];\n  }\n  T sum = 0;\n  for(int i = 0; i < N; i++) sum\
+    \ += ma[i] * v[i];\n  auto dp = knapsack_limitations(v, ma, w, sum, T(-1), less<>());\n\
+    \  vector< int > ord(N);\n  iota(begin(ord), end(ord), 0);\n  sort(begin(ord),\
+    \ end(ord), [&](int a, int b) {\n    return v[a] * w[b] > v[b] * w[a];\n  });\n\
+    \  T ret = T();\n  for(int i = 0; i < dp.size(); i++) {\n    if(dp[i] > W || dp[i]\
+    \ == -1) continue;\n    T rest = W - dp[i], cost = i;\n    for(auto &p : ord)\
+    \ {\n      auto get = min(mb[p], rest / w[p]);\n      if(get <= 0) continue;\n\
+    \      cost += get * v[p];\n      rest -= get * w[p];\n    }\n    ret = max(ret,\
+    \ cost);\n  }\n  return ret;\n}\n#line 6 \"test/verify/aoj-dpl-1-i.test.cpp\"\n\
+    \nint main() {\n  int N;\n  int64 W;\n  cin >> N >> W;\n  vector< int > v(N);\n\
+    \  vector< int64 > w(N), m(N);\n  for(int i = 0; i < N; i++) {\n    cin >> v[i]\
+    \ >> w[i] >> m[i];\n  }\n  cout << knapsack_limitations(w, m, v, W) << endl;\n\
+    }\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_I\"\
     \n\n#include \"../../template/template.hpp\"\n\n#include \"../../dp/knapsack-limitations-2.hpp\"\
     \n\nint main() {\n  int N;\n  int64 W;\n  cin >> N >> W;\n  vector< int > v(N);\n\
@@ -100,7 +96,7 @@ data:
   isVerificationFile: true
   path: test/verify/aoj-dpl-1-i.test.cpp
   requiredBy: []
-  timestamp: '2022-07-05 18:16:30+09:00'
+  timestamp: '2022-07-11 11:56:34+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/aoj-dpl-1-i.test.cpp

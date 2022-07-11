@@ -42,7 +42,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/others/dominator-tree.hpp
     title: Dominator Tree
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/others/enumerate-triangles.hpp
     title: "Enumerate Triangles(\u4E09\u89D2\u5F62\u5168\u5217\u6319)"
   - icon: ':question:'
@@ -218,7 +218,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-dominatortree.test.cpp
     title: test/verify/yosupo-dominatortree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-enumerate-triangles.test.cpp
     title: test/verify/yosupo-enumerate-triangles.test.cpp
   - icon: ':x:'

@@ -46,18 +46,16 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-dpl-1-g.test.cpp\"\
-    \n\n#line 1 \"dp/knapsack-limitations.hpp\"\n/**\n * @brief Knapsack Limitations(\u500B\
-    \u6570\u5236\u9650\u3064\u304D\u30CA\u30C3\u30D7\u30B5\u30C3\u30AF\u554F\u984C\
-    ) $O(NW)$\n * @docs docs/knapsack-limitations.md\n */\ntemplate< typename T, typename\
-    \ Compare = greater< T > >\nvector< T > knapsack_limitations(const vector< int\
-    \ > &w, const vector< int > &m, const vector< T > &v,\n                      \
-    \           const int &W, const T &NG, const Compare &comp = Compare()) {\n  const\
-    \ int N = (int) w.size();\n  vector< T > dp(W + 1, NG), deqv(W + 1);\n  dp[0]\
-    \ = T();\n  vector< int > deq(W + 1);\n  for(int i = 0; i < N; i++) {\n    if(w[i]\
-    \ == 0) {\n      for(int j = 0; j <= W; j++) {\n        if(dp[j] != NG && comp(dp[j]\
-    \ + v[i] * m[i], dp[j])) {\n          dp[j] = dp[j] + v[i] * m[i];\n        }\n\
-    \      }\n    } else {\n      for(int a = 0; a < w[i]; a++) {\n        int s =\
-    \ 0, t = 0;\n        for(int j = 0; w[i] * j + a <= W; j++) {\n          if(dp[w[i]\
+    \n\n#line 1 \"dp/knapsack-limitations.hpp\"\ntemplate< typename T, typename Compare\
+    \ = greater< T > >\nvector< T > knapsack_limitations(const vector< int > &w, const\
+    \ vector< int > &m, const vector< T > &v,\n                                 const\
+    \ int &W, const T &NG, const Compare &comp = Compare()) {\n  const int N = (int)\
+    \ w.size();\n  vector< T > dp(W + 1, NG), deqv(W + 1);\n  dp[0] = T();\n  vector<\
+    \ int > deq(W + 1);\n  for(int i = 0; i < N; i++) {\n    if(w[i] == 0) {\n   \
+    \   for(int j = 0; j <= W; j++) {\n        if(dp[j] != NG && comp(dp[j] + v[i]\
+    \ * m[i], dp[j])) {\n          dp[j] = dp[j] + v[i] * m[i];\n        }\n     \
+    \ }\n    } else {\n      for(int a = 0; a < w[i]; a++) {\n        int s = 0, t\
+    \ = 0;\n        for(int j = 0; w[i] * j + a <= W; j++) {\n          if(dp[w[i]\
     \ * j + a] != NG) {\n            auto val = dp[w[i] * j + a] - j * v[i];\n   \
     \         while(s < t && comp(val, deqv[t - 1])) --t;\n            deq[t] = j;\n\
     \            deqv[t++] = val;\n          }\n          if(s < t) {\n          \
@@ -79,7 +77,7 @@ data:
   isVerificationFile: true
   path: test/verify/aoj-dpl-1-g.test.cpp
   requiredBy: []
-  timestamp: '2022-07-05 18:16:30+09:00'
+  timestamp: '2022-07-11 11:56:34+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/aoj-dpl-1-g.test.cpp

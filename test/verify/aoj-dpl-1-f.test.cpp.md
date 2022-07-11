@@ -46,17 +46,16 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-dpl-1-f.test.cpp\"\
-    \n\n#line 1 \"dp/knapsack-01-2.hpp\"\n/**\n * @brief Knapsack 01(0-1\u30CA\u30C3\
-    \u30D7\u30B5\u30C3\u30AF\u554F\u984C) $O(N \\sum {v_i})$\n * @docs docs/knapsack-01-2.md\n\
-    \ */\ntemplate< typename T >\nT knapsack_01_2(const vector< T > &w, const vector<\
-    \ int > &v, const T &W) {\n  const int N = (int) w.size();\n  const int sum =\
-    \ accumulate(begin(v), end(v), 0);\n  vector< T > dp(sum + 1, W + 1);\n  dp[0]\
-    \ = T();\n  for(int i = 0; i < N; i++) {\n    for(int j = sum; j >= v[i]; j--)\
-    \ {\n      dp[j] = min(dp[j], dp[j - v[i]] + w[i]);\n    }\n  }\n  int ret = 0;\n\
-    \  for(int i = 0; i <= sum; i++) {\n    if(dp[i] <= W) ret = i;\n  }\n  return\
-    \ ret;\n}\n#line 6 \"test/verify/aoj-dpl-1-f.test.cpp\"\n\nint main() {\n  int\
-    \ N, W;\n  cin >> N >> W;\n  vector< int > v(N), w(N);\n  for(int i = 0; i < N;\
-    \ i++) cin >> v[i] >> w[i];\n  cout << knapsack_01_2(w, v, W) << endl;\n}\n"
+    \n\n#line 1 \"dp/knapsack-01-2.hpp\"\ntemplate< typename T >\nT knapsack_01_2(const\
+    \ vector< T > &w, const vector< int > &v, const T &W) {\n  const int N = (int)\
+    \ w.size();\n  const int sum = accumulate(begin(v), end(v), 0);\n  vector< T >\
+    \ dp(sum + 1, W + 1);\n  dp[0] = T();\n  for(int i = 0; i < N; i++) {\n    for(int\
+    \ j = sum; j >= v[i]; j--) {\n      dp[j] = min(dp[j], dp[j - v[i]] + w[i]);\n\
+    \    }\n  }\n  int ret = 0;\n  for(int i = 0; i <= sum; i++) {\n    if(dp[i] <=\
+    \ W) ret = i;\n  }\n  return ret;\n}\n#line 6 \"test/verify/aoj-dpl-1-f.test.cpp\"\
+    \n\nint main() {\n  int N, W;\n  cin >> N >> W;\n  vector< int > v(N), w(N);\n\
+    \  for(int i = 0; i < N; i++) cin >> v[i] >> w[i];\n  cout << knapsack_01_2(w,\
+    \ v, W) << endl;\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_F\"\
     \n\n#include \"../../template/template.hpp\"\n\n#include \"../../dp/knapsack-01-2.hpp\"\
     \n\nint main() {\n  int N, W;\n  cin >> N >> W;\n  vector< int > v(N), w(N);\n\
@@ -68,7 +67,7 @@ data:
   isVerificationFile: true
   path: test/verify/aoj-dpl-1-f.test.cpp
   requiredBy: []
-  timestamp: '2022-07-05 18:16:30+09:00'
+  timestamp: '2022-07-11 11:56:34+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/aoj-dpl-1-f.test.cpp

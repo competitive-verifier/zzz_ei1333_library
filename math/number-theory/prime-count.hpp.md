@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: math/number-theory/kth-root-integer.hpp
     title: Kth Root Integer
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/number-theory/prime-table.hpp
     title: "Prime Table(\u7D20\u6570\u30C6\u30FC\u30D6\u30EB)"
   _extendedRequiredBy: []

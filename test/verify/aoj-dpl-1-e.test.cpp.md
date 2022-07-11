@@ -45,17 +45,16 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-dpl-1-e.test.cpp\"\
-    \n\n#line 1 \"dp/edit-distance.hpp\"\n/**\n * @brief Edit Distance(\u7DE8\u96C6\
-    \u8DDD\u96E2)\n * @docs docs/edit-distance.md\n */\nint edit_distance(const string\
-    \ &S, const string &T) {\n  const int N = (int) S.size(), M = (int) T.size();\n\
-    \  vector< vector< int > > dp(N + 1, vector< int >(M + 1, N + M));\n  for(int\
-    \ i = 0; i <= N; i++) dp[i][0] = i;\n  for(int i = 0; i <= M; i++) dp[0][i] =\
-    \ i;\n  for(int i = 1; i <= N; i++) {\n    for(int j = 1; j <= M; j++) {\n   \
-    \   dp[i][j] = min(dp[i][j], dp[i - 1][j] + 1);\n      dp[i][j] = min(dp[i][j],\
-    \ dp[i][j - 1] + 1);\n      dp[i][j] = min(dp[i][j], dp[i - 1][j - 1] + (S[i -\
-    \ 1] != T[j - 1]));\n    }\n  }\n  return dp[N][M];\n}\n#line 6 \"test/verify/aoj-dpl-1-e.test.cpp\"\
-    \n\nint main() {\n  string S, T;\n  cin >> S >> T;\n  cout << edit_distance(S,\
-    \ T) << endl;\n}\n\n"
+    \n\n#line 1 \"dp/edit-distance.hpp\"\nint edit_distance(const string &S, const\
+    \ string &T) {\n  const int N = (int) S.size(), M = (int) T.size();\n  vector<\
+    \ vector< int > > dp(N + 1, vector< int >(M + 1, N + M));\n  for(int i = 0; i\
+    \ <= N; i++) dp[i][0] = i;\n  for(int i = 0; i <= M; i++) dp[0][i] = i;\n  for(int\
+    \ i = 1; i <= N; i++) {\n    for(int j = 1; j <= M; j++) {\n      dp[i][j] = min(dp[i][j],\
+    \ dp[i - 1][j] + 1);\n      dp[i][j] = min(dp[i][j], dp[i][j - 1] + 1);\n    \
+    \  dp[i][j] = min(dp[i][j], dp[i - 1][j - 1] + (S[i - 1] != T[j - 1]));\n    }\n\
+    \  }\n  return dp[N][M];\n}\n#line 6 \"test/verify/aoj-dpl-1-e.test.cpp\"\n\n\
+    int main() {\n  string S, T;\n  cin >> S >> T;\n  cout << edit_distance(S, T)\
+    \ << endl;\n}\n\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_E\"\
     \n\n#include \"../../template/template.hpp\"\n\n#include \"../../dp/edit-distance.hpp\"\
     \n\nint main() {\n  string S, T;\n  cin >> S >> T;\n  cout << edit_distance(S,\
@@ -66,7 +65,7 @@ data:
   isVerificationFile: true
   path: test/verify/aoj-dpl-1-e.test.cpp
   requiredBy: []
-  timestamp: '2022-07-05 18:16:30+09:00'
+  timestamp: '2022-07-11 11:56:34+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/aoj-dpl-1-e.test.cpp
