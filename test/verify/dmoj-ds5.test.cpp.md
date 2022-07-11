@@ -23,37 +23,40 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://dmoj.ca/problem/ds5
+    IGNORE: ''
+    IGNORE_IF_CLANG: ''
+    IGNORE_IF_GCC: ''
     links:
     - https://dmoj.ca/problem/ds5
-  bundledCode: "#line 1 \"test/verify/dmoj-ds5.test.cpp\"\n#define PROBLEM \"https://dmoj.ca/problem/ds5\"\
-    \n\n#line 1 \"template/template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
-    \ std;\n\nusing int64 = long long;\nconst int mod = 1e9 + 7;\n\nconst int64 infll\
-    \ = (1LL << 62) - 1;\nconst int inf = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup()\
-    \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n    cout << fixed\
-    \ << setprecision(10);\n    cerr << fixed << setprecision(10);\n  }\n} iosetup;\n\
-    \ntemplate< typename T1, typename T2 >\nostream &operator<<(ostream &os, const\
-    \ pair< T1, T2 >& p) {\n  os << p.first << \" \" << p.second;\n  return os;\n\
-    }\n\ntemplate< typename T1, typename T2 >\nistream &operator>>(istream &is, pair<\
-    \ T1, T2 > &p) {\n  is >> p.first >> p.second;\n  return is;\n}\n\ntemplate< typename\
-    \ T >\nostream &operator<<(ostream &os, const vector< T > &v) {\n  for(int i =\
-    \ 0; i < (int) v.size(); i++) {\n    os << v[i] << (i + 1 != v.size() ? \" \"\
-    \ : \"\");\n  }\n  return os;\n}\n\ntemplate< typename T >\nistream &operator>>(istream\
-    \ &is, vector< T > &v) {\n  for(T &in : v) is >> in;\n  return is;\n}\n\ntemplate<\
-    \ typename T1, typename T2 >\ninline bool chmax(T1 &a, T2 b) { return a < b &&\
-    \ (a = b, true); }\n\ntemplate< typename T1, typename T2 >\ninline bool chmin(T1\
-    \ &a, T2 b) { return a > b && (a = b, true); }\n\ntemplate< typename T = int64\
-    \ >\nvector< T > make_v(size_t a) {\n  return vector< T >(a);\n}\n\ntemplate<\
-    \ typename T, typename... Ts >\nauto make_v(size_t a, Ts... ts) {\n  return vector<\
-    \ decltype(make_v< T >(ts...)) >(a, make_v< T >(ts...));\n}\n\ntemplate< typename\
-    \ T, typename V >\ntypename enable_if< is_class< T >::value == 0 >::type fill_v(T\
-    \ &t, const V &v) {\n  t = v;\n}\n\ntemplate< typename T, typename V >\ntypename\
-    \ enable_if< is_class< T >::value != 0 >::type fill_v(T &t, const V &v) {\n  for(auto\
-    \ &e : t) fill_v(e, v);\n}\n\ntemplate< typename F >\nstruct FixPoint : F {\n\
-    \  explicit FixPoint(F &&f) : F(forward< F >(f)) {}\n\n  template< typename...\
-    \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
+  bundledCode: "#line 1 \"test/verify/dmoj-ds5.test.cpp\"\n#define IGNORE\n#define\
+    \ PROBLEM \"https://dmoj.ca/problem/ds5\"\n\n#line 1 \"template/template.hpp\"\
+    \n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing int64 = long long;\n\
+    const int mod = 1e9 + 7;\n\nconst int64 infll = (1LL << 62) - 1;\nconst int inf\
+    \ = (1 << 30) - 1;\n\nstruct IoSetup {\n  IoSetup() {\n    cin.tie(nullptr);\n\
+    \    ios::sync_with_stdio(false);\n    cout << fixed << setprecision(10);\n  \
+    \  cerr << fixed << setprecision(10);\n  }\n} iosetup;\n\ntemplate< typename T1,\
+    \ typename T2 >\nostream &operator<<(ostream &os, const pair< T1, T2 >& p) {\n\
+    \  os << p.first << \" \" << p.second;\n  return os;\n}\n\ntemplate< typename\
+    \ T1, typename T2 >\nistream &operator>>(istream &is, pair< T1, T2 > &p) {\n \
+    \ is >> p.first >> p.second;\n  return is;\n}\n\ntemplate< typename T >\nostream\
+    \ &operator<<(ostream &os, const vector< T > &v) {\n  for(int i = 0; i < (int)\
+    \ v.size(); i++) {\n    os << v[i] << (i + 1 != v.size() ? \" \" : \"\");\n  }\n\
+    \  return os;\n}\n\ntemplate< typename T >\nistream &operator>>(istream &is, vector<\
+    \ T > &v) {\n  for(T &in : v) is >> in;\n  return is;\n}\n\ntemplate< typename\
+    \ T1, typename T2 >\ninline bool chmax(T1 &a, T2 b) { return a < b && (a = b,\
+    \ true); }\n\ntemplate< typename T1, typename T2 >\ninline bool chmin(T1 &a, T2\
+    \ b) { return a > b && (a = b, true); }\n\ntemplate< typename T = int64 >\nvector<\
+    \ T > make_v(size_t a) {\n  return vector< T >(a);\n}\n\ntemplate< typename T,\
+    \ typename... Ts >\nauto make_v(size_t a, Ts... ts) {\n  return vector< decltype(make_v<\
+    \ T >(ts...)) >(a, make_v< T >(ts...));\n}\n\ntemplate< typename T, typename V\
+    \ >\ntypename enable_if< is_class< T >::value == 0 >::type fill_v(T &t, const\
+    \ V &v) {\n  t = v;\n}\n\ntemplate< typename T, typename V >\ntypename enable_if<\
+    \ is_class< T >::value != 0 >::type fill_v(T &t, const V &v) {\n  for(auto &e\
+    \ : t) fill_v(e, v);\n}\n\ntemplate< typename F >\nstruct FixPoint : F {\n  explicit\
+    \ FixPoint(F &&f) : F(forward< F >(f)) {}\n\n  template< typename... Args >\n\
+    \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
-    \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/dmoj-ds5.test.cpp\"\
+    \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 5 \"test/verify/dmoj-ds5.test.cpp\"\
     \n\n#line 1 \"structure/develop/super-link-cut-tree.hpp\"\n/**\n * @brief \u4F55\
     \u3067\u3082\u3067\u304D\u308BLCT\n */\ntemplate< typename LInfo, typename Lazy\
     \ >\nstruct SplayTree {\n  struct Node {\n    Node *l, *r, *p;\n    LInfo info;\n\
@@ -239,7 +242,7 @@ data:
     \ // change\n      light_min = p.v;\n      light_max = p.v;\n      light_sum =\
     \ p.v * light_sz;\n    } else { // inc\n      light_min += p.v;\n      light_max\
     \ += p.v;\n      light_sum += p.v * light_sz;\n    }\n  }\n};\n\nusing LCT = SuperLinkCutTree<\
-    \ Info, LInfo, Lazy >;\n#line 6 \"test/verify/dmoj-ds5.test.cpp\"\n\n#line 1 \"\
+    \ Info, LInfo, Lazy >;\n#line 7 \"test/verify/dmoj-ds5.test.cpp\"\n\n#line 1 \"\
     other/scanner.hpp\"\n/**\n * @brief Scanner(\u9AD8\u901F\u5165\u529B)\n */\nstruct\
     \ Scanner {\npublic:\n\n  explicit Scanner(FILE *fp) : fp(fp) {}\n\n  template<\
     \ typename T, typename... E >\n  void read(T &t, E &... e) {\n    read_single(t);\n\
@@ -280,7 +283,7 @@ data:
     \  }\n\n  void write_single(const char *s) {\n    while(*s != 0) write_single(*s++);\n\
     \  }\n\n  template< typename T >\n  void write_single(const vector< T > &s) {\n\
     \    for(size_t i = 0; i < s.size(); i++) {\n      if(i) write_single(' ');\n\
-    \      write_single(s[i]);\n    }\n  }\n};\n#line 9 \"test/verify/dmoj-ds5.test.cpp\"\
+    \      write_single(s[i]);\n    }\n  }\n};\n#line 10 \"test/verify/dmoj-ds5.test.cpp\"\
     \n\nint main() {\n  Scanner in(stdin);\n  Printer out(stdout);\n\n  int N, M;\n\
     \  in.read(N, M);\n  vector< vector< int > > g(N);\n  for(int i = 0; i + 1 < N;\
     \ i++) {\n    int x, y;\n    in.read(x, y);\n    --x, --y;\n    g[x].emplace_back(y);\n\
@@ -313,12 +316,12 @@ data:
     \ vs[y]).path_sum);\n    } else {\n      int x;\n      in.read(x);\n      --x;\n\
     \      lct.evert(vs[R]);\n      auto ret = lct.query_subtree(vs[x]);\n      out.writeln(ret.path_sum\
     \ + ret.light_sum);\n    }\n  }\n}\n"
-  code: "#define PROBLEM \"https://dmoj.ca/problem/ds5\"\n\n#include \"../../template/template.hpp\"\
-    \n\n#include \"../../structure/develop/dynamic-tree-test.hpp\"\n\n#include \"\
-    ../../other/scanner.hpp\"\n#include \"../../other/printer.hpp\"\n\nint main()\
-    \ {\n  Scanner in(stdin);\n  Printer out(stdout);\n\n  int N, M;\n  in.read(N,\
-    \ M);\n  vector< vector< int > > g(N);\n  for(int i = 0; i + 1 < N; i++) {\n \
-    \   int x, y;\n    in.read(x, y);\n    --x, --y;\n    g[x].emplace_back(y);\n\
+  code: "#define IGNORE\n#define PROBLEM \"https://dmoj.ca/problem/ds5\"\n\n#include\
+    \ \"../../template/template.hpp\"\n\n#include \"../../structure/develop/dynamic-tree-test.hpp\"\
+    \n\n#include \"../../other/scanner.hpp\"\n#include \"../../other/printer.hpp\"\
+    \n\nint main() {\n  Scanner in(stdin);\n  Printer out(stdout);\n\n  int N, M;\n\
+    \  in.read(N, M);\n  vector< vector< int > > g(N);\n  for(int i = 0; i + 1 < N;\
+    \ i++) {\n    int x, y;\n    in.read(x, y);\n    --x, --y;\n    g[x].emplace_back(y);\n\
     \    g[y].emplace_back(x);\n  }\n  LCT lct;\n  vector< LCT::NP > vs(N);\n  for(int\
     \ i = 0; i < N; i++) {\n    T x;\n    in.read(x);\n    vs[i] = lct.alloc(x);\n\
     \  }\n  int R;\n  in.read(R);\n  --R;\n  MFP([&](auto dfs, int idx, int par) ->\
@@ -357,7 +360,7 @@ data:
   isVerificationFile: true
   path: test/verify/dmoj-ds5.test.cpp
   requiredBy: []
-  timestamp: '2022-07-05 18:16:30+09:00'
+  timestamp: '2022-07-11 12:25:48+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/dmoj-ds5.test.cpp

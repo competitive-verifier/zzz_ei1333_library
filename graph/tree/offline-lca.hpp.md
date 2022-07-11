@@ -15,12 +15,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-2270.test.cpp
     title: test/verify/aoj-2270.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-lca-4.test.cpp
     title: test/verify/yosupo-lca-4.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: "Offline LCA(\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\u901A\
       \u7956\u5148)"
@@ -98,7 +98,7 @@ data:
   requiredBy:
   - other/mo-tree.hpp
   timestamp: '2022-07-05 18:16:30+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/yosupo-lca-4.test.cpp
   - test/verify/aoj-2270.test.cpp

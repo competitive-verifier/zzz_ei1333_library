@@ -6,12 +6,12 @@ data:
     title: "Suffix Array(\u63A5\u5C3E\u8F9E\u914D\u5217)"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-number-of-substrings.test.cpp
     title: test/verify/yosupo-number-of-substrings.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: LCP Array
     links: []
@@ -94,7 +94,7 @@ data:
   path: string/lcp-array.hpp
   requiredBy: []
   timestamp: '2022-03-30 01:32:04+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/yosupo-number-of-substrings.test.cpp
 documentation_of: string/lcp-array.hpp

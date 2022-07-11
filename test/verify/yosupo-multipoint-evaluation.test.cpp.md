@@ -11,10 +11,10 @@ data:
     path: math/fps/formal-power-series-friendly-ntt.hpp
     title: "Formal Power Series Friendly NTT(NTTmod\u7528\u5F62\u5F0F\u7684\u51AA\u7D1A\
       \u6570)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/fps/multipoint-evaluation.hpp
     title: Multipoint Evaluation
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/fps/subproduct-tree.hpp
     title: Subproduct Tree
   - icon: ':question:'
@@ -22,9 +22,9 @@ data:
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/multipoint_evaluation
@@ -317,7 +317,7 @@ data:
   path: test/verify/yosupo-multipoint-evaluation.test.cpp
   requiredBy: []
   timestamp: '2022-07-05 18:16:30+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/yosupo-multipoint-evaluation.test.cpp
 layout: document

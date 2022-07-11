@@ -3,7 +3,7 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-line-add-get-min-2.test.cpp
     title: test/verify/yosupo-line-add-get-min-2.test.cpp
   - icon: ':x:'
@@ -11,7 +11,7 @@ data:
     title: test/verify/yukicoder-952.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: docs/convex-hull-trick-add-monotone.md
     document_title: Convex Hull Trick Add Monotone
@@ -84,7 +84,7 @@ data:
   path: structure/convex-hull-trick/convex-hull-trick-add-monotone.hpp
   requiredBy: []
   timestamp: '2022-07-05 18:16:30+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/verify/yukicoder-952.test.cpp
   - test/verify/yosupo-line-add-get-min-2.test.cpp

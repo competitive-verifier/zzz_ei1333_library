@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: structure/convex-hull-trick/convex-hull-trick-add-monotone.hpp
     title: Convex Hull Trick Add Monotone
   - icon: ':question:'

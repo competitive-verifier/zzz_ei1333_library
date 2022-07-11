@@ -1,11 +1,11 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: structure/others/abstract-2d-binary-indexed-tree-compressed.hpp
     title: "Abstract 2D Binary Indexed Tree Compressed(\u62BD\u8C61\u53162\u6B21\u5143\
       \u5EA7\u5727BIT)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: structure/others/abstract-binary-indexed-tree.hpp
     title: "Abstract Binary Indexed Tree(\u62BD\u8C61\u5316BIT)"
   - icon: ':question:'

@@ -14,7 +14,7 @@ data:
   - icon: ':x:'
     path: math/fps/polynomial-interpolation.hpp
     title: "Polynomial Interpolation(\u591A\u9805\u5F0F\u88DC\u9593)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/fps/subproduct-tree.hpp
     title: Subproduct Tree
   - icon: ':question:'

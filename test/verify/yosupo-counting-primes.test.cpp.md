@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/number-theory/kth-root-integer.hpp
     title: Kth Root Integer
   - icon: ':heavy_check_mark:'

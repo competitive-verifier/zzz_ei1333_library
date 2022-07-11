@@ -9,12 +9,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-counting-primes.test.cpp
     title: test/verify/yosupo-counting-primes.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-kth-root-integer.test.cpp
     title: test/verify/yosupo-kth-root-integer.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: docs/kth-root-integer.md
     document_title: Kth Root Integer
@@ -38,7 +38,7 @@ data:
   requiredBy:
   - math/number-theory/prime-count.hpp
   timestamp: '2022-07-05 18:16:30+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/yosupo-counting-primes.test.cpp
   - test/verify/yosupo-kth-root-integer.test.cpp
