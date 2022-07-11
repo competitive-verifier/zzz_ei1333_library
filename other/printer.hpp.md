@@ -36,10 +36,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
     title: test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
     title: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-point-add-rectangle-sum.test.cpp
     title: test/verify/yosupo-point-add-rectangle-sum.test.cpp
   - icon: ':x:'

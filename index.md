@@ -541,7 +541,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/fps/partition.hpp
       title: "Partition(\u5206\u5272\u6570)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/fps/polynomial-interpolation.hpp
       title: "Polynomial Interpolation(\u591A\u9805\u5F0F\u88DC\u9593)"
     - icon: ':x:'
@@ -555,7 +555,7 @@ data:
       path: math/fps/stirling-second.hpp
       title: "Stirling Second(\u7B2C\u4E8C\u7A2E\u30B9\u30BF\u30FC\u30EA\u30F3\u30B0\
         \u6570)"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/fps/subproduct-tree.hpp
       title: Subproduct Tree
   - name: math/matrix
@@ -636,7 +636,7 @@ data:
     - icon: ':warning:'
       path: other/dice.hpp
       title: other/dice.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: other/dynamic-point-add-rectangle-sum.hpp
       title: Dynamic Point Add Rectangle Sum
     - icon: ':warning:'
@@ -663,7 +663,7 @@ data:
     - icon: ':question:'
       path: other/scanner.hpp
       title: "Scanner(\u9AD8\u901F\u5165\u529B)"
-    - icon: ':x:'
+    - icon: ':question:'
       path: other/static-point-add-rectangle-sum.hpp
       title: Static Point Add Rectangle Sum
     - icon: ':warning:'
@@ -707,7 +707,7 @@ data:
     - icon: ':x:'
       path: structure/bbst/lazy-red-black-tree.hpp
       title: "Lazy-Red-Black-Tree(\u9045\u5EF6\u4F1D\u642C\u8D64\u9ED2\u6728)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: structure/bbst/lazy-reversible-splay-tree.hpp
       title: "Lazy-Reversible-Splay-Tree(\u9045\u5EF6\u4F1D\u642C\u53CD\u8EE2\u53EF\
         \u80FDSplay\u6728)"
@@ -741,7 +741,7 @@ data:
     - icon: ':question:'
       path: structure/bbst/red-black-tree.hpp
       title: "Red-Black-Tree(\u8D64\u9ED2\u6728)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: structure/bbst/reversible-splay-tree.hpp
       title: "Reversible-Splay-Tree(\u53CD\u8EE2\u53EF\u80FDSplay\u6728)"
     - icon: ':heavy_check_mark:'
@@ -779,10 +779,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: structure/develop/link-cut-tree.hpp
       title: Link-Cut-Tree
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: structure/develop/reversible-splay-tree.hpp
       title: "Reversible-Splay-Tree(\u53CD\u8EE2\u53EF\u80FDSplay\u6728)"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: structure/develop/splay-tree-base.hpp
       title: "Splay-Tree-Base(Splay\u6728)"
     - icon: ':warning:'
@@ -950,7 +950,7 @@ data:
     - icon: ':question:'
       path: structure/wavelet/succinct-indexable-dictionary.hpp
       title: "Succinct Indexable Dictionary(\u5B8C\u5099\u8F9E\u66F8)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: structure/wavelet/wavelet-matrix-point-add-rectangle-sum.hpp
       title: Wavelet Matrix Point Add Rectangle Sum
     - icon: ':x:'
@@ -1451,25 +1451,25 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
       title: test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
       title: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-point-add-rectangle-sum.test.cpp
       title: test/verify/yosupo-point-add-rectangle-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-point-set-range-composite-2.test.cpp
       title: test/verify/yosupo-point-set-range-composite-2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-point-set-range-composite-3.test.cpp
       title: test/verify/yosupo-point-set-range-composite-3.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-point-set-range-composite.test.cpp
       title: test/verify/yosupo-point-set-range-composite.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-polynomial-interpolation.test.cpp
       title: test/verify/yosupo-polynomial-interpolation.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-polynomial-taylor-shift.test.cpp
       title: test/verify/yosupo-polynomial-taylor-shift.test.cpp
     - icon: ':x:'

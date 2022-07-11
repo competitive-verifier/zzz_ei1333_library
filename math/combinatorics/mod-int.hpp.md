@@ -60,19 +60,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-partition-function.test.cpp
     title: test/verify/yosupo-partition-function.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-point-set-range-composite-2.test.cpp
     title: test/verify/yosupo-point-set-range-composite-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-point-set-range-composite-3.test.cpp
     title: test/verify/yosupo-point-set-range-composite-3.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-point-set-range-composite.test.cpp
     title: test/verify/yosupo-point-set-range-composite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-polynomial-interpolation.test.cpp
     title: test/verify/yosupo-polynomial-interpolation.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-polynomial-taylor-shift.test.cpp
     title: test/verify/yosupo-polynomial-taylor-shift.test.cpp
   - icon: ':x:'

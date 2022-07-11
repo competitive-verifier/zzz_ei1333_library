@@ -9,12 +9,12 @@ data:
     title: "Succinct Indexable Dictionary(\u5B8C\u5099\u8F9E\u66F8)"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-point-add-rectangle-sum.test.cpp
     title: test/verify/yosupo-point-add-rectangle-sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: docs/wavelet-matrix-point-add-rectangle-sum.md
     document_title: Wavelet Matrix Point Add Rectangle Sum
@@ -140,7 +140,7 @@ data:
   path: structure/wavelet/wavelet-matrix-point-add-rectangle-sum.hpp
   requiredBy: []
   timestamp: '2022-07-05 18:16:30+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/yosupo-point-add-rectangle-sum.test.cpp
 documentation_of: structure/wavelet/wavelet-matrix-point-add-rectangle-sum.hpp
