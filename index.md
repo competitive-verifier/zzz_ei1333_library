@@ -328,7 +328,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/shortest-path/dijkstra-radix-heap.hpp
       title: "Dijkstra-Radix-Heap(\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u8DEF)"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/shortest-path/dijkstra.hpp
       title: "Dijkstra(\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u8DEF)"
     - icon: ':warning:'
@@ -414,7 +414,7 @@ data:
     - icon: ':warning:'
       path: math/combinatorics/lagrange-polynomial-2.hpp
       title: "Lagrange Polynomial(\u591A\u9805\u5F0F\u88DC\u9593, \u4FC2\u6570)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/combinatorics/lagrange-polynomial-3.hpp
       title: "Lagrange Polynomial(\u591A\u9805\u5F0F\u88DC\u9593, \u5024)"
     - icon: ':warning:'
@@ -519,7 +519,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/fps/coeff-of-rational-function.hpp
       title: Coeff of Rational Function
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/fps/count-subset-sum.hpp
       title: Count Subset Sum
     - icon: ':warning:'
@@ -752,7 +752,7 @@ data:
     - icon: ':question:'
       path: structure/convex-hull-trick/convex-hull-trick-add-monotone.hpp
       title: Convex Hull Trick Add Monotone
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: structure/convex-hull-trick/dynamic-li-chao-tree.hpp
       title: Dynamic-Li-Chao-Tree
     - icon: ':warning:'
@@ -916,7 +916,7 @@ data:
       title: "Segment Tree(\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
   - name: structure/trie
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: structure/trie/binary-trie.hpp
       title: Binary-Trie
     - icon: ':warning:'
@@ -1502,19 +1502,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-scc.test.cpp
       title: test/verify/yosupo-scc.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-segment-add-get-min.test.cpp
       title: test/verify/yosupo-segment-add-get-min.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-set-xor-min.test.cpp
       title: test/verify/yosupo-set-xor-min.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-sharp-p-subset-sum.test.cpp
       title: test/verify/yosupo-sharp-p-subset-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-shift-of-sampling-points-of-polynomial.test.cpp
       title: test/verify/yosupo-shift-of-sampling-points-of-polynomial.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-shortest-path.test.cpp
       title: test/verify/yosupo-shortest-path.test.cpp
     - icon: ':x:'
