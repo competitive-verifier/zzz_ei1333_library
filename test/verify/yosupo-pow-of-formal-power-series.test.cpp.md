@@ -280,14 +280,14 @@ data:
     \ i++) p[i] *= rfact[i];\n    return p;\n  }\n};\n\ntemplate< typename Mint >\n\
     using FPS = FormalPowerSeriesFriendlyNTT< Mint >;\n#line 8 \"test/verify/yosupo-pow-of-formal-power-series.test.cpp\"\
     \n\nconst int MOD = 998244353;\nusing mint = ModInt< MOD >;\n\nint main() {\n\
-    \  int N, M;\n  cin >> N >> M;\n  FPS< mint > f(N);\n  cin >> f;\n  cout << f.pow(M)\
-    \ << \"\\n\";\n}\n"
+    \  int N;\n  int64_t M;\n  cin >> N >> M;\n  FPS< mint > f(N);\n  cin >> f;\n\
+    \  cout << f.pow(M) << \"\\n\";\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/pow_of_formal_power_series\"\
     \n\n#include \"../../template/template.hpp\"\n\n#include \"../../math/combinatorics/mod-int.hpp\"\
     \n\n#include \"../../math/fps/formal-power-series-friendly-ntt.hpp\"\n\nconst\
-    \ int MOD = 998244353;\nusing mint = ModInt< MOD >;\n\nint main() {\n  int N,\
-    \ M;\n  cin >> N >> M;\n  FPS< mint > f(N);\n  cin >> f;\n  cout << f.pow(M) <<\
-    \ \"\\n\";\n}\n"
+    \ int MOD = 998244353;\nusing mint = ModInt< MOD >;\n\nint main() {\n  int N;\n\
+    \  int64_t M;\n  cin >> N >> M;\n  FPS< mint > f(N);\n  cin >> f;\n  cout << f.pow(M)\
+    \ << \"\\n\";\n}\n"
   dependsOn:
   - template/template.hpp
   - math/combinatorics/mod-int.hpp
@@ -296,7 +296,7 @@ data:
   isVerificationFile: true
   path: test/verify/yosupo-pow-of-formal-power-series.test.cpp
   requiredBy: []
-  timestamp: '2022-07-05 18:16:30+09:00'
+  timestamp: '2022-07-13 02:25:51+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-pow-of-formal-power-series.test.cpp
