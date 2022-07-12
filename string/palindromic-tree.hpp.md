@@ -132,8 +132,8 @@ data:
   timestamp: '2022-07-05 18:16:30+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/verify/yukicoder-465.test.cpp
   - test/verify/yukicoder-263.test.cpp
+  - test/verify/yukicoder-465.test.cpp
   - test/verify/yukicoder-273.test.cpp
 documentation_of: string/palindromic-tree.hpp
 layout: document

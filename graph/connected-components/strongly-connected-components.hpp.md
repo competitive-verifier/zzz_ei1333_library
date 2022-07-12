@@ -22,9 +22,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':question:'
   attributes:
-    _deprecated_at_docs: docs/strongly-connected-components.md
-    document_title: "Strongly Connected Components(\u5F37\u9023\u7D50\u6210\u5206\u5206\
-      \u89E3)"
     links: []
   bundledCode: "#line 2 \"graph/connected-components/strongly-connected-components.hpp\"\
     \n\n#line 2 \"graph/graph-template.hpp\"\n\n/**\n * @brief Graph Template(\u30B0\
@@ -46,29 +43,7 @@ data:
     \ {\n    return g[k];\n  }\n\n  inline const vector< Edge< T > > &operator[](const\
     \ int &k) const {\n    return g[k];\n  }\n};\n\ntemplate< typename T = int >\n\
     using Edges = vector< Edge< T > >;\n#line 4 \"graph/connected-components/strongly-connected-components.hpp\"\
-    \n\n/**\n * @brief Strongly Connected Components(\u5F37\u9023\u7D50\u6210\u5206\
-    \u5206\u89E3)\n * @docs docs/strongly-connected-components.md\n */\ntemplate<\
-    \ typename T = int >\nstruct StronglyConnectedComponents : Graph< T > {\npublic:\n\
-    \  using Graph< T >::Graph;\n  using Graph< T >::g;\n  vector< int > comp;\n \
-    \ Graph< T > dag;\n  vector< vector< int > > group;\n\n  void build() {\n    rg\
-    \ = Graph< T >(g.size());\n    for(size_t i = 0; i < g.size(); i++) {\n      for(auto\
-    \ &e : g[i]) {\n        rg.add_directed_edge(e.to, e.from, e.cost);\n      }\n\
-    \    }\n    comp.assign(g.size(), -1);\n    used.assign(g.size(), 0);\n    for(size_t\
-    \ i = 0; i < g.size(); i++) dfs(i);\n    reverse(begin(order), end(order));\n\
-    \    int ptr = 0;\n    for(int i : order) if(comp[i] == -1) rdfs(i, ptr), ptr++;\n\
-    \    dag = Graph< T >(ptr);\n    for(size_t i = 0; i < g.size(); i++) {\n    \
-    \  for(auto &e : g[i]) {\n        int x = comp[e.from], y = comp[e.to];\n    \
-    \    if(x == y) continue;\n        dag.add_directed_edge(x, y, e.cost);\n    \
-    \  }\n    }\n    group.resize(ptr);\n    for(size_t i = 0; i < g.size(); i++)\
-    \ {\n      group[comp[i]].emplace_back(i);\n    }\n  }\n\n  int operator[](int\
-    \ k) const {\n    return comp[k];\n  }\n\nprivate:\n  vector< int > order, used;\n\
-    \  Graph< T > rg;\n\n  void dfs(int idx) {\n    if(exchange(used[idx], true))\
-    \ return;\n    for(auto &to : g[idx]) dfs(to);\n    order.push_back(idx);\n  }\n\
-    \n  void rdfs(int idx, int cnt) {\n    if(comp[idx] != -1) return;\n    comp[idx]\
-    \ = cnt;\n    for(auto &to : rg.g[idx]) rdfs(to, cnt);\n  }\n};\n"
-  code: "#pragma once\n\n#include \"../graph-template.hpp\"\n\n/**\n * @brief Strongly\
-    \ Connected Components(\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3)\n * @docs docs/strongly-connected-components.md\n\
-    \ */\ntemplate< typename T = int >\nstruct StronglyConnectedComponents : Graph<\
+    \n\ntemplate< typename T = int >\nstruct StronglyConnectedComponents : Graph<\
     \ T > {\npublic:\n  using Graph< T >::Graph;\n  using Graph< T >::g;\n  vector<\
     \ int > comp;\n  Graph< T > dag;\n  vector< vector< int > > group;\n\n  void build()\
     \ {\n    rg = Graph< T >(g.size());\n    for(size_t i = 0; i < g.size(); i++)\
@@ -86,25 +61,42 @@ data:
     \ return;\n    for(auto &to : g[idx]) dfs(to);\n    order.push_back(idx);\n  }\n\
     \n  void rdfs(int idx, int cnt) {\n    if(comp[idx] != -1) return;\n    comp[idx]\
     \ = cnt;\n    for(auto &to : rg.g[idx]) rdfs(to, cnt);\n  }\n};\n"
+  code: "#pragma once\n\n#include \"../graph-template.hpp\"\n\ntemplate< typename\
+    \ T = int >\nstruct StronglyConnectedComponents : Graph< T > {\npublic:\n  using\
+    \ Graph< T >::Graph;\n  using Graph< T >::g;\n  vector< int > comp;\n  Graph<\
+    \ T > dag;\n  vector< vector< int > > group;\n\n  void build() {\n    rg = Graph<\
+    \ T >(g.size());\n    for(size_t i = 0; i < g.size(); i++) {\n      for(auto &e\
+    \ : g[i]) {\n        rg.add_directed_edge(e.to, e.from, e.cost);\n      }\n  \
+    \  }\n    comp.assign(g.size(), -1);\n    used.assign(g.size(), 0);\n    for(size_t\
+    \ i = 0; i < g.size(); i++) dfs(i);\n    reverse(begin(order), end(order));\n\
+    \    int ptr = 0;\n    for(int i : order) if(comp[i] == -1) rdfs(i, ptr), ptr++;\n\
+    \    dag = Graph< T >(ptr);\n    for(size_t i = 0; i < g.size(); i++) {\n    \
+    \  for(auto &e : g[i]) {\n        int x = comp[e.from], y = comp[e.to];\n    \
+    \    if(x == y) continue;\n        dag.add_directed_edge(x, y, e.cost);\n    \
+    \  }\n    }\n    group.resize(ptr);\n    for(size_t i = 0; i < g.size(); i++)\
+    \ {\n      group[comp[i]].emplace_back(i);\n    }\n  }\n\n  int operator[](int\
+    \ k) const {\n    return comp[k];\n  }\n\nprivate:\n  vector< int > order, used;\n\
+    \  Graph< T > rg;\n\n  void dfs(int idx) {\n    if(exchange(used[idx], true))\
+    \ return;\n    for(auto &to : g[idx]) dfs(to);\n    order.push_back(idx);\n  }\n\
+    \n  void rdfs(int idx, int cnt) {\n    if(comp[idx] != -1) return;\n    comp[idx]\
+    \ = cnt;\n    for(auto &to : rg.g[idx]) rdfs(to, cnt);\n  }\n};\n"
   dependsOn:
   - graph/graph-template.hpp
   isVerificationFile: false
   path: graph/connected-components/strongly-connected-components.hpp
   requiredBy:
   - graph/others/two-satisfiability.hpp
-  timestamp: '2021-08-16 02:17:26+09:00'
+  timestamp: '2022-07-13 00:31:16+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/verify/yosupo-scc.test.cpp
   - test/verify/aoj-grl-3-c.test.cpp
   - test/verify/yosupo-two-sat.test.cpp
-  - test/verify/yosupo-scc.test.cpp
 documentation_of: graph/connected-components/strongly-connected-components.hpp
 layout: document
-redirect_from:
-- /library/graph/connected-components/strongly-connected-components.hpp
-- /library/graph/connected-components/strongly-connected-components.hpp.html
 title: "Strongly Connected Components(\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3)"
 ---
+
 ## 概要
 
 与えられた有向グラフを強連結成分分解する.

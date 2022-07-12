@@ -92,25 +92,25 @@ data:
   isVerificationFile: false
   path: geometry/polygon.hpp
   requiredBy:
-  - geometry/convex_polygon_cut.hpp
-  - geometry/convex_hull.hpp
   - geometry/convex_polygon_diameter.hpp
   - geometry/is_convex_polygon.hpp
   - geometry/contains.hpp
-  - geometry/convex_polygon_contains.hpp
+  - geometry/convex_hull.hpp
+  - geometry/convex_polygon_cut.hpp
   - geometry/area.hpp
   - geometry/common_area_cp.hpp
+  - geometry/convex_polygon_contains.hpp
   timestamp: '2022-07-05 18:16:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/verify/aoj-cgl-3-a.test.cpp
   - test/verify/aoj-cgl-4-a.test.cpp
-  - test/verify/aoj-cgl-4-b.test.cpp
-  - test/verify/aoj-cgl-3-c.test.cpp
-  - test/verify/aoj-cgl-4-c.test.cpp
   - test/verify/aoj-0412.test.cpp
   - test/verify/aoj-cgl-7-h.test.cpp
+  - test/verify/aoj-cgl-4-c.test.cpp
   - test/verify/aoj-cgl-3-b.test.cpp
-  - test/verify/aoj-cgl-3-a.test.cpp
+  - test/verify/aoj-cgl-4-b.test.cpp
+  - test/verify/aoj-cgl-3-c.test.cpp
 documentation_of: geometry/polygon.hpp
 layout: document
 redirect_from:

@@ -16,9 +16,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':x:'
   attributes:
-    _deprecated_at_docs: docs/two-edge-connected-components.md
-    document_title: "Two Edge Connected Components(\u4E8C\u91CD\u8FBA\u9023\u7D50\u6210\
-      \u5206\u5206\u89E3)"
     links: []
   bundledCode: "#line 2 \"graph/connected-components/two-edge-connected-components.hpp\"\
     \n\n#line 2 \"graph/graph-template.hpp\"\n\n/**\n * @brief Graph Template(\u30B0\
@@ -58,9 +55,7 @@ data:
     \ < low[to]) bridge.emplace_back(to);\n      } else {\n        low[idx] = min(low[idx],\
     \ ord[to]);\n      }\n    }\n    is_articulation |= par == -1 && cnt > 1;\n  \
     \  if(is_articulation) articulation.push_back(idx);\n    return k;\n  }\n};\n\
-    #line 5 \"graph/connected-components/two-edge-connected-components.hpp\"\n\n/**\n\
-    \ * @brief Two Edge Connected Components(\u4E8C\u91CD\u8FBA\u9023\u7D50\u6210\u5206\
-    \u5206\u89E3)\n * @docs docs/two-edge-connected-components.md\n */\ntemplate<\
+    #line 5 \"graph/connected-components/two-edge-connected-components.hpp\"\n\ntemplate<\
     \ typename T = int >\nstruct TwoEdgeConnectedComponents : LowLink< T > {\npublic:\n\
     \  using LowLink< T >::LowLink;\n  using LowLink< T >::g;\n  using LowLink< T\
     \ >::ord;\n  using LowLink< T >::low;\n  using LowLink< T >::bridge;\n\n  vector<\
@@ -77,11 +72,9 @@ data:
     \    for(auto &to : g[idx]) {\n      if(comp[to] == -1) dfs(to, idx, k);\n   \
     \ }\n  }\n};\n"
   code: "#pragma once\n\n#include \"../graph-template.hpp\"\n#include \"../others/low-link.hpp\"\
-    \n\n/**\n * @brief Two Edge Connected Components(\u4E8C\u91CD\u8FBA\u9023\u7D50\
-    \u6210\u5206\u5206\u89E3)\n * @docs docs/two-edge-connected-components.md\n */\n\
-    template< typename T = int >\nstruct TwoEdgeConnectedComponents : LowLink< T >\
-    \ {\npublic:\n  using LowLink< T >::LowLink;\n  using LowLink< T >::g;\n  using\
-    \ LowLink< T >::ord;\n  using LowLink< T >::low;\n  using LowLink< T >::bridge;\n\
+    \n\ntemplate< typename T = int >\nstruct TwoEdgeConnectedComponents : LowLink<\
+    \ T > {\npublic:\n  using LowLink< T >::LowLink;\n  using LowLink< T >::g;\n \
+    \ using LowLink< T >::ord;\n  using LowLink< T >::low;\n  using LowLink< T >::bridge;\n\
     \n  vector< int > comp;\n  Graph< T > tree;\n  vector< vector< int > > group;\n\
     \n  int operator[](const int &k) const {\n    return comp[k];\n  }\n\n  void build()\
     \ override {\n    LowLink< T >::build();\n    comp.assign(g.size(), -1);\n   \
@@ -100,18 +93,16 @@ data:
   isVerificationFile: false
   path: graph/connected-components/two-edge-connected-components.hpp
   requiredBy: []
-  timestamp: '2021-08-16 02:17:26+09:00'
+  timestamp: '2022-07-13 00:31:16+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/yosupo-two-edge-connected-components.test.cpp
 documentation_of: graph/connected-components/two-edge-connected-components.hpp
 layout: document
-redirect_from:
-- /library/graph/connected-components/two-edge-connected-components.hpp
-- /library/graph/connected-components/two-edge-connected-components.hpp.html
 title: "Two Edge Connected Components(\u4E8C\u91CD\u8FBA\u9023\u7D50\u6210\u5206\u5206\
   \u89E3)"
 ---
+
 ## 概要
 
 二辺連結成分分解とも. 二重辺連結成分とは, $1$ 本の辺を取り除いても連結である部分グラフである. つまり, 橋を含まない部分グラフなので, 橋を列挙することで二重辺連結成分を列挙できる.

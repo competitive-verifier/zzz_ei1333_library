@@ -19,8 +19,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':x:'
   attributes:
-    document_title: "Three Edge Connected Components(\u4E09\u91CD\u8FBA\u9023\u7D50\
-      \u6210\u5206\u5206\u89E3)"
     links: []
   bundledCode: "#line 2 \"graph/connected-components/three-edge-connected-components.hpp\"\
     \n\n#line 2 \"graph/graph-template.hpp\"\n\n/**\n * @brief Graph Template(\u30B0\
@@ -55,10 +53,8 @@ data:
     \ i < n; i++) {\n      ret[find(i)].emplace_back(i);\n    }\n    ret.erase(remove_if(begin(ret),\
     \ end(ret), [&](const vector< int > &v) {\n      return v.empty();\n    }), end(ret));\n\
     \    return ret;\n  }\n};\n#line 4 \"graph/connected-components/incremental-bridge-connectivity.hpp\"\
-    \n\n/**\n * @brief Incremental Bridge Connectivity\n * @docs docs/incremental-bridge-connectivity.md\n\
-    \ * @see https://scrapbox.io/data-structures/Incremental_Bridge-Connectivity\n\
-    \ */\nstruct IncrementalBridgeConnectivity {\nprivate:\n  UnionFind cc, bcc;\n\
-    \  vector< int > bbf;\n  size_t bridge;\n\n  int size() {\n    return bbf.size();\n\
+    \n\nstruct IncrementalBridgeConnectivity {\nprivate:\n  UnionFind cc, bcc;\n \
+    \ vector< int > bbf;\n  size_t bridge;\n\n  int size() {\n    return bbf.size();\n\
     \  }\n\n  int par(int x) {\n    return bbf[x] == size() ? size() : bcc.find(bbf[x]);\n\
     \  }\n\n  int lca(int x, int y) {\n    unordered_set< int > used;\n    for(;;)\
     \ {\n      if(x != size()) {\n        if(!used.insert(x).second) return x;\n \
@@ -75,10 +71,9 @@ data:
     \ cc.find(y)) {\n      int w = lca(x, y);\n      compress(x, w);\n      compress(y,\
     \ w);\n    } else {\n      if(cc.size(x) > cc.size(y)) swap(x, y);\n      link(x,\
     \ y);\n      cc.unite(x, y);\n      ++bridge;\n    }\n  }\n};\n#line 5 \"graph/connected-components/three-edge-connected-components.hpp\"\
-    \n\n/**\n * @brief Three Edge Connected Components(\u4E09\u91CD\u8FBA\u9023\u7D50\
-    \u6210\u5206\u5206\u89E3)\n */\ntemplate< typename T = int >\nstruct ThreeEdgeConnectedComponents\
-    \ : Graph< T > {\npublic:\n  using Graph< T >::Graph;\n  using Graph< T >::g;\n\
-    \  vector< vector< int > > group;\n\n  void build() {\n    uf = UnionFind(g.size());\n\
+    \n\ntemplate< typename T = int >\nstruct ThreeEdgeConnectedComponents : Graph<\
+    \ T > {\npublic:\n  using Graph< T >::Graph;\n  using Graph< T >::g;\n  vector<\
+    \ vector< int > > group;\n\n  void build() {\n    uf = UnionFind(g.size());\n\
     \    bcc = IncrementalBridgeConnectivity(g.size());\n    used.assign(g.size(),\
     \ 0);\n    in.assign(g.size(), 0);\n    out.assign(g.size(), 0);\n    deg.assign(g.size(),\
     \ 0);\n    low.assign(g.size(), g.size());\n    for(size_t from = 0; from < g.size();\
@@ -108,10 +103,9 @@ data:
     \        }\n      }\n    }\n    out[idx] = k;\n    path.push_back(idx);\n  }\n\
     };\n\n"
   code: "#pragma once\n\n#include \"../graph-template.hpp\"\n#include \"incremental-bridge-connectivity.hpp\"\
-    \n\n/**\n * @brief Three Edge Connected Components(\u4E09\u91CD\u8FBA\u9023\u7D50\
-    \u6210\u5206\u5206\u89E3)\n */\ntemplate< typename T = int >\nstruct ThreeEdgeConnectedComponents\
-    \ : Graph< T > {\npublic:\n  using Graph< T >::Graph;\n  using Graph< T >::g;\n\
-    \  vector< vector< int > > group;\n\n  void build() {\n    uf = UnionFind(g.size());\n\
+    \n\ntemplate< typename T = int >\nstruct ThreeEdgeConnectedComponents : Graph<\
+    \ T > {\npublic:\n  using Graph< T >::Graph;\n  using Graph< T >::g;\n  vector<\
+    \ vector< int > > group;\n\n  void build() {\n    uf = UnionFind(g.size());\n\
     \    bcc = IncrementalBridgeConnectivity(g.size());\n    used.assign(g.size(),\
     \ 0);\n    in.assign(g.size(), 0);\n    out.assign(g.size(), 0);\n    deg.assign(g.size(),\
     \ 0);\n    low.assign(g.size(), g.size());\n    for(size_t from = 0; from < g.size();\
@@ -147,7 +141,7 @@ data:
   isVerificationFile: false
   path: graph/connected-components/three-edge-connected-components.hpp
   requiredBy: []
-  timestamp: '2022-07-05 18:16:30+09:00'
+  timestamp: '2022-07-13 00:31:16+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/yosupo-three-edge-connected-components.test.cpp
@@ -156,6 +150,5 @@ layout: document
 redirect_from:
 - /library/graph/connected-components/three-edge-connected-components.hpp
 - /library/graph/connected-components/three-edge-connected-components.hpp.html
-title: "Three Edge Connected Components(\u4E09\u91CD\u8FBA\u9023\u7D50\u6210\u5206\
-  \u5206\u89E3)"
+title: graph/connected-components/three-edge-connected-components.hpp
 ---

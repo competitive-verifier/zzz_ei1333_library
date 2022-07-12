@@ -22,9 +22,6 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: docs/bi-connected-components.md
-    document_title: "Bi Connected Components(\u4E8C\u91CD\u9802\u70B9\u9023\u7D50\u6210\
-      \u5206\u5206\u89E3)"
     links: []
   bundledCode: "#line 2 \"graph/graph-template.hpp\"\n\n/**\n * @brief Graph Template(\u30B0\
     \u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)\n */\ntemplate< typename T =\
@@ -63,18 +60,16 @@ data:
     \ < low[to]) bridge.emplace_back(to);\n      } else {\n        low[idx] = min(low[idx],\
     \ ord[to]);\n      }\n    }\n    is_articulation |= par == -1 && cnt > 1;\n  \
     \  if(is_articulation) articulation.push_back(idx);\n    return k;\n  }\n};\n\
-    #line 3 \"graph/connected-components/bi-connected-components.hpp\"\n\n/**\n *\
-    \ @brief Bi Connected Components(\u4E8C\u91CD\u9802\u70B9\u9023\u7D50\u6210\u5206\
-    \u5206\u89E3)\n * @docs docs/bi-connected-components.md\n */\ntemplate< typename\
-    \ T = int >\nstruct BiConnectedComponents : LowLink< T > {\npublic:\n  using LowLink<\
-    \ T >::LowLink;\n  using LowLink< T >::g;\n  using LowLink< T >::ord;\n  using\
-    \ LowLink< T >::low;\n\n  vector< vector< Edge< T > > > bc;\n\n  void build()\
-    \ override {\n    LowLink< T >::build();\n    used.assign(g.size(), 0);\n    for(int\
-    \ i = 0; i < (int)used.size(); i++) {\n      if(!used[i]) dfs(i, -1);\n    }\n\
-    \  }\n\n  explicit BiConnectedComponents(const Graph< T > &g) : Graph< T >(g)\
-    \ {}\n\nprivate:\n  vector< int > used;\n  vector< Edge< T > > tmp;\n\n  void\
-    \ dfs(int idx, int par) {\n    used[idx] = true;\n    bool beet = false;\n   \
-    \ for(auto &to : g[idx]) {\n      if(to == par && !exchange(beet, true)) continue;\n\
+    #line 3 \"graph/connected-components/bi-connected-components.hpp\"\n\ntemplate<\
+    \ typename T = int >\nstruct BiConnectedComponents : LowLink< T > {\npublic:\n\
+    \  using LowLink< T >::LowLink;\n  using LowLink< T >::g;\n  using LowLink< T\
+    \ >::ord;\n  using LowLink< T >::low;\n\n  vector< vector< Edge< T > > > bc;\n\
+    \n  void build() override {\n    LowLink< T >::build();\n    used.assign(g.size(),\
+    \ 0);\n    for(int i = 0; i < (int)used.size(); i++) {\n      if(!used[i]) dfs(i,\
+    \ -1);\n    }\n  }\n\n  explicit BiConnectedComponents(const Graph< T > &g) :\
+    \ Graph< T >(g) {}\n\nprivate:\n  vector< int > used;\n  vector< Edge< T > > tmp;\n\
+    \n  void dfs(int idx, int par) {\n    used[idx] = true;\n    bool beet = false;\n\
+    \    for(auto &to : g[idx]) {\n      if(to == par && !exchange(beet, true)) continue;\n\
     \      if(!used[to] || ord[to] < ord[idx]) {\n        tmp.emplace_back(to);\n\
     \      }\n      if(!used[to]) {\n        dfs(to, idx);\n        if(low[to] >=\
     \ ord[idx]) {\n          bc.emplace_back();\n          for(;;) {\n           \
@@ -82,11 +77,9 @@ data:
     \            if(e.idx == to.idx) break;\n          }\n        }\n      }\n   \
     \ }\n  }\n};\n"
   code: "#include \"../graph-template.hpp\"\n#include \"../others/low-link.hpp\"\n\
-    \n/**\n * @brief Bi Connected Components(\u4E8C\u91CD\u9802\u70B9\u9023\u7D50\u6210\
-    \u5206\u5206\u89E3)\n * @docs docs/bi-connected-components.md\n */\ntemplate<\
-    \ typename T = int >\nstruct BiConnectedComponents : LowLink< T > {\npublic:\n\
-    \  using LowLink< T >::LowLink;\n  using LowLink< T >::g;\n  using LowLink< T\
-    \ >::ord;\n  using LowLink< T >::low;\n\n  vector< vector< Edge< T > > > bc;\n\
+    \ntemplate< typename T = int >\nstruct BiConnectedComponents : LowLink< T > {\n\
+    public:\n  using LowLink< T >::LowLink;\n  using LowLink< T >::g;\n  using LowLink<\
+    \ T >::ord;\n  using LowLink< T >::low;\n\n  vector< vector< Edge< T > > > bc;\n\
     \n  void build() override {\n    LowLink< T >::build();\n    used.assign(g.size(),\
     \ 0);\n    for(int i = 0; i < (int)used.size(); i++) {\n      if(!used[i]) dfs(i,\
     \ -1);\n    }\n  }\n\n  explicit BiConnectedComponents(const Graph< T > &g) :\
@@ -106,19 +99,17 @@ data:
   path: graph/connected-components/bi-connected-components.hpp
   requiredBy:
   - graph/others/block-cut-tree.hpp
-  timestamp: '2021-08-16 02:17:26+09:00'
+  timestamp: '2022-07-13 00:31:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/verify/aoj-3022.test.cpp
   - test/verify/aoj-3139.test.cpp
+  - test/verify/aoj-3022.test.cpp
 documentation_of: graph/connected-components/bi-connected-components.hpp
 layout: document
-redirect_from:
-- /library/graph/connected-components/bi-connected-components.hpp
-- /library/graph/connected-components/bi-connected-components.hpp.html
 title: "Bi Connected Components(\u4E8C\u91CD\u9802\u70B9\u9023\u7D50\u6210\u5206\u5206\
   \u89E3)"
 ---
+
 ## 概要
 
 二重連結成分分解とも. 二重頂点連結成分とは, $1$ 個の頂点を取り除いても連結である部分グラフである. 

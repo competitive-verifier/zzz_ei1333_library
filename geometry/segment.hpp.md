@@ -92,20 +92,20 @@ data:
   isVerificationFile: false
   path: geometry/segment.hpp
   requiredBy:
-  - geometry/distance_sp.hpp
+  - geometry/is_intersect_ss.hpp
+  - geometry/is_intersect_cs.hpp
+  - geometry/is_intersect_sp.hpp
+  - geometry/is_intersect_ls.hpp
   - geometry/cross_point_cs.hpp
   - geometry/distance_ss.hpp
-  - geometry/is_intersect_ls.hpp
-  - geometry/is_intersect_cs.hpp
-  - geometry/is_intersect_ss.hpp
-  - geometry/is_intersect_sp.hpp
   - geometry/common_area_cp.hpp
+  - geometry/distance_sp.hpp
   timestamp: '2022-07-05 18:16:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/verify/aoj-cgl-2-b.test.cpp
   - test/verify/aoj-cgl-2-d.test.cpp
   - test/verify/aoj-cgl-7-h.test.cpp
+  - test/verify/aoj-cgl-2-b.test.cpp
 documentation_of: geometry/segment.hpp
 layout: document
 redirect_from:

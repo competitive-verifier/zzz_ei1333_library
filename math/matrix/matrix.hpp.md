@@ -114,8 +114,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/yosupo-assignment.test.cpp
-  - test/verify/yosupo-matrix-det.test.cpp
   - test/verify/yosupo-maximum-independent-set.test.cpp
+  - test/verify/yosupo-matrix-det.test.cpp
   - test/verify/aoj-1163.test.cpp
 documentation_of: math/matrix/matrix.hpp
 layout: document

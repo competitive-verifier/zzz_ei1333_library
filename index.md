@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: dp/cumulative-sum-2d.hpp
       title: "Cumulative Sum 2D(\u4E8C\u6B21\u5143\u7D2F\u7A4D\u548C)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: dp/cumulative-sum.hpp
       title: "Cumulative Sum(\u4E00\u6B21\u5143\u7D2F\u7A4D\u548C)"
     - icon: ':heavy_check_mark:'
@@ -184,8 +184,7 @@ data:
         )"
     - icon: ':x:'
       path: graph/connected-components/three-edge-connected-components.hpp
-      title: "Three Edge Connected Components(\u4E09\u91CD\u8FBA\u9023\u7D50\u6210\
-        \u5206\u5206\u89E3)"
+      title: graph/connected-components/three-edge-connected-components.hpp
     - icon: ':x:'
       path: graph/connected-components/two-edge-connected-components.hpp
       title: "Two Edge Connected Components(\u4E8C\u91CD\u8FBA\u9023\u7D50\u6210\u5206\
@@ -429,7 +428,7 @@ data:
     - icon: ':question:'
       path: math/combinatorics/mod-pow.hpp
       title: "Mod Pow(\u3079\u304D\u4E57)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/combinatorics/mod-sqrt.hpp
       title: Mod Sqrt
     - icon: ':x:'
@@ -465,7 +464,7 @@ data:
     - icon: ':warning:'
       path: math/fft/arbitrary-mod-convolution-long.hpp
       title: math/fft/arbitrary-mod-convolution-long.hpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: math/fft/arbitrary-mod-convolution.hpp
       title: "Arbitrary Mod Convolution(\u4EFB\u610Fmod\u7573\u307F\u8FBC\u307F)"
     - icon: ':heavy_check_mark:'
@@ -510,7 +509,7 @@ data:
     - icon: ':warning:'
       path: math/fps/bell.hpp
       title: "Bell(\u30D9\u30EB\u6570)"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/fps/berlekamp-massey.hpp
       title: Berlekamp Massey
     - icon: ':heavy_check_mark:'
@@ -529,7 +528,7 @@ data:
       path: math/fps/formal-power-series-friendly-ntt.hpp
       title: "Formal Power Series Friendly NTT(NTTmod\u7528\u5F62\u5F0F\u7684\u51AA\
         \u7D1A\u6570)"
-    - icon: ':x:'
+    - icon: ':question:'
       path: math/fps/formal-power-series.hpp
       title: "Formal Power Series(\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570)"
     - icon: ':heavy_check_mark:'
@@ -544,7 +543,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/fps/polynomial-interpolation.hpp
       title: "Polynomial Interpolation(\u591A\u9805\u5F0F\u88DC\u9593)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/fps/sparse-matrix.hpp
       title: math/fps/sparse-matrix.hpp
     - icon: ':x:'
@@ -645,7 +644,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: other/mo-tree.hpp
       title: "Mo Tree(\u6728\u4E0A\u306EMo)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: other/mo.hpp
       title: Mo's Algorithm
     - icon: ':warning:'
@@ -847,10 +846,10 @@ data:
     - icon: ':question:'
       path: structure/others/abstract-binary-indexed-tree.hpp
       title: "Abstract Binary Indexed Tree(\u62BD\u8C61\u5316BIT)"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: structure/others/binary-indexed-tree.hpp
       title: Binary-Indexed-Tree(BIT)
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: structure/others/disjoint-sparse-table.hpp
       title: Disjoint-Sparse-Table
     - icon: ':warning:'
@@ -1517,22 +1516,22 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-shortest-path.test.cpp
       title: test/verify/yosupo-shortest-path.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-sparse-matrix-det.test.cpp
       title: test/verify/yosupo-sparse-matrix-det.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-sqrt-mod.test.cpp
       title: test/verify/yosupo-sqrt-mod.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-sqrt-of-formal-power-series.test.cpp
       title: test/verify/yosupo-sqrt-of-formal-power-series.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-static-range-inversions-query.test.cpp
       title: test/verify/yosupo-static-range-inversions-query.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-static-range-sum.test.cpp
       title: test/verify/yosupo-static-range-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-staticrmq-2.test.cpp
       title: test/verify/yosupo-staticrmq-2.test.cpp
     - icon: ':x:'

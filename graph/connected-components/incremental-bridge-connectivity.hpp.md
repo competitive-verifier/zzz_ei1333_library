@@ -7,8 +7,7 @@ data:
   _extendedRequiredBy:
   - icon: ':x:'
     path: graph/connected-components/three-edge-connected-components.hpp
-    title: "Three Edge Connected Components(\u4E09\u91CD\u8FBA\u9023\u7D50\u6210\u5206\
-      \u5206\u89E3)"
+    title: graph/connected-components/three-edge-connected-components.hpp
   _extendedVerifiedWith:
   - icon: ':x:'
     path: test/verify/yosupo-three-edge-connected-components.test.cpp
@@ -20,10 +19,7 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':x:'
   attributes:
-    _deprecated_at_docs: docs/incremental-bridge-connectivity.md
-    document_title: Incremental Bridge Connectivity
-    links:
-    - https://scrapbox.io/data-structures/Incremental_Bridge-Connectivity
+    links: []
   bundledCode: "#line 2 \"graph/connected-components/incremental-bridge-connectivity.hpp\"\
     \n\n#line 2 \"structure/union-find/union-find.hpp\"\n\n/**\n * @brief Union-Find\n\
     \ * @docs docs/union-find.md\n */\nstruct UnionFind {\n  vector< int > data;\n\
@@ -38,10 +34,8 @@ data:
     \ i < n; i++) {\n      ret[find(i)].emplace_back(i);\n    }\n    ret.erase(remove_if(begin(ret),\
     \ end(ret), [&](const vector< int > &v) {\n      return v.empty();\n    }), end(ret));\n\
     \    return ret;\n  }\n};\n#line 4 \"graph/connected-components/incremental-bridge-connectivity.hpp\"\
-    \n\n/**\n * @brief Incremental Bridge Connectivity\n * @docs docs/incremental-bridge-connectivity.md\n\
-    \ * @see https://scrapbox.io/data-structures/Incremental_Bridge-Connectivity\n\
-    \ */\nstruct IncrementalBridgeConnectivity {\nprivate:\n  UnionFind cc, bcc;\n\
-    \  vector< int > bbf;\n  size_t bridge;\n\n  int size() {\n    return bbf.size();\n\
+    \n\nstruct IncrementalBridgeConnectivity {\nprivate:\n  UnionFind cc, bcc;\n \
+    \ vector< int > bbf;\n  size_t bridge;\n\n  int size() {\n    return bbf.size();\n\
     \  }\n\n  int par(int x) {\n    return bbf[x] == size() ? size() : bcc.find(bbf[x]);\n\
     \  }\n\n  int lca(int x, int y) {\n    unordered_set< int > used;\n    for(;;)\
     \ {\n      if(x != size()) {\n        if(!used.insert(x).second) return x;\n \
@@ -59,11 +53,9 @@ data:
     \ w);\n    } else {\n      if(cc.size(x) > cc.size(y)) swap(x, y);\n      link(x,\
     \ y);\n      cc.unite(x, y);\n      ++bridge;\n    }\n  }\n};\n"
   code: "#pragma once\n\n#include \"../../structure/union-find/union-find.hpp\"\n\n\
-    /**\n * @brief Incremental Bridge Connectivity\n * @docs docs/incremental-bridge-connectivity.md\n\
-    \ * @see https://scrapbox.io/data-structures/Incremental_Bridge-Connectivity\n\
-    \ */\nstruct IncrementalBridgeConnectivity {\nprivate:\n  UnionFind cc, bcc;\n\
-    \  vector< int > bbf;\n  size_t bridge;\n\n  int size() {\n    return bbf.size();\n\
-    \  }\n\n  int par(int x) {\n    return bbf[x] == size() ? size() : bcc.find(bbf[x]);\n\
+    struct IncrementalBridgeConnectivity {\nprivate:\n  UnionFind cc, bcc;\n  vector<\
+    \ int > bbf;\n  size_t bridge;\n\n  int size() {\n    return bbf.size();\n  }\n\
+    \n  int par(int x) {\n    return bbf[x] == size() ? size() : bcc.find(bbf[x]);\n\
     \  }\n\n  int lca(int x, int y) {\n    unordered_set< int > used;\n    for(;;)\
     \ {\n      if(x != size()) {\n        if(!used.insert(x).second) return x;\n \
     \       x = par(x);\n      }\n      swap(x, y);\n    }\n  }\n\n  void compress(int\
@@ -85,18 +77,16 @@ data:
   path: graph/connected-components/incremental-bridge-connectivity.hpp
   requiredBy:
   - graph/connected-components/three-edge-connected-components.hpp
-  timestamp: '2022-07-05 18:16:30+09:00'
+  timestamp: '2022-07-13 00:31:16+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/yosupo-two-edge-connected-components-2.test.cpp
   - test/verify/yosupo-three-edge-connected-components.test.cpp
 documentation_of: graph/connected-components/incremental-bridge-connectivity.hpp
 layout: document
-redirect_from:
-- /library/graph/connected-components/incremental-bridge-connectivity.hpp
-- /library/graph/connected-components/incremental-bridge-connectivity.hpp.html
 title: Incremental Bridge Connectivity
 ---
+
 ## 概要
 
 辺の追加クエリのみ存在するとき, 二重辺連結成分を効率的に管理するデータ構造.
@@ -111,3 +101,6 @@ title: Incremental Bridge Connectivity
 ## 計算量
 
 ならし $O(n \log n)$
+
+## 参考
+[Incremental Bridge-Connectivity - data-structures](https://scrapbox.io/data-structures/Incremental_Bridge-Connectivity)

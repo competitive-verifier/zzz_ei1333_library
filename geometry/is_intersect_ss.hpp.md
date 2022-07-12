@@ -92,8 +92,8 @@ data:
   timestamp: '2022-07-05 18:16:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/verify/aoj-cgl-2-b.test.cpp
   - test/verify/aoj-cgl-2-d.test.cpp
+  - test/verify/aoj-cgl-2-b.test.cpp
 documentation_of: geometry/is_intersect_ss.hpp
 layout: document
 redirect_from:

@@ -118,8 +118,8 @@ data:
   timestamp: '2022-07-05 18:16:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/verify/aoj-grl-1-a-2.test.cpp
   - test/verify/aoj-grl-2-a-4.test.cpp
+  - test/verify/aoj-grl-1-a-2.test.cpp
 documentation_of: structure/heap/fibonacchi-heap.hpp
 layout: document
 redirect_from:

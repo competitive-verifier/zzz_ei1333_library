@@ -9,10 +9,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-ntl-1-b.test.cpp
     title: test/verify/aoj-ntl-1-b.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-sqrt-mod.test.cpp
     title: test/verify/yosupo-sqrt-mod.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-sqrt-of-formal-power-series.test.cpp
     title: test/verify/yosupo-sqrt-of-formal-power-series.test.cpp
   - icon: ':x:'
@@ -41,10 +41,10 @@ data:
   timestamp: '2022-07-05 18:16:30+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/verify/yosupo-sqrt-mod.test.cpp
-  - test/verify/yosupo-tetration-mod.test.cpp
   - test/verify/aoj-ntl-1-b.test.cpp
+  - test/verify/yosupo-sqrt-mod.test.cpp
   - test/verify/yosupo-sqrt-of-formal-power-series.test.cpp
+  - test/verify/yosupo-tetration-mod.test.cpp
 documentation_of: math/combinatorics/mod-pow.hpp
 layout: document
 redirect_from:

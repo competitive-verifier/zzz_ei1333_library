@@ -37,13 +37,13 @@ data:
   isVerificationFile: false
   path: math/fps/subproduct-tree.hpp
   requiredBy:
-  - math/fps/multipoint-evaluation.hpp
   - math/fps/polynomial-interpolation.hpp
+  - math/fps/multipoint-evaluation.hpp
   timestamp: '2022-07-05 18:16:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/verify/yosupo-multipoint-evaluation.test.cpp
   - test/verify/yosupo-polynomial-interpolation.test.cpp
+  - test/verify/yosupo-multipoint-evaluation.test.cpp
 documentation_of: math/fps/subproduct-tree.hpp
 layout: document
 redirect_from:

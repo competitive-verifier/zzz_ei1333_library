@@ -5,11 +5,11 @@ data:
     path: math/fft/fast-fourier-transform.hpp
     title: math/fft/fast-fourier-transform.hpp
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/fps/formal-power-series.hpp
     title: "Formal Power Series(\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570)"
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-sparse-matrix-det.test.cpp
     title: test/verify/yosupo-sparse-matrix-det.test.cpp
   - icon: ':x:'
@@ -23,7 +23,7 @@ data:
     title: test/verify/yukicoder-502.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     document_title: "Arbitrary Mod Convolution(\u4EFB\u610Fmod\u7573\u307F\u8FBC\u307F\
       )"
@@ -122,12 +122,12 @@ data:
   requiredBy:
   - math/fps/formal-power-series.hpp
   timestamp: '2022-07-05 18:16:30+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/verify/yosupo-sparse-matrix-det.test.cpp
-  - test/verify/yukicoder-215.test.cpp
-  - test/verify/yukicoder-3046.test.cpp
   - test/verify/yukicoder-502.test.cpp
+  - test/verify/yukicoder-3046.test.cpp
+  - test/verify/yukicoder-215.test.cpp
+  - test/verify/yosupo-sparse-matrix-det.test.cpp
 documentation_of: math/fft/arbitrary-mod-convolution.hpp
 layout: document
 redirect_from:

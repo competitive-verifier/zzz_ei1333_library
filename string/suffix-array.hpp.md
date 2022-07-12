@@ -145,8 +145,8 @@ data:
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/verify/yosupo-suffixarray.test.cpp
-  - test/verify/yosupo-number-of-substrings.test.cpp
   - test/verify/aoj-alds-1-14-d.test.cpp
+  - test/verify/yosupo-number-of-substrings.test.cpp
 documentation_of: string/suffix-array.hpp
 layout: document
 redirect_from:

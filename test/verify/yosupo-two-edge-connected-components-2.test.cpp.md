@@ -63,10 +63,8 @@ data:
     \ i < n; i++) {\n      ret[find(i)].emplace_back(i);\n    }\n    ret.erase(remove_if(begin(ret),\
     \ end(ret), [&](const vector< int > &v) {\n      return v.empty();\n    }), end(ret));\n\
     \    return ret;\n  }\n};\n#line 4 \"graph/connected-components/incremental-bridge-connectivity.hpp\"\
-    \n\n/**\n * @brief Incremental Bridge Connectivity\n * @docs docs/incremental-bridge-connectivity.md\n\
-    \ * @see https://scrapbox.io/data-structures/Incremental_Bridge-Connectivity\n\
-    \ */\nstruct IncrementalBridgeConnectivity {\nprivate:\n  UnionFind cc, bcc;\n\
-    \  vector< int > bbf;\n  size_t bridge;\n\n  int size() {\n    return bbf.size();\n\
+    \n\nstruct IncrementalBridgeConnectivity {\nprivate:\n  UnionFind cc, bcc;\n \
+    \ vector< int > bbf;\n  size_t bridge;\n\n  int size() {\n    return bbf.size();\n\
     \  }\n\n  int par(int x) {\n    return bbf[x] == size() ? size() : bcc.find(bbf[x]);\n\
     \  }\n\n  int lca(int x, int y) {\n    unordered_set< int > used;\n    for(;;)\
     \ {\n      if(x != size()) {\n        if(!used.insert(x).second) return x;\n \
@@ -106,7 +104,7 @@ data:
   isVerificationFile: true
   path: test/verify/yosupo-two-edge-connected-components-2.test.cpp
   requiredBy: []
-  timestamp: '2022-07-05 18:16:30+09:00'
+  timestamp: '2022-07-13 00:31:16+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-two-edge-connected-components-2.test.cpp

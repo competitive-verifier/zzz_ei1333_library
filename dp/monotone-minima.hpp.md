@@ -56,10 +56,10 @@ data:
   timestamp: '2022-07-11 11:56:34+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/verify/yukicoder-705.test.cpp
   - test/verify/aoj-2603.test.cpp
-  - test/verify/yukicoder-704.test.cpp
   - test/verify/yukicoder-703.test.cpp
+  - test/verify/yukicoder-705.test.cpp
+  - test/verify/yukicoder-704.test.cpp
 documentation_of: dp/monotone-minima.hpp
 layout: document
 title: Monotone Minima

@@ -77,16 +77,16 @@ data:
   isVerificationFile: false
   path: math/combinatorics/enumeration.hpp
   requiredBy:
+  - math/combinatorics/sample-point-shift.hpp
   - math/combinatorics/factorial.hpp
   - math/combinatorics/stirling-number-second.hpp
   - math/combinatorics/bell-number.hpp
-  - math/combinatorics/sample-point-shift.hpp
   timestamp: '2022-07-05 18:16:30+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/verify/aoj-dpl-5-g.test.cpp
   - test/verify/aoj-dpl-5-i.test.cpp
   - test/verify/yukicoder-502.test.cpp
+  - test/verify/aoj-dpl-5-g.test.cpp
 documentation_of: math/combinatorics/enumeration.hpp
 layout: document
 redirect_from:

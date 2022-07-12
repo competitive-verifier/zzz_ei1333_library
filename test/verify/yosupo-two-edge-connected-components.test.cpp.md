@@ -91,9 +91,7 @@ data:
     \ < low[to]) bridge.emplace_back(to);\n      } else {\n        low[idx] = min(low[idx],\
     \ ord[to]);\n      }\n    }\n    is_articulation |= par == -1 && cnt > 1;\n  \
     \  if(is_articulation) articulation.push_back(idx);\n    return k;\n  }\n};\n\
-    #line 5 \"graph/connected-components/two-edge-connected-components.hpp\"\n\n/**\n\
-    \ * @brief Two Edge Connected Components(\u4E8C\u91CD\u8FBA\u9023\u7D50\u6210\u5206\
-    \u5206\u89E3)\n * @docs docs/two-edge-connected-components.md\n */\ntemplate<\
+    #line 5 \"graph/connected-components/two-edge-connected-components.hpp\"\n\ntemplate<\
     \ typename T = int >\nstruct TwoEdgeConnectedComponents : LowLink< T > {\npublic:\n\
     \  using LowLink< T >::LowLink;\n  using LowLink< T >::g;\n  using LowLink< T\
     \ >::ord;\n  using LowLink< T >::low;\n  using LowLink< T >::bridge;\n\n  vector<\
@@ -127,7 +125,7 @@ data:
   isVerificationFile: true
   path: test/verify/yosupo-two-edge-connected-components.test.cpp
   requiredBy: []
-  timestamp: '2022-07-05 18:16:30+09:00'
+  timestamp: '2022-07-13 00:31:16+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-two-edge-connected-components.test.cpp

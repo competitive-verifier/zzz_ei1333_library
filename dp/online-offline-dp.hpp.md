@@ -69,9 +69,9 @@ data:
   timestamp: '2022-07-11 11:56:34+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
+  - test/verify/yukicoder-703.test.cpp
   - test/verify/yukicoder-705.test.cpp
   - test/verify/yukicoder-704.test.cpp
-  - test/verify/yukicoder-703.test.cpp
 documentation_of: dp/online-offline-dp.hpp
 layout: document
 title: "Online Offline DP(\u30AA\u30F3\u30E9\u30A4\u30F3\u30FB\u30AA\u30D5\u30E9\u30A4\

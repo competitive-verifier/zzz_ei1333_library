@@ -7,7 +7,7 @@ data:
   - icon: ':question:'
     path: math/combinatorics/mod-pow.hpp
     title: "Mod Pow(\u3079\u304D\u4E57)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/combinatorics/mod-sqrt.hpp
     title: Mod Sqrt
   - icon: ':question:'
@@ -22,9 +22,9 @@ data:
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/sqrt_of_formal_power_series
@@ -321,7 +321,7 @@ data:
   path: test/verify/yosupo-sqrt-of-formal-power-series.test.cpp
   requiredBy: []
   timestamp: '2022-07-05 18:16:30+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/yosupo-sqrt-of-formal-power-series.test.cpp
 layout: document

@@ -7,8 +7,7 @@ data:
     title: Incremental Bridge Connectivity
   - icon: ':x:'
     path: graph/connected-components/three-edge-connected-components.hpp
-    title: "Three Edge Connected Components(\u4E09\u91CD\u8FBA\u9023\u7D50\u6210\u5206\
-      \u5206\u89E3)"
+    title: graph/connected-components/three-edge-connected-components.hpp
   - icon: ':warning:'
     path: graph/flow/burn-bury.hpp
     title: "Burn Bury(\u71C3\u3084\u3059\u57CB\u3081\u308B)"
@@ -114,33 +113,33 @@ data:
   isVerificationFile: false
   path: structure/union-find/union-find.hpp
   requiredBy:
-  - other/mo-tree.hpp
   - other/offline-rmq.hpp
-  - graph/flow/burn-bury.hpp
+  - other/mo-tree.hpp
   - graph/connected-components/three-edge-connected-components.hpp
   - graph/connected-components/incremental-bridge-connectivity.hpp
-  - graph/others/bipartite-graph-edge-coloring.hpp
   - graph/others/eulerian-trail.hpp
+  - graph/others/bipartite-graph-edge-coloring.hpp
   - graph/tree/offline-lca.hpp
   - graph/mst/boruvka.hpp
   - graph/mst/kruskal.hpp
+  - graph/flow/burn-bury.hpp
   timestamp: '2022-07-05 18:16:30+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/verify/aoj-dsl-1-a.test.cpp
-  - test/verify/yosupo-manhattanmst.test.cpp
-  - test/verify/aoj-grl-2-a-2.test.cpp
-  - test/verify/yosupo-staticrmq-6.test.cpp
-  - test/verify/yosupo-lca-4.test.cpp
-  - test/verify/yosupo-tree-decomposition-width-2.test.cpp
-  - test/verify/aoj-2270.test.cpp
   - test/verify/yosupo-two-edge-connected-components-2.test.cpp
-  - test/verify/yukicoder-583.test.cpp
   - test/verify/aoj-2821.test.cpp
-  - test/verify/aoj-grl-2-a-3.test.cpp
-  - test/verify/yosupo-three-edge-connected-components.test.cpp
   - test/verify/aoj-3139.test.cpp
+  - test/verify/yosupo-manhattanmst.test.cpp
+  - test/verify/yukicoder-583.test.cpp
+  - test/verify/yosupo-staticrmq-6.test.cpp
   - test/verify/yosupo-bipartite-edge-coloring.test.cpp
+  - test/verify/yosupo-tree-decomposition-width-2.test.cpp
+  - test/verify/aoj-grl-2-a-2.test.cpp
+  - test/verify/yosupo-lca-4.test.cpp
+  - test/verify/aoj-grl-2-a-3.test.cpp
+  - test/verify/aoj-2270.test.cpp
+  - test/verify/aoj-dsl-1-a.test.cpp
+  - test/verify/yosupo-three-edge-connected-components.test.cpp
 documentation_of: structure/union-find/union-find.hpp
 layout: document
 redirect_from:
