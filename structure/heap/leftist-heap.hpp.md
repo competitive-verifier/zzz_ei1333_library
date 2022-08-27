@@ -3,50 +3,52 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/aoj-alds-1-9-c.test.cpp
     title: test/verify/aoj-alds-1-9-c.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yosupo-k-shortest-walk.test.cpp
     title: test/verify/yosupo-k-shortest-walk.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     document_title: Leftist-Heap
     links: []
   bundledCode: "#line 1 \"structure/heap/leftist-heap.hpp\"\n/**\n * @brief Leftist-Heap\n\
-    \ */\ntemplate< typename T, bool isMin = true >\nstruct LeftistHeap {\n  struct\
+    \ */\ntemplate < typename T, bool isMin = true >\nstruct LeftistHeap {\n  struct\
     \ Node {\n    Node *l, *r;\n    int s;\n    T key;\n    int idx;\n\n    explicit\
-    \ Node(const T &key, int idx) : key(key), s(1), l(nullptr), r(nullptr), idx(idx)\
-    \ {}\n  };\n\n  LeftistHeap() = default;\n\n  virtual Node *clone(Node *t) {\n\
-    \    return t;\n  }\n\n  Node *alloc(const T &key, int idx = -1) {\n    return\
-    \ new Node(key, idx);\n  }\n\n  Node *meld(Node *a, Node *b) {\n    if(!a || !b)\
-    \ return a ? a : b;\n    if((a->key < b->key) ^ isMin) swap(a, b);\n    a = clone(a);\n\
-    \    a->r = meld(a->r, b);\n    if(!a->l || a->l->s < a->r->s) swap(a->l, a->r);\n\
-    \    a->s = (a->r ? a->r->s : 0) + 1;\n    return a;\n  }\n\n  Node *push(Node\
-    \ *t, const T &key, int idx = -1) {\n    return meld(t, alloc(key, idx));\n  }\n\
-    \n  Node *pop(Node *t) {\n    assert(t != nullptr);\n    return meld(t->l, t->r);\n\
-    \  }\n\n  Node *make_root() {\n    return nullptr;\n  }\n};\n"
-  code: "/**\n * @brief Leftist-Heap\n */\ntemplate< typename T, bool isMin = true\
+    \ Node(const T &key, int idx)\n        : key(key),\n          s(1),\n        \
+    \  l(nullptr),\n          r(nullptr),\n          idx(idx) {}\n  };\n\n  LeftistHeap()\
+    \ = default;\n\n  virtual Node *clone(Node *t) {\n    return t;\n  }\n\n  Node\
+    \ *alloc(const T &key, int idx = -1) {\n    return new Node(key, idx);\n  }\n\n\
+    \  Node *meld(Node *a, Node *b) {\n    if (!a || !b) return a ? a : b;\n    if\
+    \ ((a->key < b->key) ^ isMin) swap(a, b);\n    a    = clone(a);\n    a->r = meld(a->r,\
+    \ b);\n    if (!a->l || a->l->s < a->r->s) swap(a->l, a->r);\n    a->s = (a->r\
+    \ ? a->r->s : 0) + 1;\n    return a;\n  }\n\n  Node *push(Node *t, const T &key,\
+    \ int idx = -1) {\n    return meld(t, alloc(key, idx));\n  }\n\n  Node *pop(Node\
+    \ *t) {\n    assert(t != nullptr);\n    return meld(t->l, t->r);\n  }\n\n  Node\
+    \ *make_root() {\n    return nullptr;\n  }\n};\n"
+  code: "/**\n * @brief Leftist-Heap\n */\ntemplate < typename T, bool isMin = true\
     \ >\nstruct LeftistHeap {\n  struct Node {\n    Node *l, *r;\n    int s;\n   \
-    \ T key;\n    int idx;\n\n    explicit Node(const T &key, int idx) : key(key),\
-    \ s(1), l(nullptr), r(nullptr), idx(idx) {}\n  };\n\n  LeftistHeap() = default;\n\
-    \n  virtual Node *clone(Node *t) {\n    return t;\n  }\n\n  Node *alloc(const\
-    \ T &key, int idx = -1) {\n    return new Node(key, idx);\n  }\n\n  Node *meld(Node\
-    \ *a, Node *b) {\n    if(!a || !b) return a ? a : b;\n    if((a->key < b->key)\
-    \ ^ isMin) swap(a, b);\n    a = clone(a);\n    a->r = meld(a->r, b);\n    if(!a->l\
-    \ || a->l->s < a->r->s) swap(a->l, a->r);\n    a->s = (a->r ? a->r->s : 0) + 1;\n\
-    \    return a;\n  }\n\n  Node *push(Node *t, const T &key, int idx = -1) {\n \
-    \   return meld(t, alloc(key, idx));\n  }\n\n  Node *pop(Node *t) {\n    assert(t\
-    \ != nullptr);\n    return meld(t->l, t->r);\n  }\n\n  Node *make_root() {\n \
-    \   return nullptr;\n  }\n};\n"
+    \ T key;\n    int idx;\n\n    explicit Node(const T &key, int idx)\n        :\
+    \ key(key),\n          s(1),\n          l(nullptr),\n          r(nullptr),\n \
+    \         idx(idx) {}\n  };\n\n  LeftistHeap() = default;\n\n  virtual Node *clone(Node\
+    \ *t) {\n    return t;\n  }\n\n  Node *alloc(const T &key, int idx = -1) {\n \
+    \   return new Node(key, idx);\n  }\n\n  Node *meld(Node *a, Node *b) {\n    if\
+    \ (!a || !b) return a ? a : b;\n    if ((a->key < b->key) ^ isMin) swap(a, b);\n\
+    \    a    = clone(a);\n    a->r = meld(a->r, b);\n    if (!a->l || a->l->s < a->r->s)\
+    \ swap(a->l, a->r);\n    a->s = (a->r ? a->r->s : 0) + 1;\n    return a;\n  }\n\
+    \n  Node *push(Node *t, const T &key, int idx = -1) {\n    return meld(t, alloc(key,\
+    \ idx));\n  }\n\n  Node *pop(Node *t) {\n    assert(t != nullptr);\n    return\
+    \ meld(t->l, t->r);\n  }\n\n  Node *make_root() {\n    return nullptr;\n  }\n\
+    };\n"
   dependsOn: []
   isVerificationFile: false
   path: structure/heap/leftist-heap.hpp
   requiredBy: []
-  timestamp: '2022-07-05 18:16:30+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-08-27 15:55:50+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/yosupo-k-shortest-walk.test.cpp
   - test/verify/aoj-alds-1-9-c.test.cpp

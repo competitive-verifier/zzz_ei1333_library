@@ -3,31 +3,33 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/aoj-dpl-1-d.test.cpp
     title: test/verify/aoj-dpl-1-d.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"dp/longest-increasing-subsequence.hpp\"\ntemplate< typename\
-    \ T >\nsize_t longest_increasing_subsequence(const vector< T > &a, bool strict)\
-    \ {\n  vector< T > lis;\n  for(auto &p : a) {\n    typename vector< T >::iterator\
-    \ it;\n    if(strict) it = lower_bound(begin(lis), end(lis), p);\n    else it\
-    \ = upper_bound(begin(lis), end(lis), p);\n    if(end(lis) == it) lis.emplace_back(p);\n\
-    \    else *it = p;\n  }\n  return lis.size();\n}\n"
-  code: "template< typename T >\nsize_t longest_increasing_subsequence(const vector<\
-    \ T > &a, bool strict) {\n  vector< T > lis;\n  for(auto &p : a) {\n    typename\
-    \ vector< T >::iterator it;\n    if(strict) it = lower_bound(begin(lis), end(lis),\
-    \ p);\n    else it = upper_bound(begin(lis), end(lis), p);\n    if(end(lis) ==\
-    \ it) lis.emplace_back(p);\n    else *it = p;\n  }\n  return lis.size();\n}\n"
+  bundledCode: "#line 1 \"dp/longest-increasing-subsequence.hpp\"\ntemplate < typename\
+    \ T >\nsize_t longest_increasing_subsequence(const vector< T > &a,\n         \
+    \                             bool strict) {\n  vector< T > lis;\n  for (auto\
+    \ &p: a) {\n    typename vector< T >::iterator it;\n    if (strict)\n      it\
+    \ = lower_bound(begin(lis), end(lis), p);\n    else\n      it = upper_bound(begin(lis),\
+    \ end(lis), p);\n    if (end(lis) == it)\n      lis.emplace_back(p);\n    else\n\
+    \      *it = p;\n  }\n  return lis.size();\n}\n"
+  code: "template < typename T >\nsize_t longest_increasing_subsequence(const vector<\
+    \ T > &a,\n                                      bool strict) {\n  vector< T >\
+    \ lis;\n  for (auto &p: a) {\n    typename vector< T >::iterator it;\n    if (strict)\n\
+    \      it = lower_bound(begin(lis), end(lis), p);\n    else\n      it = upper_bound(begin(lis),\
+    \ end(lis), p);\n    if (end(lis) == it)\n      lis.emplace_back(p);\n    else\n\
+    \      *it = p;\n  }\n  return lis.size();\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: dp/longest-increasing-subsequence.hpp
   requiredBy: []
-  timestamp: '2022-07-11 11:56:34+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-08-27 15:55:50+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/aoj-dpl-1-d.test.cpp
 documentation_of: dp/longest-increasing-subsequence.hpp

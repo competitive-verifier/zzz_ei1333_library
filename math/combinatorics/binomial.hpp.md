@@ -11,24 +11,24 @@ data:
     document_title: "Binomial(\u4E8C\u9805\u4FC2\u6570)"
     links: []
   bundledCode: "#line 1 \"math/combinatorics/binomial.hpp\"\n/**\n * @brief Binomial(\u4E8C\
-    \u9805\u4FC2\u6570)\n * @docs docs/binomial.md\n */\ntemplate< typename T >\n\
-    T binomial(int64_t N, int64_t K) {\n  if(K < 0 || N < K) return 0;\n  static vector<\
-    \ T > invs;\n  if(invs.size() < K + 1) {\n    int pre_sz = max(1, (int) invs.size());\n\
-    \    invs.resize(K + 1);\n    for(int i = pre_sz; i <= K; i++) {\n      invs[i]\
-    \ = T(1) / i;\n    }\n  }\n  T ret = 1;\n  for(int64_t i = 1; i <= K; ++i) {\n\
+    \u9805\u4FC2\u6570)\n * @docs docs/binomial.md\n */\ntemplate < typename T >\n\
+    T binomial(int64_t N, int64_t K) {\n  if (K < 0 || N < K) return 0;\n  static\
+    \ vector< T > invs;\n  if (invs.size() < K + 1) {\n    int pre_sz = max(1, (int)invs.size());\n\
+    \    invs.resize(K + 1);\n    for (int i = pre_sz; i <= K; i++) {\n      invs[i]\
+    \ = T(1) / i;\n    }\n  }\n  T ret = 1;\n  for (int64_t i = 1; i <= K; ++i) {\n\
     \    ret *= N;\n    N--;\n    ret *= invs[i];\n  }\n  return ret;\n}\n"
   code: "/**\n * @brief Binomial(\u4E8C\u9805\u4FC2\u6570)\n * @docs docs/binomial.md\n\
-    \ */\ntemplate< typename T >\nT binomial(int64_t N, int64_t K) {\n  if(K < 0 ||\
-    \ N < K) return 0;\n  static vector< T > invs;\n  if(invs.size() < K + 1) {\n\
-    \    int pre_sz = max(1, (int) invs.size());\n    invs.resize(K + 1);\n    for(int\
-    \ i = pre_sz; i <= K; i++) {\n      invs[i] = T(1) / i;\n    }\n  }\n  T ret =\
-    \ 1;\n  for(int64_t i = 1; i <= K; ++i) {\n    ret *= N;\n    N--;\n    ret *=\
-    \ invs[i];\n  }\n  return ret;\n}\n"
+    \ */\ntemplate < typename T >\nT binomial(int64_t N, int64_t K) {\n  if (K < 0\
+    \ || N < K) return 0;\n  static vector< T > invs;\n  if (invs.size() < K + 1)\
+    \ {\n    int pre_sz = max(1, (int)invs.size());\n    invs.resize(K + 1);\n   \
+    \ for (int i = pre_sz; i <= K; i++) {\n      invs[i] = T(1) / i;\n    }\n  }\n\
+    \  T ret = 1;\n  for (int64_t i = 1; i <= K; ++i) {\n    ret *= N;\n    N--;\n\
+    \    ret *= invs[i];\n  }\n  return ret;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: math/combinatorics/binomial.hpp
   requiredBy: []
-  timestamp: '2022-07-05 18:16:30+09:00'
+  timestamp: '2022-08-27 15:55:50+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/combinatorics/binomial.hpp

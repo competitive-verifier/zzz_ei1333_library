@@ -3,36 +3,36 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/aoj-dpl-1-e.test.cpp
     title: test/verify/aoj-dpl-1-e.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"dp/edit-distance.hpp\"\nint edit_distance(const string &S,\
-    \ const string &T) {\n  const int N = (int) S.size(), M = (int) T.size();\n  vector<\
-    \ vector< int > > dp(N + 1, vector< int >(M + 1, N + M));\n  for(int i = 0; i\
-    \ <= N; i++) dp[i][0] = i;\n  for(int i = 0; i <= M; i++) dp[0][i] = i;\n  for(int\
-    \ i = 1; i <= N; i++) {\n    for(int j = 1; j <= M; j++) {\n      dp[i][j] = min(dp[i][j],\
-    \ dp[i - 1][j] + 1);\n      dp[i][j] = min(dp[i][j], dp[i][j - 1] + 1);\n    \
-    \  dp[i][j] = min(dp[i][j], dp[i - 1][j - 1] + (S[i - 1] != T[j - 1]));\n    }\n\
-    \  }\n  return dp[N][M];\n}\n"
-  code: "int edit_distance(const string &S, const string &T) {\n  const int N = (int)\
-    \ S.size(), M = (int) T.size();\n  vector< vector< int > > dp(N + 1, vector< int\
-    \ >(M + 1, N + M));\n  for(int i = 0; i <= N; i++) dp[i][0] = i;\n  for(int i\
-    \ = 0; i <= M; i++) dp[0][i] = i;\n  for(int i = 1; i <= N; i++) {\n    for(int\
-    \ j = 1; j <= M; j++) {\n      dp[i][j] = min(dp[i][j], dp[i - 1][j] + 1);\n \
-    \     dp[i][j] = min(dp[i][j], dp[i][j - 1] + 1);\n      dp[i][j] = min(dp[i][j],\
+    \ const string &T) {\n  const int N = (int)S.size(), M = (int)T.size();\n  vector<\
+    \ vector< int > > dp(N + 1, vector< int >(M + 1, N + M));\n  for (int i = 0; i\
+    \ <= N; i++) dp[i][0] = i;\n  for (int i = 0; i <= M; i++) dp[0][i] = i;\n  for\
+    \ (int i = 1; i <= N; i++) {\n    for (int j = 1; j <= M; j++) {\n      dp[i][j]\
+    \ = min(dp[i][j], dp[i - 1][j] + 1);\n      dp[i][j] = min(dp[i][j], dp[i][j -\
+    \ 1] + 1);\n      dp[i][j] =\n          min(dp[i][j], dp[i - 1][j - 1] + (S[i\
+    \ - 1] != T[j - 1]));\n    }\n  }\n  return dp[N][M];\n}\n"
+  code: "int edit_distance(const string &S, const string &T) {\n  const int N = (int)S.size(),\
+    \ M = (int)T.size();\n  vector< vector< int > > dp(N + 1, vector< int >(M + 1,\
+    \ N + M));\n  for (int i = 0; i <= N; i++) dp[i][0] = i;\n  for (int i = 0; i\
+    \ <= M; i++) dp[0][i] = i;\n  for (int i = 1; i <= N; i++) {\n    for (int j =\
+    \ 1; j <= M; j++) {\n      dp[i][j] = min(dp[i][j], dp[i - 1][j] + 1);\n     \
+    \ dp[i][j] = min(dp[i][j], dp[i][j - 1] + 1);\n      dp[i][j] =\n          min(dp[i][j],\
     \ dp[i - 1][j - 1] + (S[i - 1] != T[j - 1]));\n    }\n  }\n  return dp[N][M];\n\
     }\n"
   dependsOn: []
   isVerificationFile: false
   path: dp/edit-distance.hpp
   requiredBy: []
-  timestamp: '2022-07-11 11:56:34+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-08-27 15:55:50+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/aoj-dpl-1-e.test.cpp
 documentation_of: dp/edit-distance.hpp

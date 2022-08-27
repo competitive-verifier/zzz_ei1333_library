@@ -1,51 +1,53 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/fps/subproduct-tree.hpp
     title: Subproduct Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/yosupo-polynomial-interpolation.test.cpp
     title: test/verify/yosupo-polynomial-interpolation.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     document_title: "Polynomial Interpolation(\u591A\u9805\u5F0F\u88DC\u9593)"
     links: []
   bundledCode: "#line 1 \"math/fps/subproduct-tree.hpp\"\n/**\n * @brief Subproduct\
-    \ Tree\n */\ntemplate< template< typename > class FPS, typename Mint >\nvector<\
-    \ FPS< Mint > > subproduct_tree(const FPS< Mint > &xs) {\n  int n = (int) xs.size();\n\
-    \  int k = 1;\n  while(k < n) k <<= 1;\n  vector< FPS< Mint > > g(2 * k, {1});\n\
-    \  for(int i = 0; i < n; i++) g[k + i] = {-xs[i], Mint(1)};\n  for(int i = k;\
+    \ Tree\n */\ntemplate < template < typename > class FPS, typename Mint >\nvector<\
+    \ FPS< Mint > > subproduct_tree(const FPS< Mint > &xs) {\n  int n = (int)xs.size();\n\
+    \  int k = 1;\n  while (k < n) k <<= 1;\n  vector< FPS< Mint > > g(2 * k, {1});\n\
+    \  for (int i = 0; i < n; i++) g[k + i] = {-xs[i], Mint(1)};\n  for (int i = k;\
     \ i-- > 1;) g[i] = g[i << 1] * g[i << 1 | 1];\n  return g;\n}\n#line 2 \"math/fps/polynomial-interpolation.hpp\"\
     \n\n/**\n * @brief Polynomial Interpolation(\u591A\u9805\u5F0F\u88DC\u9593)\n\
-    \ */\ntemplate< template< typename > class FPS, typename Mint >\nFPS< Mint > polynomial_interpolation(const\
-    \ FPS< Mint > &xs, const FPS< Mint > &ys) {\n  assert(xs.size() == ys.size());\n\
-    \  auto mul = subproduct_tree(xs);\n  int n = (int) xs.size(), k = (int) mul.size()\
-    \ / 2;\n  vector< FPS< Mint > > g(2 * k);\n  g[1] = mul[1].diff() % mul[1];\n\
-    \  for(int i = 2; i < k + n; i++) g[i] = g[i >> 1] % mul[i];\n  for(int i = 0;\
-    \ i < n; i++) g[k + i] = {ys[i] / g[k + i][0]};\n  for(int i = k; i-- > 1;) g[i]\
-    \ = g[i << 1] * mul[i << 1 | 1] + g[i << 1 | 1] * mul[i << 1];\n  return g[1];\n\
-    }\n"
+    \ */\ntemplate < template < typename > class FPS, typename Mint >\nFPS< Mint >\
+    \ polynomial_interpolation(const FPS< Mint > &xs,\n                          \
+    \           const FPS< Mint > &ys) {\n  assert(xs.size() == ys.size());\n  auto\
+    \ mul = subproduct_tree(xs);\n  int n = (int)xs.size(), k = (int)mul.size() /\
+    \ 2;\n  vector< FPS< Mint > > g(2 * k);\n  g[1] = mul[1].diff() % mul[1];\n  for\
+    \ (int i = 2; i < k + n; i++) g[i] = g[i >> 1] % mul[i];\n  for (int i = 0; i\
+    \ < n; i++) g[k + i] = {ys[i] / g[k + i][0]};\n  for (int i = k; i-- > 1;)\n \
+    \   g[i] = g[i << 1] * mul[i << 1 | 1] + g[i << 1 | 1] * mul[i << 1];\n  return\
+    \ g[1];\n}\n"
   code: "#include \"subproduct-tree.hpp\"\n\n/**\n * @brief Polynomial Interpolation(\u591A\
-    \u9805\u5F0F\u88DC\u9593)\n */\ntemplate< template< typename > class FPS, typename\
-    \ Mint >\nFPS< Mint > polynomial_interpolation(const FPS< Mint > &xs, const FPS<\
-    \ Mint > &ys) {\n  assert(xs.size() == ys.size());\n  auto mul = subproduct_tree(xs);\n\
-    \  int n = (int) xs.size(), k = (int) mul.size() / 2;\n  vector< FPS< Mint > >\
-    \ g(2 * k);\n  g[1] = mul[1].diff() % mul[1];\n  for(int i = 2; i < k + n; i++)\
-    \ g[i] = g[i >> 1] % mul[i];\n  for(int i = 0; i < n; i++) g[k + i] = {ys[i] /\
-    \ g[k + i][0]};\n  for(int i = k; i-- > 1;) g[i] = g[i << 1] * mul[i << 1 | 1]\
-    \ + g[i << 1 | 1] * mul[i << 1];\n  return g[1];\n}\n"
+    \u9805\u5F0F\u88DC\u9593)\n */\ntemplate < template < typename > class FPS, typename\
+    \ Mint >\nFPS< Mint > polynomial_interpolation(const FPS< Mint > &xs,\n      \
+    \                               const FPS< Mint > &ys) {\n  assert(xs.size() ==\
+    \ ys.size());\n  auto mul = subproduct_tree(xs);\n  int n = (int)xs.size(), k\
+    \ = (int)mul.size() / 2;\n  vector< FPS< Mint > > g(2 * k);\n  g[1] = mul[1].diff()\
+    \ % mul[1];\n  for (int i = 2; i < k + n; i++) g[i] = g[i >> 1] % mul[i];\n  for\
+    \ (int i = 0; i < n; i++) g[k + i] = {ys[i] / g[k + i][0]};\n  for (int i = k;\
+    \ i-- > 1;)\n    g[i] = g[i << 1] * mul[i << 1 | 1] + g[i << 1 | 1] * mul[i <<\
+    \ 1];\n  return g[1];\n}\n"
   dependsOn:
   - math/fps/subproduct-tree.hpp
   isVerificationFile: false
   path: math/fps/polynomial-interpolation.hpp
   requiredBy: []
-  timestamp: '2022-07-05 18:16:30+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-08-27 15:55:50+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/yosupo-polynomial-interpolation.test.cpp
 documentation_of: math/fps/polynomial-interpolation.hpp

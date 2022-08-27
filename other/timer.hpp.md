@@ -14,26 +14,26 @@ data:
     \u30FC)\n * @docs docs/timer.md\n */\nconstexpr uint64_t CYCLES_PER_SEC = 3000000000;\
     \ // AtCoder\n// constexpr uint64_t CYCLES_PER_SEC = 3600000000; // Codeforces\n\
     // constexpr uint64_t CYCLES_PER_SEC = 2300000000; // yukicoder\nstruct Timer\
-    \ {\n  uint64_t start;\n\n  Timer() : start{} { reset(); }\n\n  void reset() {\
-    \ start = get_cycle(); }\n\n  inline double get_second() const { return (double)\
-    \ get_cycle() / CYCLES_PER_SEC; }\n\n  inline uint64_t get_cycle() const {\n \
-    \   unsigned low, high;\n    __asm__ volatile (\"rdtsc\" : \"=a\" (low), \"=d\"\
-    \ (high));\n    return (((uint64_t) low) | ((uint64_t) high << 32ull)) - start;\n\
+    \ {\n  uint64_t start;\n\n  Timer(): start{} {\n    reset();\n  }\n\n  void reset()\
+    \ {\n    start = get_cycle();\n  }\n\n  inline double get_second() const {\n \
+    \   return (double)get_cycle() / CYCLES_PER_SEC;\n  }\n\n  inline uint64_t get_cycle()\
+    \ const {\n    unsigned low, high;\n    __asm__ volatile(\"rdtsc\" : \"=a\"(low),\
+    \ \"=d\"(high));\n    return (((uint64_t)low) | ((uint64_t)high << 32ull)) - start;\n\
     \  }\n};\n"
   code: "/**\n * @brief Timer(\u30BF\u30A4\u30DE\u30FC)\n * @docs docs/timer.md\n\
     \ */\nconstexpr uint64_t CYCLES_PER_SEC = 3000000000; // AtCoder\n// constexpr\
     \ uint64_t CYCLES_PER_SEC = 3600000000; // Codeforces\n// constexpr uint64_t CYCLES_PER_SEC\
-    \ = 2300000000; // yukicoder\nstruct Timer {\n  uint64_t start;\n\n  Timer() :\
-    \ start{} { reset(); }\n\n  void reset() { start = get_cycle(); }\n\n  inline\
-    \ double get_second() const { return (double) get_cycle() / CYCLES_PER_SEC; }\n\
-    \n  inline uint64_t get_cycle() const {\n    unsigned low, high;\n    __asm__\
-    \ volatile (\"rdtsc\" : \"=a\" (low), \"=d\" (high));\n    return (((uint64_t)\
-    \ low) | ((uint64_t) high << 32ull)) - start;\n  }\n};\n"
+    \ = 2300000000; // yukicoder\nstruct Timer {\n  uint64_t start;\n\n  Timer():\
+    \ start{} {\n    reset();\n  }\n\n  void reset() {\n    start = get_cycle();\n\
+    \  }\n\n  inline double get_second() const {\n    return (double)get_cycle() /\
+    \ CYCLES_PER_SEC;\n  }\n\n  inline uint64_t get_cycle() const {\n    unsigned\
+    \ low, high;\n    __asm__ volatile(\"rdtsc\" : \"=a\"(low), \"=d\"(high));\n \
+    \   return (((uint64_t)low) | ((uint64_t)high << 32ull)) - start;\n  }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: other/timer.hpp
   requiredBy: []
-  timestamp: '2022-07-05 18:16:30+09:00'
+  timestamp: '2022-08-27 15:55:50+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: other/timer.hpp

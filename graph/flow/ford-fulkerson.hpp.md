@@ -3,65 +3,65 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/aoj-grl-6-a-2.test.cpp
     title: test/verify/aoj-grl-6-a-2.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: docs/ford-fulkerson.md
     document_title: "Ford Fulkerson(\u6700\u5927\u6D41)"
     links: []
   bundledCode: "#line 1 \"graph/flow/ford-fulkerson.hpp\"\n/**\n * @brief Ford Fulkerson(\u6700\
-    \u5927\u6D41)\n * @docs docs/ford-fulkerson.md\n */\ntemplate< typename flow_t\
+    \u5927\u6D41)\n * @docs docs/ford-fulkerson.md\n */\ntemplate < typename flow_t\
     \ >\nstruct FordFulkerson {\n  struct edge {\n    int to;\n    flow_t cap;\n \
     \   int rev;\n    bool isrev;\n    int idx;\n  };\n\n  const flow_t INF;\n  vector<\
     \ vector< edge > > graph;\n  vector< int > used;\n  int timestamp;\n\n  explicit\
-    \ FordFulkerson(int V) : INF(numeric_limits< flow_t >::max()), graph(V), used(V,\
-    \ -1), timestamp(0) {}\n\n  void add_edge(int from, int to, flow_t cap, int idx\
-    \ = -1) {\n    graph[from].emplace_back((edge) {to, cap, (int) graph[to].size(),\
-    \ false, idx});\n    graph[to].emplace_back((edge) {from, 0, (int) graph[from].size()\
-    \ - 1, true, idx});\n  }\n\n  flow_t find_augment_path(int idx, const int t, flow_t\
-    \ flow) {\n    if(idx == t) return flow;\n    used[idx] = timestamp;\n    for(auto\
-    \ &e : graph[idx]) {\n      if(e.cap > 0 && used[e.to] != timestamp) {\n     \
-    \   flow_t d = find_augment_path(e.to, t, min(flow, e.cap));\n        if(d > 0)\
-    \ {\n          e.cap -= d;\n          graph[e.to][e.rev].cap += d;\n         \
-    \ return d;\n        }\n      }\n    }\n    return 0;\n  }\n\n  flow_t max_flow(int\
-    \ s, int t) {\n    flow_t flow = 0;\n    for(flow_t f; (f = find_augment_path(s,\
-    \ t, INF)) > 0; timestamp++) {\n      flow += f;\n    }\n    timestamp++;\n  \
-    \  return flow;\n  }\n\n  void output() {\n    for(int i = 0; i < graph.size();\
-    \ i++) {\n      for(auto &e : graph[i]) {\n        if(e.isrev) continue;\n   \
-    \     auto &rev_e = graph[e.to][e.rev];\n        cout << i << \"->\" << e.to <<\
-    \ \" (flow: \" << rev_e.cap << \"/\" << e.cap + rev_e.cap << \")\" << endl;\n\
-    \      }\n    }\n  }\n};\n"
+    \ FordFulkerson(int V)\n      : INF(numeric_limits< flow_t >::max()),\n      \
+    \  graph(V),\n        used(V, -1),\n        timestamp(0) {}\n\n  void add_edge(int\
+    \ from, int to, flow_t cap, int idx = -1) {\n    graph[from].emplace_back(\n \
+    \       (edge){to, cap, (int)graph[to].size(), false, idx});\n    graph[to].emplace_back(\n\
+    \        (edge){from, 0, (int)graph[from].size() - 1, true, idx});\n  }\n\n  flow_t\
+    \ find_augment_path(int idx, const int t, flow_t flow) {\n    if (idx == t) return\
+    \ flow;\n    used[idx] = timestamp;\n    for (auto &e: graph[idx]) {\n      if\
+    \ (e.cap > 0 && used[e.to] != timestamp) {\n        flow_t d = find_augment_path(e.to,\
+    \ t, min(flow, e.cap));\n        if (d > 0) {\n          e.cap -= d;\n       \
+    \   graph[e.to][e.rev].cap += d;\n          return d;\n        }\n      }\n  \
+    \  }\n    return 0;\n  }\n\n  flow_t max_flow(int s, int t) {\n    flow_t flow\
+    \ = 0;\n    for (flow_t f; (f = find_augment_path(s, t, INF)) > 0;\n         timestamp++)\
+    \ {\n      flow += f;\n    }\n    timestamp++;\n    return flow;\n  }\n\n  void\
+    \ output() {\n    for (int i = 0; i < graph.size(); i++) {\n      for (auto &e:\
+    \ graph[i]) {\n        if (e.isrev) continue;\n        auto &rev_e = graph[e.to][e.rev];\n\
+    \        cout << i << \"->\" << e.to << \" (flow: \" << rev_e.cap << \"/\"\n \
+    \            << e.cap + rev_e.cap << \")\" << endl;\n      }\n    }\n  }\n};\n"
   code: "/**\n * @brief Ford Fulkerson(\u6700\u5927\u6D41)\n * @docs docs/ford-fulkerson.md\n\
-    \ */\ntemplate< typename flow_t >\nstruct FordFulkerson {\n  struct edge {\n \
-    \   int to;\n    flow_t cap;\n    int rev;\n    bool isrev;\n    int idx;\n  };\n\
-    \n  const flow_t INF;\n  vector< vector< edge > > graph;\n  vector< int > used;\n\
-    \  int timestamp;\n\n  explicit FordFulkerson(int V) : INF(numeric_limits< flow_t\
-    \ >::max()), graph(V), used(V, -1), timestamp(0) {}\n\n  void add_edge(int from,\
-    \ int to, flow_t cap, int idx = -1) {\n    graph[from].emplace_back((edge) {to,\
-    \ cap, (int) graph[to].size(), false, idx});\n    graph[to].emplace_back((edge)\
-    \ {from, 0, (int) graph[from].size() - 1, true, idx});\n  }\n\n  flow_t find_augment_path(int\
-    \ idx, const int t, flow_t flow) {\n    if(idx == t) return flow;\n    used[idx]\
-    \ = timestamp;\n    for(auto &e : graph[idx]) {\n      if(e.cap > 0 && used[e.to]\
-    \ != timestamp) {\n        flow_t d = find_augment_path(e.to, t, min(flow, e.cap));\n\
-    \        if(d > 0) {\n          e.cap -= d;\n          graph[e.to][e.rev].cap\
-    \ += d;\n          return d;\n        }\n      }\n    }\n    return 0;\n  }\n\n\
-    \  flow_t max_flow(int s, int t) {\n    flow_t flow = 0;\n    for(flow_t f; (f\
-    \ = find_augment_path(s, t, INF)) > 0; timestamp++) {\n      flow += f;\n    }\n\
-    \    timestamp++;\n    return flow;\n  }\n\n  void output() {\n    for(int i =\
-    \ 0; i < graph.size(); i++) {\n      for(auto &e : graph[i]) {\n        if(e.isrev)\
-    \ continue;\n        auto &rev_e = graph[e.to][e.rev];\n        cout << i << \"\
-    ->\" << e.to << \" (flow: \" << rev_e.cap << \"/\" << e.cap + rev_e.cap << \"\
-    )\" << endl;\n      }\n    }\n  }\n};\n"
+    \ */\ntemplate < typename flow_t >\nstruct FordFulkerson {\n  struct edge {\n\
+    \    int to;\n    flow_t cap;\n    int rev;\n    bool isrev;\n    int idx;\n \
+    \ };\n\n  const flow_t INF;\n  vector< vector< edge > > graph;\n  vector< int\
+    \ > used;\n  int timestamp;\n\n  explicit FordFulkerson(int V)\n      : INF(numeric_limits<\
+    \ flow_t >::max()),\n        graph(V),\n        used(V, -1),\n        timestamp(0)\
+    \ {}\n\n  void add_edge(int from, int to, flow_t cap, int idx = -1) {\n    graph[from].emplace_back(\n\
+    \        (edge){to, cap, (int)graph[to].size(), false, idx});\n    graph[to].emplace_back(\n\
+    \        (edge){from, 0, (int)graph[from].size() - 1, true, idx});\n  }\n\n  flow_t\
+    \ find_augment_path(int idx, const int t, flow_t flow) {\n    if (idx == t) return\
+    \ flow;\n    used[idx] = timestamp;\n    for (auto &e: graph[idx]) {\n      if\
+    \ (e.cap > 0 && used[e.to] != timestamp) {\n        flow_t d = find_augment_path(e.to,\
+    \ t, min(flow, e.cap));\n        if (d > 0) {\n          e.cap -= d;\n       \
+    \   graph[e.to][e.rev].cap += d;\n          return d;\n        }\n      }\n  \
+    \  }\n    return 0;\n  }\n\n  flow_t max_flow(int s, int t) {\n    flow_t flow\
+    \ = 0;\n    for (flow_t f; (f = find_augment_path(s, t, INF)) > 0;\n         timestamp++)\
+    \ {\n      flow += f;\n    }\n    timestamp++;\n    return flow;\n  }\n\n  void\
+    \ output() {\n    for (int i = 0; i < graph.size(); i++) {\n      for (auto &e:\
+    \ graph[i]) {\n        if (e.isrev) continue;\n        auto &rev_e = graph[e.to][e.rev];\n\
+    \        cout << i << \"->\" << e.to << \" (flow: \" << rev_e.cap << \"/\"\n \
+    \            << e.cap + rev_e.cap << \")\" << endl;\n      }\n    }\n  }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: graph/flow/ford-fulkerson.hpp
   requiredBy: []
-  timestamp: '2022-06-21 15:19:19+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-08-27 15:55:50+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/aoj-grl-6-a-2.test.cpp
 documentation_of: graph/flow/ford-fulkerson.hpp

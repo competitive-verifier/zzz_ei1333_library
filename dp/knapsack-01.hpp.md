@@ -3,34 +3,36 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/aoj-dpl-1-b.test.cpp
     title: test/verify/aoj-dpl-1-b.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"dp/knapsack-01.hpp\"\ntemplate< typename T, typename Compare\
+  bundledCode: "#line 1 \"dp/knapsack-01.hpp\"\ntemplate < typename T, typename Compare\
     \ = greater< T > >\nvector< T > knapsack_01(const vector< int > &w, const vector<\
-    \ T > &v, const int &W, const T &NG, const Compare &comp = Compare()) {\n  const\
-    \ int N = (int) w.size();\n  vector< T > dp(W + 1, NG);\n  dp[0] = T();\n  for(int\
-    \ i = 0; i < N; i++) {\n    for(int j = W; j >= w[i]; j--) {\n      if(dp[j -\
-    \ w[i]] != NG) {\n        if(comp(dp[j - w[i]] + v[i], dp[j])) {\n          dp[j]\
-    \ = dp[j - w[i]] + v[i];\n        }\n      }\n    }\n  }\n  return dp;\n}\n"
-  code: "template< typename T, typename Compare = greater< T > >\nvector< T > knapsack_01(const\
-    \ vector< int > &w, const vector< T > &v, const int &W, const T &NG, const Compare\
-    \ &comp = Compare()) {\n  const int N = (int) w.size();\n  vector< T > dp(W +\
-    \ 1, NG);\n  dp[0] = T();\n  for(int i = 0; i < N; i++) {\n    for(int j = W;\
-    \ j >= w[i]; j--) {\n      if(dp[j - w[i]] != NG) {\n        if(comp(dp[j - w[i]]\
-    \ + v[i], dp[j])) {\n          dp[j] = dp[j - w[i]] + v[i];\n        }\n     \
-    \ }\n    }\n  }\n  return dp;\n}\n"
+    \ T > &v,\n                        const int &W, const T &NG,\n              \
+    \          const Compare &comp = Compare()) {\n  const int N = (int)w.size();\n\
+    \  vector< T > dp(W + 1, NG);\n  dp[0] = T();\n  for (int i = 0; i < N; i++) {\n\
+    \    for (int j = W; j >= w[i]; j--) {\n      if (dp[j - w[i]] != NG) {\n    \
+    \    if (comp(dp[j - w[i]] + v[i], dp[j])) {\n          dp[j] = dp[j - w[i]] +\
+    \ v[i];\n        }\n      }\n    }\n  }\n  return dp;\n}\n"
+  code: "template < typename T, typename Compare = greater< T > >\nvector< T > knapsack_01(const\
+    \ vector< int > &w, const vector< T > &v,\n                        const int &W,\
+    \ const T &NG,\n                        const Compare &comp = Compare()) {\n \
+    \ const int N = (int)w.size();\n  vector< T > dp(W + 1, NG);\n  dp[0] = T();\n\
+    \  for (int i = 0; i < N; i++) {\n    for (int j = W; j >= w[i]; j--) {\n    \
+    \  if (dp[j - w[i]] != NG) {\n        if (comp(dp[j - w[i]] + v[i], dp[j])) {\n\
+    \          dp[j] = dp[j - w[i]] + v[i];\n        }\n      }\n    }\n  }\n  return\
+    \ dp;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: dp/knapsack-01.hpp
   requiredBy: []
-  timestamp: '2022-07-11 11:56:34+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-08-27 15:55:50+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/aoj-dpl-1-b.test.cpp
 documentation_of: dp/knapsack-01.hpp

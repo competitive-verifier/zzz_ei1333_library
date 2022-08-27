@@ -13,54 +13,56 @@ data:
     links: []
   bundledCode: "#line 1 \"structure/segment-tree/persistent-segment-tree.hpp\"\n/**\n\
     \ * @brief Persistent-Segment-Tree(\u6C38\u7D9A\u30BB\u30B0\u30E1\u30F3\u30C8\u6728\
-    )\n * @docs docs/persistent-segment-tree.md\n */\ntemplate< typename Monoid >\n\
+    )\n * @docs docs/persistent-segment-tree.md\n */\ntemplate < typename Monoid >\n\
     struct PersistentSegmentTree {\n  using F = function< Monoid(Monoid, Monoid) >;\n\
     \n  struct Node {\n    Monoid data;\n    Node *l, *r;\n\n    Node(const Monoid\
-    \ &data) : data(data), l(nullptr), r(nullptr) {}\n  };\n\n  int sz;\n  const F\
-    \ f;\n  const Monoid M1;\n\n  PersistentSegmentTree(const F f, const Monoid &M1)\
-    \ : f(f), M1(M1) {}\n\n  Node *build(vector< Monoid > &v) {\n    sz = (int) v.size();\n\
-    \    return build(0, (int) v.size(), v);\n  }\n\n  Node *merge(Node *l, Node *r)\
-    \ {\n    auto t = new Node(f(l->data, r->data));\n    t->l = l;\n    t->r = r;\n\
-    \    return t;\n  }\n\n  Node *build(int l, int r, vector< Monoid > &v) {\n  \
-    \  if(l + 1 >= r) return new Node(v[l]);\n    return merge(build(l, (l + r) >>\
-    \ 1, v), build((l + r) >> 1, r, v));\n  }\n\n  Node *update(int a, const Monoid\
-    \ &x, Node *k, int l, int r) {\n    if(r <= a || a + 1 <= l) {\n      return k;\n\
-    \    } else if(a <= l && r <= a + 1) {\n      return new Node(x);\n    } else\
-    \ {\n      return merge(update(a, x, k->l, l, (l + r) >> 1), update(a, x, k->r,\
-    \ (l + r) >> 1, r));\n    }\n  }\n\n  Node *update(Node *t, int k, const Monoid\
-    \ &x) {\n    return update(k, x, t, 0, sz);\n  }\n\n  Monoid query(int a, int\
-    \ b, Node *k, int l, int r) {\n    if(r <= a || b <= l) {\n      return M1;\n\
-    \    } else if(a <= l && r <= b) {\n      return k->data;\n    } else {\n    \
-    \  return f(query(a, b, k->l, l, (l + r) >> 1),\n               query(a, b, k->r,\
-    \ (l + r) >> 1, r));\n    }\n  }\n\n  Monoid query(Node *t, int a, int b) {\n\
-    \    return query(a, b, t, 0, sz);\n  }\n};\n"
+    \ &data): data(data), l(nullptr), r(nullptr) {}\n  };\n\n  int sz;\n  const F\
+    \ f;\n  const Monoid M1;\n\n  PersistentSegmentTree(const F f, const Monoid &M1):\
+    \ f(f), M1(M1) {}\n\n  Node *build(vector< Monoid > &v) {\n    sz = (int)v.size();\n\
+    \    return build(0, (int)v.size(), v);\n  }\n\n  Node *merge(Node *l, Node *r)\
+    \ {\n    auto t = new Node(f(l->data, r->data));\n    t->l   = l;\n    t->r  \
+    \ = r;\n    return t;\n  }\n\n  Node *build(int l, int r, vector< Monoid > &v)\
+    \ {\n    if (l + 1 >= r) return new Node(v[l]);\n    return merge(build(l, (l\
+    \ + r) >> 1, v),\n                 build((l + r) >> 1, r, v));\n  }\n\n  Node\
+    \ *update(int a, const Monoid &x, Node *k, int l, int r) {\n    if (r <= a ||\
+    \ a + 1 <= l) {\n      return k;\n    } else if (a <= l && r <= a + 1) {\n   \
+    \   return new Node(x);\n    } else {\n      return merge(update(a, x, k->l, l,\
+    \ (l + r) >> 1),\n                   update(a, x, k->r, (l + r) >> 1, r));\n \
+    \   }\n  }\n\n  Node *update(Node *t, int k, const Monoid &x) {\n    return update(k,\
+    \ x, t, 0, sz);\n  }\n\n  Monoid query(int a, int b, Node *k, int l, int r) {\n\
+    \    if (r <= a || b <= l) {\n      return M1;\n    } else if (a <= l && r <=\
+    \ b) {\n      return k->data;\n    } else {\n      return f(query(a, b, k->l,\
+    \ l, (l + r) >> 1),\n               query(a, b, k->r, (l + r) >> 1, r));\n   \
+    \ }\n  }\n\n  Monoid query(Node *t, int a, int b) {\n    return query(a, b, t,\
+    \ 0, sz);\n  }\n};\n"
   code: "/**\n * @brief Persistent-Segment-Tree(\u6C38\u7D9A\u30BB\u30B0\u30E1\u30F3\
-    \u30C8\u6728)\n * @docs docs/persistent-segment-tree.md\n */\ntemplate< typename\
+    \u30C8\u6728)\n * @docs docs/persistent-segment-tree.md\n */\ntemplate < typename\
     \ Monoid >\nstruct PersistentSegmentTree {\n  using F = function< Monoid(Monoid,\
     \ Monoid) >;\n\n  struct Node {\n    Monoid data;\n    Node *l, *r;\n\n    Node(const\
-    \ Monoid &data) : data(data), l(nullptr), r(nullptr) {}\n  };\n\n  int sz;\n \
-    \ const F f;\n  const Monoid M1;\n\n  PersistentSegmentTree(const F f, const Monoid\
-    \ &M1) : f(f), M1(M1) {}\n\n  Node *build(vector< Monoid > &v) {\n    sz = (int)\
-    \ v.size();\n    return build(0, (int) v.size(), v);\n  }\n\n  Node *merge(Node\
-    \ *l, Node *r) {\n    auto t = new Node(f(l->data, r->data));\n    t->l = l;\n\
-    \    t->r = r;\n    return t;\n  }\n\n  Node *build(int l, int r, vector< Monoid\
-    \ > &v) {\n    if(l + 1 >= r) return new Node(v[l]);\n    return merge(build(l,\
-    \ (l + r) >> 1, v), build((l + r) >> 1, r, v));\n  }\n\n  Node *update(int a,\
-    \ const Monoid &x, Node *k, int l, int r) {\n    if(r <= a || a + 1 <= l) {\n\
-    \      return k;\n    } else if(a <= l && r <= a + 1) {\n      return new Node(x);\n\
-    \    } else {\n      return merge(update(a, x, k->l, l, (l + r) >> 1), update(a,\
-    \ x, k->r, (l + r) >> 1, r));\n    }\n  }\n\n  Node *update(Node *t, int k, const\
-    \ Monoid &x) {\n    return update(k, x, t, 0, sz);\n  }\n\n  Monoid query(int\
-    \ a, int b, Node *k, int l, int r) {\n    if(r <= a || b <= l) {\n      return\
-    \ M1;\n    } else if(a <= l && r <= b) {\n      return k->data;\n    } else {\n\
-    \      return f(query(a, b, k->l, l, (l + r) >> 1),\n               query(a, b,\
-    \ k->r, (l + r) >> 1, r));\n    }\n  }\n\n  Monoid query(Node *t, int a, int b)\
-    \ {\n    return query(a, b, t, 0, sz);\n  }\n};\n"
+    \ Monoid &data): data(data), l(nullptr), r(nullptr) {}\n  };\n\n  int sz;\n  const\
+    \ F f;\n  const Monoid M1;\n\n  PersistentSegmentTree(const F f, const Monoid\
+    \ &M1): f(f), M1(M1) {}\n\n  Node *build(vector< Monoid > &v) {\n    sz = (int)v.size();\n\
+    \    return build(0, (int)v.size(), v);\n  }\n\n  Node *merge(Node *l, Node *r)\
+    \ {\n    auto t = new Node(f(l->data, r->data));\n    t->l   = l;\n    t->r  \
+    \ = r;\n    return t;\n  }\n\n  Node *build(int l, int r, vector< Monoid > &v)\
+    \ {\n    if (l + 1 >= r) return new Node(v[l]);\n    return merge(build(l, (l\
+    \ + r) >> 1, v),\n                 build((l + r) >> 1, r, v));\n  }\n\n  Node\
+    \ *update(int a, const Monoid &x, Node *k, int l, int r) {\n    if (r <= a ||\
+    \ a + 1 <= l) {\n      return k;\n    } else if (a <= l && r <= a + 1) {\n   \
+    \   return new Node(x);\n    } else {\n      return merge(update(a, x, k->l, l,\
+    \ (l + r) >> 1),\n                   update(a, x, k->r, (l + r) >> 1, r));\n \
+    \   }\n  }\n\n  Node *update(Node *t, int k, const Monoid &x) {\n    return update(k,\
+    \ x, t, 0, sz);\n  }\n\n  Monoid query(int a, int b, Node *k, int l, int r) {\n\
+    \    if (r <= a || b <= l) {\n      return M1;\n    } else if (a <= l && r <=\
+    \ b) {\n      return k->data;\n    } else {\n      return f(query(a, b, k->l,\
+    \ l, (l + r) >> 1),\n               query(a, b, k->r, (l + r) >> 1, r));\n   \
+    \ }\n  }\n\n  Monoid query(Node *t, int a, int b) {\n    return query(a, b, t,\
+    \ 0, sz);\n  }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: structure/segment-tree/persistent-segment-tree.hpp
   requiredBy: []
-  timestamp: '2022-07-05 18:16:30+09:00'
+  timestamp: '2022-08-27 15:55:50+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: structure/segment-tree/persistent-segment-tree.hpp

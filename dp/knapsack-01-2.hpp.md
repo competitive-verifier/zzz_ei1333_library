@@ -3,34 +3,34 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/aoj-dpl-1-f.test.cpp
     title: test/verify/aoj-dpl-1-f.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"dp/knapsack-01-2.hpp\"\ntemplate< typename T >\nT knapsack_01_2(const\
-    \ vector< T > &w, const vector< int > &v, const T &W) {\n  const int N = (int)\
-    \ w.size();\n  const int sum = accumulate(begin(v), end(v), 0);\n  vector< T >\
-    \ dp(sum + 1, W + 1);\n  dp[0] = T();\n  for(int i = 0; i < N; i++) {\n    for(int\
-    \ j = sum; j >= v[i]; j--) {\n      dp[j] = min(dp[j], dp[j - v[i]] + w[i]);\n\
-    \    }\n  }\n  int ret = 0;\n  for(int i = 0; i <= sum; i++) {\n    if(dp[i] <=\
-    \ W) ret = i;\n  }\n  return ret;\n}\n"
-  code: "template< typename T >\nT knapsack_01_2(const vector< T > &w, const vector<\
-    \ int > &v, const T &W) {\n  const int N = (int) w.size();\n  const int sum =\
-    \ accumulate(begin(v), end(v), 0);\n  vector< T > dp(sum + 1, W + 1);\n  dp[0]\
-    \ = T();\n  for(int i = 0; i < N; i++) {\n    for(int j = sum; j >= v[i]; j--)\
-    \ {\n      dp[j] = min(dp[j], dp[j - v[i]] + w[i]);\n    }\n  }\n  int ret = 0;\n\
-    \  for(int i = 0; i <= sum; i++) {\n    if(dp[i] <= W) ret = i;\n  }\n  return\
-    \ ret;\n}\n"
+  bundledCode: "#line 1 \"dp/knapsack-01-2.hpp\"\ntemplate < typename T >\nT knapsack_01_2(const\
+    \ vector< T > &w, const vector< int > &v,\n                const T &W) {\n  const\
+    \ int N   = (int)w.size();\n  const int sum = accumulate(begin(v), end(v), 0);\n\
+    \  vector< T > dp(sum + 1, W + 1);\n  dp[0] = T();\n  for (int i = 0; i < N; i++)\
+    \ {\n    for (int j = sum; j >= v[i]; j--) {\n      dp[j] = min(dp[j], dp[j -\
+    \ v[i]] + w[i]);\n    }\n  }\n  int ret = 0;\n  for (int i = 0; i <= sum; i++)\
+    \ {\n    if (dp[i] <= W) ret = i;\n  }\n  return ret;\n}\n"
+  code: "template < typename T >\nT knapsack_01_2(const vector< T > &w, const vector<\
+    \ int > &v,\n                const T &W) {\n  const int N   = (int)w.size();\n\
+    \  const int sum = accumulate(begin(v), end(v), 0);\n  vector< T > dp(sum + 1,\
+    \ W + 1);\n  dp[0] = T();\n  for (int i = 0; i < N; i++) {\n    for (int j = sum;\
+    \ j >= v[i]; j--) {\n      dp[j] = min(dp[j], dp[j - v[i]] + w[i]);\n    }\n \
+    \ }\n  int ret = 0;\n  for (int i = 0; i <= sum; i++) {\n    if (dp[i] <= W) ret\
+    \ = i;\n  }\n  return ret;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: dp/knapsack-01-2.hpp
   requiredBy: []
-  timestamp: '2022-07-11 11:56:34+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-08-27 15:55:50+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/aoj-dpl-1-f.test.cpp
 documentation_of: dp/knapsack-01-2.hpp

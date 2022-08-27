@@ -12,30 +12,30 @@ data:
     \ {\n  vector< int > data;\n  stack< pair< int, int > > history;\n\n  UnionFindUndo(int\
     \ sz) {\n    data.assign(sz, -1);\n  }\n\n  bool unite(int x, int y) {\n    x\
     \ = find(x), y = find(y);\n    history.emplace(x, data[x]);\n    history.emplace(y,\
-    \ data[y]);\n    if(x == y) return (false);\n    if(data[x] > data[y]) swap(x,\
+    \ data[y]);\n    if (x == y) return (false);\n    if (data[x] > data[y]) swap(x,\
     \ y);\n    data[x] += data[y];\n    data[y] = x;\n    return (true);\n  }\n\n\
-    \  int find(int k) {\n    if(data[k] < 0) return (k);\n    return (find(data[k]));\n\
+    \  int find(int k) {\n    if (data[k] < 0) return (k);\n    return (find(data[k]));\n\
     \  }\n\n  int size(int k) {\n    return (-data[find(k)]);\n  }\n\n  void undo()\
     \ {\n    data[history.top().first] = history.top().second;\n    history.pop();\n\
     \    data[history.top().first] = history.top().second;\n    history.pop();\n \
-    \ }\n\n  void snapshot() {\n    while(history.size()) history.pop();\n  }\n\n\
-    \  void rollback() {\n    while(history.size()) undo();\n  }\n};\n"
+    \ }\n\n  void snapshot() {\n    while (history.size()) history.pop();\n  }\n\n\
+    \  void rollback() {\n    while (history.size()) undo();\n  }\n};\n"
   code: "struct UnionFindUndo {\n  vector< int > data;\n  stack< pair< int, int >\
     \ > history;\n\n  UnionFindUndo(int sz) {\n    data.assign(sz, -1);\n  }\n\n \
     \ bool unite(int x, int y) {\n    x = find(x), y = find(y);\n    history.emplace(x,\
-    \ data[x]);\n    history.emplace(y, data[y]);\n    if(x == y) return (false);\n\
-    \    if(data[x] > data[y]) swap(x, y);\n    data[x] += data[y];\n    data[y] =\
-    \ x;\n    return (true);\n  }\n\n  int find(int k) {\n    if(data[k] < 0) return\
+    \ data[x]);\n    history.emplace(y, data[y]);\n    if (x == y) return (false);\n\
+    \    if (data[x] > data[y]) swap(x, y);\n    data[x] += data[y];\n    data[y]\
+    \ = x;\n    return (true);\n  }\n\n  int find(int k) {\n    if (data[k] < 0) return\
     \ (k);\n    return (find(data[k]));\n  }\n\n  int size(int k) {\n    return (-data[find(k)]);\n\
     \  }\n\n  void undo() {\n    data[history.top().first] = history.top().second;\n\
     \    history.pop();\n    data[history.top().first] = history.top().second;\n \
-    \   history.pop();\n  }\n\n  void snapshot() {\n    while(history.size()) history.pop();\n\
-    \  }\n\n  void rollback() {\n    while(history.size()) undo();\n  }\n};\n"
+    \   history.pop();\n  }\n\n  void snapshot() {\n    while (history.size()) history.pop();\n\
+    \  }\n\n  void rollback() {\n    while (history.size()) undo();\n  }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: structure/union-find/union-find-undo.hpp
   requiredBy: []
-  timestamp: '2022-07-05 18:16:30+09:00'
+  timestamp: '2022-08-27 15:55:50+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: structure/union-find/union-find-undo.hpp

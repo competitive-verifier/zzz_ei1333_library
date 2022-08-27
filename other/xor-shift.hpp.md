@@ -11,20 +11,20 @@ data:
     document_title: Xor-Shift
     links: []
   bundledCode: "#line 1 \"other/xor-shift.hpp\"\n/**\n * @brief Xor-Shift\n * @docs\
-    \ docs/xor-shift.md\n */\nstruct XorShift {\nprivate:\n  constexpr static double\
-    \ R = 1.0 / 0xffffffff;\n  uint64_t x;\n\npublic:\n  explicit XorShift(uint64_t\
-    \ seed = 88172645463325252ull) : x(seed) {}\n\n  template< typename T = uint64_t\
+    \ docs/xor-shift.md\n */\nstruct XorShift {\n private:\n  constexpr static double\
+    \ R = 1.0 / 0xffffffff;\n  uint64_t x;\n\n public:\n  explicit XorShift(uint64_t\
+    \ seed = 88172645463325252ull): x(seed) {}\n\n  template < typename T = uint64_t\
     \ >\n  inline T get() { // [0, 2^64)\n    x ^= x << 7ull;\n    x ^= x >> 9ull;\n\
     \    return x;\n  }\n\n  inline uint32_t get(uint32_t r) { // [0, r)\n    return\
-    \ ((uint64_t) get< uint32_t >() * r) >> 32ull;\n  }\n\n  inline uint32_t get(uint32_t\
+    \ ((uint64_t)get< uint32_t >() * r) >> 32ull;\n  }\n\n  inline uint32_t get(uint32_t\
     \ l, uint32_t r) { // [l, r)\n    return l + get(r - l);\n  }\n\n  inline double\
     \ probability() { // [0.0, 1.0]\n    return get< uint32_t >() * R;\n  }\n};\n"
   code: "/**\n * @brief Xor-Shift\n * @docs docs/xor-shift.md\n */\nstruct XorShift\
-    \ {\nprivate:\n  constexpr static double R = 1.0 / 0xffffffff;\n  uint64_t x;\n\
-    \npublic:\n  explicit XorShift(uint64_t seed = 88172645463325252ull) : x(seed)\
-    \ {}\n\n  template< typename T = uint64_t >\n  inline T get() { // [0, 2^64)\n\
+    \ {\n private:\n  constexpr static double R = 1.0 / 0xffffffff;\n  uint64_t x;\n\
+    \n public:\n  explicit XorShift(uint64_t seed = 88172645463325252ull): x(seed)\
+    \ {}\n\n  template < typename T = uint64_t >\n  inline T get() { // [0, 2^64)\n\
     \    x ^= x << 7ull;\n    x ^= x >> 9ull;\n    return x;\n  }\n\n  inline uint32_t\
-    \ get(uint32_t r) { // [0, r)\n    return ((uint64_t) get< uint32_t >() * r) >>\
+    \ get(uint32_t r) { // [0, r)\n    return ((uint64_t)get< uint32_t >() * r) >>\
     \ 32ull;\n  }\n\n  inline uint32_t get(uint32_t l, uint32_t r) { // [l, r)\n \
     \   return l + get(r - l);\n  }\n\n  inline double probability() { // [0.0, 1.0]\n\
     \    return get< uint32_t >() * R;\n  }\n};\n"
@@ -32,7 +32,7 @@ data:
   isVerificationFile: false
   path: other/xor-shift.hpp
   requiredBy: []
-  timestamp: '2022-07-05 18:16:30+09:00'
+  timestamp: '2022-08-27 15:55:50+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: other/xor-shift.hpp

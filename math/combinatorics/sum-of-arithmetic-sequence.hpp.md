@@ -12,17 +12,18 @@ data:
     links: []
   bundledCode: "#line 1 \"math/combinatorics/sum-of-arithmetic-sequence.hpp\"\n/**\n\
     \ * @brief Sum of Arithmetic Sequence(\u7B49\u5DEE\u6570\u5217\u306E\u548C)\n\
-    \ */\ntemplate< typename Mint >\nMint sum_of_arithmetic_sequence(const Mint &a,\
-    \ const Mint &d, const Mint &n) {\n  return n * (2 * a + (n - 1) * d) / 2;\n}\n"
+    \ */\ntemplate < typename Mint >\nMint sum_of_arithmetic_sequence(const Mint &a,\
+    \ const Mint &d,\n                                const Mint &n) {\n  return n\
+    \ * (2 * a + (n - 1) * d) / 2;\n}\n"
   code: "/**\n * @brief Sum of Arithmetic Sequence(\u7B49\u5DEE\u6570\u5217\u306E\u548C\
-    )\n */\ntemplate< typename Mint >\nMint sum_of_arithmetic_sequence(const Mint\
-    \ &a, const Mint &d, const Mint &n) {\n  return n * (2 * a + (n - 1) * d) / 2;\n\
-    }\n"
+    )\n */\ntemplate < typename Mint >\nMint sum_of_arithmetic_sequence(const Mint\
+    \ &a, const Mint &d,\n                                const Mint &n) {\n  return\
+    \ n * (2 * a + (n - 1) * d) / 2;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: math/combinatorics/sum-of-arithmetic-sequence.hpp
   requiredBy: []
-  timestamp: '2022-07-05 18:16:30+09:00'
+  timestamp: '2022-08-27 15:55:50+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/combinatorics/sum-of-arithmetic-sequence.hpp
