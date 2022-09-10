@@ -9,7 +9,7 @@ data:
     - icon: ':x:'
       path: dp/cumulative-sum.hpp
       title: "Cumulative Sum(\u4E00\u6B21\u5143\u7D2F\u7A4D\u548C)"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: dp/divide-and-conquer-optimization.hpp
       title: Divide And Conquer Optimization
     - icon: ':x:'
@@ -41,7 +41,7 @@ data:
       path: dp/longest-increasing-subsequence.hpp
       title: "Longest Increasing Subsequence(\u6700\u9577\u5897\u52A0\u90E8\u5206\u5217\
         )"
-    - icon: ':question:'
+    - icon: ':x:'
       path: dp/monotone-minima.hpp
       title: Monotone Minima
     - icon: ':x:'
@@ -368,7 +368,7 @@ data:
       path: graph/tree/doubling-lowest-common-ancestor.hpp
       title: "Doubling-Lowest-Common-Ancestor(\u6700\u5C0F\u5171\u901A\u7956\u5148\
         )"
-    - icon: ':question:'
+    - icon: ':x:'
       path: graph/tree/heavy-light-decomposition.hpp
       title: "Heavy-Light-Decomposition(HL\u5206\u89E3)"
     - icon: ':question:'
@@ -890,7 +890,7 @@ data:
     - icon: ':x:'
       path: structure/segment-tree/dual-segment-tree.hpp
       title: "Dual-Segment-Tree(\u53CC\u5BFE\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
-    - icon: ':question:'
+    - icon: ':x:'
       path: structure/segment-tree/lazy-segment-tree.hpp
       title: "Lazy-Segment-Tree(\u9045\u5EF6\u4F1D\u642C\u30BB\u30B0\u30E1\u30F3\u30C8\
         \u6728)"
@@ -1039,13 +1039,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/verify/aoj-2450-4.test.cpp
       title: test/verify/aoj-2450-4.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/verify/aoj-2450.test.cpp
       title: test/verify/aoj-2450.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/verify/aoj-2603.test.cpp
       title: test/verify/aoj-2603.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/verify/aoj-2667.test.cpp
       title: test/verify/aoj-2667.test.cpp
     - icon: ':x:'

@@ -72,13 +72,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-2450-4.test.cpp
     title: test/verify/aoj-2450-4.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/aoj-2450.test.cpp
     title: test/verify/aoj-2450.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/aoj-2603.test.cpp
     title: test/verify/aoj-2603.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/aoj-2667.test.cpp
     title: test/verify/aoj-2667.test.cpp
   - icon: ':x:'

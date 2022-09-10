@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: dp/divide-and-conquer-optimization.hpp
     title: Divide And Conquer Optimization
   - icon: ':x:'
@@ -10,7 +10,7 @@ data:
     title: "Online Offline DP(\u30AA\u30F3\u30E9\u30A4\u30F3\u30FB\u30AA\u30D5\u30E9\
       \u30A4\u30F3\u5909\u63DB)"
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/verify/aoj-2603.test.cpp
     title: test/verify/aoj-2603.test.cpp
   - icon: ':x:'
@@ -24,7 +24,7 @@ data:
     title: test/verify/yukicoder-705.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"dp/monotone-minima.hpp\"\ntemplate< typename T, typename\
@@ -54,7 +54,7 @@ data:
   - dp/divide-and-conquer-optimization.hpp
   - dp/online-offline-dp.hpp
   timestamp: '2022-09-11 00:53:50+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/yukicoder-704.test.cpp
   - test/verify/aoj-2603.test.cpp
