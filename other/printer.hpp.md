@@ -67,51 +67,48 @@ data:
     document_title: "Printer(\u9AD8\u901F\u51FA\u529B)"
     links: []
   bundledCode: "#line 1 \"other/printer.hpp\"\n/**\n * @brief Printer(\u9AD8\u901F\
-    \u51FA\u529B)\n */\nstruct Printer {\n public:\n  explicit Printer(FILE *fp):\
-    \ fp(fp) {}\n\n  ~Printer() {\n    flush();\n  }\n\n  template < bool f = false,\
-    \ typename T, typename... E >\n  void write(const T &t, const E &...e) {\n   \
-    \ if (f) write_single(' ');\n    write_single(t);\n    write< true >(e...);\n\
-    \  }\n\n  template < typename... T >\n  void writeln(const T &...t) {\n    write(t...);\n\
-    \    write_single('\\n');\n  }\n\n  void flush() {\n    fwrite(line, 1, st - line,\
-    \ fp);\n    st = line;\n  }\n\n private:\n  FILE *fp                         \
-    \  = nullptr;\n  static constexpr size_t line_size  = 1 << 16;\n  static constexpr\
-    \ size_t int_digits = 20;\n  char line[line_size + 1]           = {};\n  char\
-    \ *st                           = line;\n\n  template < bool f = false >\n  void\
-    \ write() {}\n\n  void write_single(const char &t) {\n    if (st + 1 >= line +\
-    \ line_size) flush();\n    *st++ = t;\n  }\n\n  template < typename T,\n     \
-    \        enable_if_t< is_integral< T >::value, int > = 0 >\n  void write_single(T\
-    \ s) {\n    if (st + int_digits >= line + line_size) flush();\n    st += to_chars(st,\
-    \ st + int_digits, s).ptr - st;\n  }\n\n  void write_single(const string &s) {\n\
-    \    for (auto &c: s) write_single(c);\n  }\n\n  void write_single(const char\
-    \ *s) {\n    while (*s != 0) write_single(*s++);\n  }\n\n  template < typename\
-    \ T >\n  void write_single(const vector< T > &s) {\n    for (size_t i = 0; i <\
-    \ s.size(); i++) {\n      if (i) write_single(' ');\n      write_single(s[i]);\n\
-    \    }\n  }\n};\n"
-  code: "/**\n * @brief Printer(\u9AD8\u901F\u51FA\u529B)\n */\nstruct Printer {\n\
-    \ public:\n  explicit Printer(FILE *fp): fp(fp) {}\n\n  ~Printer() {\n    flush();\n\
-    \  }\n\n  template < bool f = false, typename T, typename... E >\n  void write(const\
-    \ T &t, const E &...e) {\n    if (f) write_single(' ');\n    write_single(t);\n\
-    \    write< true >(e...);\n  }\n\n  template < typename... T >\n  void writeln(const\
-    \ T &...t) {\n    write(t...);\n    write_single('\\n');\n  }\n\n  void flush()\
-    \ {\n    fwrite(line, 1, st - line, fp);\n    st = line;\n  }\n\n private:\n \
-    \ FILE *fp                           = nullptr;\n  static constexpr size_t line_size\
-    \  = 1 << 16;\n  static constexpr size_t int_digits = 20;\n  char line[line_size\
-    \ + 1]           = {};\n  char *st                           = line;\n\n  template\
-    \ < bool f = false >\n  void write() {}\n\n  void write_single(const char &t)\
-    \ {\n    if (st + 1 >= line + line_size) flush();\n    *st++ = t;\n  }\n\n  template\
-    \ < typename T,\n             enable_if_t< is_integral< T >::value, int > = 0\
-    \ >\n  void write_single(T s) {\n    if (st + int_digits >= line + line_size)\
-    \ flush();\n    st += to_chars(st, st + int_digits, s).ptr - st;\n  }\n\n  void\
-    \ write_single(const string &s) {\n    for (auto &c: s) write_single(c);\n  }\n\
-    \n  void write_single(const char *s) {\n    while (*s != 0) write_single(*s++);\n\
-    \  }\n\n  template < typename T >\n  void write_single(const vector< T > &s) {\n\
-    \    for (size_t i = 0; i < s.size(); i++) {\n      if (i) write_single(' ');\n\
+    \u51FA\u529B)\n */\nstruct Printer {\npublic:\n  explicit Printer(FILE *fp) :\
+    \ fp(fp) {}\n\n  ~Printer() { flush(); }\n\n  template< bool f = false, typename\
+    \ T, typename... E >\n  void write(const T &t, const E &... e) {\n    if(f) write_single('\
+    \ ');\n    write_single(t);\n    write< true >(e...);\n  }\n\n  template< typename...\
+    \ T >\n  void writeln(const T &...t) {\n    write(t...);\n    write_single('\\\
+    n');\n  }\n\n  void flush() {\n    fwrite(line, 1, st - line, fp);\n    st = line;\n\
+    \  }\n\nprivate:\n  FILE *fp = nullptr;\n  static constexpr size_t line_size =\
+    \ 1 << 16;\n  static constexpr size_t int_digits = 20;\n  char line[line_size\
+    \ + 1] = {};\n  char *st = line;\n\n  template< bool f = false >\n  void write()\
+    \ {}\n\n  void write_single(const char &t) {\n    if(st + 1 >= line + line_size)\
+    \ flush();\n    *st++ = t;\n  }\n\n  template< typename T, enable_if_t< is_integral<\
+    \ T >::value, int > = 0 >\n  void write_single(T s) {\n    if(st + int_digits\
+    \ >= line + line_size) flush();\n    st += to_chars(st, st + int_digits, s).ptr\
+    \ - st;\n  }\n\n  void write_single(const string &s) {\n    for(auto &c: s) write_single(c);\n\
+    \  }\n\n  void write_single(const char *s) {\n    while(*s != 0) write_single(*s++);\n\
+    \  }\n\n  template< typename T >\n  void write_single(const vector< T > &s) {\n\
+    \    for(size_t i = 0; i < s.size(); i++) {\n      if(i) write_single(' ');\n\
     \      write_single(s[i]);\n    }\n  }\n};\n"
+  code: "/**\n * @brief Printer(\u9AD8\u901F\u51FA\u529B)\n */\nstruct Printer {\n\
+    public:\n  explicit Printer(FILE *fp) : fp(fp) {}\n\n  ~Printer() { flush(); }\n\
+    \n  template< bool f = false, typename T, typename... E >\n  void write(const\
+    \ T &t, const E &... e) {\n    if(f) write_single(' ');\n    write_single(t);\n\
+    \    write< true >(e...);\n  }\n\n  template< typename... T >\n  void writeln(const\
+    \ T &...t) {\n    write(t...);\n    write_single('\\n');\n  }\n\n  void flush()\
+    \ {\n    fwrite(line, 1, st - line, fp);\n    st = line;\n  }\n\nprivate:\n  FILE\
+    \ *fp = nullptr;\n  static constexpr size_t line_size = 1 << 16;\n  static constexpr\
+    \ size_t int_digits = 20;\n  char line[line_size + 1] = {};\n  char *st = line;\n\
+    \n  template< bool f = false >\n  void write() {}\n\n  void write_single(const\
+    \ char &t) {\n    if(st + 1 >= line + line_size) flush();\n    *st++ = t;\n  }\n\
+    \n  template< typename T, enable_if_t< is_integral< T >::value, int > = 0 >\n\
+    \  void write_single(T s) {\n    if(st + int_digits >= line + line_size) flush();\n\
+    \    st += to_chars(st, st + int_digits, s).ptr - st;\n  }\n\n  void write_single(const\
+    \ string &s) {\n    for(auto &c: s) write_single(c);\n  }\n\n  void write_single(const\
+    \ char *s) {\n    while(*s != 0) write_single(*s++);\n  }\n\n  template< typename\
+    \ T >\n  void write_single(const vector< T > &s) {\n    for(size_t i = 0; i <\
+    \ s.size(); i++) {\n      if(i) write_single(' ');\n      write_single(s[i]);\n\
+    \    }\n  }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: other/printer.hpp
   requiredBy: []
-  timestamp: '2022-08-27 15:55:50+09:00'
+  timestamp: '2022-09-11 00:53:50+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/yosupo-tree-decomposition-width-2.test.cpp

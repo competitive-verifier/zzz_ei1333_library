@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-2286.test.cpp
     title: test/verify/aoj-2286.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: docs/euler-phi-table.md
     document_title: "Euler\u2019s Phi Table(\u30AA\u30A4\u30E9\u30FC\u306E\u03C6\u95A2\
@@ -17,23 +17,22 @@ data:
   bundledCode: "#line 1 \"math/number-theory/euler-phi-table.hpp\"\n/**\n * @brief\
     \ Euler\u2019s Phi Table(\u30AA\u30A4\u30E9\u30FC\u306E\u03C6\u95A2\u6570\u30C6\
     \u30FC\u30D6\u30EB)\n * @docs docs/euler-phi-table.md\n */\nvector< int > euler_phi_table(int\
-    \ n) {\n  vector< int > euler(n + 1);\n  for (int i = 0; i <= n; i++) {\n    euler[i]\
-    \ = i;\n  }\n  for (int i = 2; i <= n; i++) {\n    if (euler[i] == i) {\n    \
-    \  for (int j = i; j <= n; j += i) {\n        euler[j] = euler[j] / i * (i - 1);\n\
-    \      }\n    }\n  }\n  return euler;\n}\n"
+    \ n) {\n  vector< int > euler(n + 1);\n  for(int i = 0; i <= n; i++) {\n    euler[i]\
+    \ = i;\n  }\n  for(int i = 2; i <= n; i++) {\n    if(euler[i] == i) {\n      for(int\
+    \ j = i; j <= n; j += i) {\n        euler[j] = euler[j] / i * (i - 1);\n     \
+    \ }\n    }\n  }\n  return euler;\n}\n"
   code: "/**\n * @brief Euler\u2019s Phi Table(\u30AA\u30A4\u30E9\u30FC\u306E\u03C6\
     \u95A2\u6570\u30C6\u30FC\u30D6\u30EB)\n * @docs docs/euler-phi-table.md\n */\n\
-    vector< int > euler_phi_table(int n) {\n  vector< int > euler(n + 1);\n  for (int\
-    \ i = 0; i <= n; i++) {\n    euler[i] = i;\n  }\n  for (int i = 2; i <= n; i++)\
-    \ {\n    if (euler[i] == i) {\n      for (int j = i; j <= n; j += i) {\n     \
-    \   euler[j] = euler[j] / i * (i - 1);\n      }\n    }\n  }\n  return euler;\n\
-    }\n"
+    vector< int > euler_phi_table(int n) {\n  vector< int > euler(n + 1);\n  for(int\
+    \ i = 0; i <= n; i++) {\n    euler[i] = i;\n  }\n  for(int i = 2; i <= n; i++)\
+    \ {\n    if(euler[i] == i) {\n      for(int j = i; j <= n; j += i) {\n       \
+    \ euler[j] = euler[j] / i * (i - 1);\n      }\n    }\n  }\n  return euler;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: math/number-theory/euler-phi-table.hpp
   requiredBy: []
-  timestamp: '2022-08-27 15:55:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-09-11 00:53:50+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/aoj-2286.test.cpp
 documentation_of: math/number-theory/euler-phi-table.hpp

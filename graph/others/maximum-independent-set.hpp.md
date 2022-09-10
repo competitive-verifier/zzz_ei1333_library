@@ -13,40 +13,37 @@ data:
     document_title: "Maximum Independent Set(\u6700\u5927\u72EC\u7ACB\u96C6\u5408)"
     links: []
   bundledCode: "#line 1 \"graph/others/maximum-independent-set.hpp\"\n/**\n * @brief\
-    \ Maximum Independent Set(\u6700\u5927\u72EC\u7ACB\u96C6\u5408)\n */\ntemplate\
-    \ < typename Matrix >\nvector< int > maximum_independent_set(const Matrix &g,\n\
-    \                                      int trial = 1000000) {\n  int N = (int)g.size();\n\
-    \  vector< uint64_t > bit(N);\n  assert(N <= 64);\n  for (int i = 0; i < N; i++)\
-    \ {\n    for (int j = 0; j < N; j++) {\n      if (i != j) {\n        assert(g[i][j]\
-    \ == g[j][i]);\n        if (g[i][j]) bit[i] |= uint64_t(1) << j;\n      }\n  \
-    \  }\n  }\n\n  vector< int > ord(N);\n  iota(begin(ord), end(ord), 0);\n  mt19937\
-    \ mt(chrono::steady_clock::now().time_since_epoch().count());\n  int ret     \
-    \ = 0;\n  uint64_t ver = 0;\n  for (int i = 0; i < trial; i++) {\n    shuffle(begin(ord),\
-    \ end(ord), mt);\n    uint64_t used = 0;\n    int add       = 0;\n    for (int\
-    \ j: ord) {\n      if (used & bit[j]) continue;\n      used |= uint64_t(1) <<\
-    \ j;\n      ++add;\n    }\n    if (ret < add) {\n      ret = add;\n      ver =\
-    \ used;\n    }\n  }\n  vector< int > ans;\n  for (int i = 0; i < N; i++) {\n \
-    \   if ((ver >> i) & 1) ans.emplace_back(i);\n  }\n  return ans;\n}\n"
+    \ Maximum Independent Set(\u6700\u5927\u72EC\u7ACB\u96C6\u5408)\n */\ntemplate<\
+    \ typename Matrix >\nvector< int > maximum_independent_set(const Matrix &g, int\
+    \ trial = 1000000) {\n  int N = (int) g.size();\n  vector< uint64_t > bit(N);\n\
+    \  assert(N <= 64);\n  for(int i = 0; i < N; i++) {\n    for(int j = 0; j < N;\
+    \ j++) {\n      if(i != j) {\n        assert(g[i][j] == g[j][i]);\n        if(g[i][j])\
+    \ bit[i] |= uint64_t(1) << j;\n      }\n    }\n  }\n\n  vector< int > ord(N);\n\
+    \  iota(begin(ord), end(ord), 0);\n  mt19937 mt(chrono::steady_clock::now().time_since_epoch().count());\n\
+    \  int ret = 0;\n  uint64_t ver = 0;\n  for(int i = 0; i < trial; i++) {\n   \
+    \ shuffle(begin(ord), end(ord), mt);\n    uint64_t used = 0;\n    int add = 0;\n\
+    \    for(int j : ord) {\n      if(used & bit[j]) continue;\n      used |= uint64_t(1)\
+    \ << j;\n      ++add;\n    }\n    if(ret < add) {\n      ret = add;\n      ver\
+    \ = used;\n    }\n  }\n  vector< int > ans;\n  for(int i = 0; i < N; i++) {\n\
+    \    if((ver >> i) & 1) ans.emplace_back(i);\n  }\n  return ans;\n}\n"
   code: "/**\n * @brief Maximum Independent Set(\u6700\u5927\u72EC\u7ACB\u96C6\u5408\
-    )\n */\ntemplate < typename Matrix >\nvector< int > maximum_independent_set(const\
-    \ Matrix &g,\n                                      int trial = 1000000) {\n \
-    \ int N = (int)g.size();\n  vector< uint64_t > bit(N);\n  assert(N <= 64);\n \
-    \ for (int i = 0; i < N; i++) {\n    for (int j = 0; j < N; j++) {\n      if (i\
-    \ != j) {\n        assert(g[i][j] == g[j][i]);\n        if (g[i][j]) bit[i] |=\
-    \ uint64_t(1) << j;\n      }\n    }\n  }\n\n  vector< int > ord(N);\n  iota(begin(ord),\
-    \ end(ord), 0);\n  mt19937 mt(chrono::steady_clock::now().time_since_epoch().count());\n\
-    \  int ret      = 0;\n  uint64_t ver = 0;\n  for (int i = 0; i < trial; i++) {\n\
-    \    shuffle(begin(ord), end(ord), mt);\n    uint64_t used = 0;\n    int add \
-    \      = 0;\n    for (int j: ord) {\n      if (used & bit[j]) continue;\n    \
-    \  used |= uint64_t(1) << j;\n      ++add;\n    }\n    if (ret < add) {\n    \
-    \  ret = add;\n      ver = used;\n    }\n  }\n  vector< int > ans;\n  for (int\
-    \ i = 0; i < N; i++) {\n    if ((ver >> i) & 1) ans.emplace_back(i);\n  }\n  return\
-    \ ans;\n}\n"
+    )\n */\ntemplate< typename Matrix >\nvector< int > maximum_independent_set(const\
+    \ Matrix &g, int trial = 1000000) {\n  int N = (int) g.size();\n  vector< uint64_t\
+    \ > bit(N);\n  assert(N <= 64);\n  for(int i = 0; i < N; i++) {\n    for(int j\
+    \ = 0; j < N; j++) {\n      if(i != j) {\n        assert(g[i][j] == g[j][i]);\n\
+    \        if(g[i][j]) bit[i] |= uint64_t(1) << j;\n      }\n    }\n  }\n\n  vector<\
+    \ int > ord(N);\n  iota(begin(ord), end(ord), 0);\n  mt19937 mt(chrono::steady_clock::now().time_since_epoch().count());\n\
+    \  int ret = 0;\n  uint64_t ver = 0;\n  for(int i = 0; i < trial; i++) {\n   \
+    \ shuffle(begin(ord), end(ord), mt);\n    uint64_t used = 0;\n    int add = 0;\n\
+    \    for(int j : ord) {\n      if(used & bit[j]) continue;\n      used |= uint64_t(1)\
+    \ << j;\n      ++add;\n    }\n    if(ret < add) {\n      ret = add;\n      ver\
+    \ = used;\n    }\n  }\n  vector< int > ans;\n  for(int i = 0; i < N; i++) {\n\
+    \    if((ver >> i) & 1) ans.emplace_back(i);\n  }\n  return ans;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: graph/others/maximum-independent-set.hpp
   requiredBy: []
-  timestamp: '2022-08-27 15:55:50+09:00'
+  timestamp: '2022-09-11 00:53:50+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/yosupo-maximum-independent-set.test.cpp

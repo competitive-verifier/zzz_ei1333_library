@@ -8,16 +8,16 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"geometry/integer/point.hpp\"\ntemplate < typename T >\n\
-    struct Point {\n  T x, y;\n};\n\n// \u3042\u3068\u306F\u307E\u304B\u305B\u305F\
-    \uFF01\n"
-  code: "template < typename T >\nstruct Point {\n  T x, y;\n};\n\n// \u3042\u3068\
-    \u306F\u307E\u304B\u305B\u305F\uFF01\n"
+  bundledCode: "#line 1 \"geometry/integer/point.hpp\"\ntemplate< typename T >\nstruct\
+    \ Point {\n  T x, y;\n};\n\n// \u3042\u3068\u306F\u307E\u304B\u305B\u305F\uFF01\
+    \n"
+  code: "template< typename T >\nstruct Point {\n  T x, y;\n};\n\n// \u3042\u3068\u306F\
+    \u307E\u304B\u305B\u305F\uFF01\n"
   dependsOn: []
   isVerificationFile: false
   path: geometry/integer/point.hpp
   requiredBy: []
-  timestamp: '2022-08-27 15:55:50+09:00'
+  timestamp: '2022-09-11 00:53:50+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: geometry/integer/point.hpp

@@ -15,19 +15,19 @@ data:
     links: []
   bundledCode: "#line 1 \"math/number-theory/divisor.hpp\"\n/**\n * @brief Divisor(\u7D04\
     \u6570\u5217\u6319)\n * @docs docs/divisor.md\n */\nvector< int64_t > divisor(int64_t\
-    \ n) {\n  vector< int64_t > ret;\n  for (int64_t i = 1; i * i <= n; i++) {\n \
-    \   if (n % i == 0) {\n      ret.push_back(i);\n      if (i * i != n) ret.push_back(n\
+    \ n) {\n  vector< int64_t > ret;\n  for(int64_t i = 1; i * i <= n; i++) {\n  \
+    \  if(n % i == 0) {\n      ret.push_back(i);\n      if(i * i != n) ret.push_back(n\
     \ / i);\n    }\n  }\n  sort(begin(ret), end(ret));\n  return ret;\n}\n"
   code: "/**\n * @brief Divisor(\u7D04\u6570\u5217\u6319)\n * @docs docs/divisor.md\n\
-    \ */\nvector< int64_t > divisor(int64_t n) {\n  vector< int64_t > ret;\n  for\
-    \ (int64_t i = 1; i * i <= n; i++) {\n    if (n % i == 0) {\n      ret.push_back(i);\n\
-    \      if (i * i != n) ret.push_back(n / i);\n    }\n  }\n  sort(begin(ret), end(ret));\n\
+    \ */\nvector< int64_t > divisor(int64_t n) {\n  vector< int64_t > ret;\n  for(int64_t\
+    \ i = 1; i * i <= n; i++) {\n    if(n % i == 0) {\n      ret.push_back(i);\n \
+    \     if(i * i != n) ret.push_back(n / i);\n    }\n  }\n  sort(begin(ret), end(ret));\n\
     \  return ret;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: math/number-theory/divisor.hpp
   requiredBy: []
-  timestamp: '2022-08-27 15:55:50+09:00'
+  timestamp: '2022-09-11 00:53:50+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/aoj-itp1-3-d.test.cpp

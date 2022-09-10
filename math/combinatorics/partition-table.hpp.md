@@ -15,23 +15,22 @@ data:
     links: []
   bundledCode: "#line 1 \"math/combinatorics/partition-table.hpp\"\n/**\n * @brief\
     \ Partition Table(\u5206\u5272\u6570\u30C6\u30FC\u30D6\u30EB)\n * @docs docs/partition-table.md\n\
-    \ */\ntemplate < typename T >\nvector< vector< T > > partition_table(int n, int\
+    \ */\ntemplate< typename T >\nvector< vector< T > > partition_table(int n, int\
     \ k) {\n  vector< vector< T > > dp(n + 1, vector< T >(k + 1));\n  dp[0][0] = 1;\n\
-    \  for (int i = 0; i <= n; i++) {\n    for (int j = 1; j <= k; j++) {\n      if\
-    \ (i - j >= 0)\n        dp[i][j] = dp[i][j - 1] + dp[i - j][j];\n      else\n\
-    \        dp[i][j] = dp[i][j - 1];\n    }\n  }\n  return dp;\n}\n"
+    \  for(int i = 0; i <= n; i++) {\n    for(int j = 1; j <= k; j++) {\n      if(i\
+    \ - j >= 0) dp[i][j] = dp[i][j - 1] + dp[i - j][j];\n      else dp[i][j] = dp[i][j\
+    \ - 1];\n    }\n  }\n  return dp;\n}\n"
   code: "/**\n * @brief Partition Table(\u5206\u5272\u6570\u30C6\u30FC\u30D6\u30EB\
-    )\n * @docs docs/partition-table.md\n */\ntemplate < typename T >\nvector< vector<\
+    )\n * @docs docs/partition-table.md\n */\ntemplate< typename T >\nvector< vector<\
     \ T > > partition_table(int n, int k) {\n  vector< vector< T > > dp(n + 1, vector<\
-    \ T >(k + 1));\n  dp[0][0] = 1;\n  for (int i = 0; i <= n; i++) {\n    for (int\
-    \ j = 1; j <= k; j++) {\n      if (i - j >= 0)\n        dp[i][j] = dp[i][j - 1]\
-    \ + dp[i - j][j];\n      else\n        dp[i][j] = dp[i][j - 1];\n    }\n  }\n\
-    \  return dp;\n}\n"
+    \ T >(k + 1));\n  dp[0][0] = 1;\n  for(int i = 0; i <= n; i++) {\n    for(int\
+    \ j = 1; j <= k; j++) {\n      if(i - j >= 0) dp[i][j] = dp[i][j - 1] + dp[i -\
+    \ j][j];\n      else dp[i][j] = dp[i][j - 1];\n    }\n  }\n  return dp;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: math/combinatorics/partition-table.hpp
   requiredBy: []
-  timestamp: '2022-08-27 15:55:50+09:00'
+  timestamp: '2022-09-11 00:53:50+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/aoj-dpl-5-j.test.cpp

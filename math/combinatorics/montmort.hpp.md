@@ -14,20 +14,20 @@ data:
     document_title: "Montmort-Number(\u30E2\u30F3\u30E2\u30FC\u30EB\u6570)"
     links: []
   bundledCode: "#line 1 \"math/combinatorics/montmort.hpp\"\n/**\n * @brief Montmort-Number(\u30E2\
-    \u30F3\u30E2\u30FC\u30EB\u6570)\n * @docs docs/montmort.md\n */\ntemplate < typename\
-    \ T >\nvector< T > montmort(int N) {\n  vector< T > dp(N + 1);\n  for (int k =\
-    \ 2; k <= N; k++) {\n    dp[k] = dp[k - 1] * k;\n    if (k & 1)\n      dp[k] -=\
-    \ 1;\n    else\n      dp[k] += 1;\n  }\n  return dp;\n}\n"
+    \u30F3\u30E2\u30FC\u30EB\u6570)\n * @docs docs/montmort.md\n */\ntemplate< typename\
+    \ T >\nvector< T > montmort(int N) {\n  vector< T > dp(N + 1);\n  for(int k =\
+    \ 2; k <= N; k++) {\n    dp[k] = dp[k - 1] * k;\n    if(k & 1) dp[k] -= 1;\n \
+    \   else dp[k] += 1;\n  }\n  return dp;\n}\n"
   code: "/**\n * @brief Montmort-Number(\u30E2\u30F3\u30E2\u30FC\u30EB\u6570)\n *\
-    \ @docs docs/montmort.md\n */\ntemplate < typename T >\nvector< T > montmort(int\
-    \ N) {\n  vector< T > dp(N + 1);\n  for (int k = 2; k <= N; k++) {\n    dp[k]\
-    \ = dp[k - 1] * k;\n    if (k & 1)\n      dp[k] -= 1;\n    else\n      dp[k] +=\
-    \ 1;\n  }\n  return dp;\n}\n"
+    \ @docs docs/montmort.md\n */\ntemplate< typename T >\nvector< T > montmort(int\
+    \ N) {\n  vector< T > dp(N + 1);\n  for(int k = 2; k <= N; k++) {\n    dp[k] =\
+    \ dp[k - 1] * k;\n    if(k & 1) dp[k] -= 1;\n    else dp[k] += 1;\n  }\n  return\
+    \ dp;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: math/combinatorics/montmort.hpp
   requiredBy: []
-  timestamp: '2022-08-27 15:55:50+09:00'
+  timestamp: '2022-09-11 00:53:50+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/yosupo-montmort-number-mod.test.cpp

@@ -3,7 +3,7 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-1254.test.cpp
     title: test/verify/aoj-1254.test.cpp
   - icon: ':x:'
@@ -11,7 +11,7 @@ data:
     title: test/verify/yosupo-chromatic-number.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: docs/chromatic-number.md
     document_title: "Chromatic Number(\u5F69\u8272\u6570)"
@@ -19,42 +19,42 @@ data:
     - https://www.slideshare.net/wata_orz/ss-12131479
   bundledCode: "#line 2 \"graph/others/chromatic-number.hpp\"\n\n/**\n * @brief Chromatic\
     \ Number(\u5F69\u8272\u6570)\n * @docs docs/chromatic-number.md\n * @see https://www.slideshare.net/wata_orz/ss-12131479\n\
-    \ */\ntemplate < typename Matrix >\nint chromatic_number(Matrix &g) {\n  int N\
-    \ = (int)g.size();\n  vector< int > es(N);\n  for (int i = 0; i < (int)g.size();\
-    \ i++) {\n    for (int j = 0; j < (int)g.size(); j++) {\n      if (g[i][j] !=\
-    \ 0) es[i] |= 1 << j;\n    }\n  }\n  vector< int > ind(1 << N);\n  ind[0] = 1;\n\
-    \  for (int S = 1; S < (1 << N); S++) {\n    int u  = __builtin_ctz(S);\n    ind[S]\
+    \ */\ntemplate< typename Matrix >\nint chromatic_number(Matrix &g) {\n  int N\
+    \ = (int) g.size();\n  vector< int > es(N);\n  for(int i = 0; i < (int) g.size();\
+    \ i++) {\n    for(int j = 0; j < (int) g.size(); j++) {\n      if(g[i][j] != 0)\
+    \ es[i] |= 1 << j;\n    }\n  }\n  vector< int > ind(1 << N);\n  ind[0] = 1;\n\
+    \  for(int S = 1; S < (1 << N); S++) {\n    int u = __builtin_ctz(S);\n    ind[S]\
     \ = ind[S ^ (1 << u)] + ind[(S ^ (1 << u)) & ~es[u]];\n  }\n  vector< int > cnt((1\
-    \ << N) + 1);\n  for (int i = 0; i < (1 << N); i++) {\n    cnt[ind[i]] += __builtin_parity(i)\
-    \ ? -1 : 1;\n  }\n  vector< pair< unsigned, int > > hist;\n  for (int i = 1; i\
-    \ <= (1 << N); i++) {\n    if (cnt[i]) hist.emplace_back(i, cnt[i]);\n  }\n  constexpr\
-    \ int mods[] = {1000000007, 1000000011, 1000000021};\n  int ret              =\
-    \ N;\n  for (int k = 0; k < 3; k++) {\n    auto buf = hist;\n    for (int c =\
-    \ 1; c < ret; c++) {\n      int64_t sum = 0;\n      for (auto &[i, x]: buf) {\n\
-    \        sum += (x = int64_t(x) * i % mods[k]);\n      }\n      if (sum % mods[k])\
-    \ ret = c;\n    }\n  }\n  return ret;\n}\n"
+    \ << N) + 1);\n  for(int i = 0; i < (1 << N); i++) {\n    cnt[ind[i]] += __builtin_parity(i)\
+    \ ? -1 : 1;\n  }\n  vector< pair< unsigned, int > > hist;\n  for(int i = 1; i\
+    \ <= (1 << N); i++) {\n    if(cnt[i]) hist.emplace_back(i, cnt[i]);\n  }\n  constexpr\
+    \ int mods[] = {1000000007, 1000000011, 1000000021};\n  int ret = N;\n  for(int\
+    \ k = 0; k < 3; k++) {\n    auto buf = hist;\n    for(int c = 1; c < ret; c++)\
+    \ {\n      int64_t sum = 0;\n      for(auto&[i, x] : buf) {\n        sum += (x\
+    \ = int64_t(x) * i % mods[k]);\n      }\n      if(sum % mods[k]) ret = c;\n  \
+    \  }\n  }\n  return ret;\n}\n"
   code: "#pragma once\n\n/**\n * @brief Chromatic Number(\u5F69\u8272\u6570)\n * @docs\
     \ docs/chromatic-number.md\n * @see https://www.slideshare.net/wata_orz/ss-12131479\n\
-    \ */\ntemplate < typename Matrix >\nint chromatic_number(Matrix &g) {\n  int N\
-    \ = (int)g.size();\n  vector< int > es(N);\n  for (int i = 0; i < (int)g.size();\
-    \ i++) {\n    for (int j = 0; j < (int)g.size(); j++) {\n      if (g[i][j] !=\
-    \ 0) es[i] |= 1 << j;\n    }\n  }\n  vector< int > ind(1 << N);\n  ind[0] = 1;\n\
-    \  for (int S = 1; S < (1 << N); S++) {\n    int u  = __builtin_ctz(S);\n    ind[S]\
+    \ */\ntemplate< typename Matrix >\nint chromatic_number(Matrix &g) {\n  int N\
+    \ = (int) g.size();\n  vector< int > es(N);\n  for(int i = 0; i < (int) g.size();\
+    \ i++) {\n    for(int j = 0; j < (int) g.size(); j++) {\n      if(g[i][j] != 0)\
+    \ es[i] |= 1 << j;\n    }\n  }\n  vector< int > ind(1 << N);\n  ind[0] = 1;\n\
+    \  for(int S = 1; S < (1 << N); S++) {\n    int u = __builtin_ctz(S);\n    ind[S]\
     \ = ind[S ^ (1 << u)] + ind[(S ^ (1 << u)) & ~es[u]];\n  }\n  vector< int > cnt((1\
-    \ << N) + 1);\n  for (int i = 0; i < (1 << N); i++) {\n    cnt[ind[i]] += __builtin_parity(i)\
-    \ ? -1 : 1;\n  }\n  vector< pair< unsigned, int > > hist;\n  for (int i = 1; i\
-    \ <= (1 << N); i++) {\n    if (cnt[i]) hist.emplace_back(i, cnt[i]);\n  }\n  constexpr\
-    \ int mods[] = {1000000007, 1000000011, 1000000021};\n  int ret              =\
-    \ N;\n  for (int k = 0; k < 3; k++) {\n    auto buf = hist;\n    for (int c =\
-    \ 1; c < ret; c++) {\n      int64_t sum = 0;\n      for (auto &[i, x]: buf) {\n\
-    \        sum += (x = int64_t(x) * i % mods[k]);\n      }\n      if (sum % mods[k])\
-    \ ret = c;\n    }\n  }\n  return ret;\n}\n"
+    \ << N) + 1);\n  for(int i = 0; i < (1 << N); i++) {\n    cnt[ind[i]] += __builtin_parity(i)\
+    \ ? -1 : 1;\n  }\n  vector< pair< unsigned, int > > hist;\n  for(int i = 1; i\
+    \ <= (1 << N); i++) {\n    if(cnt[i]) hist.emplace_back(i, cnt[i]);\n  }\n  constexpr\
+    \ int mods[] = {1000000007, 1000000011, 1000000021};\n  int ret = N;\n  for(int\
+    \ k = 0; k < 3; k++) {\n    auto buf = hist;\n    for(int c = 1; c < ret; c++)\
+    \ {\n      int64_t sum = 0;\n      for(auto&[i, x] : buf) {\n        sum += (x\
+    \ = int64_t(x) * i % mods[k]);\n      }\n      if(sum % mods[k]) ret = c;\n  \
+    \  }\n  }\n  return ret;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: graph/others/chromatic-number.hpp
   requiredBy: []
-  timestamp: '2022-08-27 15:55:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-09-11 00:53:50+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/verify/yosupo-chromatic-number.test.cpp
   - test/verify/aoj-1254.test.cpp

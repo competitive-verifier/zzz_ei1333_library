@@ -12,20 +12,20 @@ data:
     links: []
   bundledCode: "#line 1 \"structure/bbst/persistent-weight-balanced-tree.hpp\"\n/**\n\
     \ * @brief Persistent-Weight-Balanced-Tree(\u6C38\u7D9A\u91CD\u307F\u5E73\u8861\
-    \u6728)\n */\ntemplate < typename Monoid, typename F, size_t FULL = 1000 >\nstruct\
-    \ PersistentWeightBalancedTree: WeightBalancedTree< Monoid, F > {\n  using WBT\
+    \u6728)\n */\ntemplate< typename Monoid, typename F, size_t FULL = 1000 >\nstruct\
+    \ PersistentWeightBalancedTree : WeightBalancedTree< Monoid, F > {\n  using WBT\
     \ = WeightBalancedTree< Monoid, F >;\n  using WBT::WeightBalancedTree;\n  using\
-    \ Node = typename WBT::Node;\n\n private:\n  Node *clone(Node *t) override {\n\
-    \    return &(*WBT::pool.alloc() = *t);\n  }\n\n public:\n  Node *rebuild(Node\
+    \ Node = typename WBT::Node;\n\nprivate:\n  Node *clone(Node *t) override {\n\
+    \    return &(*WBT::pool.alloc() = *t);\n  }\n\npublic:\n  Node *rebuild(Node\
     \ *r) {\n    auto ret = WBT::dump(r);\n    WBT::pool.clear();\n    return WBT::build(ret);\n\
     \  }\n\n  bool almost_full() const {\n    return this->pool.ptr < FULL;\n  }\n\
     };\n"
   code: "/**\n * @brief Persistent-Weight-Balanced-Tree(\u6C38\u7D9A\u91CD\u307F\u5E73\
-    \u8861\u6728)\n */\ntemplate < typename Monoid, typename F, size_t FULL = 1000\
-    \ >\nstruct PersistentWeightBalancedTree: WeightBalancedTree< Monoid, F > {\n\
+    \u8861\u6728)\n */\ntemplate< typename Monoid, typename F, size_t FULL = 1000\
+    \ >\nstruct PersistentWeightBalancedTree : WeightBalancedTree< Monoid, F > {\n\
     \  using WBT = WeightBalancedTree< Monoid, F >;\n  using WBT::WeightBalancedTree;\n\
-    \  using Node = typename WBT::Node;\n\n private:\n  Node *clone(Node *t) override\
-    \ {\n    return &(*WBT::pool.alloc() = *t);\n  }\n\n public:\n  Node *rebuild(Node\
+    \  using Node = typename WBT::Node;\n\nprivate:\n  Node *clone(Node *t) override\
+    \ {\n    return &(*WBT::pool.alloc() = *t);\n  }\n\npublic:\n  Node *rebuild(Node\
     \ *r) {\n    auto ret = WBT::dump(r);\n    WBT::pool.clear();\n    return WBT::build(ret);\n\
     \  }\n\n  bool almost_full() const {\n    return this->pool.ptr < FULL;\n  }\n\
     };\n"
@@ -33,7 +33,7 @@ data:
   isVerificationFile: false
   path: structure/bbst/persistent-weight-balanced-tree.hpp
   requiredBy: []
-  timestamp: '2022-08-27 15:55:50+09:00'
+  timestamp: '2022-09-11 00:53:50+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: structure/bbst/persistent-weight-balanced-tree.hpp

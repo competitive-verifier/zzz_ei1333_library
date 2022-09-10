@@ -22,24 +22,24 @@ data:
     document_title: Subproduct Tree
     links: []
   bundledCode: "#line 1 \"math/fps/subproduct-tree.hpp\"\n/**\n * @brief Subproduct\
-    \ Tree\n */\ntemplate < template < typename > class FPS, typename Mint >\nvector<\
-    \ FPS< Mint > > subproduct_tree(const FPS< Mint > &xs) {\n  int n = (int)xs.size();\n\
-    \  int k = 1;\n  while (k < n) k <<= 1;\n  vector< FPS< Mint > > g(2 * k, {1});\n\
-    \  for (int i = 0; i < n; i++) g[k + i] = {-xs[i], Mint(1)};\n  for (int i = k;\
+    \ Tree\n */\ntemplate< template< typename > class FPS, typename Mint >\nvector<\
+    \ FPS< Mint > > subproduct_tree(const FPS< Mint > &xs) {\n  int n = (int) xs.size();\n\
+    \  int k = 1;\n  while(k < n) k <<= 1;\n  vector< FPS< Mint > > g(2 * k, {1});\n\
+    \  for(int i = 0; i < n; i++) g[k + i] = {-xs[i], Mint(1)};\n  for(int i = k;\
     \ i-- > 1;) g[i] = g[i << 1] * g[i << 1 | 1];\n  return g;\n}\n"
-  code: "/**\n * @brief Subproduct Tree\n */\ntemplate < template < typename > class\
+  code: "/**\n * @brief Subproduct Tree\n */\ntemplate< template< typename > class\
     \ FPS, typename Mint >\nvector< FPS< Mint > > subproduct_tree(const FPS< Mint\
-    \ > &xs) {\n  int n = (int)xs.size();\n  int k = 1;\n  while (k < n) k <<= 1;\n\
-    \  vector< FPS< Mint > > g(2 * k, {1});\n  for (int i = 0; i < n; i++) g[k + i]\
-    \ = {-xs[i], Mint(1)};\n  for (int i = k; i-- > 1;) g[i] = g[i << 1] * g[i <<\
-    \ 1 | 1];\n  return g;\n}\n"
+    \ > &xs) {\n  int n = (int) xs.size();\n  int k = 1;\n  while(k < n) k <<= 1;\n\
+    \  vector< FPS< Mint > > g(2 * k, {1});\n  for(int i = 0; i < n; i++) g[k + i]\
+    \ = {-xs[i], Mint(1)};\n  for(int i = k; i-- > 1;) g[i] = g[i << 1] * g[i << 1\
+    \ | 1];\n  return g;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: math/fps/subproduct-tree.hpp
   requiredBy:
   - math/fps/polynomial-interpolation.hpp
   - math/fps/multipoint-evaluation.hpp
-  timestamp: '2022-08-27 15:55:50+09:00'
+  timestamp: '2022-09-11 00:53:50+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/yosupo-multipoint-evaluation.test.cpp

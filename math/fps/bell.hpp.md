@@ -11,22 +11,22 @@ data:
     document_title: "Bell(\u30D9\u30EB\u6570)"
     links: []
   bundledCode: "#line 1 \"math/fps/bell.hpp\"\n/**\n * @brief Bell(\u30D9\u30EB\u6570\
-    )\n * @docs docs/bell.md\n */\ntemplate < template < typename > class FPS, typename\
+    )\n * @docs docs/bell.md\n */\ntemplate< template< typename > class FPS, typename\
     \ Mint >\nFPS< Mint > bell(int N) {\n  FPS< Mint > poly(N + 1), ret(N + 1);\n\
-    \  poly[1] = 1;\n  poly    = poly.exp();\n  poly[0] -= 1;\n  poly     = poly.exp();\n\
-    \  Mint mul = 1;\n  for (int i = 0; i <= N; i++) {\n    ret[i] = poly[i] * mul;\n\
+    \  poly[1] = 1;\n  poly = poly.exp();\n  poly[0] -= 1;\n  poly = poly.exp();\n\
+    \  Mint mul = 1;\n  for(int i = 0; i <= N; i++) {\n    ret[i] = poly[i] * mul;\n\
     \    mul *= i + 1;\n  }\n  return ret;\n}\n"
-  code: "/**\n * @brief Bell(\u30D9\u30EB\u6570)\n * @docs docs/bell.md\n */\ntemplate\
-    \ < template < typename > class FPS, typename Mint >\nFPS< Mint > bell(int N)\
-    \ {\n  FPS< Mint > poly(N + 1), ret(N + 1);\n  poly[1] = 1;\n  poly    = poly.exp();\n\
-    \  poly[0] -= 1;\n  poly     = poly.exp();\n  Mint mul = 1;\n  for (int i = 0;\
-    \ i <= N; i++) {\n    ret[i] = poly[i] * mul;\n    mul *= i + 1;\n  }\n  return\
-    \ ret;\n}\n"
+  code: "/**\n * @brief Bell(\u30D9\u30EB\u6570)\n * @docs docs/bell.md\n */\ntemplate<\
+    \ template< typename > class FPS, typename Mint >\nFPS< Mint > bell(int N) {\n\
+    \  FPS< Mint > poly(N + 1), ret(N + 1);\n  poly[1] = 1;\n  poly = poly.exp();\n\
+    \  poly[0] -= 1;\n  poly = poly.exp();\n  Mint mul = 1;\n  for(int i = 0; i <=\
+    \ N; i++) {\n    ret[i] = poly[i] * mul;\n    mul *= i + 1;\n  }\n  return ret;\n\
+    }\n"
   dependsOn: []
   isVerificationFile: false
   path: math/fps/bell.hpp
   requiredBy: []
-  timestamp: '2022-08-27 15:55:50+09:00'
+  timestamp: '2022-09-11 00:53:50+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/fps/bell.hpp

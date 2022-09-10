@@ -3,13 +3,13 @@ data:
   libraryCategories:
   - name: dp
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: dp/cumulative-sum-2d.hpp
       title: "Cumulative Sum 2D(\u4E8C\u6B21\u5143\u7D2F\u7A4D\u548C)"
     - icon: ':x:'
       path: dp/cumulative-sum.hpp
       title: "Cumulative Sum(\u4E00\u6B21\u5143\u7D2F\u7A4D\u548C)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: dp/divide-and-conquer-optimization.hpp
       title: Divide And Conquer Optimization
     - icon: ':x:'
@@ -41,7 +41,7 @@ data:
       path: dp/longest-increasing-subsequence.hpp
       title: "Longest Increasing Subsequence(\u6700\u9577\u5897\u52A0\u90E8\u5206\u5217\
         )"
-    - icon: ':x:'
+    - icon: ':question:'
       path: dp/monotone-minima.hpp
       title: Monotone Minima
     - icon: ':x:'
@@ -56,7 +56,7 @@ data:
     - icon: ':x:'
       path: geometry/area.hpp
       title: geometry/area.hpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: geometry/base.hpp
       title: geometry/base.hpp
     - icon: ':x:'
@@ -74,7 +74,7 @@ data:
     - icon: ':x:'
       path: geometry/convex_hull.hpp
       title: geometry/convex_hull.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: geometry/convex_polygon_contains.hpp
       title: geometry/convex_polygon_contains.hpp
     - icon: ':x:'
@@ -146,10 +146,10 @@ data:
     - icon: ':x:'
       path: geometry/line.hpp
       title: geometry/line.hpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: geometry/point.hpp
       title: geometry/point.hpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: geometry/polygon.hpp
       title: geometry/polygon.hpp
     - icon: ':x:'
@@ -191,7 +191,7 @@ data:
         \u5206\u89E3)"
   - name: graph/flow
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: graph/flow/bipartite-flow.hpp
       title: "Bipartite Flow(\u4E8C\u90E8\u30B0\u30E9\u30D5\u306E\u30D5\u30ED\u30FC\
         )"
@@ -205,7 +205,7 @@ data:
     - icon: ':x:'
       path: graph/flow/dinic-capacity-scaling.hpp
       title: "Dinic Capacity Scaling(\u6700\u5927\u6D41)"
-    - icon: ':x:'
+    - icon: ':question:'
       path: graph/flow/dinic.hpp
       title: "Dinic(\u6700\u5927\u6D41)"
     - icon: ':x:'
@@ -215,11 +215,11 @@ data:
       path: graph/flow/gabow-edmonds.hpp
       title: "Gabow Edmonds(\u4E00\u822C\u30B0\u30E9\u30D5\u306E\u6700\u5927\u30DE\
         \u30C3\u30C1\u30F3\u30B0)"
-    - icon: ':x:'
+    - icon: ':question:'
       path: graph/flow/hungarian.hpp
       title: "Hungarian(\u4E8C\u90E8\u30B0\u30E9\u30D5\u306E\u6700\u5C0F\u91CD\u307F\
         \u6700\u5927\u30DE\u30C3\u30C1\u30F3\u30B0)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/flow/maxflow-lower-bound.hpp
       title: graph/flow/maxflow-lower-bound.hpp
     - icon: ':x:'
@@ -230,7 +230,7 @@ data:
       title: graph/flow/push-relabel.hpp
   - name: graph
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: graph/graph-template.hpp
       title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8\
         )"
@@ -266,16 +266,16 @@ data:
     - icon: ':x:'
       path: graph/others/cartesian-tree.hpp
       title: Cartesian Tree
-    - icon: ':x:'
+    - icon: ':question:'
       path: graph/others/chromatic-number.hpp
       title: "Chromatic Number(\u5F69\u8272\u6570)"
     - icon: ':x:'
       path: graph/others/cycle-detection.hpp
       title: "Cycle Detection(\u9589\u8DEF\u691C\u51FA)"
-    - icon: ':x:'
+    - icon: ':question:'
       path: graph/others/dominator-tree.hpp
       title: Dominator Tree
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/others/enumerate-cliques.hpp
       title: "Enumerate Cliques(\u30AF\u30EA\u30FC\u30AF\u5168\u5217\u6319)"
     - icon: ':x:'
@@ -296,15 +296,15 @@ data:
     - icon: ':x:'
       path: graph/others/namori-graph.hpp
       title: Namori Graph
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/others/offline-dag-reachability.hpp
       title: "Offline Dag Reachability(DAG\u306E\u5230\u9054\u53EF\u80FD\u6027\u30AF\
         \u30A8\u30EA)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/others/topological-sort.hpp
       title: "Topological Sort(\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8\
         )"
-    - icon: ':x:'
+    - icon: ':question:'
       path: graph/others/tree-decomposition-width-2.hpp
       title: "Tree Decomposition Width 2(\u6728\u5E452\u306E\u6728\u5206\u89E3)"
     - icon: ':x:'
@@ -312,7 +312,7 @@ data:
       title: Two Satisfiability(2-SAT)
   - name: graph/shortest-path
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: graph/shortest-path/bellman-ford.hpp
       title: "Bellman-Ford(\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u8DEF)"
     - icon: ':x:'
@@ -327,7 +327,7 @@ data:
     - icon: ':x:'
       path: graph/shortest-path/dijkstra-radix-heap.hpp
       title: "Dijkstra-Radix-Heap(\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u8DEF)"
-    - icon: ':x:'
+    - icon: ':question:'
       path: graph/shortest-path/dijkstra.hpp
       title: "Dijkstra(\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u8DEF)"
     - icon: ':warning:'
@@ -368,17 +368,17 @@ data:
       path: graph/tree/doubling-lowest-common-ancestor.hpp
       title: "Doubling-Lowest-Common-Ancestor(\u6700\u5C0F\u5171\u901A\u7956\u5148\
         )"
-    - icon: ':x:'
+    - icon: ':question:'
       path: graph/tree/heavy-light-decomposition.hpp
       title: "Heavy-Light-Decomposition(HL\u5206\u89E3)"
-    - icon: ':x:'
+    - icon: ':question:'
       path: graph/tree/offline-lca.hpp
       title: "Offline LCA(\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\u901A\u7956\
         \u5148)"
     - icon: ':x:'
       path: graph/tree/pmormq-lowest-common-ancestor.hpp
       title: "PMORMQ-Lowest-Common-Ancestor(\u6700\u5C0F\u5171\u901A\u7956\u5148)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/tree/rerooting.hpp
       title: graph/tree/rerooting.hpp
     - icon: ':x:'
@@ -419,7 +419,7 @@ data:
     - icon: ':warning:'
       path: math/combinatorics/lagrange-polynomial.hpp
       title: "Lagrange Polynomial(\u591A\u9805\u5F0F\u88DC\u9593, \u5024)"
-    - icon: ':x:'
+    - icon: ':question:'
       path: math/combinatorics/mod-int.hpp
       title: math/combinatorics/mod-int.hpp
     - icon: ':x:'
@@ -562,15 +562,15 @@ data:
     - icon: ':x:'
       path: math/matrix/binary-basis.hpp
       title: math/matrix/binary-basis.hpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: math/matrix/matrix.hpp
       title: math/matrix/matrix.hpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: math/matrix/square-matrix.hpp
       title: "Square-Matrix(\u6B63\u65B9\u884C\u5217)"
   - name: math/number-theory
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/number-theory/convert-base.hpp
       title: "Convert Base(\u9032\u6570\u5909\u63DB)"
     - icon: ':x:'
@@ -579,7 +579,7 @@ data:
     - icon: ':x:'
       path: math/number-theory/enumerate-primes.hpp
       title: "Enumerate Primes(\u7D20\u6570\u5217\u6319)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/number-theory/euler-phi-table.hpp
       title: "Euler\u2019s Phi Table(\u30AA\u30A4\u30E9\u30FC\u306E\u03C6\u95A2\u6570\
         \u30C6\u30FC\u30D6\u30EB)"
@@ -641,7 +641,7 @@ data:
     - icon: ':warning:'
       path: other/mo-rollback.hpp
       title: other/mo-rollback.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: other/mo-tree.hpp
       title: "Mo Tree(\u6728\u4E0A\u306EMo)"
     - icon: ':x:'
@@ -671,7 +671,7 @@ data:
     - icon: ':warning:'
       path: other/timer.hpp
       title: "Timer(\u30BF\u30A4\u30DE\u30FC)"
-    - icon: ':x:'
+    - icon: ':question:'
       path: other/vector-pool.hpp
       title: other/vector-pool.hpp
     - icon: ':warning:'
@@ -734,16 +734,16 @@ data:
     - icon: ':warning:'
       path: structure/bbst/randomized-binary-search-tree-set.hpp
       title: structure/bbst/randomized-binary-search-tree-set.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: structure/bbst/randomized-binary-search-tree.hpp
       title: structure/bbst/randomized-binary-search-tree.hpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: structure/bbst/red-black-tree.hpp
       title: "Red-Black-Tree(\u8D64\u9ED2\u6728)"
     - icon: ':x:'
       path: structure/bbst/reversible-splay-tree.hpp
       title: "Reversible-Splay-Tree(\u53CD\u8EE2\u53EF\u80FDSplay\u6728)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: structure/bbst/weight-balanced-tree.hpp
       title: "Weight-Balanced-Tree(\u91CD\u307F\u5E73\u8861\u6728)"
   - name: structure/convex-hull-trick
@@ -771,17 +771,17 @@ data:
     - icon: ':x:'
       path: structure/develop/dynamic-tree-test.hpp
       title: Dynamic Tree Test
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: structure/develop/lazy-reversible-splay-tree.hpp
       title: "Lazy-Reversible-Splay-Tree(\u9045\u5EF6\u4F1D\u642C\u53CD\u8EE2\u53EF\
         \u80FDSplay\u6728)"
-    - icon: ':x:'
+    - icon: ':question:'
       path: structure/develop/link-cut-tree.hpp
       title: Link-Cut-Tree
-    - icon: ':x:'
+    - icon: ':question:'
       path: structure/develop/reversible-splay-tree.hpp
       title: "Reversible-Splay-Tree(\u53CD\u8EE2\u53EF\u80FDSplay\u6728)"
-    - icon: ':x:'
+    - icon: ':question:'
       path: structure/develop/splay-tree-base.hpp
       title: "Splay-Tree-Base(Splay\u6728)"
     - icon: ':warning:'
@@ -790,7 +790,7 @@ data:
     - icon: ':x:'
       path: structure/develop/subtree-add-subtree-sum.hpp
       title: Subtree Add Subtree Sum
-    - icon: ':x:'
+    - icon: ':question:'
       path: structure/develop/super-link-cut-tree.hpp
       title: "\u4F55\u3067\u3082\u3067\u304D\u308BLCT"
     - icon: ':x:'
@@ -828,7 +828,7 @@ data:
     - icon: ':warning:'
       path: structure/lct/euler-tour-tree.hpp
       title: Euler-Tour-Tree
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: structure/lct/link-cut-tree-lazy-path.hpp
       title: Link Cut Tree Lazy Path
     - icon: ':x:'
@@ -846,7 +846,7 @@ data:
     - icon: ':x:'
       path: structure/others/abstract-binary-indexed-tree.hpp
       title: "Abstract Binary Indexed Tree(\u62BD\u8C61\u5316BIT)"
-    - icon: ':x:'
+    - icon: ':question:'
       path: structure/others/binary-indexed-tree.hpp
       title: Binary-Indexed-Tree(BIT)
     - icon: ':x:'
@@ -890,7 +890,7 @@ data:
     - icon: ':x:'
       path: structure/segment-tree/dual-segment-tree.hpp
       title: "Dual-Segment-Tree(\u53CC\u5BFE\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
-    - icon: ':x:'
+    - icon: ':question:'
       path: structure/segment-tree/lazy-segment-tree.hpp
       title: "Lazy-Segment-Tree(\u9045\u5EF6\u4F1D\u642C\u30BB\u30B0\u30E1\u30F3\u30C8\
         \u6728)"
@@ -938,7 +938,7 @@ data:
     - icon: ':warning:'
       path: structure/union-find/union-find-undo.hpp
       title: structure/union-find/union-find-undo.hpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: structure/union-find/union-find.hpp
       title: Union-Find
     - icon: ':x:'
@@ -946,7 +946,7 @@ data:
       title: structure/union-find/weighted-union-find.hpp
   - name: structure/wavelet
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: structure/wavelet/succinct-indexable-dictionary.hpp
       title: "Succinct Indexable Dictionary(\u5B8C\u5099\u8F9E\u66F8)"
     - icon: ':x:'
@@ -955,97 +955,97 @@ data:
     - icon: ':x:'
       path: structure/wavelet/wavelet-matrix-rectangle-sum.hpp
       title: Wavelet Matrix Rectangle Sum
-    - icon: ':x:'
+    - icon: ':question:'
       path: structure/wavelet/wavelet-matrix.hpp
       title: "Wavelet Matrix(\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217\
         )"
-    - icon: ':x:'
+    - icon: ':question:'
       path: structure/wavelet/wavelet-tree.hpp
       title: "Wavelet Tree(\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u6728)"
   - name: template
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
   - name: test/verify
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-0233.test.cpp
       title: test/verify/aoj-0233.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-0275.test.cpp
       title: test/verify/aoj-0275.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-0294.test.cpp
       title: test/verify/aoj-0294.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-0304.test.cpp
       title: test/verify/aoj-0304.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-0334.test.cpp
       title: test/verify/aoj-0334.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-0412.test.cpp
       title: test/verify/aoj-0412.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-0560.test.cpp
       title: test/verify/aoj-0560.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-1163.test.cpp
       title: test/verify/aoj-1163.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-1254.test.cpp
       title: test/verify/aoj-1254.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-1508-2.test.cpp
       title: test/verify/aoj-1508-2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-1508-3.test.cpp
       title: test/verify/aoj-1508-3.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-1508.test.cpp
       title: test/verify/aoj-1508.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-1549-2.test.cpp
       title: test/verify/aoj-1549-2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-1549.test.cpp
       title: test/verify/aoj-1549.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-1595.test.cpp
       title: test/verify/aoj-1595.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-1615.test.cpp
       title: test/verify/aoj-1615.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-2270.test.cpp
       title: test/verify/aoj-2270.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-2286.test.cpp
       title: test/verify/aoj-2286.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-2306.test.cpp
       title: test/verify/aoj-2306.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-2405.test.cpp
       title: test/verify/aoj-2405.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-2450-2.test.cpp
       title: test/verify/aoj-2450-2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-2450-3.test.cpp
       title: test/verify/aoj-2450-3.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-2450-4.test.cpp
       title: test/verify/aoj-2450-4.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-2450.test.cpp
       title: test/verify/aoj-2450.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-2603.test.cpp
       title: test/verify/aoj-2603.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/aoj-2667.test.cpp
       title: test/verify/aoj-2667.test.cpp
     - icon: ':x:'

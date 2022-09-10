@@ -15,7 +15,7 @@ data:
     path: structure/wavelet/wavelet-matrix-point-add-rectangle-sum.hpp
     title: Wavelet Matrix Point Add Rectangle Sum
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-2270.test.cpp
     title: test/verify/aoj-2270.test.cpp
   - icon: ':x:'
@@ -35,48 +35,48 @@ data:
     title: test/verify/yosupo-static-range-inversions-query.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: docs/binary-indexed-tree.md
     document_title: Binary-Indexed-Tree(BIT)
     links: []
   bundledCode: "#line 1 \"structure/others/binary-indexed-tree.hpp\"\n/**\n * @brief\
-    \ Binary-Indexed-Tree(BIT)\n * @docs docs/binary-indexed-tree.md\n */\ntemplate\
-    \ < typename T >\nstruct BinaryIndexedTree {\n private:\n  int n;\n  vector< T\
-    \ > data;\n\n public:\n  BinaryIndexedTree() = default;\n\n  explicit BinaryIndexedTree(int\
-    \ n): n(n) {\n    data.assign(n + 1, T());\n  }\n\n  explicit BinaryIndexedTree(const\
-    \ vector< T > &v)\n      : BinaryIndexedTree((int)v.size()) {\n    build(v);\n\
-    \  }\n\n  void build(const vector< T > &v) {\n    assert(n == (int)v.size());\n\
-    \    for (int i = 1; i <= n; i++) data[i] = v[i - 1];\n    for (int i = 1; i <=\
-    \ n; i++) {\n      int j = i + (i & -i);\n      if (j <= n) data[j] += data[i];\n\
-    \    }\n  }\n\n  void apply(int k, const T &x) {\n    for (++k; k <= n; k += k\
-    \ & -k) data[k] += x;\n  }\n\n  T prod(int r) const {\n    T ret = T();\n    for\
-    \ (; r > 0; r -= r & -r) ret += data[r];\n    return ret;\n  }\n\n  T prod(int\
-    \ l, int r) const {\n    return prod(r) - prod(l);\n  }\n\n  int lower_bound(T\
-    \ x) const {\n    int i = 0;\n    for (int k = 1 << (__lg(n) + 1); k > 0; k >>=\
-    \ 1) {\n      if (i + k <= n && data[i + k] < x) {\n        x -= data[i + k];\n\
-    \        i += k;\n      }\n    }\n    return i;\n  }\n\n  int upper_bound(T x)\
-    \ const {\n    int i = 0;\n    for (int k = 1 << (__lg(n) + 1); k > 0; k >>= 1)\
-    \ {\n      if (i + k <= n && data[i + k] <= x) {\n        x -= data[i + k];\n\
-    \        i += k;\n      }\n    }\n    return i;\n  }\n};\n"
+    \ Binary-Indexed-Tree(BIT)\n * @docs docs/binary-indexed-tree.md\n */\ntemplate<\
+    \ typename T >\nstruct BinaryIndexedTree {\nprivate:\n  int n;\n  vector< T >\
+    \ data;\n\npublic:\n  BinaryIndexedTree() = default;\n\n  explicit BinaryIndexedTree(int\
+    \ n) : n(n) {\n    data.assign(n + 1, T());\n  }\n\n  explicit BinaryIndexedTree(const\
+    \ vector< T > &v) :\n      BinaryIndexedTree((int) v.size()) {\n    build(v);\n\
+    \  }\n\n  void build(const vector< T > &v) {\n    assert(n == (int) v.size());\n\
+    \    for(int i = 1; i <= n; i++) data[i] = v[i - 1];\n    for(int i = 1; i <=\
+    \ n; i++) {\n      int j = i + (i & -i);\n      if(j <= n) data[j] += data[i];\n\
+    \    }\n  }\n\n  void apply(int k, const T &x) {\n    for(++k; k <= n; k += k\
+    \ & -k) data[k] += x;\n  }\n\n  T prod(int r) const {\n    T ret = T();\n    for(;\
+    \ r > 0; r -= r & -r) ret += data[r];\n    return ret;\n  }\n\n  T prod(int l,\
+    \ int r) const {\n    return prod(r) - prod(l);\n  }\n\n  int lower_bound(T x)\
+    \ const {\n    int i = 0;\n    for(int k = 1 << (__lg(n) + 1); k > 0; k >>= 1)\
+    \ {\n      if(i + k <= n && data[i + k] < x) {\n        x -= data[i + k];\n  \
+    \      i += k;\n      }\n    }\n    return i;\n  }\n\n  int upper_bound(T x) const\
+    \ {\n    int i = 0;\n    for(int k = 1 << (__lg(n) + 1); k > 0; k >>= 1) {\n \
+    \     if(i + k <= n && data[i + k] <= x) {\n        x -= data[i + k];\n      \
+    \  i += k;\n      }\n    }\n    return i;\n  }\n};\n"
   code: "/**\n * @brief Binary-Indexed-Tree(BIT)\n * @docs docs/binary-indexed-tree.md\n\
-    \ */\ntemplate < typename T >\nstruct BinaryIndexedTree {\n private:\n  int n;\n\
-    \  vector< T > data;\n\n public:\n  BinaryIndexedTree() = default;\n\n  explicit\
-    \ BinaryIndexedTree(int n): n(n) {\n    data.assign(n + 1, T());\n  }\n\n  explicit\
-    \ BinaryIndexedTree(const vector< T > &v)\n      : BinaryIndexedTree((int)v.size())\
+    \ */\ntemplate< typename T >\nstruct BinaryIndexedTree {\nprivate:\n  int n;\n\
+    \  vector< T > data;\n\npublic:\n  BinaryIndexedTree() = default;\n\n  explicit\
+    \ BinaryIndexedTree(int n) : n(n) {\n    data.assign(n + 1, T());\n  }\n\n  explicit\
+    \ BinaryIndexedTree(const vector< T > &v) :\n      BinaryIndexedTree((int) v.size())\
     \ {\n    build(v);\n  }\n\n  void build(const vector< T > &v) {\n    assert(n\
-    \ == (int)v.size());\n    for (int i = 1; i <= n; i++) data[i] = v[i - 1];\n \
-    \   for (int i = 1; i <= n; i++) {\n      int j = i + (i & -i);\n      if (j <=\
+    \ == (int) v.size());\n    for(int i = 1; i <= n; i++) data[i] = v[i - 1];\n \
+    \   for(int i = 1; i <= n; i++) {\n      int j = i + (i & -i);\n      if(j <=\
     \ n) data[j] += data[i];\n    }\n  }\n\n  void apply(int k, const T &x) {\n  \
-    \  for (++k; k <= n; k += k & -k) data[k] += x;\n  }\n\n  T prod(int r) const\
-    \ {\n    T ret = T();\n    for (; r > 0; r -= r & -r) ret += data[r];\n    return\
-    \ ret;\n  }\n\n  T prod(int l, int r) const {\n    return prod(r) - prod(l);\n\
-    \  }\n\n  int lower_bound(T x) const {\n    int i = 0;\n    for (int k = 1 <<\
-    \ (__lg(n) + 1); k > 0; k >>= 1) {\n      if (i + k <= n && data[i + k] < x) {\n\
-    \        x -= data[i + k];\n        i += k;\n      }\n    }\n    return i;\n \
-    \ }\n\n  int upper_bound(T x) const {\n    int i = 0;\n    for (int k = 1 << (__lg(n)\
-    \ + 1); k > 0; k >>= 1) {\n      if (i + k <= n && data[i + k] <= x) {\n     \
-    \   x -= data[i + k];\n        i += k;\n      }\n    }\n    return i;\n  }\n};\n"
+    \  for(++k; k <= n; k += k & -k) data[k] += x;\n  }\n\n  T prod(int r) const {\n\
+    \    T ret = T();\n    for(; r > 0; r -= r & -r) ret += data[r];\n    return ret;\n\
+    \  }\n\n  T prod(int l, int r) const {\n    return prod(r) - prod(l);\n  }\n\n\
+    \  int lower_bound(T x) const {\n    int i = 0;\n    for(int k = 1 << (__lg(n)\
+    \ + 1); k > 0; k >>= 1) {\n      if(i + k <= n && data[i + k] < x) {\n       \
+    \ x -= data[i + k];\n        i += k;\n      }\n    }\n    return i;\n  }\n\n \
+    \ int upper_bound(T x) const {\n    int i = 0;\n    for(int k = 1 << (__lg(n)\
+    \ + 1); k > 0; k >>= 1) {\n      if(i + k <= n && data[i + k] <= x) {\n      \
+    \  x -= data[i + k];\n        i += k;\n      }\n    }\n    return i;\n  }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: structure/others/binary-indexed-tree.hpp
@@ -85,8 +85,8 @@ data:
   - other/static-point-add-rectangle-sum.hpp
   - other/dynamic-point-add-rectangle-sum.hpp
   - other/static-rectangle-add-rectangle-sum.hpp
-  timestamp: '2022-08-27 15:55:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-09-11 00:53:50+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/verify/yosupo-point-add-rectangle-sum.test.cpp
   - test/verify/yosupo-static-range-inversions-query.test.cpp

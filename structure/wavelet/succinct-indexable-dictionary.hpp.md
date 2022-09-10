@@ -5,14 +5,14 @@ data:
   - icon: ':x:'
     path: structure/wavelet/wavelet-matrix-point-add-rectangle-sum.hpp
     title: Wavelet Matrix Point Add Rectangle Sum
-  - icon: ':x:'
+  - icon: ':question:'
     path: structure/wavelet/wavelet-matrix.hpp
     title: "Wavelet Matrix(\u30A6\u30A7\u30FC\u30D6\u30EC\u30C3\u30C8\u884C\u5217)"
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-1549-2.test.cpp
     title: test/verify/aoj-1549-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-1549.test.cpp
     title: test/verify/aoj-1549.test.cpp
   - icon: ':x:'
@@ -35,7 +35,7 @@ data:
     title: test/verify/yosupo-rectangle-sum.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     document_title: "Succinct Indexable Dictionary(\u5B8C\u5099\u8F9E\u66F8)"
     links: []
@@ -43,35 +43,34 @@ data:
     /**\n * @brief Succinct Indexable Dictionary(\u5B8C\u5099\u8F9E\u66F8)\n */\n\
     struct SuccinctIndexableDictionary {\n  size_t length;\n  size_t blocks;\n  vector<\
     \ unsigned > bit, sum;\n\n  SuccinctIndexableDictionary() = default;\n\n  SuccinctIndexableDictionary(size_t\
-    \ length)\n      : length(length),\n        blocks((length + 31) >> 5) {\n   \
-    \ bit.assign(blocks, 0U);\n    sum.assign(blocks, 0U);\n  }\n\n  void set(int\
-    \ k) {\n    bit[k >> 5] |= 1U << (k & 31);\n  }\n\n  void build() {\n    sum[0]\
-    \ = 0U;\n    for (int i = 1; i < blocks; i++) {\n      sum[i] = sum[i - 1] + __builtin_popcount(bit[i\
+    \ length) : length(length), blocks((length + 31) >> 5) {\n    bit.assign(blocks,\
+    \ 0U);\n    sum.assign(blocks, 0U);\n  }\n\n  void set(int k) {\n    bit[k >>\
+    \ 5] |= 1U << (k & 31);\n  }\n\n  void build() {\n    sum[0] = 0U;\n    for(int\
+    \ i = 1; i < blocks; i++) {\n      sum[i] = sum[i - 1] + __builtin_popcount(bit[i\
     \ - 1]);\n    }\n  }\n\n  bool operator[](int k) {\n    return (bool((bit[k >>\
     \ 5] >> (k & 31)) & 1));\n  }\n\n  int rank(int k) {\n    return (sum[k >> 5]\
-    \ +\n            __builtin_popcount(bit[k >> 5] & ((1U << (k & 31)) - 1)));\n\
-    \  }\n\n  int rank(bool val, int k) {\n    return (val ? rank(k) : k - rank(k));\n\
-    \  }\n};\n"
+    \ + __builtin_popcount(bit[k >> 5] & ((1U << (k & 31)) - 1)));\n  }\n\n  int rank(bool\
+    \ val, int k) {\n    return (val ? rank(k) : k - rank(k));\n  }\n};\n"
   code: "/**\n * @brief Succinct Indexable Dictionary(\u5B8C\u5099\u8F9E\u66F8)\n\
     \ */\nstruct SuccinctIndexableDictionary {\n  size_t length;\n  size_t blocks;\n\
     \  vector< unsigned > bit, sum;\n\n  SuccinctIndexableDictionary() = default;\n\
-    \n  SuccinctIndexableDictionary(size_t length)\n      : length(length),\n    \
-    \    blocks((length + 31) >> 5) {\n    bit.assign(blocks, 0U);\n    sum.assign(blocks,\
-    \ 0U);\n  }\n\n  void set(int k) {\n    bit[k >> 5] |= 1U << (k & 31);\n  }\n\n\
-    \  void build() {\n    sum[0] = 0U;\n    for (int i = 1; i < blocks; i++) {\n\
-    \      sum[i] = sum[i - 1] + __builtin_popcount(bit[i - 1]);\n    }\n  }\n\n \
-    \ bool operator[](int k) {\n    return (bool((bit[k >> 5] >> (k & 31)) & 1));\n\
-    \  }\n\n  int rank(int k) {\n    return (sum[k >> 5] +\n            __builtin_popcount(bit[k\
-    \ >> 5] & ((1U << (k & 31)) - 1)));\n  }\n\n  int rank(bool val, int k) {\n  \
-    \  return (val ? rank(k) : k - rank(k));\n  }\n};\n"
+    \n  SuccinctIndexableDictionary(size_t length) : length(length), blocks((length\
+    \ + 31) >> 5) {\n    bit.assign(blocks, 0U);\n    sum.assign(blocks, 0U);\n  }\n\
+    \n  void set(int k) {\n    bit[k >> 5] |= 1U << (k & 31);\n  }\n\n  void build()\
+    \ {\n    sum[0] = 0U;\n    for(int i = 1; i < blocks; i++) {\n      sum[i] = sum[i\
+    \ - 1] + __builtin_popcount(bit[i - 1]);\n    }\n  }\n\n  bool operator[](int\
+    \ k) {\n    return (bool((bit[k >> 5] >> (k & 31)) & 1));\n  }\n\n  int rank(int\
+    \ k) {\n    return (sum[k >> 5] + __builtin_popcount(bit[k >> 5] & ((1U << (k\
+    \ & 31)) - 1)));\n  }\n\n  int rank(bool val, int k) {\n    return (val ? rank(k)\
+    \ : k - rank(k));\n  }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: structure/wavelet/succinct-indexable-dictionary.hpp
   requiredBy:
   - structure/wavelet/wavelet-matrix.hpp
   - structure/wavelet/wavelet-matrix-point-add-rectangle-sum.hpp
-  timestamp: '2022-08-27 15:55:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-09-11 00:53:50+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/verify/yosupo-range-kth-smallest-2.test.cpp
   - test/verify/aoj-1549-2.test.cpp

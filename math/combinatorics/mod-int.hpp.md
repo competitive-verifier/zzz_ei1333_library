@@ -3,7 +3,7 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-2405.test.cpp
     title: test/verify/aoj-2405.test.cpp
   - icon: ':x:'
@@ -122,62 +122,61 @@ data:
     title: test/verify/yukicoder-650.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"math/combinatorics/mod-int.hpp\"\ntemplate < int mod >\n\
-    struct ModInt {\n  int x;\n\n  ModInt(): x(0) {}\n\n  ModInt(int64_t y): x(y >=\
-    \ 0 ? y % mod : (mod - (-y) % mod) % mod) {}\n\n  ModInt &operator+=(const ModInt\
-    \ &p) {\n    if ((x += p.x) >= mod) x -= mod;\n    return *this;\n  }\n\n  ModInt\
-    \ &operator-=(const ModInt &p) {\n    if ((x += mod - p.x) >= mod) x -= mod;\n\
-    \    return *this;\n  }\n\n  ModInt &operator*=(const ModInt &p) {\n    x = (int)(1LL\
-    \ * x * p.x % mod);\n    return *this;\n  }\n\n  ModInt &operator/=(const ModInt\
-    \ &p) {\n    *this *= p.inverse();\n    return *this;\n  }\n\n  ModInt operator-()\
-    \ const {\n    return ModInt(-x);\n  }\n\n  ModInt operator+(const ModInt &p)\
-    \ const {\n    return ModInt(*this) += p;\n  }\n\n  ModInt operator-(const ModInt\
-    \ &p) const {\n    return ModInt(*this) -= p;\n  }\n\n  ModInt operator*(const\
-    \ ModInt &p) const {\n    return ModInt(*this) *= p;\n  }\n\n  ModInt operator/(const\
-    \ ModInt &p) const {\n    return ModInt(*this) /= p;\n  }\n\n  bool operator==(const\
-    \ ModInt &p) const {\n    return x == p.x;\n  }\n\n  bool operator!=(const ModInt\
-    \ &p) const {\n    return x != p.x;\n  }\n\n  ModInt inverse() const {\n    int\
-    \ a = x, b = mod, u = 1, v = 0, t;\n    while (b > 0) {\n      t = a / b;\n  \
-    \    swap(a -= t * b, b);\n      swap(u -= t * v, v);\n    }\n    return ModInt(u);\n\
-    \  }\n\n  ModInt pow(int64_t n) const {\n    ModInt ret(1), mul(x);\n    while\
-    \ (n > 0) {\n      if (n & 1) ret *= mul;\n      mul *= mul;\n      n >>= 1;\n\
-    \    }\n    return ret;\n  }\n\n  friend ostream &operator<<(ostream &os, const\
-    \ ModInt &p) {\n    return os << p.x;\n  }\n\n  friend istream &operator>>(istream\
-    \ &is, ModInt &a) {\n    int64_t t;\n    is >> t;\n    a = ModInt< mod >(t);\n\
-    \    return (is);\n  }\n\n  static int get_mod() {\n    return mod;\n  }\n};\n\
-    \nusing modint = ModInt< mod >;\n"
-  code: "template < int mod >\nstruct ModInt {\n  int x;\n\n  ModInt(): x(0) {}\n\n\
-    \  ModInt(int64_t y): x(y >= 0 ? y % mod : (mod - (-y) % mod) % mod) {}\n\n  ModInt\
-    \ &operator+=(const ModInt &p) {\n    if ((x += p.x) >= mod) x -= mod;\n    return\
-    \ *this;\n  }\n\n  ModInt &operator-=(const ModInt &p) {\n    if ((x += mod -\
-    \ p.x) >= mod) x -= mod;\n    return *this;\n  }\n\n  ModInt &operator*=(const\
-    \ ModInt &p) {\n    x = (int)(1LL * x * p.x % mod);\n    return *this;\n  }\n\n\
-    \  ModInt &operator/=(const ModInt &p) {\n    *this *= p.inverse();\n    return\
-    \ *this;\n  }\n\n  ModInt operator-() const {\n    return ModInt(-x);\n  }\n\n\
-    \  ModInt operator+(const ModInt &p) const {\n    return ModInt(*this) += p;\n\
-    \  }\n\n  ModInt operator-(const ModInt &p) const {\n    return ModInt(*this)\
-    \ -= p;\n  }\n\n  ModInt operator*(const ModInt &p) const {\n    return ModInt(*this)\
-    \ *= p;\n  }\n\n  ModInt operator/(const ModInt &p) const {\n    return ModInt(*this)\
-    \ /= p;\n  }\n\n  bool operator==(const ModInt &p) const {\n    return x == p.x;\n\
-    \  }\n\n  bool operator!=(const ModInt &p) const {\n    return x != p.x;\n  }\n\
-    \n  ModInt inverse() const {\n    int a = x, b = mod, u = 1, v = 0, t;\n    while\
-    \ (b > 0) {\n      t = a / b;\n      swap(a -= t * b, b);\n      swap(u -= t *\
-    \ v, v);\n    }\n    return ModInt(u);\n  }\n\n  ModInt pow(int64_t n) const {\n\
-    \    ModInt ret(1), mul(x);\n    while (n > 0) {\n      if (n & 1) ret *= mul;\n\
-    \      mul *= mul;\n      n >>= 1;\n    }\n    return ret;\n  }\n\n  friend ostream\
-    \ &operator<<(ostream &os, const ModInt &p) {\n    return os << p.x;\n  }\n\n\
-    \  friend istream &operator>>(istream &is, ModInt &a) {\n    int64_t t;\n    is\
-    \ >> t;\n    a = ModInt< mod >(t);\n    return (is);\n  }\n\n  static int get_mod()\
-    \ {\n    return mod;\n  }\n};\n\nusing modint = ModInt< mod >;\n"
+  bundledCode: "#line 1 \"math/combinatorics/mod-int.hpp\"\ntemplate< int mod >\n\
+    struct ModInt {\n  int x;\n\n  ModInt() : x(0) {}\n\n  ModInt(int64_t y) : x(y\
+    \ >= 0 ? y % mod : (mod - (-y) % mod) % mod) {}\n\n  ModInt &operator+=(const\
+    \ ModInt &p) {\n    if((x += p.x) >= mod) x -= mod;\n    return *this;\n  }\n\n\
+    \  ModInt &operator-=(const ModInt &p) {\n    if((x += mod - p.x) >= mod) x -=\
+    \ mod;\n    return *this;\n  }\n\n  ModInt &operator*=(const ModInt &p) {\n  \
+    \  x = (int) (1LL * x * p.x % mod);\n    return *this;\n  }\n\n  ModInt &operator/=(const\
+    \ ModInt &p) {\n    *this *= p.inverse();\n    return *this;\n  }\n\n  ModInt\
+    \ operator-() const { return ModInt(-x); }\n\n  ModInt operator+(const ModInt\
+    \ &p) const { return ModInt(*this) += p; }\n\n  ModInt operator-(const ModInt\
+    \ &p) const { return ModInt(*this) -= p; }\n\n  ModInt operator*(const ModInt\
+    \ &p) const { return ModInt(*this) *= p; }\n\n  ModInt operator/(const ModInt\
+    \ &p) const { return ModInt(*this) /= p; }\n\n  bool operator==(const ModInt &p)\
+    \ const { return x == p.x; }\n\n  bool operator!=(const ModInt &p) const { return\
+    \ x != p.x; }\n\n  ModInt inverse() const {\n    int a = x, b = mod, u = 1, v\
+    \ = 0, t;\n    while(b > 0) {\n      t = a / b;\n      swap(a -= t * b, b);\n\
+    \      swap(u -= t * v, v);\n    }\n    return ModInt(u);\n  }\n\n  ModInt pow(int64_t\
+    \ n) const {\n    ModInt ret(1), mul(x);\n    while(n > 0) {\n      if(n & 1)\
+    \ ret *= mul;\n      mul *= mul;\n      n >>= 1;\n    }\n    return ret;\n  }\n\
+    \n  friend ostream &operator<<(ostream &os, const ModInt &p) {\n    return os\
+    \ << p.x;\n  }\n\n  friend istream &operator>>(istream &is, ModInt &a) {\n   \
+    \ int64_t t;\n    is >> t;\n    a = ModInt< mod >(t);\n    return (is);\n  }\n\
+    \n  static int get_mod() { return mod; }\n};\n\nusing modint = ModInt< mod >;\n"
+  code: "template< int mod >\nstruct ModInt {\n  int x;\n\n  ModInt() : x(0) {}\n\n\
+    \  ModInt(int64_t y) : x(y >= 0 ? y % mod : (mod - (-y) % mod) % mod) {}\n\n \
+    \ ModInt &operator+=(const ModInt &p) {\n    if((x += p.x) >= mod) x -= mod;\n\
+    \    return *this;\n  }\n\n  ModInt &operator-=(const ModInt &p) {\n    if((x\
+    \ += mod - p.x) >= mod) x -= mod;\n    return *this;\n  }\n\n  ModInt &operator*=(const\
+    \ ModInt &p) {\n    x = (int) (1LL * x * p.x % mod);\n    return *this;\n  }\n\
+    \n  ModInt &operator/=(const ModInt &p) {\n    *this *= p.inverse();\n    return\
+    \ *this;\n  }\n\n  ModInt operator-() const { return ModInt(-x); }\n\n  ModInt\
+    \ operator+(const ModInt &p) const { return ModInt(*this) += p; }\n\n  ModInt\
+    \ operator-(const ModInt &p) const { return ModInt(*this) -= p; }\n\n  ModInt\
+    \ operator*(const ModInt &p) const { return ModInt(*this) *= p; }\n\n  ModInt\
+    \ operator/(const ModInt &p) const { return ModInt(*this) /= p; }\n\n  bool operator==(const\
+    \ ModInt &p) const { return x == p.x; }\n\n  bool operator!=(const ModInt &p)\
+    \ const { return x != p.x; }\n\n  ModInt inverse() const {\n    int a = x, b =\
+    \ mod, u = 1, v = 0, t;\n    while(b > 0) {\n      t = a / b;\n      swap(a -=\
+    \ t * b, b);\n      swap(u -= t * v, v);\n    }\n    return ModInt(u);\n  }\n\n\
+    \  ModInt pow(int64_t n) const {\n    ModInt ret(1), mul(x);\n    while(n > 0)\
+    \ {\n      if(n & 1) ret *= mul;\n      mul *= mul;\n      n >>= 1;\n    }\n \
+    \   return ret;\n  }\n\n  friend ostream &operator<<(ostream &os, const ModInt\
+    \ &p) {\n    return os << p.x;\n  }\n\n  friend istream &operator>>(istream &is,\
+    \ ModInt &a) {\n    int64_t t;\n    is >> t;\n    a = ModInt< mod >(t);\n    return\
+    \ (is);\n  }\n\n  static int get_mod() { return mod; }\n};\n\nusing modint = ModInt<\
+    \ mod >;\n"
   dependsOn: []
   isVerificationFile: false
   path: math/combinatorics/mod-int.hpp
   requiredBy: []
-  timestamp: '2022-08-27 15:55:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-09-11 00:53:50+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/verify/yosupo-find-linear-recurrence.test.cpp
   - test/verify/yosupo-kth-term-of-linearly-recurrent-sequence.test.cpp

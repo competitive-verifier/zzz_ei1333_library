@@ -21,23 +21,23 @@ data:
     links: []
   bundledCode: "#line 1 \"math/number-theory/kth-root-integer.hpp\"\n/**\n * @brief\
     \ Kth Root Integer\n * @docs docs/kth-root-integer.md\n */\nuint64_t kth_root_integer(uint64_t\
-    \ a, int k) {\n  if (k == 1) return a;\n  auto check = [&](uint32_t x) {\n   \
-    \ uint64_t mul = 1;\n    for (int j = 0; j < k; j++) {\n      if (__builtin_mul_overflow(mul,\
+    \ a, int k) {\n  if(k == 1) return a;\n  auto check = [&](uint32_t x) {\n    uint64_t\
+    \ mul = 1;\n    for(int j = 0; j < k; j++) {\n      if(__builtin_mul_overflow(mul,\
     \ x, &mul)) return false;\n    }\n    return mul <= a;\n  };\n  uint64_t ret =\
-    \ 0;\n  for (int i = 31; i >= 0; i--) {\n    if (check(ret | (1u << i))) ret |=\
+    \ 0;\n  for(int i = 31; i >= 0; i--) {\n    if(check(ret | (1u << i))) ret |=\
     \ 1u << i;\n  }\n  return ret;\n}\n"
   code: "/**\n * @brief Kth Root Integer\n * @docs docs/kth-root-integer.md\n */\n\
-    uint64_t kth_root_integer(uint64_t a, int k) {\n  if (k == 1) return a;\n  auto\
-    \ check = [&](uint32_t x) {\n    uint64_t mul = 1;\n    for (int j = 0; j < k;\
-    \ j++) {\n      if (__builtin_mul_overflow(mul, x, &mul)) return false;\n    }\n\
-    \    return mul <= a;\n  };\n  uint64_t ret = 0;\n  for (int i = 31; i >= 0; i--)\
-    \ {\n    if (check(ret | (1u << i))) ret |= 1u << i;\n  }\n  return ret;\n}\n"
+    uint64_t kth_root_integer(uint64_t a, int k) {\n  if(k == 1) return a;\n  auto\
+    \ check = [&](uint32_t x) {\n    uint64_t mul = 1;\n    for(int j = 0; j < k;\
+    \ j++) {\n      if(__builtin_mul_overflow(mul, x, &mul)) return false;\n    }\n\
+    \    return mul <= a;\n  };\n  uint64_t ret = 0;\n  for(int i = 31; i >= 0; i--)\
+    \ {\n    if(check(ret | (1u << i))) ret |= 1u << i;\n  }\n  return ret;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: math/number-theory/kth-root-integer.hpp
   requiredBy:
   - math/number-theory/prime-count.hpp
-  timestamp: '2022-08-27 15:55:50+09:00'
+  timestamp: '2022-09-11 00:53:50+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/yosupo-counting-primes.test.cpp

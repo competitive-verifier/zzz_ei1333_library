@@ -16,31 +16,31 @@ data:
     document_title: Multipoint Evaluation
     links: []
   bundledCode: "#line 1 \"math/fps/subproduct-tree.hpp\"\n/**\n * @brief Subproduct\
-    \ Tree\n */\ntemplate < template < typename > class FPS, typename Mint >\nvector<\
-    \ FPS< Mint > > subproduct_tree(const FPS< Mint > &xs) {\n  int n = (int)xs.size();\n\
-    \  int k = 1;\n  while (k < n) k <<= 1;\n  vector< FPS< Mint > > g(2 * k, {1});\n\
-    \  for (int i = 0; i < n; i++) g[k + i] = {-xs[i], Mint(1)};\n  for (int i = k;\
+    \ Tree\n */\ntemplate< template< typename > class FPS, typename Mint >\nvector<\
+    \ FPS< Mint > > subproduct_tree(const FPS< Mint > &xs) {\n  int n = (int) xs.size();\n\
+    \  int k = 1;\n  while(k < n) k <<= 1;\n  vector< FPS< Mint > > g(2 * k, {1});\n\
+    \  for(int i = 0; i < n; i++) g[k + i] = {-xs[i], Mint(1)};\n  for(int i = k;\
     \ i-- > 1;) g[i] = g[i << 1] * g[i << 1 | 1];\n  return g;\n}\n#line 2 \"math/fps/multipoint-evaluation.hpp\"\
-    \n\n/**\n * @brief Multipoint Evaluation\n */\ntemplate < template < typename\
-    \ > class FPS, typename Mint >\nFPS< Mint > multipoint_evaluation(const FPS< Mint\
-    \ > &f,\n                                  const FPS< Mint > &xs) {\n  auto g\
-    \ = subproduct_tree(xs);\n  int m = (int)xs.size(), k = (int)g.size() / 2;\n \
-    \ g[1] = f % g[1];\n  for (int i = 2; i < k + m; i++) g[i] = g[i >> 1] % g[i];\n\
-    \  FPS< Mint > ys(m);\n  for (int i = 0; i < m; i++)\n    ys[i] = (g[k + i].empty()\
-    \ ? Mint(0) : g[k + i][0]);\n  return ys;\n}\n"
+    \n\n/**\n * @brief Multipoint Evaluation\n */\ntemplate< template< typename >\
+    \ class FPS, typename Mint >\nFPS< Mint > multipoint_evaluation(const FPS< Mint\
+    \ > &f, const FPS< Mint > &xs) {\n  auto g = subproduct_tree(xs);\n  int m = (int)\
+    \ xs.size(), k = (int) g.size() / 2;\n  g[1] = f % g[1];\n  for(int i = 2; i <\
+    \ k + m; i++) g[i] = g[i >> 1] % g[i];\n  FPS< Mint > ys(m);\n  for(int i = 0;\
+    \ i < m; i++) ys[i] = (g[k + i].empty() ? Mint(0) : g[k + i][0]);\n  return ys;\n\
+    }\n"
   code: "#include \"subproduct-tree.hpp\"\n\n/**\n * @brief Multipoint Evaluation\n\
-    \ */\ntemplate < template < typename > class FPS, typename Mint >\nFPS< Mint >\
-    \ multipoint_evaluation(const FPS< Mint > &f,\n                              \
-    \    const FPS< Mint > &xs) {\n  auto g = subproduct_tree(xs);\n  int m = (int)xs.size(),\
-    \ k = (int)g.size() / 2;\n  g[1] = f % g[1];\n  for (int i = 2; i < k + m; i++)\
-    \ g[i] = g[i >> 1] % g[i];\n  FPS< Mint > ys(m);\n  for (int i = 0; i < m; i++)\n\
-    \    ys[i] = (g[k + i].empty() ? Mint(0) : g[k + i][0]);\n  return ys;\n}\n"
+    \ */\ntemplate< template< typename > class FPS, typename Mint >\nFPS< Mint > multipoint_evaluation(const\
+    \ FPS< Mint > &f, const FPS< Mint > &xs) {\n  auto g = subproduct_tree(xs);\n\
+    \  int m = (int) xs.size(), k = (int) g.size() / 2;\n  g[1] = f % g[1];\n  for(int\
+    \ i = 2; i < k + m; i++) g[i] = g[i >> 1] % g[i];\n  FPS< Mint > ys(m);\n  for(int\
+    \ i = 0; i < m; i++) ys[i] = (g[k + i].empty() ? Mint(0) : g[k + i][0]);\n  return\
+    \ ys;\n}\n"
   dependsOn:
   - math/fps/subproduct-tree.hpp
   isVerificationFile: false
   path: math/fps/multipoint-evaluation.hpp
   requiredBy: []
-  timestamp: '2022-08-27 15:55:50+09:00'
+  timestamp: '2022-09-11 00:53:50+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/yosupo-multipoint-evaluation.test.cpp

@@ -23,7 +23,7 @@ data:
   - icon: ':x:'
     path: geometry/convex_hull.hpp
     title: geometry/convex_hull.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: geometry/convex_polygon_contains.hpp
     title: geometry/convex_polygon_contains.hpp
   - icon: ':x:'
@@ -95,10 +95,10 @@ data:
   - icon: ':x:'
     path: geometry/line.hpp
     title: geometry/line.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: geometry/point.hpp
     title: geometry/point.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: geometry/polygon.hpp
     title: geometry/polygon.hpp
   - icon: ':x:'
@@ -111,7 +111,7 @@ data:
     path: geometry/segment.hpp
     title: geometry/segment.hpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-0412.test.cpp
     title: test/verify/aoj-0412.test.cpp
   - icon: ':x:'
@@ -164,20 +164,19 @@ data:
     title: test/verify/aoj-cgl-7-h.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"geometry/base.hpp\"\n\nnamespace geometry {\n  using Real\
-    \     = double;\n  const Real EPS = 1e-8;\n  const Real PI  = acos(static_cast<\
-    \ Real >(-1));\n\n  enum { OUT, ON, IN };\n\n  inline int sign(const Real &r)\
+    \ = double;\n  const Real EPS = 1e-8;\n  const Real PI = acos(static_cast< Real\
+    \ >(-1));\n\n  enum {\n    OUT, ON, IN\n  };\n\n  inline int sign(const Real &r)\
     \ {\n    return r <= -EPS ? -1 : r >= EPS ? 1 : 0;\n  }\n\n  inline bool equals(const\
-    \ Real &a, const Real &b) {\n    return sign(a - b) == 0;\n  }\n} // namespace\
-    \ geometry\n"
-  code: "#pragma once\n\nnamespace geometry {\n  using Real     = double;\n  const\
-    \ Real EPS = 1e-8;\n  const Real PI  = acos(static_cast< Real >(-1));\n\n  enum\
-    \ { OUT, ON, IN };\n\n  inline int sign(const Real &r) {\n    return r <= -EPS\
-    \ ? -1 : r >= EPS ? 1 : 0;\n  }\n\n  inline bool equals(const Real &a, const Real\
-    \ &b) {\n    return sign(a - b) == 0;\n  }\n} // namespace geometry\n"
+    \ Real &a, const Real &b) {\n    return sign(a - b) == 0;\n  }\n}\n"
+  code: "#pragma once\n\nnamespace geometry {\n  using Real = double;\n  const Real\
+    \ EPS = 1e-8;\n  const Real PI = acos(static_cast< Real >(-1));\n\n  enum {\n\
+    \    OUT, ON, IN\n  };\n\n  inline int sign(const Real &r) {\n    return r <=\
+    \ -EPS ? -1 : r >= EPS ? 1 : 0;\n  }\n\n  inline bool equals(const Real &a, const\
+    \ Real &b) {\n    return sign(a - b) == 0;\n  }\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: geometry/base.hpp
@@ -218,8 +217,8 @@ data:
   - geometry/contains.hpp
   - geometry/is_orthogonal.hpp
   - geometry/is_intersect_ls.hpp
-  timestamp: '2022-08-27 15:55:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-09-11 00:53:50+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/verify/aoj-cgl-3-a.test.cpp
   - test/verify/aoj-cgl-3-c.test.cpp

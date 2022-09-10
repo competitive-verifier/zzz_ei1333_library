@@ -28,23 +28,22 @@ data:
   bundledCode: "#line 1 \"math/number-theory/prime-table.hpp\"\n/**\n * @brief Prime\
     \ Table(\u7D20\u6570\u30C6\u30FC\u30D6\u30EB)\n * @docs docs/prime-table.md\n\
     \ */\nvector< bool > prime_table(int n) {\n  vector< bool > prime(n + 1, true);\n\
-    \  if (n >= 0) prime[0] = false;\n  if (n >= 1) prime[1] = false;\n  for (int\
-    \ i = 2; i * i <= n; i++) {\n    if (!prime[i]) continue;\n    for (int j = i\
-    \ * i; j <= n; j += i) {\n      prime[j] = false;\n    }\n  }\n  return prime;\n\
-    }\n"
+    \  if(n >= 0) prime[0] = false;\n  if(n >= 1) prime[1] = false;\n  for(int i =\
+    \ 2; i * i <= n; i++) {\n    if(!prime[i]) continue;\n    for(int j = i * i; j\
+    \ <= n; j += i) {\n      prime[j] = false;\n    }\n  }\n  return prime;\n}\n"
   code: "/**\n * @brief Prime Table(\u7D20\u6570\u30C6\u30FC\u30D6\u30EB)\n * @docs\
     \ docs/prime-table.md\n */\nvector< bool > prime_table(int n) {\n  vector< bool\
-    \ > prime(n + 1, true);\n  if (n >= 0) prime[0] = false;\n  if (n >= 1) prime[1]\
-    \ = false;\n  for (int i = 2; i * i <= n; i++) {\n    if (!prime[i]) continue;\n\
-    \    for (int j = i * i; j <= n; j += i) {\n      prime[j] = false;\n    }\n \
-    \ }\n  return prime;\n}\n"
+    \ > prime(n + 1, true);\n  if(n >= 0) prime[0] = false;\n  if(n >= 1) prime[1]\
+    \ = false;\n  for(int i = 2; i * i <= n; i++) {\n    if(!prime[i]) continue;\n\
+    \    for(int j = i * i; j <= n; j += i) {\n      prime[j] = false;\n    }\n  }\n\
+    \  return prime;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: math/number-theory/prime-table.hpp
   requiredBy:
   - math/number-theory/prime-count.hpp
   - math/number-theory/enumerate-primes.hpp
-  timestamp: '2022-08-27 15:55:50+09:00'
+  timestamp: '2022-09-11 00:53:50+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/yosupo-enumerate-primes.test.cpp

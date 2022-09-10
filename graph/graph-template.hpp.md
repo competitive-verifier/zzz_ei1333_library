@@ -38,7 +38,7 @@ data:
   - icon: ':x:'
     path: graph/others/cycle-detection.hpp
     title: "Cycle Detection(\u9589\u8DEF\u691C\u51FA)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/others/dominator-tree.hpp
     title: Dominator Tree
   - icon: ':x:'
@@ -50,18 +50,18 @@ data:
   - icon: ':x:'
     path: graph/others/namori-graph.hpp
     title: Namori Graph
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/others/offline-dag-reachability.hpp
     title: "Offline Dag Reachability(DAG\u306E\u5230\u9054\u53EF\u80FD\u6027\u30AF\
       \u30A8\u30EA)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/others/topological-sort.hpp
     title: "Topological Sort(\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8\
       )"
   - icon: ':x:'
     path: graph/others/two-satisfiability.hpp
     title: Two Satisfiability(2-SAT)
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/shortest-path/bellman-ford.hpp
     title: "Bellman-Ford(\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u8DEF)"
   - icon: ':x:'
@@ -76,7 +76,7 @@ data:
   - icon: ':x:'
     path: graph/shortest-path/dijkstra-radix-heap.hpp
     title: "Dijkstra-Radix-Heap(\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u8DEF)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/shortest-path/dijkstra.hpp
     title: "Dijkstra(\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u8DEF)"
   - icon: ':x:'
@@ -104,10 +104,10 @@ data:
   - icon: ':x:'
     path: graph/tree/doubling-lowest-common-ancestor.hpp
     title: "Doubling-Lowest-Common-Ancestor(\u6700\u5C0F\u5171\u901A\u7956\u5148)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/tree/heavy-light-decomposition.hpp
     title: "Heavy-Light-Decomposition(HL\u5206\u89E3)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/tree/offline-lca.hpp
     title: "Offline LCA(\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\u901A\u7956\
       \u5148)"
@@ -123,26 +123,26 @@ data:
   - icon: ':x:'
     path: graph/tree/tree-isomorphism.hpp
     title: "Tree-Isomorphism(\u6728\u306E\u540C\u578B\u6027\u5224\u5B9A)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: other/mo-tree.hpp
     title: "Mo Tree(\u6728\u4E0A\u306EMo)"
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-0275.test.cpp
     title: test/verify/aoj-0275.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-0294.test.cpp
     title: test/verify/aoj-0294.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-0304.test.cpp
     title: test/verify/aoj-0304.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-2270.test.cpp
     title: test/verify/aoj-2270.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-2450.test.cpp
     title: test/verify/aoj-2450.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-2667.test.cpp
     title: test/verify/aoj-2667.test.cpp
   - icon: ':x:'
@@ -276,50 +276,48 @@ data:
     title: test/verify/yukicoder-650.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     document_title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\
       \u30C8)"
     links: []
   bundledCode: "#line 2 \"graph/graph-template.hpp\"\n\n/**\n * @brief Graph Template(\u30B0\
-    \u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)\n */\ntemplate < typename T\
-    \ = int >\nstruct Edge {\n  int from, to;\n  T cost;\n  int idx;\n\n  Edge() =\
-    \ default;\n\n  Edge(int from, int to, T cost = 1, int idx = -1)\n      : from(from),\n\
-    \        to(to),\n        cost(cost),\n        idx(idx) {}\n\n  operator int()\
-    \ const {\n    return to;\n  }\n};\n\ntemplate < typename T = int >\nstruct Graph\
-    \ {\n  vector< vector< Edge< T > > > g;\n  int es;\n\n  Graph() = default;\n\n\
-    \  explicit Graph(int n): g(n), es(0) {}\n\n  size_t size() const {\n    return\
-    \ g.size();\n  }\n\n  void add_directed_edge(int from, int to, T cost = 1) {\n\
-    \    g[from].emplace_back(from, to, cost, es++);\n  }\n\n  void add_edge(int from,\
-    \ int to, T cost = 1) {\n    g[from].emplace_back(from, to, cost, es);\n    g[to].emplace_back(to,\
-    \ from, cost, es++);\n  }\n\n  void read(int M, int padding = -1, bool weighted\
-    \ = false,\n            bool directed = false) {\n    for (int i = 0; i < M; i++)\
-    \ {\n      int a, b;\n      cin >> a >> b;\n      a += padding;\n      b += padding;\n\
-    \      T c = T(1);\n      if (weighted) cin >> c;\n      if (directed)\n     \
-    \   add_directed_edge(a, b, c);\n      else\n        add_edge(a, b, c);\n    }\n\
-    \  }\n\n  inline vector< Edge< T > > &operator[](const int &k) {\n    return g[k];\n\
-    \  }\n\n  inline const vector< Edge< T > > &operator[](const int &k) const {\n\
-    \    return g[k];\n  }\n};\n\ntemplate < typename T = int >\nusing Edges = vector<\
-    \ Edge< T > >;\n"
+    \u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)\n */\ntemplate< typename T =\
+    \ int >\nstruct Edge {\n  int from, to;\n  T cost;\n  int idx;\n\n  Edge() = default;\n\
+    \n  Edge(int from, int to, T cost = 1, int idx = -1) : from(from), to(to), cost(cost),\
+    \ idx(idx) {}\n\n  operator int() const { return to; }\n};\n\ntemplate< typename\
+    \ T = int >\nstruct Graph {\n  vector< vector< Edge< T > > > g;\n  int es;\n\n\
+    \  Graph() = default;\n\n  explicit Graph(int n) : g(n), es(0) {}\n\n  size_t\
+    \ size() const {\n    return g.size();\n  }\n\n  void add_directed_edge(int from,\
+    \ int to, T cost = 1) {\n    g[from].emplace_back(from, to, cost, es++);\n  }\n\
+    \n  void add_edge(int from, int to, T cost = 1) {\n    g[from].emplace_back(from,\
+    \ to, cost, es);\n    g[to].emplace_back(to, from, cost, es++);\n  }\n\n  void\
+    \ read(int M, int padding = -1, bool weighted = false, bool directed = false)\
+    \ {\n    for(int i = 0; i < M; i++) {\n      int a, b;\n      cin >> a >> b;\n\
+    \      a += padding;\n      b += padding;\n      T c = T(1);\n      if(weighted)\
+    \ cin >> c;\n      if(directed) add_directed_edge(a, b, c);\n      else add_edge(a,\
+    \ b, c);\n    }\n  }\n\n  inline vector< Edge< T > > &operator[](const int &k)\
+    \ {\n    return g[k];\n  }\n\n  inline const vector< Edge< T > > &operator[](const\
+    \ int &k) const {\n    return g[k];\n  }\n};\n\ntemplate< typename T = int >\n\
+    using Edges = vector< Edge< T > >;\n"
   code: "#pragma once\n\n/**\n * @brief Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\
-    \u30D7\u30EC\u30FC\u30C8)\n */\ntemplate < typename T = int >\nstruct Edge {\n\
+    \u30D7\u30EC\u30FC\u30C8)\n */\ntemplate< typename T = int >\nstruct Edge {\n\
     \  int from, to;\n  T cost;\n  int idx;\n\n  Edge() = default;\n\n  Edge(int from,\
-    \ int to, T cost = 1, int idx = -1)\n      : from(from),\n        to(to),\n  \
-    \      cost(cost),\n        idx(idx) {}\n\n  operator int() const {\n    return\
-    \ to;\n  }\n};\n\ntemplate < typename T = int >\nstruct Graph {\n  vector< vector<\
-    \ Edge< T > > > g;\n  int es;\n\n  Graph() = default;\n\n  explicit Graph(int\
-    \ n): g(n), es(0) {}\n\n  size_t size() const {\n    return g.size();\n  }\n\n\
-    \  void add_directed_edge(int from, int to, T cost = 1) {\n    g[from].emplace_back(from,\
-    \ to, cost, es++);\n  }\n\n  void add_edge(int from, int to, T cost = 1) {\n \
-    \   g[from].emplace_back(from, to, cost, es);\n    g[to].emplace_back(to, from,\
-    \ cost, es++);\n  }\n\n  void read(int M, int padding = -1, bool weighted = false,\n\
-    \            bool directed = false) {\n    for (int i = 0; i < M; i++) {\n   \
-    \   int a, b;\n      cin >> a >> b;\n      a += padding;\n      b += padding;\n\
-    \      T c = T(1);\n      if (weighted) cin >> c;\n      if (directed)\n     \
-    \   add_directed_edge(a, b, c);\n      else\n        add_edge(a, b, c);\n    }\n\
-    \  }\n\n  inline vector< Edge< T > > &operator[](const int &k) {\n    return g[k];\n\
-    \  }\n\n  inline const vector< Edge< T > > &operator[](const int &k) const {\n\
-    \    return g[k];\n  }\n};\n\ntemplate < typename T = int >\nusing Edges = vector<\
+    \ int to, T cost = 1, int idx = -1) : from(from), to(to), cost(cost), idx(idx)\
+    \ {}\n\n  operator int() const { return to; }\n};\n\ntemplate< typename T = int\
+    \ >\nstruct Graph {\n  vector< vector< Edge< T > > > g;\n  int es;\n\n  Graph()\
+    \ = default;\n\n  explicit Graph(int n) : g(n), es(0) {}\n\n  size_t size() const\
+    \ {\n    return g.size();\n  }\n\n  void add_directed_edge(int from, int to, T\
+    \ cost = 1) {\n    g[from].emplace_back(from, to, cost, es++);\n  }\n\n  void\
+    \ add_edge(int from, int to, T cost = 1) {\n    g[from].emplace_back(from, to,\
+    \ cost, es);\n    g[to].emplace_back(to, from, cost, es++);\n  }\n\n  void read(int\
+    \ M, int padding = -1, bool weighted = false, bool directed = false) {\n    for(int\
+    \ i = 0; i < M; i++) {\n      int a, b;\n      cin >> a >> b;\n      a += padding;\n\
+    \      b += padding;\n      T c = T(1);\n      if(weighted) cin >> c;\n      if(directed)\
+    \ add_directed_edge(a, b, c);\n      else add_edge(a, b, c);\n    }\n  }\n\n \
+    \ inline vector< Edge< T > > &operator[](const int &k) {\n    return g[k];\n \
+    \ }\n\n  inline const vector< Edge< T > > &operator[](const int &k) const {\n\
+    \    return g[k];\n  }\n};\n\ntemplate< typename T = int >\nusing Edges = vector<\
     \ Edge< T > >;\n"
   dependsOn: []
   isVerificationFile: false
@@ -364,8 +362,8 @@ data:
   - graph/shortest-path/shortest-path-faster-algorithm.hpp
   - graph/shortest-path/complement-shotest-path.hpp
   - other/mo-tree.hpp
-  timestamp: '2022-08-27 15:55:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-09-11 00:53:50+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/verify/aoj-0294.test.cpp
   - test/verify/aoj-grl-2-a-2.test.cpp

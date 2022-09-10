@@ -3,151 +3,145 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-2450-2.test.cpp
     title: test/verify/aoj-2450-2.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: docs/link-cut-tree-lazy-path.md
     document_title: Link Cut Tree Lazy Path
     links: []
   bundledCode: "#line 1 \"structure/lct/link-cut-tree-lazy-path.hpp\"\n/**\n * @brief\
-    \ Link Cut Tree Lazy Path\n * @docs docs/link-cut-tree-lazy-path.md\n */\ntemplate\
-    \ < typename T, typename E, typename F, typename G, typename H,\n           typename\
-    \ S >\nstruct LinkCutTreeLazyPath {\n\n private:\n  F f;\n  G g;\n  H h;\n  S\
-    \ s;\n  E e0;\n\n  struct Node {\n    Node *l, *r, *p;\n    T key, sum;\n    E\
-    \ lazy;\n    bool rev;\n    size_t sz;\n\n    explicit Node(const T &v, const\
-    \ E &e)\n        : key(v),\n          sum(v),\n          lazy(e),\n          sz(1),\n\
-    \          rev(false),\n          l(nullptr),\n          r(nullptr),\n       \
-    \   p(nullptr) {}\n\n    bool is_root() const {\n      return not p or (p->l !=\
-    \ this and p->r != this);\n    }\n  };\n\n public:\n  using NP = Node *;\n\n private:\n\
-    \  NP update(NP t) {\n    t->sz  = 1;\n    t->sum = t->key;\n    if (t->l) t->sz\
-    \ += t->l->sz, t->sum = f(t->l->sum, t->sum);\n    if (t->r) t->sz += t->r->sz,\
-    \ t->sum = f(t->sum, t->r->sum);\n    return t;\n  }\n\n  void rotr(NP t) {\n\
-    \    NP x = t->p, y = x->p;\n    if ((x->l = t->r)) t->r->p = x;\n    t->r = x,\
-    \ x->p = t;\n    update(x), update(t);\n    if ((t->p = y)) {\n      if (y->l\
-    \ == x) y->l = t;\n      if (y->r == x) y->r = t;\n      update(y);\n    }\n \
-    \ }\n\n  void rotl(NP t) {\n    NP x = t->p, y = x->p;\n    if ((x->r = t->l))\
-    \ t->l->p = x;\n    t->l = x, x->p = t;\n    update(x), update(t);\n    if ((t->p\
-    \ = y)) {\n      if (y->l == x) y->l = t;\n      if (y->r == x) y->r = t;\n  \
-    \    update(y);\n    }\n  }\n\n  void toggle(NP t) {\n    swap(t->l, t->r);\n\
-    \    t->sum = s(t->sum);\n    t->rev ^= true;\n  }\n\n  void propagate(NP t, const\
-    \ E &e) {\n    t->lazy = h(t->lazy, e);\n    t->key  = g(t->key, e);\n    t->sum\
-    \  = g(t->sum, e);\n  }\n\n  void push(NP t) {\n    if (t->lazy != e0) {\n   \
-    \   if (t->l) propagate(t->l, t->lazy);\n      if (t->r) propagate(t->r, t->lazy);\n\
-    \      t->lazy = e0;\n    }\n    if (t->rev) {\n      if (t->l) toggle(t->l);\n\
-    \      if (t->r) toggle(t->r);\n      t->rev = false;\n    }\n  }\n\n  void splay(NP\
-    \ t) {\n    push(t);\n    while (not t->is_root()) {\n      NP q = t->p;\n   \
-    \   if (q->is_root()) {\n        push(q), push(t);\n        if (q->l == t)\n \
-    \         rotr(t);\n        else\n          rotl(t);\n      } else {\n       \
-    \ NP r = q->p;\n        push(r), push(q), push(t);\n        if (r->l == q) {\n\
-    \          if (q->l == t)\n            rotr(q), rotr(t);\n          else\n   \
-    \         rotl(t), rotr(t);\n        } else {\n          if (q->r == t)\n    \
-    \        rotl(q), rotl(t);\n          else\n            rotr(t), rotl(t);\n  \
-    \      }\n      }\n    }\n  }\n\n public:\n  LinkCutTreeLazyPath(const F &f, const\
-    \ G &g, const H &h, const S &s,\n                      const E &e0)\n      : f(f),\n\
-    \        g(g),\n        h(h),\n        s(s),\n        e0(e0) {}\n\n  NP alloc(const\
-    \ T &v = T()) {\n    return new Node(v, e0);\n  }\n\n  vector< NP > build(vector<\
-    \ T > &vs) {\n    vector< NP > nodes(vs.size());\n    for (int i = 0; i < (int)vs.size();\
-    \ i++) {\n      nodes[i] = alloc(vs[i]);\n    }\n    return nodes;\n  }\n\n  NP\
-    \ expose(NP t) {\n    NP rp = nullptr;\n    for (NP cur = t; cur; cur = cur->p)\
-    \ {\n      splay(cur);\n      cur->r = rp;\n      update(cur);\n      rp = cur;\n\
-    \    }\n    splay(t);\n    return rp;\n  }\n\n  void evert(NP t) {\n    expose(t);\n\
-    \    toggle(t);\n    push(t);\n  }\n\n  void link(NP child, NP parent) {\n   \
-    \ if (is_connected(child, parent)) {\n      throw runtime_error(\n          \"\
-    child and parent must be different connected components\");\n    }\n    if (child->l)\
-    \ {\n      throw runtime_error(\"child must be root\");\n    }\n    child->p \
-    \ = parent;\n    parent->r = child;\n    update(parent);\n  }\n\n  void cut(NP\
-    \ child) {\n    expose(child);\n    NP parent = child->l;\n    if (not parent)\
-    \ {\n      throw runtime_error(\"child must not be root\");\n    }\n    child->l\
-    \  = nullptr;\n    parent->p = nullptr;\n    update(child);\n  }\n\n  bool is_connected(NP\
-    \ u, NP v) {\n    expose(u), expose(v);\n    return u == v or u->p;\n  }\n\n \
-    \ NP lca(NP u, NP v) {\n    if (not is_connected(u, v)) return nullptr;\n    expose(u);\n\
-    \    return expose(v);\n  }\n\n  NP get_kth(NP x, int k) {\n    expose(x);\n \
-    \   while (x) {\n      push(x);\n      if (x->r && x->r->sz > k) {\n        x\
-    \ = x->r;\n      } else {\n        if (x->r) k -= x->r->sz;\n        if (k ==\
-    \ 0) return x;\n        k -= 1;\n        x = x->l;\n      }\n    }\n    return\
-    \ nullptr;\n  }\n\n  const T &query(NP u) {\n    expose(u);\n    return u->sum;\n\
-    \  }\n\n  const T &query(NP u, NP v) {\n    evert(u);\n    return query(v);\n\
-    \  }\n\n  void set_key(NP t, T v) {\n    expose(t);\n    t->key = v;\n    update(t);\n\
-    \  }\n\n  void set_propagate(NP t, const E &e) {\n    expose(t);\n    propagate(t,\
-    \ e);\n    push(t);\n  }\n\n  void set_propagate(NP u, NP v, const E &e) {\n \
-    \   evert(u);\n    set_propagate(v, e);\n  }\n};\n\ntemplate < typename T, typename\
-    \ E, typename F, typename G, typename H,\n           typename S >\nLinkCutTreeLazyPath<\
-    \ T, E, F, G, H, S > get_link_cut_tree_lazy_path(\n    const F &f, const G &g,\
-    \ const H &h, const S &s, const E &e0) {\n  return {f, g, h, s, e0};\n}\n"
-  code: "/**\n * @brief Link Cut Tree Lazy Path\n * @docs docs/link-cut-tree-lazy-path.md\n\
-    \ */\ntemplate < typename T, typename E, typename F, typename G, typename H,\n\
-    \           typename S >\nstruct LinkCutTreeLazyPath {\n\n private:\n  F f;\n\
-    \  G g;\n  H h;\n  S s;\n  E e0;\n\n  struct Node {\n    Node *l, *r, *p;\n  \
-    \  T key, sum;\n    E lazy;\n    bool rev;\n    size_t sz;\n\n    explicit Node(const\
-    \ T &v, const E &e)\n        : key(v),\n          sum(v),\n          lazy(e),\n\
-    \          sz(1),\n          rev(false),\n          l(nullptr),\n          r(nullptr),\n\
-    \          p(nullptr) {}\n\n    bool is_root() const {\n      return not p or\
-    \ (p->l != this and p->r != this);\n    }\n  };\n\n public:\n  using NP = Node\
-    \ *;\n\n private:\n  NP update(NP t) {\n    t->sz  = 1;\n    t->sum = t->key;\n\
-    \    if (t->l) t->sz += t->l->sz, t->sum = f(t->l->sum, t->sum);\n    if (t->r)\
-    \ t->sz += t->r->sz, t->sum = f(t->sum, t->r->sum);\n    return t;\n  }\n\n  void\
-    \ rotr(NP t) {\n    NP x = t->p, y = x->p;\n    if ((x->l = t->r)) t->r->p = x;\n\
-    \    t->r = x, x->p = t;\n    update(x), update(t);\n    if ((t->p = y)) {\n \
-    \     if (y->l == x) y->l = t;\n      if (y->r == x) y->r = t;\n      update(y);\n\
-    \    }\n  }\n\n  void rotl(NP t) {\n    NP x = t->p, y = x->p;\n    if ((x->r\
-    \ = t->l)) t->l->p = x;\n    t->l = x, x->p = t;\n    update(x), update(t);\n\
-    \    if ((t->p = y)) {\n      if (y->l == x) y->l = t;\n      if (y->r == x) y->r\
+    \ Link Cut Tree Lazy Path\n * @docs docs/link-cut-tree-lazy-path.md\n */\ntemplate<\
+    \ typename T, typename E, typename F, typename G, typename H, typename S >\nstruct\
+    \ LinkCutTreeLazyPath {\n\nprivate:\n  F f;\n  G g;\n  H h;\n  S s;\n  E e0;\n\
+    \n  struct Node {\n    Node *l, *r, *p;\n    T key, sum;\n    E lazy;\n    bool\
+    \ rev;\n    size_t sz;\n\n    explicit Node(const T &v, const E &e) : key(v),\
+    \ sum(v), lazy(e), sz(1), rev(false),\n                                      \
+    \      l(nullptr), r(nullptr), p(nullptr) {}\n\n    bool is_root() const {\n \
+    \     return not p or (p->l != this and p->r != this);\n    }\n  };\n\npublic:\n\
+    \  using NP = Node *;\n\nprivate:\n  NP update(NP t) {\n    t->sz = 1;\n    t->sum\
+    \ = t->key;\n    if(t->l) t->sz += t->l->sz, t->sum = f(t->l->sum, t->sum);\n\
+    \    if(t->r) t->sz += t->r->sz, t->sum = f(t->sum, t->r->sum);\n    return t;\n\
+    \  }\n\n  void rotr(NP t) {\n    NP x = t->p, y = x->p;\n    if((x->l = t->r))\
+    \ t->r->p = x;\n    t->r = x, x->p = t;\n    update(x), update(t);\n    if((t->p\
+    \ = y)) {\n      if(y->l == x) y->l = t;\n      if(y->r == x) y->r = t;\n    \
+    \  update(y);\n    }\n  }\n\n  void rotl(NP t) {\n    NP x = t->p, y = x->p;\n\
+    \    if((x->r = t->l)) t->l->p = x;\n    t->l = x, x->p = t;\n    update(x), update(t);\n\
+    \    if((t->p = y)) {\n      if(y->l == x) y->l = t;\n      if(y->r == x) y->r\
     \ = t;\n      update(y);\n    }\n  }\n\n  void toggle(NP t) {\n    swap(t->l,\
     \ t->r);\n    t->sum = s(t->sum);\n    t->rev ^= true;\n  }\n\n  void propagate(NP\
-    \ t, const E &e) {\n    t->lazy = h(t->lazy, e);\n    t->key  = g(t->key, e);\n\
-    \    t->sum  = g(t->sum, e);\n  }\n\n  void push(NP t) {\n    if (t->lazy != e0)\
-    \ {\n      if (t->l) propagate(t->l, t->lazy);\n      if (t->r) propagate(t->r,\
-    \ t->lazy);\n      t->lazy = e0;\n    }\n    if (t->rev) {\n      if (t->l) toggle(t->l);\n\
-    \      if (t->r) toggle(t->r);\n      t->rev = false;\n    }\n  }\n\n  void splay(NP\
-    \ t) {\n    push(t);\n    while (not t->is_root()) {\n      NP q = t->p;\n   \
-    \   if (q->is_root()) {\n        push(q), push(t);\n        if (q->l == t)\n \
-    \         rotr(t);\n        else\n          rotl(t);\n      } else {\n       \
-    \ NP r = q->p;\n        push(r), push(q), push(t);\n        if (r->l == q) {\n\
-    \          if (q->l == t)\n            rotr(q), rotr(t);\n          else\n   \
-    \         rotl(t), rotr(t);\n        } else {\n          if (q->r == t)\n    \
-    \        rotl(q), rotl(t);\n          else\n            rotr(t), rotl(t);\n  \
-    \      }\n      }\n    }\n  }\n\n public:\n  LinkCutTreeLazyPath(const F &f, const\
-    \ G &g, const H &h, const S &s,\n                      const E &e0)\n      : f(f),\n\
-    \        g(g),\n        h(h),\n        s(s),\n        e0(e0) {}\n\n  NP alloc(const\
-    \ T &v = T()) {\n    return new Node(v, e0);\n  }\n\n  vector< NP > build(vector<\
-    \ T > &vs) {\n    vector< NP > nodes(vs.size());\n    for (int i = 0; i < (int)vs.size();\
-    \ i++) {\n      nodes[i] = alloc(vs[i]);\n    }\n    return nodes;\n  }\n\n  NP\
-    \ expose(NP t) {\n    NP rp = nullptr;\n    for (NP cur = t; cur; cur = cur->p)\
-    \ {\n      splay(cur);\n      cur->r = rp;\n      update(cur);\n      rp = cur;\n\
-    \    }\n    splay(t);\n    return rp;\n  }\n\n  void evert(NP t) {\n    expose(t);\n\
-    \    toggle(t);\n    push(t);\n  }\n\n  void link(NP child, NP parent) {\n   \
-    \ if (is_connected(child, parent)) {\n      throw runtime_error(\n          \"\
-    child and parent must be different connected components\");\n    }\n    if (child->l)\
-    \ {\n      throw runtime_error(\"child must be root\");\n    }\n    child->p \
-    \ = parent;\n    parent->r = child;\n    update(parent);\n  }\n\n  void cut(NP\
-    \ child) {\n    expose(child);\n    NP parent = child->l;\n    if (not parent)\
-    \ {\n      throw runtime_error(\"child must not be root\");\n    }\n    child->l\
-    \  = nullptr;\n    parent->p = nullptr;\n    update(child);\n  }\n\n  bool is_connected(NP\
-    \ u, NP v) {\n    expose(u), expose(v);\n    return u == v or u->p;\n  }\n\n \
-    \ NP lca(NP u, NP v) {\n    if (not is_connected(u, v)) return nullptr;\n    expose(u);\n\
-    \    return expose(v);\n  }\n\n  NP get_kth(NP x, int k) {\n    expose(x);\n \
-    \   while (x) {\n      push(x);\n      if (x->r && x->r->sz > k) {\n        x\
-    \ = x->r;\n      } else {\n        if (x->r) k -= x->r->sz;\n        if (k ==\
-    \ 0) return x;\n        k -= 1;\n        x = x->l;\n      }\n    }\n    return\
-    \ nullptr;\n  }\n\n  const T &query(NP u) {\n    expose(u);\n    return u->sum;\n\
-    \  }\n\n  const T &query(NP u, NP v) {\n    evert(u);\n    return query(v);\n\
-    \  }\n\n  void set_key(NP t, T v) {\n    expose(t);\n    t->key = v;\n    update(t);\n\
-    \  }\n\n  void set_propagate(NP t, const E &e) {\n    expose(t);\n    propagate(t,\
-    \ e);\n    push(t);\n  }\n\n  void set_propagate(NP u, NP v, const E &e) {\n \
-    \   evert(u);\n    set_propagate(v, e);\n  }\n};\n\ntemplate < typename T, typename\
-    \ E, typename F, typename G, typename H,\n           typename S >\nLinkCutTreeLazyPath<\
-    \ T, E, F, G, H, S > get_link_cut_tree_lazy_path(\n    const F &f, const G &g,\
-    \ const H &h, const S &s, const E &e0) {\n  return {f, g, h, s, e0};\n}\n"
+    \ t, const E &e) {\n    t->lazy = h(t->lazy, e);\n    t->key = g(t->key, e);\n\
+    \    t->sum = g(t->sum, e);\n  }\n\n  void push(NP t) {\n    if(t->lazy != e0)\
+    \ {\n      if(t->l) propagate(t->l, t->lazy);\n      if(t->r) propagate(t->r,\
+    \ t->lazy);\n      t->lazy = e0;\n    }\n    if(t->rev) {\n      if(t->l) toggle(t->l);\n\
+    \      if(t->r) toggle(t->r);\n      t->rev = false;\n    }\n  }\n\n  void splay(NP\
+    \ t) {\n    push(t);\n    while(not t->is_root()) {\n      NP q = t->p;\n    \
+    \  if(q->is_root()) {\n        push(q), push(t);\n        if(q->l == t) rotr(t);\n\
+    \        else rotl(t);\n      } else {\n        NP r = q->p;\n        push(r),\
+    \ push(q), push(t);\n        if(r->l == q) {\n          if(q->l == t) rotr(q),\
+    \ rotr(t);\n          else rotl(t), rotr(t);\n        } else {\n          if(q->r\
+    \ == t) rotl(q), rotl(t);\n          else rotr(t), rotl(t);\n        }\n     \
+    \ }\n    }\n  }\n\npublic:\n  LinkCutTreeLazyPath(const F &f, const G &g, const\
+    \ H &h, const S &s, const E &e0) :\n      f(f), g(g), h(h), s(s), e0(e0) {}\n\n\
+    \  NP alloc(const T &v = T()) {\n    return new Node(v, e0);\n  }\n\n  vector<\
+    \ NP > build(vector< T > &vs) {\n    vector< NP > nodes(vs.size());\n    for(int\
+    \ i = 0; i < (int) vs.size(); i++) {\n      nodes[i] = alloc(vs[i]);\n    }\n\
+    \    return nodes;\n  }\n\n  NP expose(NP t) {\n    NP rp = nullptr;\n    for(NP\
+    \ cur = t; cur; cur = cur->p) {\n      splay(cur);\n      cur->r = rp;\n     \
+    \ update(cur);\n      rp = cur;\n    }\n    splay(t);\n    return rp;\n  }\n\n\
+    \  void evert(NP t) {\n    expose(t);\n    toggle(t);\n    push(t);\n  }\n\n \
+    \ void link(NP child, NP parent) {\n    if(is_connected(child, parent)) {\n  \
+    \    throw runtime_error(\"child and parent must be different connected components\"\
+    );\n    }\n    if(child->l) {\n      throw runtime_error(\"child must be root\"\
+    );\n    }\n    child->p = parent;\n    parent->r = child;\n    update(parent);\n\
+    \  }\n\n  void cut(NP child) {\n    expose(child);\n    NP parent = child->l;\n\
+    \    if(not parent) {\n      throw runtime_error(\"child must not be root\");\n\
+    \    }\n    child->l = nullptr;\n    parent->p = nullptr;\n    update(child);\n\
+    \  }\n\n  bool is_connected(NP u, NP v) {\n    expose(u), expose(v);\n    return\
+    \ u == v or u->p;\n  }\n\n  NP lca(NP u, NP v) {\n    if(not is_connected(u, v))\
+    \ return nullptr;\n    expose(u);\n    return expose(v);\n  }\n\n  NP get_kth(NP\
+    \ x, int k) {\n    expose(x);\n    while(x) {\n      push(x);\n      if(x->r &&\
+    \ x->r->sz > k) {\n        x = x->r;\n      } else {\n        if(x->r) k -= x->r->sz;\n\
+    \        if(k == 0) return x;\n        k -= 1;\n        x = x->l;\n      }\n \
+    \   }\n    return nullptr;\n  }\n\n  const T &query(NP u) {\n    expose(u);\n\
+    \    return u->sum;\n  }\n\n  const T &query(NP u, NP v) {\n    evert(u);\n  \
+    \  return query(v);\n  }\n\n  void set_key(NP t, T v) {\n    expose(t);\n    t->key\
+    \ = v;\n    update(t);\n  }\n\n  void set_propagate(NP t, const E &e) {\n    expose(t);\n\
+    \    propagate(t, e);\n    push(t);\n  }\n\n  void set_propagate(NP u, NP v, const\
+    \ E &e) {\n    evert(u);\n    set_propagate(v, e);\n  }\n};\n\ntemplate< typename\
+    \ T, typename E, typename F, typename G, typename H, typename S >\nLinkCutTreeLazyPath<\
+    \ T, E, F, G, H, S > get_link_cut_tree_lazy_path(const F &f, const G &g, const\
+    \ H &h, const S &s, const E &e0) {\n  return {f, g, h, s, e0};\n}\n"
+  code: "/**\n * @brief Link Cut Tree Lazy Path\n * @docs docs/link-cut-tree-lazy-path.md\n\
+    \ */\ntemplate< typename T, typename E, typename F, typename G, typename H, typename\
+    \ S >\nstruct LinkCutTreeLazyPath {\n\nprivate:\n  F f;\n  G g;\n  H h;\n  S s;\n\
+    \  E e0;\n\n  struct Node {\n    Node *l, *r, *p;\n    T key, sum;\n    E lazy;\n\
+    \    bool rev;\n    size_t sz;\n\n    explicit Node(const T &v, const E &e) :\
+    \ key(v), sum(v), lazy(e), sz(1), rev(false),\n                              \
+    \              l(nullptr), r(nullptr), p(nullptr) {}\n\n    bool is_root() const\
+    \ {\n      return not p or (p->l != this and p->r != this);\n    }\n  };\n\npublic:\n\
+    \  using NP = Node *;\n\nprivate:\n  NP update(NP t) {\n    t->sz = 1;\n    t->sum\
+    \ = t->key;\n    if(t->l) t->sz += t->l->sz, t->sum = f(t->l->sum, t->sum);\n\
+    \    if(t->r) t->sz += t->r->sz, t->sum = f(t->sum, t->r->sum);\n    return t;\n\
+    \  }\n\n  void rotr(NP t) {\n    NP x = t->p, y = x->p;\n    if((x->l = t->r))\
+    \ t->r->p = x;\n    t->r = x, x->p = t;\n    update(x), update(t);\n    if((t->p\
+    \ = y)) {\n      if(y->l == x) y->l = t;\n      if(y->r == x) y->r = t;\n    \
+    \  update(y);\n    }\n  }\n\n  void rotl(NP t) {\n    NP x = t->p, y = x->p;\n\
+    \    if((x->r = t->l)) t->l->p = x;\n    t->l = x, x->p = t;\n    update(x), update(t);\n\
+    \    if((t->p = y)) {\n      if(y->l == x) y->l = t;\n      if(y->r == x) y->r\
+    \ = t;\n      update(y);\n    }\n  }\n\n  void toggle(NP t) {\n    swap(t->l,\
+    \ t->r);\n    t->sum = s(t->sum);\n    t->rev ^= true;\n  }\n\n  void propagate(NP\
+    \ t, const E &e) {\n    t->lazy = h(t->lazy, e);\n    t->key = g(t->key, e);\n\
+    \    t->sum = g(t->sum, e);\n  }\n\n  void push(NP t) {\n    if(t->lazy != e0)\
+    \ {\n      if(t->l) propagate(t->l, t->lazy);\n      if(t->r) propagate(t->r,\
+    \ t->lazy);\n      t->lazy = e0;\n    }\n    if(t->rev) {\n      if(t->l) toggle(t->l);\n\
+    \      if(t->r) toggle(t->r);\n      t->rev = false;\n    }\n  }\n\n  void splay(NP\
+    \ t) {\n    push(t);\n    while(not t->is_root()) {\n      NP q = t->p;\n    \
+    \  if(q->is_root()) {\n        push(q), push(t);\n        if(q->l == t) rotr(t);\n\
+    \        else rotl(t);\n      } else {\n        NP r = q->p;\n        push(r),\
+    \ push(q), push(t);\n        if(r->l == q) {\n          if(q->l == t) rotr(q),\
+    \ rotr(t);\n          else rotl(t), rotr(t);\n        } else {\n          if(q->r\
+    \ == t) rotl(q), rotl(t);\n          else rotr(t), rotl(t);\n        }\n     \
+    \ }\n    }\n  }\n\npublic:\n  LinkCutTreeLazyPath(const F &f, const G &g, const\
+    \ H &h, const S &s, const E &e0) :\n      f(f), g(g), h(h), s(s), e0(e0) {}\n\n\
+    \  NP alloc(const T &v = T()) {\n    return new Node(v, e0);\n  }\n\n  vector<\
+    \ NP > build(vector< T > &vs) {\n    vector< NP > nodes(vs.size());\n    for(int\
+    \ i = 0; i < (int) vs.size(); i++) {\n      nodes[i] = alloc(vs[i]);\n    }\n\
+    \    return nodes;\n  }\n\n  NP expose(NP t) {\n    NP rp = nullptr;\n    for(NP\
+    \ cur = t; cur; cur = cur->p) {\n      splay(cur);\n      cur->r = rp;\n     \
+    \ update(cur);\n      rp = cur;\n    }\n    splay(t);\n    return rp;\n  }\n\n\
+    \  void evert(NP t) {\n    expose(t);\n    toggle(t);\n    push(t);\n  }\n\n \
+    \ void link(NP child, NP parent) {\n    if(is_connected(child, parent)) {\n  \
+    \    throw runtime_error(\"child and parent must be different connected components\"\
+    );\n    }\n    if(child->l) {\n      throw runtime_error(\"child must be root\"\
+    );\n    }\n    child->p = parent;\n    parent->r = child;\n    update(parent);\n\
+    \  }\n\n  void cut(NP child) {\n    expose(child);\n    NP parent = child->l;\n\
+    \    if(not parent) {\n      throw runtime_error(\"child must not be root\");\n\
+    \    }\n    child->l = nullptr;\n    parent->p = nullptr;\n    update(child);\n\
+    \  }\n\n  bool is_connected(NP u, NP v) {\n    expose(u), expose(v);\n    return\
+    \ u == v or u->p;\n  }\n\n  NP lca(NP u, NP v) {\n    if(not is_connected(u, v))\
+    \ return nullptr;\n    expose(u);\n    return expose(v);\n  }\n\n  NP get_kth(NP\
+    \ x, int k) {\n    expose(x);\n    while(x) {\n      push(x);\n      if(x->r &&\
+    \ x->r->sz > k) {\n        x = x->r;\n      } else {\n        if(x->r) k -= x->r->sz;\n\
+    \        if(k == 0) return x;\n        k -= 1;\n        x = x->l;\n      }\n \
+    \   }\n    return nullptr;\n  }\n\n  const T &query(NP u) {\n    expose(u);\n\
+    \    return u->sum;\n  }\n\n  const T &query(NP u, NP v) {\n    evert(u);\n  \
+    \  return query(v);\n  }\n\n  void set_key(NP t, T v) {\n    expose(t);\n    t->key\
+    \ = v;\n    update(t);\n  }\n\n  void set_propagate(NP t, const E &e) {\n    expose(t);\n\
+    \    propagate(t, e);\n    push(t);\n  }\n\n  void set_propagate(NP u, NP v, const\
+    \ E &e) {\n    evert(u);\n    set_propagate(v, e);\n  }\n};\n\ntemplate< typename\
+    \ T, typename E, typename F, typename G, typename H, typename S >\nLinkCutTreeLazyPath<\
+    \ T, E, F, G, H, S > get_link_cut_tree_lazy_path(const F &f, const G &g, const\
+    \ H &h, const S &s, const E &e0) {\n  return {f, g, h, s, e0};\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: structure/lct/link-cut-tree-lazy-path.hpp
   requiredBy: []
-  timestamp: '2022-08-27 15:55:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-09-11 00:53:50+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/aoj-2450-2.test.cpp
 documentation_of: structure/lct/link-cut-tree-lazy-path.hpp

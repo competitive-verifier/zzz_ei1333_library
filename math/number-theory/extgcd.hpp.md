@@ -16,19 +16,19 @@ data:
     links: []
   bundledCode: "#line 1 \"math/number-theory/extgcd.hpp\"\n/**\n * @brief Extgcd(\u62E1\
     \u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\u6CD5)\n * @docs\
-    \ docs/extgcd.md\n */\ntemplate < typename T >\nT extgcd(T a, T b, T &x, T &y)\
-    \ {\n  T d = a;\n  if (b != 0) {\n    d = extgcd(b, a % b, y, x);\n    y -= (a\
+    \ docs/extgcd.md\n */\ntemplate< typename T >\nT extgcd(T a, T b, T &x, T &y)\
+    \ {\n  T d = a;\n  if(b != 0) {\n    d = extgcd(b, a % b, y, x);\n    y -= (a\
     \ / b) * x;\n  } else {\n    x = 1;\n    y = 0;\n  }\n  return d;\n}\n"
   code: "/**\n * @brief Extgcd(\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\
-    \u4E92\u9664\u6CD5)\n * @docs docs/extgcd.md\n */\ntemplate < typename T >\nT\
-    \ extgcd(T a, T b, T &x, T &y) {\n  T d = a;\n  if (b != 0) {\n    d = extgcd(b,\
-    \ a % b, y, x);\n    y -= (a / b) * x;\n  } else {\n    x = 1;\n    y = 0;\n \
-    \ }\n  return d;\n}\n"
+    \u4E92\u9664\u6CD5)\n * @docs docs/extgcd.md\n */\ntemplate< typename T >\nT extgcd(T\
+    \ a, T b, T &x, T &y) {\n  T d = a;\n  if(b != 0) {\n    d = extgcd(b, a % b,\
+    \ y, x);\n    y -= (a / b) * x;\n  } else {\n    x = 1;\n    y = 0;\n  }\n  return\
+    \ d;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: math/number-theory/extgcd.hpp
   requiredBy: []
-  timestamp: '2022-08-27 15:55:50+09:00'
+  timestamp: '2022-09-11 00:53:50+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/aoj-ntl-1-e.test.cpp

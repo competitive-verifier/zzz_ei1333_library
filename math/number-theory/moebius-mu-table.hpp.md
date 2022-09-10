@@ -13,21 +13,19 @@ data:
   bundledCode: "#line 1 \"math/number-theory/moebius-mu-table.hpp\"\n/**\n * @brief\
     \ Moebius Table(\u30E1\u30D3\u30A6\u30B9\u95A2\u6570\u30C6\u30FC\u30D6\u30EB)\n\
     \ */\nvector< int > moebius_table(int n) {\n  vector< int > mu(n + 1, 1), p(n\
-    \ + 1, 1);\n  for (int i = 2; i <= n; i++) {\n    if (p[i] == 1) {\n      for\
-    \ (int j = i; j <= n; j += i) p[j] = i;\n    }\n    if ((i / p[i]) % p[i] == 0)\n\
-    \      mu[i] = 0;\n    else\n      mu[i] = -mu[i / p[i]];\n  }\n  return mu;\n\
-    }\n"
+    \ + 1, 1);\n  for(int i = 2; i <= n; i++) {\n    if(p[i] == 1) {\n      for(int\
+    \ j = i; j <= n; j += i) p[j] = i;\n    }\n    if((i / p[i]) % p[i] == 0) mu[i]\
+    \ = 0;\n    else mu[i] = -mu[i / p[i]];\n  }\n  return mu;\n}\n"
   code: "/**\n * @brief Moebius Table(\u30E1\u30D3\u30A6\u30B9\u95A2\u6570\u30C6\u30FC\
     \u30D6\u30EB)\n */\nvector< int > moebius_table(int n) {\n  vector< int > mu(n\
-    \ + 1, 1), p(n + 1, 1);\n  for (int i = 2; i <= n; i++) {\n    if (p[i] == 1)\
-    \ {\n      for (int j = i; j <= n; j += i) p[j] = i;\n    }\n    if ((i / p[i])\
-    \ % p[i] == 0)\n      mu[i] = 0;\n    else\n      mu[i] = -mu[i / p[i]];\n  }\n\
-    \  return mu;\n}\n"
+    \ + 1, 1), p(n + 1, 1);\n  for(int i = 2; i <= n; i++) {\n    if(p[i] == 1) {\n\
+    \      for(int j = i; j <= n; j += i) p[j] = i;\n    }\n    if((i / p[i]) % p[i]\
+    \ == 0) mu[i] = 0;\n    else mu[i] = -mu[i / p[i]];\n  }\n  return mu;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: math/number-theory/moebius-mu-table.hpp
   requiredBy: []
-  timestamp: '2022-08-27 15:55:50+09:00'
+  timestamp: '2022-09-11 00:53:50+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/number-theory/moebius-mu-table.hpp

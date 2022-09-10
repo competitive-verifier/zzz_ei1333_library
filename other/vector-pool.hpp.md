@@ -3,10 +3,10 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-1508-2.test.cpp
     title: test/verify/aoj-1508-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-1508-3.test.cpp
     title: test/verify/aoj-1508-3.test.cpp
   - icon: ':x:'
@@ -20,27 +20,27 @@ data:
     title: test/verify/yosupo-staticrmq-3.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"other/vector-pool.hpp\"\ntemplate < class T >\nstruct VectorPool\
+  bundledCode: "#line 1 \"other/vector-pool.hpp\"\ntemplate< class T >\nstruct VectorPool\
     \ {\n  vector< T > pool;\n  vector< T * > stock;\n  int ptr;\n\n  VectorPool()\
-    \ = default;\n\n  VectorPool(int sz): pool(sz), stock(sz) {}\n\n  inline T *alloc()\
-    \ {\n    return stock[--ptr];\n  }\n\n  inline void free(T *t) {\n    stock[ptr++]\
-    \ = t;\n  }\n\n  void clear() {\n    ptr = (int)pool.size();\n    for (int i =\
-    \ 0; i < pool.size(); i++) stock[i] = &pool[i];\n  }\n};\n"
-  code: "template < class T >\nstruct VectorPool {\n  vector< T > pool;\n  vector<\
-    \ T * > stock;\n  int ptr;\n\n  VectorPool() = default;\n\n  VectorPool(int sz):\
-    \ pool(sz), stock(sz) {}\n\n  inline T *alloc() {\n    return stock[--ptr];\n\
-    \  }\n\n  inline void free(T *t) {\n    stock[ptr++] = t;\n  }\n\n  void clear()\
-    \ {\n    ptr = (int)pool.size();\n    for (int i = 0; i < pool.size(); i++) stock[i]\
-    \ = &pool[i];\n  }\n};\n"
+    \ = default;\n\n  VectorPool(int sz) : pool(sz), stock(sz) {}\n\n  inline T *alloc()\
+    \ { return stock[--ptr]; }\n\n  inline void free(T *t) { stock[ptr++] = t; }\n\
+    \n  void clear() {\n    ptr = (int) pool.size();\n    for(int i = 0; i < pool.size();\
+    \ i++) stock[i] = &pool[i];\n  }\n};\n"
+  code: "template< class T >\nstruct VectorPool {\n  vector< T > pool;\n  vector<\
+    \ T * > stock;\n  int ptr;\n\n  VectorPool() = default;\n\n  VectorPool(int sz)\
+    \ : pool(sz), stock(sz) {}\n\n  inline T *alloc() { return stock[--ptr]; }\n\n\
+    \  inline void free(T *t) { stock[ptr++] = t; }\n\n  void clear() {\n    ptr =\
+    \ (int) pool.size();\n    for(int i = 0; i < pool.size(); i++) stock[i] = &pool[i];\n\
+    \  }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: other/vector-pool.hpp
   requiredBy: []
-  timestamp: '2022-08-27 15:55:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-09-11 00:53:50+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/verify/yosupo-range-affine-range-sum-3.test.cpp
   - test/verify/aoj-1508-3.test.cpp

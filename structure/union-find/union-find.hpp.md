@@ -24,18 +24,18 @@ data:
   - icon: ':x:'
     path: graph/others/eulerian-trail.hpp
     title: "Eulerian Trail(\u30AA\u30A4\u30E9\u30FC\u8DEF)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/tree/offline-lca.hpp
     title: "Offline LCA(\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\u901A\u7956\
       \u5148)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: other/mo-tree.hpp
     title: "Mo Tree(\u6728\u4E0A\u306EMo)"
   - icon: ':x:'
     path: other/offline-rmq.hpp
     title: Offline RMQ
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-2270.test.cpp
     title: test/verify/aoj-2270.test.cpp
   - icon: ':x:'
@@ -79,38 +79,36 @@ data:
     title: test/verify/yukicoder-583.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: docs/union-find.md
     document_title: Union-Find
     links: []
   bundledCode: "#line 2 \"structure/union-find/union-find.hpp\"\n\n/**\n * @brief\
     \ Union-Find\n * @docs docs/union-find.md\n */\nstruct UnionFind {\n  vector<\
-    \ int > data;\n\n  UnionFind() = default;\n\n  explicit UnionFind(size_t sz):\
+    \ int > data;\n\n  UnionFind() = default;\n\n  explicit UnionFind(size_t sz) :\
     \ data(sz, -1) {}\n\n  bool unite(int x, int y) {\n    x = find(x), y = find(y);\n\
-    \    if (x == y) return false;\n    if (data[x] > data[y]) swap(x, y);\n    data[x]\
+    \    if(x == y) return false;\n    if(data[x] > data[y]) swap(x, y);\n    data[x]\
     \ += data[y];\n    data[y] = x;\n    return true;\n  }\n\n  int find(int k) {\n\
-    \    if (data[k] < 0) return (k);\n    return data[k] = find(data[k]);\n  }\n\n\
+    \    if(data[k] < 0) return (k);\n    return data[k] = find(data[k]);\n  }\n\n\
     \  int size(int k) {\n    return -data[find(k)];\n  }\n\n  bool same(int x, int\
     \ y) {\n    return find(x) == find(y);\n  }\n\n  vector< vector< int > > groups()\
-    \ {\n    int n = (int)data.size();\n    vector< vector< int > > ret(n);\n    for\
-    \ (int i = 0; i < n; i++) {\n      ret[find(i)].emplace_back(i);\n    }\n    ret.erase(\n\
-    \        remove_if(begin(ret), end(ret),\n                  [&](const vector<\
-    \ int > &v) { return v.empty(); }),\n        end(ret));\n    return ret;\n  }\n\
-    };\n"
+    \ {\n    int n = (int) data.size();\n    vector< vector< int > > ret(n);\n   \
+    \ for(int i = 0; i < n; i++) {\n      ret[find(i)].emplace_back(i);\n    }\n \
+    \   ret.erase(remove_if(begin(ret), end(ret), [&](const vector< int > &v) {\n\
+    \      return v.empty();\n    }), end(ret));\n    return ret;\n  }\n};\n"
   code: "#pragma once\n\n/**\n * @brief Union-Find\n * @docs docs/union-find.md\n\
     \ */\nstruct UnionFind {\n  vector< int > data;\n\n  UnionFind() = default;\n\n\
-    \  explicit UnionFind(size_t sz): data(sz, -1) {}\n\n  bool unite(int x, int y)\
-    \ {\n    x = find(x), y = find(y);\n    if (x == y) return false;\n    if (data[x]\
+    \  explicit UnionFind(size_t sz) : data(sz, -1) {}\n\n  bool unite(int x, int\
+    \ y) {\n    x = find(x), y = find(y);\n    if(x == y) return false;\n    if(data[x]\
     \ > data[y]) swap(x, y);\n    data[x] += data[y];\n    data[y] = x;\n    return\
-    \ true;\n  }\n\n  int find(int k) {\n    if (data[k] < 0) return (k);\n    return\
+    \ true;\n  }\n\n  int find(int k) {\n    if(data[k] < 0) return (k);\n    return\
     \ data[k] = find(data[k]);\n  }\n\n  int size(int k) {\n    return -data[find(k)];\n\
     \  }\n\n  bool same(int x, int y) {\n    return find(x) == find(y);\n  }\n\n \
-    \ vector< vector< int > > groups() {\n    int n = (int)data.size();\n    vector<\
-    \ vector< int > > ret(n);\n    for (int i = 0; i < n; i++) {\n      ret[find(i)].emplace_back(i);\n\
-    \    }\n    ret.erase(\n        remove_if(begin(ret), end(ret),\n            \
-    \      [&](const vector< int > &v) { return v.empty(); }),\n        end(ret));\n\
-    \    return ret;\n  }\n};\n"
+    \ vector< vector< int > > groups() {\n    int n = (int) data.size();\n    vector<\
+    \ vector< int > > ret(n);\n    for(int i = 0; i < n; i++) {\n      ret[find(i)].emplace_back(i);\n\
+    \    }\n    ret.erase(remove_if(begin(ret), end(ret), [&](const vector< int >\
+    \ &v) {\n      return v.empty();\n    }), end(ret));\n    return ret;\n  }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: structure/union-find/union-find.hpp
@@ -125,8 +123,8 @@ data:
   - graph/flow/burn-bury.hpp
   - other/mo-tree.hpp
   - other/offline-rmq.hpp
-  timestamp: '2022-08-27 15:55:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-09-11 00:53:50+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/verify/aoj-grl-2-a-2.test.cpp
   - test/verify/yosupo-bipartite-edge-coloring.test.cpp
