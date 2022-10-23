@@ -52,8 +52,7 @@ data:
     \  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-counting-primes.test.cpp\"\
-    \n\n#line 1 \"math/number-theory/kth-root-integer.hpp\"\n/**\n * @brief Kth Root\
-    \ Integer\n * @docs docs/kth-root-integer.md\n */\nuint64_t kth_root_integer(uint64_t\
+    \n\n#line 1 \"math/number-theory/kth-root-integer.hpp\"\nuint64_t kth_root_integer(uint64_t\
     \ a, int k) {\n  if(k == 1) return a;\n  auto check = [&](uint32_t x) {\n    uint64_t\
     \ mul = 1;\n    for(int j = 0; j < k; j++) {\n      if(__builtin_mul_overflow(mul,\
     \ x, &mul)) return false;\n    }\n    return mul <= a;\n  };\n  uint64_t ret =\
@@ -98,7 +97,7 @@ data:
   isVerificationFile: true
   path: test/verify/yosupo-counting-primes.test.cpp
   requiredBy: []
-  timestamp: '2022-09-11 00:53:50+09:00'
+  timestamp: '2022-10-23 21:05:11+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-counting-primes.test.cpp

@@ -7,7 +7,7 @@ data:
   - icon: ':x:'
     path: graph/mst/prim-fibonacchi-heap.hpp
     title: "Prim Fibonacchi Heap(\u6700\u5C0F\u5168\u57DF\u6728)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: structure/heap/fibonacchi-heap.hpp
     title: "Fibonacchi-Heap(\u30D5\u30A3\u30DC\u30CA\u30C3\u30C1\u30D2\u30FC\u30D7\
       )"

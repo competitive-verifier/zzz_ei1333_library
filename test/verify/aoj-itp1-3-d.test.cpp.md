@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':x:'
     path: math/number-theory/divisor.hpp
-    title: math/number-theory/divisor.hpp
+    title: "Divisor(\u7D04\u6570\u5217\u6319)"
   - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp

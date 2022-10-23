@@ -61,7 +61,7 @@ data:
   - icon: ':x:'
     path: graph/others/two-satisfiability.hpp
     title: Two Satisfiability(2-SAT)
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/shortest-path/bellman-ford.hpp
     title: "Bellman-Ford(\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u8DEF)"
   - icon: ':heavy_check_mark:'
@@ -70,10 +70,10 @@ data:
   - icon: ':warning:'
     path: graph/shortest-path/complement-shotest-path.hpp
     title: "Complement-Shortest-Path(\u88DC\u30B0\u30E9\u30D5\u6700\u77ED\u8DEF)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/shortest-path/dijkstra-fibonacchi-heap.hpp
     title: "Dijkstra-Fibonacchi-Heap(\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u8DEF)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/shortest-path/dijkstra-radix-heap.hpp
     title: "Dijkstra-Radix-Heap(\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u8DEF)"
   - icon: ':question:'
@@ -85,7 +85,7 @@ data:
   - icon: ':x:'
     path: graph/shortest-path/k-shortest-walk.hpp
     title: K-Shortest-Walk
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/shortest-path/shortest-path-faster-algorithm.hpp
     title: "Shortest-Path-Faster-Algorithm(\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u8DEF\
       )"
@@ -157,19 +157,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-alds-1-11-c.test.cpp
     title: test/verify/aoj-alds-1-11-c.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-grl-1-a-2.test.cpp
     title: test/verify/aoj-grl-1-a-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-grl-1-a-3.test.cpp
     title: test/verify/aoj-grl-1-a-3.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-grl-1-a.test.cpp
     title: test/verify/aoj-grl-1-a.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-grl-1-b-2.test.cpp
     title: test/verify/aoj-grl-1-b-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-grl-1-b.test.cpp
     title: test/verify/aoj-grl-1-b.test.cpp
   - icon: ':x:'

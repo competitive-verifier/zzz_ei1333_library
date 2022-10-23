@@ -44,7 +44,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-3139.test.cpp
     title: test/verify/aoj-3139.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-dsl-1-a.test.cpp
     title: test/verify/aoj-dsl-1-a.test.cpp
   - icon: ':x:'

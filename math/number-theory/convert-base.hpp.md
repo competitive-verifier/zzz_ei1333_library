@@ -32,8 +32,19 @@ data:
   - test/verify/aoj-0233.test.cpp
 documentation_of: math/number-theory/convert-base.hpp
 layout: document
-redirect_from:
-- /library/math/number-theory/convert-base.hpp
-- /library/math/number-theory/convert-base.hpp.html
-title: math/number-theory/convert-base.hpp
+title: "Convert Base(\u9032\u6570\u5909\u63DB)"
 ---
+
+与えられた 10 進数を進数変換します。
+
+# convert_base
+
+```
+vector< T > convert_base(T x, T b)
+```
+
+`x` を `b` 進数に変換した結果を返します。
+
+## 計算量
+
+- $O(\log_b x)$

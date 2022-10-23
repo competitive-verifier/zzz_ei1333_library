@@ -18,8 +18,7 @@ data:
   attributes:
     document_title: "Prime Count(\u7D20\u6570\u306E\u500B\u6570)"
     links: []
-  bundledCode: "#line 1 \"math/number-theory/kth-root-integer.hpp\"\n/**\n * @brief\
-    \ Kth Root Integer\n * @docs docs/kth-root-integer.md\n */\nuint64_t kth_root_integer(uint64_t\
+  bundledCode: "#line 1 \"math/number-theory/kth-root-integer.hpp\"\nuint64_t kth_root_integer(uint64_t\
     \ a, int k) {\n  if(k == 1) return a;\n  auto check = [&](uint32_t x) {\n    uint64_t\
     \ mul = 1;\n    for(int j = 0; j < k; j++) {\n      if(__builtin_mul_overflow(mul,\
     \ x, &mul)) return false;\n    }\n    return mul <= a;\n  };\n  uint64_t ret =\
@@ -77,7 +76,7 @@ data:
   isVerificationFile: false
   path: math/number-theory/prime-count.hpp
   requiredBy: []
-  timestamp: '2022-09-11 00:53:50+09:00'
+  timestamp: '2022-10-23 21:05:11+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/yosupo-counting-primes.test.cpp

@@ -29,8 +29,23 @@ data:
   - test/verify/aoj-itp1-3-d.test.cpp
 documentation_of: math/number-theory/divisor.hpp
 layout: document
-redirect_from:
-- /library/math/number-theory/divisor.hpp
-- /library/math/number-theory/divisor.hpp.html
-title: math/number-theory/divisor.hpp
+title: "Divisor(\u7D04\u6570\u5217\u6319)"
 ---
+
+与えられた整数の約数を列挙します。
+
+# divisor
+
+```
+vector< int64_t > divisor(int64_t n)
+```
+
+`n` の約数を昇順に返します。
+
+## 制約
+
+- $1 \ge n$
+
+## 計算量
+
+- $O(\sqrt n)$
