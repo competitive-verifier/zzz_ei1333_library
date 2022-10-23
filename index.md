@@ -239,7 +239,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/mst/boruvka.hpp
       title: "Boruvka(\u6700\u5C0F\u5168\u57DF\u6728)"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/mst/directed-mst.hpp
       title: "Directed MST(\u6700\u5C0F\u6709\u5411\u5168\u57DF\u6728)"
     - icon: ':question:'
@@ -269,10 +269,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/others/chromatic-number.hpp
       title: "Chromatic Number(\u5F69\u8272\u6570)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/others/cycle-detection.hpp
       title: "Cycle Detection(\u9589\u8DEF\u691C\u51FA)"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/others/dominator-tree.hpp
       title: Dominator Tree
     - icon: ':heavy_check_mark:'
@@ -422,7 +422,7 @@ data:
     - icon: ':question:'
       path: math/combinatorics/mod-int.hpp
       title: math/combinatorics/mod-int.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/combinatorics/mod-log.hpp
       title: "Mod Log(\u96E2\u6563\u5BFE\u6570\u554F\u984C)"
     - icon: ':question:'
@@ -787,7 +787,7 @@ data:
     - icon: ':warning:'
       path: structure/develop/splay-tree.hpp
       title: structure/develop/splay-tree.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: structure/develop/subtree-add-subtree-sum.hpp
       title: Subtree Add Subtree Sum
     - icon: ':question:'
@@ -796,10 +796,10 @@ data:
     - icon: ':x:'
       path: structure/develop/vertex-set-path-composite.hpp
       title: Vertex Set Path Composite
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: structure/develop/vertex-set-path-sum.hpp
       title: Vertex Set Path Sum
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: structure/develop/vertex-set-subtree-sum.hpp
       title: Vertex Set Subtree Sum
   - name: structure/heap
@@ -820,7 +820,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: structure/heap/radix-heap.hpp
       title: structure/heap/radix-heap.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: structure/heap/skew-heap.hpp
       title: Skew-Heap
   - name: structure/lct
@@ -834,7 +834,7 @@ data:
     - icon: ':x:'
       path: structure/lct/link-cut-tree-subtree.hpp
       title: structure/lct/link-cut-tree-subtree.hpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: structure/lct/link-cut-tree.hpp
       title: Link Cut Tree
   - name: structure/others
@@ -940,7 +940,7 @@ data:
       title: structure/union-find/union-find-undo.hpp
     - icon: ':question:'
       path: structure/union-find/union-find.hpp
-      title: Union-Find
+      title: Union Find
     - icon: ':heavy_check_mark:'
       path: structure/union-find/weighted-union-find.hpp
       title: structure/union-find/weighted-union-find.hpp
@@ -1321,34 +1321,34 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-counting-primes.test.cpp
       title: test/verify/yosupo-counting-primes.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-cycle-detection.test.cpp
       title: test/verify/yosupo-cycle-detection.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-directedmst.test.cpp
       title: test/verify/yosupo-directedmst.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-discrete-logarithm-mod.test.cpp
       title: test/verify/yosupo-discrete-logarithm-mod.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-division-of-polynomials.test.cpp
       title: test/verify/yosupo-division-of-polynomials.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-dominatortree.test.cpp
       title: test/verify/yosupo-dominatortree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-dynamic-tree-subtree-add-subtree-sum.test.cpp
       title: test/verify/yosupo-dynamic-tree-subtree-add-subtree-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-dynamic-tree-vertex-add-path-sum-2.test.cpp
       title: test/verify/yosupo-dynamic-tree-vertex-add-path-sum-2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-dynamic-tree-vertex-add-path-sum-3.test.cpp
       title: test/verify/yosupo-dynamic-tree-vertex-add-path-sum-3.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-dynamic-tree-vertex-add-path-sum.test.cpp
       title: test/verify/yosupo-dynamic-tree-vertex-add-path-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-dynamic-tree-vertex-add-subtree-sum-2.test.cpp
       title: test/verify/yosupo-dynamic-tree-vertex-add-subtree-sum-2.test.cpp
     - icon: ':x:'

@@ -354,34 +354,34 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-counting-primes.test.cpp
     title: test/verify/yosupo-counting-primes.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-cycle-detection.test.cpp
     title: test/verify/yosupo-cycle-detection.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-directedmst.test.cpp
     title: test/verify/yosupo-directedmst.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-discrete-logarithm-mod.test.cpp
     title: test/verify/yosupo-discrete-logarithm-mod.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-division-of-polynomials.test.cpp
     title: test/verify/yosupo-division-of-polynomials.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-dominatortree.test.cpp
     title: test/verify/yosupo-dominatortree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-dynamic-tree-subtree-add-subtree-sum.test.cpp
     title: test/verify/yosupo-dynamic-tree-subtree-add-subtree-sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-dynamic-tree-vertex-add-path-sum-2.test.cpp
     title: test/verify/yosupo-dynamic-tree-vertex-add-path-sum-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-dynamic-tree-vertex-add-path-sum-3.test.cpp
     title: test/verify/yosupo-dynamic-tree-vertex-add-path-sum-3.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-dynamic-tree-vertex-add-path-sum.test.cpp
     title: test/verify/yosupo-dynamic-tree-vertex-add-path-sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-dynamic-tree-vertex-add-subtree-sum-2.test.cpp
     title: test/verify/yosupo-dynamic-tree-vertex-add-subtree-sum-2.test.cpp
   - icon: ':x:'

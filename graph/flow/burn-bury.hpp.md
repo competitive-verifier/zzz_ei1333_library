@@ -6,7 +6,7 @@ data:
     title: "Dinic(\u6700\u5927\u6D41)"
   - icon: ':question:'
     path: structure/union-find/union-find.hpp
-    title: Union-Find
+    title: Union Find
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -16,26 +16,25 @@ data:
     document_title: "Burn Bury(\u71C3\u3084\u3059\u57CB\u3081\u308B)"
     links: []
   bundledCode: "#line 2 \"graph/flow/burn-bury.hpp\"\n\n#line 2 \"structure/union-find/union-find.hpp\"\
-    \n\n/**\n * @brief Union-Find\n * @docs docs/union-find.md\n */\nstruct UnionFind\
-    \ {\n  vector< int > data;\n\n  UnionFind() = default;\n\n  explicit UnionFind(size_t\
-    \ sz) : data(sz, -1) {}\n\n  bool unite(int x, int y) {\n    x = find(x), y =\
-    \ find(y);\n    if(x == y) return false;\n    if(data[x] > data[y]) swap(x, y);\n\
-    \    data[x] += data[y];\n    data[y] = x;\n    return true;\n  }\n\n  int find(int\
-    \ k) {\n    if(data[k] < 0) return (k);\n    return data[k] = find(data[k]);\n\
-    \  }\n\n  int size(int k) {\n    return -data[find(k)];\n  }\n\n  bool same(int\
-    \ x, int y) {\n    return find(x) == find(y);\n  }\n\n  vector< vector< int >\
-    \ > groups() {\n    int n = (int) data.size();\n    vector< vector< int > > ret(n);\n\
-    \    for(int i = 0; i < n; i++) {\n      ret[find(i)].emplace_back(i);\n    }\n\
-    \    ret.erase(remove_if(begin(ret), end(ret), [&](const vector< int > &v) {\n\
-    \      return v.empty();\n    }), end(ret));\n    return ret;\n  }\n};\n#line\
-    \ 1 \"graph/flow/dinic.hpp\"\n/**\n * @brief Dinic(\u6700\u5927\u6D41)\n * @docs\
-    \ docs/dinic.md\n */\ntemplate< typename flow_t >\nstruct Dinic {\n  const flow_t\
-    \ INF;\n\n  struct edge {\n    int to;\n    flow_t cap;\n    int rev;\n    bool\
-    \ isrev;\n    int idx;\n  };\n\n  vector< vector< edge > > graph;\n  vector< int\
-    \ > min_cost, iter;\n\n  explicit Dinic(int V) : INF(numeric_limits< flow_t >::max()),\
-    \ graph(V) {}\n\n  void add_edge(int from, int to, flow_t cap, int idx = -1) {\n\
-    \    graph[from].emplace_back((edge) {to, cap, (int) graph[to].size(), false,\
-    \ idx});\n    graph[to].emplace_back((edge) {from, 0, (int) graph[from].size()\
+    \n\nstruct UnionFind {\n  vector< int > data;\n\n  UnionFind() = default;\n\n\
+    \  explicit UnionFind(size_t sz) : data(sz, -1) {}\n\n  bool unite(int x, int\
+    \ y) {\n    x = find(x), y = find(y);\n    if(x == y) return false;\n    if(data[x]\
+    \ > data[y]) swap(x, y);\n    data[x] += data[y];\n    data[y] = x;\n    return\
+    \ true;\n  }\n\n  int find(int k) {\n    if(data[k] < 0) return (k);\n    return\
+    \ data[k] = find(data[k]);\n  }\n\n  int size(int k) {\n    return -data[find(k)];\n\
+    \  }\n\n  bool same(int x, int y) {\n    return find(x) == find(y);\n  }\n\n \
+    \ vector< vector< int > > groups() {\n    int n = (int) data.size();\n    vector<\
+    \ vector< int > > ret(n);\n    for(int i = 0; i < n; i++) {\n      ret[find(i)].emplace_back(i);\n\
+    \    }\n    ret.erase(remove_if(begin(ret), end(ret), [&](const vector< int >\
+    \ &v) {\n      return v.empty();\n    }), end(ret));\n    return ret;\n  }\n};\n\
+    #line 1 \"graph/flow/dinic.hpp\"\n/**\n * @brief Dinic(\u6700\u5927\u6D41)\n *\
+    \ @docs docs/dinic.md\n */\ntemplate< typename flow_t >\nstruct Dinic {\n  const\
+    \ flow_t INF;\n\n  struct edge {\n    int to;\n    flow_t cap;\n    int rev;\n\
+    \    bool isrev;\n    int idx;\n  };\n\n  vector< vector< edge > > graph;\n  vector<\
+    \ int > min_cost, iter;\n\n  explicit Dinic(int V) : INF(numeric_limits< flow_t\
+    \ >::max()), graph(V) {}\n\n  void add_edge(int from, int to, flow_t cap, int\
+    \ idx = -1) {\n    graph[from].emplace_back((edge) {to, cap, (int) graph[to].size(),\
+    \ false, idx});\n    graph[to].emplace_back((edge) {from, 0, (int) graph[from].size()\
     \ - 1, true, idx});\n  }\n\n  bool build_augment_path(int s, int t) {\n    min_cost.assign(graph.size(),\
     \ -1);\n    queue< int > que;\n    min_cost[s] = 0;\n    que.push(s);\n    while(!que.empty()\
     \ && min_cost[t] == -1) {\n      int p = que.front();\n      que.pop();\n    \
@@ -191,7 +190,7 @@ data:
   isVerificationFile: false
   path: graph/flow/burn-bury.hpp
   requiredBy: []
-  timestamp: '2022-09-11 00:53:50+09:00'
+  timestamp: '2022-10-23 21:54:47+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graph/flow/burn-bury.hpp

@@ -6,7 +6,7 @@ data:
     title: "Boruvka(\u6700\u5C0F\u5168\u57DF\u6728)"
   - icon: ':question:'
     path: structure/union-find/union-find.hpp
-    title: Union-Find
+    title: Union Find
   - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
@@ -49,29 +49,29 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-grl-2-a-3.test.cpp\"\
-    \n\n#line 2 \"structure/union-find/union-find.hpp\"\n\n/**\n * @brief Union-Find\n\
-    \ * @docs docs/union-find.md\n */\nstruct UnionFind {\n  vector< int > data;\n\
-    \n  UnionFind() = default;\n\n  explicit UnionFind(size_t sz) : data(sz, -1) {}\n\
-    \n  bool unite(int x, int y) {\n    x = find(x), y = find(y);\n    if(x == y)\
-    \ return false;\n    if(data[x] > data[y]) swap(x, y);\n    data[x] += data[y];\n\
-    \    data[y] = x;\n    return true;\n  }\n\n  int find(int k) {\n    if(data[k]\
-    \ < 0) return (k);\n    return data[k] = find(data[k]);\n  }\n\n  int size(int\
-    \ k) {\n    return -data[find(k)];\n  }\n\n  bool same(int x, int y) {\n    return\
-    \ find(x) == find(y);\n  }\n\n  vector< vector< int > > groups() {\n    int n\
-    \ = (int) data.size();\n    vector< vector< int > > ret(n);\n    for(int i = 0;\
-    \ i < n; i++) {\n      ret[find(i)].emplace_back(i);\n    }\n    ret.erase(remove_if(begin(ret),\
-    \ end(ret), [&](const vector< int > &v) {\n      return v.empty();\n    }), end(ret));\n\
-    \    return ret;\n  }\n};\n#line 2 \"graph/mst/boruvka.hpp\"\n\n/**\n * @brief\
-    \ Boruvka(\u6700\u5C0F\u5168\u57DF\u6728)\n * @docs docs/boruvka.md\n */\ntemplate<\
-    \ typename T >\nstruct Boruvka {\nprivate:\n  size_t V;\n  UnionFind uf;\n  const\
-    \ T INF;\n\npublic:\n  explicit Boruvka(size_t V, T INF = numeric_limits< T >::max())\
-    \ : V(V), uf(V), INF(INF) {}\n\n  inline int find(int k) {\n    return uf.find(k);\n\
-    \  }\n\n  template< typename F >\n  T build(const F &update) {\n    T ret = T();\n\
-    \    while(uf.size(0) < (int)V) {\n      vector< pair< T, int > > v(V, make_pair(INF,\
-    \ -1));\n      update(v);\n      bool con = false;\n      for(int i = 0; i < (int)V;\
-    \ i++) {\n        if(v[i].second >= 0 && uf.unite(i, v[i].second)) {\n       \
-    \   ret += v[i].first;\n          con = true;\n        }\n      }\n      if(!con)\
-    \ return INF;\n    }\n    return ret;\n  }\n};\n#line 6 \"test/verify/aoj-grl-2-a-3.test.cpp\"\
+    \n\n#line 2 \"structure/union-find/union-find.hpp\"\n\nstruct UnionFind {\n  vector<\
+    \ int > data;\n\n  UnionFind() = default;\n\n  explicit UnionFind(size_t sz) :\
+    \ data(sz, -1) {}\n\n  bool unite(int x, int y) {\n    x = find(x), y = find(y);\n\
+    \    if(x == y) return false;\n    if(data[x] > data[y]) swap(x, y);\n    data[x]\
+    \ += data[y];\n    data[y] = x;\n    return true;\n  }\n\n  int find(int k) {\n\
+    \    if(data[k] < 0) return (k);\n    return data[k] = find(data[k]);\n  }\n\n\
+    \  int size(int k) {\n    return -data[find(k)];\n  }\n\n  bool same(int x, int\
+    \ y) {\n    return find(x) == find(y);\n  }\n\n  vector< vector< int > > groups()\
+    \ {\n    int n = (int) data.size();\n    vector< vector< int > > ret(n);\n   \
+    \ for(int i = 0; i < n; i++) {\n      ret[find(i)].emplace_back(i);\n    }\n \
+    \   ret.erase(remove_if(begin(ret), end(ret), [&](const vector< int > &v) {\n\
+    \      return v.empty();\n    }), end(ret));\n    return ret;\n  }\n};\n#line\
+    \ 2 \"graph/mst/boruvka.hpp\"\n\n/**\n * @brief Boruvka(\u6700\u5C0F\u5168\u57DF\
+    \u6728)\n * @docs docs/boruvka.md\n */\ntemplate< typename T >\nstruct Boruvka\
+    \ {\nprivate:\n  size_t V;\n  UnionFind uf;\n  const T INF;\n\npublic:\n  explicit\
+    \ Boruvka(size_t V, T INF = numeric_limits< T >::max()) : V(V), uf(V), INF(INF)\
+    \ {}\n\n  inline int find(int k) {\n    return uf.find(k);\n  }\n\n  template<\
+    \ typename F >\n  T build(const F &update) {\n    T ret = T();\n    while(uf.size(0)\
+    \ < (int)V) {\n      vector< pair< T, int > > v(V, make_pair(INF, -1));\n    \
+    \  update(v);\n      bool con = false;\n      for(int i = 0; i < (int)V; i++)\
+    \ {\n        if(v[i].second >= 0 && uf.unite(i, v[i].second)) {\n          ret\
+    \ += v[i].first;\n          con = true;\n        }\n      }\n      if(!con) return\
+    \ INF;\n    }\n    return ret;\n  }\n};\n#line 6 \"test/verify/aoj-grl-2-a-3.test.cpp\"\
     \n\nint main() {\n  int V, E;\n  cin >> V >> E;\n  vector< int > X(E), Y(E), Z(E);\n\
     \  for(int i = 0; i < E; i++) {\n    cin >> X[i] >> Y[i] >> Z[i];\n  }\n  Boruvka<\
     \ int > mst(V);\n  auto f = [&](vector< pair< int, int > > &ret) {\n    for(int\
@@ -95,7 +95,7 @@ data:
   isVerificationFile: true
   path: test/verify/aoj-grl-2-a-3.test.cpp
   requiredBy: []
-  timestamp: '2022-09-11 00:53:50+09:00'
+  timestamp: '2022-10-23 21:54:47+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/aoj-grl-2-a-3.test.cpp

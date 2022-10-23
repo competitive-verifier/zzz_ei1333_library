@@ -81,34 +81,31 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':question:'
   attributes:
-    _deprecated_at_docs: docs/union-find.md
-    document_title: Union-Find
     links: []
-  bundledCode: "#line 2 \"structure/union-find/union-find.hpp\"\n\n/**\n * @brief\
-    \ Union-Find\n * @docs docs/union-find.md\n */\nstruct UnionFind {\n  vector<\
-    \ int > data;\n\n  UnionFind() = default;\n\n  explicit UnionFind(size_t sz) :\
-    \ data(sz, -1) {}\n\n  bool unite(int x, int y) {\n    x = find(x), y = find(y);\n\
-    \    if(x == y) return false;\n    if(data[x] > data[y]) swap(x, y);\n    data[x]\
-    \ += data[y];\n    data[y] = x;\n    return true;\n  }\n\n  int find(int k) {\n\
-    \    if(data[k] < 0) return (k);\n    return data[k] = find(data[k]);\n  }\n\n\
-    \  int size(int k) {\n    return -data[find(k)];\n  }\n\n  bool same(int x, int\
-    \ y) {\n    return find(x) == find(y);\n  }\n\n  vector< vector< int > > groups()\
-    \ {\n    int n = (int) data.size();\n    vector< vector< int > > ret(n);\n   \
-    \ for(int i = 0; i < n; i++) {\n      ret[find(i)].emplace_back(i);\n    }\n \
-    \   ret.erase(remove_if(begin(ret), end(ret), [&](const vector< int > &v) {\n\
+  bundledCode: "#line 2 \"structure/union-find/union-find.hpp\"\n\nstruct UnionFind\
+    \ {\n  vector< int > data;\n\n  UnionFind() = default;\n\n  explicit UnionFind(size_t\
+    \ sz) : data(sz, -1) {}\n\n  bool unite(int x, int y) {\n    x = find(x), y =\
+    \ find(y);\n    if(x == y) return false;\n    if(data[x] > data[y]) swap(x, y);\n\
+    \    data[x] += data[y];\n    data[y] = x;\n    return true;\n  }\n\n  int find(int\
+    \ k) {\n    if(data[k] < 0) return (k);\n    return data[k] = find(data[k]);\n\
+    \  }\n\n  int size(int k) {\n    return -data[find(k)];\n  }\n\n  bool same(int\
+    \ x, int y) {\n    return find(x) == find(y);\n  }\n\n  vector< vector< int >\
+    \ > groups() {\n    int n = (int) data.size();\n    vector< vector< int > > ret(n);\n\
+    \    for(int i = 0; i < n; i++) {\n      ret[find(i)].emplace_back(i);\n    }\n\
+    \    ret.erase(remove_if(begin(ret), end(ret), [&](const vector< int > &v) {\n\
     \      return v.empty();\n    }), end(ret));\n    return ret;\n  }\n};\n"
-  code: "#pragma once\n\n/**\n * @brief Union-Find\n * @docs docs/union-find.md\n\
-    \ */\nstruct UnionFind {\n  vector< int > data;\n\n  UnionFind() = default;\n\n\
-    \  explicit UnionFind(size_t sz) : data(sz, -1) {}\n\n  bool unite(int x, int\
-    \ y) {\n    x = find(x), y = find(y);\n    if(x == y) return false;\n    if(data[x]\
-    \ > data[y]) swap(x, y);\n    data[x] += data[y];\n    data[y] = x;\n    return\
-    \ true;\n  }\n\n  int find(int k) {\n    if(data[k] < 0) return (k);\n    return\
-    \ data[k] = find(data[k]);\n  }\n\n  int size(int k) {\n    return -data[find(k)];\n\
-    \  }\n\n  bool same(int x, int y) {\n    return find(x) == find(y);\n  }\n\n \
-    \ vector< vector< int > > groups() {\n    int n = (int) data.size();\n    vector<\
-    \ vector< int > > ret(n);\n    for(int i = 0; i < n; i++) {\n      ret[find(i)].emplace_back(i);\n\
-    \    }\n    ret.erase(remove_if(begin(ret), end(ret), [&](const vector< int >\
-    \ &v) {\n      return v.empty();\n    }), end(ret));\n    return ret;\n  }\n};\n"
+  code: "#pragma once\n\nstruct UnionFind {\n  vector< int > data;\n\n  UnionFind()\
+    \ = default;\n\n  explicit UnionFind(size_t sz) : data(sz, -1) {}\n\n  bool unite(int\
+    \ x, int y) {\n    x = find(x), y = find(y);\n    if(x == y) return false;\n \
+    \   if(data[x] > data[y]) swap(x, y);\n    data[x] += data[y];\n    data[y] =\
+    \ x;\n    return true;\n  }\n\n  int find(int k) {\n    if(data[k] < 0) return\
+    \ (k);\n    return data[k] = find(data[k]);\n  }\n\n  int size(int k) {\n    return\
+    \ -data[find(k)];\n  }\n\n  bool same(int x, int y) {\n    return find(x) == find(y);\n\
+    \  }\n\n  vector< vector< int > > groups() {\n    int n = (int) data.size();\n\
+    \    vector< vector< int > > ret(n);\n    for(int i = 0; i < n; i++) {\n     \
+    \ ret[find(i)].emplace_back(i);\n    }\n    ret.erase(remove_if(begin(ret), end(ret),\
+    \ [&](const vector< int > &v) {\n      return v.empty();\n    }), end(ret));\n\
+    \    return ret;\n  }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: structure/union-find/union-find.hpp
@@ -123,7 +120,7 @@ data:
   - graph/others/bipartite-graph-edge-coloring.hpp
   - graph/others/eulerian-trail.hpp
   - graph/tree/offline-lca.hpp
-  timestamp: '2022-09-11 00:53:50+09:00'
+  timestamp: '2022-10-23 21:54:47+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/verify/yosupo-manhattanmst.test.cpp
@@ -142,21 +139,100 @@ data:
   - test/verify/yosupo-tree-decomposition-width-2.test.cpp
 documentation_of: structure/union-find/union-find.hpp
 layout: document
-redirect_from:
-- /library/structure/union-find/union-find.hpp
-- /library/structure/union-find/union-find.hpp.html
-title: Union-Find
+title: Union Find
 ---
-## 概要
 
-集合を高速に扱うためのデータ構造. 集合を合併する操作(unite), ある要素がどの集合に属しているか(find) を問い合わせる操作を行うことが出来る.
+集合を高速に扱うためのデータ構造です。集合を合併する操作(unite)と、ある要素がどの集合に属しているか(find)を問い合わせる操作を行うことができます。
 
-* `unite(x, y)`: 集合 `x` と `y` を併合する. 併合済のとき `false`, 未併合のとき `true` が返される.
-* `find(k)`: 要素 `k` が属する集合を求める.
-* `size(k)`: 要素 `k` が属する集合の要素の数を求める.
-* `same(x, y)`: 要素 `x`, `y` が同じ集合に属するか判定する.
-* `groups()`: 各集合に含まれる要素を返す.
+# コンストラクタ
+
+```
+UnionFind(size_t n)
+```
+
+`n` 個の集合を作成します。集合 $i(1 \leq i \lt n)$ には要素 $i$ のみが属します。
+
+## 制約
+
+- $0 \leq n$
 
 ## 計算量
 
-* クエリ: ならし $O(\alpha(N))$ ($\alpha$ はアッカーマンの逆関数) 
+- $O(n)$
+
+# unite
+
+```
+bool unite(int x, int y)
+```
+
+集合 `x` と `y` を併合します。併合済のとき `false`、未併合のとき `true` を返します。
+
+## 制約
+
+- $0 \leq x, y \lt n$
+
+## 計算量
+
+- amortized $O(\alpha(n))$ 
+
+# find
+
+```
+int find(int k)
+```
+
+要素 `k` が属する集合の代表元を返します。
+
+## 制約
+
+- $0 \leq k \lt n$
+
+## 計算量
+
+- amortized $O(\alpha(n))$
+
+# size
+
+```
+int size(int k)
+```
+
+要素 `k` が属する集合の要素数を返します。
+
+## 制約
+
+- $0 \leq k \lt n$
+
+## 計算量
+
+- amortized $O(\alpha(n))$
+
+# same
+
+```
+bool same(int x, int y)
+```
+
+要素 `x` と `y` が同じ集合に属する場合 `true`、異なる集合に属する場合は `false` を返します。
+
+## 制約
+
+- $0 \leq x, y \lt n$
+
+## 計算量
+
+- amortized $O(\alpha(n))$
+
+# groups
+
+```
+vector< vector< int > > groups()
+```
+
+それぞれの集合に含まれる要素を列挙し、それを返します。それぞれの集合内の要素は昇順に格納されますが、集合の順番は未定義です。
+
+
+## 計算量
+
+- $O(n)$

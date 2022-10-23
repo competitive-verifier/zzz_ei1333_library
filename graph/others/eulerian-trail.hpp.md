@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':question:'
     path: structure/union-find/union-find.hpp
-    title: Union-Find
+    title: Union Find
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: graph/others/bipartite-graph-edge-coloring.hpp
@@ -24,19 +24,18 @@ data:
     document_title: "Eulerian Trail(\u30AA\u30A4\u30E9\u30FC\u8DEF)"
     links: []
   bundledCode: "#line 2 \"graph/others/eulerian-trail.hpp\"\n\n#line 2 \"structure/union-find/union-find.hpp\"\
-    \n\n/**\n * @brief Union-Find\n * @docs docs/union-find.md\n */\nstruct UnionFind\
-    \ {\n  vector< int > data;\n\n  UnionFind() = default;\n\n  explicit UnionFind(size_t\
-    \ sz) : data(sz, -1) {}\n\n  bool unite(int x, int y) {\n    x = find(x), y =\
-    \ find(y);\n    if(x == y) return false;\n    if(data[x] > data[y]) swap(x, y);\n\
-    \    data[x] += data[y];\n    data[y] = x;\n    return true;\n  }\n\n  int find(int\
-    \ k) {\n    if(data[k] < 0) return (k);\n    return data[k] = find(data[k]);\n\
-    \  }\n\n  int size(int k) {\n    return -data[find(k)];\n  }\n\n  bool same(int\
-    \ x, int y) {\n    return find(x) == find(y);\n  }\n\n  vector< vector< int >\
-    \ > groups() {\n    int n = (int) data.size();\n    vector< vector< int > > ret(n);\n\
-    \    for(int i = 0; i < n; i++) {\n      ret[find(i)].emplace_back(i);\n    }\n\
-    \    ret.erase(remove_if(begin(ret), end(ret), [&](const vector< int > &v) {\n\
-    \      return v.empty();\n    }), end(ret));\n    return ret;\n  }\n};\n#line\
-    \ 4 \"graph/others/eulerian-trail.hpp\"\n\n/**\n * @brief Eulerian Trail(\u30AA\
+    \n\nstruct UnionFind {\n  vector< int > data;\n\n  UnionFind() = default;\n\n\
+    \  explicit UnionFind(size_t sz) : data(sz, -1) {}\n\n  bool unite(int x, int\
+    \ y) {\n    x = find(x), y = find(y);\n    if(x == y) return false;\n    if(data[x]\
+    \ > data[y]) swap(x, y);\n    data[x] += data[y];\n    data[y] = x;\n    return\
+    \ true;\n  }\n\n  int find(int k) {\n    if(data[k] < 0) return (k);\n    return\
+    \ data[k] = find(data[k]);\n  }\n\n  int size(int k) {\n    return -data[find(k)];\n\
+    \  }\n\n  bool same(int x, int y) {\n    return find(x) == find(y);\n  }\n\n \
+    \ vector< vector< int > > groups() {\n    int n = (int) data.size();\n    vector<\
+    \ vector< int > > ret(n);\n    for(int i = 0; i < n; i++) {\n      ret[find(i)].emplace_back(i);\n\
+    \    }\n    ret.erase(remove_if(begin(ret), end(ret), [&](const vector< int >\
+    \ &v) {\n      return v.empty();\n    }), end(ret));\n    return ret;\n  }\n};\n\
+    #line 4 \"graph/others/eulerian-trail.hpp\"\n\n/**\n * @brief Eulerian Trail(\u30AA\
     \u30A4\u30E9\u30FC\u8DEF)\n * @docs docs/eulerian-trail.md\n */\ntemplate< bool\
     \ directed >\nstruct EulerianTrail {\n  vector< vector< pair< int, int > > > g;\n\
     \  vector< pair< int, int > > es;\n  int M;\n  vector< int > used_vertex, used_edge,\
@@ -112,7 +111,7 @@ data:
   path: graph/others/eulerian-trail.hpp
   requiredBy:
   - graph/others/bipartite-graph-edge-coloring.hpp
-  timestamp: '2022-09-11 00:53:50+09:00'
+  timestamp: '2022-10-23 21:54:47+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/verify/yukicoder-583.test.cpp

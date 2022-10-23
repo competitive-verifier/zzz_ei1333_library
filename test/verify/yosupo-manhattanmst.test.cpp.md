@@ -12,7 +12,7 @@ data:
     title: Manhattan MST
   - icon: ':question:'
     path: structure/union-find/union-find.hpp
-    title: Union-Find
+    title: Union Find
   - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
@@ -86,18 +86,17 @@ data:
     \ j, abs(xs[i] - xs[j]) + abs(ys[i] - ys[j]));\n        }\n        idx[-ys[i]]\
     \ = i;\n      }\n      swap(xs, ys);\n    }\n    for(int i = 0; i < n; i++) xs[i]\
     \ *= -1;\n  }\n  return ret;\n}\n#line 2 \"graph/mst/kruskal.hpp\"\n\n#line 2\
-    \ \"structure/union-find/union-find.hpp\"\n\n/**\n * @brief Union-Find\n * @docs\
-    \ docs/union-find.md\n */\nstruct UnionFind {\n  vector< int > data;\n\n  UnionFind()\
-    \ = default;\n\n  explicit UnionFind(size_t sz) : data(sz, -1) {}\n\n  bool unite(int\
-    \ x, int y) {\n    x = find(x), y = find(y);\n    if(x == y) return false;\n \
-    \   if(data[x] > data[y]) swap(x, y);\n    data[x] += data[y];\n    data[y] =\
-    \ x;\n    return true;\n  }\n\n  int find(int k) {\n    if(data[k] < 0) return\
-    \ (k);\n    return data[k] = find(data[k]);\n  }\n\n  int size(int k) {\n    return\
-    \ -data[find(k)];\n  }\n\n  bool same(int x, int y) {\n    return find(x) == find(y);\n\
-    \  }\n\n  vector< vector< int > > groups() {\n    int n = (int) data.size();\n\
-    \    vector< vector< int > > ret(n);\n    for(int i = 0; i < n; i++) {\n     \
-    \ ret[find(i)].emplace_back(i);\n    }\n    ret.erase(remove_if(begin(ret), end(ret),\
-    \ [&](const vector< int > &v) {\n      return v.empty();\n    }), end(ret));\n\
+    \ \"structure/union-find/union-find.hpp\"\n\nstruct UnionFind {\n  vector< int\
+    \ > data;\n\n  UnionFind() = default;\n\n  explicit UnionFind(size_t sz) : data(sz,\
+    \ -1) {}\n\n  bool unite(int x, int y) {\n    x = find(x), y = find(y);\n    if(x\
+    \ == y) return false;\n    if(data[x] > data[y]) swap(x, y);\n    data[x] += data[y];\n\
+    \    data[y] = x;\n    return true;\n  }\n\n  int find(int k) {\n    if(data[k]\
+    \ < 0) return (k);\n    return data[k] = find(data[k]);\n  }\n\n  int size(int\
+    \ k) {\n    return -data[find(k)];\n  }\n\n  bool same(int x, int y) {\n    return\
+    \ find(x) == find(y);\n  }\n\n  vector< vector< int > > groups() {\n    int n\
+    \ = (int) data.size();\n    vector< vector< int > > ret(n);\n    for(int i = 0;\
+    \ i < n; i++) {\n      ret[find(i)].emplace_back(i);\n    }\n    ret.erase(remove_if(begin(ret),\
+    \ end(ret), [&](const vector< int > &v) {\n      return v.empty();\n    }), end(ret));\n\
     \    return ret;\n  }\n};\n#line 5 \"graph/mst/kruskal.hpp\"\n\n/**\n * @brief\
     \ Kruskal(\u6700\u5C0F\u5168\u57DF\u6728)\n * @docs docs/kruskal.md\n */\ntemplate<\
     \ typename T >\nstruct MinimumSpanningTree {\n  T cost;\n  Edges< T > edges;\n\
@@ -127,7 +126,7 @@ data:
   isVerificationFile: true
   path: test/verify/yosupo-manhattanmst.test.cpp
   requiredBy: []
-  timestamp: '2022-09-11 00:53:50+09:00'
+  timestamp: '2022-10-23 21:54:47+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/yosupo-manhattanmst.test.cpp

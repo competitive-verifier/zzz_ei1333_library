@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':question:'
     path: structure/union-find/union-find.hpp
-    title: Union-Find
+    title: Union Find
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':x:'
@@ -15,18 +15,17 @@ data:
   attributes:
     document_title: Offline RMQ
     links: []
-  bundledCode: "#line 2 \"structure/union-find/union-find.hpp\"\n\n/**\n * @brief\
-    \ Union-Find\n * @docs docs/union-find.md\n */\nstruct UnionFind {\n  vector<\
-    \ int > data;\n\n  UnionFind() = default;\n\n  explicit UnionFind(size_t sz) :\
-    \ data(sz, -1) {}\n\n  bool unite(int x, int y) {\n    x = find(x), y = find(y);\n\
-    \    if(x == y) return false;\n    if(data[x] > data[y]) swap(x, y);\n    data[x]\
-    \ += data[y];\n    data[y] = x;\n    return true;\n  }\n\n  int find(int k) {\n\
-    \    if(data[k] < 0) return (k);\n    return data[k] = find(data[k]);\n  }\n\n\
-    \  int size(int k) {\n    return -data[find(k)];\n  }\n\n  bool same(int x, int\
-    \ y) {\n    return find(x) == find(y);\n  }\n\n  vector< vector< int > > groups()\
-    \ {\n    int n = (int) data.size();\n    vector< vector< int > > ret(n);\n   \
-    \ for(int i = 0; i < n; i++) {\n      ret[find(i)].emplace_back(i);\n    }\n \
-    \   ret.erase(remove_if(begin(ret), end(ret), [&](const vector< int > &v) {\n\
+  bundledCode: "#line 2 \"structure/union-find/union-find.hpp\"\n\nstruct UnionFind\
+    \ {\n  vector< int > data;\n\n  UnionFind() = default;\n\n  explicit UnionFind(size_t\
+    \ sz) : data(sz, -1) {}\n\n  bool unite(int x, int y) {\n    x = find(x), y =\
+    \ find(y);\n    if(x == y) return false;\n    if(data[x] > data[y]) swap(x, y);\n\
+    \    data[x] += data[y];\n    data[y] = x;\n    return true;\n  }\n\n  int find(int\
+    \ k) {\n    if(data[k] < 0) return (k);\n    return data[k] = find(data[k]);\n\
+    \  }\n\n  int size(int k) {\n    return -data[find(k)];\n  }\n\n  bool same(int\
+    \ x, int y) {\n    return find(x) == find(y);\n  }\n\n  vector< vector< int >\
+    \ > groups() {\n    int n = (int) data.size();\n    vector< vector< int > > ret(n);\n\
+    \    for(int i = 0; i < n; i++) {\n      ret[find(i)].emplace_back(i);\n    }\n\
+    \    ret.erase(remove_if(begin(ret), end(ret), [&](const vector< int > &v) {\n\
     \      return v.empty();\n    }), end(ret));\n    return ret;\n  }\n};\n#line\
     \ 2 \"other/offline-rmq.hpp\"\n\n/**\n * @brief Offline RMQ\n **/\ntemplate< typename\
     \ Comp >\nvector< int > offline_rmq(vector< pair< int, int > > &qs, const Comp\
@@ -55,7 +54,7 @@ data:
   isVerificationFile: false
   path: other/offline-rmq.hpp
   requiredBy: []
-  timestamp: '2022-09-11 00:53:50+09:00'
+  timestamp: '2022-10-23 21:54:47+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/verify/yosupo-staticrmq-6.test.cpp

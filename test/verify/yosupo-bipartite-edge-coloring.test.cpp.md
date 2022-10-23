@@ -13,7 +13,7 @@ data:
     title: "Eulerian Trail(\u30AA\u30A4\u30E9\u30FC\u8DEF)"
   - icon: ':question:'
     path: structure/union-find/union-find.hpp
-    title: Union-Find
+    title: Union Find
   - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
@@ -57,32 +57,31 @@ data:
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/yosupo-bipartite-edge-coloring.test.cpp\"\
     \n\n\n#line 2 \"graph/others/bipartite-graph-edge-coloring.hpp\"\n\n#line 2 \"\
-    structure/union-find/union-find.hpp\"\n\n/**\n * @brief Union-Find\n * @docs docs/union-find.md\n\
-    \ */\nstruct UnionFind {\n  vector< int > data;\n\n  UnionFind() = default;\n\n\
-    \  explicit UnionFind(size_t sz) : data(sz, -1) {}\n\n  bool unite(int x, int\
-    \ y) {\n    x = find(x), y = find(y);\n    if(x == y) return false;\n    if(data[x]\
-    \ > data[y]) swap(x, y);\n    data[x] += data[y];\n    data[y] = x;\n    return\
-    \ true;\n  }\n\n  int find(int k) {\n    if(data[k] < 0) return (k);\n    return\
-    \ data[k] = find(data[k]);\n  }\n\n  int size(int k) {\n    return -data[find(k)];\n\
-    \  }\n\n  bool same(int x, int y) {\n    return find(x) == find(y);\n  }\n\n \
-    \ vector< vector< int > > groups() {\n    int n = (int) data.size();\n    vector<\
-    \ vector< int > > ret(n);\n    for(int i = 0; i < n; i++) {\n      ret[find(i)].emplace_back(i);\n\
-    \    }\n    ret.erase(remove_if(begin(ret), end(ret), [&](const vector< int >\
-    \ &v) {\n      return v.empty();\n    }), end(ret));\n    return ret;\n  }\n};\n\
-    #line 1 \"graph/flow/bipartite-flow.hpp\"\n/**\n * @brief Bipartite Flow(\u4E8C\
-    \u90E8\u30B0\u30E9\u30D5\u306E\u30D5\u30ED\u30FC)\n * @docs docs/bipartite-flow.md\n\
-    \ */\nstruct BipartiteFlow {\n  size_t n, m, time_stamp;\n  vector< vector< int\
-    \ > > g, rg;\n  vector< int > match_l, match_r, dist, used, alive;\n  bool matched;\n\
-    \npublic:\n  explicit BipartiteFlow(size_t n, size_t m) :\n      n(n), m(m), time_stamp(0),\
-    \ g(n), rg(m), match_l(n, -1), match_r(m, -1), used(n), alive(n, 1), matched(false)\
-    \ {}\n\n  void add_edge(int u, int v) {\n    g[u].push_back(v);\n    rg[v].emplace_back(u);\n\
-    \  }\n\n  vector< pair< int, int > > max_matching() {\n    matched = true;\n \
-    \   for(;;) {\n      build_augment_path();\n      ++time_stamp;\n      int flow\
-    \ = 0;\n      for(int i = 0; i < (int)n; i++) {\n        if(match_l[i] == -1)\
-    \ flow += find_min_dist_augment_path(i);\n      }\n      if(flow == 0) break;\n\
-    \    }\n    vector< pair< int, int > > ret;\n    for(int i = 0; i < (int)n; i++)\
-    \ {\n      if(match_l[i] >= 0) ret.emplace_back(i, match_l[i]);\n    }\n    return\
-    \ ret;\n  }\n\n  /* http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=3198\
+    structure/union-find/union-find.hpp\"\n\nstruct UnionFind {\n  vector< int > data;\n\
+    \n  UnionFind() = default;\n\n  explicit UnionFind(size_t sz) : data(sz, -1) {}\n\
+    \n  bool unite(int x, int y) {\n    x = find(x), y = find(y);\n    if(x == y)\
+    \ return false;\n    if(data[x] > data[y]) swap(x, y);\n    data[x] += data[y];\n\
+    \    data[y] = x;\n    return true;\n  }\n\n  int find(int k) {\n    if(data[k]\
+    \ < 0) return (k);\n    return data[k] = find(data[k]);\n  }\n\n  int size(int\
+    \ k) {\n    return -data[find(k)];\n  }\n\n  bool same(int x, int y) {\n    return\
+    \ find(x) == find(y);\n  }\n\n  vector< vector< int > > groups() {\n    int n\
+    \ = (int) data.size();\n    vector< vector< int > > ret(n);\n    for(int i = 0;\
+    \ i < n; i++) {\n      ret[find(i)].emplace_back(i);\n    }\n    ret.erase(remove_if(begin(ret),\
+    \ end(ret), [&](const vector< int > &v) {\n      return v.empty();\n    }), end(ret));\n\
+    \    return ret;\n  }\n};\n#line 1 \"graph/flow/bipartite-flow.hpp\"\n/**\n *\
+    \ @brief Bipartite Flow(\u4E8C\u90E8\u30B0\u30E9\u30D5\u306E\u30D5\u30ED\u30FC\
+    )\n * @docs docs/bipartite-flow.md\n */\nstruct BipartiteFlow {\n  size_t n, m,\
+    \ time_stamp;\n  vector< vector< int > > g, rg;\n  vector< int > match_l, match_r,\
+    \ dist, used, alive;\n  bool matched;\n\npublic:\n  explicit BipartiteFlow(size_t\
+    \ n, size_t m) :\n      n(n), m(m), time_stamp(0), g(n), rg(m), match_l(n, -1),\
+    \ match_r(m, -1), used(n), alive(n, 1), matched(false) {}\n\n  void add_edge(int\
+    \ u, int v) {\n    g[u].push_back(v);\n    rg[v].emplace_back(u);\n  }\n\n  vector<\
+    \ pair< int, int > > max_matching() {\n    matched = true;\n    for(;;) {\n  \
+    \    build_augment_path();\n      ++time_stamp;\n      int flow = 0;\n      for(int\
+    \ i = 0; i < (int)n; i++) {\n        if(match_l[i] == -1) flow += find_min_dist_augment_path(i);\n\
+    \      }\n      if(flow == 0) break;\n    }\n    vector< pair< int, int > > ret;\n\
+    \    for(int i = 0; i < (int)n; i++) {\n      if(match_l[i] >= 0) ret.emplace_back(i,\
+    \ match_l[i]);\n    }\n    return ret;\n  }\n\n  /* http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=3198\
     \ */\n  void erase_edge(int a, int b) {\n    if(match_l[a] == b) {\n      match_l[a]\
     \ = -1;\n      match_r[b] = -1;\n    }\n    g[a].erase(find(begin(g[a]), end(g[a]),\
     \ b));\n    rg[b].erase(find(begin(rg[b]), end(rg[b]), a));\n  }\n\n  /* http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0334\
@@ -259,7 +258,7 @@ data:
   isVerificationFile: true
   path: test/verify/yosupo-bipartite-edge-coloring.test.cpp
   requiredBy: []
-  timestamp: '2022-09-11 00:53:50+09:00'
+  timestamp: '2022-10-23 21:54:47+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/yosupo-bipartite-edge-coloring.test.cpp

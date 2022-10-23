@@ -6,7 +6,7 @@ data:
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
   - icon: ':question:'
     path: structure/union-find/union-find.hpp
-    title: Union-Find
+    title: Union Find
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: other/mo-tree.hpp
@@ -44,22 +44,21 @@ data:
     \ {\n    return g[k];\n  }\n\n  inline const vector< Edge< T > > &operator[](const\
     \ int &k) const {\n    return g[k];\n  }\n};\n\ntemplate< typename T = int >\n\
     using Edges = vector< Edge< T > >;\n#line 2 \"structure/union-find/union-find.hpp\"\
-    \n\n/**\n * @brief Union-Find\n * @docs docs/union-find.md\n */\nstruct UnionFind\
-    \ {\n  vector< int > data;\n\n  UnionFind() = default;\n\n  explicit UnionFind(size_t\
-    \ sz) : data(sz, -1) {}\n\n  bool unite(int x, int y) {\n    x = find(x), y =\
-    \ find(y);\n    if(x == y) return false;\n    if(data[x] > data[y]) swap(x, y);\n\
-    \    data[x] += data[y];\n    data[y] = x;\n    return true;\n  }\n\n  int find(int\
-    \ k) {\n    if(data[k] < 0) return (k);\n    return data[k] = find(data[k]);\n\
-    \  }\n\n  int size(int k) {\n    return -data[find(k)];\n  }\n\n  bool same(int\
-    \ x, int y) {\n    return find(x) == find(y);\n  }\n\n  vector< vector< int >\
-    \ > groups() {\n    int n = (int) data.size();\n    vector< vector< int > > ret(n);\n\
-    \    for(int i = 0; i < n; i++) {\n      ret[find(i)].emplace_back(i);\n    }\n\
-    \    ret.erase(remove_if(begin(ret), end(ret), [&](const vector< int > &v) {\n\
-    \      return v.empty();\n    }), end(ret));\n    return ret;\n  }\n};\n#line\
-    \ 3 \"graph/tree/offline-lca.hpp\"\n\n/**\n * @brief Offline LCA(\u30AA\u30D5\u30E9\
-    \u30A4\u30F3\u6700\u5C0F\u5171\u901A\u7956\u5148)\n **/\ntemplate< typename T\
-    \ >\nvector< int > offline_lca(const Graph< T > &g, vector< pair< int, int > >\
-    \ &qs, int root = 0) {\n  int n = (int) g.size();\n  UnionFind uf(n);\n  vector<\
+    \n\nstruct UnionFind {\n  vector< int > data;\n\n  UnionFind() = default;\n\n\
+    \  explicit UnionFind(size_t sz) : data(sz, -1) {}\n\n  bool unite(int x, int\
+    \ y) {\n    x = find(x), y = find(y);\n    if(x == y) return false;\n    if(data[x]\
+    \ > data[y]) swap(x, y);\n    data[x] += data[y];\n    data[y] = x;\n    return\
+    \ true;\n  }\n\n  int find(int k) {\n    if(data[k] < 0) return (k);\n    return\
+    \ data[k] = find(data[k]);\n  }\n\n  int size(int k) {\n    return -data[find(k)];\n\
+    \  }\n\n  bool same(int x, int y) {\n    return find(x) == find(y);\n  }\n\n \
+    \ vector< vector< int > > groups() {\n    int n = (int) data.size();\n    vector<\
+    \ vector< int > > ret(n);\n    for(int i = 0; i < n; i++) {\n      ret[find(i)].emplace_back(i);\n\
+    \    }\n    ret.erase(remove_if(begin(ret), end(ret), [&](const vector< int >\
+    \ &v) {\n      return v.empty();\n    }), end(ret));\n    return ret;\n  }\n};\n\
+    #line 3 \"graph/tree/offline-lca.hpp\"\n\n/**\n * @brief Offline LCA(\u30AA\u30D5\
+    \u30E9\u30A4\u30F3\u6700\u5C0F\u5171\u901A\u7956\u5148)\n **/\ntemplate< typename\
+    \ T >\nvector< int > offline_lca(const Graph< T > &g, vector< pair< int, int >\
+    \ > &qs, int root = 0) {\n  int n = (int) g.size();\n  UnionFind uf(n);\n  vector<\
     \ int > st(n), mark(n), ptr(n), ans(qs.size(), -1);\n  int top = 0;\n  st[top]\
     \ = root;\n  for(auto&[l, r]: qs) mark[l]++, mark[r]++;\n  vector< vector< pair<\
     \ int, int > > > q(n);\n  for(int i = 0; i < n; i++) {\n    q[i].reserve(mark[i]);\n\
@@ -97,7 +96,7 @@ data:
   path: graph/tree/offline-lca.hpp
   requiredBy:
   - other/mo-tree.hpp
-  timestamp: '2022-09-11 00:53:50+09:00'
+  timestamp: '2022-10-23 21:54:47+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/verify/aoj-2270.test.cpp

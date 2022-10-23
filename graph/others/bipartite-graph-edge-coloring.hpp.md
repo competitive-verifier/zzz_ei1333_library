@@ -9,7 +9,7 @@ data:
     title: "Eulerian Trail(\u30AA\u30A4\u30E9\u30FC\u8DEF)"
   - icon: ':question:'
     path: structure/union-find/union-find.hpp
-    title: Union-Find
+    title: Union Find
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -25,18 +25,17 @@ data:
     links:
     - https://ei1333.hateblo.jp/entry/2020/08/25/015955
   bundledCode: "#line 2 \"graph/others/bipartite-graph-edge-coloring.hpp\"\n\n#line\
-    \ 2 \"structure/union-find/union-find.hpp\"\n\n/**\n * @brief Union-Find\n * @docs\
-    \ docs/union-find.md\n */\nstruct UnionFind {\n  vector< int > data;\n\n  UnionFind()\
-    \ = default;\n\n  explicit UnionFind(size_t sz) : data(sz, -1) {}\n\n  bool unite(int\
-    \ x, int y) {\n    x = find(x), y = find(y);\n    if(x == y) return false;\n \
-    \   if(data[x] > data[y]) swap(x, y);\n    data[x] += data[y];\n    data[y] =\
-    \ x;\n    return true;\n  }\n\n  int find(int k) {\n    if(data[k] < 0) return\
-    \ (k);\n    return data[k] = find(data[k]);\n  }\n\n  int size(int k) {\n    return\
-    \ -data[find(k)];\n  }\n\n  bool same(int x, int y) {\n    return find(x) == find(y);\n\
-    \  }\n\n  vector< vector< int > > groups() {\n    int n = (int) data.size();\n\
-    \    vector< vector< int > > ret(n);\n    for(int i = 0; i < n; i++) {\n     \
-    \ ret[find(i)].emplace_back(i);\n    }\n    ret.erase(remove_if(begin(ret), end(ret),\
-    \ [&](const vector< int > &v) {\n      return v.empty();\n    }), end(ret));\n\
+    \ 2 \"structure/union-find/union-find.hpp\"\n\nstruct UnionFind {\n  vector< int\
+    \ > data;\n\n  UnionFind() = default;\n\n  explicit UnionFind(size_t sz) : data(sz,\
+    \ -1) {}\n\n  bool unite(int x, int y) {\n    x = find(x), y = find(y);\n    if(x\
+    \ == y) return false;\n    if(data[x] > data[y]) swap(x, y);\n    data[x] += data[y];\n\
+    \    data[y] = x;\n    return true;\n  }\n\n  int find(int k) {\n    if(data[k]\
+    \ < 0) return (k);\n    return data[k] = find(data[k]);\n  }\n\n  int size(int\
+    \ k) {\n    return -data[find(k)];\n  }\n\n  bool same(int x, int y) {\n    return\
+    \ find(x) == find(y);\n  }\n\n  vector< vector< int > > groups() {\n    int n\
+    \ = (int) data.size();\n    vector< vector< int > > ret(n);\n    for(int i = 0;\
+    \ i < n; i++) {\n      ret[find(i)].emplace_back(i);\n    }\n    ret.erase(remove_if(begin(ret),\
+    \ end(ret), [&](const vector< int > &v) {\n      return v.empty();\n    }), end(ret));\n\
     \    return ret;\n  }\n};\n#line 1 \"graph/flow/bipartite-flow.hpp\"\n/**\n *\
     \ @brief Bipartite Flow(\u4E8C\u90E8\u30B0\u30E9\u30D5\u306E\u30D5\u30ED\u30FC\
     )\n * @docs docs/bipartite-flow.md\n */\nstruct BipartiteFlow {\n  size_t n, m,\
@@ -264,7 +263,7 @@ data:
   isVerificationFile: false
   path: graph/others/bipartite-graph-edge-coloring.hpp
   requiredBy: []
-  timestamp: '2022-09-11 00:53:50+09:00'
+  timestamp: '2022-10-23 21:54:47+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/yosupo-bipartite-edge-coloring.test.cpp

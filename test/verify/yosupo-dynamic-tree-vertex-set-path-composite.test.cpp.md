@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: math/combinatorics/mod-int.hpp
     title: math/combinatorics/mod-int.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: structure/lct/link-cut-tree.hpp
     title: Link Cut Tree
   - icon: ':question:'
