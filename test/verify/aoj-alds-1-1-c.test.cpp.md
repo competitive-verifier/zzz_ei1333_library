@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: math/number-theory/is-prime.hpp
-    title: math/number-theory/is-prime.hpp
+    title: "Is Prime(\u7D20\u6570\u5224\u5B9A)"
   - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp

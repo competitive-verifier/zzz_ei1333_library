@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/combinatorics/montgomery-mod-int.hpp
     title: Montgomery ModInt
   - icon: ':x:'

@@ -6,7 +6,7 @@ data:
     path: graph/connected-components/bi-connected-components.hpp
     title: "Bi Connected Components(\u4E8C\u91CD\u9802\u70B9\u9023\u7D50\u6210\u5206\
       \u5206\u89E3)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/connected-components/strongly-connected-components.hpp
     title: "Strongly Connected Components(\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3\
       )"
@@ -17,19 +17,19 @@ data:
     path: graph/connected-components/two-edge-connected-components.hpp
     title: "Two Edge Connected Components(\u4E8C\u91CD\u8FBA\u9023\u7D50\u6210\u5206\
       \u5206\u89E3)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/mst/directed-mst.hpp
     title: "Directed MST(\u6700\u5C0F\u6709\u5411\u5168\u57DF\u6728)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/mst/kruskal.hpp
     title: "Kruskal(\u6700\u5C0F\u5168\u57DF\u6728)"
   - icon: ':x:'
     path: graph/mst/manhattan-mst.hpp
     title: Manhattan MST
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/mst/prim-fibonacchi-heap.hpp
     title: "Prim Fibonacchi Heap(\u6700\u5C0F\u5168\u57DF\u6728)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/mst/prim.hpp
     title: "Prim(\u6700\u5C0F\u5168\u57DF\u6728)"
   - icon: ':heavy_check_mark:'
@@ -101,7 +101,7 @@ data:
   - icon: ':warning:'
     path: graph/tree/disjoint-set-union-on-tree.hpp
     title: Disjoint-Set-Union-On-Tree
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/tree/doubling-lowest-common-ancestor.hpp
     title: "Doubling-Lowest-Common-Ancestor(\u6700\u5C0F\u5171\u901A\u7956\u5148)"
   - icon: ':question:'
@@ -111,13 +111,13 @@ data:
     path: graph/tree/offline-lca.hpp
     title: "Offline LCA(\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\u901A\u7956\
       \u5148)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/tree/pmormq-lowest-common-ancestor.hpp
     title: "PMORMQ-Lowest-Common-Ancestor(\u6700\u5C0F\u5171\u901A\u7956\u5148)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/tree/rmq-lowest-common-ancestor.hpp
     title: "RMQ-Lowest-Common-Ancestor(\u6700\u5C0F\u5171\u901A\u7956\u5148)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/tree/tree-diameter.hpp
     title: "Tree-Diameter(\u6728\u306E\u76F4\u5F84)"
   - icon: ':heavy_check_mark:'
@@ -172,40 +172,40 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-grl-1-b.test.cpp
     title: test/verify/aoj-grl-1-b.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-grl-2-a-2.test.cpp
     title: test/verify/aoj-grl-2-a-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-grl-2-a-4.test.cpp
     title: test/verify/aoj-grl-2-a-4.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-grl-2-a.test.cpp
     title: test/verify/aoj-grl-2-a.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-grl-2-b.test.cpp
     title: test/verify/aoj-grl-2-b.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-grl-3-a.test.cpp
     title: test/verify/aoj-grl-3-a.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-grl-3-b.test.cpp
     title: test/verify/aoj-grl-3-b.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-grl-3-c.test.cpp
     title: test/verify/aoj-grl-3-c.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-grl-5-a.test.cpp
     title: test/verify/aoj-grl-5-a.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-grl-5-c-2.test.cpp
     title: test/verify/aoj-grl-5-c-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-grl-5-c-3.test.cpp
     title: test/verify/aoj-grl-5-c-3.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-grl-5-c-4.test.cpp
     title: test/verify/aoj-grl-5-c-4.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-grl-5-c.test.cpp
     title: test/verify/aoj-grl-5-c.test.cpp
   - icon: ':x:'

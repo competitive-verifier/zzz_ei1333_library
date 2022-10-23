@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-itp1-3-d.test.cpp
     title: test/verify/aoj-itp1-3-d.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/number-theory/divisor.hpp\"\nvector< int64_t > divisor(int64_t\
@@ -24,7 +24,7 @@ data:
   path: math/number-theory/divisor.hpp
   requiredBy: []
   timestamp: '2022-10-23 20:41:53+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/aoj-itp1-3-d.test.cpp
 documentation_of: math/number-theory/divisor.hpp
@@ -44,7 +44,7 @@ vector< int64_t > divisor(int64_t n)
 
 ## 制約
 
-- $1 \ge n$
+- $1 \le n$
 
 ## 計算量
 

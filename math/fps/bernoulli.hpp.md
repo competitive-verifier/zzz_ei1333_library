@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-bernoulli-number.test.cpp
     title: test/verify/yosupo-bernoulli-number.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: "Bernoulli(\u30D9\u30EB\u30CC\u30FC\u30A4\u6570)"
     links: []
@@ -30,7 +30,7 @@ data:
   path: math/fps/bernoulli.hpp
   requiredBy: []
   timestamp: '2022-09-11 00:53:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/yosupo-bernoulli-number.test.cpp
 documentation_of: math/fps/bernoulli.hpp

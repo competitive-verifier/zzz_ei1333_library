@@ -15,16 +15,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-dpl-5-j.test.cpp
     title: test/verify/aoj-dpl-5-j.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-bernoulli-number.test.cpp
     title: test/verify/yosupo-bernoulli-number.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-bitwise-and-convolution-2.test.cpp
     title: test/verify/yosupo-bitwise-and-convolution-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-bitwise-and-convolution.test.cpp
     title: test/verify/yosupo-bitwise-and-convolution.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-bitwise-xor-convolution.test.cpp
     title: test/verify/yosupo-bitwise-xor-convolution.test.cpp
   - icon: ':x:'

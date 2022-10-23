@@ -4,17 +4,17 @@ data:
   - icon: ':question:'
     path: math/combinatorics/mod-int.hpp
     title: math/combinatorics/mod-int.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/fft/bitwise-xor-convolution.hpp
     title: "Bitwise Xor Convolution (Bitwise-XOR\u7573\u307F\u8FBC\u307F)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/fft/fast-walsh-hadamard-transform.hpp
     title: "Fast Walsh Hadamard Transform (\u9AD8\u901F\u30A6\u30A9\u30EB\u30B7\u30E5\
       \u30A2\u30C0\u30DE\u30FC\u30EB\u5909\u63DB)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: other/printer.hpp
     title: "Printer(\u9AD8\u901F\u51FA\u529B)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: other/scanner.hpp
     title: "Scanner(\u9AD8\u901F\u5165\u529B)"
   - icon: ':question:'
@@ -22,9 +22,9 @@ data:
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/bitwise_xor_convolution
@@ -166,7 +166,7 @@ data:
   path: test/verify/yosupo-bitwise-xor-convolution.test.cpp
   requiredBy: []
   timestamp: '2022-09-11 00:53:50+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/yosupo-bitwise-xor-convolution.test.cpp
 layout: document

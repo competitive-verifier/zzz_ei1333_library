@@ -11,17 +11,17 @@ data:
   - icon: ':warning:'
     path: graph/flow/burn-bury.hpp
     title: "Burn Bury(\u71C3\u3084\u3059\u57CB\u3081\u308B)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/mst/boruvka.hpp
     title: "Boruvka(\u6700\u5C0F\u5168\u57DF\u6728)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/mst/kruskal.hpp
     title: "Kruskal(\u6700\u5C0F\u5168\u57DF\u6728)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/others/bipartite-graph-edge-coloring.hpp
     title: "Bipartite Graph Edge Coloring(\u4E8C\u90E8\u30B0\u30E9\u30D5\u306E\u8FBA\
       \u5F69\u8272)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/others/eulerian-trail.hpp
     title: "Eulerian Trail(\u30AA\u30A4\u30E9\u30FC\u8DEF)"
   - icon: ':question:'
@@ -47,13 +47,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-dsl-1-a.test.cpp
     title: test/verify/aoj-dsl-1-a.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-grl-2-a-2.test.cpp
     title: test/verify/aoj-grl-2-a-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-grl-2-a-3.test.cpp
     title: test/verify/aoj-grl-2-a-3.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-bipartite-edge-coloring.test.cpp
     title: test/verify/yosupo-bipartite-edge-coloring.test.cpp
   - icon: ':x:'

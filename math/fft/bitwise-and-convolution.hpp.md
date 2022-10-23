@@ -1,18 +1,18 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/fft/superset-zeta-moebius-transform.hpp
     title: "Superset Zeta/Moebius Transform (\u4E0A\u4F4D\u96C6\u5408\u306E\u30BC\u30FC\
       \u30BF/\u30E1\u30D3\u30A6\u30B9\u5909\u63DB)"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-bitwise-and-convolution.test.cpp
     title: test/verify/yosupo-bitwise-and-convolution.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: "Bitwise And Convolution (Bitwise-AND\u7573\u307F\u8FBC\u307F)"
     links: []
@@ -46,7 +46,7 @@ data:
   path: math/fft/bitwise-and-convolution.hpp
   requiredBy: []
   timestamp: '2022-09-11 00:53:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/yosupo-bitwise-and-convolution.test.cpp
 documentation_of: math/fft/bitwise-and-convolution.hpp

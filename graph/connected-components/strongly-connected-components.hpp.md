@@ -9,7 +9,7 @@ data:
     path: graph/others/two-satisfiability.hpp
     title: Two Satisfiability(2-SAT)
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-grl-3-c.test.cpp
     title: test/verify/aoj-grl-3-c.test.cpp
   - icon: ':x:'
@@ -20,7 +20,7 @@ data:
     title: test/verify/yosupo-two-sat.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"graph/connected-components/strongly-connected-components.hpp\"\
@@ -87,7 +87,7 @@ data:
   requiredBy:
   - graph/others/two-satisfiability.hpp
   timestamp: '2022-09-11 00:53:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/verify/yosupo-two-sat.test.cpp
   - test/verify/yosupo-scc.test.cpp

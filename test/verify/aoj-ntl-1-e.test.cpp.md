@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/number-theory/extgcd.hpp
     title: "Extgcd(\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\
       \u6CD5)"
@@ -10,9 +10,9 @@ data:
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_E
@@ -46,13 +46,12 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-ntl-1-e.test.cpp\"\
-    \n\n#line 1 \"math/number-theory/extgcd.hpp\"\n/**\n * @brief Extgcd(\u62E1\u5F35\
-    \u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\u6CD5)\n * @docs docs/extgcd.md\n\
-    \ */\ntemplate< typename T >\nT extgcd(T a, T b, T &x, T &y) {\n  T d = a;\n \
-    \ if(b != 0) {\n    d = extgcd(b, a % b, y, x);\n    y -= (a / b) * x;\n  } else\
-    \ {\n    x = 1;\n    y = 0;\n  }\n  return d;\n}\n#line 6 \"test/verify/aoj-ntl-1-e.test.cpp\"\
-    \n\nint main() {\n  int a, b, x, y;\n  cin >> a >> b;\n  extgcd(a, b, x, y);\n\
-    \  cout << x << \" \" << y << endl;\n}\n"
+    \n\n#line 1 \"math/number-theory/extgcd.hpp\"\ntemplate< typename T >\nT extgcd(T\
+    \ a, T b, T &x, T &y) {\n  T d = a;\n  if(b != 0) {\n    d = extgcd(b, a % b,\
+    \ y, x);\n    y -= (a / b) * x;\n  } else {\n    x = 1;\n    y = 0;\n  }\n  return\
+    \ d;\n}\n#line 6 \"test/verify/aoj-ntl-1-e.test.cpp\"\n\nint main() {\n  int a,\
+    \ b, x, y;\n  cin >> a >> b;\n  extgcd(a, b, x, y);\n  cout << x << \" \" << y\
+    \ << endl;\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_E\"\
     \n\n#include \"../../template/template.hpp\"\n\n#include \"../../math/number-theory/extgcd.hpp\"\
     \n\nint main() {\n  int a, b, x, y;\n  cin >> a >> b;\n  extgcd(a, b, x, y);\n\
@@ -63,8 +62,8 @@ data:
   isVerificationFile: true
   path: test/verify/aoj-ntl-1-e.test.cpp
   requiredBy: []
-  timestamp: '2022-09-11 00:53:50+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-10-23 21:27:55+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/aoj-ntl-1-e.test.cpp
 layout: document

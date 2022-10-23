@@ -4,13 +4,13 @@ data:
   - icon: ':question:'
     path: math/combinatorics/mod-int.hpp
     title: math/combinatorics/mod-int.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/fft/number-theoretic-transform-friendly-mod-int.hpp
     title: Number Theoretic Transform Friendly ModInt
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/fps/bernoulli.hpp
     title: "Bernoulli(\u30D9\u30EB\u30CC\u30FC\u30A4\u6570)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/fps/formal-power-series-friendly-ntt.hpp
     title: "Formal Power Series Friendly NTT(NTTmod\u7528\u5F62\u5F0F\u7684\u51AA\u7D1A\
       \u6570)"
@@ -19,9 +19,9 @@ data:
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/bernoulli_number
@@ -305,7 +305,7 @@ data:
   path: test/verify/yosupo-bernoulli-number.test.cpp
   requiredBy: []
   timestamp: '2022-09-11 00:53:50+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/yosupo-bernoulli-number.test.cpp
 layout: document

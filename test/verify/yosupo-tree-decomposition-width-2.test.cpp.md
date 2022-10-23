@@ -4,10 +4,10 @@ data:
   - icon: ':question:'
     path: graph/others/tree-decomposition-width-2.hpp
     title: "Tree Decomposition Width 2(\u6728\u5E452\u306E\u6728\u5206\u89E3)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: other/printer.hpp
     title: "Printer(\u9AD8\u901F\u51FA\u529B)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: other/scanner.hpp
     title: "Scanner(\u9AD8\u901F\u5165\u529B)"
   - icon: ':question:'

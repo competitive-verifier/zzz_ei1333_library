@@ -39,8 +39,24 @@ data:
   - test/verify/yosupo-enumerate-primes.test.cpp
 documentation_of: math/number-theory/enumerate-primes.hpp
 layout: document
-redirect_from:
-- /library/math/number-theory/enumerate-primes.hpp
-- /library/math/number-theory/enumerate-primes.hpp.html
-title: math/number-theory/enumerate-primes.hpp
+title: "Enumerate Primes(\u7D20\u6570\u5217\u6319)"
 ---
+
+エラトステネスの篩を用いて素数を列挙します。
+
+
+# enumerate_primes
+
+```
+vector< int > enumerate_primes(int n)
+```
+
+$n$ 以下の素数を昇順に返します。
+
+## 制約
+
+- $0 \le n$
+
+## 計算量
+
+- $O(n \log \log n)$

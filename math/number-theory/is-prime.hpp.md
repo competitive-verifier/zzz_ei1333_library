@@ -26,8 +26,21 @@ data:
   - test/verify/aoj-alds-1-1-c.test.cpp
 documentation_of: math/number-theory/is-prime.hpp
 layout: document
-redirect_from:
-- /library/math/number-theory/is-prime.hpp
-- /library/math/number-theory/is-prime.hpp.html
-title: math/number-theory/is-prime.hpp
+title: "Is Prime(\u7D20\u6570\u5224\u5B9A)"
 ---
+
+# is_prime
+
+```
+bool is_prime(int64_t x)
+```
+
+$x$ が素数なら `true`、素数でなければ `false` を返します。
+
+## 制約
+
+- $0 \le x$
+
+## 計算量
+
+- $O(\sqrt x)$

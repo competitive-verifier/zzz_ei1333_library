@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/number-theory/prime-factor.hpp
     title: "Prime Factor(\u7D20\u56E0\u6570\u5206\u89E3)"
   - icon: ':question:'
@@ -9,9 +9,9 @@ data:
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A
@@ -45,13 +45,13 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-ntl-1-a.test.cpp\"\
-    \n\n#line 1 \"math/number-theory/prime-factor.hpp\"\n/**\n * @brief Prime Factor(\u7D20\
-    \u56E0\u6570\u5206\u89E3)\n */\nmap< int64_t, int > prime_factor(int64_t n) {\n\
-    \  map< int64_t, int > ret;\n  for(int64_t i = 2; i * i <= n; i++) {\n    while(n\
-    \ % i == 0) {\n      ret[i]++;\n      n /= i;\n    }\n  }\n  if(n != 1) ret[n]\
-    \ = 1;\n  return ret;\n}\n#line 6 \"test/verify/aoj-ntl-1-a.test.cpp\"\n\nint\
-    \ main() {\n  int N;\n  cin >> N;\n  cout << N << \":\";\n  for(auto p : prime_factor(N))\
-    \ {\n    while(p.second--) cout << \" \" << p.first;\n  }\n  cout << endl;\n}\n"
+    \n\n#line 1 \"math/number-theory/prime-factor.hpp\"\nmap< int64_t, int > prime_factor(int64_t\
+    \ n) {\n  map< int64_t, int > ret;\n  for(int64_t i = 2; i * i <= n; i++) {\n\
+    \    while(n % i == 0) {\n      ret[i]++;\n      n /= i;\n    }\n  }\n  if(n !=\
+    \ 1) ret[n] = 1;\n  return ret;\n}\n#line 6 \"test/verify/aoj-ntl-1-a.test.cpp\"\
+    \n\nint main() {\n  int N;\n  cin >> N;\n  cout << N << \":\";\n  for(auto p :\
+    \ prime_factor(N)) {\n    while(p.second--) cout << \" \" << p.first;\n  }\n \
+    \ cout << endl;\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A\"\
     \n\n#include \"../../template/template.hpp\"\n\n#include \"../../math/number-theory/prime-factor.hpp\"\
     \n\nint main() {\n  int N;\n  cin >> N;\n  cout << N << \":\";\n  for(auto p :\
@@ -63,8 +63,8 @@ data:
   isVerificationFile: true
   path: test/verify/aoj-ntl-1-a.test.cpp
   requiredBy: []
-  timestamp: '2022-09-11 00:53:50+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2022-10-23 21:27:55+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/aoj-ntl-1-a.test.cpp
 layout: document

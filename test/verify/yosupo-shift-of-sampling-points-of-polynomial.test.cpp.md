@@ -7,7 +7,7 @@ data:
   - icon: ':question:'
     path: math/combinatorics/mod-int.hpp
     title: math/combinatorics/mod-int.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/fft/number-theoretic-transform-friendly-mod-int.hpp
     title: Number Theoretic Transform Friendly ModInt
   - icon: ':question:'

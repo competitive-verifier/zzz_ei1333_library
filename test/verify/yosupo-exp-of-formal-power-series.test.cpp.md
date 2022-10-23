@@ -4,10 +4,10 @@ data:
   - icon: ':question:'
     path: math/combinatorics/mod-int.hpp
     title: math/combinatorics/mod-int.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/fft/number-theoretic-transform-friendly-mod-int.hpp
     title: Number Theoretic Transform Friendly ModInt
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/fps/formal-power-series-friendly-ntt.hpp
     title: "Formal Power Series Friendly NTT(NTTmod\u7528\u5F62\u5F0F\u7684\u51AA\u7D1A\
       \u6570)"

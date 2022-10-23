@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: structure/develop/diameter.hpp
     title: Diameter
   - icon: ':x:'
@@ -24,7 +24,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-2450-4.test.cpp
     title: test/verify/aoj-2450-4.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-grl-5-a-2.test.cpp
     title: test/verify/aoj-grl-5-a-2.test.cpp
   - icon: ':x:'

@@ -4,10 +4,10 @@ data:
   - icon: ':x:'
     path: other/dynamic-point-add-rectangle-sum.hpp
     title: Dynamic Point Add Rectangle Sum
-  - icon: ':x:'
+  - icon: ':question:'
     path: other/printer.hpp
     title: "Printer(\u9AD8\u901F\u51FA\u529B)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: other/scanner.hpp
     title: "Scanner(\u9AD8\u901F\u5165\u529B)"
   - icon: ':x:'

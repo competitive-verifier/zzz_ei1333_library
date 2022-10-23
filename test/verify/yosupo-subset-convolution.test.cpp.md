@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/combinatorics/montgomery-mod-int.hpp
     title: Montgomery ModInt
   - icon: ':x:'
     path: math/fft/subset-convolution.hpp
     title: Subset Convolution
-  - icon: ':x:'
+  - icon: ':question:'
     path: other/printer.hpp
     title: "Printer(\u9AD8\u901F\u51FA\u529B)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: other/scanner.hpp
     title: "Scanner(\u9AD8\u901F\u5165\u529B)"
   - icon: ':question:'
