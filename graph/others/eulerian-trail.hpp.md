@@ -115,8 +115,8 @@ data:
   timestamp: '2022-09-11 00:53:50+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/verify/yosupo-bipartite-edge-coloring.test.cpp
   - test/verify/yukicoder-583.test.cpp
+  - test/verify/yosupo-bipartite-edge-coloring.test.cpp
 documentation_of: graph/others/eulerian-trail.hpp
 layout: document
 redirect_from:

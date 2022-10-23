@@ -100,8 +100,8 @@ data:
   timestamp: '2022-09-11 00:53:50+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/verify/yosupo-lca-4.test.cpp
   - test/verify/aoj-2270.test.cpp
+  - test/verify/yosupo-lca-4.test.cpp
 documentation_of: graph/tree/offline-lca.hpp
 layout: document
 redirect_from:

@@ -4,13 +4,13 @@ data:
   - icon: ':question:'
     path: geometry/base.hpp
     title: geometry/base.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: geometry/line.hpp
     title: geometry/line.hpp
   - icon: ':question:'
     path: geometry/point.hpp
     title: geometry/point.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: geometry/projection.hpp
     title: geometry/projection.hpp
   - icon: ':question:'
@@ -18,9 +18,9 @@ data:
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     ERROR: '0.00000001'
@@ -108,7 +108,7 @@ data:
   path: test/verify/aoj-cgl-1-a.test.cpp
   requiredBy: []
   timestamp: '2022-09-11 00:53:50+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/aoj-cgl-1-a.test.cpp
 layout: document

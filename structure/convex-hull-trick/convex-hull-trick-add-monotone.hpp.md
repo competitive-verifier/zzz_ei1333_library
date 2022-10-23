@@ -86,8 +86,8 @@ data:
   timestamp: '2022-09-11 00:53:50+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/verify/yosupo-line-add-get-min-2.test.cpp
   - test/verify/yukicoder-952.test.cpp
+  - test/verify/yosupo-line-add-get-min-2.test.cpp
 documentation_of: structure/convex-hull-trick/convex-hull-trick-add-monotone.hpp
 layout: document
 redirect_from:

@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: geometry/base.hpp
     title: geometry/base.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: geometry/line.hpp
     title: geometry/line.hpp
   - icon: ':question:'
@@ -94,18 +94,18 @@ data:
   requiredBy:
   - geometry/is_intersect_ss.hpp
   - geometry/distance_sp.hpp
-  - geometry/is_intersect_cs.hpp
-  - geometry/is_intersect_sp.hpp
-  - geometry/distance_ss.hpp
   - geometry/cross_point_cs.hpp
-  - geometry/common_area_cp.hpp
+  - geometry/distance_ss.hpp
   - geometry/is_intersect_ls.hpp
+  - geometry/is_intersect_cs.hpp
+  - geometry/common_area_cp.hpp
+  - geometry/is_intersect_sp.hpp
   timestamp: '2022-09-11 00:53:50+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
+  - test/verify/aoj-cgl-2-d.test.cpp
   - test/verify/aoj-cgl-7-h.test.cpp
   - test/verify/aoj-cgl-2-b.test.cpp
-  - test/verify/aoj-cgl-2-d.test.cpp
 documentation_of: geometry/segment.hpp
 layout: document
 redirect_from:

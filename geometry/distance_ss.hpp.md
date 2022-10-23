@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: geometry/base.hpp
     title: geometry/base.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: geometry/ccw.hpp
     title: geometry/ccw.hpp
   - icon: ':x:'
@@ -16,13 +16,13 @@ data:
   - icon: ':x:'
     path: geometry/is_intersect_ss.hpp
     title: geometry/is_intersect_ss.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: geometry/line.hpp
     title: geometry/line.hpp
   - icon: ':question:'
     path: geometry/point.hpp
     title: geometry/point.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: geometry/projection.hpp
     title: geometry/projection.hpp
   - icon: ':x:'

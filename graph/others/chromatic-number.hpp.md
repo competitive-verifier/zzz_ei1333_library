@@ -56,8 +56,8 @@ data:
   timestamp: '2022-09-11 00:53:50+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/verify/yosupo-chromatic-number.test.cpp
   - test/verify/aoj-1254.test.cpp
+  - test/verify/yosupo-chromatic-number.test.cpp
 documentation_of: graph/others/chromatic-number.hpp
 layout: document
 redirect_from:

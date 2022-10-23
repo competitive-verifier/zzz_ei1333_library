@@ -6,7 +6,7 @@ data:
     path: string/lcp-array.hpp
     title: LCP Array
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-alds-1-14-d.test.cpp
     title: test/verify/aoj-alds-1-14-d.test.cpp
   - icon: ':x:'
@@ -17,7 +17,7 @@ data:
     title: test/verify/yosupo-suffixarray.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     document_title: "Suffix Array(\u63A5\u5C3E\u8F9E\u914D\u5217)"
     links: []
@@ -142,11 +142,11 @@ data:
   requiredBy:
   - string/lcp-array.hpp
   timestamp: '2022-09-11 00:53:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/verify/aoj-alds-1-14-d.test.cpp
   - test/verify/yosupo-number-of-substrings.test.cpp
   - test/verify/yosupo-suffixarray.test.cpp
+  - test/verify/aoj-alds-1-14-d.test.cpp
 documentation_of: string/suffix-array.hpp
 layout: document
 redirect_from:

@@ -7,13 +7,13 @@ data:
   - icon: ':x:'
     path: geometry/circle.hpp
     title: geometry/circle.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: geometry/line.hpp
     title: geometry/line.hpp
   - icon: ':question:'
     path: geometry/point.hpp
     title: geometry/point.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: geometry/projection.hpp
     title: geometry/projection.hpp
   _extendedRequiredBy:
@@ -97,8 +97,8 @@ data:
   timestamp: '2022-09-11 00:53:50+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/verify/aoj-cgl-7-h.test.cpp
   - test/verify/aoj-cgl-7-d.test.cpp
+  - test/verify/aoj-cgl-7-h.test.cpp
 documentation_of: geometry/cross_point_cl.hpp
 layout: document
 redirect_from:

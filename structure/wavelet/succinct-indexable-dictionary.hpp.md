@@ -15,10 +15,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-1549.test.cpp
     title: test/verify/aoj-1549.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-2674-2.test.cpp
     title: test/verify/aoj-2674-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-2674.test.cpp
     title: test/verify/aoj-2674.test.cpp
   - icon: ':x:'
@@ -72,14 +72,14 @@ data:
   timestamp: '2022-09-11 00:53:50+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/verify/yosupo-range-kth-smallest-2.test.cpp
-  - test/verify/aoj-1549-2.test.cpp
-  - test/verify/yosupo-point-add-rectangle-sum.test.cpp
-  - test/verify/aoj-1549.test.cpp
-  - test/verify/aoj-2674.test.cpp
-  - test/verify/yosupo-rectangle-sum.test.cpp
-  - test/verify/aoj-2674-2.test.cpp
   - test/verify/yosupo-range-kth-smallest.test.cpp
+  - test/verify/aoj-1549.test.cpp
+  - test/verify/aoj-1549-2.test.cpp
+  - test/verify/yosupo-rectangle-sum.test.cpp
+  - test/verify/yosupo-point-add-rectangle-sum.test.cpp
+  - test/verify/aoj-2674.test.cpp
+  - test/verify/yosupo-range-kth-smallest-2.test.cpp
+  - test/verify/aoj-2674-2.test.cpp
 documentation_of: structure/wavelet/succinct-indexable-dictionary.hpp
 layout: document
 redirect_from:

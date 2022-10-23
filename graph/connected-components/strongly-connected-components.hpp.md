@@ -89,8 +89,8 @@ data:
   timestamp: '2022-09-11 00:53:50+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/verify/yosupo-scc.test.cpp
   - test/verify/yosupo-two-sat.test.cpp
+  - test/verify/yosupo-scc.test.cpp
   - test/verify/aoj-grl-3-c.test.cpp
 documentation_of: graph/connected-components/strongly-connected-components.hpp
 layout: document

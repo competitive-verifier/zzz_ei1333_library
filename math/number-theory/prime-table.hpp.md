@@ -4,12 +4,12 @@ data:
   _extendedRequiredBy:
   - icon: ':x:'
     path: math/number-theory/enumerate-primes.hpp
-    title: "Enumerate Primes(\u7D20\u6570\u5217\u6319)"
+    title: math/number-theory/enumerate-primes.hpp
   - icon: ':x:'
     path: math/number-theory/prime-count.hpp
     title: "Prime Count(\u7D20\u6570\u306E\u500B\u6570)"
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-alds-1-1-c-2.test.cpp
     title: test/verify/aoj-alds-1-1-c-2.test.cpp
   - icon: ':x:'
@@ -20,7 +20,7 @@ data:
     title: test/verify/yosupo-enumerate-primes.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: docs/prime-table.md
     document_title: "Prime Table(\u7D20\u6570\u30C6\u30FC\u30D6\u30EB)"
@@ -44,10 +44,10 @@ data:
   - math/number-theory/prime-count.hpp
   - math/number-theory/enumerate-primes.hpp
   timestamp: '2022-09-11 00:53:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/verify/yosupo-enumerate-primes.test.cpp
   - test/verify/yosupo-counting-primes.test.cpp
+  - test/verify/yosupo-enumerate-primes.test.cpp
   - test/verify/aoj-alds-1-1-c-2.test.cpp
 documentation_of: math/number-theory/prime-table.hpp
 layout: document

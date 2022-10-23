@@ -38,8 +38,8 @@ data:
   timestamp: '2022-09-11 00:53:50+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/verify/aoj-ntl-1-d.test.cpp
   - test/verify/yosupo-tetration-mod.test.cpp
+  - test/verify/aoj-ntl-1-d.test.cpp
 documentation_of: math/number-theory/euler-phi.hpp
 layout: document
 redirect_from:

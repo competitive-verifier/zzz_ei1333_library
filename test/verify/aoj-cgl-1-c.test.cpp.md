@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: geometry/base.hpp
     title: geometry/base.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: geometry/ccw.hpp
     title: geometry/ccw.hpp
   - icon: ':question:'
@@ -15,9 +15,9 @@ data:
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C
@@ -101,7 +101,7 @@ data:
   path: test/verify/aoj-cgl-1-c.test.cpp
   requiredBy: []
   timestamp: '2022-09-11 00:53:50+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/aoj-cgl-1-c.test.cpp
 layout: document

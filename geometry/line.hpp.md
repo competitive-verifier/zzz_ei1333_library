@@ -56,29 +56,29 @@ data:
   - icon: ':x:'
     path: geometry/is_intersect_ss.hpp
     title: geometry/is_intersect_ss.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: geometry/is_orthogonal.hpp
     title: geometry/is_orthogonal.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: geometry/is_parallel.hpp
     title: geometry/is_parallel.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: geometry/projection.hpp
     title: geometry/projection.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: geometry/reflection.hpp
     title: geometry/reflection.hpp
   - icon: ':x:'
     path: geometry/segment.hpp
     title: geometry/segment.hpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-cgl-1-a.test.cpp
     title: test/verify/aoj-cgl-1-a.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-cgl-1-b.test.cpp
     title: test/verify/aoj-cgl-1-b.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-cgl-2-a.test.cpp
     title: test/verify/aoj-cgl-2-a.test.cpp
   - icon: ':x:'
@@ -101,7 +101,7 @@ data:
     title: test/verify/aoj-cgl-7-h.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"geometry/base.hpp\"\n\nnamespace geometry {\n  using Real\
@@ -151,39 +151,39 @@ data:
   isVerificationFile: false
   path: geometry/line.hpp
   requiredBy:
-  - geometry/is_intersect_ll.hpp
-  - geometry/distance_ll.hpp
-  - geometry/is_intersect_cl.hpp
-  - geometry/is_intersect_ss.hpp
-  - geometry/projection.hpp
-  - geometry/distance_sp.hpp
   - geometry/distance_lp.hpp
-  - geometry/is_intersect_cs.hpp
+  - geometry/is_intersect_lp.hpp
   - geometry/is_parallel.hpp
-  - geometry/segment.hpp
   - geometry/convex_polygon_cut.hpp
-  - geometry/is_intersect_sp.hpp
-  - geometry/reflection.hpp
+  - geometry/is_intersect_ss.hpp
+  - geometry/distance_sp.hpp
+  - geometry/projection.hpp
+  - geometry/cross_point_cl.hpp
+  - geometry/cross_point_cs.hpp
   - geometry/distance_ss.hpp
   - geometry/cross_point_ll.hpp
-  - geometry/cross_point_cs.hpp
-  - geometry/cross_point_cl.hpp
-  - geometry/common_area_cp.hpp
-  - geometry/is_intersect_lp.hpp
   - geometry/is_orthogonal.hpp
+  - geometry/segment.hpp
+  - geometry/reflection.hpp
+  - geometry/distance_ll.hpp
+  - geometry/is_intersect_ll.hpp
   - geometry/is_intersect_ls.hpp
+  - geometry/is_intersect_cs.hpp
+  - geometry/common_area_cp.hpp
+  - geometry/is_intersect_sp.hpp
+  - geometry/is_intersect_cl.hpp
   timestamp: '2022-09-11 00:53:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/verify/aoj-cgl-7-h.test.cpp
-  - test/verify/aoj-cgl-2-b.test.cpp
   - test/verify/aoj-cgl-7-d.test.cpp
   - test/verify/aoj-cgl-2-d.test.cpp
+  - test/verify/aoj-cgl-7-h.test.cpp
   - test/verify/aoj-cgl-1-a.test.cpp
-  - test/verify/aoj-cgl-2-c.test.cpp
   - test/verify/aoj-cgl-2-a.test.cpp
-  - test/verify/aoj-cgl-1-b.test.cpp
   - test/verify/aoj-cgl-4-c.test.cpp
+  - test/verify/aoj-cgl-2-c.test.cpp
+  - test/verify/aoj-cgl-1-b.test.cpp
+  - test/verify/aoj-cgl-2-b.test.cpp
 documentation_of: geometry/line.hpp
 layout: document
 redirect_from:

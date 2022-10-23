@@ -10,16 +10,16 @@ data:
   - icon: ':warning:'
     path: geometry/is_intersect_ll.hpp
     title: geometry/is_intersect_ll.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: geometry/is_parallel.hpp
     title: geometry/is_parallel.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: geometry/line.hpp
     title: geometry/line.hpp
   - icon: ':question:'
     path: geometry/point.hpp
     title: geometry/point.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: geometry/projection.hpp
     title: geometry/projection.hpp
   _extendedRequiredBy: []

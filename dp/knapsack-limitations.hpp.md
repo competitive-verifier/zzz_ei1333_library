@@ -56,8 +56,8 @@ data:
   timestamp: '2022-09-11 00:53:50+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/verify/aoj-dpl-1-g.test.cpp
   - test/verify/aoj-dpl-1-i.test.cpp
+  - test/verify/aoj-dpl-1-g.test.cpp
 documentation_of: dp/knapsack-limitations.hpp
 layout: document
 title: "Knapsack Limitations(\u500B\u6570\u5236\u9650\u3064\u304D\u30CA\u30C3\u30D7\

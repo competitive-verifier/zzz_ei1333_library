@@ -4,10 +4,10 @@ data:
   - icon: ':question:'
     path: geometry/base.hpp
     title: geometry/base.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: geometry/ccw.hpp
     title: geometry/ccw.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: geometry/line.hpp
     title: geometry/line.hpp
   - icon: ':question:'
@@ -92,8 +92,8 @@ data:
   timestamp: '2022-09-11 00:53:50+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/verify/aoj-cgl-2-b.test.cpp
   - test/verify/aoj-cgl-2-d.test.cpp
+  - test/verify/aoj-cgl-2-b.test.cpp
 documentation_of: geometry/is_intersect_ss.hpp
 layout: document
 redirect_from:

@@ -30,7 +30,7 @@ data:
     path: geometry/is_intersect_ss.hpp
     title: geometry/is_intersect_ss.hpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-cgl-1-c.test.cpp
     title: test/verify/aoj-cgl-1-c.test.cpp
   - icon: ':x:'
@@ -47,7 +47,7 @@ data:
     title: test/verify/aoj-cgl-7-h.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_1_C
@@ -93,20 +93,20 @@ data:
   isVerificationFile: false
   path: geometry/ccw.hpp
   requiredBy:
+  - geometry/is_intersect_lp.hpp
   - geometry/is_intersect_ss.hpp
   - geometry/distance_sp.hpp
-  - geometry/is_convex_polygon.hpp
-  - geometry/is_intersect_sp.hpp
   - geometry/distance_ss.hpp
   - geometry/common_area_cp.hpp
-  - geometry/is_intersect_lp.hpp
+  - geometry/is_intersect_sp.hpp
+  - geometry/is_convex_polygon.hpp
   timestamp: '2022-09-11 00:53:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/verify/aoj-cgl-7-h.test.cpp
-  - test/verify/aoj-cgl-2-b.test.cpp
   - test/verify/aoj-cgl-2-d.test.cpp
+  - test/verify/aoj-cgl-7-h.test.cpp
   - test/verify/aoj-cgl-3-b.test.cpp
+  - test/verify/aoj-cgl-2-b.test.cpp
   - test/verify/aoj-cgl-1-c.test.cpp
 documentation_of: geometry/ccw.hpp
 layout: document

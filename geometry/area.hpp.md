@@ -65,8 +65,8 @@ data:
   timestamp: '2022-09-11 00:53:50+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/verify/aoj-cgl-3-a.test.cpp
   - test/verify/aoj-cgl-4-c.test.cpp
+  - test/verify/aoj-cgl-3-a.test.cpp
 documentation_of: geometry/area.hpp
 layout: document
 redirect_from:

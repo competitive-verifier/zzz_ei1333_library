@@ -5,7 +5,7 @@ data:
     path: graph/graph-template.hpp
     title: "Graph Template(\u30B0\u30E9\u30D5\u30C6\u30F3\u30D7\u30EC\u30FC\u30C8)"
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/connected-components/bi-connected-components.hpp
     title: "Bi Connected Components(\u4E8C\u91CD\u9802\u70B9\u9023\u7D50\u6210\u5206\
       \u5206\u89E3)"
@@ -13,14 +13,14 @@ data:
     path: graph/connected-components/two-edge-connected-components.hpp
     title: "Two Edge Connected Components(\u4E8C\u91CD\u8FBA\u9023\u7D50\u6210\u5206\
       \u5206\u89E3)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/others/block-cut-tree.hpp
     title: Block Cut Tree
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-3022.test.cpp
     title: test/verify/aoj-3022.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/aoj-3139.test.cpp
     title: test/verify/aoj-3139.test.cpp
   - icon: ':x:'
@@ -34,7 +34,7 @@ data:
     title: test/verify/yosupo-two-edge-connected-components.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: docs/low-link.md
     document_title: "Low Link(\u6A4B/\u95A2\u7BC0\u70B9)"
@@ -99,17 +99,17 @@ data:
   isVerificationFile: false
   path: graph/others/low-link.hpp
   requiredBy:
-  - graph/others/block-cut-tree.hpp
   - graph/connected-components/bi-connected-components.hpp
   - graph/connected-components/two-edge-connected-components.hpp
+  - graph/others/block-cut-tree.hpp
   timestamp: '2022-09-11 00:53:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/verify/aoj-3022.test.cpp
-  - test/verify/yosupo-two-edge-connected-components.test.cpp
+  - test/verify/aoj-grl-3-b.test.cpp
   - test/verify/aoj-grl-3-a.test.cpp
   - test/verify/aoj-3139.test.cpp
-  - test/verify/aoj-grl-3-b.test.cpp
+  - test/verify/aoj-3022.test.cpp
+  - test/verify/yosupo-two-edge-connected-components.test.cpp
 documentation_of: graph/others/low-link.hpp
 layout: document
 redirect_from:

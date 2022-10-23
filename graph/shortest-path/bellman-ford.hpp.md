@@ -63,8 +63,8 @@ data:
   timestamp: '2022-09-11 00:53:50+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/verify/aoj-grl-1-b.test.cpp
   - test/verify/aoj-0304.test.cpp
+  - test/verify/aoj-grl-1-b.test.cpp
 documentation_of: graph/shortest-path/bellman-ford.hpp
 layout: document
 redirect_from:

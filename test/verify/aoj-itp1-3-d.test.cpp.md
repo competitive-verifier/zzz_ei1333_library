@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':x:'
     path: math/number-theory/divisor.hpp
-    title: "Divisor(\u7D04\u6570\u5217\u6319)"
+    title: math/number-theory/divisor.hpp
   - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
@@ -46,8 +46,7 @@ data:
     \ Args >\n  decltype(auto) operator()(Args &&... args) const {\n    return F::operator()(*this,\
     \ forward< Args >(args)...);\n  }\n};\n \ntemplate< typename F >\ninline decltype(auto)\
     \ MFP(F &&f) {\n  return FixPoint< F >{forward< F >(f)};\n}\n#line 4 \"test/verify/aoj-itp1-3-d.test.cpp\"\
-    \n\n#line 1 \"math/number-theory/divisor.hpp\"\n/**\n * @brief Divisor(\u7D04\u6570\
-    \u5217\u6319)\n * @docs docs/divisor.md\n */\nvector< int64_t > divisor(int64_t\
+    \n\n#line 1 \"math/number-theory/divisor.hpp\"\nvector< int64_t > divisor(int64_t\
     \ n) {\n  vector< int64_t > ret;\n  for(int64_t i = 1; i * i <= n; i++) {\n  \
     \  if(n % i == 0) {\n      ret.push_back(i);\n      if(i * i != n) ret.push_back(n\
     \ / i);\n    }\n  }\n  sort(begin(ret), end(ret));\n  return ret;\n}\n#line 6\
@@ -65,7 +64,7 @@ data:
   isVerificationFile: true
   path: test/verify/aoj-itp1-3-d.test.cpp
   requiredBy: []
-  timestamp: '2022-09-11 00:53:50+09:00'
+  timestamp: '2022-10-23 20:41:53+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/verify/aoj-itp1-3-d.test.cpp

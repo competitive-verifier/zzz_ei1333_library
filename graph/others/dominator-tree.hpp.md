@@ -104,8 +104,8 @@ data:
   timestamp: '2022-09-11 00:53:50+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/verify/aoj-0294.test.cpp
   - test/verify/yosupo-dominatortree.test.cpp
+  - test/verify/aoj-0294.test.cpp
 documentation_of: graph/others/dominator-tree.hpp
 layout: document
 redirect_from:
