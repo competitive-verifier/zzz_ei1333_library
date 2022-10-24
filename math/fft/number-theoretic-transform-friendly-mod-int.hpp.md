@@ -16,13 +16,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-division-of-polynomials.test.cpp
     title: test/verify/yosupo-division-of-polynomials.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-exp-of-formal-power-series.test.cpp
     title: test/verify/yosupo-exp-of-formal-power-series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-find-linear-recurrence.test.cpp
     title: test/verify/yosupo-find-linear-recurrence.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-inv-of-formal-power-series.test.cpp
     title: test/verify/yosupo-inv-of-formal-power-series.test.cpp
   - icon: ':x:'

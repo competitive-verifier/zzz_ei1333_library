@@ -41,7 +41,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/others/dominator-tree.hpp
     title: Dominator Tree
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/others/enumerate-triangles.hpp
     title: "Enumerate Triangles(\u4E09\u89D2\u5F62\u5168\u5217\u6319)"
   - icon: ':question:'
@@ -82,7 +82,7 @@ data:
   - icon: ':x:'
     path: graph/shortest-path/k-shortest-path.hpp
     title: K-Shortest-Path
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/shortest-path/k-shortest-walk.hpp
     title: K-Shortest-Walk
   - icon: ':heavy_check_mark:'
@@ -217,13 +217,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-dominatortree.test.cpp
     title: test/verify/yosupo-dominatortree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-enumerate-triangles.test.cpp
     title: test/verify/yosupo-enumerate-triangles.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-frequency-table-of-tree-distance.test.cpp
     title: test/verify/yosupo-frequency-table-of-tree-distance.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-k-shortest-walk.test.cpp
     title: test/verify/yosupo-k-shortest-walk.test.cpp
   - icon: ':x:'

@@ -211,7 +211,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/flow/ford-fulkerson.hpp
       title: "Ford Fulkerson(\u6700\u5927\u6D41)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/flow/gabow-edmonds.hpp
       title: "Gabow Edmonds(\u4E00\u822C\u30B0\u30E9\u30D5\u306E\u6700\u5927\u30DE\
         \u30C3\u30C1\u30F3\u30B0)"
@@ -278,7 +278,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/others/enumerate-cliques.hpp
       title: "Enumerate Cliques(\u30AF\u30EA\u30FC\u30AF\u5168\u5217\u6319)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/others/enumerate-triangles.hpp
       title: "Enumerate Triangles(\u4E09\u89D2\u5F62\u5168\u5217\u6319)"
     - icon: ':question:'
@@ -336,7 +336,7 @@ data:
     - icon: ':x:'
       path: graph/shortest-path/k-shortest-path.hpp
       title: K-Shortest-Path
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/shortest-path/k-shortest-walk.hpp
       title: K-Shortest-Walk
     - icon: ':x:'
@@ -476,7 +476,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/fft/bitwise-xor-convolution.hpp
       title: "Bitwise Xor Convolution (Bitwise-XOR\u7573\u307F\u8FBC\u307F)"
-    - icon: ':x:'
+    - icon: ':question:'
       path: math/fft/fast-fourier-transform.hpp
       title: math/fft/fast-fourier-transform.hpp
     - icon: ':heavy_check_mark:'
@@ -509,7 +509,7 @@ data:
     - icon: ':warning:'
       path: math/fps/bell.hpp
       title: "Bell(\u30D9\u30EB\u6570)"
-    - icon: ':x:'
+    - icon: ':question:'
       path: math/fps/berlekamp-massey.hpp
       title: Berlekamp Massey
     - icon: ':heavy_check_mark:'
@@ -576,7 +576,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/number-theory/divisor.hpp
       title: "Divisor(\u7D04\u6570\u5217\u6319)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/number-theory/enumerate-primes.hpp
       title: "Enumerate Primes(\u7D20\u6570\u5217\u6319)"
     - icon: ':heavy_check_mark:'
@@ -590,13 +590,13 @@ data:
       path: math/number-theory/extgcd.hpp
       title: "Extgcd(\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\
         \u6CD5)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/number-theory/fast-prime-factorization.hpp
       title: math/number-theory/fast-prime-factorization.hpp
     - icon: ':heavy_check_mark:'
       path: math/number-theory/is-prime.hpp
       title: "Is Prime(\u7D20\u6570\u5224\u5B9A)"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/number-theory/kth-root-integer.hpp
       title: Kth Root Integer
     - icon: ':warning:'
@@ -609,7 +609,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/number-theory/prime-factor.hpp
       title: "Prime Factor(\u7D20\u56E0\u6570\u5206\u89E3)"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/number-theory/prime-table.hpp
       title: "Prime Table(\u7D20\u6570\u30C6\u30FC\u30D6\u30EB)"
     - icon: ':warning:'
@@ -686,7 +686,7 @@ data:
     - icon: ':x:'
       path: string/lcp-array.hpp
       title: LCP Array
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: string/manacher.hpp
       title: "Manacher(\u6700\u9577\u56DE\u6587)"
     - icon: ':x:'
@@ -775,7 +775,7 @@ data:
       path: structure/develop/lazy-reversible-splay-tree.hpp
       title: "Lazy-Reversible-Splay-Tree(\u9045\u5EF6\u4F1D\u642C\u53CD\u8EE2\u53EF\
         \u80FDSplay\u6728)"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: structure/develop/link-cut-tree.hpp
       title: Link-Cut-Tree
     - icon: ':question:'
@@ -793,7 +793,7 @@ data:
     - icon: ':question:'
       path: structure/develop/super-link-cut-tree.hpp
       title: "\u4F55\u3067\u3082\u3067\u304D\u308BLCT"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: structure/develop/vertex-set-path-composite.hpp
       title: Vertex Set Path Composite
     - icon: ':heavy_check_mark:'
@@ -811,10 +811,10 @@ data:
       path: structure/heap/fibonacchi-heap.hpp
       title: "Fibonacchi-Heap(\u30D5\u30A3\u30DC\u30CA\u30C3\u30C1\u30D2\u30FC\u30D7\
         )"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: structure/heap/leftist-heap.hpp
       title: Leftist-Heap
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: structure/heap/persistent-leftist-heap.hpp
       title: Persistent-Leftist-Heap
     - icon: ':heavy_check_mark:'
@@ -831,10 +831,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: structure/lct/link-cut-tree-lazy-path.hpp
       title: Link Cut Tree Lazy Path
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: structure/lct/link-cut-tree-subtree.hpp
       title: structure/lct/link-cut-tree-subtree.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: structure/lct/link-cut-tree.hpp
       title: Link Cut Tree
   - name: structure/others
@@ -1351,49 +1351,49 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-dynamic-tree-vertex-add-subtree-sum-2.test.cpp
       title: test/verify/yosupo-dynamic-tree-vertex-add-subtree-sum-2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-dynamic-tree-vertex-add-subtree-sum.test.cpp
       title: test/verify/yosupo-dynamic-tree-vertex-add-subtree-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-dynamic-tree-vertex-set-path-composite-2.test.cpp
       title: test/verify/yosupo-dynamic-tree-vertex-set-path-composite-2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-dynamic-tree-vertex-set-path-composite-3.test.cpp
       title: test/verify/yosupo-dynamic-tree-vertex-set-path-composite-3.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-dynamic-tree-vertex-set-path-composite.test.cpp
       title: test/verify/yosupo-dynamic-tree-vertex-set-path-composite.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-enumerate-palindromes.test.cpp
       title: test/verify/yosupo-enumerate-palindromes.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-enumerate-primes.test.cpp
       title: test/verify/yosupo-enumerate-primes.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-enumerate-triangles.test.cpp
       title: test/verify/yosupo-enumerate-triangles.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-exp-of-formal-power-series.test.cpp
       title: test/verify/yosupo-exp-of-formal-power-series.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-factorize.test.cpp
       title: test/verify/yosupo-factorize.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-find-linear-recurrence.test.cpp
       title: test/verify/yosupo-find-linear-recurrence.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-frequency-table-of-tree-distance.test.cpp
       title: test/verify/yosupo-frequency-table-of-tree-distance.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-general-matching.test.cpp
       title: test/verify/yosupo-general-matching.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-inv-of-formal-power-series.test.cpp
       title: test/verify/yosupo-inv-of-formal-power-series.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-k-shortest-walk.test.cpp
       title: test/verify/yosupo-k-shortest-walk.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-kth-root-integer.test.cpp
       title: test/verify/yosupo-kth-root-integer.test.cpp
     - icon: ':x:'

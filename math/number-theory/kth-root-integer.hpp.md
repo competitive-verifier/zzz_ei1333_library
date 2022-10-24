@@ -9,12 +9,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-counting-primes.test.cpp
     title: test/verify/yosupo-counting-primes.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-kth-root-integer.test.cpp
     title: test/verify/yosupo-kth-root-integer.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/number-theory/kth-root-integer.hpp\"\nuint64_t kth_root_integer(uint64_t\
@@ -35,7 +35,7 @@ data:
   requiredBy:
   - math/number-theory/prime-count.hpp
   timestamp: '2022-10-23 21:05:11+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/yosupo-kth-root-integer.test.cpp
   - test/verify/yosupo-counting-primes.test.cpp
@@ -59,4 +59,4 @@ $\textrm{floor}{(a^{\frac {1} {k}})}$ を返します。
 
 ## 計算量
 
-- $O(k \log a)$
+- $O(k \log \log a)$

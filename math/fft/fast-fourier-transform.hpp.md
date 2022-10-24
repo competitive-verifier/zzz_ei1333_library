@@ -9,7 +9,7 @@ data:
     path: math/fps/formal-power-series.hpp
     title: "Formal Power Series(\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570)"
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-frequency-table-of-tree-distance.test.cpp
     title: test/verify/yosupo-frequency-table-of-tree-distance.test.cpp
   - icon: ':x:'
@@ -26,7 +26,7 @@ data:
     title: test/verify/yukicoder-502.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/fft/fast-fourier-transform.hpp\"\nnamespace FastFourierTransform\
@@ -109,7 +109,7 @@ data:
   - math/fps/formal-power-series.hpp
   - math/fft/arbitrary-mod-convolution.hpp
   timestamp: '2022-09-11 00:53:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/verify/yosupo-frequency-table-of-tree-distance.test.cpp
   - test/verify/yukicoder-215.test.cpp

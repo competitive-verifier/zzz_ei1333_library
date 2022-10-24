@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/fft/fast-fourier-transform.hpp
     title: math/fft/fast-fourier-transform.hpp
   _extendedRequiredBy:

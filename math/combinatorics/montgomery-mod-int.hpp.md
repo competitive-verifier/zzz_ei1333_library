@@ -2,14 +2,14 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: structure/develop/vertex-set-path-composite.hpp
     title: Vertex Set Path Composite
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-convolution-mod-2.test.cpp
     title: test/verify/yosupo-convolution-mod-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-dynamic-tree-vertex-set-path-composite-3.test.cpp
     title: test/verify/yosupo-dynamic-tree-vertex-set-path-composite-3.test.cpp
   - icon: ':x:'

@@ -7,7 +7,7 @@ data:
   - icon: ':x:'
     path: math/fft/arbitrary-mod-convolution.hpp
     title: "Arbitrary Mod Convolution(\u4EFB\u610Fmod\u7573\u307F\u8FBC\u307F)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: math/fft/fast-fourier-transform.hpp
     title: math/fft/fast-fourier-transform.hpp
   - icon: ':x:'

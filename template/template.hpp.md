@@ -384,49 +384,49 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-dynamic-tree-vertex-add-subtree-sum-2.test.cpp
     title: test/verify/yosupo-dynamic-tree-vertex-add-subtree-sum-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-dynamic-tree-vertex-add-subtree-sum.test.cpp
     title: test/verify/yosupo-dynamic-tree-vertex-add-subtree-sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-dynamic-tree-vertex-set-path-composite-2.test.cpp
     title: test/verify/yosupo-dynamic-tree-vertex-set-path-composite-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-dynamic-tree-vertex-set-path-composite-3.test.cpp
     title: test/verify/yosupo-dynamic-tree-vertex-set-path-composite-3.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-dynamic-tree-vertex-set-path-composite.test.cpp
     title: test/verify/yosupo-dynamic-tree-vertex-set-path-composite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-enumerate-palindromes.test.cpp
     title: test/verify/yosupo-enumerate-palindromes.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-enumerate-primes.test.cpp
     title: test/verify/yosupo-enumerate-primes.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-enumerate-triangles.test.cpp
     title: test/verify/yosupo-enumerate-triangles.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-exp-of-formal-power-series.test.cpp
     title: test/verify/yosupo-exp-of-formal-power-series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-factorize.test.cpp
     title: test/verify/yosupo-factorize.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-find-linear-recurrence.test.cpp
     title: test/verify/yosupo-find-linear-recurrence.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-frequency-table-of-tree-distance.test.cpp
     title: test/verify/yosupo-frequency-table-of-tree-distance.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-general-matching.test.cpp
     title: test/verify/yosupo-general-matching.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-inv-of-formal-power-series.test.cpp
     title: test/verify/yosupo-inv-of-formal-power-series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-k-shortest-walk.test.cpp
     title: test/verify/yosupo-k-shortest-walk.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-kth-root-integer.test.cpp
     title: test/verify/yosupo-kth-root-integer.test.cpp
   - icon: ':x:'
