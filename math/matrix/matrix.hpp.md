@@ -13,15 +13,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-assignment.test.cpp
     title: test/verify/yosupo-assignment.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-matrix-det.test.cpp
     title: test/verify/yosupo-matrix-det.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-maximum-independent-set.test.cpp
     title: test/verify/yosupo-maximum-independent-set.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/matrix/matrix.hpp\"\ntemplate< class T >\nstruct Matrix\
@@ -111,7 +111,7 @@ data:
   requiredBy:
   - graph/flow/hungarian.hpp
   timestamp: '2022-09-11 00:53:50+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/yosupo-matrix-det.test.cpp
   - test/verify/yosupo-assignment.test.cpp

@@ -242,10 +242,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/mst/directed-mst.hpp
       title: "Directed MST(\u6700\u5C0F\u6709\u5411\u5168\u57DF\u6728)"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/mst/kruskal.hpp
       title: "Kruskal(\u6700\u5C0F\u5168\u57DF\u6728)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/mst/manhattan-mst.hpp
       title: Manhattan MST
     - icon: ':heavy_check_mark:'
@@ -287,10 +287,10 @@ data:
     - icon: ':question:'
       path: graph/others/low-link.hpp
       title: "Low Link(\u6A4B/\u95A2\u7BC0\u70B9)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/others/maximum-clique.hpp
       title: "Maximum Clique(\u6700\u5927\u30AF\u30EA\u30FC\u30AF)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/others/maximum-independent-set.hpp
       title: "Maximum Independent Set(\u6700\u5927\u72EC\u7ACB\u96C6\u5408)"
     - icon: ':x:'
@@ -364,14 +364,14 @@ data:
     - icon: ':warning:'
       path: graph/tree/disjoint-set-union-on-tree.hpp
       title: Disjoint-Set-Union-On-Tree
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/tree/doubling-lowest-common-ancestor.hpp
       title: "Doubling-Lowest-Common-Ancestor(\u6700\u5C0F\u5171\u901A\u7956\u5148\
         )"
     - icon: ':question:'
       path: graph/tree/heavy-light-decomposition.hpp
       title: "Heavy-Light-Decomposition(HL\u5206\u89E3)"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/tree/offline-lca.hpp
       title: "Offline LCA(\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\u901A\u7956\
         \u5148)"
@@ -381,7 +381,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/tree/rerooting.hpp
       title: graph/tree/rerooting.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/tree/rmq-lowest-common-ancestor.hpp
       title: "RMQ-Lowest-Common-Ancestor(\u6700\u5C0F\u5171\u901A\u7956\u5148)"
     - icon: ':question:'
@@ -392,7 +392,7 @@ data:
       title: "Tree-Isomorphism(\u6728\u306E\u540C\u578B\u6027\u5224\u5B9A)"
   - name: math/combinatorics
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/combinatorics/arbitrary-mod-int.hpp
       title: math/combinatorics/arbitrary-mod-int.hpp
     - icon: ':heavy_check_mark:'
@@ -437,7 +437,7 @@ data:
     - icon: ':question:'
       path: math/combinatorics/montgomery-mod-int.hpp
       title: Montgomery ModInt
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/combinatorics/montmort.hpp
       title: "Montmort-Number(\u30E2\u30F3\u30E2\u30FC\u30EB\u6570)"
     - icon: ':heavy_check_mark:'
@@ -515,7 +515,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/fps/bernoulli.hpp
       title: "Bernoulli(\u30D9\u30EB\u30CC\u30FC\u30A4\u6570)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/fps/coeff-of-rational-function.hpp
       title: Coeff of Rational Function
     - icon: ':x:'
@@ -531,13 +531,13 @@ data:
     - icon: ':x:'
       path: math/fps/formal-power-series.hpp
       title: "Formal Power Series(\u5F62\u5F0F\u7684\u51AA\u7D1A\u6570)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/fps/kth-term-of-linearly-recurrent-sequence.hpp
       title: Kth Term of Linearly Recurrent Sequence
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/fps/multipoint-evaluation.hpp
       title: Multipoint Evaluation
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/fps/partition.hpp
       title: "Partition(\u5206\u5272\u6570)"
     - icon: ':x:'
@@ -554,7 +554,7 @@ data:
       path: math/fps/stirling-second.hpp
       title: "Stirling Second(\u7B2C\u4E8C\u7A2E\u30B9\u30BF\u30FC\u30EA\u30F3\u30B0\
         \u6570)"
-    - icon: ':x:'
+    - icon: ':question:'
       path: math/fps/subproduct-tree.hpp
       title: Subproduct Tree
   - name: math/matrix
@@ -562,7 +562,7 @@ data:
     - icon: ':x:'
       path: math/matrix/binary-basis.hpp
       title: math/matrix/binary-basis.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/matrix/matrix.hpp
       title: math/matrix/matrix.hpp
     - icon: ':question:'
@@ -635,7 +635,7 @@ data:
     - icon: ':warning:'
       path: other/dice.hpp
       title: other/dice.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: other/dynamic-point-add-rectangle-sum.hpp
       title: Dynamic Point Add Rectangle Sum
     - icon: ':warning:'
@@ -662,7 +662,7 @@ data:
     - icon: ':question:'
       path: other/scanner.hpp
       title: "Scanner(\u9AD8\u901F\u5165\u529B)"
-    - icon: ':x:'
+    - icon: ':question:'
       path: other/static-point-add-rectangle-sum.hpp
       title: Static Point Add Rectangle Sum
     - icon: ':warning:'
@@ -683,7 +683,7 @@ data:
       path: string/aho-corasick.hpp
       title: "Aho-Corasick(\u30A8\u30A4\u30DB\u2013\u30B3\u30E9\u30B7\u30C3\u30AF\u6CD5\
         )"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: string/lcp-array.hpp
       title: LCP Array
     - icon: ':heavy_check_mark:'
@@ -748,7 +748,7 @@ data:
       title: "Weight-Balanced-Tree(\u91CD\u307F\u5E73\u8861\u6728)"
   - name: structure/convex-hull-trick
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: structure/convex-hull-trick/convex-hull-trick-add-monotone.hpp
       title: Convex Hull Trick Add Monotone
     - icon: ':question:'
@@ -839,11 +839,11 @@ data:
       title: Link Cut Tree
   - name: structure/others
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: structure/others/abstract-2d-binary-indexed-tree-compressed.hpp
       title: "Abstract 2D Binary Indexed Tree Compressed(\u62BD\u8C61\u53162\u6B21\
         \u5143\u5EA7\u5727BIT)"
-    - icon: ':x:'
+    - icon: ':question:'
       path: structure/others/abstract-binary-indexed-tree.hpp
       title: "Abstract Binary Indexed Tree(\u62BD\u8C61\u5316BIT)"
     - icon: ':question:'
@@ -861,7 +861,7 @@ data:
     - icon: ':x:'
       path: structure/others/permutation-tree.hpp
       title: "Permutation Tree(\u9806\u5217\u6728)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: structure/others/persistent-array.hpp
       title: structure/others/persistent-array.hpp
     - icon: ':question:'
@@ -932,7 +932,7 @@ data:
     - icon: ':warning:'
       path: structure/union-find/partially-persistent-union-find.hpp
       title: structure/union-find/partially-persistent-union-find.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: structure/union-find/persistent-union-find.hpp
       title: "Persistent-Union-Find(\u6C38\u7D9AUnion-Find)"
     - icon: ':warning:'
@@ -949,7 +949,7 @@ data:
     - icon: ':question:'
       path: structure/wavelet/succinct-indexable-dictionary.hpp
       title: "Succinct Indexable Dictionary(\u5B8C\u5099\u8F9E\u66F8)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: structure/wavelet/wavelet-matrix-point-add-rectangle-sum.hpp
       title: Wavelet Matrix Point Add Rectangle Sum
     - icon: ':x:'
@@ -1396,64 +1396,64 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-kth-root-integer.test.cpp
       title: test/verify/yosupo-kth-root-integer.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-kth-term-of-linearly-recurrent-sequence.test.cpp
       title: test/verify/yosupo-kth-term-of-linearly-recurrent-sequence.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-lca-2.test.cpp
       title: test/verify/yosupo-lca-2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-lca-3.test.cpp
       title: test/verify/yosupo-lca-3.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-lca-4.test.cpp
       title: test/verify/yosupo-lca-4.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-lca.test.cpp
       title: test/verify/yosupo-lca.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-line-add-get-min-2.test.cpp
       title: test/verify/yosupo-line-add-get-min-2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-line-add-get-min.test.cpp
       title: test/verify/yosupo-line-add-get-min.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-log-of-formal-power-series.test.cpp
       title: test/verify/yosupo-log-of-formal-power-series.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-manhattanmst.test.cpp
       title: test/verify/yosupo-manhattanmst.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-matrix-det.test.cpp
       title: test/verify/yosupo-matrix-det.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-maximum-independent-set-2.test.cpp
       title: test/verify/yosupo-maximum-independent-set-2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-maximum-independent-set.test.cpp
       title: test/verify/yosupo-maximum-independent-set.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-montmort-number-mod.test.cpp
       title: test/verify/yosupo-montmort-number-mod.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-multipoint-evaluation.test.cpp
       title: test/verify/yosupo-multipoint-evaluation.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-number-of-substrings.test.cpp
       title: test/verify/yosupo-number-of-substrings.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-partition-function.test.cpp
       title: test/verify/yosupo-partition-function.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-persistent-unionfind.test.cpp
       title: test/verify/yosupo-persistent-unionfind.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
       title: test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
       title: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/verify/yosupo-point-add-rectangle-sum.test.cpp
       title: test/verify/yosupo-point-add-rectangle-sum.test.cpp
     - icon: ':x:'

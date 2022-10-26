@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: structure/wavelet/wavelet-matrix-point-add-rectangle-sum.hpp
     title: Wavelet Matrix Point Add Rectangle Sum
   - icon: ':question:'
@@ -21,7 +21,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-2674.test.cpp
     title: test/verify/aoj-2674.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-point-add-rectangle-sum.test.cpp
     title: test/verify/yosupo-point-add-rectangle-sum.test.cpp
   - icon: ':x:'

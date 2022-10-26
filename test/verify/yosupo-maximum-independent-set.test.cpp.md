@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/others/maximum-independent-set.hpp
     title: "Maximum Independent Set(\u6700\u5927\u72EC\u7ACB\u96C6\u5408)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/matrix/matrix.hpp
     title: math/matrix/matrix.hpp
   - icon: ':question:'
@@ -12,9 +12,9 @@ data:
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/maximum_independent_set
@@ -123,7 +123,7 @@ data:
   path: test/verify/yosupo-maximum-independent-set.test.cpp
   requiredBy: []
   timestamp: '2022-09-11 00:53:50+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/yosupo-maximum-independent-set.test.cpp
 layout: document

@@ -7,7 +7,7 @@ data:
   - icon: ':question:'
     path: other/scanner.hpp
     title: "Scanner(\u9AD8\u901F\u5165\u529B)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: other/static-point-add-rectangle-sum.hpp
     title: Static Point Add Rectangle Sum
   - icon: ':question:'

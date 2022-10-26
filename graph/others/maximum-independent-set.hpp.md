@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-maximum-independent-set.test.cpp
     title: test/verify/yosupo-maximum-independent-set.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: "Maximum Independent Set(\u6700\u5927\u72EC\u7ACB\u96C6\u5408)"
     links: []
@@ -44,7 +44,7 @@ data:
   path: graph/others/maximum-independent-set.hpp
   requiredBy: []
   timestamp: '2022-09-11 00:53:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/yosupo-maximum-independent-set.test.cpp
 documentation_of: graph/others/maximum-independent-set.hpp

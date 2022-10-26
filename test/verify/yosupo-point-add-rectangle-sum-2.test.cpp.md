@@ -7,11 +7,11 @@ data:
   - icon: ':question:'
     path: other/scanner.hpp
     title: "Scanner(\u9AD8\u901F\u5165\u529B)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: structure/others/abstract-2d-binary-indexed-tree-compressed.hpp
     title: "Abstract 2D Binary Indexed Tree Compressed(\u62BD\u8C61\u53162\u6B21\u5143\
       \u5EA7\u5727BIT)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: structure/others/abstract-binary-indexed-tree.hpp
     title: "Abstract Binary Indexed Tree(\u62BD\u8C61\u5316BIT)"
   - icon: ':question:'
@@ -19,9 +19,9 @@ data:
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_add_rectangle_sum
@@ -189,7 +189,7 @@ data:
   path: test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
   requiredBy: []
   timestamp: '2022-10-23 21:27:55+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/yosupo-point-add-rectangle-sum-2.test.cpp
 layout: document

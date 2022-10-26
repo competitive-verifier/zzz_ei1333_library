@@ -2,16 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: other/dynamic-point-add-rectangle-sum.hpp
     title: Dynamic Point Add Rectangle Sum
-  - icon: ':x:'
+  - icon: ':question:'
     path: other/static-point-add-rectangle-sum.hpp
     title: Static Point Add Rectangle Sum
   - icon: ':warning:'
     path: other/static-rectangle-add-rectangle-sum.hpp
     title: Static Rectangle Add Rectangle Sum
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: structure/wavelet/wavelet-matrix-point-add-rectangle-sum.hpp
     title: Wavelet Matrix Point Add Rectangle Sum
   _extendedVerifiedWith:
@@ -21,10 +21,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-dsl-2-b.test.cpp
     title: test/verify/aoj-dsl-2-b.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
     title: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-point-add-rectangle-sum.test.cpp
     title: test/verify/yosupo-point-add-rectangle-sum.test.cpp
   - icon: ':x:'

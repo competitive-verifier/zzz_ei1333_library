@@ -5,11 +5,11 @@ data:
     path: structure/others/binary-indexed-tree.hpp
     title: Binary-Indexed-Tree(BIT)
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: other/dynamic-point-add-rectangle-sum.hpp
     title: Dynamic Point Add Rectangle Sum
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
     title: test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
   - icon: ':x:'
@@ -17,7 +17,7 @@ data:
     title: test/verify/yosupo-rectangle-sum-2.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     document_title: Static Point Add Rectangle Sum
     links: []
@@ -105,7 +105,7 @@ data:
   requiredBy:
   - other/dynamic-point-add-rectangle-sum.hpp
   timestamp: '2022-09-11 00:53:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/verify/yosupo-point-add-rectangle-sum-3.test.cpp
   - test/verify/yosupo-rectangle-sum-2.test.cpp

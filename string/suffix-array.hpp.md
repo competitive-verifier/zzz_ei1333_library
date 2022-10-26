@@ -2,14 +2,14 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/lcp-array.hpp
     title: LCP Array
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/verify/aoj-alds-1-14-d.test.cpp
     title: test/verify/aoj-alds-1-14-d.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-number-of-substrings.test.cpp
     title: test/verify/yosupo-number-of-substrings.test.cpp
   - icon: ':x:'

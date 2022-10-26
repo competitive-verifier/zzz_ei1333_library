@@ -14,7 +14,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/mst/boruvka.hpp
     title: "Boruvka(\u6700\u5C0F\u5168\u57DF\u6728)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/mst/kruskal.hpp
     title: "Kruskal(\u6700\u5C0F\u5168\u57DF\u6728)"
   - icon: ':heavy_check_mark:'
@@ -24,7 +24,7 @@ data:
   - icon: ':question:'
     path: graph/others/eulerian-trail.hpp
     title: "Eulerian Trail(\u30AA\u30A4\u30E9\u30FC\u8DEF)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/tree/offline-lca.hpp
     title: "Offline LCA(\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\u901A\u7956\
       \u5148)"
@@ -56,10 +56,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-bipartite-edge-coloring.test.cpp
     title: test/verify/yosupo-bipartite-edge-coloring.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-lca-4.test.cpp
     title: test/verify/yosupo-lca-4.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/verify/yosupo-manhattanmst.test.cpp
     title: test/verify/yosupo-manhattanmst.test.cpp
   - icon: ':x:'
@@ -150,7 +150,7 @@ title: Union Find
 UnionFind(size_t n)
 ```
 
-`n` 個の集合を作成します。集合 $i(1 \leq i \lt n)$ には要素 $i$ のみが属します。
+`n` 個の集合を作成します。集合 $i(0 \leq i \lt n)$ には要素 $i$ のみが属します。
 
 ## 制約
 
